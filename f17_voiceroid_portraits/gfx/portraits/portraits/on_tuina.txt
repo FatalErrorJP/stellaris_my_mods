@@ -1,0 +1,67 @@
+##############################################################
+# 役ついな種族用のポートレート定義
+##############################################################
+# 画像、音声ファイルとのリンク設定
+portraits = {
+	tuinaA_01 = { texturefile = "gfx/models/portraits/tuina/tuinaA_01.dds" }
+	tuinaA_02 = { texturefile = "gfx/models/portraits/tuina/tuinaA_02.dds" }
+	tuinaA_03 = { texturefile = "gfx/models/portraits/tuina/tuinaA_03.dds" }
+	tuinaA_04 = { texturefile = "gfx/models/portraits/tuina/tuinaA_04.dds" }
+	tuinaA_05 = { texturefile = "gfx/models/portraits/tuina/tuinaA_05.dds" }
+	tuinaA_06 = { texturefile = "gfx/models/portraits/tuina/tuinaA_06.dds" }
+	tuinaA_07 = { texturefile = "gfx/models/portraits/tuina/tuinaA_07.dds" }
+	tuinaA_08 = { texturefile = "gfx/models/portraits/tuina/tuinaA_08.dds" }
+}
+
+# 各場面別のポートレート
+portrait_groups = {
+	tuina = {
+		# デフォルト
+		default = tuinaA_01
+
+		# 帝国作成時
+		game_setup = {
+			add = {
+				portraits = {
+					tuinaA_01 tuinaA_02 tuinaA_03 tuinaA_04 tuinaA_05 tuinaA_06 tuinaA_07 tuinaA_08
+				}
+			}
+		}
+
+		# 汎用
+		species = {
+			add = {
+				portraits = {
+					tuinaA_01 tuinaA_02 tuinaA_03 tuinaA_04 tuinaA_05 tuinaA_06 tuinaA_07 tuinaA_08
+				}
+			}
+		}
+
+		# 惑星上のPOP
+		pop = {
+			add = {
+				portraits = {
+					tuinaA_01 tuinaA_02 tuinaA_03 tuinaA_04 tuinaA_05 tuinaA_06 tuinaA_07 tuinaA_08
+				}
+			}
+		}
+
+		#リーダー
+		leader = {
+			add = {
+				portraits = {
+					tuinaA_01 tuinaA_02 tuinaA_03 tuinaA_04 tuinaA_05 tuinaA_06 tuinaA_07 tuinaA_08
+				}
+			}
+		}
+
+		# 国家元首
+		ruler = {
+			add = {
+				portraits = {
+					tuinaA_01 tuinaA_02 tuinaA_03 tuinaA_04 tuinaA_05 tuinaA_06 tuinaA_07 tuinaA_08
+				}
+			}
+		}
+	}
+}

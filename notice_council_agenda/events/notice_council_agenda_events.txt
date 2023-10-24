@@ -1,0 +1,108 @@
+namespace = notice_council_agenda
+
+###########################################################
+# 月次イベント
+# 評議会の方針の進捗状況をお知らせする
+###########################################################
+event = {
+	id = notice_council_agenda.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {}
+
+	immediate = {
+		every_playable_country = {
+			limit = { is_ai = no }
+			country_event = {
+				id = notice_council_agenda.2
+			}
+		}
+	}
+}
+country_event = {
+	id = notice_council_agenda.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		not = { has_policy_flag = notice_council_agenda_stance_none }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				council_agenda_progress_percent >= 0.9
+				has_policy_flag = notice_council_agenda_stance_90
+			}
+			if = { limit = { not = { has_country_flag = complete_council_agenda_stance_90 } }
+				set_country_flag = complete_council_agenda_stance_90
+				create_message = {
+					type = MESSAGE_COUNCIL_AGENDA_STANCE_90
+					localization = MESSAGE_COUNCIL_AGENDA_STANCE_90_MESSAGE
+					days = 30
+				}
+			}
+		} else_if = {
+			limit = {
+				council_agenda_progress_percent >= 0.8
+				has_policy_flag = notice_council_agenda_stance_80
+			}
+			if = { limit = { not = { has_country_flag = complete_council_agenda_stance_80 } }
+				set_country_flag = complete_council_agenda_stance_80
+				create_message = {
+					type = MESSAGE_COUNCIL_AGENDA_STANCE_80
+					localization = MESSAGE_COUNCIL_AGENDA_STANCE_80_MESSAGE
+					days = 30
+				}
+			}
+		} else_if = {
+			limit = {
+				council_agenda_progress_percent >= 0.7
+				has_policy_flag = notice_council_agenda_stance_70
+			}
+			if = { limit = { not = { has_country_flag = complete_council_agenda_stance_70 } }
+				set_country_flag = complete_council_agenda_stance_70
+				create_message = {
+					type = MESSAGE_COUNCIL_AGENDA_STANCE_70
+					localization = MESSAGE_COUNCIL_AGENDA_STANCE_70_MESSAGE
+					days = 30
+				}
+			}
+		} else_if = {
+			limit = {
+				council_agenda_progress_percent >= 0.6
+				has_policy_flag = notice_council_agenda_stance_60
+			}
+			if = { limit = { not = { has_country_flag = complete_council_agenda_stance_60 } }
+				set_country_flag = complete_council_agenda_stance_60
+				create_message = {
+					type = MESSAGE_COUNCIL_AGENDA_STANCE_60
+					localization = MESSAGE_COUNCIL_AGENDA_STANCE_60_MESSAGE
+					days = 30
+				}
+			}
+		} else_if = {
+			limit = {
+				council_agenda_progress_percent >= 0.5
+				has_policy_flag = notice_council_agenda_stance_50
+			}
+			if = { limit = { not = { has_country_flag = complete_council_agenda_stance_50 } }
+				set_country_flag = complete_council_agenda_stance_50
+				create_message = {
+					type = MESSAGE_COUNCIL_AGENDA_STANCE_50
+					localization = MESSAGE_COUNCIL_AGENDA_STANCE_50_MESSAGE
+					days = 30
+				}
+			}
+		} else = {
+			# フラグリセット
+			remove_country_flag = complete_council_agenda_stance_50
+			remove_country_flag = complete_council_agenda_stance_60
+			remove_country_flag = complete_council_agenda_stance_70
+			remove_country_flag = complete_council_agenda_stance_80
+			remove_country_flag = complete_council_agenda_stance_90
+		}
+	}
+}

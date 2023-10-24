@@ -1,0 +1,70 @@
+namespace = origin
+
+# Lost Colony Setup
+country_event = {
+	id = origin.100
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				is_human_species = no
+			}
+			random_country = {
+				limit = {
+					has_country_flag = lost_colony_parent_of@root
+				}
+
+				#########################################################################
+				#### ここから追加コード
+				#########################################################################
+				if = {
+					# 第一種族のポトレが葵ちゃんポトレの場合は、専用の創始種族の国家体制に書き換える
+					limit = { root = { species_portrait = aoiM } }
+
+					# 国家の志向を軍国、狂精神に、POPの志向を精神に変更する
+					# 優先度の問題で志向が上手く切り替わらないことがあるため、
+					# 対策として一旦POPの志向を軍国主義に変えている
+					every_owned_pop = { pop_change_ethic = ethic_militarist }
+					shift_ethic = ethic_fanatic_militarist
+					shift_ethic = ethic_fanatic_spiritualist
+					every_owned_pop = { pop_change_ethic = ethic_spiritualist }
+
+					# 統治形態を「君主制」、国是を「享楽の追求者」「高名な艦隊司令部」「哲人王」に変更する
+					change_government = {
+						authority = auth_imperial
+						civics = {
+							civic = civic_pleasure_seekers
+							civic = civic_distinguished_admiralty
+							civic = civic_philosopher_king
+						}
+						cooldown = no
+						remove_invalid_civics = yes
+					}
+
+					# 国旗とカラーの変更
+					change_country_flag = {
+						icon = { category = "human" file = "flag_human_1.dds" }
+						background = { category = "backgrounds" file = "double_hemispheres.dds" }
+						colors = { "white" "light_blue" "null" "null" }
+					}
+
+					# 国家名を「葵ちゃん大好き侍」に変更する
+					set_name = "NAME_AOI_CHANG"
+					set_adjective = "NAME_AOI_CHANG"
+				}
+				#########################################################################
+				#### ここまで追加コード
+				#########################################################################
+
+				capital_scope = { change_pc = root.species }
+				every_owned_planet = {
+					limit = { has_planet_flag = lost_colony_planet }
+					change_pc = root.species
+				}
+			}
+		}
+	}
+}

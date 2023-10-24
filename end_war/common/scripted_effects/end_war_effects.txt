@@ -1,0 +1,337 @@
+###########################################################
+# 戦争が終わらないMod用のScripted effects
+###########################################################
+
+#################################################
+# 敵国の未占領の星系と入植地をスペシャルプロジェクトとして追加する
+# SCOPE: COUNTRY
+# Parameters:
+#  CHAIN_NAME: イベントチェーンの名称
+#  CLEAN_CHAIN_PROJECT_NAME: イベントチェーン終了用のプロジェクト名
+#################################################
+end_war_begin_event_chain = {
+	if = {
+		limit = { has_event_chain = $CHAIN_NAME$ }
+		end_event_chain = $CHAIN_NAME$
+	}
+	begin_event_chain = {
+		event_chain = $CHAIN_NAME$
+		target = root
+	}
+	enable_special_project = {
+		name = $CLEAN_CHAIN_PROJECT_NAME$
+		location = capital_star
+		owner = root
+	}
+}
+
+#################################################
+# 自国の戦争を最大5つまで取得する
+# SCOPE: COUNTRY
+#################################################
+end_war_get_war_list = {
+	random_war = {
+		save_event_target_as = target_war_1
+	}
+	random_war = {
+		limit = {
+			NOT = {
+				is_same_value = event_target:target_war_1
+			}
+		}
+		save_event_target_as = target_war_2
+	}
+	random_war = {
+		limit = {
+			NOR = {
+				is_same_value = event_target:target_war_1
+				is_same_value = event_target:target_war_2
+			}
+		}
+		save_event_target_as = target_war_3
+	}
+	random_war = {
+		limit = {
+			NOR = {
+				is_same_value = event_target:target_war_1
+				is_same_value = event_target:target_war_2
+				is_same_value = event_target:target_war_3
+			}
+		}
+		save_event_target_as = target_war_4
+	}
+	random_war = {
+		limit = {
+			NOR = {
+				is_same_value = event_target:target_war_1
+				is_same_value = event_target:target_war_2
+				is_same_value = event_target:target_war_3
+				is_same_value = event_target:target_war_4
+			}
+		}
+		save_event_target_as = target_war_5
+	}
+}
+
+
+#################################################
+# 敵国の未占領の星系と入植地をスペシャルプロジェクトとして追加する
+# SCOPE: WAR
+# Parameters:
+#  SIDE1: 敵国陣営(attacker/defender)
+#  SIDE2: 自国陣営(attacker/defender)
+#################################################
+end_war_add_special_project = {
+	every_$SIDE1$ = {
+		save_event_target_as = target_$SIDE1$_country
+
+		#####
+		# 敵国陣営の全ての星系について
+		#####
+		every_system = {
+			limit = {
+				exists = owner
+				owner = { is_same_value = event_target:target_$SIDE1$_country }
+			}
+			save_event_target_as = target_system
+			set_variable = { which = target_system_occupied value = 0 }
+
+			from = {
+				#####
+				# 対象の星系が、自国陣営の占領下にあるかどうかを判定する
+				# 占領下だった場合、target_system_occupied = 1をセット
+				#####
+				every_$SIDE2$ = {
+					save_event_target_as = target_$SIDE2$_country
+					if = {
+						limit = {
+							event_target:target_system = {
+								starbase = {
+									controller = {
+										is_same_value = event_target:target_$SIDE2$_country
+									}
+								}
+							}
+						}
+						event_target:target_system = {
+							set_variable = { which = target_system_occupied value = 1 }
+						}
+					}
+				}
+			}
+
+			if = {
+				#####
+				# 上記の判定の結果、対象の星系が自国陣営の占領下になければスペシャルプロジェクトとして追加する
+				#####
+				limit = {
+					check_variable = { which = target_system_occupied value = 0 }
+				}
+				enable_special_project = {
+					name = "SHOW_WAR_UNOCCUPIED_SYSTEMS"
+					location = solar_system
+					owner = root
+				}
+			}
+		}
+
+		#####
+		# 敵国陣営の全ての入植地について
+		#####
+		every_owned_planet = {
+			limit = {
+				exists = owner
+				owner = { is_same_value = event_target:target_$SIDE1$_country }
+			}
+			save_event_target_as = target_planet
+			set_variable = { which = target_planet_occupied value = 0 }
+
+			from = {
+				#####
+				# 対象の入植地が、自国陣営の占領下にあるかどうかを判定する
+				# 占領下だった場合、target_planet_occupied = 1をセット
+				#####
+				every_$SIDE2$ = {
+					save_event_target_as = target_$SIDE2$_country
+					if = {
+						limit = {
+							event_target:target_planet = {
+								controller = {
+									is_same_value = event_target:target_$SIDE2$_country
+								}
+							}
+						}
+						event_target:target_planet = {
+							set_variable = { which = target_planet_occupied value = 1 }
+						}
+					}
+				}
+			}
+
+			if = {
+				#####
+				# 上記の判定の結果、対象の入植地が自国陣営の占領下になければスペシャルプロジェクトとして追加する
+				#####
+				limit = {
+					check_variable = { which = target_planet_occupied value = 0 }
+				}
+				enable_special_project = {
+					name = "SHOW_WAR_UNOCCUPIED_PLANETS"
+					location = this
+					owner = root
+				}
+			}
+		}
+	}
+}
+
+
+#################################################
+# 敵国の未占領かつ請求中の星系と入植地をスペシャルプロジェクトとして追加する
+# SCOPE: WAR
+# Parameters:
+#  SIDE1: 敵国陣営(attacker/defender)
+#  SIDE2: 自国陣営(attacker/defender)
+#################################################
+end_war_add_claim_special_project = {
+	every_$SIDE1$ = {
+		save_event_target_as = target_$SIDE1$_country
+
+		#####
+		# 敵国陣営の全ての星系について
+		#####
+		every_system = {
+			limit = {
+				exists = owner
+				owner = { is_same_value = event_target:target_$SIDE1$_country }
+			}
+			save_event_target_as = target_system
+			set_variable = { which = target_system_occupied value = -1 }
+
+			from = {
+				#####
+				# 対象の星系が、自国陣営で請求中かどうかを判定する
+				# 請求中だった場合、target_system_occupied = 0をセット
+				#####
+				every_$SIDE2$ = {
+					limit = { has_claim = event_target:target_system }
+					event_target:target_system = {
+						set_variable = { which = target_system_occupied value = 0 }
+					}
+				}
+
+				#####
+				# 対象の星系が、請求中だった場合
+				# 自国陣営の占領下にあるかどうかを追加で判定する
+				# 占領下だった場合、target_system_occupied = 1をセット
+				#####
+				if = {
+					limit = {
+						event_target:target_system = {
+							check_variable = { which = target_system_occupied value = 0 }
+						}
+					}
+					every_$SIDE2$ = {
+						save_event_target_as = target_$SIDE2$_country
+						if = {
+							limit = {
+								event_target:target_system = {
+									starbase = {
+										controller = {
+											is_same_value = event_target:target_$SIDE2$_country
+										}
+									}
+								}
+							}
+							event_target:target_system = {
+								set_variable = { which = target_system_occupied value = 1 }
+							}
+						}
+					}
+				}
+			}
+
+			if = {
+				#####
+				# 上記の判定の結果、対象の星系が自国陣営の占領下になければスペシャルプロジェクトとして追加する
+				#####
+				limit = {
+					check_variable = { which = target_system_occupied value = 0 }
+				}
+				enable_special_project = {
+					name = "SHOW_WAR_UNOCCUPIED_CLAIM_SYSTEMS"
+					location = solar_system
+					owner = root
+				}
+			}
+		}
+
+		#####
+		# 敵国陣営の全ての入植地について
+		#####
+		every_owned_planet = {
+			limit = {
+				exists = owner
+				owner = { is_same_value = event_target:target_$SIDE1$_country }
+			}
+			save_event_target_as = target_planet
+			solar_system = { save_event_target_as = target_system }
+			set_variable = { which = target_planet_occupied value = -1 }
+
+			from = {
+				#####
+				# 対象の星系が、自国陣営で請求中かどうかを判定する
+				# target_planet_occupied = 0をセット
+				#####
+				every_$SIDE2$ = {
+					limit = { has_claim = event_target:target_system }
+					event_target:target_planet = {
+						set_variable = { which = target_planet_occupied value = 0 }
+					}
+				}
+
+				#####
+				# 対象の星系が、請求中だった場合
+				# 対象の入植地が、自国陣営の占領下にあるかどうかを判定する
+				# 占領下だった場合、target_planet_occupied = 1をセット
+				#####
+				if = {
+					limit = {
+						event_target:target_planet = {
+							check_variable = { which = target_planet_occupied value = 0 }
+						}
+					}
+					every_$SIDE2$ = {
+						save_event_target_as = target_$SIDE2$_country
+						if = {
+							limit = {
+								event_target:target_planet = {
+									controller = {
+										is_same_value = event_target:target_$SIDE2$_country
+									}
+								}
+							}
+							event_target:target_planet = {
+								set_variable = { which = target_planet_occupied value = 1 }
+							}
+						}
+					}
+				}
+			}
+
+			if = {
+				#####
+				# 上記の判定の結果、対象の入植地が自国陣営の占領下になければスペシャルプロジェクトとして追加する
+				#####
+				limit = {
+					check_variable = { which = target_planet_occupied value = 0 }
+				}
+				enable_special_project = {
+					name = "SHOW_WAR_UNOCCUPIED_CLAIM_PLANETS"
+					location = this
+					owner = root
+				}
+			}
+		}
+	}
+}

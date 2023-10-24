@@ -1,0 +1,73 @@
+# ゲーム開始前の準備イベント
+# Called during empire initialization when starting a new game if has_secondary_species game rule is true.
+# Called before empire_init_create_capital_pops.
+# scope: planet
+# from: founder species
+# fromfrom: secondary species (if exists)
+empire_init_capital_planet = {
+	events = {
+		big_wave.1
+	}
+}
+
+# ゲーム開始直後のイベント
+# Triggers when pressing begin in the intro window
+# This = country to press begin
+on_press_begin = {
+	events = {
+		big_wave.11
+	}
+}
+
+# 月次イベント
+# this = country
+on_monthly_pulse_country = {
+	events = {
+		big_wave.32
+		big_wave.48
+	}
+}
+
+# 奴隷市場での売買
+# This = Pop
+# From = Country (buyer)
+# Fromfrom = Country (seller)
+on_slave_sold_on_market = {
+	events = {
+		big_wave.47
+	}
+}
+
+# 浄化
+# A pop has finished purging
+# This = Planet scope
+# From = Country
+# FromFrom = Pop
+on_pop_purged = {
+	events = {
+		big_wave.45
+	}
+}
+
+# 地上戦終了(喰人鬼側勝利)
+# Triggers country_event for the attacker upon victory (before controller is switched)
+# This = country, lead attacker
+# From = country, planet owner
+# FromFrom = planet
+# 'Attacker' is the side that "IsHostile" to the planet controller. For example: spawned monster armies are attackers, but if they win and the player attempts to retake the planet, the player is the attacker
+on_planet_attackers_win = {
+	events = {
+		big_wave.50
+	}
+}
+
+# 地上戦終了(喰人鬼側敗北)
+# Triggers country_event for the defender upon victory
+# Root = country, planet owner
+# From = country, attack leader
+# FromFrom = planet
+on_planet_defenders_win = {
+	events = {
+		big_wave.51
+	}
+}

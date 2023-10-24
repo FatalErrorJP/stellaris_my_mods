@@ -1,0 +1,89 @@
+##############################################################
+# 東北姉妹種族用のポートレート定義
+##############################################################
+# 画像、音声ファイルとのリンク設定
+portraits = {
+	itako_01 =    { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_01.dds"     }
+	itako_02 =    { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_02.dds"     }
+	itako_03 =    { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_03.dds"     }
+	itako_04 =    { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_04.dds"     }
+	itako_05 =    { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_05.dds"     }
+	itako_06 =    { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_06.dds"     }
+	zunkoB_01 =   { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_01.dds"     }
+	zunkoB_02 =   { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_02.dds"     }
+	zunkoB_03 =   { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_03.dds"     }
+	zunkoB_04 =   { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_04.dds"     }
+	zunkoB_05 =   { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_05.dds"     }
+	kiritanB_01 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_01.dds" }
+	kiritanB_02 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_02.dds" }
+	kiritanB_03 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_03.dds" }
+	kiritanB_04 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_04.dds" }
+	kiritanB_05 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_05.dds" }
+	kiritanB_06 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_06.dds" }
+	kiritanB_07 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_07.dds" }
+	kiritanB_08 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_08.dds" }
+	kiritanB_09 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_09.dds" }
+}
+
+# 各場面別のポートレート
+portrait_groups = {
+	touhokusimai = {
+		# デフォルト
+		default = zunkoB_01
+
+		# 帝国作成時
+		game_setup = {
+			add = {
+				portraits = {
+					zunkoB_01 zunkoB_02 zunkoB_03 zunkoB_04 zunkoB_05
+					kiritanB_01 kiritanB_02 kiritanB_03 kiritanB_04 kiritanB_05 kiritanB_06 kiritanB_07 kiritanB_08 kiritanB_09
+					itako_01 itako_02 itako_03 itako_04 itako_05 itako_06
+				}
+			}
+		}
+
+		# 汎用
+		species = {
+			add = {
+				portraits = {
+					zunkoB_01 zunkoB_02 zunkoB_03 zunkoB_04 zunkoB_05
+					kiritanB_01 kiritanB_02 kiritanB_03 kiritanB_04 kiritanB_05 kiritanB_06 kiritanB_07 kiritanB_08 kiritanB_09
+					itako_01 itako_02 itako_03 itako_04 itako_05 itako_06
+				}
+			}
+		}
+
+		# 惑星上のPOP
+		pop = {
+			add = {
+				portraits = {
+					zunkoB_01 zunkoB_02 zunkoB_03 zunkoB_04 zunkoB_05
+					kiritanB_01 kiritanB_02 kiritanB_03 kiritanB_04 kiritanB_05 kiritanB_06 kiritanB_07 kiritanB_08 kiritanB_09
+					itako_01 itako_02 itako_03 itako_04 itako_05 itako_06
+				}
+			}
+		}
+
+		#リーダー
+		leader = {
+			add = {
+				portraits = {
+					zunkoB_01 zunkoB_02 zunkoB_03 zunkoB_04 zunkoB_05
+					kiritanB_01 kiritanB_02 kiritanB_03 kiritanB_04 kiritanB_05 kiritanB_06 kiritanB_07 kiritanB_08 kiritanB_09
+					itako_01 itako_02 itako_03 itako_04 itako_05 itako_06
+				}
+			}
+		}
+
+		# 国家元首
+		ruler = {
+			add = {
+				portraits = {
+					zunkoB_01 zunkoB_02 zunkoB_03 zunkoB_04 zunkoB_05
+					kiritanB_01 kiritanB_02 kiritanB_03 kiritanB_04 kiritanB_05 kiritanB_06 kiritanB_07 kiritanB_08 kiritanB_09
+					itako_01 itako_02 itako_03 itako_04 itako_05 itako_06
+				}
+			}
+		}
+	}
+}

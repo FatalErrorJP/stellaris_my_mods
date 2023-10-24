@@ -1,0 +1,92 @@
+# 00_distant_stars_tech.txt
+# 神経再生医療
+tech_neuroregeneration = {
+	cost = @tier4cost2
+	area = society
+	tier = 4
+	category = { biology }
+	is_rare = yes
+	weight = 0
+
+	modifier = {
+		species_leader_exp_gain = 0.25
+		leader_age = 2								# MOD修正箇所 10 -> 2
+	}
+
+	weight_modifier = {
+		factor = 0
+	}
+}
+
+# 00_soc_tech.txt
+# 生命活性剤
+tech_vitality_boosters = {
+	cost = @tier2cost2
+	area = society
+	tier = 2
+	category = { biology }
+	prerequisites = { "tech_genome_mapping" }
+	weight = @tier2weight2
+
+	modifier = {
+		leader_age = 2								# MOD修正箇所 10 -> 2
+	}
+
+	potential = {
+		OR = {
+			NOT = { has_authority = auth_machine_intelligence }
+			has_civic = civic_machine_assimilator
+		}
+	}
+
+	weight_modifier = {
+		factor = 1.5	# genetech needs to be a bit more common
+		modifier = {
+			factor = 1.25
+			has_authority = auth_hive_mind
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 2
+			has_relic = r_pox_sample
+		}
+	}
+
+	ai_weight = {
+	}
+}
+
+# 00_soc_tech_repeatable.txt
+# 細胞再活性化
+tech_repeatable_improved_leader_life_span = {
+	area = society
+	cost = @repeatableTechBaseCost
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier
+	category = { biology }
+	levels = -1
+	prerequisites = { "tech_vitality_boosters" }
+	weight = @repeatableTechWeight
+
+	weight_modifier = {
+		factor = @repatableTechFactor
+	}
+
+	ai_weight = {
+		factor = 1.0
+	}
+
+	weight_groups = {
+		repeatable
+	}
+	mod_weight_if_group_picked = {
+		repeatable = 0.01
+	}
+
+	modifier = {
+		leader_age = 1								# MOD修正箇所 5 -> 1
+	}
+}

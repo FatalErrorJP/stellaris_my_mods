@@ -1,0 +1,9 @@
+﻿l_japanese:
+  policy_mercenary_enclave_fleets_stance:0 "傭兵中立機構からの艦隊の譲与"
+  policy_mercenary_enclave_fleets_stance_desc:0 "傭兵中立機構から貰える配当金として、艦隊を受け入れるかどうかを選択する"
+  mercenary_enclave_fleets_stance_receive:0 "受け入れる"
+  mercenary_enclave_fleets_stance_receive_name:0 "$mercenary_enclave_fleets_stance_receive$"
+  mercenary_enclave_fleets_stance_receive_desc:0 "配当金として艦隊が貰えるようになる"
+  mercenary_enclave_fleets_stance_rejection:0 "拒否する"
+  mercenary_enclave_fleets_stance_rejection_name:0 "$mercenary_enclave_fleets_stance_rejection$"
+  mercenary_enclave_fleets_stance_rejection_desc:0 "配当金として艦隊が貰えるような選択肢がなくなる"

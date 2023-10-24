@@ -1,0 +1,13 @@
+next_generation_leader_age_percentage_of_lifespan = {
+	base = 70 # バニラでの死亡は80才以降のため、その10年前から後継者を育てられるようにする
+	complex_trigger_modifier = {
+		trigger = check_modifier_value
+		parameters = {
+			modifier = leader_age
+		}
+		mode = add
+	}
+	divide = trigger:leader_age
+	# Change: [Lifespan / LeaderAge] into: [LeaderAge / Lifespan] to get a percentage.
+	pow = -1
+}

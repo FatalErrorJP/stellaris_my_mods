@@ -1,0 +1,43 @@
+@EdictDuration = -1
+@CoastGuardBaseCost = 0.25
+
+# 沿岸警備隊
+coast_guard = {
+	length = @EdictDuration
+	icon = "GFX_edict_type_time"
+
+	resources = {
+		category = campaigns
+		cost = {
+			energy = @CoastGuardBaseCost
+			multiplier = value:coast_guard_cost
+		}
+		upkeep = {
+			energy = @CoastGuardBaseCost
+			multiplier = value:coast_guard_cost
+		}
+	}
+
+	potential = {
+		is_gestalt = no
+	}
+
+	effect = {
+		hidden_effect = {
+			remove_modifier = coast_guard
+		}
+		add_modifier = {
+			modifier = coast_guard
+			multiplier = value:coast_guard_trade_protection_value
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @EdictLowPrio
+			has_resource = { type = energy amount > 5000 }
+		}
+	}
+}
+

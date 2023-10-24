@@ -1,0 +1,145 @@
+﻿character = {
+	size = { x = 472 y = 324 }
+
+	entity = {
+		orientation = center_down
+		position = { x = 50 y = -20 }
+		scale = 24
+	}
+	#2d Portrait position
+	icon = {
+		orientation = center_down
+		position = { x = 0 y = 0 }
+		scale = 1.0
+	}
+}
+
+portraits = {
+	
+	itako_01 = { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_01.dds" }
+	itako_02 = { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_02.dds" }
+	itako_03 = { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_03.dds" }
+	itako_04 = { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_04.dds" }
+	itako_05 = { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_05.dds" }
+	itako_06 = { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_06.dds" }
+}
+
+portrait_groups = {
+	itako = {
+		default = itako_01
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					itako_01
+					itako_02
+					itako_03
+					itako_04
+					itako_05
+					itako_06
+
+				}
+			}
+
+		}
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					itako_01
+					itako_02
+					itako_03
+					itako_04
+					itako_05
+					itako_06
+				}
+			}
+		}		
+		
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					itako_01
+					itako_02
+					itako_03
+					itako_04
+					itako_05
+					itako_06
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			
+			add = {
+				trigger = {
+					leader_class = governor
+				}
+				portraits = {
+					itako_01
+					itako_02
+					itako_03
+					itako_04
+					itako_05
+					itako_06
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = scientist
+				}
+				portraits = {
+					itako_01
+					itako_02
+					itako_03
+					itako_04
+					itako_05
+					itako_06
+
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = admiral
+				}
+				portraits = {
+					itako_01
+					itako_02
+					itako_03
+					itako_04
+					itako_05
+					itako_06
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = general
+				}
+				portraits = {
+					itako_01
+					itako_02
+					itako_03
+					itako_04
+					itako_05
+					itako_06
+				}
+			}
+		}
+		
+		#leader scope 
+		ruler = {
+			add = {
+			    	portraits = {
+					itako_01
+					itako_02
+					itako_03
+					itako_04
+					itako_05
+					itako_06
+				}
+			}
+
+		}
+	}

@@ -1,0 +1,5 @@
+# 帝国補正「沿岸警備隊」
+# 交易保護値を上昇させる
+coast_guard = {
+	local_trade_protection_add = 2
+}

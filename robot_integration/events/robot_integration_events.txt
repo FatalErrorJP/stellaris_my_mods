@@ -1,0 +1,121 @@
+###########################################################
+# ロボットPOPの統合化イベント
+###########################################################
+namespace = robot_integration
+
+# 月次イベント開始
+# 全ての国家に対してイベントを実施する
+event = {
+	id = robot_integration.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		any_playable_country = {
+			num_unique_species > 1
+			any_owned_species = { has_citizenship_type = { type = citizenship_robot_integration country = prev } }
+			NOT = { has_ethic = ethic_gestalt_consciousness }
+			exists = built_species
+			built_species = { is_robotic_species = yes }
+			has_technology = tech_robotic_workers
+		}
+	}
+
+	immediate = {
+		set_update_modifiers_batch = begin
+
+		every_playable_country = {
+			limit = {
+				num_unique_species > 1
+				any_owned_species = {
+					has_citizenship_type = { type = citizenship_robot_integration country = prev }
+				}
+			}
+
+			country_event = { id = robot_integration.2 }
+		}
+
+		set_update_modifiers_batch = end
+	}
+}
+
+# 各国家毎の処理
+# root:country
+country_event = {
+	id = robot_integration.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_ethic = ethic_gestalt_consciousness }
+		exists = built_species
+		built_species = { is_robotic_species = yes }
+		has_technology = tech_robotic_workers
+	}
+
+	immediate = {
+		# 統合後の種族を選択する
+		if = {
+			limit = {
+				any_owned_species = {
+					is_robotic_species = yes
+					not = { has_citizenship_type = { type = citizenship_robot_integration country = root } }
+					not = { has_citizenship_type = { type = citizenship_assimilation country = root } }
+					is_subspecies = root.built_species
+				}
+			}
+			ordered_owned_species = {
+				limit = {
+					is_robotic_species = yes
+					not = { has_citizenship_type = { type = citizenship_robot_integration country = root } }
+					not = { has_citizenship_type = { type = citizenship_assimilation country = root } }
+					is_subspecies = root.built_species
+				}
+				save_event_target_as = target_species
+			}
+		} else = {
+			built_species = { save_event_target_as = target_species }
+		}
+
+		every_owned_planet = {
+			planet_event = { id = robot_integration.3 scopes = { from = root fromfrom = event_target:target_species } }
+		}
+	}
+}
+
+# 各惑星毎の処理
+# root:planet
+# from:country
+# fromfrom:統合化後のspecies
+planet_event = {
+	id = robot_integration.3
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		any_owned_species = {
+			has_citizenship_type = {
+				type = citizenship_robot_integration
+				country = from
+			}
+		}
+	}
+
+	immediate = {
+		# 統合化させるPOP数を設定する
+		set_variable_to_random_value = { which = robot_integration_counter min = 3 max = 12 rounded = yes }
+
+		# 統合化させるPOP数だけ統合処理を実施する
+		while = {
+			count = robot_integration_counter
+			limit = { any_owned_pop = { has_citizenship_type = { type = citizenship_robot_integration country = from } } }
+
+			random_owned_pop = {
+				limit = { has_citizenship_type = { type = citizenship_robot_integration country = from } }
+				change_species = fromfrom
+			}
+		}
+
+		clear_variable = robot_integration_counter
+	}
+}

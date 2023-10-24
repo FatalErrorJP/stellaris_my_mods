@@ -1,0 +1,27 @@
+###########################################################
+# ブラック企業を許さないマローダーの会Mod用のイベント定義
+# ※バニラの上書き部分
+###########################################################
+namespace = marauder
+
+###########################################################
+# マローダーの契約更新イベント
+###########################################################
+# バニラオリジナル(events/marauder_events.txt)のmarauder.50を上書きし、イベントの挟み込み
+# marauder.50と同様の操作はdestroy.1で実施
+fleet_event = {
+	id = marauder.50
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		# 契約更新の回答の保留月数を初期化する
+		destroy_black_exec_scripted_effect = { EFFECT_NAME = initilize_count }
+
+		# 30日単位でフラグチェック
+		fleet_event = { id = destroy.11 days = 30 }
+
+		# 契約更新イベントを呼び出す
+		fleet_event = { id = destroy.1 }
+	}
+}

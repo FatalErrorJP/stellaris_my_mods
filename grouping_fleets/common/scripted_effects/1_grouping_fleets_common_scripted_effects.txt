@@ -1,0 +1,163 @@
+###########################################################
+# 艦隊グループ化Mod用のScripted effects
+###########################################################
+
+#######################################################
+#
+# 共通関数
+#
+#######################################################
+
+#################################################
+# 追跡モード用のパラメータを入力する
+# PARAMETER
+#   NUMBER: グループ番号
+#   VALUE: 0:追跡していない 1:追跡中
+#################################################
+grouping_fleets_set_auto_move_parameter = {
+	from = {
+		set_variable = { which = grouping_fleets_temp value = $NUMBER$ }
+		set_variable = { which = grouping_fleets_tempv value = $VALUE$ }
+		if = {
+			limit = { check_variable = { which = grouping_fleets_tempv value = 1 } }
+			set_variable = { which = grouping_fleets_tempv value = $NUMBER$ }
+		}
+
+		if = {
+			limit = {
+				check_variable = { which = grouping_fleets_temp value = 1 }
+			}
+			set_variable = { which = grouping_fleets_auto_move_1 value = grouping_fleets_tempv }
+		} else_if = {
+			limit = {
+				check_variable = { which = grouping_fleets_temp value = 2 }
+			}
+			set_variable = { which = grouping_fleets_auto_move_2 value = grouping_fleets_tempv }
+		} else_if = {
+			limit = {
+				check_variable = { which = grouping_fleets_temp value = 3 }
+			}
+			set_variable = { which = grouping_fleets_auto_move_3 value = grouping_fleets_tempv }
+		} else_if = {
+			limit = {
+				check_variable = { which = grouping_fleets_temp value = 4 }
+			}
+			set_variable = { which = grouping_fleets_auto_move_4 value = grouping_fleets_tempv }
+		} else_if = {
+			limit = {
+				check_variable = { which = grouping_fleets_temp value = 5 }
+			}
+			set_variable = { which = grouping_fleets_auto_move_5 value = grouping_fleets_tempv }
+		} else_if = {
+			limit = {
+				check_variable = { which = grouping_fleets_temp value = 6 }
+			}
+			set_variable = { which = grouping_fleets_auto_move_6 value = grouping_fleets_tempv }
+		} else_if = {
+			limit = {
+				check_variable = { which = grouping_fleets_temp value = 7 }
+			}
+			set_variable = { which = grouping_fleets_auto_move_7 value = grouping_fleets_tempv }
+		} else_if = {
+			limit = {
+				check_variable = { which = grouping_fleets_temp value = 8 }
+			}
+			set_variable = { which = grouping_fleets_auto_move_8 value = grouping_fleets_tempv }
+		}
+	}
+}
+
+#################################################
+# 対象の艦隊グループの追跡モードを全て解除する
+# PARAMETER
+#   NUMBER: グループ番号
+#################################################
+grouping_fleets_remove_auto_move = {
+	from = {
+		every_owned_fleet = {
+			limit = {
+				OR = {
+					is_ship_size = juggernaut
+					is_ship_class = shipclass_military
+				}
+				check_variable = { which = grouping_fleets_fleet_group_num value = $NUMBER$ }
+			}
+			remove_auto_move_target = yes
+		}
+	}
+}
+
+#################################################
+# 対象の艦隊グループを追跡モードに変更する
+# PARAMETER
+#   NUMBER: グループ番号
+#################################################
+grouping_fleets_set_auto_move = {
+	from = {
+		if = {
+			limit = {
+				any_owned_fleet = {
+					OR = {
+						is_ship_size = juggernaut
+						is_ship_class = shipclass_military
+					}
+					not = { check_variable = { which = grouping_fleets_flagship value = 0 } }
+					check_variable = { which = grouping_fleets_flagship value = $NUMBER$ }
+				}
+			}
+
+			random_owned_fleet = {
+				limit = {
+					OR = {
+						is_ship_size = juggernaut
+						is_ship_class = shipclass_military
+					}
+					check_variable = { which = grouping_fleets_flagship value = $NUMBER$ }
+				}
+				save_event_target_as = target_flagship_fleet
+			}
+
+			every_owned_fleet = {
+				limit = {
+					OR = {
+						is_ship_size = juggernaut
+						is_ship_class = shipclass_military
+					}
+					check_variable = { which = grouping_fleets_fleet_group_num value = $NUMBER$ }
+					not = { is_same_value = event_target:target_flagship_fleet }
+				}
+				auto_follow_fleet = { target = event_target:target_flagship_fleet attack_fleet = no }
+			}
+		}
+	}
+}
+
+
+#################################################
+# 対象の艦隊グループの旗艦を解除する
+# PARAMETER
+#   NUMBER: グループ番号
+#################################################
+grouping_fleets_remove_flagship = {
+	from = {
+		every_owned_fleet = {
+			limit = {
+				OR = {
+					is_ship_size = juggernaut
+					is_ship_class = shipclass_military
+				}
+				check_variable = { which = grouping_fleets_flagship value = $NUMBER$ }
+			}
+			set_variable = { which = grouping_fleets_flagship value = 0 }
+		}
+	}
+}
+
+#################################################
+# rootを艦隊グループの旗艦として設定する
+# PARAMETER
+#   NUMBER: グループ番号
+#################################################
+grouping_fleets_set_flagship = {
+	set_variable = { which = grouping_fleets_flagship value = $NUMBER$ }
+}

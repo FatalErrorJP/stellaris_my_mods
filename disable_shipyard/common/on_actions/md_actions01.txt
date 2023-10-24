@@ -1,0 +1,21 @@
+###########################################################
+# 巨大造船所のON/OFF機能追加用コード
+# コード提供：6thStrikeUnit様
+###########################################################
+# From = system
+# FromFrom = country (previous owner)
+# This = country (new owner)
+on_system_gained = {
+	events = {
+		md_event.001
+	}
+}
+
+# THIS = System: system whos controller has changed
+# FROM = Country: New controller of the system
+# FROMFROM = Country: Old controller of the system
+on_system_controller_changed = {
+	events = {
+		md_event.002
+	}
+}

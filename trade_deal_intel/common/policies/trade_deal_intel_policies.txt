@@ -1,0 +1,121 @@
+# 貿易協定の提案の成立条件
+offer_trade_deal_stance = {
+	potential = {
+		is_ai = no
+	}
+
+	allow = {
+		always = yes
+	}
+
+	# 条件なし
+	option = {
+		name = offer_trade_deal_stance_none
+		potential = { always = yes }
+		valid = { always = yes }
+		policy_flags = { offer_trade_deal_stance_none }
+		ai_weight = { weight = 10 }
+	}
+
+	# 経済の情報レベル1(低)以上
+	option = {
+		name = offer_trade_deal_stance_1
+		potential = { always = yes }
+		valid = { always = yes }
+		policy_flags = { offer_trade_deal_stance_1 }
+		ai_weight = { weight = 0 }
+	}
+
+	# 経済の情報レベル2(中)以上
+	option = {
+		name = offer_trade_deal_stance_2
+		potential = { always = yes }
+		valid = { always = yes }
+		policy_flags = { offer_trade_deal_stance_2 }
+		ai_weight = { weight = 0 }
+	}
+
+	# 経済の情報レベル3(高)以上
+	option = {
+		name = offer_trade_deal_stance_3
+		potential = { always = yes }
+		valid = { always = yes }
+		policy_flags = { offer_trade_deal_stance_3 }
+		ai_weight = { weight = 0 }
+	}
+
+	# 経済の情報レベル4(完全)
+	option = {
+		name = offer_trade_deal_stance_4
+		potential = { always = yes }
+		valid = { always = yes }
+		policy_flags = { offer_trade_deal_stance_4 }
+		ai_weight = { weight = 0 }
+	}
+
+	# 友好的な国家
+	option = {
+		name = offer_trade_deal_stance_friendly
+		potential = { always = yes }
+		valid = { always = yes }
+		policy_flags = { offer_trade_deal_stance_friendly }
+		ai_weight = { weight = 0 }
+	}
+
+	# 友好的な国家 + 経済の情報レベル1(低)以上
+	option = {
+		name = offer_trade_deal_stance_friendly_1
+		potential = { always = yes }
+		valid = { always = yes }
+		policy_flags = {
+			offer_trade_deal_stance_friendly
+			offer_trade_deal_stance_1
+		}
+		ai_weight = { weight = 0 }
+	}
+
+	# 友好的な国家 + 経済の情報レベル2(中)以上
+	option = {
+		name = offer_trade_deal_stance_friendly_2
+		potential = { always = yes }
+		valid = { always = yes }
+		policy_flags = {
+			offer_trade_deal_stance_friendly
+			offer_trade_deal_stance_2
+		}
+		ai_weight = { weight = 0 }
+	}
+
+	# 友好的な国家 + 経済の情報レベル3(高)以上
+	option = {
+		name = offer_trade_deal_stance_friendly_3
+		potential = { always = yes }
+		valid = { always = yes }
+		policy_flags = {
+			offer_trade_deal_stance_friendly
+			offer_trade_deal_stance_3
+		}
+		ai_weight = { weight = 0 }
+	}
+
+	# 友好的な国家 + 経済の情報レベル4(完全)
+	option = {
+		name = offer_trade_deal_stance_friendly_4
+		potential = { always = yes }
+		valid = { always = yes }
+		policy_flags = {
+			offer_trade_deal_stance_friendly
+			offer_trade_deal_stance_4
+		}
+		ai_weight = { weight = 0 }
+	}
+
+	# 完全禁止
+	option = {
+		name = offer_trade_deal_stance_always_no
+		potential = { always = yes }
+		valid = { always = yes }
+		policy_flags = { offer_trade_deal_stance_always_no }
+		ai_weight = { weight = 0 }
+	}
+}

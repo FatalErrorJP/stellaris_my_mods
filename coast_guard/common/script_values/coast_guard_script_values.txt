@@ -1,0 +1,20 @@
+# 沿岸警備隊に必要なコストの基本値(=余っている艦隊許容量)
+coast_guard_cost = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = max_naval_capacity
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = used_naval_capacity_integer
+		mode = subtract
+	}
+	min = 0
+}
+
+# 沿岸警備隊の交易保護値上昇量(=余っている艦隊許容量/保有星系数 小数切り上げ)
+coast_guard_trade_protection_value = {
+	add = value:coast_guard_cost
+	divide = trigger:controlled_systems
+	ceiling = yes
+}

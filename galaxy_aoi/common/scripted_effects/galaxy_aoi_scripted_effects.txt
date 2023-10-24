@@ -1,0 +1,170 @@
+# 没落帝国用のシタデルを生成する
+static_create_fe_home_citadel = {
+	create_starbase = {
+		size = "starbase_citadel"
+		owner = $COUNTRY$
+
+		module = "shipyard"
+		module = "shipyard"
+		module = "shipyard"
+		module = "hangar_bay"
+		module = "gun_battery"
+		module = "gun_battery"
+
+		building = "target_uplink_computer"
+		building = "defense_grid"
+		building = "colossus_yards"
+		building = "titan_yards"
+
+		effect = {
+			while = {
+				count = 10
+				create_fallen_empire_platform = yes
+			}
+		}
+	}
+}
+
+# 没落帝国用のシタデルを生成する
+static_create_fe_citadel = {
+	create_starbase = {
+		size = "starbase_citadel"
+
+		owner = $COUNTRY$
+		module = "shipyard"
+		module = "anchorage"
+		module = "anchorage"
+		module = "hangar_bay"
+		module = "gun_battery"
+		module = "gun_battery"
+
+		building = "crew_quarters"
+		building = "command_center"
+		building = "target_uplink_computer"
+		building = "dark_matter_listening_post"
+
+		effect = {
+			while = {
+				count = 4
+				create_fallen_empire_platform = yes
+			}
+		}
+	}
+}
+
+# 没落帝国用の前哨地を生成する
+static_create_fe_outpost = {
+	create_starbase = {
+		size = "starbase_outpost"
+		owner = $COUNTRY$
+		effect = {
+			while = {
+				count = 2
+				create_fallen_empire_platform = yes
+			}
+		}
+	}
+}
+
+# 没落帝国の首都と隣接する各星系を作成する
+static_spawn_fallen_neighbor_system = {
+	spawn_system = { initializer = $INITIALIZER$ }
+	last_created_system = {
+		if = {
+			limit = { not = { has_hyperlane_to = prev } }
+			add_hyperlane = { from = this to = prev }
+		}
+	}
+}
+
+# 隣接星系とハイパーレーンで繋ぐ
+static_add_hyperlane = {
+	last_created_system = {
+		if = {
+			limit = { not = { has_hyperlane_to = $SYSTEM$ } }
+			add_hyperlane = { from = this to = $SYSTEM$ }
+		}
+	}
+}
+
+static_create_fe_fringe_colony = {
+	set_planet_flag = fallen_empire_world
+	clear_blockers = yes
+	prevent_anomaly = yes
+	set_owner = $COUNTRY$
+	add_building = building_ancient_palace
+	add_building = building_fe_dome
+	while = {
+		count = 5
+		add_district = {
+			district_type = district_city
+			ignore_cap = yes
+		}
+	}
+	while = {
+		count = 8
+		create_pop = {
+			species = owner_main_species
+		}
+	}
+	while = {
+		count = 8
+		create_pop = {
+			species = event_target:fe_servants
+		}
+	}
+}
+
+static_create_fe_spiritualist_fringe_colony = {
+	set_planet_flag = fallen_empire_world
+	clear_blockers = yes
+	prevent_anomaly = yes
+	set_owner = $COUNTRY$
+	add_building = building_ancient_palace
+	add_building = building_fe_dome
+	while = {
+		count = 3
+		add_district_and_planet_size_if_needed_effect = {
+			district = district_city
+		}
+	}
+	while = {
+		count = 2
+		add_district_and_planet_size_if_needed_effect = {
+			district = district_generator
+		}
+	}
+	while = {
+		count = 2
+		add_district_and_planet_size_if_needed_effect = {
+			district = district_mining
+		}
+	}
+	while = {
+		count = 2
+		add_district_and_planet_size_if_needed_effect = {
+			district = district_farming
+		}
+	}
+	while = {
+		count = 20
+		create_pop = {
+			species = owner_main_species
+		}
+	}
+}
+
+static_create_fe_servant_species = {
+	create_species = {
+		name = random
+		class = random_non_machine
+		portrait = random
+		traits = random
+		traits = {
+			ideal_planet_class = $COUNTRY$
+			trait = "trait_nerve_stapled"
+			trait = "trait_strong"
+			trait = "trait_charismatic"
+		}
+	}
+}

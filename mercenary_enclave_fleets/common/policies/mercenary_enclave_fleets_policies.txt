@@ -1,0 +1,31 @@
+mercenary_enclave_fleets_stance = {
+	potential = {
+		always = yes
+	}
+
+	allow = {
+		always = yes
+	}
+
+	# 傭兵中立機構からの艦隊の提供を受け入れる
+	option = {
+		name = mercenary_enclave_fleets_stance_receive
+		potential = { always = yes }
+		valid = { always = yes }
+		on_enabled = {}
+		policy_flags = { mercenary_enclave_fleets_stance_receive }
+		modifier = {}
+		ai_weight = { weight = 10 }
+	}
+
+	# 傭兵中立機構からの艦隊の提供を拒否する
+	option = {
+		name = mercenary_enclave_fleets_stance_rejection
+		potential = { is_ai = no }
+		valid = { always = yes }
+		on_enabled = {}
+		policy_flags = { mercenary_enclave_fleets_stance_rejection }
+		modifier = {}
+		ai_weight = { weight = 0 }
+	}
+}

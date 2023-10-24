@@ -1,0 +1,21 @@
+###############################################################################
+# 布告メニューの項目設定
+###############################################################################
+custom_map_mode_menu = {
+	length = 1
+	icon = "GFX_planets_header"
+
+	potential = {
+		is_ai = no
+	}
+
+	effect = {
+		hidden_effect = {
+			country_event = { id = custom_map.1 }
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

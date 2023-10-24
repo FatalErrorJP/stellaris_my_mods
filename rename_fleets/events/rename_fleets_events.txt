@@ -1,0 +1,114 @@
+#
+# rename_fleets.1 : メニュー表示開始
+# rename_fleets.2 : アウトライナー順に艦隊番号を振り直す(バニラ)
+# rename_fleets.3 : アウトライナー順に艦隊番号を振り直す(MOD)
+# rename_fleets.4 : 所属グループ毎に艦隊番号を振り直す(MOD)
+#
+namespace = rename_fleets
+
+country_event = {
+	id = rename_fleets.1
+	title = rename_fleets.1.name
+	desc = rename_fleets.1.desc
+	picture = GFX_evt_federation_fleet
+	is_triggered_only = yes
+
+	option = {
+		name = rename_fleets.1.a
+		hidden_effect = {
+			country_event = { id = rename_fleets.2 }
+		}
+	}
+	option = {
+		name = rename_fleets.1.b
+		custom_tooltip = rename_fleets.1.tooltip
+		hidden_effect = {
+			country_event = { id = rename_fleets.3 }
+		}
+	}
+	option = {
+		name = rename_fleets.1.c
+		custom_tooltip = rename_fleets.1.tooltip
+		hidden_effect = {
+			country_event = { id = rename_fleets.4 }
+		}
+	}
+	option = {
+		name = CANCEL
+	}
+}
+
+country_event = {
+	id = rename_fleets.2
+	title = rename_fleets.2.name
+	desc = rename_fleets.2.desc
+	picture = GFX_evt_fleet_names1
+	is_triggered_only = yes
+
+	option = {
+		name = rename_fleets.2.a
+		custom_tooltip = rename_fleets.tooltip
+		hidden_effect = {
+			rename_fleets = yes
+		}
+	}
+	option = {
+		name = BACK
+		hidden_effect = {
+			country_event = { id = rename_fleets.1 }
+		}
+	}
+	option = {
+		name = CANCEL
+	}
+}
+
+country_event = {
+	id = rename_fleets.3
+	title = rename_fleets.3.name
+	desc = rename_fleets.3.desc
+	picture = GFX_evt_fleet_names2
+	is_triggered_only = yes
+
+	option = {
+		name = rename_fleets.3.a
+		custom_tooltip = rename_fleets.tooltip
+		hidden_effect = {
+			rename_grouping_fleets = yes
+		}
+	}
+	option = {
+		name = BACK
+		hidden_effect = {
+			country_event = { id = rename_fleets.1 }
+		}
+	}
+	option = {
+		name = CANCEL
+	}
+}
+
+country_event = {
+	id = rename_fleets.4
+	title = rename_fleets.4.name
+	desc = rename_fleets.4.desc
+	picture = GFX_evt_fleet_names3
+	is_triggered_only = yes
+
+	option = {
+		name = rename_fleets.4.a
+		custom_tooltip = rename_fleets.tooltip
+		hidden_effect = {
+			rename_grouping_fleets2 = yes
+		}
+	}
+	option = {
+		name = BACK
+		hidden_effect = {
+			country_event = { id = rename_fleets.1 }
+		}
+	}
+	option = {
+		name = CANCEL
+	}
+}

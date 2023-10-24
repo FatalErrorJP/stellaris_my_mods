@@ -1,0 +1,137 @@
+﻿character = {
+	size = { x = 472 y = 324 }
+
+	entity = {
+		orientation = center_down
+		position = { x = 50 y = -20 }
+		scale = 24
+	}
+	#2d Portrait position
+	icon = {
+		orientation = center_down
+		position = { x = 0 y = 0 }
+		scale = 1.0
+	}
+}
+
+portraits = {
+	
+	zunko_01 = { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_01.dds" }
+	zunko_02 = { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_02.dds" }
+	zunko_03 = { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_03.dds" }
+	zunko_04 = { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_04.dds" }
+	zunko_05 = { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_05.dds" }
+}
+
+portrait_groups = {
+	zunko = {
+		default = zunko_01
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					zunko_01
+					zunko_02
+					zunko_03
+					zunko_04
+					zunko_05
+
+				}
+			}
+
+		}
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					zunko_01
+					zunko_02
+					zunko_03
+					zunko_04
+					zunko_05
+				}
+			}
+		}		
+		
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					zunko_01
+					zunko_02
+					zunko_03
+					zunko_04
+					zunko_05
+
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			
+			add = {
+				trigger = {
+					leader_class = governor
+				}
+				portraits = {
+					zunko_01
+					zunko_02
+					zunko_03
+					zunko_04
+					zunko_05
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = scientist
+				}
+				portraits = {
+					zunko_01
+					zunko_02
+					zunko_03
+					zunko_04
+					zunko_05
+
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = admiral
+				}
+				portraits = {
+					zunko_01
+					zunko_02
+					zunko_03
+					zunko_04
+					zunko_05
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = general
+				}
+				portraits = {
+					zunko_01
+					zunko_02
+					zunko_03
+					zunko_04
+					zunko_05
+				}
+			}
+		}
+		
+		#leader scope 
+		ruler = {
+			add = {
+			    	portraits = {
+					zunko_01
+					zunko_02
+					zunko_03
+					zunko_04
+					zunko_05
+				}
+			}
+
+		}
+	}

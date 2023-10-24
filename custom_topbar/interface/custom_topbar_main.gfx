@@ -1,0 +1,12 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_custom_topbar_button_hover"
+		texturefile = "gfx/interface/buttons/custom_topbar_main_button_90_18.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_custom_topbar_button_narrow_hover"
+		texturefile = "gfx/interface/buttons/custom_topbar_main_button_70_18.dds"
+		noOfFrames = 2
+	}
+}

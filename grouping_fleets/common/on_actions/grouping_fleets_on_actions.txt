@@ -1,0 +1,6 @@
+# コロッサス 神の光投射後イベント
+on_destroy_planet_with_PLANET_KILLER_GODRAY = {
+	events = {
+		grouping_fleets.10
+	}
+}

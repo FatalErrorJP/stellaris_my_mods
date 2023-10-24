@@ -1,0 +1,163 @@
+﻿character = {
+	size = { x = 472 y = 324 }
+
+	entity = {
+		orientation = center_down
+		position = { x = 50 y = -20 }
+		scale = 24
+	}
+	#2d Portrait position
+	icon = {
+		orientation = center_down
+		position = { x = 0 y = 0 }
+		scale = 1.0
+	}
+}
+
+portraits = {
+	
+	himeC_01 = { texturefile = "gfx/models/portraits/meika/hime/himeC_01.dds" }
+	himeC_02 = { texturefile = "gfx/models/portraits/meika/hime/himeC_02.dds" }
+	himeC_03 = { texturefile = "gfx/models/portraits/meika/hime/himeC_03.dds" }
+	himeC_04 = { texturefile = "gfx/models/portraits/meika/hime/himeC_04.dds" }
+	himeC_05 = { texturefile = "gfx/models/portraits/meika/hime/himeC_05.dds" }
+	himeC_06 = { texturefile = "gfx/models/portraits/meika/hime/himeC_06.dds" }
+	himeC_07 = { texturefile = "gfx/models/portraits/meika/hime/himeC_07.dds" }
+	himeC_08 = { texturefile = "gfx/models/portraits/meika/hime/himeC_08.dds" }
+}
+
+portrait_groups = {
+	hime = {
+		default = himeC_01
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					himeC_01
+					himeC_02
+					himeC_03
+					himeC_04
+					himeC_05
+					himeC_06
+					himeC_07
+					himeC_08
+
+				}
+			}
+
+		}
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					himeC_01
+					himeC_02
+					himeC_03
+					himeC_04
+					himeC_05
+					himeC_06
+					himeC_07
+					himeC_08
+				}
+			}
+		}		
+		
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					himeC_01
+					himeC_02
+					himeC_03
+					himeC_04
+					himeC_05
+					himeC_06
+					himeC_07
+					himeC_08
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			
+			add = {
+				trigger = {
+					leader_class = governor
+				}
+				portraits = {
+					himeC_01
+					himeC_02
+					himeC_03
+					himeC_04
+					himeC_05
+					himeC_06
+					himeC_07
+					himeC_08
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = scientist
+				}
+				portraits = {
+					himeC_01
+					himeC_02
+					himeC_03
+					himeC_04
+					himeC_05
+					himeC_06
+					himeC_07
+					himeC_08
+
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = admiral
+				}
+				portraits = {
+					himeC_01
+					himeC_02
+					himeC_03
+					himeC_04
+					himeC_05
+					himeC_06
+					himeC_07
+					himeC_08
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = general
+				}
+				portraits = {
+					himeC_01
+					himeC_02
+					himeC_03
+					himeC_04
+					himeC_05
+					himeC_06
+					himeC_07
+					himeC_08
+				}
+			}
+		}
+		
+		#leader scope 
+		ruler = {
+			add = {
+			    	portraits = {
+					himeC_01
+					himeC_02
+					himeC_03
+					himeC_04
+					himeC_05
+					himeC_06
+					himeC_07
+					himeC_08
+				}
+			}
+
+		}
+	}

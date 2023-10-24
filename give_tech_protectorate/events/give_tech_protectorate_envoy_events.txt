@@ -1,0 +1,146 @@
+namespace = give_tech_protectorate
+
+###
+# 1 : 宗主国AI専用の「保護国への技術供与」付与イベント
+# 11: 宗主国AI専用の「保護国への技術供与」キャンセルイベント
+# 12: 保護国AI専用の「保護国への技術供与」キャンセルイベント
+# 21: 保護国への技術進捗増加イベント
+###
+
+###########################################################
+# 宗主国AI専用の「保護国への技術供与」付与イベント
+# Root = Country
+###########################################################
+country_event = {
+	id = give_tech_protectorate.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = yes
+		is_country_type = default
+		is_overlord = yes
+		any_subject = {
+			is_country_type = default
+			any_agreement = { agreement_preset = preset_protectorate }
+			tech_unlocked_ratio = { who = overlord ratio < 0.5 }
+		}
+		not = { has_modifier = give_tech_overlord }
+	}
+
+	immediate = {
+		random_subject = {
+			limit = {
+				is_country_type = default
+				any_agreement = { agreement_preset = preset_protectorate }
+				tech_unlocked_ratio = { who = overlord ratio < 0.5 }
+			}
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				random = {
+					chance = 20
+					root = {
+						set_country_flag = give_tech_event
+						add_modifier = { modifier = give_tech_overlord }
+					}
+					set_country_flag = give_tech_event
+					add_modifier = { modifier = give_tech_subject }
+				}
+			}
+		}
+	}
+}
+
+
+###########################################################
+# 宗主国AI専用の「保護国への技術供与」キャンセルイベント
+# Root = Country
+###########################################################
+country_event = {
+	id = give_tech_protectorate.11
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = default
+		has_country_flag = give_tech_event
+		has_modifier = give_tech_overlord
+
+		not = {
+			any_subject = {
+				has_country_flag = give_tech_event
+				has_modifier = give_tech_subject
+				any_agreement = { agreement_preset = preset_protectorate }
+				can_copy_random_tech_from = { who = overlord }
+				tech_unlocked_ratio = { who = overlord ratio < 0.6 }
+				is_loyal_to = overlord
+			}
+		}
+	}
+
+	immediate = {
+		remove_country_flag = give_tech_event
+		remove_modifier = give_tech_overlord
+	}
+}
+
+###########################################################
+# 保護国AI専用の「保護国への技術供与」キャンセルイベント
+# Root = Country
+###########################################################
+country_event = {
+	id = give_tech_protectorate.12
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = default
+		has_country_flag = give_tech_event
+		has_modifier = give_tech_subject
+
+		not = {
+			is_subject = yes
+			overlord = {
+				has_country_flag = give_tech_event
+				has_modifier = give_tech_overlord
+			}
+		}
+	}
+	immediate = {
+		remove_country_flag = give_tech_event
+		remove_modifier = give_tech_subject
+	}
+}
+
+###########################################################
+# 21: 保護国への技術進捗増加イベント
+# Root = Country
+###########################################################
+country_event = {
+	id = give_tech_protectorate.21
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_subject = yes
+		has_modifier = give_tech_subject
+		overlord = {
+			has_modifier = give_tech_overlord
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = { tech_unlocked_ratio = { who = overlord ratio < 0.2 } }
+			copy_random_tech_from = { who = overlord }
+		} else_if = {
+			limit = { tech_unlocked_ratio = { who = overlord ratio < 0.4 } }
+			copy_random_tech_from = { who = overlord progress = 0.5 }
+		} else_if = {
+			limit = { tech_unlocked_ratio = { who = overlord ratio < 0.6 } }
+			copy_random_tech_from = { who = overlord progress = 0.3 }
+		}
+	}
+}

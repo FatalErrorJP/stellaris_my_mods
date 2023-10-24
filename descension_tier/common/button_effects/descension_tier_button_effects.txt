@@ -1,0 +1,42 @@
+###############################################################################
+# button_effects
+#
+# 補足:
+#   各button_effectの記述の意味
+#   ・potential:画面にボタンを表示する条件
+#   ・allow:ボタンを押せる条件
+#   ・effects:実際にボタンを押した時の処理の内容
+#
+###############################################################################
+
+#####
+# アセンション・ティアのダウングレード
+#####
+descension_tier_btn = {
+	potential = {
+		is_scope_type = planet
+		exists = from
+		from = {
+			is_scope_type = country
+		}
+		has_owner = yes
+		is_colony = yes
+		is_under_colonization = no
+	}
+	allow = {
+		custom_tooltip = "PLANET_ASCENSION_TIER_DOWNGRADE"
+		is_owned_by = from
+		from = {
+			is_at_war = no
+		}
+		has_planetary_ascension_tier > 0
+	}
+	effect = {
+		custom_tooltip = "PLANET_ASCENSION_TIER_DOWNGRADE"
+		hidden_effect = {
+			export_trigger_value_to_variable = { trigger = has_planetary_ascension_tier variable = planet_ascension_tier }
+			subtract_variable = { which = planet_ascension_tier value = 1 }
+			set_planetary_ascension_tier = planet_ascension_tier
+		}
+	}
+}

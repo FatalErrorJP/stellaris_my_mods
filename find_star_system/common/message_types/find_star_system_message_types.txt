@@ -1,0 +1,664 @@
+#message_type = {
+#	key = "CONSTRUCTION_MESSAGE_TYPE"				# Message key, used from code.
+#	icon = "GFX_message_other_construction"			# Sprite to use for gui item "message_icon_button"
+#	icon_frame = 1									# Frame index to use for gui item "message_frame"
+#
+#	name = "MESSAGE_DECLARE_WAR_TITLE"			# Localization key to use for title, if impty it will use "MESSAGE_<key>_TITLE instead.
+#	sound = "advisor_notification_construction_complete"	# Sound to play on message creation
+#
+#	sound_is_advisor = yes							# Depricated and does nothing.
+#	auto_opens = others								# Specifies if the message should be auto opened or not, valid: 'none', 'player', 'others' and 'all' (default: 'player). Some messages as events are ignoring this since thay have their own option.
+#	ping = "ping_notification_green"					# Ping map to use for map visualization.
+#}
+
+####
+# バイパス
+####
+# ワームホール
+message_type = {
+	key = "FOUND_BYPASS_WORMHOLE"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_BYPASS_WORMHOLE_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# ゲートウェイ
+message_type = {
+	key = "FOUND_BYPASS_GATEWAY"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_BYPASS_GATEWAY_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# Lゲート
+message_type = {
+	key = "FOUND_BYPASS_LGATE"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_BYPASS_LGATE_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# シュラウドトンネル
+message_type = {
+	key = "FOUND_BYPASS_SHROUDTUNNEL"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_BYPASS_SHROUDTUNNEL_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+
+####
+# 基地/艦隊/リヴァイアサン
+####
+# 自国内の防衛プラットフォームの存在する前哨地
+message_type = {
+	key = "FOUND_MILITARY_STATION_SMALL"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_MILITARY_STATION_SMALL_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# リヴァイアサン
+message_type = {
+	key = "FOUND_LEVIATHANS"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_LEVIATHANS_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# キャラバンの所属艦隊
+message_type = {
+	key = "FOUND_CARAVANEER_FLEET"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_CARAVANEER_FLEET_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# プレスリン(汚染された惑星)
+message_type = {
+	key = "FOUND_CRISIS_SWARM"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_CRISIS_SWARM_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 招かれざるもの(次元アンカー)
+message_type = {
+	key = "FOUND_DIMENSIONAL_ANCHORS"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_DIMENSIONAL_ANCHORS_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 招かれざるもの(次元ポータル)
+message_type = {
+	key = "FOUND_DIMENSIONAL_PORTALS"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_DIMENSIONAL_PORTALS_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+
+####
+# 巨大建造物
+####
+# セントリーアレイ
+message_type = {
+	key = "FOUND_MEGASTRUCTURE_SPY_ORB"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_MEGASTRUCTURE_SPY_ORB_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# サイエンスネクサス
+message_type = {
+	key = "FOUND_MEGASTRUCTURE_THINK_TANK"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_MEGASTRUCTURE_THINK_TANK_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 巨大芸術体験施設
+message_type = {
+	key = "FOUND_MEGASTRUCTURE_MEGA_ART_INSTALLATION"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_MEGASTRUCTURE_MEGA_ART_INSTALLATION_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 星間会議場
+message_type = {
+	key = "FOUND_MEGASTRUCTURE_INTERSTELLAR_ASSEMBLY"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_MEGASTRUCTURE_INTERSTELLAR_ASSEMBLY_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 戦略調整センター
+message_type = {
+	key = "FOUND_MEGASTRUCTURE_STRATEGIC_COORDINATION_CENTER"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_MEGASTRUCTURE_STRATEGIC_COORDINATION_CENTER_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 巨大造船所
+message_type = {
+	key = "FOUND_MEGASTRUCTURE_MEGA_SHIPYARD"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_MEGASTRUCTURE_MEGA_SHIPYARD_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 量子カタパルト
+message_type = {
+	key = "FOUND_MEGASTRUCTURE_QUANTUM_CATAPULT"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_MEGASTRUCTURE_QUANTUM_CATAPULT_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# ダイソンスフィア
+message_type = {
+	key = "FOUND_MEGASTRUCTURE_DYSON_SPHERE"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_MEGASTRUCTURE_DYSON_SPHERE_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 物質展開器
+message_type = {
+	key = "FOUND_MEGASTRUCTURE_MATTER_DECOMPRESSOR"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_MEGASTRUCTURE_MATTER_DECOMPRESSOR_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# リングワールド
+message_type = {
+	key = "FOUND_MEGASTRUCTURE_RING_WORLD"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_MEGASTRUCTURE_RING_WORLD_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# エーテル位相機関
+message_type = {
+	key = "FOUND_MEGASTRUCTURE_CRISIS_SPHERE"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_MEGASTRUCTURE_CRISIS_SPHERE_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# アップグレード可能な自国内の巨大建造物
+message_type = {
+	key = "FOUND_UPGRADABLE_MEGASTRUCTURE"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_UPGRADABLE_MEGASTRUCTURE_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+
+####
+# 入植可能惑星
+####
+# 粉末採取用トラップ
+message_type = {
+	key = "FOUND_PLANET_MOTE_HARVESTERS"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_PLANET_MOTE_HARVESTERS_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# ガス抽出井
+message_type = {
+	key = "FOUND_PLANET_GAS_EXTRACTORS"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_PLANET_GAS_EXTRACTORS_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# クリスタル鉱山
+message_type = {
+	key = "FOUND_PLANET_CRYSTAL_MINES"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_PLANET_CRYSTAL_MINES_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 特殊な惑星
+message_type = {
+	key = "FOUND_PLANET_SPECIAL"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_PLANET_SPECIAL_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 準知性
+message_type = {
+	key = "FOUND_PLANET_PRE_SAPIENTS"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_PLANET_PRE_SAPIENTS_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 原始文明
+message_type = {
+	key = "FOUND_PLANET_PRIMITIVE"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_PLANET_PRIMITIVE_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+
+####
+# テラフォーム候補惑星
+####
+# テラフォーム候補惑星
+message_type = {
+	key = "FOUND_TERRAFORMING_CANDIDATE"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_TERRAFORMING_CANDIDATE_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 凍結したテラフォーム候補惑星
+message_type = {
+	key = "FOUND_FROZEN_TERRAFORMING_CANDIDATE"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_FROZEN_TERRAFORMING_CANDIDATE_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 有毒なテラフォーム候補惑星
+message_type = {
+	key = "FOUND_TOXIC_TERRAFORMING_CANDIDATE"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_TOXIC_TERRAFORMING_CANDIDATE_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+
+####
+# 入植済惑星
+####
+# 銀河市場
+message_type = {
+	key = "FOUND_GALACTIC_MARKET"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_GALACTIC_MARKET_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+
+####
+# 支社
+####
+# 自国の支社
+message_type = {
+	key = "FOUND_HAS_MY_BRANCH_OFFICE"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_HAS_MY_BRANCH_OFFICE_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 他国の支社
+message_type = {
+	key = "FOUND_HAS_OTHER_BRANCH_OFFICE"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_HAS_OTHER_BRANCH_OFFICE_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 支社がない
+message_type = {
+	key = "FOUND_HAS_NOT_BRANCH_OFFICE"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_HAS_NOT_BRANCH_OFFICE_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+
+####
+# 戦略資源
+####
+# 揮発性粉末
+message_type = {
+	key = "FOUND_STRATEGIC_RESOURCE_VOLATILE_MOTES"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_STRATEGIC_RESOURCE_VOLATILE_MOTES_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# エキゾチックガス
+message_type = {
+	key = "FOUND_STRATEGIC_RESOURCE_EXOTIC_GASES"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_STRATEGIC_RESOURCE_EXOTIC_GASES_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# レアクリスタル
+message_type = {
+	key = "FOUND_STRATEGIC_RESOURCE_RARE_CRYSTALS"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_STRATEGIC_RESOURCE_RARE_CRYSTALS_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 生体金属
+message_type = {
+	key = "FOUND_STRATEGIC_RESOURCE_SR_LIVING_METAL"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_STRATEGIC_RESOURCE_SR_LIVING_METAL_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# ズィロ
+message_type = {
+	key = "FOUND_STRATEGIC_RESOURCE_SR_ZRO"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_STRATEGIC_RESOURCE_SR_ZRO_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# ダークマター
+message_type = {
+	key = "FOUND_STRATEGIC_RESOURCE_SR_DARK_MATTER"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_STRATEGIC_RESOURCE_SR_DARK_MATTER_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# ナノマシン
+message_type = {
+	key = "FOUND_STRATEGIC_RESOURCE_NANITES"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_STRATEGIC_RESOURCE_NANITES_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 統合力
+message_type = {
+	key = "FOUND_STRATEGIC_RESOURCE_UNITY"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_STRATEGIC_RESOURCE_UNITY_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 出土品
+message_type = {
+	key = "FOUND_STRATEGIC_RESOURCE_MINOR_ARTIFACTS"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_STRATEGIC_RESOURCE_MINOR_ARTIFACTS_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 未建設の資源のある自国の星系
+message_type = {
+	key = "FOUND_STRATEGIC_RESOURCE_STRATEGIC"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_STRATEGIC_RESOURCE_STRATEGIC_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+
+####
+# 中立機構
+####
+# 交易中立機構(リガン商業取引所)
+message_type = {
+	key = "FOUND_ENCLAVE_TRADER_RIGGAN"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_ENCLAVE_TRADER_RIGGAN_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 交易中立機構(ジュラコープ)
+message_type = {
+	key = "FOUND_ENCLAVE_TRADER_XURACORP"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_ENCLAVE_TRADER_XURACORP_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 交易中立機構(ムウタガン商業ギルド)
+message_type = {
+	key = "FOUND_ENCLAVE_TRADER_MUUTAGAN"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_ENCLAVE_TRADER_MUUTAGAN_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 学術中立機構
+message_type = {
+	key = "FOUND_ENCLAVE_CURATOR"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_ENCLAVE_CURATOR_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 工匠中立機構
+message_type = {
+	key = "FOUND_ENCLAVE_ARTIST"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_ENCLAVE_ARTIST_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 回収者中立機構
+message_type = {
+	key = "FOUND_ENCLAVE_SALVAGER"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_ENCLAVE_SALVAGER_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# シュラウドウォーカー中立機構
+message_type = {
+	key = "FOUND_ENCLAVE_SHROUDWALKER"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_ENCLAVE_SHROUDWALKER_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 傭兵中立機構(自国領土内のみ)
+message_type = {
+	key = "FOUND_ENCLAVE_MERCENARY"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_ENCLAVE_MERCENARY_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 傭兵中立機構(全部)
+message_type = {
+	key = "FOUND_ENCLAVE_MERCENARY_ALL"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_ENCLAVE_MERCENARY_ALL_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# キャラバン
+message_type = {
+	key = "FOUND_ENCLAVE_CARAVANEER"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_ENCLAVE_CARAVANEER_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}
+# 結晶帝国
+message_type = {
+	key = "FOUND_ENCLAVE_CENTRAL_CRYSTAL"
+	icon = "GFX_message_event_completion"
+	icon_frame = 1
+
+	name = "FOUND_ENCLAVE_CENTRAL_CRYSTAL_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_green"
+}

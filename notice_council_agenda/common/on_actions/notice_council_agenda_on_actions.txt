@@ -1,0 +1,6 @@
+# No scope, like on_game_start
+on_monthly_pulse = {
+	events = {
+		notice_council_agenda.1
+	}
+}

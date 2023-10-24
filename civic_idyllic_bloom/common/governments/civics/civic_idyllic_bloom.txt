@@ -1,0 +1,98 @@
+civic_idyllic_bloom = {
+	modification = no
+	playable = { host_has_dlc = "Plantoids Species Pack" }
+	ai_playable = { host_has_dlc = "Plantoids Species Pack" }
+	description = "civic_tooltip_idyllic_bloom_effects"
+	potential = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		authority = { NOT = { value = auth_corporate } }
+	}
+	possible = {
+		species_class = {
+			OR = {
+				value = FUN
+				value = PLANT
+				#############################################
+				# ここからMod追加コード
+				#############################################
+				value = akari
+				value = AKALITHOID
+				value = kotonoha
+				value = KOTOLITHOID
+				value = meika
+				value = MEIKALITHOID
+				value = hinomoto
+				value = HINOLITHOID
+				value = sora
+				value = SORALITHOID
+				value = touhoku
+				value = TOHOLITHOID
+				value = yukari
+				value = YUKALITHOID
+				#############################################
+				# ここまでMod追加コード
+				#############################################
+			}
+		}
+		origin = {
+			NOT = {
+				value = origin_void_dwellers
+			}
+		}
+		civics = {
+			NOT = { value = civic_relentless_industrialists }
+		}
+	}
+	random_weight = {
+		base = @civic_rare_random_weight
+	}
+}
+
+civic_hive_idyllic_bloom = {
+	modification = no
+	playable = { host_has_dlc = "Plantoids Species Pack" }
+	ai_playable = { host_has_dlc = "Plantoids Species Pack" }
+	description = "civic_tooltip_idyllic_bloom_effects"
+	potential = {
+		authority = { value = auth_hive_mind }
+	}
+	possible = {
+		species_class = {
+			OR = {
+				value = FUN
+				value = PLANT
+				#############################################
+				# ここからMod追加コード
+				#############################################
+				value = akari
+				value = AKALITHOID
+				value = kotonoha
+				value = KOTOLITHOID
+				value = meika
+				value = MEIKALITHOID
+				value = hinomoto
+				value = HINOLITHOID
+				value = sora
+				value = SORALITHOID
+				value = touhoku
+				value = TOHOLITHOID
+				value = yukari
+				value = YUKALITHOID
+				#############################################
+				# ここまでMod追加コード
+				#############################################
+			}
+		}
+		origin = {
+			NOT = {
+				value = origin_void_dwellers
+			}
+		}
+	}
+	random_weight = {
+		base = @civic_rare_random_weight
+	}
+	modifier = {
+		councilor_gestalt_governor_exp_gain = @gestalt_civic_node_xp_rate
+	}
+}

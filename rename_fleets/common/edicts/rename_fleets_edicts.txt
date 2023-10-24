@@ -1,0 +1,21 @@
+###############################################################################
+# 布告メニューの項目設定
+###############################################################################
+rename_fleets_menu = {
+	length = 1
+	icon = "GFX_fleet_size_icon"
+
+	potential = {
+		is_ai = no
+	}
+
+	effect = {
+		hidden_effect = {
+			country_event = { id = rename_fleets.1 }
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

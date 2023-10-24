@@ -1,0 +1,791 @@
+guiTypes = {
+	containerWindowType = {
+		name = "gotobox"
+		position = { x = -1200 y = 200 }
+		size = { width = 760 height = 465 }
+		orientation = upper_right
+		moveable = yes
+
+		background = {
+			name = "background"
+			quadTextureSprite = "GFX_tile_outliner_bg"
+		}
+
+		containerWindowType = {
+			name = "start_screen_frame_bg"
+			position = { x = 10 y = 50 }
+			size = { width = 288 height = 400 }
+			orientation = upper_left
+
+			background = {
+				name = "start_screen_frame"
+				quadTextureSprite = "GFX_set_focus_frame"
+				position = { x = 0 y = 4 }
+				alwaysTransparent = yes
+			}
+		}
+
+		iconType = {
+			name = "title_hex"
+			quadTextureSprite = "GFX_hex_bg"
+			position = { x = -17 y = -14 }
+		}
+
+		instantTextBoxType={
+			name = "header"
+			font = "malgun_goth_24"
+			text = "GOTOBOX_HEADER"
+			#text_color_code = "H"
+			position = { x= 15 y= 5 }
+			maxWidth = 300
+			maxHeight = 40
+			fixedsize = yes
+			format = left
+		}
+
+		iconType = {
+			name = "title_line"
+			quadTextureSprite = "GFX_line_short"
+			position = { x = 6 y = 21 }
+		}
+
+		instantTextBoxType = {
+			name = "desc"
+			font = "cg_16b"
+			text = "GOTOBOX_DESC"
+			#text_color_code = "H"
+			position = { x = 15 y = 36 }
+			maxWidth = 280
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+			text_color_code = "E"
+		}
+
+		instantTextBoxType = {
+			name = "find_planet_name_desc"
+			font = "cg_16b"
+			text = "GOTOBOX_FIND_PLANET_NAME_DESC"
+			position = { x = 20 y = 65 }
+			maxWidth = 280
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+			text_color_code = "E"
+		}
+
+		editBoxType = {
+			position = { x = 20 y = 85 }
+			name = "edit"
+			instantTextBoxType = no
+			textureFile = "gfx/interface/tiles/small_tiles_dialog.dds"
+			font = "cg_16b"
+			borderSize = { x=4 y=4 }
+			size = { x=265 y=40 }
+			orientation = "UPPER_LEFT"
+			cursor = { x=0 y= 4}
+			#text_color_code = "H"
+
+		}
+
+		listBoxType = {
+			name ="list"
+			position = { x = 15 y = 130 }
+			orientation = "UPPER_LEFT"
+			priority = 100
+			size = { x = 250 y = 300 }
+			borderSize = { x = 0 y = 0 }
+			scrollbartype = "standardlistbox_slider"
+			alwaystransparent = no
+		}
+
+		buttonType = {
+			name = "close"
+			quadTextureSprite = "GFX_close"
+			position = { x= -45 y = 16  }
+			Orientation = "UPPER_RIGHT"
+			shortcut = "ESCAPE"
+			clicksound = "back_click"
+		}
+
+		###################################################
+		# ここから、星系内の要素での検索
+		###################################################
+		containerWindowType = {
+			name = "start_screen_frame_bg_right"
+			position = { x = 300 y = 50 }
+			size = { width = 450 height = 400 }
+			orientation = upper_left
+
+			background = {
+				name = "start_screen_frame_right"
+				quadTextureSprite = "GFX_set_focus_frame"
+				position = { x = 0 y = 4 }
+				alwaysTransparent = yes
+			}
+		}
+
+		instantTextBoxType = {
+			name = "find_planet_object_desc"
+			font = "cg_16b"
+			text = "GOTOBOX_FIND_PLANET_OBJECT_DESC"
+			position = { x = 310 y = 65 }
+			maxWidth = 280
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+			text_color_code = "E"
+		}
+
+		####
+		# バイパス
+		####
+		instantTextBoxType = {
+			name = "find_bypass_desc"
+			font = "cg_16b"
+			text = "GOTOBOX_FIND_BYPASS_DESC"
+			position = { x = 315 y = 90 }
+			maxWidth = 280
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+			text_color_code = "E"
+		}
+
+		# ワームホール
+		effectButtonType  = {
+			name ="find_bypass_wormhole_btn"
+			quadTextureSprite = "GFX_find_wormhole_btn"
+			position = { x = 310 y = 105 }
+			orientation = "UPPER_LEFT"
+			effect = "find_bypass_wormhole_btn"
+		}
+		# ゲートウェイ(開通済)
+		effectButtonType  = {
+			name ="find_bypass_gateway_btn"
+			quadTextureSprite = "GFX_find_gateway_btn"
+			position = { x = 345 y = 105 }
+			orientation = "UPPER_LEFT"
+			effect = "find_bypass_gateway_btn"
+		}
+		# Lゲート
+		effectButtonType  = {
+			name ="find_bypass_lgate_btn"
+			quadTextureSprite = "GFX_find_lgate_btn"
+			position = { x = 380 y = 105 }
+			orientation = "UPPER_LEFT"
+			effect = "find_bypass_lgate_btn"
+		}
+		# シュラウドトンネル
+		effectButtonType  = {
+			name ="find_bypass_shroudtunnel_btn"
+			quadTextureSprite = "GFX_find_gateway_btn"
+			position = { x = 415 y = 105 }
+			orientation = "UPPER_LEFT"
+			effect = "find_bypass_shroudtunnel_btn"
+		}
+
+		####
+		# 基地/艦隊/リヴァイヤサン/危機
+		####
+		instantTextBoxType = {
+			name = "find_fleet_desc"
+			font = "cg_16b"
+			text = "GOTOBOX_FIND_FLEET_TYPE_DESC"
+			position = { x = 490 y = 90 }
+			maxWidth = 280
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+			text_color_code = "E"
+		}
+
+		# 自国内の防衛プラットフォームの存在する前哨地
+		effectButtonType  = {
+			name ="find_military_station_small_btn"
+			quadTextureSprite = "GFX_find_military_station_small_btn"
+			position = { x = 485 y = 105 }
+			orientation = "UPPER_LEFT"
+			effect = "find_military_station_small_btn"
+		}
+		# リヴァイアサンのいる星系
+		effectButtonType  = {
+			name ="find_leviathans_btn"
+			quadTextureSprite = "GFX_find_leviathans_btn"
+			position = { x = 520 y = 105 }
+			orientation = "UPPER_LEFT"
+			effect = "find_leviathans_btn"
+		}
+		# キャラバンの艦隊
+		effectButtonType  = {
+			name ="find_caravaneer_fleet_btn"
+			quadTextureSprite = "GFX_find_caravaneer_fleet_btn"
+			position = { x = 555 y = 105 }
+			orientation = "UPPER_LEFT"
+			effect = "find_caravaneer_fleet_btn"
+		}
+		# プレスリン(汚染された惑星)
+		effectButtonType  = {
+			name ="find_crisis_swarm_btn"
+			quadTextureSprite = "GFX_find_crisis_swarm_btn"
+			position = { x = 590 y = 105 }
+			orientation = "UPPER_LEFT"
+			effect = "find_crisis_swarm_btn"
+		}
+		# 招かれざるもの(次元ポータル＆次元アンカー)
+		effectButtonType  = {
+			name ="find_crisis_extradimensional_btn"
+			quadTextureSprite = "GFX_find_crisis_extradimensional_btn"
+			position = { x = 625 y = 105 }
+			orientation = "UPPER_LEFT"
+			effect = "find_crisis_extradimensional_btn"
+		}
+
+		####
+		# 巨大建造物
+		####
+		instantTextBoxType = {
+			name = "find_megastructure_desc"
+			font = "cg_16b"
+			text = "GOTOBOX_FIND_MEGASTRUCTURE_DESC"
+			position = { x = 315 y = 150 }
+			maxWidth = 280
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+			text_color_code = "E"
+		}
+
+		# セントリーアレイ
+		effectButtonType  = {
+			name ="find_megastructure_spy_orb_btn"
+			quadTextureSprite = "GFX_find_megastructure_spy_orb_btn"
+			position = { x = 310 y = 165 }
+			orientation = "UPPER_LEFT"
+			effect = "find_megastructure_spy_orb_btn"
+		}
+		# サイエンスネクサス
+		effectButtonType  = {
+			name ="find_megastructure_think_tank_btn"
+			quadTextureSprite = "GFX_find_megastructure_think_tank_btn"
+			position = { x = 345 y = 165 }
+			orientation = "UPPER_LEFT"
+			effect = "find_megastructure_think_tank_btn"
+		}
+		# 巨大芸術体験施設
+		effectButtonType  = {
+			name ="find_megastructure_mega_art_installation_btn"
+			quadTextureSprite = "GFX_find_megastructure_mega_art_installation_btn"
+			position = { x = 380 y = 165 }
+			orientation = "UPPER_LEFT"
+			effect = "find_megastructure_mega_art_installation_btn"
+		}
+		# 星間会議場
+		effectButtonType  = {
+			name ="find_megastructure_interstellar_assembly_btn"
+			quadTextureSprite = "GFX_find_megastructure_interstellar_assembly_btn"
+			position = { x = 415 y = 165 }
+			orientation = "UPPER_LEFT"
+			effect = "find_megastructure_interstellar_assembly_btn"
+		}
+		# 戦略調整センター
+		effectButtonType  = {
+			name ="find_megastructure_strategic_coordination_center_btn"
+			quadTextureSprite = "GFX_find_megastructure_strategic_coordination_center_btn"
+			position = { x = 450 y = 165 }
+			orientation = "UPPER_LEFT"
+			effect = "find_megastructure_strategic_coordination_center_btn"
+		}
+		# 巨大造船所
+		effectButtonType  = {
+			name ="find_megastructure_mega_shipyard_btn"
+			quadTextureSprite = "GFX_find_megastructure_mega_shipyard_btn"
+			position = { x = 485 y = 165 }
+			orientation = "UPPER_LEFT"
+			effect = "find_megastructure_mega_shipyard_btn"
+		}
+		# 量子カタパルト
+		effectButtonType  = {
+			name ="find_megastructure_quantum_catapult_btn"
+			quadTextureSprite = "GFX_find_megastructure_quantum_catapult_btn"
+			position = { x = 520 y = 165 }
+			orientation = "UPPER_LEFT"
+			effect = "find_megastructure_quantum_catapult_btn"
+		}
+
+		# ダイソンスフィア
+		effectButtonType  = {
+			name ="find_megastructure_dyson_sphere_btn"
+			quadTextureSprite = "GFX_find_megastructure_dyson_sphere_btn"
+			position = { x = 555 y = 165 }
+			orientation = "UPPER_LEFT"
+			effect = "find_megastructure_dyson_sphere_btn"
+		}
+		# 物質展開器
+		effectButtonType  = {
+			name ="find_megastructure_matter_decompressor_btn"
+			quadTextureSprite = "GFX_find_megastructure_matter_decompressor_btn"
+			position = { x = 590 y = 165 }
+			orientation = "UPPER_LEFT"
+			effect = "find_megastructure_matter_decompressor_btn"
+		}
+		# リングワールド
+		effectButtonType  = {
+			name ="find_megastructure_ring_world_btn"
+			quadTextureSprite = "GFX_find_megastructure_ring_world_btn"
+			position = { x = 625 y = 165 }
+			orientation = "UPPER_LEFT"
+			effect = "find_megastructure_ring_world_btn"
+		}
+		# エーテル位相機関
+		effectButtonType  = {
+			name ="find_megastructure_crisis_sphere_btn"
+			quadTextureSprite = "GFX_find_megastructure_crisis_sphere_btn"
+			position = { x = 660 y = 165 }
+			orientation = "UPPER_LEFT"
+			effect = "find_megastructure_crisis_sphere_btn"
+		}
+		# アップグレード可能な自国内の巨大建造物
+		effectButtonType  = {
+			name ="find_upgradable_megastructure_btn"
+			quadTextureSprite = "GFX_find_megastructure_btn"
+			position = { x = 695 y = 165 }
+			orientation = "UPPER_LEFT"
+			effect = "find_upgradable_megastructure_btn"
+		}
+
+		####
+		# 入植可能惑星
+		####
+		instantTextBoxType = {
+			name = "find_colonizable_planet_type_desc"
+			font = "cg_16b"
+			text = "GOTOBOX_FIND_COLONIZABLE_PLANET_TYPE_DESC"
+			position = { x = 315 y = 210 }
+			maxWidth = 280
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+			text_color_code = "E"
+		}
+
+		# 粉末採取用トラップ
+		effectButtonType  = {
+			name ="find_planet_mote_harvesters_btn"
+			quadTextureSprite = "GFX_find_planet_mote_harvesters_btn"
+			position = { x = 310 y = 225 }
+			orientation = "UPPER_LEFT"
+			effect = "find_planet_mote_harvesters_btn"
+		}
+		# ガス抽出井
+		effectButtonType  = {
+			name ="find_planet_gas_extractors_btn"
+			quadTextureSprite = "GFX_find_planet_gas_extractors_btn"
+			position = { x = 345 y = 225 }
+			orientation = "UPPER_LEFT"
+			effect = "find_planet_gas_extractors_btn"
+		}
+		# クリスタル鉱山
+		effectButtonType  = {
+			name ="find_planet_crystal_mines_btn"
+			quadTextureSprite = "GFX_find_planet_crystal_mines_btn"
+			position = { x = 380 y = 225 }
+			orientation = "UPPER_LEFT"
+			effect = "find_planet_crystal_mines_btn"
+		}
+		# 特殊な惑星(ガイア型惑星、機械惑星、集合意識惑星、遺物惑星、エキュメノポリス)
+		effectButtonType  = {
+			name ="find_planet_special_btn"
+			quadTextureSprite = "GFX_find_planet_special_btn"
+			position = { x = 415 y = 225 }
+			orientation = "UPPER_LEFT"
+			effect = "find_planet_special_btn"
+		}
+		# 準知性のいる星系
+		effectButtonType  = {
+			name ="find_planet_pre_sapients_btn"
+			quadTextureSprite = "GFX_find_planet_pre_sapients_btn"
+			position = { x = 450 y = 225 }
+			orientation = "UPPER_LEFT"
+			effect = "find_planet_pre_sapients_btn"
+		}
+		# 原始文明
+		effectButtonType  = {
+			name ="find_planet_primitive_btn"
+			quadTextureSprite = "GFX_find_planet_primitive_btn"
+			position = { x = 485 y = 225 }
+			orientation = "UPPER_LEFT"
+			effect = "find_planet_primitive_btn"
+		}
+
+		####
+		# テラフォーム候補惑星
+		####
+		instantTextBoxType = {
+			name = "find_terraforming_candidate_desc"
+			font = "cg_16b"
+			text = "GOTOBOX_FIND_TERRAFORMING_CANDIDATE_DESC"
+			position = { x = 560 y = 210 }
+			maxWidth = 280
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+			text_color_code = "E"
+		}
+		# テラフォーム候補惑星
+		effectButtonType  = {
+			name ="find_terraforming_candidate_btn"
+			quadTextureSprite = "GFX_find_terraforming_candidate_btn"
+			position = { x = 555 y = 225 }
+			orientation = "UPPER_LEFT"
+			effect = "find_terraforming_candidate_btn"
+		}
+		# 凍結したテラフォーム候補惑星
+		effectButtonType  = {
+			name ="find_frozen_terraforming_candidate_btn"
+			quadTextureSprite = "GFX_find_frozen_terraforming_candidate_btn"
+			position = { x = 590 y = 225 }
+			orientation = "UPPER_LEFT"
+			effect = "find_frozen_terraforming_candidate_btn"
+		}
+		# 有毒なテラフォーム候補惑星
+		effectButtonType  = {
+			name ="find_toxic_terraforming_candidate_btn"
+			quadTextureSprite = "GFX_find_toxic_terraforming_candidate_btn"
+			position = { x = 625 y = 225 }
+			orientation = "UPPER_LEFT"
+			effect = "find_toxic_terraforming_candidate_btn"
+		}
+
+		####
+		# 入植済惑星
+		####
+		instantTextBoxType = {
+			name = "gotobox_find_colony_desc"
+			font = "cg_16b"
+			text = "GOTOBOX_FIND_COLONY_DESC"
+			position = { x = 315 y = 270 }
+			maxWidth = 280
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+			text_color_code = "E"
+		}
+
+		# 粉末採取用トラップ
+		effectButtonType  = {
+			name ="find_colony_mote_harvesters_btn"
+			quadTextureSprite = "GFX_find_planet_mote_harvesters_btn"
+			position = { x = 310 y = 285 }
+			orientation = "UPPER_LEFT"
+			effect = "find_colony_mote_harvesters_btn"
+		}
+		# ガス抽出井
+		effectButtonType  = {
+			name ="find_colony_gas_extractors_btn"
+			quadTextureSprite = "GFX_find_planet_gas_extractors_btn"
+			position = { x = 345 y = 285 }
+			orientation = "UPPER_LEFT"
+			effect = "find_colony_gas_extractors_btn"
+		}
+		# クリスタル鉱山
+		effectButtonType  = {
+			name ="find_colony_crystal_mines_btn"
+			quadTextureSprite = "GFX_find_planet_crystal_mines_btn"
+			position = { x = 380 y = 285 }
+			orientation = "UPPER_LEFT"
+			effect = "find_colony_crystal_mines_btn"
+		}
+		# 特殊な惑星(ガイア型惑星、機械惑星、集合意識惑星、遺物惑星、エキュメノポリス)
+		effectButtonType  = {
+			name ="find_colony_special_btn"
+			quadTextureSprite = "GFX_find_planet_special_btn"
+			position = { x = 415 y = 285 }
+			orientation = "UPPER_LEFT"
+			effect = "find_colony_special_btn"
+		}
+		# 準知性のいる星系
+		effectButtonType  = {
+			name ="find_colony_pre_sapients_btn"
+			quadTextureSprite = "GFX_find_planet_pre_sapients_btn"
+			position = { x = 450 y = 285 }
+			orientation = "UPPER_LEFT"
+			effect = "find_colony_pre_sapients_btn"
+		}
+		# 銀河市場
+		effectButtonType  = {
+			name ="find_galactic_market_btn"
+			quadTextureSprite = "GFX_find_galactic_market_btn"
+			position = { x = 485 y = 285 }
+			orientation = "UPPER_LEFT"
+			effect = "find_galactic_market_btn"
+		}
+
+		####
+		# 支社
+		####
+		instantTextBoxType = {
+			name = "gotobox_find_branch_office_desc"
+			font = "cg_16b"
+			text = "GOTOBOX_FIND_BRANCH_OFFICE_DESC"
+			position = { x = 560 y = 270 }
+			maxWidth = 280
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+			text_color_code = "E"
+		}
+
+		# 自国の支社の存在する星系
+		effectButtonType  = {
+			name ="find_has_my_branch_office_btn"
+			quadTextureSprite = "GFX_find_has_my_branch_office_btn"
+			position = { x = 555 y = 285 }
+			orientation = "UPPER_LEFT"
+			effect = "find_has_my_branch_office_btn"
+		}
+		# 他国の支社の存在する星系
+		effectButtonType  = {
+			name ="find_has_other_branch_office_btn"
+			quadTextureSprite = "GFX_find_has_other_branch_office_btn"
+			position = { x = 590 y = 285 }
+			orientation = "UPPER_LEFT"
+			effect = "find_has_other_branch_office_btn"
+		}
+		# 支社の存在しない星系
+		effectButtonType  = {
+			name ="find_has_not_branch_office_btn"
+			quadTextureSprite = "GFX_find_has_not_branch_office_btn"
+			position = { x = 625 y = 285 }
+			orientation = "UPPER_LEFT"
+			effect = "find_has_not_branch_office_btn"
+		}
+
+		####
+		# 戦略資源
+		####
+		instantTextBoxType = {
+			name = "find_strategic_resource_desc"
+			font = "cg_16b"
+			text = "GOTOBOX_FIND_STRATEGIC_RESOURCE_DESC"
+			position = { x = 315 y = 330 }
+			maxWidth = 280
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+			text_color_code = "E"
+		}
+
+		# 揮発性粉末
+		effectButtonType  = {
+			name = "find_strategic_resource_volatile_motes_btn"
+			quadTextureSprite = "GFX_find_strategic_resource_volatile_motes_btn"
+			position = { x = 310 y = 345 }
+			orientation = "UPPER_LEFT"
+			effect = "find_strategic_resource_volatile_motes_btn"
+		}
+		# エキゾチックガス
+		effectButtonType  = {
+			name = "find_strategic_resource_exotic_gases_btn"
+			quadTextureSprite = "GFX_find_strategic_resource_exotic_gases_btn"
+			position = { x = 345 y = 345 }
+			orientation = "UPPER_LEFT"
+			effect = "find_strategic_resource_exotic_gases_btn"
+		}
+		# レアクリスタル
+		effectButtonType  = {
+			name = "find_strategic_resource_rare_crystals_btn"
+			quadTextureSprite = "GFX_find_strategic_resource_rare_crystals_btn"
+			position = { x = 380 y = 345 }
+			orientation = "UPPER_LEFT"
+			effect = "find_strategic_resource_rare_crystals_btn"
+		}
+		# 生体金属
+		effectButtonType  = {
+			name = "find_strategic_resource_sr_living_metal_btn"
+			quadTextureSprite = "GFX_find_strategic_resource_sr_living_metal_btn"
+			position = { x = 415 y = 345 }
+			orientation = "UPPER_LEFT"
+			effect = "find_strategic_resource_sr_living_metal_btn"
+		}
+		# ズィロ
+		effectButtonType  = {
+			name = "find_strategic_resource_sr_zro_btn"
+			quadTextureSprite = "GFX_find_strategic_resource_sr_zro_btn"
+			position = { x = 450 y = 345 }
+			orientation = "UPPER_LEFT"
+			effect = "find_strategic_resource_sr_zro_btn"
+		}
+		# ダークマター
+		effectButtonType  = {
+			name = "find_strategic_resource_sr_dark_matter_btn"
+			quadTextureSprite = "GFX_find_strategic_resource_sr_dark_matter_btn"
+			position = { x = 485 y = 345 }
+			orientation = "UPPER_LEFT"
+			effect = "find_strategic_resource_sr_dark_matter_btn"
+		}
+		# ナノマシン
+		effectButtonType  = {
+			name = "find_strategic_resource_nanites_btn"
+			quadTextureSprite = "GFX_find_strategic_resource_nanites_btn"
+			position = { x = 520 y = 345 }
+			orientation = "UPPER_LEFT"
+			effect = "find_strategic_resource_nanites_btn"
+		}
+		# 統合力
+		effectButtonType  = {
+			name = "find_strategic_resource_unity_btn"
+			quadTextureSprite = "GFX_find_strategic_resource_unity_btn"
+			position = { x = 555 y = 345 }
+			orientation = "UPPER_LEFT"
+			effect = "find_strategic_resource_unity_btn"
+		}
+		# 出土品
+		effectButtonType  = {
+			name = "find_strategic_resource_minor_artifacts_btn"
+			quadTextureSprite = "GFX_find_strategic_resource_minor_artifacts_btn"
+			position = { x = 590 y = 345 }
+			orientation = "UPPER_LEFT"
+			effect = "find_strategic_resource_minor_artifacts_btn"
+		}
+		# 未建設の資源のある自国の星系
+		effectButtonType  = {
+			name = "find_strategic_resource_strategic_btn"
+			quadTextureSprite = "GFX_find_strategic_resource_strategic_btn"
+			position = { x = 625 y = 345 }
+			orientation = "UPPER_LEFT"
+			effect = "find_strategic_resource_strategic_btn"
+		}
+
+		####
+		# 中立機構
+		####
+		instantTextBoxType = {
+			name = "find_enclave_desc"
+			font = "cg_16b"
+			text = "GOTOBOX_FIND_ENCLAVE_DESC"
+			position = { x = 315 y = 390 }
+			maxWidth = 280
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+			text_color_code = "E"
+		}
+
+		# 交易中立機構(リガン商業取引所、揮発性粉末)
+		effectButtonType  = {
+			name = "find_enclave_trader_riggan_btn"
+			quadTextureSprite = "GFX_find_enclave_trader_riggan_btn"
+			position = { x = 310 y = 405 }
+			orientation = "UPPER_LEFT"
+			effect = "find_enclave_trader_riggan_btn"
+		}
+		# 交易中立機構(ジュラコープ、エキゾチックガス)
+		effectButtonType  = {
+			name = "find_enclave_trader_xuracorp_btn"
+			quadTextureSprite = "GFX_find_enclave_trader_xuracorp_btn"
+			position = { x = 345 y = 405 }
+			orientation = "UPPER_LEFT"
+			effect = "find_enclave_trader_xuracorp_btn"
+		}
+		# 交易中立機構(ムウタガン商業ギルド、レアクリスタル)
+		effectButtonType  = {
+			name = "find_enclave_trader_muutagan_btn"
+			quadTextureSprite = "GFX_find_enclave_trader_muutagan_btn"
+			position = { x = 380 y = 405 }
+			orientation = "UPPER_LEFT"
+			effect = "find_enclave_trader_muutagan_btn"
+		}
+		# 学術中立機構
+		effectButtonType  = {
+			name = "find_enclave_curator_btn"
+			quadTextureSprite = "GFX_find_enclave_curator_btn"
+			position = { x = 415 y = 405 }
+			orientation = "UPPER_LEFT"
+			effect = "find_enclave_curator_btn"
+		}
+		# 工匠中立機構
+		effectButtonType  = {
+			name = "find_enclave_artist_btn"
+			quadTextureSprite = "GFX_find_enclave_artist_btn"
+			position = { x = 450 y = 405 }
+			orientation = "UPPER_LEFT"
+			effect = "find_enclave_artist_btn"
+		}
+		# 回収者中立機構
+		effectButtonType  = {
+			name = "find_enclave_salvager_btn"
+			quadTextureSprite = "GFX_find_enclave_salvager_btn"
+			position = { x = 485 y = 405 }
+			orientation = "UPPER_LEFT"
+			effect = "find_enclave_salvager_btn"
+		}
+		# シュラウドウォーカー中立機構
+		effectButtonType  = {
+			name = "find_enclave_shroudwalker_btn"
+			quadTextureSprite = "GFX_find_enclave_shroudwalker_btn"
+			position = { x = 520 y = 405 }
+			orientation = "UPPER_LEFT"
+			effect = "find_enclave_shroudwalker_btn"
+		}
+		# 傭兵中立機構(自国領土内のみ)
+		effectButtonType  = {
+			name = "find_enclave_mercenary_btn"
+			quadTextureSprite = "GFX_find_enclave_mercenary_btn"
+			position = { x = 555 y = 405 }
+			orientation = "UPPER_LEFT"
+			effect = "find_enclave_mercenary_btn"
+		}
+		# 傭兵中立機構(全部)
+		effectButtonType  = {
+			name = "find_enclave_mercenary_all_btn"
+			quadTextureSprite = "GFX_find_enclave_mercenary_all_btn"
+			position = { x = 590 y = 405 }
+			orientation = "UPPER_LEFT"
+			effect = "find_enclave_mercenary_all_btn"
+		}
+		# キャラバン
+		effectButtonType  = {
+			name = "find_enclave_caravaneer_btn"
+			quadTextureSprite = "GFX_find_enclave_caravaneer_btn"
+			position = { x = 625 y = 405 }
+			orientation = "UPPER_LEFT"
+			effect = "find_enclave_caravaneer_btn"
+		}
+		# 結晶帝国
+		effectButtonType  = {
+			name = "find_enclave_central_crystal_btn"
+			quadTextureSprite = "GFX_find_enclave_central_crystal_btn"
+			position = { x = 660 y = 405 }
+			orientation = "UPPER_LEFT"
+			effect = "find_enclave_central_crystal_btn"
+		}
+
+	}
+
+	containerWindowType = {
+		name = "gotobox_entry"
+		position = { x = 0 y = 0 }
+		size = { width = 250 height = 30 }
+		buttonType = {
+			name = "button"
+			quadTextureSprite = "GFX_black_box"
+			position = { x= 5 y = 0 }
+			size = { x=240 y= 26 }
+		}
+
+		instantTextBoxType = {
+			name = "name"
+			position = { x = 10 y = 4 }
+			textureFile = ""
+			font = "cg_16b"
+			borderSize = {x = 0 y = 0}
+			text = "Test"
+			maxWidth = 200
+			maxHeight = 18
+			fixedsize = yes
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+	}
+}

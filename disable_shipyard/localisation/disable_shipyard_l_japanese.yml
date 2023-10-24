@@ -1,0 +1,5 @@
+﻿l_japanese:
+  TOOLTIP_DISABLE_STARBASE_SHIPYARD_BTN:0 "この基地の造船機能を§H無効§!にする。\n\n※現在キューに入っている造船の命令は、§Rゾンビプロセスとしてキューに残り続けてしまうため、無効化前に必ずキューの中身を空にしてください。§!"
+  TOOLTIP_ENABLE_STARBASE_SHIPYARD_BTN:0 "この基地の造船機能を§H有効§!にする。"
+  TOOLTIP_DISABLE_JUGGERNAUT_SHIPYARD_BTN:0 "ジャガーノートの造船機能を§H無効§!にする。\n\n※現在キューに入っている造船の命令は、§Rゾンビプロセスとしてキューに残り続けてしまうため、無効化前に必ずキューの中身を空にしてください。§!"
+  TOOLTIP_ENABLE_JUGGERNAUT_SHIPYARD_BTN:0 "ジャガーノートの造船機能を§H有効§!にする。"

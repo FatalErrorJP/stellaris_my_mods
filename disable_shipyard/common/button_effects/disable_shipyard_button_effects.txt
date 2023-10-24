@@ -1,0 +1,149 @@
+###############################################################################
+# 補足:
+#   各button_effectの記述の意味
+#   ・potential:画面にボタンを表示する条件
+#   ・allow:ボタンを押せる条件
+#   ・effects:実際にボタンを押した時の処理の内容
+###############################################################################
+
+###########################################################
+# 基地関連のボタンイベント
+# Scope:
+#   This = fleet
+#   From = player country
+###########################################################
+#####
+# 基地の造船機能を無効にする
+#####
+disable_starbase_shipyard_btn = {
+	potential = {
+		is_scope_type = fleet
+		exists = starbase
+		exists = from
+		owner = { is_same_value = from }
+		starbase = {
+			not = { is_variable_set = shipyard_off }
+			OR = {
+				has_starbase_size > starbase_outpost
+				is_orbital_ring = yes
+			}
+		}
+		from = { is_scope_type = country }
+	}
+	allow = {
+		starbase = {
+			OR = {
+				has_starbase_module = shipyard
+				has_starbase_module = orbital_ring_shipyard
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_DISABLE_STARBASE_SHIPYARD_BTN"
+		hidden_effect = {
+			starbase = {
+				set_variable = { which = shipyard_off value = 1 }
+			}
+		}
+	}
+}
+#####
+# 基地の造船機能を有効にする
+#####
+enable_starbase_shipyard_btn = {
+	potential = {
+		is_scope_type = fleet
+		exists = starbase
+		exists = from
+		owner = { is_same_value = from }
+		starbase = {
+			is_variable_set = shipyard_off
+			OR = {
+				has_starbase_size > starbase_outpost
+				is_orbital_ring = yes
+			}
+		}
+		from = { is_scope_type = country }
+	}
+	allow = {
+		starbase = {
+			OR = {
+				has_starbase_module = shipyard
+				has_starbase_module = orbital_ring_shipyard
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_ENABLE_STARBASE_SHIPYARD_BTN"
+		hidden_effect = {
+			starbase = {
+				clear_variable = shipyard_off
+			}
+		}
+	}
+}
+
+###########################################################
+# ジャガーノート関連のボタンイベント
+# Scope:
+#   This = fleet
+#   From = player country
+###########################################################
+#####
+# ジャガーノートの造船機能を無効にする
+#####
+disable_juggernaut_shipyard_btn = {
+	potential = {
+		is_scope_type = fleet
+		exists = starbase
+		exists = from
+		owner = { is_same_value = from }
+		starbase = {
+			not = { is_variable_set = shipyard_off }
+			OR = {
+				has_starbase_flag = juggernaut
+				has_starbase_flag = MFE1
+				has_starbase_flag = MFE2
+			}
+		}
+		from = { is_scope_type = country }
+	}
+	allow = {}
+	effect = {
+		custom_tooltip = "TOOLTIP_DISABLE_JUGGERNAUT_SHIPYARD_BTN"
+		hidden_effect = {
+			starbase = {
+				set_variable = { which = shipyard_off value = 1 }
+			}
+		}
+	}
+}
+#####
+# ジャガーノートの造船機能を有効にする
+#####
+enable_juggernaut_shipyard_btn = {
+	potential = {
+		is_scope_type = fleet
+		exists = starbase
+		exists = from
+		owner = { is_same_value = from }
+		starbase = {
+			is_variable_set = shipyard_off
+			OR = {
+				has_starbase_flag = juggernaut
+				has_starbase_flag = MFE1
+				has_starbase_flag = MFE2
+			}
+		}
+		from = { is_scope_type = country }
+	}
+	allow = {}
+	effect = {
+		custom_tooltip = "TOOLTIP_ENABLE_JUGGERNAUT_SHIPYARD_BTN"
+		hidden_effect = {
+			starbase = {
+				clear_variable = shipyard_off
+			}
+		}
+	}
+}

@@ -1,0 +1,5 @@
+is_leader_pool_bonus_event = {
+	from = { leader_class = $LEADER_CLASS$ }
+	is_variable_set = leader_years_$LEADER_CLASS$
+	check_variable = { which = leader_years_$LEADER_CLASS$ value >= 50 }
+}

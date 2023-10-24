@@ -1,0 +1,51 @@
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_resource_volatile_motes"
+		textureFile = "gfx/interface/icons/resources/volatile_motes.dds"
+	}
+
+	spriteType = {
+		name = "GFX_resource_exotic_gases"
+		textureFile = "gfx/interface/icons/resources/exotic_gases.dds"
+	}
+
+	spriteType = {
+		name = "GFX_resource_rare_crystals"
+		textureFile = "gfx/interface/icons/resources/rare_crystals.dds"
+	}
+
+	spriteType = {
+		name = "GFX_resource_sr_living_metal"
+		textureFile = "gfx/interface/icons/resources/sr_living_metal.dds"
+	}
+
+	spriteType = {
+		name = "GFX_resource_sr_zro"
+		textureFile = "gfx/interface/icons/resources/sr_zro.dds"
+	}
+
+	spriteType = {
+		name = "GFX_resource_sr_dark_matter"
+		textureFile = "gfx/interface/icons/resources/sr_dark_matter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_resource_nanites"
+		textureFile = "gfx/interface/icons/resources/nanites.dds"
+	}
+
+	spriteType = {
+		name = "GFX_resource_physics_research"
+		textureFile = "gfx/interface/icons/resources/physics_research.dds"
+	}
+
+	spriteType = {
+		name = "GFX_resource_society_research"
+		textureFile = "gfx/interface/icons/resources/society_research.dds"
+	}
+
+	spriteType = {
+		name = "GFX_resource_engineering_research"
+		textureFile = "gfx/interface/icons/resources/engineering_research.dds"
+	}
+}

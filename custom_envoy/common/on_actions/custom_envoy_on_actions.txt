@@ -1,0 +1,16 @@
+# スポーン時のイベント
+# a new leader is generated for an empire, to be available for recruitment
+# scope: country, from: leader
+on_leader_spawned = {
+	events = {
+		custom_envoy.1
+	}
+}
+
+# 割り当て時のイベント
+# Scope: Leader (after assignment)
+on_leader_assigned = {
+	events = {
+		custom_envoy.2
+	}
+}

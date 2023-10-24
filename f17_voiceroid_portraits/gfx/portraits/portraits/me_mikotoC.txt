@@ -1,0 +1,66 @@
+##############################################################
+# 鳴花ミコト種族用のポートレート定義
+##############################################################
+# 画像、音声ファイルとのリンク設定
+portraits = {
+	mikotoC_01 = { texturefile = "gfx/models/portraits/meika/mikoto/mikotoC_01.dds" }
+	mikotoC_02 = { texturefile = "gfx/models/portraits/meika/mikoto/mikotoC_02.dds" }
+	mikotoC_03 = { texturefile = "gfx/models/portraits/meika/mikoto/mikotoC_03.dds" }
+	mikotoC_04 = { texturefile = "gfx/models/portraits/meika/mikoto/mikotoC_04.dds" }
+	mikotoC_05 = { texturefile = "gfx/models/portraits/meika/mikoto/mikotoC_05.dds" }
+	mikotoC_06 = { texturefile = "gfx/models/portraits/meika/mikoto/mikotoC_06.dds" }
+	mikotoC_07 = { texturefile = "gfx/models/portraits/meika/mikoto/mikotoC_07.dds" }
+}
+
+# 各場面別のポートレート
+portrait_groups = {
+	mikoto = {
+		# デフォルト
+		default = mikotoC_01
+
+		# 帝国作成時
+		game_setup = {
+			add = {
+				portraits = {
+					mikotoC_01 mikotoC_02 mikotoC_03 mikotoC_04 mikotoC_05 mikotoC_06 mikotoC_07
+				}
+			}
+		}
+
+		# 汎用
+		species = {
+			add = {
+				portraits = {
+					mikotoC_01 mikotoC_02 mikotoC_03 mikotoC_04 mikotoC_05 mikotoC_06 mikotoC_07
+				}
+			}
+		}
+
+		# 惑星上のPOP
+		pop = {
+			add = {
+				portraits = {
+					mikotoC_01 mikotoC_02 mikotoC_03 mikotoC_04 mikotoC_05 mikotoC_06 mikotoC_07
+				}
+			}
+		}
+
+		#リーダー
+		leader = {
+			add = {
+				portraits = {
+					mikotoC_01 mikotoC_02 mikotoC_03 mikotoC_04 mikotoC_05 mikotoC_06 mikotoC_07
+				}
+			}
+		}
+
+		# 国家元首
+		ruler = {
+			add = {
+				portraits = {
+					mikotoC_01 mikotoC_02 mikotoC_03 mikotoC_04 mikotoC_05 mikotoC_06 mikotoC_07
+				}
+			}
+		}
+	}
+}

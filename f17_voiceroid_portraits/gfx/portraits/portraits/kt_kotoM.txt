@@ -1,0 +1,170 @@
+##############################################################
+# 琴葉姉妹種族用のポートレート定義
+##############################################################
+# 画像、音声ファイルとのリンク設定
+portraits = {
+	kotonohaAM_01 =  { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_01.dds"  }
+	kotonohaAM_02 =  { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_02.dds"  }
+	kotonohaAM_03 =  { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_03.dds"  }
+	kotonohaAM_04 =  { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_04.dds"  }
+	kotonohaAM_05 =  { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_05.dds"  }
+	kotonohaAM_06 =  { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_06.dds"  }
+	kotonohaAM_07 =  { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_07.dds"  }
+	kotonohaAM_08 =  { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_08.dds"  }
+	kotonohaAM_09 =  { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_09.dds"  }
+	kotonohaAM_10 =  { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_10.dds"  }
+	kotonohaAMC_01 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_01.dds" }
+	kotonohaAMC_02 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_02.dds" }
+	kotonohaAMC_03 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_03.dds" }
+	kotonohaAMC_04 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_04.dds" }
+	kotonohaAMC_05 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_05.dds" }
+	kotonohaAMC_06 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_06.dds" }
+	kotonohaAMC_07 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_07.dds" }
+	kotonohaAMC_08 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_08.dds" }
+	kotonohaAMC_09 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_09.dds" }
+	kotonohaAMC_10 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_10.dds" }
+	kotonohaBM_01 =  { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_01.dds"      }
+	kotonohaBM_02 =  { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_02.dds"      }
+	kotonohaBM_03 =  { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_03.dds"      }
+	kotonohaBM_04 =  { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_04.dds"      }
+	kotonohaBM_05 =  { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_05.dds"      }
+	kotonohaBM_06 =  { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_06.dds"      }
+	kotonohaBM_07 =  { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_07.dds"      }
+	kotonohaBM_08 =  { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_08.dds"      }
+	kotonohaBM_09 =  { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_09.dds"      }
+	kotonohaBM_10 =  { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_10.dds"      }
+	kotonohaBMC_01 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_01.dds"     }
+	kotonohaBMC_02 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_02.dds"     }
+	kotonohaBMC_03 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_03.dds"     }
+	kotonohaBMC_04 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_04.dds"     }
+	kotonohaBMC_05 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_05.dds"     }
+	kotonohaBMC_06 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_06.dds"     }
+	kotonohaBMC_07 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_07.dds"     }
+	kotonohaBMC_08 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_08.dds"     }
+	kotonohaBMC_09 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_09.dds"     }
+	kotonohaBMC_10 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_10.dds"     }
+}
+
+# 各場面別のポートレート
+portrait_groups = {
+	kotoM = {
+		# デフォルト
+		default = kotonohaAM_01
+
+		# 帝国作成時
+		game_setup = {
+			add = {
+				trigger = { ruler = { OR = { gender = male gender = indeterminable } } }
+				portraits = {
+					kotonohaAM_01 kotonohaAM_02 kotonohaAM_03 kotonohaAM_04 kotonohaAM_05
+					kotonohaAM_06 kotonohaAM_07 kotonohaAM_08 kotonohaAM_09 kotonohaAM_10
+					kotonohaAMC_01 kotonohaAMC_02 kotonohaAMC_03 kotonohaAMC_04 kotonohaAMC_05
+					kotonohaAMC_06 kotonohaAMC_07 kotonohaAMC_08 kotonohaAMC_09 kotonohaAMC_10
+				}
+			}
+			add = {
+				trigger = { ruler = { OR = { gender = female gender = indeterminable } } }
+				portraits = {
+					kotonohaBM_01 kotonohaBM_02 kotonohaBM_03 kotonohaBM_04 kotonohaBM_05
+					kotonohaBM_06 kotonohaBM_07 kotonohaBM_08 kotonohaBM_09 kotonohaBM_10
+					kotonohaBMC_01 kotonohaBMC_02 kotonohaBMC_03 kotonohaBMC_04 kotonohaBMC_05
+					kotonohaBMC_06 kotonohaBMC_07 kotonohaBMC_08 kotonohaBMC_09 kotonohaBMC_10
+				}
+			}
+		}
+
+		# 汎用
+		species = {
+			add = {
+				trigger = {
+					exists = species
+					NOT = { species = { species_gender = female } }
+				}
+				portraits = {
+					kotonohaAM_01 kotonohaAM_02 kotonohaAM_03 kotonohaAM_04 kotonohaAM_05
+					kotonohaAM_06 kotonohaAM_07 kotonohaAM_08 kotonohaAM_09 kotonohaAM_10
+					kotonohaAMC_01 kotonohaAMC_02 kotonohaAMC_03 kotonohaAMC_04 kotonohaAMC_05
+					kotonohaAMC_06 kotonohaAMC_07 kotonohaAMC_08 kotonohaAMC_09 kotonohaAMC_10
+				}
+			}
+			add = {
+				trigger = {
+					exists = species
+					NOT = { species = { species_gender = male } }
+				}
+				portraits = {
+					kotonohaBM_01 kotonohaBM_02 kotonohaBM_03 kotonohaBM_04 kotonohaBM_05
+					kotonohaBM_06 kotonohaBM_07 kotonohaBM_08 kotonohaBM_09 kotonohaBM_10
+					kotonohaBMC_01 kotonohaBMC_02 kotonohaBMC_03 kotonohaBMC_04 kotonohaBMC_05
+					kotonohaBMC_06 kotonohaBMC_07 kotonohaBMC_08 kotonohaBMC_09 kotonohaBMC_10
+				}
+			}
+		}
+
+		# 惑星上のPOP
+		pop = {
+			add = {
+				trigger = { NOT = { species = { species_gender = female } } }
+				portraits = {
+					kotonohaAM_01 kotonohaAM_02 kotonohaAM_03 kotonohaAM_04 kotonohaAM_05
+					kotonohaAM_06 kotonohaAM_07 kotonohaAM_08 kotonohaAM_09 kotonohaAM_10
+					kotonohaAMC_01 kotonohaAMC_02 kotonohaAMC_03 kotonohaAMC_04 kotonohaAMC_05
+					kotonohaAMC_06 kotonohaAMC_07 kotonohaAMC_08 kotonohaAMC_09 kotonohaAMC_10
+				}
+			}
+			add = {
+				trigger = { NOT = { species = { species_gender = male } } }
+				portraits = {
+					kotonohaBM_01 kotonohaBM_02 kotonohaBM_03 kotonohaBM_04 kotonohaBM_05
+					kotonohaBM_06 kotonohaBM_07 kotonohaBM_08 kotonohaBM_09 kotonohaBM_10
+					kotonohaBMC_01 kotonohaBMC_02 kotonohaBMC_03 kotonohaBMC_04 kotonohaBMC_05
+					kotonohaBMC_06 kotonohaBMC_07 kotonohaBMC_08 kotonohaBMC_09 kotonohaBMC_10
+				}
+			}
+		}
+
+		#リーダー
+		leader = {
+			add = {
+				trigger = { OR = { gender = male gender = indeterminable } }
+				portraits = {
+					kotonohaAM_01 kotonohaAM_02 kotonohaAM_03 kotonohaAM_04 kotonohaAM_05
+					kotonohaAM_06 kotonohaAM_07 kotonohaAM_08 kotonohaAM_09 kotonohaAM_10
+					kotonohaAMC_01 kotonohaAMC_02 kotonohaAMC_03 kotonohaAMC_04 kotonohaAMC_05
+					kotonohaAMC_06 kotonohaAMC_07 kotonohaAMC_08 kotonohaAMC_09 kotonohaAMC_10
+				}
+			}
+			add = {
+				trigger = { OR = { gender = female gender = indeterminable } }
+				portraits = {
+					kotonohaBM_01 kotonohaBM_02 kotonohaBM_03 kotonohaBM_04 kotonohaBM_05
+					kotonohaBM_06 kotonohaBM_07 kotonohaBM_08 kotonohaBM_09 kotonohaBM_10
+					kotonohaBMC_01 kotonohaBMC_02 kotonohaBMC_03 kotonohaBMC_04 kotonohaBMC_05
+					kotonohaBMC_06 kotonohaBMC_07 kotonohaBMC_08 kotonohaBMC_09 kotonohaBMC_10
+				}
+			}
+		}
+
+		# 国家元首
+		ruler = {
+			add = {
+				trigger = { OR = { gender = male gender = indeterminable } }
+				portraits = {
+					kotonohaAM_01 kotonohaAM_02 kotonohaAM_03 kotonohaAM_04 kotonohaAM_05
+					kotonohaAM_06 kotonohaAM_07 kotonohaAM_08 kotonohaAM_09 kotonohaAM_10
+					kotonohaAMC_01 kotonohaAMC_02 kotonohaAMC_03 kotonohaAMC_04 kotonohaAMC_05
+					kotonohaAMC_06 kotonohaAMC_07 kotonohaAMC_08 kotonohaAMC_09 kotonohaAMC_10
+				}
+			}
+			add = {
+				trigger = { OR = { gender = female gender = indeterminable } }
+				portraits = {
+					kotonohaBM_01 kotonohaBM_02 kotonohaBM_03 kotonohaBM_04 kotonohaBM_05
+					kotonohaBM_06 kotonohaBM_07 kotonohaBM_08 kotonohaBM_09 kotonohaBM_10
+					kotonohaBMC_01 kotonohaBMC_02 kotonohaBMC_03 kotonohaBMC_04 kotonohaBMC_05
+					kotonohaBMC_06 kotonohaBMC_07 kotonohaBMC_08 kotonohaBMC_09 kotonohaBMC_10
+				}
+			}
+		}
+	}
+}

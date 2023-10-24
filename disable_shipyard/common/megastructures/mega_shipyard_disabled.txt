@@ -1,0 +1,259 @@
+###########################################################
+# 巨大造船所のON/OFF機能追加用コード
+# コード提供：6thStrikeUnit様
+###########################################################
+mega_shipyard_1_disabled = {
+	entity = "mega_shipyard_01_stage_1_entity"
+	construction_entity = "mega_shipyard_01_stage_1_entity"
+	portrait = GFX_megastructure_construction_background
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -27 y = -27 }
+	build_time = 0
+	resources = {
+		category = megastructures
+		upkeep = {
+			energy = 10
+		}
+	}
+
+	prerequisites = { "tech_mega_shipyard" }
+
+	upgrade_from = {
+		mega_shipyard_1
+	}
+
+	country_modifier = {
+		starbase_shipyard_build_speed_mult = 0.33
+	}
+}
+
+mega_shipyard_1_enabled = {
+	entity = "mega_shipyard_01_stage_1_entity"
+	construction_entity = "mega_shipyard_01_stage_1_entity"
+	portrait = GFX_megastructure_construction_background
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -27 y = -27 }
+	build_time = 0
+	resources = {
+		category = megastructures
+		upkeep = {
+			energy = 10
+		}
+	}
+
+	upgrade_from = {
+		mega_shipyard_1_disabled
+	}
+
+	prerequisites = { "tech_mega_shipyard" }
+
+	on_build_complete = {
+		fromfrom.solar_system = {
+			spawn_megastructure = {
+				type = mega_shipyard_1
+				owner =  fromfrom.owner
+				planet = fromfrom.planet
+				graphical_culture = fromfrom.owner
+			}
+		}
+		remove_megastructure = fromfrom
+	}
+}
+
+mega_shipyard_2_disabled = {
+	entity = "mega_shipyard_01_stage_2_entity"
+	construction_entity = "mega_shipyard_01_stage_2_entity"
+	portrait = GFX_megastructure_construction_background
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -27 y = -27 }
+	build_time = 0
+	resources = {
+		category = megastructures
+		upkeep = {
+			energy = 20
+		}
+	}
+
+	upgrade_from = {
+		mega_shipyard_2
+	}
+
+	prerequisites = { "tech_mega_shipyard" }
+
+	country_modifier = {
+		starbase_shipyard_build_speed_mult = 0.67
+	}
+
+	on_build_complete = {}
+}
+
+mega_shipyard_2_enabled = {
+	entity = "mega_shipyard_01_stage_2_entity"
+	construction_entity = "mega_shipyard_01_stage_2_entity"
+	portrait = GFX_megastructure_construction_background
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -27 y = -27 }
+	build_time = 0
+	resources = {
+		category = megastructures
+		upkeep = {
+			energy = 20
+		}
+	}
+
+	upgrade_from = {
+		mega_shipyard_2_disabled
+	}
+
+	prerequisites = { "tech_mega_shipyard" }
+
+	country_modifier = {
+		starbase_shipyard_build_speed_mult = 0.67
+	}
+
+	on_build_complete = {
+		fromfrom.solar_system = {
+			spawn_megastructure = {
+				type = mega_shipyard_2
+				owner =  fromfrom.owner
+				planet = fromfrom.planet
+				graphical_culture = fromfrom.owner
+			}
+		}
+		remove_megastructure = fromfrom
+	}
+}
+
+mega_shipyard_3_disabled = {
+	entity = "mega_shipyard_01_stage_3_entity"
+	construction_entity = "mega_shipyard_01_stage_3_entity"
+	portrait = "GFX_megastructure_mega_shipyard_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -27 y = -27 }
+	build_time = 0
+	resources = {
+		category = megastructures
+		upkeep = {
+			energy = 40
+		}
+	}
+
+	upgrade_from = {
+		mega_shipyard_3
+	}
+
+	prerequisites = { "tech_mega_shipyard" }
+	show_prereqs = yes
+
+	country_modifier = {
+		starbase_shipyard_build_speed_mult = 1
+	}
+
+	on_build_complete = {}
+}
+
+mega_shipyard_3_enabled = {
+	entity = "mega_shipyard_01_stage_3_entity"
+	construction_entity = "mega_shipyard_01_stage_3_entity"
+	portrait = "GFX_megastructure_mega_shipyard_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -27 y = -27 }
+	build_time = 0
+	resources = {
+		category = megastructures
+		upkeep = {
+			energy = 40
+		}
+	}
+
+	upgrade_from = {
+		mega_shipyard_3_disabled
+	}
+
+	prerequisites = { "tech_mega_shipyard" }
+	show_prereqs = yes
+
+	country_modifier = {
+		starbase_shipyard_build_speed_mult = 1
+	}
+
+	on_build_complete = {
+		fromfrom.solar_system = {
+			spawn_megastructure = {
+				type = mega_shipyard_3
+				owner =  fromfrom.owner
+				planet = fromfrom.planet
+				graphical_culture = fromfrom.owner
+			}
+		}
+		remove_megastructure = fromfrom
+	}
+}
+
+mega_shipyard_restored_disabled = {
+	entity = "mega_shipyard_01_stage_3_entity"
+	construction_entity = "mega_shipyard_01_stage_3_entity"
+	portrait = "GFX_megastructure_mega_shipyard_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -27 y = -27 }
+	build_time = 0
+	resources = {
+		category = megastructures
+		upkeep = {
+			energy = 40
+		}
+	}
+
+	upgrade_from = {
+		mega_shipyard_restored
+	}
+
+	possible = {
+		from = { has_technology = tech_mega_engineering }
+	}
+
+	country_modifier = {
+		starbase_shipyard_build_speed_mult = 1
+	}
+
+	on_build_complete = {
+	}
+}
+
+mega_shipyard_restored_enabled = {
+	entity = "mega_shipyard_01_stage_3_entity"
+	construction_entity = "mega_shipyard_01_stage_3_entity"
+	portrait = "GFX_megastructure_mega_shipyard_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -27 y = -27 }
+	build_time = 0
+	resources = {
+		category = megastructures
+		upkeep = {
+			energy = 40
+		}
+	}
+
+	upgrade_from = {
+		mega_shipyard_restored_disabled
+	}
+
+	prerequisites = { "tech_mega_shipyard" }
+	show_prereqs = yes
+
+	country_modifier = {
+		starbase_shipyard_build_speed_mult = 1
+	}
+
+	on_build_complete = {
+		fromfrom.solar_system = {
+			spawn_megastructure = {
+				type = mega_shipyard_restored
+				owner =  fromfrom.owner
+				planet = fromfrom.planet
+				graphical_culture = fromfrom.owner
+			}
+		}
+		remove_megastructure = fromfrom
+	}
+}

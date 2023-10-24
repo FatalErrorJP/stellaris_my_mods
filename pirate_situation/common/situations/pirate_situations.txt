@@ -1,0 +1,323 @@
+# デバックコマンド
+# event pirate.1
+
+# 海賊発生時の状況イベント
+situation_pirate = {
+	#######################################################
+	# 画像
+	#######################################################
+	####
+	# イベントピクチャー
+	# 公式画像を使い回す場合は、interface/eventpictures.gfxにある定義から拝借すること
+	# 画像の実態はgfx\event_picturesにあります
+	####
+	picture = GFX_evt_pirates_attacking_cargo
+
+	####
+	# 状況完了時のアイコン
+	# completeが右端、failが左端に表示するアイコン
+	# 左端に行くことがなければfailはスルーしてOK
+	#
+	# 公式で用意しているものを利用するときの参考例
+	# icon)
+	# ・GFX_situation_outcome_unknown 青背景の「?」の画像
+	# ・GFX_situation_outcome_positive 緑背景の「+」の画像
+	# ・GFX_situation_outcome_negative 赤背景の「!」の画像
+	# ・GFX_situation_outcome_meh 印鑑を押している画像
+	# ・GFX_situation_outcome_bankrupcy 赤背景の経済破綻している画像
+	# ・GFX_situation_outcome_revolt 赤背景の反乱の画像
+	#
+	# icon_frame)
+	# ・GFX_situation_outcome_frame_blue
+	# ・GFX_situation_outcome_frame_green
+	# ・GFX_situation_outcome_frame_red
+	####
+	complete_icon = GFX_situation_outcome_negative
+	complete_icon_frame = GFX_situation_outcome_frame_red
+
+	#######################################################
+	# イベント
+	# Scope:
+	#   Root:situation
+	#   Owner:この状況が発生中のCountry
+	#   Target:start_situationで指定したもの
+	#######################################################
+	# 完了時発生イベント
+	on_progress_complete = {
+		custom_tooltip = situation_pirate_completion_tooltip
+		hidden_effect = {
+			situation_event = { id = pirate_situation.11 }
+		}
+	}
+	# 状況の中止条件とイベント
+	abort_trigger = {
+		target.solar_system = { trade_intercepted_value <= 0 }
+	}
+	on_abort = {
+		# 報酬の計算をしたいが、pirate_situation.21のafterで計算しようとすると、
+		# situationが先に消去され、スコープにアクセスできなくなってしまうので
+		# 先に計算要のパラメータをここで取っておく
+		#hidden_effect = {
+			# 報酬の基礎値
+			if = {
+				limit = { target.solar_system = { trade_route_value > 1000 } }
+				target.solar_system.owner = { set_variable = { which = base_trade_value value = 1000 } }
+			} else_if = {
+				limit = { target.solar_system = { trade_route_value > 500 } }
+				target.solar_system.owner = { set_variable = { which = base_trade_value value = 500 } }
+			} else_if = {
+				limit = { target.solar_system = { trade_route_value > 300 } }
+				target.solar_system.owner = { set_variable = { which = base_trade_value value = 300 } }
+			} else_if = {
+				limit = { target.solar_system = { trade_route_value > 200 } }
+				target.solar_system.owner = { set_variable = { which = base_trade_value value = 200 } }
+			} else_if = {
+				limit = { target.solar_system = { trade_route_value > 100 } }
+				target.solar_system.owner = { set_variable = { which = base_trade_value value = 100 } }
+			} else_if = {
+				limit = { target.solar_system = { trade_route_value > 50 } }
+				target.solar_system.owner = { set_variable = { which = base_trade_value value = 50 } }
+			} else = {
+				target.solar_system.owner = { set_variable = { which = base_trade_value value = 20 } }
+			}
+
+			# stageの補正値
+			if = {
+				limit = { current_stage = stage_1 }
+				target.solar_system.owner = { set_variable = { which = stege_mult value = 20 } }
+			} else_if = {
+				limit = { current_stage = stage_2 }
+				target.solar_system.owner = { set_variable = { which = stege_mult value = 15 } }
+			} else_if = {
+				limit = { current_stage = stage_3 }
+				target.solar_system.owner = { set_variable = { which = stege_mult value = 10 } }
+			} else_if = {
+				limit = { current_stage = stage_4 }
+				target.solar_system.owner = { set_variable = { which = stege_mult value = 5 } }
+			} else = {
+				target.solar_system.owner = { set_variable = { which = stege_mult value = 1 } }
+			}
+
+			target.solar_system.owner = { multiply_variable = { which = base_trade_value value = stege_mult } }
+		#}
+
+		situation_event = { id = pirate_situation.21 scopes = { from = target.solar_system } }
+	}
+
+	#######################################################
+	# 補正値と補正値の発生条件
+	# modifierは国家全体にかかる補正
+	# triggered_modifierはmodifierの発生条件を記載できるパターン
+	# target_modifierは対象が惑星の場合にかかる補正
+	# triggered_target_modifierはtarget_modifierの発生条件を記載できるパターン
+	#######################################################
+	triggered_modifier = {
+		potential = {
+			owner = {
+				NOR = {
+					has_policy_flag = trade_conversion_consumer_goods
+					has_policy_flag = trade_conversion_unity
+					has_policy_flag = trade_conversion_trade_league
+					has_policy_flag = trade_conversion_holy_covenant
+				}
+			}
+		}
+		modifier = {
+			country_energy_produces_mult = -0.10
+		}
+	}
+	triggered_modifier = {
+		potential = {
+			owner = { has_policy_flag = trade_conversion_consumer_goods }
+		}
+		modifier = {
+			country_energy_produces_mult = -0.05
+			country_consumer_goods_produces_mult = -0.05
+		}
+	}
+	triggered_modifier = {
+		potential = {
+			owner = { has_policy_flag = trade_conversion_unity }
+		}
+		modifier = {
+			country_energy_produces_mult = -0.05
+			country_unity_produces_mult = -0.05
+		}
+	}
+	triggered_modifier = {
+		potential = {
+			owner = { has_policy_flag = trade_conversion_trade_league }
+		}
+		modifier = {
+			country_energy_produces_mult = -0.05
+			country_unity_produces_mult = -0.05
+			country_consumer_goods_produces_mult = -0.05
+		}
+	}
+	triggered_modifier = {
+		potential = {
+			owner = { has_policy_flag = trade_conversion_holy_covenant }
+		}
+		modifier = {
+			country_energy_produces_mult = -0.05
+			country_unity_produces_mult = -0.05
+		}
+	}
+
+	#######################################################
+	# プログレスバー周りの設定
+	#######################################################
+	# 状況発生時の初期値
+	start_value = 0
+
+	# 進行状況の種類
+	# monodirectional:常に右に進捗が進む
+	# bidirectional:条件によって左右に進捗が進む
+	progress_direction = monodirectional
+
+	####
+	# カテゴリー設定
+	# progress_directionの値によって使う項目が分かれる
+	# ・monodirectional : category
+	# ・bidirectional : complete_category、fail_category
+	#
+	# 入力可能なパラメータはpositive/negative/neutral
+	# 多分UIのデザイン等に影響する
+	# negativeだと赤系、positiveだと緑系、neutralだと青系の色になりそう
+	####
+	category = negative
+
+	#######################################################
+	# ステージ設定
+	#######################################################
+	stages = {
+		stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_approach_bg_red
+			end = 8
+			custom_tooltip = situation_pirate_stage_1
+		}
+		stage_2 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_approach_bg_red
+			end = 15
+			on_first_enter = {
+				situation_event = { id = pirate_situation.2 }
+			}
+			custom_tooltip = situation_pirate_stage_2
+		}
+		stage_3 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_approach_bg_red
+			end = 20
+			on_first_enter = {
+				situation_event = { id = pirate_situation.3 }
+			}
+			custom_tooltip = situation_pirate_stage_3
+		}
+		stage_4 = {
+			icon = GFX_situation_stage_4
+			icon_background = GFX_situation_approach_bg_red
+			end = 24
+			on_first_enter = {
+				situation_event = { id = pirate_situation.4 }
+			}
+			custom_tooltip = situation_pirate_stage_4
+		}
+	}
+
+	#######################################################
+	# アプローチの設定
+	#######################################################
+	monthly_progress = {
+		base = 1.2
+		modifier = {
+			add = 0.3
+			desc = situation_pirate_monitor
+			current_situation_approach = situation_pirate_monitor
+		}
+		modifier = {
+			add = -0.2
+			desc = situation_pirate_fleet
+			current_situation_approach = situation_pirate_fleet
+		}
+	}
+
+	approach = {
+		name = situation_pirate_monitor
+		icon = GFX_situation_approach_suspicious
+		icon_background = GFX_situation_approach_bg_red
+		default = yes
+
+		# このアプローチが表示される条件
+		potential = { always = yes }
+		#このアプローチが選択可能な条件
+		allow = { always = yes }
+
+		# このアプローチを選択したときのイベント
+		on_select = {
+			custom_tooltip = situation_pirate_monitor_tooltip
+		}
+
+		####
+		# リソース情報
+		# category = situations : 固定
+		# cost = {} : 選択肢を選ぶためのコスト
+		# upkeep = {} : 維持費
+		# produces = {} : 生産物
+		####
+		resources = {
+			category = situations
+			upkeep = { energy = 10 }
+		}
+
+		# AIがこのアプローチを選択するかどうかの重み付け
+		ai_weight = {
+			base = 5
+		}
+	}
+
+	approach = {
+		name = situation_pirate_fleet
+		icon = GFX_situation_approach_fleet
+		icon_background = GFX_situation_approach_bg_yellow
+
+		# このアプローチが表示される条件
+		potential = { always = yes }
+		#このアプローチが選択可能な条件
+		allow = { always = yes }
+
+		# このアプローチを選択したときのイベント
+		on_select = {
+			custom_tooltip = situation_pirate_fleet_tooltip
+		}
+
+		# 補正値
+		modifier = {
+			ship_speed_mult = 0.05
+			starbase_shipyard_build_speed_mult = 0.05
+			starbase_upgrade_speed_mult = 0.05
+			starbase_module_build_speed_mult = 0.05
+		}
+
+		####
+		# リソース情報
+		# category = situations : 固定
+		# cost = {} : 選択肢を選ぶためのコスト
+		# upkeep = {} : 維持費
+		# produces = {} : 生産物
+		####
+		resources = {
+			category = situations
+			upkeep = {
+				energy = 20
+				alloys = 20
+			}
+		}
+
+		# AIがこのアプローチを選択するかどうかの重み付け
+		ai_weight = {
+			base = 5
+		}
+	}
+}

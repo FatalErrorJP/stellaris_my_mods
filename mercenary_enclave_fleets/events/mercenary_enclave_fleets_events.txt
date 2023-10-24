@@ -1,0 +1,897 @@
+# 基本的にはバニラのイベントのコードを踏襲
+namespace = enclave
+
+#Merc Pays Back Patron
+country_event = {
+	id = enclave.275
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		#Check who owns the system the enclave is in and register them as the target for the payment event.
+		random_owned_fleet = {
+			limit = {
+				is_ship_size = enclave_mercenary_station
+			}
+			solar_system = {
+				if = {
+					limit = {
+						exists = space_owner
+					}
+					space_owner = {
+						save_event_target_as = mercenary_patron
+					}
+				}
+			}
+		}
+		root = {
+			save_event_target_as = mercenary_enclave_country
+		}
+		if = {
+			limit = {
+				exists = event_target:mercenary_patron
+			}
+			event_target:mercenary_patron = {
+				random_list = {
+					24 = { country_event = { id = enclave.2000 } }
+					24 = { country_event = { id = enclave.2005 } }
+					24 = { country_event = { id = enclave.2010 } }
+					24 = {
+						modifier = {
+							factor = 0
+							event_target:mercenary_patron = { used_naval_capacity_percent > 0.95 }
+						}
+						####
+						# ここからMod追加コード
+						####
+						modifier = {
+							factor = 0
+							has_policy_flag = mercenary_enclave_fleets_stance_rejection
+						}
+						####
+						# ここまでMod追加コード
+						####
+						country_event = { id = enclave.2015 }
+					}
+					2 = {
+						####
+						# ここからMod追加コード
+						####
+						modifier = {
+							factor = 0
+							has_policy_flag = mercenary_enclave_fleets_stance_rejection
+						}
+						####
+						# ここまでMod追加コード
+						####
+						country_event = { id = enclave.2020 }
+					}
+					2 = { country_event = { id = enclave.2025 } }
+				}
+			}
+		}
+	}
+
+	after = {
+		start_situation = {
+			type = mercenary_dividends
+			target = root
+		}
+		destroy_situation = from
+	}
+}
+
+
+##Ships Reward
+country_event = {
+	id = enclave.2015
+	title = enclave.2000.name
+	desc = enclave.2015.desc
+	picture = GFX_evt_mercenary_enclave
+	show_sound = evn_ove_mercenary_enclave
+	is_triggered_only = yes
+
+	immediate = {
+		#Get Ships Design
+		event_target:mercenary_enclave_country = {
+			random_controlled_ship = {
+				limit = { is_ship_size = corvette }
+				save_event_target_as = mercenary_dividend_corvette
+			}
+			if = { #We don't really want them to give ships they don't have. But they must always be able to provide Corvettes.
+				limit = {
+					NOT = { exists = event_target:mercenary_dividend_corvette }
+				}
+				random_owned_design = {
+					limit = { is_ship_size = corvette }
+					save_event_target_as = mercenary_dividend_corvette
+				}
+			}
+			random_controlled_ship = {
+				limit = { is_ship_size = destroyer }
+				save_event_target_as = mercenary_dividend_destroyer
+			}
+			random_controlled_ship = {
+				limit = { is_ship_size = cruiser }
+				save_event_target_as = mercenary_dividend_cruiser
+			}
+			random_controlled_ship = {
+				limit = { is_ship_size = battleship }
+				save_event_target_as = mercenary_dividend_battleship
+			}
+		}
+	}
+
+	option = {
+		name = EXCELLENT
+		trigger = {
+			event_target:mercenary_enclave_country = {
+				NOT = { has_modifier = mercenary_fleet_size_upgrade_2 }
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = energy
+			value = @tier1materialreward
+			min = @tier1materialmin
+			max = @tier1materialmax
+		}
+		custom_tooltip = merc_enclave_grants_ships
+		hidden_effect = {
+			if = {
+				limit = {
+					exists = event_target:mercenary_dividend_battleship
+				}
+				create_fleet = {
+					effect = {
+						set_owner = root
+						while = {
+							count = 2
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_corvette
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						while = {
+							count = 1
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_battleship
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						####
+						# ここからMod追加コード
+						####
+						set_location = root.capital_scope.star
+						####
+						# ここまでMod追加コード
+						####
+					}
+				}
+			}
+			else = {
+				create_fleet = {
+					effect = {
+						set_owner = root
+						while = {
+							count = 6
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_corvette
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						####
+						# ここからMod追加コード
+						####
+						set_location = root.capital_scope.star
+						####
+						# ここまでMod追加コード
+						####
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EXCELLENT
+		trigger = {
+			event_target:mercenary_enclave_country = {
+				NOT = { has_modifier = mercenary_fleet_size_upgrade_4 }
+				has_modifier = mercenary_fleet_size_upgrade_2
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = energy
+			value = @tier2materialreward
+			min = @tier2materialmin
+			max = @tier2materialmax
+		}
+		custom_tooltip = merc_enclave_grants_ships
+		hidden_effect = {
+			if = {
+				limit = {
+					exists = event_target:mercenary_dividend_battleship
+				}
+				create_fleet = {
+					effect = {
+						set_owner = root
+						while = {
+							count = 4
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_corvette
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						while = {
+							count = 2
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_battleship
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						####
+						# ここからMod追加コード
+						####
+						set_location = root.capital_scope.star
+						####
+						# ここまでMod追加コード
+						####
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					exists = event_target:mercenary_dividend_cruiser
+				}
+				create_fleet = {
+					effect = {
+						set_owner = root
+						while = {
+							count = 4
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_cruiser
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						####
+						# ここからMod追加コード
+						####
+						set_location = root.capital_scope.star
+						####
+						# ここまでMod追加コード
+						####
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					exists = event_target:mercenary_dividend_destroyer
+				}
+				create_fleet = {
+					effect = {
+						set_owner = root
+						while = {
+							count = 3
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_destroyer
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						while = {
+							count = 6
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_corvette
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						####
+						# ここからMod追加コード
+						####
+						set_location = root.capital_scope.star
+						####
+						# ここまでMod追加コード
+						####
+					}
+				}
+			}
+			else = {
+				create_fleet = {
+					effect = {
+						set_owner = root
+						while = {
+							count = 12
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_corvette
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						####
+						# ここからMod追加コード
+						####
+						set_location = root.capital_scope.star
+						####
+						# ここまでMod追加コード
+						####
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EXCELLENT
+		trigger = {
+			event_target:mercenary_enclave_country = {
+				has_modifier = mercenary_fleet_size_upgrade_4
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = energy
+			value = @tier3materialreward
+			min = @tier3materialmin
+			max = @tier3materialmax
+		}
+		custom_tooltip = merc_enclave_grants_ships
+		hidden_effect = {
+			if = {
+				limit = {
+					exists = event_target:mercenary_dividend_battleship
+				}
+				create_fleet = {
+					effect = {
+						set_owner = root
+						while = {
+							count = 4
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_corvette
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						while = {
+							count = 4
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_battleship
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						####
+						# ここからMod追加コード
+						####
+						set_location = root.capital_scope.star
+						####
+						# ここまでMod追加コード
+						####
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					exists = event_target:mercenary_dividend_cruiser
+				}
+				create_fleet = {
+					effect = {
+						set_owner = root
+						while = {
+							count = 4
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_cruiser
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						while = {
+							count = 6
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_destroyer
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						####
+						# ここからMod追加コード
+						####
+						set_location = root.capital_scope.star
+						####
+						# ここまでMod追加コード
+						####
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					exists = event_target:mercenary_dividend_destroyer
+				}
+				create_fleet = {
+					effect = {
+						set_owner = root
+						while = {
+							count = 7
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_destroyer
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						while = {
+							count = 6
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_corvette
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						####
+						# ここからMod追加コード
+						####
+						set_location = root.capital_scope.star
+						####
+						# ここまでMod追加コード
+						####
+					}
+				}
+			}
+			else = {
+				create_fleet = {
+					effect = {
+						set_owner = root
+						while = {
+							count = 20
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_corvette
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						####
+						# ここからMod追加コード
+						####
+						set_location = root.capital_scope.star
+						####
+						# ここまでMod追加コード
+						####
+					}
+				}
+			}
+		}
+	}
+}
+##Jackpot Reward
+country_event = {
+	id = enclave.2020
+	title = enclave.2000.name
+	desc = enclave.2020.desc
+	picture = GFX_evt_mercenary_enclave
+	show_sound = evn_ove_mercenary_enclave
+	is_triggered_only = yes
+	trigger = {
+		event_target:mercenary_enclave_country = {
+			NOT = { has_modifier = merc_financial_troubles }
+		}
+	}
+
+	immediate = {
+		#Get Ships Design
+		event_target:mercenary_enclave_country = {
+			random_controlled_ship = {
+				limit = { is_ship_size = corvette }
+				save_event_target_as = mercenary_dividend_corvette
+			}
+			if = { #We don't really want them to give ships they don't have. But they must always be able to provide Corvettes.
+				limit = {
+					NOT = { exists = event_target:mercenary_dividend_corvette }
+				}
+				random_owned_design = {
+					limit = { is_ship_size = corvette }
+					save_event_target_as = mercenary_dividend_corvette
+				}
+			}
+			random_controlled_ship = {
+				limit = { is_ship_size = destroyer }
+				save_event_target_as = mercenary_dividend_destroyer
+			}
+			random_controlled_ship = {
+				limit = { is_ship_size = cruiser }
+				save_event_target_as = mercenary_dividend_cruiser
+			}
+			random_controlled_ship = {
+				limit = { is_ship_size = battleship }
+				save_event_target_as = mercenary_dividend_battleship
+			}
+		}
+	}
+
+	option = {
+		name = EXCELLENT
+		trigger = {
+			event_target:mercenary_enclave_country = {
+				NOT = { has_modifier = mercenary_fleet_size_upgrade_2 }
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = energy
+			value = @tier1materialreward
+			min = @tier1materialmin
+			max = @tier1materialmax
+		}
+		add_monthly_resource_mult = {
+			resource = minerals
+			value = @tier1materialreward
+			min = @tier1materialmin
+			max = @tier1materialmax
+		}
+		custom_tooltip = merc_enclave_grants_ships
+		hidden_effect = {
+			if = {
+				limit = {
+					exists = event_target:mercenary_dividend_cruiser
+				}
+				create_fleet = {
+					effect = {
+						set_owner = root
+						while = {
+							count = 1
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_cruiser
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						####
+						# ここからMod追加コード
+						####
+						set_location = root.capital_scope.star
+						####
+						# ここまでMod追加コード
+						####
+					}
+				}
+			}
+			else = {
+				create_fleet = {
+					effect = {
+						set_owner = root
+						while = {
+							count = 3
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_corvette
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						####
+						# ここからMod追加コード
+						####
+						set_location = root.capital_scope.star
+						####
+						# ここまでMod追加コード
+						####
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EXCELLENT
+		trigger = {
+			event_target:mercenary_enclave_country = {
+				NOT = { has_modifier = mercenary_fleet_size_upgrade_4 }
+				has_modifier = mercenary_fleet_size_upgrade_2
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = energy
+			value = @tier2materialreward
+			min = @tier2materialmin
+			max = @tier2materialmax
+		}
+		add_monthly_resource_mult = {
+			resource = minerals
+			value = @tier2materialreward
+			min = @tier2materialmin
+			max = @tier2materialmax
+		}
+		add_monthly_resource_mult = {
+			resource = engineering_research
+			value = @tier1researchreward
+			min = @tier1researchmin
+			max = @tier1researchmax
+		}
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier1researchreward
+			min = @tier1researchmin
+			max = @tier1researchmax
+		}
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier1researchreward
+			min = @tier1researchmin
+			max = @tier1researchmax
+		}
+		custom_tooltip = merc_enclave_grants_ships
+		hidden_effect = {
+			if = {
+				limit = {
+					exists = event_target:mercenary_dividend_battleship
+				}
+				create_fleet = {
+					effect = {
+						set_owner = root
+						while = {
+							count = 2
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_corvette
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						while = {
+							count = 1
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_battleship
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						####
+						# ここからMod追加コード
+						####
+						set_location = root.capital_scope.star
+						####
+						# ここまでMod追加コード
+						####
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					exists = event_target:mercenary_dividend_cruiser
+				}
+				create_fleet = {
+					effect = {
+						set_owner = root
+						while = {
+							count = 2
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_cruiser
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						####
+						# ここからMod追加コード
+						####
+						set_location = root.capital_scope.star
+						####
+						# ここまでMod追加コード
+						####
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					exists = event_target:mercenary_dividend_destroyer
+				}
+				create_fleet = {
+					effect = {
+						set_owner = root
+						while = {
+							count = 2
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_destroyer
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						while = {
+							count = 2
+							create_ship = {
+								name = random
+
+								design = event_target:mercenary_dividend_corvette
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						####
+						# ここからMod追加コード
+						####
+						set_location = root.capital_scope.star
+						####
+						# ここまでMod追加コード
+						####
+					}
+				}
+			}
+			else = {
+				create_fleet = {
+					effect = {
+						set_owner = root
+						while = {
+							count = 6
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_corvette
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						####
+						# ここからMod追加コード
+						####
+						set_location = root.capital_scope.star
+						####
+						# ここまでMod追加コード
+						####
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EXCELLENT
+		trigger = {
+			event_target:mercenary_enclave_country = {
+				has_modifier = mercenary_fleet_size_upgrade_4
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = energy
+			value = @tier3materialreward
+			min = @tier3materialmin
+			max = @tier3materialmax
+		}
+		add_monthly_resource_mult = {
+			resource = minerals
+			value = @tier3materialreward
+			min = @tier3materialmin
+			max = @tier3materialmax
+		}
+		add_monthly_resource_mult = {
+			resource = engineering_research
+			value = @tier2researchreward
+			min = @tier2researchmin
+			max = @tier2researchmax
+		}
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier2researchreward
+			min = @tier2researchmin
+			max = @tier2researchmax
+		}
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier2researchreward
+			min = @tier2researchmin
+			max = @tier2researchmax
+		}
+		custom_tooltip = merc_enclave_grants_ships
+		hidden_effect = {
+			if = {
+				limit = {
+					exists = event_target:mercenary_dividend_battleship
+				}
+				create_fleet = {
+					effect = {
+						set_owner = root
+						while = {
+							count = 4
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_corvette
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						while = {
+							count = 2
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_battleship
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						####
+						# ここからMod追加コード
+						####
+						set_location = root.capital_scope.star
+						####
+						# ここまでMod追加コード
+						####
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					exists = event_target:mercenary_dividend_cruiser
+				}
+				create_fleet = {
+					effect = {
+						set_owner = root
+						while = {
+							count = 4
+							create_ship = {
+								name = random
+
+								design = event_target:mercenary_dividend_cruiser
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						####
+						# ここからMod追加コード
+						####
+						set_location = root.capital_scope.star
+						####
+						# ここまでMod追加コード
+						####
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					exists = event_target:mercenary_dividend_destroyer
+				}
+				create_fleet = {
+					effect = {
+						set_owner = root
+						while = {
+							count = 3
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_destroyer
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						while = {
+							count = 6
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_corvette
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						####
+						# ここからMod追加コード
+						####
+						set_location = root.capital_scope.star
+						####
+						# ここまでMod追加コード
+						####
+					}
+				}
+			}
+			else = {
+				create_fleet = {
+					effect = {
+						set_owner = root
+						while = {
+							count = 12
+							create_ship = {
+								name = random
+								design = event_target:mercenary_dividend_corvette
+								graphical_culture = event_target:mercenary_enclave_country
+							}
+						}
+						####
+						# ここからMod追加コード
+						####
+						set_location = root.capital_scope.star
+						####
+						# ここまでMod追加コード
+						####
+					}
+				}
+			}
+		}
+	}
+}

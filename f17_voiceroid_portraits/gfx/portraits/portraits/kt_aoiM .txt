@@ -1,0 +1,120 @@
+##############################################################
+# 琴葉葵種族用のポートレート定義
+##############################################################
+# 画像、音声ファイルとのリンク設定
+portraits = {
+	aoiM_01 =  { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_01.dds"  }
+	aoiM_02 =  { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_02.dds"  }
+	aoiM_03 =  { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_03.dds"  }
+	aoiM_04 =  { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_04.dds"  }
+	aoiM_05 =  { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_05.dds"  }
+	aoiM_06 =  { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_06.dds"  }
+	aoiM_07 =  { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_07.dds"  }
+	aoiM_08 =  { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_08.dds"  }
+	aoiM_09 =  { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_09.dds"  }
+	aoiM_10 =  { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_10.dds"  }
+	aoiMC_01 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_01.dds" }
+	aoiMC_02 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_02.dds" }
+	aoiMC_03 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_03.dds" }
+	aoiMC_04 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_04.dds" }
+	aoiMC_05 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_05.dds" }
+	aoiMC_06 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_06.dds" }
+	aoiMC_07 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_07.dds" }
+	aoiMC_08 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_08.dds" }
+	aoiMC_09 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_09.dds" }
+	aoiMC_10 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_10.dds" }
+}
+
+# 各場面別のポートレート
+portrait_groups = {
+	aoiM = {
+		# デフォルト
+		default = aoiM_01
+
+		# 帝国作成時
+		game_setup = {
+			add = {
+				trigger = { ruler = { OR = { gender = male gender = indeterminable } } }
+				portraits = {
+					aoiM_01 aoiM_02 aoiM_03 aoiM_04 aoiM_05 aoiM_06 aoiM_07 aoiM_08 aoiM_09 aoiM_10
+				}
+			}
+			add = {
+				trigger = { ruler = { OR = { gender = female gender = indeterminable } } }
+				portraits = {
+					aoiMC_01 aoiMC_02 aoiMC_03 aoiMC_04 aoiMC_05 aoiMC_06 aoiMC_07 aoiMC_08 aoiMC_09 aoiMC_10
+				}
+			}
+		}
+
+		# 汎用
+		species = {
+			add = {
+				trigger = {
+					exists = species
+					NOT = { species = { species_gender = female } }
+				}
+				portraits = {
+					aoiM_01 aoiM_02 aoiM_03 aoiM_04 aoiM_05 aoiM_06 aoiM_07 aoiM_08 aoiM_09 aoiM_10
+				}
+			}
+			add = {
+				trigger = {
+					exists = species
+					NOT = { species = { species_gender = male } }
+				}
+				portraits = {
+					aoiMC_01 aoiMC_02 aoiMC_03 aoiMC_04 aoiMC_05 aoiMC_06 aoiMC_07 aoiMC_08 aoiMC_09 aoiMC_10
+				}
+			}
+		}
+
+		# 惑星上のPOP
+		pop = {
+			add = {
+				trigger = { NOT = { species = { species_gender = female } } }
+				portraits = {
+					aoiM_01 aoiM_02 aoiM_03 aoiM_04 aoiM_05 aoiM_06 aoiM_07 aoiM_08 aoiM_09 aoiM_10
+				}
+			}
+			add = {
+				trigger = { NOT = { species = { species_gender = male } } }
+				portraits = {
+					aoiMC_01 aoiMC_02 aoiMC_03 aoiMC_04 aoiMC_05 aoiMC_06 aoiMC_07 aoiMC_08 aoiMC_09 aoiMC_10
+				}
+			}
+		}
+
+		#リーダー
+		leader = {
+			add = {
+				trigger = { OR = { gender = male gender = indeterminable } }
+				portraits = {
+					aoiM_01 aoiM_02 aoiM_03 aoiM_04 aoiM_05 aoiM_06 aoiM_07 aoiM_08 aoiM_09 aoiM_10
+				}
+			}
+			add = {
+				trigger = { OR = { gender = female gender = indeterminable } }
+				portraits = {
+					aoiMC_01 aoiMC_02 aoiMC_03 aoiMC_04 aoiMC_05 aoiMC_06 aoiMC_07 aoiMC_08 aoiMC_09 aoiMC_10
+				}
+			}
+		}
+
+		# 国家元首
+		ruler = {
+			add = {
+				trigger = { OR = { gender = male gender = indeterminable } }
+				portraits = {
+					aoiM_01 aoiM_02 aoiM_03 aoiM_04 aoiM_05 aoiM_06 aoiM_07 aoiM_08 aoiM_09 aoiM_10
+				}
+			}
+			add = {
+				trigger = { OR = { gender = female gender = indeterminable } }
+				portraits = {
+					aoiMC_01 aoiMC_02 aoiMC_03 aoiMC_04 aoiMC_05 aoiMC_06 aoiMC_07 aoiMC_08 aoiMC_09 aoiMC_10
+				}
+			}
+		}
+	}
+}

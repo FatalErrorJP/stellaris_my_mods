@@ -1,0 +1,146 @@
+##############################################################
+# ランダム生成される帝国名用の定義
+# name : 種族名
+# plural : 種族名(複数形)
+# home_planet : 惑星名
+# home_system : 恒星名
+# name_list : ネームリスト…思いつかないので公式のHUM1を使い回し
+##############################################################
+#最大全角６文字
+### D言語くん種族(有機種族)
+d-man-biologicals = {
+	d-man1 = {
+		name = SPEC_D-MAN
+		plural = SPEC_D-MAN_pl
+		home_planet = SPEC_D-MAN_planet1
+		home_system = SPEC_D-MAN_system1
+		name_list = "HUM1"
+	}
+	d-man2 = {
+		name = SPEC_D-MAN
+		plural = SPEC_D-MAN_pl
+		home_planet = SPEC_D-MAN_planet2
+		home_system = SPEC_D-MAN_system2
+		name_list = "HUM1"
+	}
+	d-man3 = {
+		name = SPEC_D-MAN
+		plural = SPEC_D-MAN_pl
+		home_planet = SPEC_D-MAN_planet3
+		home_system = SPEC_D-MAN_system3
+		name_list = "HUM1"
+	}
+	d-man4 = {
+		name = SPEC_D-MAN
+		plural = SPEC_D-MAN_pl
+		home_planet = SPEC_D-MAN_planet4
+		home_system = SPEC_D-MAN_system4
+		name_list = "HUM1"
+	}
+	d-man5 = {
+		name = SPEC_D-MAN
+		plural = SPEC_D-MAN_pl
+		home_planet = SPEC_D-MAN_planet5
+		home_system = SPEC_D-MAN_system5
+		name_list = "HUM1"
+	}
+	d-man6 = {
+		name = SPEC_D-MAN
+		plural = SPEC_D-MAN_pl
+		home_planet = SPEC_D-MAN_planet6
+		home_system = SPEC_D-MAN_system6
+		name_list = "HUM1"
+	}
+}
+
+# D言語くん種族(機械知性)
+d-man-machines = {
+	d-man11 = {
+		name = SPEC_D-MAN
+		plural = SPEC_D-MAN_pl
+		home_planet = SPEC_D-MAN_planet1
+		home_system = SPEC_D-MAN_system1
+		name_list = "HUM1"
+	}
+	d-man12 = {
+		name = SPEC_D-MAN
+		plural = SPEC_D-MAN_pl
+		home_planet = SPEC_D-MAN_planet2
+		home_system = SPEC_D-MAN_system2
+		name_list = "HUM1"
+	}
+	d-man13 = {
+		name = SPEC_D-MAN
+		plural = SPEC_D-MAN_pl
+		home_planet = SPEC_D-MAN_planet3
+		home_system = SPEC_D-MAN_system3
+		name_list = "HUM1"
+	}
+	d-man14 = {
+		name = SPEC_D-MAN
+		plural = SPEC_D-MAN_pl
+		home_planet = SPEC_D-MAN_planet4
+		home_system = SPEC_D-MAN_system4
+		name_list = "HUM1"
+	}
+	d-man15 = {
+		name = SPEC_D-MAN
+		plural = SPEC_D-MAN_pl
+		home_planet = SPEC_D-MAN_planet5
+		home_system = SPEC_D-MAN_system5
+		name_list = "HUM1"
+	}
+	d-man16 = {
+		name = SPEC_D-MAN
+		plural = SPEC_D-MAN_pl
+		home_planet = SPEC_D-MAN_planet6
+		home_system = SPEC_D-MAN_system6
+		name_list = "HUM1"
+	}
+}
+
+# D言語くん種族(岩石種族)
+d-man-lithoids = {
+	d-man21 = {
+		name = SPEC_D-MAN
+		plural = SPEC_D-MAN_pl
+		home_planet = SPEC_D-MAN_planet1
+		home_system = SPEC_D-MAN_system1
+		name_list = "HUM1"
+	}
+	d-man22 = {
+		name = SPEC_D-MAN
+		plural = SPEC_D-MAN_pl
+		home_planet = SPEC_D-MAN_planet2
+		home_system = SPEC_D-MAN_system2
+		name_list = "HUM1"
+	}
+	d-man23 = {
+		name = SPEC_D-MAN
+		plural = SPEC_D-MAN_pl
+		home_planet = SPEC_D-MAN_planet3
+		home_system = SPEC_D-MAN_system3
+		name_list = "HUM1"
+	}
+	d-man24 = {
+		name = SPEC_D-MAN
+		plural = SPEC_D-MAN_pl
+		home_planet = SPEC_D-MAN_planet4
+		home_system = SPEC_D-MAN_system4
+		name_list = "HUM1"
+	}
+	d-man25 = {
+		name = SPEC_D-MAN
+		plural = SPEC_D-MAN_pl
+		home_planet = SPEC_D-MAN_planet5
+		home_system = SPEC_D-MAN_system5
+		name_list = "HUM1"
+	}
+	d-man26 = {
+		name = SPEC_D-MAN
+		plural = SPEC_D-MAN_pl
+		home_planet = SPEC_D-MAN_planet6
+		home_system = SPEC_D-MAN_system6
+		name_list = "HUM1"
+	}
+}

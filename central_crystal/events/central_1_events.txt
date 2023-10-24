@@ -1,0 +1,13 @@
+namespace = central
+
+# Start Events
+event = {
+	id = central.1
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		set_global_flag = central_crystal_flag
+	}
+}

@@ -1,0 +1,15 @@
+random_list = {
+	name = static_empire_init
+	random_empire_init_01 = 1
+	random_empire_init_02 = 1
+	random_empire_init_03 = 1
+	random_empire_init_04 = 1
+	random_empire_init_05 = 1
+	random_empire_init_06 = 1
+	custom_starting_init_01 = 1
+	custom_starting_init_02 = 1
+	custom_starting_init_03 = 1
+	custom_starting_init_04 = 1
+	custom_starting_init_05 = 1
+	custom_starting_init_06 = 1
+}

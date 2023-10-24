@@ -1,0 +1,217 @@
+# デバックコマンド
+# event pirate.1
+
+# 海賊発生時の状況イベント
+situation_big_wave = {
+	#######################################################
+	# 画像
+	#######################################################
+	####
+	# イベントピクチャー
+	# 公式画像を使い回す場合は、interface/eventpictures.gfxにある定義から拝借すること
+	# 画像の実態はgfx\event_picturesにあります
+	####
+	picture = GFX_evt_enlightenment_failure
+
+	####
+	# 状況完了時のアイコン
+	# completeが右端、failが左端に表示するアイコン
+	# 左端に行くことがなければfailはスルーしてOK
+	#
+	# 公式で用意しているものを利用するときの参考例
+	# icon)
+	# ・GFX_situation_outcome_unknown 青背景の「?」の画像
+	# ・GFX_situation_outcome_positive 緑背景の「+」の画像
+	# ・GFX_situation_outcome_negative 赤背景の「!」の画像
+	# ・GFX_situation_outcome_meh 印鑑を押している画像
+	# ・GFX_situation_outcome_bankrupcy 赤背景の経済破綻している画像
+	# ・GFX_situation_outcome_revolt 赤背景の反乱の画像
+	#
+	# icon_frame)
+	# ・GFX_situation_outcome_frame_blue
+	# ・GFX_situation_outcome_frame_green
+	# ・GFX_situation_outcome_frame_red
+	####
+	complete_icon = GFX_situation_outcome_negative
+	complete_icon_frame = GFX_situation_outcome_frame_red
+
+	#######################################################
+	# イベント
+	# Scope:
+	#   Root:situation
+	#   Owner:この状況が発生中のCountry
+	#   Target:start_situationで指定したもの
+	#######################################################
+	# 状況発生時のイベント
+	on_start = {}
+
+	# 完了時発生イベント
+	on_progress_complete = {
+		custom_tooltip = situation_big_wave_completion_tooltip
+		hidden_effect = {
+			situation_event = { id = big_wave.24 }
+		}
+	}
+	# 状況の中止条件とイベント
+	abort_trigger = {
+		owner = {
+			count_owned_pop = {
+				limit = {
+					pop_has_trait = trait_big_wave
+				}
+				count <= 0
+			}
+		}
+	}
+	on_abort = {
+		situation_event = { id = big_wave.31 }
+	}
+
+	#######################################################
+	# プログレスバー周りの設定
+	#######################################################
+	# 状況発生時の初期値
+	start_value = 0
+
+	# 進行状況の種類
+	# monodirectional:常に右に進捗が進む
+	# bidirectional:条件によって左右に進捗が進む
+	progress_direction = monodirectional
+
+	####
+	# カテゴリー設定
+	# progress_directionの値によって使う項目が分かれる
+	# ・monodirectional : category
+	# ・bidirectional : complete_category、fail_category
+	#
+	# 入力可能なパラメータはpositive/negative/neutral
+	# 多分UIのデザイン等に影響する
+	# negativeだと赤系、positiveだと緑系、neutralだと青系の色になりそう
+	####
+	category = neutral
+
+	#######################################################
+	# ステージ設定
+	# 1ステージ10年、40年で完了
+	#######################################################
+	stages = {
+		stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_approach_bg_red
+			end = 240
+			custom_tooltip = situation_big_wave_stage_1
+			modifier = {
+				planet_jobs_worker_produces_mult = 0.05
+			}
+		}
+		stage_2 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_approach_bg_red
+			end = 300
+			on_first_enter = {
+				situation_event = { id = big_wave.21 }
+			}
+			modifier = {
+				pop_happiness = 0.10
+			}
+			custom_tooltip = situation_big_wave_stage_2
+		}
+		stage_3 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_approach_bg_red
+			end = 360
+			on_first_enter = {
+				situation_event = { id = big_wave.22 }
+			}
+			custom_tooltip = situation_big_wave_stage_3
+		}
+		stage_4 = {
+			icon = GFX_situation_stage_4
+			icon_background = GFX_situation_approach_bg_red
+			end = 480
+			on_first_enter = {
+				situation_event = { id = big_wave.23 }
+			}
+			modifier = {
+				pop_happiness = -0.05
+			}
+			custom_tooltip = situation_big_wave_stage_4
+		}
+	}
+
+	#######################################################
+	# アプローチの設定
+	#######################################################
+	monthly_progress = {
+		base = 1
+	}
+
+	approach = {
+		name = situation_big_wave_fulfill
+		icon = GFX_situation_approach_kneel
+		icon_background = GFX_situation_approach_bg_yellow
+		default = yes
+
+		# このアプローチが表示される条件
+		potential = { always = yes }
+		#このアプローチが選択可能な条件
+		allow = { always = yes }
+
+		# このアプローチを選択したときのイベント
+		on_select = {
+			custom_tooltip = situation_big_wave_fulfill_tooltip
+		}
+
+		# 補正値
+		modifier = {
+			pop_happiness = -0.05
+		}
+
+		####
+		# リソース情報
+		# category = situations : 固定
+		# cost = {} : 選択肢を選ぶためのコスト
+		# upkeep = {} : 維持費
+		# produces = {} : 生産物
+		####
+		resources = {
+			category = situations
+			upkeep = { unity = 10 }
+		}
+
+		# AIがこのアプローチを選択するかどうかの重み付け
+		ai_weight = { base = 5 }
+	}
+
+	approach = {
+		name = situation_big_wave_cancel
+		icon = GFX_situation_approach_fist
+		icon_background = GFX_situation_approach_bg_red
+
+		# このアプローチが表示される条件
+		potential = { always = yes }
+		#このアプローチが選択可能な条件
+		allow = { always = yes }
+
+		# このアプローチを選択したときのイベント
+		on_select = {
+			custom_tooltip = situation_big_wave_cancel_tooltip
+			situation_event = { id = big_wave.41 }
+		}
+
+		# 補正値
+		modifier = {}
+
+		####
+		# リソース情報
+		# category = situations : 固定
+		# cost = {} : 選択肢を選ぶためのコスト
+		# upkeep = {} : 維持費
+		# produces = {} : 生産物
+		####
+		resources = {}
+
+		# AIがこのアプローチを選択するかどうかの重み付け
+		ai_weight = { base = 0 }
+	}
+}

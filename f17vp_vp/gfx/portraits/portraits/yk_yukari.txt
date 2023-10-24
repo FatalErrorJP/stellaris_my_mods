@@ -1,0 +1,153 @@
+##############################################################
+# 結月ゆかり種族用のポートレート定義
+##############################################################
+# 画像、音声ファイルとのリンク設定
+portraits = {
+	yukariJA_01 = { texturefile = "gfx/models/portraits/yukari/yukariJA_01.dds" }
+	yukariJA_02 = { texturefile = "gfx/models/portraits/yukari/yukariJA_02.dds" }
+	yukariJA_03 = { texturefile = "gfx/models/portraits/yukari/yukariJA_03.dds" }
+	yukariJA_04 = { texturefile = "gfx/models/portraits/yukari/yukariJA_04.dds" }
+	yukariJA_05 = { texturefile = "gfx/models/portraits/yukari/yukariJA_05.dds" }
+	yukariJA_06 = { texturefile = "gfx/models/portraits/yukari/yukariJA_06.dds" }
+	yukariJA_07 = { texturefile = "gfx/models/portraits/yukari/yukariJA_07.dds" }
+	yukariJB_01 = { texturefile = "gfx/models/portraits/yukari/yukariJB_01.dds" }
+	yukariJB_02 = { texturefile = "gfx/models/portraits/yukari/yukariJB_02.dds" }
+	yukariJB_03 = { texturefile = "gfx/models/portraits/yukari/yukariJB_03.dds" }
+	yukariJB_04 = { texturefile = "gfx/models/portraits/yukari/yukariJB_04.dds" }
+	yukariJB_05 = { texturefile = "gfx/models/portraits/yukari/yukariJB_05.dds" }
+	yukariJB_06 = { texturefile = "gfx/models/portraits/yukari/yukariJB_06.dds" }
+	yukariJB_07 = { texturefile = "gfx/models/portraits/yukari/yukariJB_07.dds" }
+	yukariR_01 =  { texturefile = "gfx/models/portraits/yukari/yukariR_01.dds"  }
+	yukariR_02 =  { texturefile = "gfx/models/portraits/yukari/yukariR_02.dds"  }
+	yukariR_03 =  { texturefile = "gfx/models/portraits/yukari/yukariR_03.dds"  }
+	yukariO_01 =  { texturefile = "gfx/models/portraits/yukari/yukariO_01.dds"  }
+	yukariO_02 =  { texturefile = "gfx/models/portraits/yukari/yukariO_02.dds"  }
+	yukariO_03 =  { texturefile = "gfx/models/portraits/yukari/yukariO_03.dds"  }
+}
+
+# 各場面別のポートレート
+portrait_groups = {
+	yuduki_yukari = {
+		# デフォルト
+		default = yukariJA_01
+
+		# 帝国作成時
+		game_setup = {
+			add = {
+				trigger = { ruler = { OR = { gender = male gender = indeterminable } } }
+				portraits = {
+					yukariJA_01 yukariJA_02 yukariJA_03 yukariJA_04 yukariJA_05 yukariJA_06 yukariJA_07
+				}
+			}
+			add = {
+				trigger = { ruler = { OR = { gender = female gender = indeterminable } } }
+				portraits = {
+					yukariJB_01 yukariJB_02 yukariJB_03 yukariJB_04 yukariJB_05 yukariJB_06 yukariJB_07
+				}
+			}
+			add = {
+				trigger = { ruler = { gender = indeterminable } }
+				portraits = {
+					yukariR_01 yukariR_02 yukariR_03 yukariO_01 yukariO_02 yukariO_03
+				}
+			}
+		}
+
+		# 汎用
+		species = {
+			add = {
+				trigger = {
+					exists = species
+					NOT = { species = { species_gender = female } }
+				}
+				portraits = {
+					yukariJA_01 yukariJA_02 yukariJA_03 yukariJA_04 yukariJA_05 yukariJA_06 yukariJA_07
+				}
+			}
+			add = {
+				trigger = {
+					exists = species
+					NOT = { species = { species_gender = male } }
+				}
+				portraits = {
+					yukariJB_01 yukariJB_02 yukariJB_03 yukariJB_04 yukariJB_05 yukariJB_06 yukariJB_07
+				}
+			}
+			add = {
+				trigger = {
+					exists = species
+					NOT = { species = { species_gender = indeterminable } }
+				}
+				portraits = {
+					yukariR_01 yukariR_02 yukariR_03 yukariO_01 yukariO_02 yukariO_03
+				}
+			}
+		}
+
+		# 惑星上のPOP
+		pop = {
+			add = {
+				trigger = { NOT = { species = { species_gender = female } } }
+				portraits = {
+					yukariJA_01 yukariJA_02 yukariJA_03 yukariJA_04 yukariJA_05 yukariJA_06 yukariJA_07
+				}
+			}
+			add = {
+				trigger = { NOT = { species = { species_gender = male } } }
+				portraits = {
+					yukariJB_01 yukariJB_02 yukariJB_03 yukariJB_04 yukariJB_05 yukariJB_06 yukariJB_07
+				}
+			}
+			add = {
+				trigger = { ruler = { gender = indeterminable } }
+				portraits = {
+					yukariR_01 yukariR_02 yukariR_03 yukariO_01 yukariO_02 yukariO_03
+				}
+			}
+		}
+
+		#リーダー
+		leader = {
+			add = {
+				trigger = { OR = { gender = male gender = indeterminable } }
+				portraits = {
+					yukariJA_01 yukariJA_02 yukariJA_03 yukariJA_04 yukariJA_05 yukariJA_06 yukariJA_07
+				}
+			}
+			add = {
+				trigger = { OR = { gender = female gender = indeterminable } }
+				portraits = {
+					yukariJB_01 yukariJB_02 yukariJB_03 yukariJB_04 yukariJB_05 yukariJB_06 yukariJB_07
+				}
+			}
+			add = {
+				trigger = { gender = indeterminable }
+				portraits = {
+					yukariR_01 yukariR_02 yukariR_03 yukariO_01 yukariO_02 yukariO_03
+				}
+			}
+		}
+
+		# 国家元首
+		ruler = {
+			add = {
+				trigger = { OR = { gender = male gender = indeterminable } }
+				portraits = {
+					yukariJA_01 yukariJA_02 yukariJA_03 yukariJA_04 yukariJA_05 yukariJA_06 yukariJA_07
+				}
+			}
+			add = {
+				trigger = { OR = { gender = female gender = indeterminable } }
+				portraits = {
+					yukariJB_01 yukariJB_02 yukariJB_03 yukariJB_04 yukariJB_05 yukariJB_06 yukariJB_07
+				}
+			}
+			add = {
+				trigger = { gender = indeterminable }
+				portraits = {
+					yukariR_01 yukariR_02 yukariR_03 yukariO_01 yukariO_02 yukariO_03
+				}
+			}
+		}
+	}
+}

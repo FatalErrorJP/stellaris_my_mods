@@ -1,0 +1,9 @@
+version="1.0.0"
+tags={
+	"Graphics"
+	"Overhaul"
+	"Fixes"
+}
+name="特性選択画面を見やすくしたい"
+supported_version="3.9.*"
+remote_file_id="2984480876"

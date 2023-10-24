@@ -1,0 +1,9 @@
+version="1.0.0"
+tags={
+	"Balance"
+	"Leaders"
+	"Fixes"
+}
+name="次世代のリーダーは君だ！"
+supported_version="3.9.*"
+remote_file_id="2988759983"

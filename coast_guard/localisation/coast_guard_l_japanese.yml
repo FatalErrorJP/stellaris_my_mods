@@ -1,0 +1,4 @@
+﻿l_japanese:
+  coast_guard:0 "沿岸警備隊"
+  edict_coast_guard:0 "$coast_guard$"
+  edict_coast_guard_desc:0 "艦隊許容量の余剰分を利用して沿岸警備隊を結成し、交易路を巡回させれば治安維持に繋がるだろう。"

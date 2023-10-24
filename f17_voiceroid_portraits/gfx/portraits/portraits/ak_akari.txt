@@ -1,0 +1,112 @@
+##############################################################
+# 紲星あかり種族用のポートレート定義
+##############################################################
+# 画像、音声ファイルとのリンク設定
+portraits = {
+	akariA_01 = { texturefile = "gfx/models/portraits/akari/akariA_01.dds" }
+	akariA_02 = { texturefile = "gfx/models/portraits/akari/akariA_02.dds" }
+	akariA_03 = { texturefile = "gfx/models/portraits/akari/akariA_03.dds" }
+	akariA_04 = { texturefile = "gfx/models/portraits/akari/akariA_04.dds" }
+	akariA_05 = { texturefile = "gfx/models/portraits/akari/akariA_05.dds" }
+	akariA_06 = { texturefile = "gfx/models/portraits/akari/akariA_06.dds" }
+	akariB_01 = { texturefile = "gfx/models/portraits/akari/akariB_01.dds" }
+	akariB_02 = { texturefile = "gfx/models/portraits/akari/akariB_02.dds" }
+	akariB_03 = { texturefile = "gfx/models/portraits/akari/akariB_03.dds" }
+	akariB_04 = { texturefile = "gfx/models/portraits/akari/akariB_04.dds" }
+	akariB_05 = { texturefile = "gfx/models/portraits/akari/akariB_05.dds" }
+	akariB_06 = { texturefile = "gfx/models/portraits/akari/akariB_06.dds" }
+}
+
+# 各場面別のポートレート
+portrait_groups = {
+	akariA = {
+		# デフォルト
+		default = akariA_01
+
+		# 帝国作成時
+		game_setup = {
+			add = {
+				trigger = { ruler = { OR = { gender = male gender = indeterminable } } }
+				portraits = {
+					akariA_01 akariA_02 akariA_03 akariA_04 akariA_05 akariA_06
+				}
+			}
+			add = {
+				trigger = { ruler = { OR = { gender = female gender = indeterminable } } }
+				portraits = {
+					akariB_01 akariB_02 akariB_03 akariB_04 akariB_05 akariB_06
+				}
+			}
+		}
+
+		# 汎用
+		species = {
+			add = {
+				trigger = {
+					exists = species
+					NOT = { species = { species_gender = female } }
+				}
+				portraits = {
+					akariA_01 akariA_02 akariA_03 akariA_04 akariA_05 akariA_06
+				}
+			}
+			add = {
+				trigger = {
+					exists = species
+					NOT = { species = { species_gender = male } }
+				}
+				portraits = {
+					akariB_01 akariB_02 akariB_03 akariB_04 akariB_05 akariB_06
+				}
+			}
+		}
+
+		# 惑星上のPOP
+		pop = {
+			add = {
+				trigger = { NOT = { species = { species_gender = female } } }
+				portraits = {
+					akariA_01 akariA_02 akariA_03 akariA_04 akariA_05 akariA_06
+				}
+			}
+			add = {
+				trigger = { NOT = { species = { species_gender = male } } }
+				portraits = {
+					akariB_01 akariB_02 akariB_03 akariB_04 akariB_05 akariB_06
+				}
+			}
+		}
+
+		#リーダー
+		leader = {
+			add = {
+				trigger = { OR = { gender = male gender = indeterminable } }
+				portraits = {
+					akariA_01 akariA_02 akariA_03 akariA_04 akariA_05 akariA_06
+				}
+			}
+			add = {
+				trigger = { OR = { gender = female gender = indeterminable } }
+				portraits = {
+					akariB_01 akariB_02 akariB_03 akariB_04 akariB_05 akariB_06
+				}
+			}
+		}
+
+		# 国家元首
+		ruler = {
+			add = {
+				trigger = { OR = { gender = male gender = indeterminable } }
+				portraits = {
+					akariA_01 akariA_02 akariA_03 akariA_04 akariA_05 akariA_06
+				}
+			}
+			add = {
+				trigger = { OR = { gender = female gender = indeterminable } }
+				portraits = {
+					akariB_01 akariB_02 akariB_03 akariB_04 akariB_05 akariB_06
+				}
+			}
+		}
+	}
+}

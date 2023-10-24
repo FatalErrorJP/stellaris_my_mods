@@ -1,0 +1,61 @@
+##############################################################
+# ポロン種族用のポートレート定義
+##############################################################
+# 画像、音声ファイルとのリンク設定
+portraits = {
+	poron_01 = { texturefile = "gfx/models/portraits/poron/poron_01.dds" }
+	poron_02 = { texturefile = "gfx/models/portraits/poron/poron_02.dds" }
+}
+
+# 各場面別のポートレート
+portrait_groups = {
+	poron = {
+		# デフォルト
+		default = poron_01
+
+		# 帝国作成時
+		game_setup = {
+			add = {
+				portraits = {
+					poron_01 poron_02
+				}
+			}
+		}
+
+		# 汎用
+		species = {
+			add = {
+				portraits = {
+					poron_01 poron_02
+				}
+			}
+		}
+
+		# 惑星上のPOP
+		pop = {
+			add = {
+				portraits = {
+					poron_01 poron_02
+				}
+			}
+		}
+
+		#リーダー
+		leader = {
+			add = {
+				portraits = {
+					poron_01 poron_02
+				}
+			}
+		}
+
+		# 国家元首
+		ruler = {
+			add = {
+				portraits = {
+					poron_01 poron_02
+				}
+			}
+		}
+	}
+}

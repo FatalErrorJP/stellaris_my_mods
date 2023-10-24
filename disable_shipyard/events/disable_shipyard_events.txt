@@ -1,0 +1,41 @@
+namespace = disable_shipyard
+
+# ジャガーノート建造時に動作するイベント
+ship_event = {
+	id = disable_shipyard.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ship_size = juggernaut
+	}
+
+	immediate = {
+		fleet.starbase = {
+			set_starbase_flag = juggernaut
+			set_starbase_building = { slot = 1 building = juggernaut_shipyard }
+		}
+	}
+}
+
+# Mod導入前のセーブデータで動かすための特殊イベント
+# コンソールコマンドで動作させる想定
+# event disable_shipyard.99
+event = {
+	id = disable_shipyard.99
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_country = {
+			limit = { always = yes }
+			every_owned_ship = {
+				limit = { is_ship_size = juggernaut }
+				fleet.starbase = {
+					set_starbase_flag = juggernaut
+					set_starbase_building = { slot = 1 building = juggernaut_shipyard }
+				}
+			}
+		}
+	}
+}

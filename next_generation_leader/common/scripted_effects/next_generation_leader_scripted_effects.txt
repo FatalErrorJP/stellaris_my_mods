@@ -1,0 +1,43 @@
+add_trait_next_generation_leader = {
+	owner = {
+		# 寿命の近いのリーダーの人数を取得する
+		export_trigger_value_to_variable = {
+			trigger = count_owned_leader
+			parameters = {
+				limit = {
+					leader_class = $LEADER_CLASS$
+					not = { is_same_value = root }
+					is_pool_leader = no
+					is_immortal = no
+					check_variable_arithmetic = { which = value:next_generation_leader_age_percentage_of_lifespan value > 1 }
+				}
+			}
+			variable = num_old_age_leader
+		}
+
+		# 次世代のリーダーの特性を持った人数を取得する
+		export_trigger_value_to_variable = {
+			trigger = count_owned_leader
+			parameters = {
+				limit = {
+					leader_class = $LEADER_CLASS$
+					not = { is_same_value = root }
+					is_pool_leader = no
+					has_trait = trait_next_generation_leader
+				}
+			}
+			variable = num_next_generation_leader_trait
+		}
+
+		# 寿命の近いリーダーがいれば、次世代のリーダーの特性を得る
+		if = {
+			limit = {
+				check_variable = { which = num_old_age_leader value > num_next_generation_leader_trait }
+			}
+			root = {
+				add_trait = trait_next_generation_leader
+				leader_event = { id = next_generation_leader.2 days = 3600 }
+			}
+		}
+	}
+}

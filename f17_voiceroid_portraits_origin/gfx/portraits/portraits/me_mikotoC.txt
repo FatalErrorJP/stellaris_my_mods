@@ -1,0 +1,154 @@
+﻿character = {
+	size = { x = 472 y = 324 }
+
+	entity = {
+		orientation = center_down
+		position = { x = 50 y = -20 }
+		scale = 24
+	}
+	#2d Portrait position
+	icon = {
+		orientation = center_down
+		position = { x = 0 y = 0 }
+		scale = 1.0
+	}
+}
+
+portraits = {
+	
+	mikotoC_01 = { texturefile = "gfx/models/portraits/meika/mikoto/mikotoC_01.dds" }
+	mikotoC_02 = { texturefile = "gfx/models/portraits/meika/mikoto/mikotoC_02.dds" }
+	mikotoC_03 = { texturefile = "gfx/models/portraits/meika/mikoto/mikotoC_03.dds" }
+	mikotoC_04 = { texturefile = "gfx/models/portraits/meika/mikoto/mikotoC_04.dds" }
+	mikotoC_05 = { texturefile = "gfx/models/portraits/meika/mikoto/mikotoC_05.dds" }
+	mikotoC_06 = { texturefile = "gfx/models/portraits/meika/mikoto/mikotoC_06.dds" }
+	mikotoC_07 = { texturefile = "gfx/models/portraits/meika/mikoto/mikotoC_07.dds" }
+}
+
+portrait_groups = {
+	mikoto = {
+		default = mikotoC_01
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					mikotoC_01
+					mikotoC_02
+					mikotoC_03
+					mikotoC_04
+					mikotoC_05
+					mikotoC_06
+					mikotoC_07
+
+				}
+			}
+
+		}
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					mikotoC_01
+					mikotoC_02
+					mikotoC_03
+					mikotoC_04
+					mikotoC_05
+					mikotoC_06
+					mikotoC_07
+				}
+			}
+		}		
+		
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					mikotoC_01
+					mikotoC_02
+					mikotoC_03
+					mikotoC_04
+					mikotoC_05
+					mikotoC_06
+					mikotoC_07
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			
+			add = {
+				trigger = {
+					leader_class = governor
+				}
+				portraits = {
+					mikotoC_01
+					mikotoC_02
+					mikotoC_03
+					mikotoC_04
+					mikotoC_05
+					mikotoC_06
+					mikotoC_07
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = scientist
+				}
+				portraits = {
+					mikotoC_01
+					mikotoC_02
+					mikotoC_03
+					mikotoC_04
+					mikotoC_05
+					mikotoC_06
+					mikotoC_07
+
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = admiral
+				}
+				portraits = {
+					mikotoC_01
+					mikotoC_02
+					mikotoC_03
+					mikotoC_04
+					mikotoC_05
+					mikotoC_06
+					mikotoC_07
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = general
+				}
+				portraits = {
+					mikotoC_01
+					mikotoC_02
+					mikotoC_03
+					mikotoC_04
+					mikotoC_05
+					mikotoC_06
+					mikotoC_07
+				}
+			}
+		}
+		
+		#leader scope 
+		ruler = {
+			add = {
+			    	portraits = {
+					mikotoC_01
+					mikotoC_02
+					mikotoC_03
+					mikotoC_04
+					mikotoC_05
+					mikotoC_06
+					mikotoC_07
+				}
+			}
+
+		}
+	}

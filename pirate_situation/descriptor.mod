@@ -1,0 +1,9 @@
+version="1.0.0"
+tags={
+	"Balance"
+	"Fixes"
+	"Events"
+}
+name="え、交易路に海賊が！？"
+supported_version="3.9.*"
+remote_file_id="2888039864"

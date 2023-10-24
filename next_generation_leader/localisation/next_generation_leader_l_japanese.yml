@@ -1,0 +1,5 @@
+﻿l_japanese:
+  # スキル
+  trait_next_generation_leader:0 "次世代のリーダー"
+  trait_next_generation_leader_desc:0 "世代交代を円滑に進めるためにも、後継者の育成は必要だ"
+  trait_next_generation_leader_tooltip:0 "$t$この特性を持つリーダーはリーダー雇用上限の対象とならない\n$t$この特性は10年で削除される"

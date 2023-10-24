@@ -1,0 +1,86 @@
+namespace = show_settings
+
+# 状況レポートにゲーム設定を表示する
+country_event = {
+	id = show_settings.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+	}
+
+	immediate = {
+		####
+		# ゲームの各設定値の取得
+		####
+		get_galaxy_setup_value = { which = setup_value_num_empires setting = num_empires }                         # AI帝国
+		get_galaxy_setup_value = { which = setup_value_num_advanced_empires setting = num_advanced_empires }       # 発展した開始状態のAI
+		get_galaxy_setup_value = { which = setup_value_num_fallen_empires setting = num_fallen_empires }           # 没落した帝国
+		get_galaxy_setup_value = { which = setup_value_num_marauder_empires setting = num_marauder_empires }       # マローダー帝国
+		get_galaxy_setup_value = { which = setup_value_tech_costs_scale setting = tech_costs_scale }               # 技術・伝統コスト
+		get_galaxy_setup_value = { which = setup_value_habitable_worlds_scale setting = habitable_worlds_scale }   # 居住可能な惑星
+		get_galaxy_setup_value = { which = setup_value_primitive_worlds_scale setting = primitive_worlds_scale }   # 原始文明
+		get_galaxy_setup_value = { which = setup_value_crisis_strength_scale setting = crisis_strength_scale }     # 危機のレベル
+
+		# ミッドゲーム開始年
+		get_galaxy_setup_value = { which = setup_value_mid_game_year setting = mid_game_year }
+		change_variable = { which = setup_value_mid_game_year value = 2200 }
+
+		# エンドゲーム開始年
+		get_galaxy_setup_value = { which = setup_value_end_game_year setting = end_game_year }
+		change_variable = { which = setup_value_end_game_year value = 2200 }
+
+		# 勝利年
+		get_galaxy_setup_value = { which = setup_value_victory_year setting = victory_year }
+		change_variable = { which = setup_value_victory_year value = 2200 }
+
+		get_galaxy_setup_value = { which = setup_value_num_hyperlanes setting = num_hyperlanes }                   # ハイパーレーン密度
+		get_galaxy_setup_value = { which = setup_value_num_gateways setting = num_gateways }                       # 放棄されたゲートウェイ
+		get_galaxy_setup_value = { which = setup_value_num_wormhole_pairs setting = num_wormhole_pairs }           # ワームホール
+		get_galaxy_setup_value = { which = setup_value_num_guaranteed_colonies setting = num_guaranteed_colonies } # 居住性保証惑星
+
+		####
+		# 状況レポートの追加
+		####
+		begin_event_chain = {
+			event_chain = show_settings_game_start_chain
+			target = root
+		}
+	}
+}
+
+# 状況レポートからゲーム設定を削除する
+event = {
+	id = show_settings.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {}
+
+	immediate = {
+		every_country = {
+			limit = { has_event_chain = show_settings_game_start_chain }
+
+			# 状況レポートの削除
+			end_event_chain = show_settings_game_start_chain
+
+			# 不要パラメータの削除
+			clear_variable = setup_value_num_empires
+			clear_variable = setup_value_num_advanced_empires
+			clear_variable = setup_value_num_fallen_empires
+			clear_variable = setup_value_num_marauder_empires
+			clear_variable = setup_value_tech_costs_scale
+			clear_variable = setup_value_habitable_worlds_scale
+			clear_variable = setup_value_primitive_worlds_scale
+			clear_variable = setup_value_crisis_strength_scale
+			clear_variable = setup_value_mid_game_year
+			clear_variable = setup_value_end_game_year
+			clear_variable = setup_value_victory_year
+			clear_variable = setup_value_num_hyperlanes
+			clear_variable = setup_value_num_gateways
+			clear_variable = setup_value_num_wormhole_pairs
+			clear_variable = setup_value_num_guaranteed_colonies
+		}
+	}
+}

@@ -1,0 +1,26 @@
+﻿hinomoto = {
+	selectable = { always = no }
+	inline_script = "name_lists/human_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_HINOMOTO
+	}
+}
+
+HINOMACH = {
+	selectable = { always = no }
+	inline_script = "name_lists/machine_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_HINOMOTO
+	}
+}
+
+HINOLITHOID = {
+	selectable = { always = no }
+	inline_script = "name_lists/lithoid_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_HINOMOTO
+	}
+}

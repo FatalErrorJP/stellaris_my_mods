@@ -1,0 +1,121 @@
+namespace = kill_leader_bounus
+
+# リーダー解雇時のイベント
+# リーダーとして対象の国家に従事した年数分だけ、国家に内部ポイントを付与する
+# This = Country
+# From = Leader
+country_event = {
+	id = kill_leader_bounus.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		from = {
+			leader_years_of_service > 0
+			not = { leader_class = envoy }
+			owner = {
+				is_same_empire = root
+			}
+			is_pool_leader = no
+		}
+	}
+
+	immediate = {
+		from = {
+			# リーダーの所属年数の取得
+			export_trigger_value_to_variable = {
+				trigger = leader_years_of_service
+				variable = leader_years
+			}
+
+			# リーダーの所属年数の加算
+			switch = {
+				trigger = leader_class
+				governor  = { add_leader_years = { LEADER_CLASS = governor  } }
+				admiral   = { add_leader_years = { LEADER_CLASS = admiral   } }
+				scientist = { add_leader_years = { LEADER_CLASS = scientist } }
+				general   = { add_leader_years = { LEADER_CLASS = general   } }
+			}
+		}
+	}
+}
+
+###############################################################################
+# リーダープール追加時のイベント
+# リーダーとして対象の国家に従事した年数分だけ、国家に内部ポイントを付与する
+###############################################################################
+# 総督
+# This = Country
+# From = Leader
+country_event = {
+	id = kill_leader_bounus.2
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		not = { has_country_flag = spawning_renowned_leader }
+		is_leader_pool_bonus_event= { LEADER_CLASS = governor }
+	}
+
+	immediate = {
+		add_leader_bounus = { LEADER_CLASS = governor }
+	}
+}
+
+# 提督
+# This = Country
+# From = Leader
+country_event = {
+	id = kill_leader_bounus.3
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		not = { has_country_flag = spawning_renowned_leader }
+		is_leader_pool_bonus_event= { LEADER_CLASS = admiral }
+	}
+
+	immediate = {
+		add_leader_bounus = { LEADER_CLASS = admiral }
+	}
+}
+
+# 科学者
+# This = Country
+# From = Leader
+country_event = {
+	id = kill_leader_bounus.4
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		not = { has_country_flag = spawning_renowned_leader }
+		is_leader_pool_bonus_event= { LEADER_CLASS = scientist }
+	}
+
+	immediate = {
+		add_leader_bounus = { LEADER_CLASS = scientist }
+	}
+}
+
+# 将軍
+# This = Country
+# From = Leader
+country_event = {
+	id = kill_leader_bounus.5
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		not = { has_country_flag = spawning_renowned_leader }
+		is_leader_pool_bonus_event= { LEADER_CLASS = general }
+	}
+
+	immediate = {
+		add_leader_bounus = { LEADER_CLASS = general }
+	}
+}

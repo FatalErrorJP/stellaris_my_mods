@@ -1,0 +1,238 @@
+###########################################################
+# ブラック企業を許さないマローダーの会Mod用のScripted effects
+# Vanillaや他ModのScripted effectsとの互換性を保つため、
+# 本ModのScripted effectsの名前は必ず頭にdestroy_blackを付けるようにしています。
+#
+# 各引数に指定できるパラメータは以下の通りです。
+#
+# COUNTRY:マローダー艦隊の所属国家
+#  marauder_1
+#  marauder_2
+#  marauder_3
+#
+# FLEETTYPE:マローダー艦隊の種類
+#  armada_of_the_voidborn
+#  star_rider_flotilla
+#  first_storm_wing
+#  dwamak_bashers
+#  unhinged_screamer_flotilla
+#  frenzied_volunteer_squadron
+#  her_chosen_champions
+#  order_of_eternal_night
+#  twilight_congregation
+###########################################################
+
+#################################################
+# 無償労働させられた月数を0に初期化する
+# SCOPE: fleet
+# Parameters:
+#  FLEETTYPE:マローダー艦隊の種類
+#################################################
+destroy_black_initilize_count = {
+	set_variable = { which = $FLEETTYPE$_count value = 0 }
+}
+
+#################################################
+# 滞納金の支払いイベントを呼び出す
+# SCOPE: fleet
+# Parameters:
+#  FLEETTYPE:マローダー艦隊の種類
+#################################################
+destroy_black_call_arrears_event = {
+	if = {
+		# 対象の部隊の契約更新の回答を保留しているかどうか
+		limit = {
+			check_variable = { which = $FLEETTYPE$_count value >= 1 }
+		}
+
+		every_country = {
+			# マローダー艦隊の所属国家(マローダー)の特定
+			limit = {
+				has_country_flag = $COUNTRY$
+			}
+			save_event_target_as = marauder_country
+		}
+
+		# 滞納イベントの発火開始
+		fleet_event = {
+			id = destroy.2
+			scopes = {
+				from = event_target:marauder_country
+			}
+		}
+	} else = {
+		destroy_black_count_clear = { FLEETTYPE = $FLEETTYPE$ }
+	}
+}
+
+#################################################
+# 契約更新するかどうかの回答を保留しているかチェックし
+# 保留中の場合、契約国への襲撃イベントを発火する
+# SCOPE: fleet
+# Parameters:
+#  FLEETTYPE:マローダー艦隊の種類
+#################################################
+destroy_black_check_on_hold = {
+	if = {
+		# 対象の部隊の契約更新の回答を保留しているかどうか
+		limit = {
+			check_variable = { which = $FLEETTYPE$_count value >= 0 }
+		}
+
+		# 月数のカウントアップ
+		change_variable = { which = $FLEETTYPE$_count value = 1 }
+
+		# 襲撃部隊の呼び出し
+		fleet_event = { id = destroy.12 }
+
+		# 再帰処理
+		fleet_event = { id = destroy.11 days = 30 }
+	}
+}
+
+#################################################
+# 契約した艦隊と同規模の艦隊x無償労働させられた月数の部隊を作成する
+# バニラオリジナル(events/marauder_events.txt)のmarauder.6
+# (マローダーを全滅させた時の復習部隊)の処理を参考にしています
+# SCOPE: fleet
+# Parameters:
+#  COUNTRY:マローダー艦隊の所属国家
+#  FLEETTYPE:マローダー艦隊の種類
+#################################################
+destroy_black_create_fleets = {
+	# 襲撃対象となる入植地の確定
+	owner = {
+		random_owned_planet = {
+			solar_system = {
+				save_event_target_as = black_target_system
+				star = { save_event_target_as = black_target_star }
+			}
+			save_event_target_as = black_target_planet
+		}
+	}
+
+	every_country = {
+		# 作成対象の襲撃部隊の所属国家(マローダーの国家)の特定
+		limit = {
+			has_country_flag = $COUNTRY$
+		}
+		save_event_target_as = marauder_country
+
+		# 襲撃部隊のリーダーの作成
+		create_leader = {
+			class = admiral
+			species = owner_main_species
+			name = random
+			skill = 3
+			leader_age_min = 25
+			leader_age_max = 45
+			traits = {
+				0 = leader_trait_mercenary_warrior
+			}
+		}
+
+		# 襲撃部隊の艦隊の作成
+		create_fleet = {
+			name = "NAME_Destroy_Black_Fleet"
+			effect = {
+				# 襲撃部隊の所属国家の設定
+				set_owner = event_target:marauder_country
+
+				# 艦船の作成
+				while  = {
+					count = root.$FLEETTYPE$_count
+					create_$FLEETTYPE$ = yes
+				}
+
+				# リーダーの割り当て
+				assign_leader = last_created_leader
+
+				# 出現位置の設定
+				set_location = {
+					target = event_target:black_target_star
+					distance = 370
+					angle = 12
+				}
+
+				# 艦隊態勢「攻撃的」、軌道爆撃「無差別爆撃」
+				set_fleet_stance = aggressive
+				set_fleet_bombardment_stance = indiscriminate
+
+				# 襲撃部隊の移動先の指定
+				auto_move_to_planet = {
+					target = event_target:black_target_planet
+					clear_auto_move_on_arrival = no
+				}
+
+				# フラグの設定
+				set_fleet_flag = $FLEETTYPE$_destroy
+			}
+			settings = {
+				can_upgrade = no
+				can_change_composition = no
+			}
+		}
+
+		last_created_fleet = {
+			save_event_target_as = black_target_fleet
+		}
+
+	}
+
+	if = {
+		limit = {
+			check_variable = { which = $FLEETTYPE$_count value = 1 }
+		}
+
+		# 初回の襲撃の場合、イベントメッセージを表示する
+		fleet_event = {
+			id = destroy.13
+			scopes = {
+				from = event_target:black_target_fleet
+				fromfrom = event_target:black_target_planet
+			}
+		}
+	}
+
+	# 1%の確率で大ハーンイベントを発生させる
+	event_target:marauder_country = {
+		random_list = {
+			1 = { country_event = { id = marauder.500 } }
+			99 = {}
+		}
+	}
+}
+
+#################################################
+# 襲撃部隊を撤収させる
+# SCOPE: fleet
+# Parameters:
+#  COUNTRY:マローダー艦隊の所属国家
+#  FLEETTYPE:マローダー艦隊の種類
+#################################################
+destroy_black_delete_fleets = {
+	every_country = {
+		limit = {
+			has_country_flag = $COUNTRY$
+		}
+		every_owned_fleet = {
+			limit = {
+				has_fleet_flag = $FLEETTYPE$_destroy
+			}
+			delete_fleet = this
+		}
+	}
+}
+
+#################################################
+# 無償労働させられた月数をクリア(-1)にする
+# SCOPE: fleet
+# Parameters:
+#  FLEETTYPE:マローダー艦隊の種類
+#################################################
+destroy_black_count_clear = {
+	if = {
+		limit = { has_fleet_flag = $FLEETTYPE$ }
+		set_variable = { which = $FLEETTYPE$_count value = -1 }
+	}
+}

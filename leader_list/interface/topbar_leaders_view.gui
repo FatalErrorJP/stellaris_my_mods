@@ -1,0 +1,401 @@
+@dynamic_extra = 0.8
+@slim_row_h = 93
+
+guiTypes = {
+
+	containerWindowType = {
+		name = "topbar_leaders_view"
+		size = { width = 1200 height = 640 }
+		dynamic_extra_height = @dynamic_extra
+		position = { x = -1053 y = 40 }
+		show_position = { x = 35 y = 40 }
+        hide_position = { x = -1270 y = 40 }
+        animation_time = 200
+        animation_type = decelerated
+		
+		orientation = upper_left
+		moveable = no
+		clipping = no
+		show_sound = "interface"
+		
+		background = {
+			name = "background"
+			spriteType = "GFX_tile_outliner_bg"
+		}
+		
+		iconType = {
+			name = "hex_bg"
+			spriteType = "GFX_hex_bg"
+			position = { x = 5 y = -12 }
+			alwaysTransparent = yes
+		}
+		
+		iconType = {
+			name = "leaders_header_line"
+			quadTextureSprite = "GFX_line"
+			position = { x = 6 y = 21 }
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType={
+			name = "leaders_header"
+			font = "malgun_goth_24"
+			text = "topbar_button_leaders_name"
+			position = { x = 35 y = 5 }
+			maxWidth = 300
+			maxHeight = 20
+			fixedSize = yes
+			format = left
+		}
+		
+		buttonType = {
+			name = "close"
+			quadTextureSprite = "GFX_close"
+			position = { x = -45 y = 16 }
+			orientation = upper_right
+			shortcut = "ESCAPE"
+			clicksound = "back_click"
+			pdx_tooltip = "CLOSE_TITLE"
+		}
+
+		@class_icon_x = 32
+		@class_icon_y = 26
+		@class_label_x = 50
+		@class_label_y = 18
+		@class_tab_button_y = 40
+
+		@recruit_button_y = 70
+        
+		containerWindowType = {
+			name = "all_tab_container"
+			position = { x = 6 y = @class_tab_button_y }
+
+			buttonType = {
+	        	name = "show_all_tab_button"
+				spriteType = "GFX_button_filter_tab_112_34"
+	        }
+
+			iconType = {
+				name = "all_icon"
+				position = { x = 36 y = 29 }
+				spriteType = "GFX_icon_leader"
+				alwaysTransparent = yes
+				centerPosition = yes
+				scale = 0.9
+			}
+	        
+			instantTextBoxType = {
+				name = "all_lable"
+				font = "cg_16b"
+				text = "ALL"
+				position = { x = 50 y = @class_label_y }
+				maxWidth = 70
+				maxHeight = 20
+				multiline = no
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "admiral_tab_container"
+			position = { x = 135 y = @class_tab_button_y }
+
+			buttonType = {
+	        	name = "show_admiral_tab_button"
+				spriteType = "GFX_button_filter_tab_112_34"
+	        }
+
+			iconType = {
+				name = "admiral_icon"
+				position = { x = @class_icon_x y = @class_icon_y }
+				spriteType = "GFX_leader_icons"
+				alwaysTransparent = yes
+				centerPosition = yes
+				frame = 1
+				scale = 0.7
+			}
+	        
+			instantTextBoxType = {
+				name = "admirals_title_lable"
+				font = "cg_16b"
+				text = "admiral_plural"
+				position = { x = @class_label_x y = @class_label_y }
+				maxWidth = 90
+				maxHeight = 20
+				multiline = no
+				format = left
+				alwaystransparent = yes
+			}
+			
+		}
+
+        containerWindowType = {
+			name = "general_tab_container"
+			position = { x = 264 y = @class_tab_button_y }
+
+			buttonType = {
+	        	name = "show_general_tab_button"
+				spriteType = "GFX_button_filter_tab_112_34"
+	        }
+
+			iconType = {
+				name = "general_icon"
+				position = { x = @class_icon_x y = @class_icon_y }
+				spriteType = "GFX_leader_icons"
+				alwaysTransparent = yes
+				centerPosition = yes
+				frame = 2
+				scale = 0.7
+			}
+	        
+			instantTextBoxType = {
+				name = "generals_title_lable"
+				font = "cg_16b"
+				text = "general_plural"
+				position = { x = @class_label_x y = @class_label_y }
+				maxWidth = 90
+				maxHeight = 20
+				multiline = no
+				format = left
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "governor_tab_container"
+			position = { x = 393 y = @class_tab_button_y }
+
+			buttonType = {
+	        	name = "show_governor_tab_button"
+				spriteType = "GFX_button_filter_tab_112_34"
+	        }
+
+			iconType = {
+				name = "governor_icon"
+				position = { x = @class_icon_x y = @class_icon_y }
+				spriteType = "GFX_leader_icons"
+				alwaysTransparent = yes
+				centerPosition = yes
+				frame = 4
+				scale = 0.7
+			}
+
+			instantTextBoxType = {
+				name = "governor_title_lable"
+				font = "cg_16b"
+				text = "governor_plural"
+				position = { x = @class_label_x y = @class_label_y }
+				maxWidth = 90
+				maxHeight = 20
+				multiline = no
+				format = left
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "scientist_tab_container"
+			position = { x = 522 y = @class_tab_button_y }
+
+			buttonType = {
+	        	name = "show_scientist_tab_button"
+				spriteType = "GFX_button_filter_tab_112_34"
+	        }
+
+			iconType = {
+				name = "scientist_icon"
+				position = { x = @class_icon_x y = @class_icon_y }
+				spriteType = "GFX_leader_icons"
+				alwaysTransparent = yes
+				centerPosition = yes
+				frame = 3
+				scale = 0.7
+			}
+
+			instantTextBoxType = {
+				name = "scientits_title_lable"
+				font = "cg_16b"
+				text = "scientist_plural"
+				position = { x = @class_label_x y = @class_label_y }
+				maxWidth = 90
+				maxHeight = 20
+				multiline = no
+				format = left
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "leader_list_container"
+			position = { x = 15 y = 90 }
+			size = { width = 800 height = 490 }
+			clipping = no
+
+			smoothListBoxType = {
+				name = "leader_container_list"
+				orientation = "UPPER_LEFT"
+				priority = 100
+				size = { x = 805 y = 520 }
+				scrollbartype = "standardlistbox_slider"
+				spacing = 0
+				defaultSelection = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "leader_portrait_container"
+			size = { width = 340 height = 510 }
+			position = { x = 840 y = 95 }
+			clipping = no
+
+			background = {
+				name = "leader_details_bg"
+				spriteType = "GFX_invisible"
+			}
+		}
+
+		containerWindowType = {
+			name = "no_available_leader_container"
+			size = { width = 340 height = 510 }
+			position = { x = 690 y = 95 }
+			clipping = no
+
+			background = {
+				name = "no_available_leader_container_bg"
+				spriteType = "GFX_invisible"
+			}
+
+			instantTextBoxType = {
+				name = "no_available_leader_text"
+				font = "cg_16b"
+				position = { x = 0 y = 240 }
+				maxWidth = 340
+				maxHeight = 50
+				format = center
+			}
+		}
+
+		@leader_action_button_pos_y = -86
+
+		buttonType = {
+			name = "hire_leader_button"
+			quadTextureSprite = "GFX_standard_button_180_34_button"
+			position = { x = -215 y = @leader_action_button_pos_y }
+			orientation = "LOWER_RIGHT"
+			buttonText = "HIRE_LEADER"
+			font = "cg_16b"
+		}
+
+		buttonType = {
+			name = "dismiss_leader_button"
+			quadTextureSprite = "GFX_standard_button_180_34_button"
+			position = { x = -362 y = @leader_action_button_pos_y }
+			orientation = "LOWER_RIGHT"
+			buttonText = "DISMISS_LEADER"
+			font = "cg_16b"
+			shortcut = "DEL" 
+		}
+
+
+		checkboxType = {
+			position = { x = 9 y = 609 }
+			name = "autoselect_traits_checkbox"
+			spriteType = "GFX_checkbox_20_20_01"
+		}
+
+		instantTextBoxType = {
+			name = "autoselect_traits_title"
+			font = "cg_16b"
+			text = "autoselect_traits"
+			position = { x = 42 y = 615 }
+			maxWidth = 200
+			maxHeight = 40
+			fixedSize = yes
+			format = left
+		}
+	}
+
+	containerWindowType = {
+		name = "leaders_view_gridbox_entry"
+		size = { width = 800 height = @slim_row_h }
+
+		containerWindowType = {
+			name = "selected_overlay"
+			position = { x = 3 y = 0 }
+			size = { width = 800 height = 88 }
+
+			background = {
+				name = "selected_bg"
+				spriteType = "GFX_glow_tile_orange_no_padding"
+				alwaysTransparent = yes
+			}
+		}
+
+		buttonType = {
+			name = "expand_leader_button"
+			spriteType = "GFX_custom_leader_assign_entry_bg"
+			position = { x = -9 y = -12 }
+			size = { x = 800 y = 100 }
+			oversound = "no_sound"
+			clicksound = "select_click"
+		}
+	}
+
+	containerWindowType = {
+		name = "collapsable_leader_container"
+		size = { width = 800 height = 42 }
+		clipping = no
+
+		buttonType = {
+			name = "expand_button"
+			spriteType = "GFX_custom_expand_row_long_button"
+			position = { x = 3 y = 0 }
+			size = { x = 800 y = 42 }
+			oversound = "no_sound"
+			clicksound = "select_click"
+			format = left
+			font = "cg_16b"
+			borderSize = { x = 15 y = 0 }
+			pdx_tooltip = "CLICK_TO_EXPAND"
+		}
+
+		buttonType = {
+			name = "unexpand_button"
+			spriteType = "GFX_custom_unexpand_row_long_button"
+			position = { x = 3 y = 0 }
+			size = { x = 800 y = 42 }
+			oversound = "no_sound"
+			clicksound = "select_click"
+			format = left
+			font = "cg_16b"
+			borderSize = { x = 15 y = 0 }
+			pdx_tooltip = "CLICK_TO_COLLAPSE"
+		}
+
+		instantTextBoxType={
+			name = "rhs_header_button_custom_text"
+			position = { x = 404 y = 13 }
+			font = "cg_16b"
+			maxWidth = 400
+			maxHeight = 20
+			fixedSize = yes
+			format = right
+		}
+
+		gridBoxType = {
+			name = "item_gridbox"
+			position = { x = 0 y = 42 }
+
+			slotSize = { width = 640 height = @slim_row_h }
+			max_slots_horizontal = 1
+			format = UPPER_LEFT
+
+			background = {
+				name = "background"
+				spriteType = "GFX_tiled_window_transparent"
+				position = { x = 0 y = 0 }
+				alwaystransparent = yes
+			}
+		}
+	}
+}

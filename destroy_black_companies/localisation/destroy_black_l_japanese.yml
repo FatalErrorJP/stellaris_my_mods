@@ -1,0 +1,28 @@
+﻿l_japanese:
+  destroy.2.name:0 "[From.GetName]"
+  destroy.2.desc_1:0 "返答するまでの期間の間、無償労働させられた分を支払ってもらおうか。"
+  destroy.2.desc_2:0 "ヒャッハー！ドゥワマクども！これまで滞納していた分の支払いはどうした？"
+  destroy.2.desc_3:0 "女神はお怒りだぞ、[Root.Owner.GetName]。このまま滞納金を支払わないつもりか？"
+  destroy.2a:0 "滞納金を支払う"
+  destroy.2b:0 "支払いを拒否する"
+
+  destroy.3.name:0 "[From.GetName]"
+  destroy.3.desc_1:0 "全額支払いを確認した。襲撃部隊もただちに撤収させよう。"
+  destroy.3.desc_2:0 "ヒャッハー！これで手打ちだな。もうドゥワマク煮込みはいらねえよ、今んとこはな。"
+  destroy.3.desc_3:0 "正しい選択だ。襲撃部隊も撤収させよう。女神の慈悲深さに感謝をするんだな"
+  destroy.3a:0 "通信終わり。"
+  destroy.3a.tooltip:0 "§H[Root.GetName]§!への返答を保留し続けた結果出現した襲撃部隊が全て撤退する"
+
+  destroy.4.name:0 "[From.GetName]"
+  destroy.4.desc_1:0 "そうか。では代わりに君たちから気のすむまで奪うとしよう。"
+  destroy.4.desc_2:0 "そう言ってくれると思ってたぜ！思う存分ドゥワマク煮込みを楽しませて貰うとするぜ！\n\nヒャッハー！"
+  destroy.4.desc_3:0 "虚空の女神はその反応を予期しておられたが、選択肢を与えてやらねばならんからな。こうなれば、ふさわしい儀礼的戦闘を通じて奴隷と富を得ることができよう。もちろん、女神の名のもとにな。"
+  destroy.4a:0 "鎮圧しなければ。"
+  destroy.4a.tooltip:0 "今後2年間は襲撃部隊の略奪行為が続くだろう。"
+
+  destroy.13.name:0 "傭兵の襲撃"
+  destroy.13.desc:0 "§H[From.Owner.GetName]§!所属の傭兵部隊が、§H[From.From.GetName]§!を襲撃しようとしているとの情報を検知した。\n契約を更新しないまま§H[Root.GetName]§!を無償で働かせている事に対する報復のようだ。\n\n回答を保留し続ければ攻撃はますます激しくなるだろう。"
+  destroy.13a:0 "返答を急がなくては。"
+  destroy.13a.tooltip:0 "§H[Root.GetName]§!への返答を保留し続けた場合\n30日毎に新規の襲撃艦隊が出現する"
+
+  NAME_Destroy_Black_Fleet:0 "襲撃部隊"

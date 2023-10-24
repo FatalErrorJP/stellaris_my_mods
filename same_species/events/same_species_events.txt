@@ -1,0 +1,32 @@
+namespace = same_species
+
+# 最初の起源特有の説明文のボタンを押したときに呼ばれる処理
+country_event = {
+	id = same_species.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {}
+
+	immediate = {
+		add_same_species = yes
+	}
+}
+
+# 国家生成時に呼ばれる処理
+country_event = {
+	id = same_species.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# 何故かdays_passed > 0をここに書いても判定してくれないのでimmediateで条件を絞り込む
+	}
+
+	immediate = {
+		if = {
+			limit = { days_passed > 0 }
+			add_same_species = yes
+		}
+	}
+}

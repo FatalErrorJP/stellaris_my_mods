@@ -1,0 +1,188 @@
+﻿
+zunko = {
+	ship_names = {
+
+		generic = {
+			"ナデシコ" ""コスモス "カキツバタ" "シャクヤク" "ユーチャリス" "リアトリス" "トビウメ" "グラジオラス" "ジキタリス" "ユウガオ" "ヒメジョオン" "ハルジョオン" "クロッカス" "パンジー" "デルフィニウム" "チューリップ" "アマリリス" "ライラック" 
+		}
+
+		corvette = {
+		}
+		
+		destroyer = {
+		}
+		
+		cruiser = {
+		}
+		
+		battleship = {
+		}
+
+		titan = {
+		}
+
+		colossus = {
+		}
+		
+		science = {
+		}
+		
+		colonizer = {
+		}
+		
+		constructor = {
+		}
+
+		transport = {
+		}
+	
+		military_station_small = {
+		}
+
+		ion_cannon = {
+		}
+	}
+
+	fleet_names = {
+		random_names = {
+		}
+		sequential_name = "第%C%艦隊"
+	}
+	
+	army_names = {
+		defense_army = {
+			sequential_name = "ずんだ第%C%部隊"
+		}
+			
+		assault_army = {
+			sequential_name = "第%C%部隊"
+		}
+		
+		slave_army = {
+			sequential_name = "ずんだファンのダークサイド第%C%部隊"
+		}
+		
+		clone_army = { 
+			sequential_name = "量産型ずんだ第%C%部隊"
+		}
+		
+		robotic_army = {
+			sequential_name = "ずんだ第%C%部隊"
+		}
+
+		robotic_defense_army = {
+			sequential_name = "ずんだ第%C%防衛部隊"
+		}
+		
+		android_army = {
+			sequential_name = "ずんだ第%C%部隊"
+		}
+
+		android_defense_army = {
+			sequential_name = "ずんだ第%C%防衛部隊"
+		}
+		
+		psionic_army = { 
+			sequential_name = "ニュータイプ部隊第%C%小隊"
+		}
+		
+		xenomorph_army = {
+			sequential_name = "人造ずんだ第%C%部隊"
+		}
+		
+		gene_warrior_army = {
+			sequential_name = "コーディネイター部隊第%C%小隊"
+		}
+		
+		occupation_army = {
+			sequential_name = "ずんだ第%C%部隊"
+		}
+
+		robotic_occupation_army = {
+			sequential_name = "ずんだ第%C%部隊"
+		}
+
+		android_occupation_army = {
+			sequential_name = "ずんだ第%C%部隊"
+		}
+	}
+
+	planet_names = {
+
+		generic = {
+			names = {
+				"アベロンス" "パルデナー" "ベロング" "フラメント" "プラスク" "コロンド" "レダーン" "ドレルン" "ファリシェナ" "ベナム" "ムルラドロク" "ストゥガ" "アヴェグオド" "カガレル" "スロネマ" "ユニトルム" "ソノレフ" "フトレム" "ガラクーン" "ラクアプス" "バッティロ" "エロラグオ" "オルブトメア" "ベアロド" "パルドレス" "ルポデク" "ヘンマ" "ファメン" "サドルレン" "アルガレモ" "ポガル" "カサコー" "ペガンス" "クラーナ" "ラモド" "ドラネ" "アーダルク" "スモ" "グータン" "テラソク" "ヴァロプン" "ユニレム" "グテラム" "キネル" "ブルル" "バムン" "メバルン" "ケンプ" "プラルド" "フィモルド" "グトレグン" "テルガム" "メグロル" "マルゲン" "クーメ" "ガトッド" "ペドロムン" "セスラデス" "ケムノド" "ルカポル" "ユサベル" "ボクセル" "セルドマ" "サグネム" "アルレスト" "イカゲット" "マソル" "ナツルク" "アロンゲド" "アロメン" "ロメナド" "スガラン" "コロルナ" "メラデュリン" "デュラケム" "ハッチモッド" "ゲランス"
+			}
+		}
+		
+		pc_desert = {
+			names = {
+			}
+		}
+		
+		pc_tropical = {
+			names = {
+			}
+		}
+		
+		pc_arid = {
+			names = {
+			}
+		}
+		
+		pc_continental= {
+			names = {
+			}
+		}
+		
+		pc_ocean = {
+			names = {
+			}
+		}
+		
+		pc_tundra = {
+			names = {
+			}
+		}
+		
+		pc_arctic = {
+			names = {
+			}
+		}
+
+		pc_savannah = {
+			names = {
+			}
+		}
+
+		pc_alpine = {
+			names = {
+			}
+		}
+		
+	}
+
+	character_names = {
+		default = {
+			# A complete name
+			full_names = { 
+				"東北ずん子"
+			}
+			
+			# Always combined with a second name
+			first_names = { 
+			}
+			
+			# Always combined with a first name
+			second_names = { 
+			}
+			
+			regnal_first_names = {
+			}
+			
+			regnal_second_names = {
+			}
+		}
+	}
+
+}

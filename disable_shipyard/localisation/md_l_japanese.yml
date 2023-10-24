@@ -1,0 +1,24 @@
+﻿###########################################################
+# 巨大造船所のON/OFF機能追加用コード
+# コード提供：6thStrikeUnit様
+###########################################################
+l_japanese:
+  mega_shipyard_1_disabled:0 "$mega_shipyard_1$ 無効化中"
+  mega_shipyard_1_disabled_DESC:0 "この$mega_shipyard_1$の造船機能は現在停止されている。"
+  mega_shipyard_1_enabled:0 "$mega_shipyard_1$ 有効化"
+  mega_shipyard_1_enabled_DESC:0 "$mega_shipyard_1$の造船機能を有効化する。"
+
+  mega_shipyard_2_disabled:0 "$mega_shipyard_2$ 無効化中"
+  mega_shipyard_2_disabled_DESC:0 "この$mega_shipyard_2$の造船機能は現在停止されている。"
+  mega_shipyard_2_enabled:0 "$mega_shipyard_2$ 有効化"
+  mega_shipyard_2_enabled_DESC:0 "$mega_shipyard_2$の造船機能を有効化する。"
+
+  mega_shipyard_3_disabled:0 "$mega_shipyard_3$ 無効化中"
+  mega_shipyard_3_disabled_DESC:0 "この$mega_shipyard_3$の造船機能は現在停止されている。"
+  mega_shipyard_3_enabled:0 "$mega_shipyard_3$ 有効化"
+  mega_shipyard_3_enabled_DESC:0 "$mega_shipyard_3$の造船機能を有効化する。"
+
+  mega_shipyard_restored_disabled:0 "$mega_shipyard_3$ 無効化中"
+  mega_shipyard_restored_disabled_DESC:0 "この$mega_shipyard_3$の造船機能は現在停止されている。"
+  mega_shipyard_restored_enabled:0 "$mega_shipyard_3$ 有効化"
+  mega_shipyard_restored_enabled_DESC:0 "$mega_shipyard_3$の造船機能を有効化する。"

@@ -1,0 +1,6 @@
+# this = country
+on_monthly_pulse_country = {
+	events = {
+		coast_guard.1
+	}
+}

@@ -1,0 +1,10 @@
+version="1.0.0"
+tags={
+	"Utilities"
+}
+dependencies={
+	"造船機能をON/OFFしたい"
+}
+name="艦隊をグループ化したかった"
+supported_version="3.9.*"
+remote_file_id="2816799181"

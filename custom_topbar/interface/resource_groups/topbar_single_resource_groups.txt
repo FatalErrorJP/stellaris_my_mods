@@ -1,0 +1,300 @@
+###############################################################################
+#
+# STORED:現在の備蓄
+# BALANCE:来月の収入
+#
+# NEGはネガティブ。赤字収入の場合なので赤色表示される
+# DECは1000～10000までの間の桁数表示の制御用
+# MAXは備蓄最大の場合
+# BALANCE_ONLYは収入の表記が不要な場合
+#
+# RESOURCE_GROUP_DEFAULT:0                   "§W$STORED|*0$ +$BALANCE|*0$§!"
+# RESOURCE_GROUP_DEFAULT_NEG:0               "§R$STORED|*0$ $BALANCE|*0$§!"
+# RESOURCE_GROUP_DEFAULT_NEG_TOTAL_POS:0     "§R$STORED|*0$ +$BALANCE|*0$§!"
+# RESOURCE_GROUP_DEFAULT_MAX:0               "§Y$STORED|*0$ +$BALANCE|*0$§!"
+# RESOURCE_GROUP_DEFAULT_DEC:0               "§W$STORED|*1$ +$BALANCE|*0$§!"
+# RESOURCE_GROUP_DEFAULT_NEG_DEC:0           "§R$STORED|*1$ $BALANCE|*0$§!"
+# RESOURCE_GROUP_DEFAULT_NEG_DEC_TOTAL_POS:0 "§R$STORED|*1$ +$BALANCE|*0$§!"
+# RESOURCE_GROUP_BALANCE_ONLY:0              "§W+$BALANCE|*0$§!"
+# RESOURCE_GROUP_BALANCE_ONLY_NEG:0          "§R$BALANCE|*0$§!"
+# RESOURCE_GROUP_MULTI_TOOLTIP:0             "£$RESOURCE_KEY$£ $RESOURCE_NAME$：$AMOUNT$"
+###############################################################################
+tb_energy_group = {
+	resources = {
+		energy
+	}
+	localization = {
+		"RESOURCE_GROUP_DEFAULT" = default
+		"RESOURCE_GROUP_DEFAULT_NEG_DEC" = { balance < 0 stored >= 1000 stored < 10000 }
+		"RESOURCE_GROUP_DEFAULT_NEG" = { balance < 0 }
+		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
+		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
+	}
+	onclick = market
+}
+
+tb_mineral_group = {
+	resources = {
+		minerals
+	}
+	localization = {
+		"RESOURCE_GROUP_DEFAULT" = default
+		"RESOURCE_GROUP_DEFAULT_NEG_DEC" = { balance < 0 stored >= 1000 stored < 10000 }
+		"RESOURCE_GROUP_DEFAULT_NEG" = { balance < 0 }
+		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
+		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
+	}
+	onclick = market
+}
+
+tb_food_group = {
+	resources = {
+		food
+	}
+	localization = {
+		"RESOURCE_GROUP_DEFAULT" = default
+		"RESOURCE_GROUP_DEFAULT_NEG_DEC" = { balance < 0 stored >= 1000 stored < 10000 }
+		"RESOURCE_GROUP_DEFAULT_NEG" = { balance < 0 }
+		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
+		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
+	}
+	onclick = market
+}
+
+tb_consumer_goods_group = {
+	resources = {
+		consumer_goods
+	}
+	localization = {
+		"RESOURCE_GROUP_DEFAULT" = default
+		"RESOURCE_GROUP_DEFAULT_NEG_DEC" = { balance < 0 stored >= 1000 stored < 10000 }
+		"RESOURCE_GROUP_DEFAULT_NEG" = { balance < 0 }
+		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
+		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
+	}
+	onclick = market
+}
+
+tb_alloys_group = {
+	resources = {
+		alloys
+	}
+	localization = {
+		"RESOURCE_GROUP_DEFAULT" = default
+		"RESOURCE_GROUP_DEFAULT_NEG_DEC" = { balance < 0 stored >= 1000 stored < 10000 }
+		"RESOURCE_GROUP_DEFAULT_NEG" = { balance < 0 }
+		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
+		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
+	}
+	onclick = market
+}
+
+tb_volatile_motes_group = {
+	resources = {
+		volatile_motes
+	}
+	localization = {
+		"RESOURCE_GROUP_DEFAULT" = default
+		"RESOURCE_GROUP_DEFAULT_NEG_DEC" = { balance < 0 stored >= 1000 stored < 10000 }
+		"RESOURCE_GROUP_DEFAULT_NEG" = { balance < 0 }
+		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
+		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
+	}
+	onclick = market
+}
+
+tb_exotic_gases_group = {
+	resources = {
+		exotic_gases
+	}
+	localization = {
+		"RESOURCE_GROUP_DEFAULT" = default
+		"RESOURCE_GROUP_DEFAULT_NEG_DEC" = { balance < 0 stored >= 1000 stored < 10000 }
+		"RESOURCE_GROUP_DEFAULT_NEG" = { balance < 0 }
+		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
+		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
+	}
+	onclick = market
+}
+
+tb_rare_crystals_group = {
+	resources = {
+		rare_crystals
+	}
+	localization = {
+		"RESOURCE_GROUP_DEFAULT" = default
+		"RESOURCE_GROUP_DEFAULT_NEG_DEC" = { balance < 0 stored >= 1000 stored < 10000 }
+		"RESOURCE_GROUP_DEFAULT_NEG" = { balance < 0 }
+		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
+		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
+	}
+	onclick = market
+}
+
+tb_minor_artifacts_group = {
+	resources = {
+		minor_artifacts
+	}
+	localization = {
+		"RESOURCE_GROUP_DEFAULT" = default
+		"RESOURCE_GROUP_DEFAULT_NEG_DEC" = { balance < 0 stored >= 1000 stored < 10000 }
+		"RESOURCE_GROUP_DEFAULT_NEG" = { balance < 0 }
+		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
+		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
+	}
+	onclick = traditions
+}
+
+tb_sr_living_metal_group = {
+	resources = {
+		sr_living_metal
+	}
+	localization = {
+		"RESOURCE_GROUP_DEFAULT" = default
+		"RESOURCE_GROUP_DEFAULT_NEG_DEC" = { balance < 0 stored >= 1000 stored < 10000 }
+		"RESOURCE_GROUP_DEFAULT_NEG" = { balance < 0 }
+		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
+		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
+	}
+	onclick = market
+}
+
+tb_sr_zro_group = {
+	resources = {
+		sr_zro
+	}
+	localization = {
+		"RESOURCE_GROUP_DEFAULT" = default
+		"RESOURCE_GROUP_DEFAULT_NEG_DEC" = { balance < 0 stored >= 1000 stored < 10000 }
+		"RESOURCE_GROUP_DEFAULT_NEG" = { balance < 0 }
+		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
+		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
+	}
+	onclick = market
+}
+
+tb_sr_dark_matter_group = {
+	resources = {
+		sr_dark_matter
+	}
+	localization = {
+		"RESOURCE_GROUP_DEFAULT" = default
+		"RESOURCE_GROUP_DEFAULT_NEG_DEC" = { balance < 0 stored >= 1000 stored < 10000 }
+		"RESOURCE_GROUP_DEFAULT_NEG" = { balance < 0 }
+		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
+		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
+	}
+	onclick = market
+}
+
+tb_nanites_group = {
+	resources = {
+		nanites
+	}
+	localization = {
+		"RESOURCE_GROUP_DEFAULT" = default
+		"RESOURCE_GROUP_DEFAULT_NEG_DEC" = { balance < 0 stored >= 1000 stored < 10000 }
+		"RESOURCE_GROUP_DEFAULT_NEG" = { balance < 0 }
+		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
+		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
+	}
+	onclick = market
+}
+
+tb_physics_research_group = {
+	resources = {
+		physics_research
+	}
+	localization = {
+		"RESOURCE_GROUP_BALANCE_ONLY" = default
+	}
+	onclick = technology
+}
+
+tb_society_research_group = {
+	resources = {
+		society_research
+	}
+	localization = {
+		"RESOURCE_GROUP_BALANCE_ONLY" = default
+	}
+	onclick = technology
+}
+
+tb_engineering_research_group = {
+	resources = {
+		engineering_research
+	}
+	localization = {
+		"RESOURCE_GROUP_BALANCE_ONLY" = default
+	}
+	onclick = technology
+}
+
+tb_physics_research_stored_group = {
+	resources = {
+		physics_research
+	}
+	localization = {
+		"RESOURCE_GROUP_STORED_ONLY" = default
+	}
+	onclick = technology
+}
+
+tb_society_research_stored_group = {
+	resources = {
+		society_research
+	}
+	localization = {
+		"RESOURCE_GROUP_STORED_ONLY" = default
+	}
+	onclick = technology
+}
+
+tb_engineering_research_stored_group = {
+	resources = {
+		engineering_research
+	}
+	localization = {
+		"RESOURCE_GROUP_STORED_ONLY" = default
+	}
+	onclick = technology
+}
+
+tb_unity_group = {
+	resources = {
+		unity
+	}
+	localization = {
+		"RESOURCE_GROUP_DEFAULT" = default
+		"RESOURCE_GROUP_DEFAULT_NEG_DEC" = { balance < 0 stored >= 1000 stored < 10000 }
+		"RESOURCE_GROUP_DEFAULT_NEG" = { balance < 0 }
+		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
+		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
+	}
+	onclick = traditions
+}
+
+tb_influence_group = {
+	resources = {
+		influence
+	}
+	localization = {
+		"RESOURCE_GROUP_DEFAULT" = default
+		"RESOURCE_GROUP_DEFAULT_NEG_DEC" = { balance < 0 stored >= 1000 stored < 10000 }
+		"RESOURCE_GROUP_DEFAULT_NEG" = { balance < 0 }
+		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
+		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
+	}
+	onclick = claims
+}
+
+tb_menace_group = {
+	resources = {
+		menace
+	}
+	localization = {
+		"RESOURCE_GROUP_STORED_ONLY" = default
+	}
+	onclick = traditions
+}

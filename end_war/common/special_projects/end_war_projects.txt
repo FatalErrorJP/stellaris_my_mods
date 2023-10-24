@@ -1,0 +1,115 @@
+###########################################################
+# 戦争が終わらないMod スペシャルプロジェクト定義群
+###########################################################
+
+#################################################
+# 「未占領の敵国星系の表示」
+#################################################
+special_project = {
+	key = "SHOW_WAR_UNOCCUPIED_SYSTEMS"
+	event_chain = show_war_unoccupied_systems_chain
+	picture = GFX_evt_landing_ship
+	location = yes
+	event_scope = country_event
+	on_success = {}
+}
+
+#################################################
+# 「未占領の敵国星系の表示」を終了する
+#################################################
+special_project = {
+	key = "CLEAN_WAR_UNOCCUPIED_SYSTEMS"
+	event_chain = show_war_unoccupied_systems_chain
+	picture = GFX_evt_landing_ship
+	cost = 0
+	days_to_research = 1
+	location = no
+	event_scope = country_event
+	on_success = {
+		country_event = { id = end_war_menu.21 }
+	}
+}
+
+#################################################
+# 「未占領の敵国の入植地の表示」
+#################################################
+special_project = {
+	key = "SHOW_WAR_UNOCCUPIED_PLANETS"
+	event_chain = show_war_unoccupied_planets_chain
+	picture = GFX_evt_landing_ship
+	location = yes
+	event_scope = country_event
+	on_success = {}
+}
+
+#################################################
+# 「未占領の敵国の入植地の表示」を終了する
+#################################################
+special_project = {
+	key = "CLEAN_WAR_UNOCCUPIED_PLANETS"
+	event_chain = show_war_unoccupied_planets_chain
+	picture = GFX_evt_landing_ship
+	cost = 0
+	days_to_research = 1
+	location = no
+	event_scope = country_event
+	on_success = {
+		country_event = { id = end_war_menu.22 }
+	}
+}
+
+#################################################
+# 「未占領かつ請求中の敵国星系の表示」
+#################################################
+special_project = {
+	key = "SHOW_WAR_UNOCCUPIED_CLAIM_SYSTEMS"
+	event_chain = show_war_unoccupied_claim_systems_chain
+	picture = GFX_evt_landing_ship
+	location = yes
+	event_scope = country_event
+	on_success = {}
+}
+
+#################################################
+# 「未占領かつ請求中の敵国星系の表示」を終了する
+#################################################
+special_project = {
+	key = "CLEAN_WAR_UNOCCUPIED_CLAIM_SYSTEMS"
+	event_chain = show_war_unoccupied_claim_systems_chain
+	picture = GFX_evt_landing_ship
+	cost = 0
+	days_to_research = 1
+	location = no
+	event_scope = country_event
+	on_success = {
+		country_event = { id = end_war_menu.23 }
+	}
+}
+
+#################################################
+# 「未占領かつ請求中の敵国の入植地の表示」
+#################################################
+special_project = {
+	key = "SHOW_WAR_UNOCCUPIED_CLAIM_PLANETS"
+	event_chain = show_war_unoccupied_claim_planets_chain
+	picture = GFX_evt_landing_ship
+	location = yes
+	event_scope = country_event
+	on_success = {}
+}
+
+#################################################
+# 「未占領かつ請求中の敵国の入植地の表示」を終了する
+#################################################
+special_project = {
+	key = "CLEAN_WAR_UNOCCUPIED_CLAIM_PLANETS"
+	event_chain = show_war_unoccupied_claim_planets_chain
+	picture = GFX_evt_landing_ship
+	cost = 0
+	days_to_research = 1
+	location = no
+	event_scope = country_event
+	on_success = {
+		country_event = { id = end_war_menu.24 }
+	}
+}

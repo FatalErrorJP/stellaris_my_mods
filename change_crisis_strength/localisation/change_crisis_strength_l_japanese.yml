@@ -1,0 +1,6 @@
+﻿l_japanese:
+  edict_double_crisis_strength:0 "危機の強さを2倍にする"
+  edict_double_crisis_strength_desc:0 "エンドゲームに登場する危機の艦隊の強さを倍に強化します。"
+
+  edict_half_crisis_strength:0 "危機の強さを半分にする"
+  edict_half_crisis_strength_desc:0 "エンドゲームに登場する危機の艦隊の強さを半分にします。"

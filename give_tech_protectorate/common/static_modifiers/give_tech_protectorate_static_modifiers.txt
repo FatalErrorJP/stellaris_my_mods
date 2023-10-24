@@ -1,0 +1,10 @@
+give_tech_overlord = {
+	country_base_influence_produces_add = 0.1
+	all_technology_research_speed = -0.05
+}
+
+give_tech_subject = {
+	country_base_influence_produces_add = -0.5
+	num_tech_alternatives_add = -1
+	monthly_loyalty = 0.5
+}

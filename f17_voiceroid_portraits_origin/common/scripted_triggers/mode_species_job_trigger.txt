@@ -1,0 +1,35 @@
+is_organic_species = {
+#	orgnic classcifiued by habitant trait
+#	OR = {
+#		has_trait = trait_pc_desert_preference
+#		has_trait = trait_pc_arid_preference
+#		has_trait = trait_pc_savannah_preference
+#		has_trait = trait_pc_tropical_preference
+#		has_trait = trait_pc_continental_preference
+#		has_trait = trait_pc_ocean_preference
+#		has_trait = trait_pc_arctic_preference
+#		has_trait = trait_pc_tundra_preference
+#		has_trait = trait_pc_alpine_preference
+#		has_trait = trait_pc_ai_preference
+#		has_trait = trait_pc_nuked_preference
+#		has_trait = trait_pc_gaia_preference
+#		has_trait = trait_pc_ringworld_habitable_preference
+#		has_trait = trait_pc_habitat_preference
+#		has_trait = trait_pc_machine_preference
+#		has_trait = trait_pc_hive_preference
+#		has_trait = trait_pc_city_preference
+#	}
+	NOT = {
+		OR = {
+			has_trait = trait_machine_unit
+			has_trait = trait_mechanical
+		}
+	}
+}
+
+is_robotic_species = {
+	OR = {
+		has_trait = trait_machine_unit
+		has_trait = trait_mechanical
+	}
+}

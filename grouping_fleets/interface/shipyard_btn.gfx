@@ -1,0 +1,12 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_shipyard_off_btn"
+		texturefile = "gfx/interface/fleet_view/shipyard_off_btn.dds"
+		noOfFrames = 3
+	}
+	spriteType = {
+		name = "GFX_shipyard_on_btn"
+		texturefile = "gfx/interface/fleet_view/shipyard_on_btn.dds"
+		noOfFrames = 3
+	}
+}

@@ -1,0 +1,65 @@
+##############################################################
+# 東北イタコ種族用のポートレート定義
+##############################################################
+# 画像、音声ファイルとのリンク設定
+portraits = {
+	itako_01 = { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_01.dds" }
+	itako_02 = { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_02.dds" }
+	itako_03 = { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_03.dds" }
+	itako_04 = { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_04.dds" }
+	itako_05 = { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_05.dds" }
+	itako_06 = { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_06.dds" }
+}
+
+# 各場面別のポートレート
+portrait_groups = {
+	itako = {
+		# デフォルト
+		default = itako_01
+
+		# 帝国作成時
+		game_setup = {
+			add = {
+				portraits = {
+					itako_01 itako_02 itako_03 itako_04 itako_05 itako_06
+				}
+			}
+		}
+
+		# 汎用
+		species = {
+			add = {
+				portraits = {
+					itako_01 itako_02 itako_03 itako_04 itako_05 itako_06
+				}
+			}
+		}
+
+		# 惑星上のPOP
+		pop = {
+			add = {
+				portraits = {
+					itako_01 itako_02 itako_03 itako_04 itako_05 itako_06
+				}
+			}
+		}
+
+		#リーダー
+		leader = {
+			add = {
+				portraits = {
+					itako_01 itako_02 itako_03 itako_04 itako_05 itako_06
+				}
+			}
+		}
+
+		# 国家元首
+		ruler = {
+			add = {
+				portraits = {
+					itako_01 itako_02 itako_03 itako_04 itako_05 itako_06
+				}
+			}
+		}
+	}
+}

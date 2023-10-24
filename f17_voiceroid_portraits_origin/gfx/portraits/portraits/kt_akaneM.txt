@@ -1,0 +1,270 @@
+﻿character = {
+	size = { x = 472 y = 324 }
+
+	entity = {
+		orientation = center_down
+		position = { x = 50 y = -20 }
+		scale = 24
+	}
+	#2d Portrait position
+	icon = {
+		orientation = center_down
+		position = { x = 0 y = 0 }
+		scale = 1.0
+	}
+}
+
+portraits = {
+	
+	akaneM_01 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_01.dds" }
+	akaneM_02 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_02.dds" }
+	akaneM_03 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_03.dds" }
+	akaneM_04 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_04.dds" }
+	akaneM_05 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_05.dds" }
+	akaneM_06 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_06.dds" }
+	akaneM_07 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_07.dds" }
+	akaneM_08 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_08.dds" }
+	akaneM_09 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_09.dds" }
+	akaneM_10 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_10.dds" }
+	akaneMC_01 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_01.dds" }
+	akaneMC_02 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_02.dds" }
+	akaneMC_03 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_03.dds" }
+	akaneMC_04 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_04.dds" }
+	akaneMC_05 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_05.dds" }
+	akaneMC_06 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_06.dds" }
+	akaneMC_07 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_07.dds" }
+	akaneMC_08 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_08.dds" }
+	akaneMC_09 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_09.dds" }
+	akaneMC_10 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_10.dds" }
+}
+
+portrait_groups = {
+	akaneM = {
+		default = akaneM_01
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					akaneM_01
+					akaneMC_01
+					akaneM_02
+					akaneMC_02
+					akaneM_03
+					akaneMC_03
+					akaneM_04
+					akaneMC_04
+					akaneM_05
+					akaneMC_05
+					akaneM_06
+					akaneMC_06
+					akaneM_07
+					akaneMC_07
+					akaneM_08
+					akaneMC_08
+					akaneM_09
+					akaneMC_09
+					akaneM_10
+					akaneMC_10
+				}
+			}
+
+		}
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					akaneM_01
+					akaneM_02
+					akaneM_03
+					akaneM_04
+					akaneM_05
+					akaneM_06
+					akaneM_07
+					akaneM_08
+					akaneM_09
+					akaneM_10
+					akaneMC_01
+					akaneMC_02
+					akaneMC_03
+					akaneMC_04
+					akaneMC_05
+					akaneMC_06
+					akaneMC_07
+					akaneMC_08
+					akaneMC_09
+					akaneMC_10
+				}
+			}
+		}		
+		
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					akaneM_01
+					akaneM_02
+					akaneM_03
+					akaneM_04
+					akaneM_05
+					akaneM_06
+					akaneM_07
+					akaneM_08
+					akaneM_09
+					akaneM_10
+					akaneMC_01
+					akaneMC_02
+					akaneMC_03
+					akaneMC_04
+					akaneMC_05
+					akaneMC_06
+					akaneMC_07
+					akaneMC_08
+					akaneMC_09
+					akaneMC_10
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			
+			add = {
+				trigger = {
+					leader_class = governor
+				}
+				portraits = {
+					akaneM_01
+					akaneM_02
+					akaneM_03
+					akaneM_04
+					akaneM_05
+					akaneM_06
+					akaneM_07
+					akaneM_08
+					akaneM_09
+					akaneM_10
+					akaneMC_01
+					akaneMC_02
+					akaneMC_03
+					akaneMC_04
+					akaneMC_05
+					akaneMC_06
+					akaneMC_07
+					akaneMC_08
+					akaneMC_09
+					akaneMC_10
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = scientist
+				}
+				portraits = {
+					akaneM_01
+					akaneM_02
+					akaneM_03
+					akaneM_04
+					akaneM_05
+					akaneM_06
+					akaneM_07
+					akaneM_08
+					akaneM_09
+					akaneM_10
+					akaneMC_01
+					akaneMC_02
+					akaneMC_03
+					akaneMC_04
+					akaneMC_05
+					akaneMC_06
+					akaneMC_07
+					akaneMC_08
+					akaneMC_09
+					akaneMC_10
+
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = admiral
+				}
+				portraits = {
+					akaneM_01
+					akaneM_02
+					akaneM_03
+					akaneM_04
+					akaneM_05
+					akaneM_06
+					akaneM_07
+					akaneM_08
+					akaneM_09
+					akaneM_10
+					akaneMC_01
+					akaneMC_02
+					akaneMC_03
+					akaneMC_04
+					akaneMC_05
+					akaneMC_06
+					akaneMC_07
+					akaneMC_08
+					akaneMC_09
+					akaneMC_10
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = general
+				}
+				portraits = {
+					akaneM_01
+					akaneM_02
+					akaneM_03
+					akaneM_04
+					akaneM_05
+					akaneM_06
+					akaneM_07
+					akaneM_08
+					akaneM_09
+					akaneM_10
+					akaneMC_01
+					akaneMC_02
+					akaneMC_03
+					akaneMC_04
+					akaneMC_05
+					akaneMC_06
+					akaneMC_07
+					akaneMC_08
+					akaneMC_09
+					akaneMC_10
+				}
+			}
+		}
+		
+		#leader scope 
+		ruler = {
+			add = {
+			    	portraits = {
+					akaneM_01
+					akaneM_02
+					akaneM_03
+					akaneM_04
+					akaneM_05
+					akaneM_06
+					akaneM_07
+					akaneM_08
+					akaneM_09
+					akaneM_10
+					akaneMC_01
+					akaneMC_02
+					akaneMC_03
+					akaneMC_04
+					akaneMC_05
+					akaneMC_06
+					akaneMC_07
+					akaneMC_08
+					akaneMC_09
+					akaneMC_10
+				}
+			}
+
+		}
+	}

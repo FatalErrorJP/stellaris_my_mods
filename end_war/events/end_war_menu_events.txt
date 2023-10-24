@@ -1,0 +1,304 @@
+###########################################################
+# 戦争が終わらないMod 布告メニューのイベント群
+###########################################################
+namespace = end_war_menu
+
+#################################################
+# 布告「未占領の敵国星系を表示する」の発火イベント
+# どの戦争について調査するか、選択肢を表示する(最大5つまで)
+#################################################
+country_event = {
+	id = end_war_menu.1
+	title = "end_war_menu.1.name"
+	desc = "end_war_menu.1.desc"
+	picture = GFX_evt_satellite_in_orbit
+	is_triggered_only = yes
+
+	# 戦争を取得
+	immediate = {
+		end_war_get_war_list = yes
+	}
+
+	# 戦争1
+	option = {
+		name = "end_war_menu.1.a"
+		custom_tooltip = "end_war_menu.1.a.tooltip"
+		trigger = {
+			exists = event_target:target_war_1
+		}
+
+		hidden_effect = {
+			country_event = { id = end_war_menu.11 scopes = { from = event_target:target_war_1 } }
+		}
+	}
+	# 戦争2
+	option = {
+		name = "end_war_menu.1.b"
+		custom_tooltip = "end_war_menu.1.b.tooltip"
+		trigger = {
+			exists = event_target:target_war_2
+		}
+
+		hidden_effect = {
+			country_event = { id = end_war_menu.11 scopes = { from = event_target:target_war_2 } }
+		}
+	}
+	# 戦争3
+	option = {
+		name = "end_war_menu.1.c"
+		custom_tooltip = "end_war_menu.1.c.tooltip"
+		trigger = {
+			exists = event_target:target_war_3
+		}
+
+		hidden_effect = {
+			country_event = { id = end_war_menu.11 scopes = { from = event_target:target_war_3 } }
+		}
+	}
+	# 戦争4
+	option = {
+		name = "end_war_menu.1.d"
+		custom_tooltip = "end_war_menu.1.d.tooltip"
+		trigger = {
+			exists = event_target:target_war_4
+		}
+
+		hidden_effect = {
+			country_event = { id = end_war_menu.11 scopes = { from = event_target:target_war_4 } }
+		}
+	}
+	# 戦争5
+	option = {
+		name = "end_war_menu.1.e"
+		custom_tooltip = "end_war_menu.1.e.tooltip"
+		trigger = {
+			exists = event_target:target_war_5
+		}
+
+		hidden_effect = {
+			country_event = { id = end_war_menu.11 scopes = { from = event_target:target_war_5 } }
+		}
+	}
+	# キャンセル
+	option = {
+		name = "end_war_menu.1.f"
+		custom_tooltip = "end_war_menu.1.f.tooltip"
+	}
+}
+
+#################################################
+# 布告「請求中の未占領の敵国星系を表示する」の発火イベント
+# どの戦争について調査するか、選択肢を表示する(最大5つまで)
+#################################################
+country_event = {
+	id = end_war_menu.2
+	title = "end_war_menu.2.name"
+	desc = "end_war_menu.2.desc"
+	picture = GFX_evt_satellite_in_orbit
+	is_triggered_only = yes
+
+	# 戦争を取得
+	immediate = {
+		end_war_get_war_list = yes
+	}
+
+	# 戦争1
+	option = {
+		name = "end_war_menu.2.a"
+		custom_tooltip = "end_war_menu.2.a.tooltip"
+		trigger = {
+			exists = event_target:target_war_1
+		}
+
+		hidden_effect = {
+			country_event = { id = end_war_menu.12 scopes = { from = event_target:target_war_1 } }
+		}
+	}
+	# 戦争2
+	option = {
+		name = "end_war_menu.2.b"
+		custom_tooltip = "end_war_menu.2.b.tooltip"
+		trigger = {
+			exists = event_target:target_war_2
+		}
+
+		hidden_effect = {
+			country_event = { id = end_war_menu.12 scopes = { from = event_target:target_war_2 } }
+		}
+	}
+	# 戦争3
+	option = {
+		name = "end_war_menu.2.c"
+		custom_tooltip = "end_war_menu.2.c.tooltip"
+		trigger = {
+			exists = event_target:target_war_3
+		}
+
+		hidden_effect = {
+			country_event = { id = end_war_menu.12 scopes = { from = event_target:target_war_3 } }
+		}
+	}
+	# 戦争4
+	option = {
+		name = "end_war_menu.2.d"
+		custom_tooltip = "end_war_menu.2.d.tooltip"
+		trigger = {
+			exists = event_target:target_war_4
+		}
+
+		hidden_effect = {
+			country_event = { id = end_war_menu.12 scopes = { from = event_target:target_war_4 } }
+		}
+	}
+	# 戦争5
+	option = {
+		name = "end_war_menu.2.e"
+		custom_tooltip = "end_war_menu.2.e.tooltip"
+		trigger = {
+			exists = event_target:target_war_5
+		}
+
+		hidden_effect = {
+			country_event = { id = end_war_menu.12 scopes = { from = event_target:target_war_5 } }
+		}
+	}
+	# キャンセル
+	option = {
+		name = "end_war_menu.2.f"
+		custom_tooltip = "end_war_menu.2.f.tooltip"
+	}
+}
+
+#################################################
+# 布告「未占領の敵国星系を表示する」関連イベント
+# 指定された戦争の未占領の敵国星系をスペシャルプロジェクトとして追加する
+#################################################
+country_event = {
+	id = end_war_menu.11
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		# イベントチェーン開始
+		end_war_begin_event_chain = { CHAIN_NAME = "show_war_unoccupied_systems_chain" CLEAN_CHAIN_PROJECT_NAME = "CLEAN_WAR_UNOCCUPIED_SYSTEMS" }
+		end_war_begin_event_chain = { CHAIN_NAME = "show_war_unoccupied_planets_chain" CLEAN_CHAIN_PROJECT_NAME = "CLEAN_WAR_UNOCCUPIED_PLANETS" }
+
+		from = {
+			if = {
+				# 自国が攻撃側の場合
+				limit = { is_war_participant = { who = root war = this side = attackers } }
+				end_war_add_special_project = { SIDE1 = defender SIDE2 = attacker }
+			}
+			else_if = {
+				# 自国が防御側の場合
+				limit = { is_war_participant = { who = root war = this side = defenders } }
+				end_war_add_special_project = { SIDE1 = attacker SIDE2 = defender }
+			}
+		}
+	}
+}
+
+#################################################
+# 布告「未占領かつ請求中の敵国星系を表示する」関連イベント
+# 指定された戦争の未占領かつ請求中の敵国星系をスペシャルプロジェクトとして追加する
+#################################################
+country_event = {
+	id = end_war_menu.12
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		# イベントチェーン開始
+		end_war_begin_event_chain = { CHAIN_NAME = "show_war_unoccupied_claim_systems_chain" CLEAN_CHAIN_PROJECT_NAME = "CLEAN_WAR_UNOCCUPIED_CLAIM_SYSTEMS" }
+		end_war_begin_event_chain = { CHAIN_NAME = "show_war_unoccupied_claim_planets_chain" CLEAN_CHAIN_PROJECT_NAME = "CLEAN_WAR_UNOCCUPIED_CLAIM_PLANETS" }
+
+		from = {
+			if = {
+				# 自国が攻撃側の場合
+				limit = { is_war_participant = { who = root war = this side = attackers } }
+				end_war_add_claim_special_project = { SIDE1 = defender SIDE2 = attacker }
+			}
+			else_if = {
+				# 自国が防御側の場合
+				limit = { is_war_participant = { who = root war = this side = defenders } }
+				end_war_add_claim_special_project = { SIDE1 = attacker SIDE2 = defender }
+			}
+		}
+	}
+}
+
+#################################################
+# 布告「未占領の敵国星系を表示する」関連イベント
+# 未占領の星系の確認を終了します。
+#################################################
+country_event = {
+	id = end_war_menu.21
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_event_chain = show_war_unoccupied_systems_chain
+			}
+			end_event_chain = show_war_unoccupied_systems_chain
+		}
+	}
+}
+
+#################################################
+# 布告「未占領の敵国星系を表示する」関連イベント
+# 未占領の入植地の確認を終了します。
+#################################################
+country_event = {
+	id = end_war_menu.22
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_event_chain = show_war_unoccupied_planets_chain
+			}
+			end_event_chain = show_war_unoccupied_planets_chain
+		}
+	}
+}
+
+#################################################
+# 布告「未占領かつ請求中の敵国星系を表示する」関連イベント
+# 未占領の星系の確認を終了します。
+#################################################
+country_event = {
+	id = end_war_menu.23
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_event_chain = show_war_unoccupied_claim_systems_chain
+			}
+			end_event_chain = show_war_unoccupied_claim_systems_chain
+		}
+	}
+}
+
+#################################################
+# 布告「未占領かつ請求中の敵国星系を表示する」関連イベント
+# 未占領の入植地の確認を終了します。
+#################################################
+country_event = {
+	id = end_war_menu.24
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_event_chain = show_war_unoccupied_claim_planets_chain
+			}
+			end_event_chain = show_war_unoccupied_claim_planets_chain
+		}
+	}
+}

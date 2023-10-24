@@ -1,0 +1,9 @@
+# this = country
+on_monthly_pulse_country = {
+	events = {
+		give_tech_protectorate.1 # 宗主国AI専用の「保護国への技術供与」付与イベント
+		give_tech_protectorate.11 # 宗主国AI専用の「保護国への技術供与」キャンセルイベント
+		give_tech_protectorate.12 # 保護国AI専用の「保護国への技術供与」キャンセルイベント
+		give_tech_protectorate.21 # 保護国への技術進捗増加イベント
+	}
+}

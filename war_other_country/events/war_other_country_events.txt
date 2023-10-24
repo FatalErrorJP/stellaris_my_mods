@@ -1,0 +1,55 @@
+###############################################################################
+# 「お前ら人の領土でなに争ってんだ」Modのイベント群
+###############################################################################
+namespace = war_other_country
+
+###########################################################
+# 戦闘行為を行っているどちらの国に対しても戦争をしていない
+# 第三国での戦闘の場合は、外交補正を発生させる
+###########################################################
+# This = owner of fleet 1 (winner)
+# From = owner of fleet 2 (loser)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+country_event = {
+	id = war_other_country.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = default
+		from = { is_country_type = default }
+		fromfrom.solar_system = {
+			not = { is_owned_by = root }
+			not = { is_owned_by = from }
+			exists = owner
+			owner = {
+				is_country_type = default
+				any_war = {
+					NOR = {
+						any_defender = {
+							OR = {
+								is_same_empire = root
+								is_same_empire = from
+							}
+						}
+						any_attacker = {
+							OR = {
+								is_same_empire = root
+								is_same_empire = from
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		fromfrom.solar_system.owner = {
+			add_opinion_modifier = { who = root modifier = opinion_war_other_country }
+			add_opinion_modifier = { who = from modifier = opinion_war_other_country }
+		}
+	}
+}
+

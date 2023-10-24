@@ -1,0 +1,66 @@
+# ベースとなる種族(event_target:species_base)と同一タイプの他種族をマージする
+# add_same_speciesから呼ばれる前提の仕組みとなっている
+merge_same_species = {
+	every_galaxy_species = {
+		limit = {
+			NAND = {
+				has_species_flag = same_species_base
+				has_species_flag = same_species_work
+			}
+			is_same_species_class = event_target:species_base
+
+			###
+			# 一応こんな形で個別にポートレートを指定すれば
+			# ポートレート単位で同一種族にすることは可能だが
+			# 全ポートレートを個別に記述していく必要があるので
+			# メンテナンス制がなさすぎて死ぬ
+			# species_portraitのScope指定版があれば解決するんだが…
+			###
+			#switch = {
+			#	trigger = species_portrait
+			#	aoiM = { event_target:species_base = { species_portrait = aoiM } }
+			#	default = { always = no }
+			#}
+		}
+
+		###
+		# set_species_identityで統合先の種族を作成する
+		###
+		set_species_identity = event_target:species_base
+		set_species_flag = same_species_work
+	}
+}
+
+# 種族に追加があった場合の処理
+# 新規国家の追加や、機械を作れるようになったタイミングで呼ばれる
+add_same_species = {
+	# ベース種族が既に存在する場合は、その種族とマージする
+	every_galaxy_species = {
+		limit = {
+			has_species_flag = same_species_base
+		}
+
+		# ベースとなる種族のスコープを保存
+		save_event_target_as = species_base
+
+		# ベースとなる種族と他種族をマージする
+		merge_same_species = yes
+	}
+
+	# ベース種族が存在しない場合は、その種族をベース種族として、他の種族とマージする
+	every_galaxy_species = {
+		limit = {
+			NOR = {
+				has_species_flag = same_species_base
+				has_species_flag = same_species_work
+			}
+		}
+
+		# ベースとなる種族のスコープを保存
+		set_species_flag = same_species_base
+		save_event_target_as = species_base
+
+		# ベースとなる種族と他種族をマージする
+		merge_same_species = yes
+	}
+}

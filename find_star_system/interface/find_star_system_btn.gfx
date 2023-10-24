@@ -1,0 +1,361 @@
+spriteTypes = {
+	####
+	# バイパス系
+	####
+	# ワームホール
+	spriteType = {
+		name = "GFX_find_wormhole_btn"
+		texturefile = "gfx/interface/icons/find_wormhole_btn.dds"
+		noOfFrames = 3
+	}
+	# ゲートウェイ
+	spriteType = {
+		name = "GFX_find_gateway_btn"
+		texturefile = "gfx/interface/icons/find_gateway_btn.dds"
+		noOfFrames = 3
+	}
+	# Lゲート
+	spriteType = {
+		name = "GFX_find_lgate_btn"
+		texturefile = "gfx/interface/icons/find_lgate_btn.dds"
+		noOfFrames = 3
+	}
+
+	####
+	# 基地/艦隊/リヴァイアサン/危機
+	####
+	# 自国内の防衛プラットフォームの存在する前哨地
+	spriteType = {
+		name = "GFX_find_military_station_small_btn"
+		texturefile = "gfx/interface/icons/find_military_station_small.dds"
+		noOfFrames = 3
+	}
+	# リヴァイアサンのいる星系
+	spriteType = {
+		name = "GFX_find_leviathans_btn"
+		texturefile = "gfx/interface/icons/find_leviathans_btn.dds"
+		noOfFrames = 3
+	}
+	# キャラバン艦隊
+	spriteType = {
+		name = "GFX_find_caravaneer_fleet_btn"
+		texturefile = "gfx/interface/icons/find_caravaneer_fleet_btn.dds"
+		noOfFrames = 3
+	}
+	# プレスリン(汚染された惑星)
+	spriteType = {
+		name = "GFX_find_crisis_swarm_btn"
+		texturefile = "gfx/interface/icons/find_crisis_swarm_btn.dds"
+		noOfFrames = 3
+	}
+	# 招かれざるもの(次元ポータル＆次元アンカー)
+	spriteType = {
+		name = "GFX_find_crisis_extradimensional_btn"
+		texturefile = "gfx/interface/icons/find_crisis_extradimensional_btn.dds"
+		noOfFrames = 3
+	}
+
+	####
+	# 巨大建造物
+	####
+	# セントリーアレイ
+	spriteType = {
+		name = "GFX_find_megastructure_spy_orb_btn"
+		texturefile = "gfx/interface/icons/find_megastructure_spy_orb_btn.dds"
+		noOfFrames = 3
+	}
+	# サイエンスネクサス
+	spriteType = {
+		name = "GFX_find_megastructure_think_tank_btn"
+		texturefile = "gfx/interface/icons/find_megastructure_think_tank_btn.dds"
+		noOfFrames = 3
+	}
+	# 巨大芸術体験施設
+	spriteType = {
+		name = "GFX_find_megastructure_mega_art_installation_btn"
+		texturefile = "gfx/interface/icons/find_megastructure_mega_art_btn.dds"
+		noOfFrames = 3
+	}
+	# 星間会議場
+	spriteType = {
+		name = "GFX_find_megastructure_interstellar_assembly_btn"
+		texturefile = "gfx/interface/icons/find_megastructure_interstellar_assembly_btn.dds"
+		noOfFrames = 3
+	}
+	# 戦略調整センター
+	spriteType = {
+		name = "GFX_find_megastructure_strategic_coordination_center_btn"
+		texturefile = "gfx/interface/icons/find_megastructure_strategic_coordination_center_btn.dds"
+		noOfFrames = 3
+	}
+	# 巨大造船所
+	spriteType = {
+		name = "GFX_find_megastructure_mega_shipyard_btn"
+		texturefile = "gfx/interface/icons/find_megastructure_mega_shipyard_btn.dds"
+		noOfFrames = 3
+	}
+	# 量子カタパルト
+	spriteType = {
+		name = "GFX_find_megastructure_quantum_catapult_btn"
+		texturefile = "gfx/interface/icons/find_megastructure_quantum_catapult_btn.dds"
+		noOfFrames = 3
+	}
+	# ダイソンスフィア
+	spriteType = {
+		name = "GFX_find_megastructure_dyson_sphere_btn"
+		texturefile = "gfx/interface/icons/find_megastructure_dyson_sphere_btn.dds"
+		noOfFrames = 3
+	}
+	# 物質展開器
+	spriteType = {
+		name = "GFX_find_megastructure_matter_decompressor_btn"
+		texturefile = "gfx/interface/icons/find_megastructure_matter_decompressor_btn.dds"
+		noOfFrames = 3
+	}
+	# リングワールド
+	spriteType = {
+		name = "GFX_find_megastructure_ring_world_btn"
+		texturefile = "gfx/interface/icons/find_megastructure_ring_world_btn.dds"
+		noOfFrames = 3
+	}
+	# エーテル位相機関
+	spriteType = {
+		name = "GFX_find_megastructure_crisis_sphere_btn"
+		texturefile = "gfx/interface/icons/find_megastructure_crisis_sphere_btn.dds"
+		noOfFrames = 3
+	}
+	# 巨大建造物
+	spriteType = {
+		name = "GFX_find_megastructure_btn"
+		texturefile = "gfx/interface/icons/find_megastructure_btn.dds"
+		noOfFrames = 3
+	}
+
+	####
+	# 入植可能惑星
+	####
+	# 粉末採取用トラップ
+	spriteType = {
+		name = "GFX_find_planet_mote_harvesters_btn"
+		texturefile = "gfx/interface/icons/find_planet_mote_harvesters_btn.dds"
+		noOfFrames = 3
+	}
+	# ガス抽出井
+	spriteType = {
+		name = "GFX_find_planet_gas_extractors_btn"
+		texturefile = "gfx/interface/icons/find_planet_gas_extractors_btn.dds"
+		noOfFrames = 3
+	}
+	# クリスタル鉱山
+	spriteType = {
+		name = "GFX_find_planet_crystal_mines_btn"
+		texturefile = "gfx/interface/icons/find_planet_crystal_mines_btn.dds"
+		noOfFrames = 3
+	}
+	# 特殊な惑星(ガイア型惑星、機械惑星、集合意識惑星、遺物惑星、エキュメノポリス)
+	spriteType = {
+		name = "GFX_find_planet_special_btn"
+		texturefile = "gfx/interface/icons/find_planet_special_btn.dds"
+		noOfFrames = 3
+	}
+	# 準知性
+	spriteType = {
+		name = "GFX_find_planet_pre_sapients_btn"
+		texturefile = "gfx/interface/icons/find_planet_pre_sapients_btn.dds"
+		noOfFrames = 3
+	}
+	# 原始文明
+	spriteType = {
+		name = "GFX_find_planet_primitive_btn"
+		texturefile = "gfx/interface/icons/find_planet_primitive_btn.dds"
+		noOfFrames = 3
+	}
+
+	####
+	# テラフォーム候補惑星
+	####
+	# テラフォーム候補惑星
+	spriteType = {
+		name = "GFX_find_terraforming_candidate_btn"
+		texturefile = "gfx/interface/icons/find_terraforming_candidate_btn.dds"
+		noOfFrames = 3
+	}
+	# 凍結したテラフォーム候補惑星
+	spriteType = {
+		name = "GFX_find_frozen_terraforming_candidate_btn"
+		texturefile = "gfx/interface/icons/find_frozen_terraforming_candidate_btn.dds"
+		noOfFrames = 3
+	}
+	# 有毒なテラフォーム候補惑星
+	spriteType = {
+		name = "GFX_find_toxic_terraforming_candidate_btn"
+		texturefile = "gfx/interface/icons/find_toxic_terraforming_candidate_btn.dds"
+		noOfFrames = 3
+	}
+
+	####
+	# 入植済惑星
+	####
+	# 銀河市場
+	spriteType = {
+		name = "GFX_find_galactic_market_btn"
+		texturefile = "gfx/interface/icons/find_galactic_market_btn.dds"
+		noOfFrames = 3
+	}
+
+	####
+	# 支社
+	####
+	# 自国の支社の存在する星系
+	spriteType = {
+		name = "GFX_find_has_my_branch_office_btn"
+		texturefile = "gfx/interface/icons/find_has_my_branch_office_btn.dds"
+		noOfFrames = 3
+	}
+	# 他国の支社の存在する星系
+	spriteType = {
+		name = "GFX_find_has_other_branch_office_btn"
+		texturefile = "gfx/interface/icons/find_has_other_branch_office_btn.dds"
+		noOfFrames = 3
+	}
+	# 支社の存在しない星系
+	spriteType = {
+		name = "GFX_find_has_not_branch_office_btn"
+		texturefile = "gfx/interface/icons/find_has_not_branch_office_btn.dds"
+		noOfFrames = 3
+	}
+
+	####
+	# 戦略資源
+	####
+	# 揮発性粉末
+	spriteType = {
+		name = "GFX_find_strategic_resource_volatile_motes_btn"
+		texturefile = "gfx/interface/icons/find_strategic_resource_volatile_motes_btn.dds"
+		noOfFrames = 3
+	}
+	# エキゾチックガス
+	spriteType = {
+		name = "GFX_find_strategic_resource_exotic_gases_btn"
+		texturefile = "gfx/interface/icons/find_strategic_resource_exotic_gases_btn.dds"
+		noOfFrames = 3
+	}
+	# レアクリスタル
+	spriteType = {
+		name = "GFX_find_strategic_resource_rare_crystals_btn"
+		texturefile = "gfx/interface/icons/find_strategic_resource_rare_crystals_btn.dds"
+		noOfFrames = 3
+	}
+	# 生体金属
+	spriteType = {
+		name = "GFX_find_strategic_resource_sr_living_metal_btn"
+		texturefile = "gfx/interface/icons/find_strategic_resource_sr_living_metal_btn.dds"
+		noOfFrames = 3
+	}
+	# ズィロ
+	spriteType = {
+		name = "GFX_find_strategic_resource_sr_zro_btn"
+		texturefile = "gfx/interface/icons/find_strategic_resource_sr_zro_btn.dds"
+		noOfFrames = 3
+	}
+	# ダークマター
+	spriteType = {
+		name = "GFX_find_strategic_resource_sr_dark_matter_btn"
+		texturefile = "gfx/interface/icons/find_strategic_resource_sr_dark_matter_btn.dds"
+		noOfFrames = 3
+	}
+	# ナノマシン
+	spriteType = {
+		name = "GFX_find_strategic_resource_nanites_btn"
+		texturefile = "gfx/interface/icons/find_strategic_resource_nanites_btn.dds"
+		noOfFrames = 3
+	}
+	# 統合力
+	spriteType = {
+		name = "GFX_find_strategic_resource_unity_btn"
+		texturefile = "gfx/interface/icons/find_strategic_resource_unity_btn.dds"
+		noOfFrames = 3
+	}
+	# 出土品
+	spriteType = {
+		name = "GFX_find_strategic_resource_minor_artifacts_btn"
+		texturefile = "gfx/interface/icons/find_strategic_resource_minor_artifacts_btn.dds"
+		noOfFrames = 3
+	}
+	# 未建設の資源のある自国の星系
+	spriteType = {
+		name = "GFX_find_strategic_resource_strategic_btn"
+		texturefile = "gfx/interface/icons/find_strategic_resource_strategic_btn.dds"
+		noOfFrames = 3
+	}
+
+	####
+	# 中立機構
+	####
+	# 交易中立機構(リガン商業取引所、揮発性粉末)
+	spriteType = {
+		name = "GFX_find_enclave_trader_riggan_btn"
+		texturefile = "gfx/interface/icons/find_enclave_trader_riggan_btn.dds"
+		noOfFrames = 3
+	}
+	# 交易中立機構(ジュラコープ、エキゾチックガス)
+	spriteType = {
+		name = "GFX_find_enclave_trader_xuracorp_btn"
+		texturefile = "gfx/interface/icons/find_enclave_trader_xuracorp_btn.dds"
+		noOfFrames = 3
+	}
+	# 交易中立機構(ムウタガン商業ギルド、レアクリスタル)
+	spriteType = {
+		name = "GFX_find_enclave_trader_muutagan_btn"
+		texturefile = "gfx/interface/icons/find_enclave_trader_muutagan_btn.dds"
+		noOfFrames = 3
+	}
+	# 学術中立機構
+	spriteType = {
+		name = "GFX_find_enclave_curator_btn"
+		texturefile = "gfx/interface/icons/find_enclave_curator_btn.dds"
+		noOfFrames = 3
+	}
+	# 工匠中立機構
+	spriteType = {
+		name = "GFX_find_enclave_artist_btn"
+		texturefile = "gfx/interface/icons/find_enclave_artist_btn.dds"
+		noOfFrames = 3
+	}
+	# 回収者中立機構
+	spriteType = {
+		name = "GFX_find_enclave_salvager_btn"
+		texturefile = "gfx/interface/icons/find_enclave_salvager_btn.dds"
+		noOfFrames = 3
+	}
+	# シュラウドウォーカー中立機構
+	spriteType = {
+		name = "GFX_find_enclave_shroudwalker_btn"
+		texturefile = "gfx/interface/icons/find_enclave_shroudwalker_btn.dds"
+		noOfFrames = 3
+	}
+	# 傭兵中立機構(自国領土内のみ)
+	spriteType = {
+		name = "GFX_find_enclave_mercenary_btn"
+		texturefile = "gfx/interface/icons/find_enclave_mercenary_btn.dds"
+		noOfFrames = 3
+	}
+	# 傭兵中立機構(全部)
+	spriteType = {
+		name = "GFX_find_enclave_mercenary_all_btn"
+		texturefile = "gfx/interface/icons/find_enclave_mercenary_all_btn.dds"
+		noOfFrames = 3
+	}
+	# キャラバン
+	spriteType = {
+		name = "GFX_find_enclave_caravaneer_btn"
+		texturefile = "gfx/interface/icons/find_enclave_caravaneer_btn.dds"
+		noOfFrames = 3
+	}
+	# 結晶帝国
+	spriteType = {
+		name = "GFX_find_enclave_central_crystal_btn"
+		texturefile = "gfx/interface/icons/find_enclave_central_crystal_btn.dds"
+		noOfFrames = 3
+	}
+}

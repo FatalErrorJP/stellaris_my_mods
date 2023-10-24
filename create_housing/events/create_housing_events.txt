@@ -1,0 +1,392 @@
+namespace = create_housing
+
+# Ver3.7.x系では、何故かfree_housingをtriggerで判定しても上手く動作しない
+# 代わりにEffect内でのifで判定する
+
+###########################################################
+# 年次イベント
+###########################################################
+country_event = {
+	id = create_housing.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = yes
+		OR = {
+			is_country_type = default
+			is_country_type = awakened_fallen_empire
+		}
+		has_country_resource = { type = minerals amount > 1000 }
+	}
+
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				is_colony = yes
+				is_under_colonization = no
+				has_orbital_bombardment = no
+				planet_devastation = 0
+			}
+			planet_event = { id = create_housing.11 }
+			planet_event = { id = create_housing.12 }
+		}
+	}
+}
+
+###########################################################
+# 空き住居のないAI国家の惑星に、都市区域を建設する
+# ただし、以下のケースは無視する
+# ・爆撃されている
+# ・荒廃している
+# ・区域を建てられる枠がない
+# ・都市区域の生成に必要な十分な鉱物がない(消費は500だが、1000以上持っている必要あり)
+###########################################################
+planet_event = {
+	id = create_housing.11
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			is_ai = yes
+			OR = {
+				is_country_type = default
+				is_country_type = awakened_fallen_empire
+			}
+			has_country_resource = { type = minerals amount > 1000 }
+		}
+
+		is_colony = yes
+		is_under_colonization = no
+		has_orbital_bombardment = no
+		planet_devastation = 0
+
+		OR = {
+			num_free_districts = { value > 0 type = district_orders_demesne }
+			num_free_districts = { value > 0 type = district_crashed_slaver_ship }
+			num_free_districts = { value > 0 type = district_city }
+			num_free_districts = { value > 0 type = district_hive }
+			num_free_districts = { value > 0 type = district_nexus }
+			num_free_districts = { value > 0 type = district_arcology_housing }
+			num_free_districts = { value > 0 type = district_hab_housing }
+			num_free_districts = { value > 0 type = district_rw_city }
+			num_free_districts = { value > 0 type = district_rw_hive }
+			num_free_districts = { value > 0 type = district_rw_nexus }
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				free_housing <= 0
+				free_district_slots > 0
+			}
+			if = {
+				limit = { num_free_districts = { value > 0 type = district_orders_demesne } }
+				add_district = district_orders_demesne
+			} else_if = {
+				limit = { num_free_districts = { value > 0 type = district_crashed_slaver_ship } }
+				add_district = district_crashed_slaver_ship
+			} else_if = {
+				limit = { num_free_districts = { value > 0 type = district_city } }
+				add_district = district_city
+			} else_if = {
+				limit = { num_free_districts = { value > 0 type = district_hive } }
+				add_district = district_hive
+			} else_if = {
+				limit = { num_free_districts = { value > 0 type = district_nexus } }
+				add_district = district_nexus
+			} else_if = {
+				limit = { num_free_districts = { value > 0 type = district_arcology_housing } }
+				add_district = district_arcology_housing
+			} else_if = {
+				limit = { num_free_districts = { value > 0 type = district_hab_housing } }
+				add_district = district_hab_housing
+			} else_if = {
+				limit = { num_free_districts = { value > 0 type = district_rw_city } }
+				add_district = district_rw_city
+			} else_if = {
+				limit = { num_free_districts = { value > 0 type = district_rw_hive } }
+				add_district = district_rw_hive
+			} else_if = {
+				limit = { num_free_districts = { value > 0 type = district_rw_nexus } }
+				add_district = district_rw_nexus
+			}
+			owner = { add_resource = { minerals = -500 } }
+		}
+	}
+}
+
+###########################################################
+# 都市区域を建てすぎて空き住居の多すぎる惑星の都市区域を別の区域に置き換える
+# ただし、以下のケースは無視する
+# ・爆撃されている
+# ・荒廃している
+# ・区域の生成に必要な十分な鉱物がない(消費は500だが、1000以上持っている必要あり)
+# ・都市区域を破壊することで、元々存在する建造物が荒廃する
+#
+# 置き換え先の区域は、国家の月次収入に従って判定する
+# 優先順位の高い順に以下の通り
+# 1. 研究区域がある場合は研究区域にする
+# 2. エキュメノポリスは鋳造アーコロジーにする
+# 3. 赤字の資源に対応する区域にする
+# 4. エネルギー、鉱物、合金の中で一番資源収入が低い資源の区域にする
+# 対応する区域がない場合は都市区域の破壊のみが実行されます
+###########################################################
+planet_event = {
+	id = create_housing.12
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			is_ai = yes
+			OR = {
+				is_country_type = default
+				is_country_type = awakened_fallen_empire
+			}
+			has_country_resource = { type = minerals amount > 1000 }
+		}
+
+		is_colony = yes
+		is_under_colonization = no
+		has_orbital_bombardment = no
+		planet_devastation = 0
+	}
+
+	immediate = {
+		##
+		# 都市区域を破壊したときに、建造物が荒廃しないかどうかをチェックする
+		##
+		export_modifier_to_variable = {
+			modifier = planet_max_buildings_add
+			variable = max_building_add
+		} # 追加で建てられる建造物の数(1個目の建造物の数は除く)
+		export_trigger_value_to_variable = {
+			trigger = num_buildings
+			parameters = { type = any }
+			variable = real_buildings_num
+			rounded = yes
+		} # 建造物の数(1個目の建造物の数を含む)
+
+		if = {
+			limit = {
+				# 都市区域を破壊したときに、建造物が荒廃しないかどうか
+				check_variable_arithmetic = { which = max_building_add subtract = real_buildings_num value >= 0 }
+
+				# 一定以上の空き住居があるか
+				free_housing > 10
+				OR = {
+					num_districts = { value > 5 type = district_orders_demesne }
+					num_districts = { value > 5 type = district_crashed_slaver_ship }
+					num_districts = { value > 5 type = district_city }
+					num_districts = { value > 5 type = district_hive }
+					num_districts = { value > 5 type = district_nexus }
+					num_districts = { value > 1 type = district_arcology_housing }
+					num_districts = { value > 5 type = district_hab_housing }
+					num_districts = { value > 1 type = district_rw_city }
+					num_districts = { value > 1 type = district_rw_hive }
+					num_districts = { value > 1 type = district_rw_nexus }
+				}
+			}
+
+			###
+			# 都市区域を破壊する
+			###
+			if = {
+				limit = { num_districts = { value > 0 type = district_orders_demesne } }
+				remove_district = district_orders_demesne
+			} else_if = {
+				limit = { num_districts = { value > 0 type = district_crashed_slaver_ship } }
+				remove_district = district_crashed_slaver_ship
+			} else_if = {
+				limit = { num_districts = { value > 0 type = district_city } }
+				remove_district = district_city
+			} else_if = {
+				limit = { num_districts = { value > 0 type = district_hive } }
+				remove_district = district_hive
+			} else_if = {
+				limit = { num_districts = { value > 0 type = district_nexus } }
+				remove_district = district_nexus
+			} else_if = {
+				limit = { num_districts = { value > 0 type = district_arcology_housing } }
+				remove_district = district_arcology_housing
+			} else_if = {
+				limit = { num_districts = { value > 0 type = district_hab_housing } }
+				remove_district = district_hab_housing
+			} else_if = {
+				limit = { num_districts = { value > 0 type = district_rw_city } }
+				remove_district = district_rw_city
+			} else_if = {
+				limit = { num_districts = { value > 0 type = district_rw_hive } }
+				remove_district = district_rw_hive
+			} else_if = {
+				limit = { num_districts = { value > 0 type = district_rw_nexus } }
+				remove_district = district_rw_nexus
+			}
+
+			# 国家の月次収入を予め取得しておく
+			owner = {
+				export_resource_income_to_variable = { resource = energy         variable = energy_income         }
+				export_resource_income_to_variable = { resource = minerals       variable = minerals_income       }
+				export_resource_income_to_variable = { resource = food           variable = food_income           }
+				export_resource_income_to_variable = { resource = consumer_goods variable = consumer_goods_income }
+				export_resource_income_to_variable = { resource = alloys         variable = alloys_income         }
+			}
+
+			###
+			# 置き換え先の区域を作成する
+			###
+			if = {
+				limit = { num_free_districts = { value > 0 type = district_rw_science } }
+				add_district = district_rw_science
+			} else_if = {
+				limit = { num_free_districts = { value > 0 type = district_hab_science } }
+				add_district = district_hab_science
+			} else_if = {
+				limit = { num_free_districts = { value > 0 type = district_arcology_arms_industry } }
+				add_district = district_arcology_arms_industry
+			} else_if = {
+				limit = { owner = { check_variable = { which = energy_income value < 0 } } }
+				if = {
+					limit = { num_free_districts = { value > 0 type = district_generator } }
+					add_district = district_generator
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_generator_uncapped } }
+					add_district = district_generator_uncapped
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_hab_energy } }
+					add_district = district_hab_energy
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_rw_generator } }
+					add_district = district_rw_generator
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_srw_commercial } }
+					add_district = district_srw_commercial
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_rw_commercial } }
+					add_district = district_rw_commercial
+				}
+			} else_if = {
+				limit = { owner = { check_variable = { which = minerals_income value < 0 } } }
+				if = {
+					limit = { num_free_districts = { value > 0 type = district_mining } }
+					add_district = district_mining
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_mining_uncapped } }
+					add_district = district_mining_uncapped
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_hab_mining } }
+					add_district = district_hab_mining
+				}
+			} else_if = {
+				limit = { owner = { check_variable = { which = food_income value < 0 } } }
+				if = {
+					limit = { num_free_districts = { value > 0 type = district_farming } }
+					add_district = district_farming
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_farming_uncapped } }
+					add_district = district_farming_uncapped
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_rw_farming } }
+					add_district = district_rw_farming
+				}
+			} else_if = {
+				limit = { owner = { check_variable = { which = consumer_goods_income value < 0 } } }
+				if = {
+					limit = { num_free_districts = { value > 0 type = district_industrial } }
+					add_district = district_industrial
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_hab_industrial } }
+					add_district = district_hab_industrial
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_rw_industrial } }
+					add_district = district_rw_industrial
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_arcology_civilian_industry } }
+					add_district = district_arcology_civilian_industry
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_srw_commercial } }
+					add_district = district_srw_commercial
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_rw_commercial } }
+					add_district = district_rw_commercial
+				}
+			} else_if = {
+				limit = { owner = { check_variable = { which = alloys_income value < 0 } } }
+				if = {
+					limit = { num_free_districts = { value > 0 type = district_industrial } }
+					add_district = district_industrial
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_hab_industrial } }
+					add_district = district_hab_industrial
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_rw_industrial } }
+					add_district = district_rw_industrial
+				}
+			} else_if = {
+				limit = {
+					owner = {
+						check_variable = { which = energy_income value <= minerals_income }
+						check_variable = { which = energy_income value <= alloys_income }
+					}
+				}
+				if = {
+					limit = { num_free_districts = { value > 0 type = district_generator } }
+					add_district = district_generator
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_generator_uncapped } }
+					add_district = district_generator_uncapped
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_hab_energy } }
+					add_district = district_hab_energy
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_rw_generator } }
+					add_district = district_rw_generator
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_srw_commercial } }
+					add_district = district_srw_commercial
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_rw_commercial } }
+					add_district = district_rw_commercial
+				}
+			} else_if = {
+				limit = {
+					owner = {
+						check_variable = { which = minerals_income value <= energy_income }
+						check_variable = { which = minerals_income value <= alloys_income }
+					}
+				}
+				if = {
+					limit = { num_free_districts = { value > 0 type = district_mining } }
+					add_district = district_mining
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_mining_uncapped } }
+					add_district = district_mining_uncapped
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_hab_mining } }
+					add_district = district_hab_mining
+				}
+			} else_if = {
+				limit = {
+					owner = {
+						check_variable = { which = alloys_income value <= energy_income }
+						check_variable = { which = alloys_income value <= minerals_income }
+					}
+				}
+				if = {
+					limit = { num_free_districts = { value > 0 type = district_industrial } }
+					add_district = district_industrial
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_hab_industrial } }
+					add_district = district_hab_industrial
+				} else_if = {
+					limit = { num_free_districts = { value > 0 type = district_rw_industrial } }
+					add_district = district_rw_industrial
+				}
+			}
+			owner = { add_resource = { minerals = -500 } }
+		}
+	}
+}

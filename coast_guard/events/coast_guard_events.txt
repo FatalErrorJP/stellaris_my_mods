@@ -1,0 +1,27 @@
+namespace = coast_guard
+
+country_event = {
+	id = coast_guard.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_gestalt = no
+	}
+
+	immediate = {
+		if = {
+			# 「沿岸警備隊」の布告が有効な場合は、効果の再計算をする
+			limit = { has_edict = coast_guard }
+			remove_modifier = coast_guard
+			add_modifier = {
+				modifier = coast_guard
+				multiplier = value:coast_guard_trade_protection_value
+			}
+		} else_if = {
+			# 「沿岸警備隊」の布告が無効な場合は、帝国補正を削除する
+			limit = { has_modifier = coast_guard }
+			remove_modifier = coast_guard
+		}
+	}
+}

@@ -1,0 +1,67 @@
+##############################################################
+# 鳴花ヒメ種族用のポートレート定義
+##############################################################
+# 画像、音声ファイルとのリンク設定
+portraits = {
+	himeC_01 = { texturefile = "gfx/models/portraits/meika/hime/himeC_01.dds" }
+	himeC_02 = { texturefile = "gfx/models/portraits/meika/hime/himeC_02.dds" }
+	himeC_03 = { texturefile = "gfx/models/portraits/meika/hime/himeC_03.dds" }
+	himeC_04 = { texturefile = "gfx/models/portraits/meika/hime/himeC_04.dds" }
+	himeC_05 = { texturefile = "gfx/models/portraits/meika/hime/himeC_05.dds" }
+	himeC_06 = { texturefile = "gfx/models/portraits/meika/hime/himeC_06.dds" }
+	himeC_07 = { texturefile = "gfx/models/portraits/meika/hime/himeC_07.dds" }
+	himeC_08 = { texturefile = "gfx/models/portraits/meika/hime/himeC_08.dds" }
+}
+
+# 各場面別のポートレート
+portrait_groups = {
+	hime = {
+		# デフォルト
+		default = himeC_01
+
+		# 帝国作成時
+		game_setup = {
+			add = {
+				portraits = {
+					himeC_01 himeC_02 himeC_03 himeC_04 himeC_05 himeC_06 himeC_07 himeC_08
+				}
+			}
+		}
+
+		# 汎用
+		species = {
+			add = {
+				portraits = {
+					himeC_01 himeC_02 himeC_03 himeC_04 himeC_05 himeC_06 himeC_07 himeC_08
+				}
+			}
+		}
+
+		# 惑星上のPOP
+		pop = {
+			add = {
+				portraits = {
+					himeC_01 himeC_02 himeC_03 himeC_04 himeC_05 himeC_06 himeC_07 himeC_08
+				}
+			}
+		}
+
+		#リーダー
+		leader = {
+			add = {
+				portraits = {
+					himeC_01 himeC_02 himeC_03 himeC_04 himeC_05 himeC_06 himeC_07 himeC_08
+				}
+			}
+		}
+
+		# 国家元首
+		ruler = {
+			add = {
+				portraits = {
+					himeC_01 himeC_02 himeC_03 himeC_04 himeC_05 himeC_06 himeC_07 himeC_08
+				}
+			}
+		}
+	}
+}

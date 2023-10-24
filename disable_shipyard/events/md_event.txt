@@ -1,0 +1,71 @@
+###########################################################
+# 巨大造船所のON/OFF機能追加用コード
+# コード提供：6thStrikeUnit様
+###########################################################
+namespace = md_event
+
+#巨大構造物置換イベント(星系獲得時)
+country_event = {
+	id = md_event.001
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_ai = yes
+		from = {
+			any_system_megastructure = {
+				OR = {
+					is_megastructure_type = mega_shipyard_1_disabled
+					is_megastructure_type = mega_shipyard_2_disabled
+					is_megastructure_type = mega_shipyard_3_disabled
+					is_megastructure_type = mega_shipyard_restored_disabled
+				}
+			}
+		}
+	}
+	immediate = {
+		from = {
+			every_system_megastructure = {
+				switch = {
+					trigger = is_megastructure_type
+					mega_shipyard_1_disabled = { upgrade_megastructure_to = mega_shipyard_1_enabled }
+					mega_shipyard_2_disabled = { upgrade_megastructure_to = mega_shipyard_2_enabled }
+					mega_shipyard_3_disabled = { upgrade_megastructure_to = mega_shipyard_3_enabled }
+					mega_shipyard_restored_disabled = { upgrade_megastructure_to = mega_shipyard_restored_enabled }
+				}
+			}
+		}
+	}
+}
+
+#巨大構造物置換イベント(星系領有者変更時)
+system_event = {
+	id = md_event.002
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		any_system_megastructure = {
+			OR = {
+				is_megastructure_type = mega_shipyard_1_disabled
+				is_megastructure_type = mega_shipyard_2_disabled
+				is_megastructure_type = mega_shipyard_3_disabled
+				is_megastructure_type = mega_shipyard_restored_disabled
+			}
+		}
+		from = {
+			is_ai = yes
+		}
+	}
+	immediate = {
+		every_system_megastructure = {
+			switch = {
+				trigger = is_megastructure_type
+				mega_shipyard_1_disabled = { upgrade_megastructure_to = mega_shipyard_1_enabled }
+				mega_shipyard_2_disabled = { upgrade_megastructure_to = mega_shipyard_2_enabled }
+				mega_shipyard_3_disabled = { upgrade_megastructure_to = mega_shipyard_3_enabled }
+				mega_shipyard_restored_disabled = { upgrade_megastructure_to = mega_shipyard_restored_enabled }
+			}
+		}
+	}
+}

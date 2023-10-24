@@ -1,0 +1,210 @@
+# pirate_situation.1   : start_situation event
+# pirate_situation.2-9 : stages on_first_enter
+# pirate_situation.11  : on_progress_complete
+# pirate_situation.21  : on_abort
+namespace = pirate_situation
+
+# start_situation event
+country_event = {
+	id = pirate_situation.1
+	title = "pirate_situation.1.name"
+	picture = GFX_evt_pirate_armada
+	show_sound = event_space_battle
+	location = event_target:pirate_system
+	desc = pirate_situation.1.desc
+	is_triggered_only = yes
+
+	immediate = {
+		set_timed_country_flag = { flag = pirates_spawned days = 3600 }
+		set_country_flag = birth_of_piracy
+		set_country_flag = pirate_encountered
+
+		random_system_within_border = {
+			limit = {
+				has_trade_route = yes
+				trade_intercepted_value > 0
+			}
+			save_event_target_as = pirate_system
+		}
+	}
+
+	option = {
+		name = pirate_situation.1.a
+	}
+
+	after = {
+		event_target:pirate_system = {
+			prev = { start_situation = { type = situation_pirate target = prev.system_star } }
+		}
+	}
+}
+
+
+# stages2 on_first_enter
+situation_event = {
+	id = pirate_situation.2
+	title = pirate_situation.2.name
+	desc = pirate_situation.2.desc
+	picture = GFX_evt_pirate_armada
+	is_triggered_only = yes
+	location = target
+	situation = this
+	show_sound = event_radio_chatter
+
+	option = {
+		name = pirate_situation.2.a
+	}
+}
+
+# stages3 on_first_enter
+situation_event = {
+	id = pirate_situation.3
+	title = pirate_situation.3.name
+	desc = pirate_situation.3.desc
+	picture = GFX_evt_pirate_armada
+	is_triggered_only = yes
+	location = target
+	situation = this
+	show_sound = event_radio_chatter
+
+	option = {
+		name = pirate_situation.3.a
+	}
+}
+
+# stages4 on_first_enter
+situation_event = {
+	id = pirate_situation.4
+	title = pirate_situation.4.name
+	desc = pirate_situation.4.desc
+	picture = GFX_evt_pirate_armada
+	is_triggered_only = yes
+	location = target
+	situation = this
+	show_sound = event_radio_chatter
+
+	option = {
+		name = pirate_situation.4.a
+	}
+}
+
+# on_progress_complete
+situation_event = {
+	id = pirate_situation.11
+	title = pirate_situation.11.name
+	desc = pirate_situation.11.desc
+	picture = GFX_evt_pirate_armada
+	is_triggered_only = yes
+	location = target
+	situation = this
+	show_sound = event_radio_chatter
+
+	immediate = {
+		owner = {
+			capital_scope = {
+				save_event_target_as = capital
+				solar_system = { save_event_target_as = capital_system }
+			}
+			save_event_target_as = pirate_target
+			owner_species = { save_event_target_as = owner_species }
+		}
+		target.solar_system = {
+			save_event_target_as = pirate_system
+			if = {
+				limit = { root.owner = { has_authority = auth_hive_mind } }
+				random_list = {
+					50 = { create_drone_pirate_country = yes }
+					50 = { create_drone_pirate_country_2 = yes }
+				}
+			} else_if = {
+				limit = { root.owner = { has_authority = auth_machine_intelligence } }
+				random_list = {
+					50 = { create_machine_pirate_country = yes }
+					50 = { create_machine_pirate_country_2 = yes }
+				}
+			} else = {
+				create_normal_pirate_country = yes
+			}
+			create_pirate_fleet = yes
+		}
+	}
+
+	option = {
+		name = pirate_situation.11.a
+	}
+
+	after = {
+		destroy_situation = this
+	}
+}
+
+# on_abort event
+#
+# 貰える報酬についての捕捉)
+# 最終的な報酬 = 報酬の基礎値 * 現在のstageの補正値 * 交易政策
+#
+# ・報酬の基礎値
+# | 交易路の価値 | 報酬の基礎値
+# | > 20         | 20
+# | > 50         | 50
+# | > 100        | 100
+# | > 200        | 200
+# | > 300        | 300
+# | > 500        | 500
+# | > 1000       | 1000
+#
+# ・stageの補正値
+# stage1 : 20
+# stage2 : 15
+# stage3 : 10
+# stage4 : 5
+#
+# ・交易政策
+# 富の創造     : エネルギー1
+# 消費者の利益 : エネルギー0.5 消費財0.25
+# 思想市場     : エネルギー0.5 統合力0.25
+# 通商連合     : エネルギー0.5 消費財0.2 統合力0.2
+situation_event = {
+	id = pirate_situation.21
+	title = pirate_situation.21.name
+	desc = pirate_situation.21.desc
+	picture = GFX_evt_pirate_armada
+	is_triggered_only = yes
+	location = from
+	situation = this
+	show_sound = event_radio_chatter
+
+	option = {
+		name = pirate_situation.21.a
+	}
+
+	after = {
+		from.owner = {
+			if = {
+				# 消費者の利益
+				limit = { has_policy_flag = trade_conversion_consumer_goods }
+				add_resource = { energy = 0.5 consumer_goods = 0.25 mult = base_trade_value }
+			} else_if = {
+				# 思想市場
+				limit = { has_policy_flag = trade_conversion_unity }
+				add_resource = { energy = 0.5 unity = 0.25 mult = base_trade_value }
+			} else_if = {
+				# 通商連合
+				limit = { has_policy_flag = trade_conversion_trade_league }
+				add_resource = { energy = 0.5 consumer_goods = 0.2 unity = 0.2 mult = base_trade_value }
+			} else_if = {
+				# 聖なる盟約
+				limit = { has_policy_flag = trade_conversion_holy_covenant }
+				add_resource = { energy = 0.5 unity = 0.5 mult = base_trade_value }
+			} else = {
+				# 富の創造
+				add_resource = { energy = 1 mult = base_trade_value }
+			}
+
+			hidden_effect = {
+				clear_variable = base_trade_value
+				clear_variable = stege_mult
+			}
+		}
+	}
+}

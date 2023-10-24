@@ -1,0 +1,25 @@
+namespace = action
+
+# ロボットが作成でできるようになった時に呼ばれる処理
+country_event = {
+	id = action.56
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_built_species = no
+		has_technology = tech_robotic_workers
+	}
+
+	immediate = {
+		create_built_robot_species = yes
+
+		###############################
+		# ここからMod追加コード
+		###############################
+		add_same_species = yes
+		###############################
+		# ここまでMod追加コード
+		###############################
+	}
+}

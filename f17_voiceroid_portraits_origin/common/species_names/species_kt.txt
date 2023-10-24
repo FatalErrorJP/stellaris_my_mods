@@ -1,0 +1,122 @@
+﻿kotonoha = {
+	alari = {
+		name = "アラリ"#Alari
+		plural = "アラリ"#Alari
+		home_planet = "アラリア"#Alaria
+		home_system = "アラー"#Alar
+		name_list = "HUM1"
+	}	
+	
+	mireesh = {
+		name = "ミレーシュ"#Mireesh
+		plural = "ミレーシュ"#Mireeshi
+		home_planet = "ミラティ"#Mirati
+		home_system = "ミレーシュマ"#"Mireesh Mar"
+		name_list = "HUM3"
+	}
+	
+	triech = {
+		name = "トリエク"#Triech
+		plural = "トリエク"#Triechs
+		home_planet = "トリエク"#Triech
+		home_system = "レキオ"#Rechio
+		name_list = "HUM3"
+	}
+	
+	vrinn = {
+		name = "ヴリン"#Vrinn
+		plural = "ヴリン"#Vrinn
+		home_planet = "ブリン"#Vrinn
+		home_system = "ヴリヌス"#Vrinnus
+		name_list = "HUM4"
+	}
+	
+	cevanti = {
+		name = "セヴァンチ"#Cevanti
+		plural = "セヴァンチ"#Cevanti
+		home_planet = "オロス"#Oros
+		home_system = "セヴァント"#Cevant 
+		name_list = "HUM1"
+	}
+	
+	mishar = {
+		name = "ミシャー"#Mishar
+		plural = "ミシャー"#Mishars
+		home_planet = "ミシリ"#Mishri
+		home_system = "シャー"#Shar
+		name_list = "HUM2"
+	}
+	
+	fareen = {
+		name = "ファレーン"#Fareen
+		plural = "ファレーン"#Fareens
+		home_planet = "ファラ"#Fara
+		home_system = "エナト"#Enato
+		name_list = "HUM3"
+	}
+	
+	yldar = {
+		name = "イルダー"#Yldar
+		plural = "イルダー"#Yldars
+		home_planet = "イルダー"#Yldar
+		home_system = "イリアント"#Yliant
+		name_list = "HUM4"
+	}
+	
+	korinth = {
+		name = "コリント"#Korinth
+		plural = "コリント"#Korinths
+		home_planet = "コロス"#Koros
+		home_system = "コリント"#Korinth
+		name_list = "HUM1"
+	}
+		
+	sildor = {
+		name = "シルドール"#Sildor
+		plural = "シルドール"#Sildors
+		home_planet = "シルドリア"#Sildoria
+		home_system = "シラ"#Sila
+		name_list = "HUM2"
+	}
+	
+	nagyari = {
+		name = "ナギャリ"#Nagyari
+		plural = "ナギャリ"#Nagyari
+		home_planet = "ナギャリア"#Nagyaria
+		home_system = "ナギャル"#Nagyar
+		name_list = "HUM3"
+	}
+
+	kobarian = {
+		name = "コバリアン"#Kobarian
+		plural = "コバリアン"#Kobarians
+		home_planet = "コバリア"#Kobaria
+		home_system = "コブ"#Kobb
+		name_list = "HUM4"
+	}
+
+	Hesukar = {
+		name = "ヘスカー"#Hesukar
+		plural = "ヘスカリ"#Hesukari
+		home_planet = "ヘスクプライム"
+		home_system = "ヘスク"#Hesuk
+ 		name_list = "HUM1"
+ 	}
+
+	giroid = {
+		name = "ギロイド"#Giroid
+		plural = "ギロイド"#Giroids
+		home_planet = "ギルザナ"#Gir-Zana
+		home_system = "ギル"#Gir
+		name_list = "HUM2"
+	}
+
+	akkano = {
+		name = "アッカノ"#Akkano
+		plural = "アッカノ"#Akkanos
+		home_planet = "アッカナー"#Akkanar
+		home_system = "アック"#Akk
+		name_list = "HUM3"
+	}
+}
+

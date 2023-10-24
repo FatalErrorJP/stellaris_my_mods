@@ -1,0 +1,12 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_text_group_number"
+		texturefile = "gfx/interface/icons/text_icons/group_number.dds"
+		noOfFrames = 11
+	}
+	spriteType = {
+		name = "GFX_text_flagship_group_number"
+		texturefile = "gfx/interface/icons/text_icons/flagship_group_number.dds"
+		noOfFrames = 11
+	}
+}

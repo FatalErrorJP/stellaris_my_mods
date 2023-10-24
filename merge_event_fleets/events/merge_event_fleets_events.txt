@@ -1,0 +1,85 @@
+###############################################################################
+# イベント艦を合流したいModのイベント処理
+###############################################################################
+namespace = merge_event_fleets
+
+###########################################################
+# 月次イベント
+# Root = Country
+###########################################################
+# イベント艦の合流を可能にするように、設定を変更する
+# 特定のイベントの艦隊のみを対象とするホワイトリスト方式だと実現が厳しいため
+# もともと合流できる艦隊も含めて変更する
+country_event = {
+	id = merge_event_fleets.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+	}
+
+	immediate = {
+		every_owned_fleet = {
+			limit = {
+				has_ship_owner_type = country					# 対象はプレイヤー国家の所有艦のみ(連邦、GDFの設計艦は除外する)
+				is_ship_class = shipclass_military				# 軍艦のみ
+				is_leased = no									# 他国から借りている艦隊は除外する
+
+				# マローダーから借りている艦隊及び、グレイは除外する
+				NOR = {
+					has_fleet_flag = armada_of_the_voidborn
+					has_fleet_flag = dwamak_bashers
+					has_fleet_flag = her_chosen_champions
+					has_fleet_flag = star_rider_flotilla
+					has_fleet_flag = unhinged_screamer_flotilla
+					has_fleet_flag = order_of_eternal_night
+					has_fleet_flag = first_storm_wing
+					has_fleet_flag = frenzied_volunteer_squadron
+					has_fleet_flag = twilight_congregation
+					is_ship_size = graygoo_mothership
+				}
+
+				# 変更済みの艦隊は除外する
+				not = { is_variable_set = merge_event_fleets }
+			}
+
+			# 艦隊の設定を変更する
+			set_fleet_settings = {
+				can_change_leader = yes			# リーダーの変更 許可
+				can_change_composition = yes	# 艦隊の追加 許可
+			}
+
+			# 変更済みフラグを付ける
+			set_variable = { which = merge_event_fleets value = 1 }
+		}
+	}
+}
+
+###########################################################
+# イベントリセット
+# コンソールコマンドでの実行を想定
+# event merge_event_fleets.2
+# Root = Country
+###########################################################
+# 変更済みフラグをリセットし、もう一度艦隊設定を変更できるようにする
+country_event = {
+	id = merge_event_fleets.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+	}
+
+	immediate = {
+		every_owned_fleet = {
+			limit = {
+				is_variable_set = merge_event_fleets
+			}
+
+			# 変更済みフラグを削除する
+			clear_variable = merge_event_fleets
+		}
+	}
+}

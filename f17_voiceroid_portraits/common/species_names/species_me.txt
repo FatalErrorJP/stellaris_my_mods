@@ -1,0 +1,121 @@
+meika = {
+	alari =  {
+		name = SPEC_Alari
+		plural = SPEC_Alari_pl
+		home_planet = SPEC_Alari_planet
+		home_system = SPEC_Alari_system
+		name_list =  "HUM1"
+	}
+
+	mireesh =  {
+		name = SPEC_Mireesh
+		plural = SPEC_Mireesh_pl
+		home_planet = SPEC_Mireesh_planet
+		home_system = SPEC_Mireesh_system
+		name_list =  "HUM2"
+	}
+
+	triech =  {
+		name = SPEC_Triech
+		plural = SPEC_Triech_pl
+		home_planet = SPEC_Triech_planet
+		home_system = SPEC_Triech_system
+		name_list =  "HUM3"
+	}
+
+	vrinn =  {
+		name = SPEC_Vrinn
+		plural = SPEC_Vrinn_pl
+		home_planet = SPEC_Vrinn_planet
+		home_system = SPEC_Vrinn_system
+		name_list =  "HUM4"
+	}
+
+	cevanti =  {
+		name = SPEC_Cevanti
+		plural = SPEC_Cevanti_pl
+		home_planet = SPEC_Cevanti_planet
+		home_system = SPEC_Cevanti_system
+		name_list =  "HUM1"
+	}
+
+	mishar =  {
+		name = SPEC_Mishar
+		plural = SPEC_Mishar_pl
+		home_planet = SPEC_Mishar_planet
+		home_system = SPEC_Mishar_system
+		name_list =  "HUM2"
+	}
+
+	fareen =  {
+		name = SPEC_Fareen
+		plural = SPEC_Fareen_pl
+		home_planet = SPEC_Fareen_planet
+		home_system = SPEC_Fareen_system
+		name_list =  "HUM3"
+	}
+
+	yldar =  {
+		name = SPEC_Yldar
+		plural = SPEC_Yldar_pl
+		home_planet = SPEC_Yldar_planet
+		home_system = SPEC_Yldar_system
+		name_list =  "HUM4"
+	}
+
+	korinth =  {
+		name = SPEC_Korinth
+		plural = SPEC_Korinth_pl
+		home_planet = SPEC_Korinth_planet
+		home_system = SPEC_Korinth_system
+		name_list =  "HUM1"
+	}
+
+	sildor =  {
+		name = SPEC_Sildor
+		plural = SPEC_Sildor_pl
+		home_planet = SPEC_Sildor_planet
+		home_system = SPEC_Sildor_system
+		name_list =  "HUM2"
+	}
+
+	nagyari =  {
+		name = SPEC_Nagyari
+		plural = SPEC_Nagyari_pl
+		home_planet = SPEC_Nagyari_planet
+		home_system = SPEC_Nagyari_system
+		name_list =  "HUM3"
+	}
+
+	kobarian =  {
+		name = SPEC_Kobarian
+		plural = SPEC_Kobarian_pl
+		home_planet = SPEC_Kobarian_planet
+		home_system = SPEC_Kobarian_system
+		name_list =  "HUM4"
+	}
+
+	Hesukar =  {
+		name = SPEC_Hesukar
+		plural = SPEC_Hesukar_pl
+		home_planet = SPEC_Hesukar_planet
+		home_system = SPEC_Hesukar_system
+		name_list =  "HUM1"
+	}
+
+	giroid =  {
+		name = SPEC_Giroid
+		plural = SPEC_Giroid_pl
+		home_planet = SPEC_Giroid_planet
+		home_system = SPEC_Giroid_system
+		name_list =  "HUM2"
+	}
+
+	akkano =  {
+		name = SPEC_Akkano
+		plural = SPEC_Akkano_pl
+		home_planet = SPEC_Akkano_planet
+		home_system = SPEC_Akkano_system
+		name_list =  "HUM3"
+	}
+}

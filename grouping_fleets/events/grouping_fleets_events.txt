@@ -1,0 +1,108 @@
+namespace = grouping_fleets
+
+# コロッサスのイベント
+# 神の光を照射した
+# Scope = Planet
+# From = fleet(colossus)
+planet_event = {
+	id = grouping_fleets.10
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			is_ai = no
+		}
+		from = {
+			owner = { is_same_value = root.owner }
+			is_ship_size = colossus
+			any_owned_ship = { has_component = PLANET_KILLER_GODRAY }
+			has_fleet_flag = godray_command
+		}
+	}
+
+	immediate = {
+		from = {
+			fleet_event = { id = grouping_fleets.11 scopes = { from = root.owner } }
+		}
+	}
+}
+
+# コロッサスのイベント
+# 精神主義以外のPOPのいる自国の惑星に神の光を照射する
+# Scope = Fleet(colossus)
+# From = Country(Fleet Owner)
+fleet_event = {
+	id = grouping_fleets.11
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ship_size = colossus
+		any_owned_ship = { has_component = PLANET_KILLER_GODRAY }
+		has_fleet_flag = godray_command
+		from = { is_ai = no }
+	}
+
+	immediate = {
+		if = {
+			from = {
+				# 神の光を当てる対象を決めるため、各惑星の精神主義派閥以外のPOPの数を数える
+				every_owned_planet = {
+					limit = {
+						is_colony = yes
+						is_under_colonization = no
+					}
+
+					export_trigger_value_to_variable = {
+						trigger = count_owned_pop
+						parameters = {
+							limit = {
+								OR = {
+									pop_has_ethic = ethic_fanatic_egalitarian
+									pop_has_ethic = ethic_fanatic_authoritarian
+									pop_has_ethic = ethic_fanatic_pacifist
+									pop_has_ethic = ethic_fanatic_militarist
+									pop_has_ethic = ethic_fanatic_xenophobe
+									pop_has_ethic = ethic_fanatic_xenophile
+									pop_has_ethic = ethic_fanatic_materialist
+									pop_has_ethic = ethic_egalitarian
+									pop_has_ethic = ethic_authoritarian
+									pop_has_ethic = ethic_pacifist
+									pop_has_ethic = ethic_militarist
+									pop_has_ethic = ethic_xenophobe
+									pop_has_ethic = ethic_xenophile
+									pop_has_ethic = ethic_materialist
+								}
+							}
+						}
+						variable = no_spiritualist_pop
+					}
+				}
+
+				# 精神主義派閥以外のPOPの最も多い惑星を1つ選択する
+				ordered_owned_planet = {
+					limit = {
+						is_colony = yes
+						is_under_colonization = no
+					}
+					order_by = no_spiritualist_pop
+					inverse = no
+					save_event_target_as = target_planet
+				}
+			}
+
+			# 対象の惑星に神の光を照射するように艦隊に命令する
+			if = {
+				limit = { exists = event_target:target_planet }
+				clear_orders = yes
+				clear_fleet_actions = this
+				queue_actions = {
+					move_to = event_target:target_planet
+					orbit_planet = event_target:target_planet
+					destroy_planet = { target = event_target:target_planet }
+				}
+			}
+		}
+	}
+}

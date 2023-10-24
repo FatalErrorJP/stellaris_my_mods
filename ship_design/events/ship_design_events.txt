@@ -1,0 +1,162 @@
+namespace = ship_design
+
+###########################################################
+# 特定の研究の完了に合わせて艦隊設計を自動的に作成する
+# 今はまだ対危機用の艦隊設計の追加しかしていないが
+# 将来的にはもっと設計のパターンを増やしたい
+#
+# イベント番号はship_design.abcというように3桁で表現する
+#
+# a:役割
+# 1:対招かれざるもの
+# 2:対プレスリン
+# 3:対コンティンジェンシー
+#
+# b:艦船の分類1
+# 1:通常の軍艦
+# 2:メナス艦
+# 3:基地関連
+#
+# c:艦隊の分類2
+# 1:コルベット
+# 2:フリゲート
+# 3:駆逐艦
+# 4:巡洋艦
+# 5:戦艦
+# 6:タイタン
+###########################################################
+
+# 対招かれざるもの級巡洋艦
+country_event = {
+	id = ship_design.114
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		not = { has_country_flag = anti_unbidden_cruiser_design }
+		has_technology = tech_cruisers
+		has_technology = tech_swarmer_missiles_1
+		has_technology = tech_ship_armor_1
+		has_technology = tech_shields_1
+		has_technology = tech_afterburners_1
+		has_technology = tech_fusion_power
+		has_technology = tech_hyper_drive_1
+		has_technology = tech_thrusters_1
+		has_technology = tech_combat_computers_1
+	}
+
+	immediate = {
+		create_ship_design = { design = "NAME_ANTI_UNBIDDEN_CRUISER" }
+		add_ship_design = last_created_design
+		set_country_flag = anti_unbidden_cruiser_design
+	}
+}
+
+# 対招かれざるもの級戦艦
+country_event = {
+	id = ship_design.115
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		not = { has_country_flag = anti_unbidden_battleship_design }
+		has_technology = tech_battleships
+		has_technology = tech_mass_accelerator_1
+		has_technology = tech_kinetic_artillery_1
+		has_technology = tech_swarmer_missiles_1
+		has_technology = tech_ship_armor_1
+		has_technology = tech_shields_1
+		has_technology = tech_auxiliary_fire_control
+		has_technology = tech_cold_fusion_power
+		has_technology = tech_hyper_drive_1
+		has_technology = tech_thrusters_1
+		has_technology = tech_combat_computers_1
+	}
+
+	immediate = {
+		create_ship_design = { design = "NAME_ANTI_UNBIDDEN_BATTLESHIP" }
+		add_ship_design = last_created_design
+		set_country_flag = anti_unbidden_battleship_design
+	}
+}
+
+# 対プレスリン級戦艦
+country_event = {
+	id = ship_design.215
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		not = { has_country_flag = anti_prethoryn_battleship_design }
+		has_technology = tech_battleships
+		has_technology = tech_energy_lance_1
+		has_technology = tech_plasma_1
+		has_technology = tech_pd_tracking_1
+		has_technology = tech_ship_armor_1
+		has_technology = tech_shields_1
+		has_technology = tech_afterburners_1
+		has_technology = tech_fission_power
+		has_technology = tech_hyper_drive_1
+		has_technology = tech_thrusters_1
+		has_technology = tech_combat_computers_1
+	}
+
+	immediate = {
+		create_ship_design = { design = "NAME_ANTI_PRETHORYN_BATTLESHIP" }
+		add_ship_design = last_created_design
+		set_country_flag = anti_prethoryn_battleship_design
+	}
+}
+
+# 対コンティンジェンシー級コルベット
+country_event = {
+	id = ship_design.311
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		not = { has_country_flag = anti_contingency_corvette_design }
+		has_technology = tech_corvettes
+		has_technology = tech_disruptors_1
+		has_technology = tech_afterburners_1
+		has_technology = tech_fission_power
+		has_technology = tech_hyper_drive_1
+		has_technology = tech_thrusters_1
+		has_technology = tech_combat_computers_1
+	}
+
+	immediate = {
+		create_ship_design = { design = "NAME_ANTI_CONTINGENCY_CORVETTE" }
+		add_ship_design = last_created_design
+		set_country_flag = anti_contingency_corvette_design
+	}
+}
+
+# 対コンティンジェンシー級戦艦
+country_event = {
+	id = ship_design.315
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		not = { has_country_flag = anti_contingency_battleship_design }
+		has_technology = tech_battleships
+		has_technology = tech_arc_emitter_1
+		has_technology = tech_afterburners_1
+		has_technology = tech_fission_power
+		has_technology = tech_hyper_drive_1
+		has_technology = tech_thrusters_1
+		has_technology = tech_combat_computers_1
+	}
+
+	immediate = {
+		create_ship_design = { design = "NAME_ANTI_CONTINGENCY_BATTLESHIP" }
+		add_ship_design = last_created_design
+		set_country_flag = anti_contingency_battleship_design
+	}
+}

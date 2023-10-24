@@ -1,0 +1,163 @@
+﻿character = {
+	size = { x = 472 y = 324 }
+
+	entity = {
+		orientation = center_down
+		position = { x = 50 y = -20 }
+		scale = 24
+	}
+	#2d Portrait position
+	icon = {
+		orientation = center_down
+		position = { x = 0 y = 0 }
+		scale = 1.0
+	}
+}
+
+portraits = {
+	
+	tuinaA_01 = { texturefile = "gfx/models/portraits/tuina/tuinaA_01.dds" }
+	tuinaA_02 = { texturefile = "gfx/models/portraits/tuina/tuinaA_02.dds" }
+	tuinaA_03 = { texturefile = "gfx/models/portraits/tuina/tuinaA_03.dds" }
+	tuinaA_04 = { texturefile = "gfx/models/portraits/tuina/tuinaA_04.dds" }
+	tuinaA_05 = { texturefile = "gfx/models/portraits/tuina/tuinaA_05.dds" }
+	tuinaA_06 = { texturefile = "gfx/models/portraits/tuina/tuinaA_06.dds" }
+	tuinaA_07 = { texturefile = "gfx/models/portraits/tuina/tuinaA_07.dds" }
+	tuinaA_08 = { texturefile = "gfx/models/portraits/tuina/tuinaA_08.dds" }
+}
+
+portrait_groups = {
+	tuina = {
+		default = tuinaA_01
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					tuinaA_01
+					tuinaA_02
+					tuinaA_03
+					tuinaA_04
+					tuinaA_05
+					tuinaA_06
+					tuinaA_07
+					tuinaA_08
+
+				}
+			}
+
+		}
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					tuinaA_01
+					tuinaA_02
+					tuinaA_03
+					tuinaA_04
+					tuinaA_05
+					tuinaA_06
+					tuinaA_07
+					tuinaA_08
+				}
+			}
+		}		
+		
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					tuinaA_01
+					tuinaA_02
+					tuinaA_03
+					tuinaA_04
+					tuinaA_05
+					tuinaA_06
+					tuinaA_07
+					tuinaA_08
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			
+			add = {
+				trigger = {
+					leader_class = governor
+				}
+				portraits = {
+					tuinaA_01
+					tuinaA_02
+					tuinaA_03
+					tuinaA_04
+					tuinaA_05
+					tuinaA_06
+					tuinaA_07
+					tuinaA_08
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = scientist
+				}
+				portraits = {
+					tuinaA_01
+					tuinaA_02
+					tuinaA_03
+					tuinaA_04
+					tuinaA_05
+					tuinaA_06
+					tuinaA_07
+					tuinaA_08
+
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = admiral
+				}
+				portraits = {
+					tuinaA_01
+					tuinaA_02
+					tuinaA_03
+					tuinaA_04
+					tuinaA_05
+					tuinaA_06
+					tuinaA_07
+					tuinaA_08
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = general
+				}
+				portraits = {
+					tuinaA_01
+					tuinaA_02
+					tuinaA_03
+					tuinaA_04
+					tuinaA_05
+					tuinaA_06
+					tuinaA_07
+					tuinaA_08
+				}
+			}
+		}
+		
+		#leader scope 
+		ruler = {
+			add = {
+			    	portraits = {
+					tuinaA_01
+					tuinaA_02
+					tuinaA_03
+					tuinaA_04
+					tuinaA_05
+					tuinaA_06
+					tuinaA_07
+					tuinaA_08
+				}
+			}
+
+		}
+	}

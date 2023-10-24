@@ -1,0 +1,184 @@
+defined_text = {
+	name = GetGroupColor
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_fleet_group_num value = 1 }
+		}
+		localization_key = FLEET_GROUP_COLOR_1
+	}
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_fleet_group_num value = 2 }
+		}
+		localization_key = FLEET_GROUP_COLOR_2
+	}
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_fleet_group_num value = 3 }
+		}
+		localization_key = FLEET_GROUP_COLOR_3
+	}
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_fleet_group_num value = 4 }
+		}
+		localization_key = FLEET_GROUP_COLOR_4
+	}
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_fleet_group_num value = 5 }
+		}
+		localization_key = FLEET_GROUP_COLOR_5
+	}
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_fleet_group_num value = 6 }
+		}
+		localization_key = FLEET_GROUP_COLOR_6
+	}
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_fleet_group_num value = 7 }
+		}
+		localization_key = FLEET_GROUP_COLOR_7
+	}
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_fleet_group_num value = 8 }
+		}
+		localization_key = FLEET_GROUP_COLOR_8
+	}
+	default = FLEET_GROUP_COLOR_0
+}
+
+defined_text = {
+	name = GetFleetNumber
+	value = This.rename_fleets_fleet_num
+}
+
+defined_text = {
+	name = GetFedFleetNumber
+	value = This.rename_fleets_fed_fleet_num
+}
+
+defined_text = {
+	name = GetGdfFleetNumber
+	value = This.rename_fleets_gdf_fleet_num
+}
+
+defined_text = {
+	name = GetGroupNumberIcon
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_flagship value = 0 }
+			check_variable = { which = grouping_fleets_fleet_group_num value = 1 }
+		}
+		localization_key = FLEET_GROUP_NUMBER_ICON_1
+	}
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_flagship value = 0 }
+			check_variable = { which = grouping_fleets_fleet_group_num value = 2 }
+		}
+		localization_key = FLEET_GROUP_NUMBER_ICON_2
+	}
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_flagship value = 0 }
+			check_variable = { which = grouping_fleets_fleet_group_num value = 3 }
+		}
+		localization_key = FLEET_GROUP_NUMBER_ICON_3
+	}
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_flagship value = 0 }
+			check_variable = { which = grouping_fleets_fleet_group_num value = 4 }
+		}
+		localization_key = FLEET_GROUP_NUMBER_ICON_4
+	}
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_flagship value = 0 }
+			check_variable = { which = grouping_fleets_fleet_group_num value = 5 }
+		}
+		localization_key = FLEET_GROUP_NUMBER_ICON_5
+	}
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_flagship value = 0 }
+			check_variable = { which = grouping_fleets_fleet_group_num value = 6 }
+		}
+		localization_key = FLEET_GROUP_NUMBER_ICON_6
+	}
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_flagship value = 0 }
+			check_variable = { which = grouping_fleets_fleet_group_num value = 7 }
+		}
+		localization_key = FLEET_GROUP_NUMBER_ICON_7
+	}
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_flagship value = 0 }
+			check_variable = { which = grouping_fleets_fleet_group_num value = 8 }
+		}
+		localization_key = FLEET_GROUP_NUMBER_ICON_8
+	}
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_flagship value = 1 }
+			check_variable = { which = grouping_fleets_fleet_group_num value = 1 }
+		}
+		localization_key = FLAGSHIP_GROUP_NUMBER_ICON_1
+	}
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_flagship value = 2 }
+			check_variable = { which = grouping_fleets_fleet_group_num value = 2 }
+		}
+		localization_key = FLAGSHIP_GROUP_NUMBER_ICON_2
+	}
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_flagship value = 3 }
+			check_variable = { which = grouping_fleets_fleet_group_num value = 3 }
+		}
+		localization_key = FLAGSHIP_GROUP_NUMBER_ICON_3
+	}
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_flagship value = 4 }
+			check_variable = { which = grouping_fleets_fleet_group_num value = 4 }
+		}
+		localization_key = FLAGSHIP_GROUP_NUMBER_ICON_4
+	}
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_flagship value = 5 }
+			check_variable = { which = grouping_fleets_fleet_group_num value = 5 }
+		}
+		localization_key = FLAGSHIP_GROUP_NUMBER_ICON_5
+	}
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_flagship value = 6 }
+			check_variable = { which = grouping_fleets_fleet_group_num value = 6 }
+		}
+		localization_key = FLAGSHIP_GROUP_NUMBER_ICON_6
+	}
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_flagship value = 7 }
+			check_variable = { which = grouping_fleets_fleet_group_num value = 7 }
+		}
+		localization_key = FLAGSHIP_GROUP_NUMBER_ICON_7
+	}
+	text = {
+		trigger = {
+			check_variable = { which = grouping_fleets_flagship value = 8 }
+			check_variable = { which = grouping_fleets_fleet_group_num value = 8 }
+		}
+		localization_key = FLAGSHIP_GROUP_NUMBER_ICON_8
+	}
+	default = FLEET_GROUP_NUMBER_ICON_0
+}

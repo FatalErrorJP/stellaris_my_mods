@@ -1,0 +1,68 @@
+##############################################################
+# 東北きりたん種族用のポートレート定義
+##############################################################
+# 画像、音声ファイルとのリンク設定
+portraits = {
+	kiritan_01 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_01.dds" }
+	kiritan_02 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_02.dds" }
+	kiritan_03 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_03.dds" }
+	kiritan_04 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_04.dds" }
+	kiritan_05 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_05.dds" }
+	kiritan_06 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_06.dds" }
+	kiritan_07 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_07.dds" }
+	kiritan_08 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_08.dds" }
+	kiritan_09 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_09.dds" }
+}
+
+# 各場面別のポートレート
+portrait_groups = {
+	kiritan = {
+		# デフォルト
+		default = kiritan_01
+
+		# 帝国作成時
+		game_setup = {
+			add = {
+				portraits = {
+					kiritan_01 kiritan_02 kiritan_03 kiritan_04 kiritan_05 kiritan_06 kiritan_07 kiritan_08 kiritan_09
+				}
+			}
+		}
+
+		# 汎用
+		species = {
+			add = {
+				portraits = {
+					kiritan_01 kiritan_02 kiritan_03 kiritan_04 kiritan_05 kiritan_06 kiritan_07 kiritan_08 kiritan_09
+				}
+			}
+		}
+
+		# 惑星上のPOP
+		pop = {
+			add = {
+				portraits = {
+					kiritan_01 kiritan_02 kiritan_03 kiritan_04 kiritan_05 kiritan_06 kiritan_07 kiritan_08 kiritan_09
+				}
+			}
+		}
+
+		#リーダー
+		leader = {
+			add = {
+				portraits = {
+					kiritan_01 kiritan_02 kiritan_03 kiritan_04 kiritan_05 kiritan_06 kiritan_07 kiritan_08 kiritan_09
+				}
+			}
+		}
+
+		# 国家元首
+		ruler = {
+			add = {
+				portraits = {
+					kiritan_01 kiritan_02 kiritan_03 kiritan_04 kiritan_05 kiritan_06 kiritan_07 kiritan_08 kiritan_09
+				}
+			}
+		}
+	}
+}

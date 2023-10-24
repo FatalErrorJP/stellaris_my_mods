@@ -1,0 +1,19 @@
+show_war_unoccupied_systems_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_ship_in_orbit
+}
+
+show_war_unoccupied_planets_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_ship_in_orbit
+}
+
+show_war_unoccupied_claim_systems_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_ship_in_orbit
+}
+
+show_war_unoccupied_claim_planets_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_ship_in_orbit
+}

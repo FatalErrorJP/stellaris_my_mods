@@ -1,0 +1,52 @@
+﻿l_japanese:
+  ###
+  # event
+  ###
+  # start_situation event
+  pirate_situation.1.name:0 "犯罪分子の活性化"
+  pirate_situation.1.desc:0 "§H[pirate_system.GetName]§!星系内の交易路は防衛体制が貧弱で、大半が無法地帯になっている。多くの海賊や密輸業者、さまざまな犯罪分子がこの星系に集まってきており、彼らは我が物顔で我々の交易船団を襲撃している。\n\n幸いな事に、今はまだ軍を派遣すれば鎮圧できる程度の規模のようだが、このまま彼らを野放しにしておけば脅威となるだろう。"
+  pirate_situation.1.a:0 "対処しなければならない"
+
+  # stages on_first_enter
+  pirate_situation.2.name:0 "犯罪組織の大規模化"
+  pirate_situation.2.desc:0 "§H[target.solar_system.GetName]§!星系の犯罪分子達の組織だった動きが活性化しているようだ。これまでは孤立した船を狙った小グループによる犯罪が多かったが、商船団を狙った大規模な海賊行為も大幅に増加している。"
+  pirate_situation.2.a:0 "手をこまねいている場合ではない"
+
+  pirate_situation.3.name:0 "犯罪組織の連携"
+  pirate_situation.3.desc:0 "§H[target.solar_system.GetName]§!星系での治安維持活動により、複数の密輸業者を捕らえることに成功した。彼らを尋問することで得た情報によれば、§H[target.solar_system.GetName]§!星系の犯罪組織の急速な大規模化は更に進んでいるようだ。我々に対抗するため、彼らはいわゆる同盟体制を組むことにしたらしい。"
+  pirate_situation.3.a:0  "厄介だな"
+
+  pirate_situation.4.name:0 "民間船の軍事転用"
+  pirate_situation.4.desc:0 "§H[target.solar_system.GetName]§!星系に終結した犯罪分子達が、拿捕した民間宇宙船を違法改造し、軍事転用を始めているとの情報をキャッチした。このまま放置を続ければ、強大な軍事力を保有した犯罪者集団が誕生し、§H[target.solar_system.GetName]§!星系がその支配下に置かれることになるだろう。"
+  pirate_situation.4.a:0  "時間はもう迫っている"
+
+  # on_progress_complete
+  pirate_situation.11.name:0 "脅威となった犯罪者集団"
+  pirate_situation.11.desc:0 "§H[target.solar_system.GetName]§!星系の犯罪組織は最早通常の治安活動では手が付けられないほどに強大化している。自らを「§S[pirate_band.GetName]§!」と呼称する彼らは、この星系権の領有権を主張し、その強大な軍事力で交易ルートに何度も攻撃を仕掛けている。\n\n彼らが冒涜的行為を続けるのを許してはならない！"
+  pirate_situation.11.a:0 "ただちに艦隊を派遣せよ"
+
+  # on_abort
+  pirate_situation.21.name:0 "犯罪分子達の鎮圧"
+  pirate_situation.21.desc:0 "§H[from.GetName]§!星系に集まりつつあった犯罪分子達は、我々の治安維持活動により、粛々と鎮圧された。今後も交易路の拡大に合わせ、適切な警備体制を敷いていく必要があるだろう。"
+  pirate_situation.21.a:0 "素晴らしい"
+
+  ###
+  # situation
+  ###
+  situation_pirate:0 "§H[target.solar_system.GetName]§!星系内の犯罪分子を鎮圧せよ"
+  situation_pirate_desc:0 "§H[target.solar_system.GetName]§!星系を通る交易路は、海賊や密輸業者、さまざまな犯罪分子の集まる危険地帯となっている。艦隊を派遣し、規模が大きくなる前に彼らを叩く必要があるだろう。"
+  situation_pirate_type:0 "犯罪分子の鎮圧"
+  situation_pirate_monthly_change_tooltip:0 "この状況の進行度は我々が採用する§Yアプローチ§!に左右される。§H[target.solar_system.GetName]§!星系に艦隊を派遣したり、基地や砲台を建てるなどして§H交易保護値§!や§H海賊抑止力§!を高めれば、問題はただちに解決するだろう。"
+  situation_pirate_completion_tooltip:0 "このまま有効な手立てが打てなければ、犯罪行為はより激化し、この宙域を使った交易は困難になるだろう。"
+
+  # stages
+  situation_pirate_stage_1:0 "§H[target.solar_system.GetName]§!星系内の犯罪分子の活動はより活性化するだろう。"
+  situation_pirate_stage_2:0 "$situation_pirate_stage_1$"
+  situation_pirate_stage_3:0 "$situation_pirate_stage_1$"
+  situation_pirate_stage_4:0 "$situation_pirate_stage_1$"
+
+  # approach
+  situation_pirate_monitor:0 "状況を注視する"
+  situation_pirate_monitor_tooltip:0 "我が国には鎮圧部隊を派遣するような余裕はない。"
+  situation_pirate_fleet:0 "鎮圧部隊を準備する"
+  situation_pirate_fleet_tooltip:0 "§H[target.solar_system.GetName]§!星系に艦隊を派遣したり、基地や砲台を建てるなどして§H交易保護値§!や§H海賊抑止力§!を高めれば、脅威となる前に犯罪分子を鎮圧できるはずだ。"

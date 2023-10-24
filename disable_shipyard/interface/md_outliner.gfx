@@ -1,0 +1,34 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_mega_shipyard_1_disabled_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/mega_shipyard.dds"
+	}
+	spriteType = {
+		name = "GFX_mega_shipyard_1_enabled_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/mega_shipyard.dds"
+	}
+	spriteType = {
+		name = "GFX_mega_shipyard_2_disabled_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/mega_shipyard.dds"
+	}
+	spriteType = {
+		name = "GFX_mega_shipyard_2_enabled_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/mega_shipyard.dds"
+	}
+	spriteType = {
+		name = "GFX_mega_shipyard_3_disabled_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/mega_shipyard.dds"
+	}
+	spriteType = {
+		name = "GFX_mega_shipyard_3_enabled_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/mega_shipyard.dds"
+	}
+	spriteType = {
+		name = "GFX_mega_shipyard_restored_disabled_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/mega_shipyard.dds"
+	}
+	spriteType = {
+		name = "GFX_mega_shipyard_restored_enabled_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/mega_shipyard.dds"
+	}
+}

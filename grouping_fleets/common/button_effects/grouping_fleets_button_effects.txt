@@ -1,0 +1,727 @@
+###############################################################################
+# 艦隊グループ化Mod用のbutton_effects
+#
+# 補足:
+#   各button_effectの記述の意味
+#   ・potential:画面にボタンを表示する条件
+#   ・allow:ボタンを押せる条件
+#   ・effects:実際にボタンを押した時の処理の内容
+#
+#   本Mod用の埋め込み変数
+#   grouping_fleets_fleet_group_num:艦隊グループの番号(0:未所属 1～8:それぞれの艦隊グループに所属)
+#   grouping_fleets_flagship:旗艦の指定(0:旗艦ではない,1～8:それぞれのグループの旗艦である)
+###############################################################################
+
+###########################################################
+# fleet_view関連のボタンイベント
+# Scope:
+#   This = fleet
+#   From = player country
+###########################################################
+#####
+# コロッサス 神の光を照射する
+#####
+colossus_godray_btn = {
+	potential = {
+		colossus_godray_btn_potential = yes
+	}
+	allow = {
+		colossus_btn_allow = yes
+	}
+	effect = {
+		custom_tooltip = TOOLTIP_COLOSSUS_GODRAY
+		hidden_effect = {
+			set_fleet_flag = godray_command
+			fleet_event = { id = grouping_fleets.11 scopes = { from = from } }
+		}
+	}
+}
+colossus_godray_cancel_btn = {
+	potential = {
+		colossus_godray_cancel_btn_potential = yes
+	}
+	allow = {
+		colossus_btn_allow = yes
+	}
+	effect = {
+		custom_tooltip = TOOLTIP_COLOSSUS_GODRAY_CANCEL
+		hidden_effect = {
+			remove_fleet_flag = godray_command
+			clear_orders = yes
+			clear_fleet_actions = root
+		}
+	}
+}
+#####
+# 艦隊グループの旗艦でない時の押下イベント
+# 艦隊グループの旗艦になる
+#####
+grouping_fleets_set_flagship_effect_0 = {
+	potential = {
+		grouping_fleets_set_flagship_potential = { NUMBER = 0 }
+	}
+	allow = {
+		grouping_fleets_set_flagship_allow = yes
+	}
+	effect = {
+		grouping_fleets_set_flagship_effect = { NUMBER = 0 }
+	}
+}
+grouping_fleets_set_flagship_effect_1 = {
+	potential = {
+		grouping_fleets_set_flagship_potential = { NUMBER = 1 }
+	}
+	allow = {
+		grouping_fleets_set_flagship_allow = yes
+	}
+	effect = {
+		grouping_fleets_set_flagship_effect = { NUMBER = 1 }
+	}
+}
+grouping_fleets_set_flagship_effect_2 = {
+	potential = {
+		grouping_fleets_set_flagship_potential = { NUMBER = 2 }
+	}
+	allow = {
+		grouping_fleets_set_flagship_allow = yes
+	}
+	effect = {
+		grouping_fleets_set_flagship_effect = { NUMBER = 2 }
+	}
+}
+grouping_fleets_set_flagship_effect_3 = {
+	potential = {
+		grouping_fleets_set_flagship_potential = { NUMBER = 3 }
+	}
+	allow = {
+		grouping_fleets_set_flagship_allow = yes
+	}
+	effect = {
+		grouping_fleets_set_flagship_effect = { NUMBER = 3 }
+	}
+}
+grouping_fleets_set_flagship_effect_4 = {
+	potential = {
+		grouping_fleets_set_flagship_potential = { NUMBER = 4 }
+	}
+	allow = {
+		grouping_fleets_set_flagship_allow = yes
+	}
+	effect = {
+		grouping_fleets_set_flagship_effect = { NUMBER = 4 }
+	}
+}
+grouping_fleets_set_flagship_effect_5 = {
+	potential = {
+		grouping_fleets_set_flagship_potential = { NUMBER = 5 }
+	}
+	allow = {
+		grouping_fleets_set_flagship_allow = yes
+	}
+	effect = {
+		grouping_fleets_set_flagship_effect = { NUMBER = 5 }
+	}
+}
+grouping_fleets_set_flagship_effect_6 = {
+	potential = {
+		grouping_fleets_set_flagship_potential = { NUMBER = 6 }
+	}
+	allow = {
+		grouping_fleets_set_flagship_allow = yes
+	}
+	effect = {
+		grouping_fleets_set_flagship_effect = { NUMBER = 6 }
+	}
+}
+grouping_fleets_set_flagship_effect_7 = {
+	potential = {
+		grouping_fleets_set_flagship_potential = { NUMBER = 7 }
+	}
+	allow = {
+		grouping_fleets_set_flagship_allow = yes
+	}
+	effect = {
+		grouping_fleets_set_flagship_effect = { NUMBER = 7 }
+	}
+}
+grouping_fleets_set_flagship_effect_8 = {
+	potential = {
+		grouping_fleets_set_flagship_potential = { NUMBER = 8 }
+	}
+	allow = {
+		grouping_fleets_set_flagship_allow = yes
+	}
+	effect = {
+		grouping_fleets_set_flagship_effect = { NUMBER = 8 }
+	}
+}
+
+###
+# 艦隊グループの旗艦である時の押下イベント
+# 艦隊グループの旗艦をやめる
+###
+grouping_fleets_remove_flagship_effect_1 = {
+	potential = {
+		grouping_fleets_remove_flagship_potential = { NUMBER = 1 }
+	}
+	allow = {
+		grouping_fleets_remove_flagship_allow = yes
+	}
+	effect = {
+		grouping_fleets_remove_flagship_effect = { NUMBER = 1 }
+	}
+}
+grouping_fleets_remove_flagship_effect_2 = {
+	potential = {
+		grouping_fleets_remove_flagship_potential = { NUMBER = 2 }
+	}
+	allow = {
+		grouping_fleets_remove_flagship_allow = yes
+	}
+	effect = {
+		grouping_fleets_remove_flagship_effect = { NUMBER = 2 }
+	}
+}
+grouping_fleets_remove_flagship_effect_3 = {
+	potential = {
+		grouping_fleets_remove_flagship_potential = { NUMBER = 3 }
+	}
+	allow = {
+		grouping_fleets_remove_flagship_allow = yes
+	}
+	effect = {
+		grouping_fleets_remove_flagship_effect = { NUMBER = 3 }
+	}
+}
+grouping_fleets_remove_flagship_effect_4 = {
+	potential = {
+		grouping_fleets_remove_flagship_potential = { NUMBER = 4 }
+	}
+	allow = {
+		grouping_fleets_remove_flagship_allow = yes
+	}
+	effect = {
+		grouping_fleets_remove_flagship_effect = { NUMBER = 4 }
+	}
+}
+grouping_fleets_remove_flagship_effect_5 = {
+	potential = {
+		grouping_fleets_remove_flagship_potential = { NUMBER = 5 }
+	}
+	allow = {
+		grouping_fleets_remove_flagship_allow = yes
+	}
+	effect = {
+		grouping_fleets_remove_flagship_effect = { NUMBER = 5 }
+	}
+}
+grouping_fleets_remove_flagship_effect_6 = {
+	potential = {
+		grouping_fleets_remove_flagship_potential = { NUMBER = 6 }
+	}
+	allow = {
+		grouping_fleets_remove_flagship_allow = yes
+	}
+	effect = {
+		grouping_fleets_remove_flagship_effect = { NUMBER = 6 }
+	}
+}
+grouping_fleets_remove_flagship_effect_7 = {
+	potential = {
+		grouping_fleets_remove_flagship_potential = { NUMBER = 7 }
+	}
+	allow = {
+		grouping_fleets_remove_flagship_allow = yes
+	}
+	effect = {
+		grouping_fleets_remove_flagship_effect = { NUMBER = 7 }
+	}
+}
+grouping_fleets_remove_flagship_effect_8 = {
+	potential = {
+		grouping_fleets_remove_flagship_potential = { NUMBER = 8 }
+	}
+	allow = {
+		grouping_fleets_remove_flagship_allow = yes
+	}
+	effect = {
+		grouping_fleets_remove_flagship_effect = { NUMBER = 8 }
+	}
+}
+
+###
+# 艦隊グループ追加ボタン
+###
+grouping_fleets_add_fleet_groups_effect_0 = {
+	potential = {
+		grouping_fleets_add_fleet_groups_potential = { NUMBER = 0 }
+	}
+	allow = {
+		grouping_fleets_add_fleet_groups_allow = { NUMBER = 0 }
+	}
+	effect = {
+		grouping_fleets_add_fleet_groups_effect = yes
+	}
+}
+grouping_fleets_add_fleet_groups_effect_1 = {
+	potential = {
+		grouping_fleets_add_fleet_groups_potential = { NUMBER = 1 }
+	}
+	allow = {
+		grouping_fleets_add_fleet_groups_allow = { NUMBER = 1 }
+	}
+	effect = {
+		grouping_fleets_add_fleet_groups_effect = yes
+	}
+}
+grouping_fleets_add_fleet_groups_effect_2 = {
+	potential = {
+		grouping_fleets_add_fleet_groups_potential = { NUMBER = 2 }
+	}
+	allow = {
+		grouping_fleets_add_fleet_groups_allow = { NUMBER = 2 }
+	}
+	effect = {
+		grouping_fleets_add_fleet_groups_effect = yes
+	}
+}
+grouping_fleets_add_fleet_groups_effect_3 = {
+	potential = {
+		grouping_fleets_add_fleet_groups_potential = { NUMBER = 3 }
+	}
+	allow = {
+		grouping_fleets_add_fleet_groups_allow = { NUMBER = 3 }
+	}
+	effect = {
+		grouping_fleets_add_fleet_groups_effect = yes
+	}
+}
+grouping_fleets_add_fleet_groups_effect_4 = {
+	potential = {
+		grouping_fleets_add_fleet_groups_potential = { NUMBER = 4 }
+	}
+	allow = {
+		grouping_fleets_add_fleet_groups_allow = { NUMBER = 4 }
+	}
+	effect = {
+		grouping_fleets_add_fleet_groups_effect = yes
+	}
+}
+grouping_fleets_add_fleet_groups_effect_5 = {
+	potential = {
+		grouping_fleets_add_fleet_groups_potential = { NUMBER = 5 }
+	}
+	allow = {
+		grouping_fleets_add_fleet_groups_allow = { NUMBER = 5 }
+	}
+	effect = {
+		grouping_fleets_add_fleet_groups_effect = yes
+	}
+}
+grouping_fleets_add_fleet_groups_effect_6 = {
+	potential = {
+		grouping_fleets_add_fleet_groups_potential = { NUMBER = 6 }
+	}
+	allow = {
+		grouping_fleets_add_fleet_groups_allow = { NUMBER = 6 }
+	}
+	effect = {
+		grouping_fleets_add_fleet_groups_effect = yes
+	}
+}
+grouping_fleets_add_fleet_groups_effect_7 = {
+	potential = {
+		grouping_fleets_add_fleet_groups_potential = { NUMBER = 7 }
+	}
+	allow = {
+		grouping_fleets_add_fleet_groups_allow = { NUMBER = 7 }
+	}
+	effect = {
+		grouping_fleets_add_fleet_groups_effect = yes
+	}
+}
+grouping_fleets_add_fleet_groups_effect_8 = {
+	potential = {
+		grouping_fleets_add_fleet_groups_potential = { NUMBER = 8 }
+	}
+	allow = {
+		grouping_fleets_add_fleet_groups_allow = { NUMBER = 8 }
+	}
+	effect = {
+		grouping_fleets_add_fleet_groups_effect = yes
+	}
+}
+
+###########################################################
+# main_bottom.gui関連のボタンイベント
+# Scope:
+#   From = player country
+###########################################################
+###
+# 旗艦に追従ボタン
+###
+grouping_fleets_follow_flagship_effect_1 = {
+	potential = {
+		grouping_fleets_follow_flagship_potential = { NUMBER = 1 }
+	}
+	allow = {
+		grouping_fleets_follow_flagship_allow = { NUMBER = 1 }
+	}
+	effect = {
+		grouping_fleets_follow_flagship_effect = { NUMBER = 1 }
+	}
+}
+grouping_fleets_follow_flagship_effect_2 = {
+	potential = {
+		grouping_fleets_follow_flagship_potential = { NUMBER = 2 }
+	}
+	allow = {
+		grouping_fleets_follow_flagship_allow = { NUMBER = 2 }
+	}
+	effect = {
+		grouping_fleets_follow_flagship_effect = { NUMBER = 2 }
+	}
+}
+grouping_fleets_follow_flagship_effect_3 = {
+	potential = {
+		grouping_fleets_follow_flagship_potential = { NUMBER = 3 }
+	}
+	allow = {
+		grouping_fleets_follow_flagship_allow = { NUMBER = 3 }
+	}
+	effect = {
+		grouping_fleets_follow_flagship_effect = { NUMBER = 3 }
+	}
+}
+grouping_fleets_follow_flagship_effect_4 = {
+	potential = {
+		grouping_fleets_follow_flagship_potential = { NUMBER = 4 }
+	}
+	allow = {
+		grouping_fleets_follow_flagship_allow = { NUMBER = 4 }
+	}
+	effect = {
+		grouping_fleets_follow_flagship_effect = { NUMBER = 4 }
+	}
+}
+grouping_fleets_follow_flagship_effect_5 = {
+	potential = {
+		grouping_fleets_follow_flagship_potential = { NUMBER = 5 }
+	}
+	allow = {
+		grouping_fleets_follow_flagship_allow = { NUMBER = 5 }
+	}
+	effect = {
+		grouping_fleets_follow_flagship_effect = { NUMBER = 5 }
+	}
+}
+grouping_fleets_follow_flagship_effect_6 = {
+	potential = {
+		grouping_fleets_follow_flagship_potential = { NUMBER = 6 }
+	}
+	allow = {
+		grouping_fleets_follow_flagship_allow = { NUMBER = 6 }
+	}
+	effect = {
+		grouping_fleets_follow_flagship_effect = { NUMBER = 6 }
+	}
+}
+grouping_fleets_follow_flagship_effect_7 = {
+	potential = {
+		grouping_fleets_follow_flagship_potential = { NUMBER = 7 }
+	}
+	allow = {
+		grouping_fleets_follow_flagship_allow = { NUMBER = 7 }
+	}
+	effect = {
+		grouping_fleets_follow_flagship_effect = { NUMBER = 7 }
+	}
+}
+grouping_fleets_follow_flagship_effect_8 = {
+	potential = {
+		grouping_fleets_follow_flagship_potential = { NUMBER = 8 }
+	}
+	allow = {
+		grouping_fleets_follow_flagship_allow = { NUMBER = 8 }
+	}
+	effect = {
+		grouping_fleets_follow_flagship_effect = { NUMBER = 8 }
+	}
+}
+
+###
+# 旗艦への追従の解除ボタン
+###
+grouping_fleets_remove_follow_flagship_effect_1 = {
+	potential = {
+		grouping_fleets_remove_follow_flagship_potential = { NUMBER = 1 }
+	}
+	allow = {
+		grouping_fleets_remove_follow_flagship_allow = { NUMBER = 1 }
+	}
+	effect = {
+		grouping_fleets_remove_follow_flagship_effect = { NUMBER = 1 }
+	}
+}
+grouping_fleets_remove_follow_flagship_effect_2 = {
+	potential = {
+		grouping_fleets_remove_follow_flagship_potential = { NUMBER = 2 }
+	}
+	allow = {
+		grouping_fleets_remove_follow_flagship_allow = { NUMBER = 2 }
+	}
+	effect = {
+		grouping_fleets_remove_follow_flagship_effect = { NUMBER = 2 }
+	}
+}
+grouping_fleets_remove_follow_flagship_effect_3 = {
+	potential = {
+		grouping_fleets_remove_follow_flagship_potential = { NUMBER = 3 }
+	}
+	allow = {
+		grouping_fleets_remove_follow_flagship_allow = { NUMBER = 3 }
+	}
+	effect = {
+		grouping_fleets_remove_follow_flagship_effect = { NUMBER = 3 }
+	}
+}
+grouping_fleets_remove_follow_flagship_effect_4 = {
+	potential = {
+		grouping_fleets_remove_follow_flagship_potential = { NUMBER = 4 }
+	}
+	allow = {
+		grouping_fleets_remove_follow_flagship_allow = { NUMBER = 4 }
+	}
+	effect = {
+		grouping_fleets_remove_follow_flagship_effect = { NUMBER = 4 }
+	}
+}
+grouping_fleets_remove_follow_flagship_effect_5 = {
+	potential = {
+		grouping_fleets_remove_follow_flagship_potential = { NUMBER = 5 }
+	}
+	allow = {
+		grouping_fleets_remove_follow_flagship_allow = { NUMBER = 5 }
+	}
+	effect = {
+		grouping_fleets_remove_follow_flagship_effect = { NUMBER = 5 }
+	}
+}
+grouping_fleets_remove_follow_flagship_effect_6 = {
+	potential = {
+		grouping_fleets_remove_follow_flagship_potential = { NUMBER = 6 }
+	}
+	allow = {
+		grouping_fleets_remove_follow_flagship_allow = { NUMBER = 6 }
+	}
+	effect = {
+		grouping_fleets_remove_follow_flagship_effect = { NUMBER = 6 }
+	}
+}
+grouping_fleets_remove_follow_flagship_effect_7 = {
+	potential = {
+		grouping_fleets_remove_follow_flagship_potential = { NUMBER = 7 }
+	}
+	allow = {
+		grouping_fleets_remove_follow_flagship_allow = { NUMBER = 7 }
+	}
+	effect = {
+		grouping_fleets_remove_follow_flagship_effect = { NUMBER = 7 }
+	}
+}
+grouping_fleets_remove_follow_flagship_effect_8 = {
+	potential = {
+		grouping_fleets_remove_follow_flagship_potential = { NUMBER = 8 }
+	}
+	allow = {
+		grouping_fleets_remove_follow_flagship_allow = { NUMBER = 8 }
+	}
+	effect = {
+		grouping_fleets_remove_follow_flagship_effect = { NUMBER = 8 }
+	}
+}
+
+###
+# ゲートウェイの軌道上へ移動ボタン
+###
+grouping_fleets_goto_gateway_effect_1 = {
+	potential = {
+		grouping_fleets_goto_gateway_potential = yes
+	}
+	allow = {
+		grouping_fleets_goto_gateway_allow = { NUMBER = 1 }
+	}
+	effect = {
+		grouping_fleets_goto_gateway_effect = { NUMBER = 1 }
+	}
+}
+grouping_fleets_goto_gateway_effect_2 = {
+	potential = {
+		grouping_fleets_goto_gateway_potential = yes
+	}
+	allow = {
+		grouping_fleets_goto_gateway_allow = { NUMBER = 2 }
+	}
+	effect = {
+		grouping_fleets_goto_gateway_effect = { NUMBER = 2 }
+	}
+}
+grouping_fleets_goto_gateway_effect_3 = {
+	potential = {
+		grouping_fleets_goto_gateway_potential = yes
+	}
+	allow = {
+		grouping_fleets_goto_gateway_allow = { NUMBER = 3 }
+	}
+	effect = {
+		grouping_fleets_goto_gateway_effect = { NUMBER = 3 }
+	}
+}
+grouping_fleets_goto_gateway_effect_4 = {
+	potential = {
+		grouping_fleets_goto_gateway_potential = yes
+	}
+	allow = {
+		grouping_fleets_goto_gateway_allow = { NUMBER = 4 }
+	}
+	effect = {
+		grouping_fleets_goto_gateway_effect = { NUMBER = 4 }
+	}
+}
+grouping_fleets_goto_gateway_effect_5 = {
+	potential = {
+		grouping_fleets_goto_gateway_potential = yes
+	}
+	allow = {
+		grouping_fleets_goto_gateway_allow = { NUMBER = 5 }
+	}
+	effect = {
+		grouping_fleets_goto_gateway_effect = { NUMBER = 5 }
+	}
+}
+grouping_fleets_goto_gateway_effect_6 = {
+	potential = {
+		grouping_fleets_goto_gateway_potential = yes
+	}
+	allow = {
+		grouping_fleets_goto_gateway_allow = { NUMBER = 6 }
+	}
+	effect = {
+		grouping_fleets_goto_gateway_effect = { NUMBER = 6 }
+	}
+}
+grouping_fleets_goto_gateway_effect_7 = {
+	potential = {
+		grouping_fleets_goto_gateway_potential = yes
+	}
+	allow = {
+		grouping_fleets_goto_gateway_allow = { NUMBER = 7 }
+	}
+	effect = {
+		grouping_fleets_goto_gateway_effect = { NUMBER = 7 }
+	}
+}
+grouping_fleets_goto_gateway_effect_8 = {
+	potential = {
+		grouping_fleets_goto_gateway_potential = yes
+	}
+	allow = {
+		grouping_fleets_goto_gateway_allow = { NUMBER = 8 }
+	}
+	effect = {
+		grouping_fleets_goto_gateway_effect = { NUMBER = 8 }
+	}
+}
+
+
+###
+# Lゲートの軌道上へ移動ボタン
+###
+grouping_fleets_goto_lgate_effect_1 = {
+	potential = {
+		grouping_fleets_goto_lgate_potential = yes
+	}
+	allow = {
+		grouping_fleets_goto_lgate_allow = { NUMBER = 1 }
+	}
+	effect = {
+		grouping_fleets_goto_lgate_effect = { NUMBER = 1 }
+	}
+}
+grouping_fleets_goto_lgate_effect_2 = {
+	potential = {
+		grouping_fleets_goto_lgate_potential = yes
+	}
+	allow = {
+		grouping_fleets_goto_lgate_allow = { NUMBER = 2 }
+	}
+	effect = {
+		grouping_fleets_goto_lgate_effect = { NUMBER = 2 }
+	}
+}
+grouping_fleets_goto_lgate_effect_3 = {
+	potential = {
+		grouping_fleets_goto_lgate_potential = yes
+	}
+	allow = {
+		grouping_fleets_goto_lgate_allow = { NUMBER = 3 }
+	}
+	effect = {
+		grouping_fleets_goto_lgate_effect = { NUMBER = 3 }
+	}
+}
+grouping_fleets_goto_lgate_effect_4 = {
+	potential = {
+		grouping_fleets_goto_lgate_potential = yes
+	}
+	allow = {
+		grouping_fleets_goto_lgate_allow = { NUMBER = 4 }
+	}
+	effect = {
+		grouping_fleets_goto_lgate_effect = { NUMBER = 4 }
+	}
+}
+grouping_fleets_goto_lgate_effect_5 = {
+	potential = {
+		grouping_fleets_goto_lgate_potential = yes
+	}
+	allow = {
+		grouping_fleets_goto_lgate_allow = { NUMBER = 5 }
+	}
+	effect = {
+		grouping_fleets_goto_lgate_effect = { NUMBER = 5 }
+	}
+}
+grouping_fleets_goto_lgate_effect_6 = {
+	potential = {
+		grouping_fleets_goto_lgate_potential = yes
+	}
+	allow = {
+		grouping_fleets_goto_lgate_allow = { NUMBER = 6 }
+	}
+	effect = {
+		grouping_fleets_goto_lgate_effect = { NUMBER = 6 }
+	}
+}
+grouping_fleets_goto_lgate_effect_7 = {
+	potential = {
+		grouping_fleets_goto_lgate_potential = yes
+	}
+	allow = {
+		grouping_fleets_goto_lgate_allow = { NUMBER = 7 }
+	}
+	effect = {
+		grouping_fleets_goto_lgate_effect = { NUMBER = 7 }
+	}
+}
+grouping_fleets_goto_lgate_effect_8 = {
+	potential = {
+		grouping_fleets_goto_lgate_potential = yes
+	}
+	allow = {
+		grouping_fleets_goto_lgate_allow = { NUMBER = 8 }
+	}
+	effect = {
+		grouping_fleets_goto_lgate_effect = { NUMBER = 8 }
+	}
+}

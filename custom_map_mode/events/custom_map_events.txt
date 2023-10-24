@@ -1,0 +1,74 @@
+###############################################################################
+# 帝国マップを見やすくしたいModのイベント群
+###############################################################################
+namespace = custom_map
+
+###########################################################
+# 全ての国家について、帝国マップ用のパラメータを設定する
+###########################################################
+country_event = {
+	id = custom_map.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		# 全パラメータを一旦初期化
+		every_country = {
+			custom_map_mode_clear_paramaters = yes
+		}
+
+		# 帝国マップ用パラメータの付与
+		every_country = {
+			limit = {
+				custom_map_mode_is_target_country = yes
+			}
+			custom_map_mode_add_country_number = yes
+		}
+	}
+}
+
+###########################################################
+# 対象の国家について、帝国マップ用のパラメータを設定する
+###########################################################
+country_event = {
+	id = custom_map.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		custom_map_mode_is_target_country = yes
+	}
+
+	immediate = {
+		custom_map_mode_add_country_number = yes
+	}
+}
+
+###########################################################
+# デバッグ用
+# 以下のStellaris起動用コマンドで起動されていることを想定しています。
+# stellaris.exe -debug_mode -logall
+#
+# Stellaris内部コンソールにて以下を実行すると
+# game.logに全国家のパラメータが吐き出されます。
+# event custom_map.99
+###########################################################
+country_event = {
+	id = custom_map.99
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		# 同盟マップ用パラメータの付与
+		every_country = {
+			limit = {
+				custom_map_mode_is_target_country = yes
+				is_variable_set = custom_map_country_number
+			}
+
+			log = "-----"
+			log = "\\[This.GetRealName]"
+			log = "\\[This.custom_map_country_number]"
+		}
+	}
+}

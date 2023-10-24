@@ -1,0 +1,155 @@
+﻿YUKAMACH = {
+
+	shazarak = {
+		name = "シャザラク"# Shazarak
+		plural = "シャザラク"# Shazaraks
+		home_planet = "シャズー"# Shazuu
+		home_system = "シャズカ"# Shazka
+		name_list = "MACHINE1"
+	}
+
+	mechazur = {
+		name = "メカズル"# Mechazur
+		plural = "メカズル"# Mechazurs
+		home_planet = "メカズプライム"# "Mechaz Prime"
+		home_system = "メカズ"# Mechaz
+		name_list = "MACHINE2"
+	}
+
+	zero-zero-one = {
+		name = "ゼロゼロワン"# Zero-Zero-One
+		plural = "ゼロゼロワン"# Zero-Zero-Ones
+		home_planet = "ゼロワン"# Zero-One
+		home_system = "ゼロ"# Zero
+		name_list = "MACHINE4"
+	}
+
+	prime = {
+		name = "プライム"# Prime
+		plural = "プライム"# Primes
+		home_planet = "プライムワン"# "Primus One"
+		home_system = "ベースクラスター"# "Base Cluster"
+		name_list = "MACHINE4"
+	}
+
+	zenak = {
+		name = "ゼナク"# Zenak
+		plural = "ゼナク"# Zenaki
+		home_planet = "ゼナク・プル"# Zenak-Pru
+		home_system = "ゼナコン"# Zenakon
+		name_list = "MACHINE1"
+	}
+
+	omni = {
+		name = "オムニ"# Omni
+		plural = "オムニ"# Omni
+		home_planet = "アルファ・アレイ"# "Alpha Array"
+		home_system = "オムナク"# Omnak
+		name_list = "MACHINE2"
+	}
+
+	daar = {
+		name = "ダール"#DAAR
+		plural = "ダール"#DAAR
+		home_planet = "ダール-1"#DAAR-1
+		home_system = "ダールズ"#DAARUZ
+		name_list = "MACHINE3"
+	}
+
+	tronzaru = {
+		name = "トロンザル"# Tronzaru
+		plural = "トロンザル"# Tronzaru
+		home_planet = "トロンズ"# Tronz
+		home_system = "トロンズ・カラス"# "Tronz Karas"
+		name_list = "MACHINE4"
+	}
+
+	techarus = {
+		name = "テカラス"# Techarus
+		plural = "テカラス"# Techarusi
+		home_planet = "テカス"# Techus
+		home_system = "テカー・ユーバス"# "Techar-Ubas"
+		name_list = "MACHINE1"
+	}
+
+	jonus = {
+		name = "ジョヌス"# Jonus
+		plural = "ジョヌス"# Jonusi
+		home_planet = "ジャラ"# Jara
+		home_system = "ジェニサ"# Jenisa
+		name_list = "MACHINE2"
+	}
+
+	iribot = {
+		name = "イリボット"# Iribot
+		plural = "イリボット"# Iribots
+		home_planet = "イル"# Ir
+		home_system = "イリ"# Iri
+		name_list = "MACHINE3"
+	}
+
+	silicron = {
+		name = "シリクロン"# Silicron
+		plural = "シリクロン"# Silicrons
+		home_planet = "マスター・コンディット"# "Master Conduit"
+		home_system = SI-1
+		name_list = "MACHINE4"
+	}
+
+	dekron = {
+		name = "デクロン"# Dekron
+		plural = "デクロン"# Dekrons
+		home_planet = "デクロニア"# Dekronia
+		home_system = "デクラス"# Dekrus
+		name_list = "MACHINE1"
+	}
+
+	synthoid = {
+		name = "シンソイド"# Synthoid
+		plural = "シンソイド"# Synthoids
+		home_planet = "シンソン"# Synthon
+		home_system = "シンサス"# Synthus
+		name_list = "MACHINE2"
+	}
+	
+	cydran = {
+		name = "シドラン"#Cydran
+		plural = "シドラン"#Cydrans
+		home_planet = "シドラス"#Cydrus
+		home_system = "タイドラル"#Tidral
+		name_list = "MACHINE3"
+	}
+
+	kelbrid = {
+		name = "ケルブリッド"#Kelbrid
+		plural = "ケルブリッド"#Kelbrids
+		home_planet = "ネクサス・ゼロ"
+		home_system = "エピラ"
+		name_list = "MACHINE4"
+	}
+
+	model-16 = {
+		name = "モデル16"#Model-16
+		plural = "モデル16"#Model-16s
+		home_planet = "主施設"
+		home_system = EN-14421
+		name_list = "MACHINE1"
+	}
+
+	nex = {
+		name = ボルシャック・NEX
+		plural = ボルシャックNEX
+		home_planet = "NEXプライマス"
+		home_system = "アイポール"
+		name_list = "MACHINE2"
+	}
+
+	sictor = {
+		name = "ミクセル"#Mictor
+		plural = "ミクセル"#Mictors
+		home_planet = "奇石"#Mict
+		home_system = "ジャミング・チャフ"
+		name_list = "MACHINE3"
+	}
+
+}

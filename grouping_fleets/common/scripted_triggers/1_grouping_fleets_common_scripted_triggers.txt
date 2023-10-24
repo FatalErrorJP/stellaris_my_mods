@@ -1,0 +1,78 @@
+###########################################################
+# 艦隊グループ化Mod用のScripted triggers
+###########################################################
+
+#######################################################
+#
+# 共通関数
+#
+#######################################################
+#################################################
+# 対象の艦隊グループが追跡モード中かどうかチェックする
+# PARAMETER
+#   NUMBER: グループ番号
+#################################################
+grouping_fleets_has_auto_move = {
+	from = {
+		if = {
+			limit = { check_variable = { which = grouping_fleets_auto_move_1 value = $NUMBER$ } }
+		}
+		else_if = {
+			limit = { check_variable = { which = grouping_fleets_auto_move_2 value = $NUMBER$ } }
+		}
+		else_if = {
+			limit = { check_variable = { which = grouping_fleets_auto_move_3 value = $NUMBER$ } }
+		}
+		else_if = {
+			limit = { check_variable = { which = grouping_fleets_auto_move_4 value = $NUMBER$ } }
+		}
+		else_if = {
+			limit = { check_variable = { which = grouping_fleets_auto_move_5 value = $NUMBER$ } }
+		}
+		else_if = {
+			limit = { check_variable = { which = grouping_fleets_auto_move_6 value = $NUMBER$ } }
+		}
+		else_if = {
+			limit = { check_variable = { which = grouping_fleets_auto_move_7 value = $NUMBER$ } }
+		}
+		else_if = {
+			limit = { check_variable = { which = grouping_fleets_auto_move_8 value = $NUMBER$ } }
+		}
+		else = { always = no }
+	}
+}
+
+#################################################
+# 対象の艦隊グループが追跡モード中でないことをチェックする
+# PARAMETER
+#   NUMBER: グループ番号
+#################################################
+grouping_fleets_has_not_auto_move = {
+	from = {
+		if = {
+			limit = { not = { check_variable = { which = grouping_fleets_auto_move_1 value = $NUMBER$ } } }
+		}
+		else_if = {
+			limit = { not = { check_variable = { which = grouping_fleets_auto_move_2 value = $NUMBER$ } } }
+		}
+		else_if = {
+			limit = { not = { check_variable = { which = grouping_fleets_auto_move_3 value = $NUMBER$ } } }
+		}
+		else_if = {
+			limit = { not = { check_variable = { which = grouping_fleets_auto_move_4 value = $NUMBER$ } } }
+		}
+		else_if = {
+			limit = { not = { check_variable = { which = grouping_fleets_auto_move_5 value = $NUMBER$ } } }
+		}
+		else_if = {
+			limit = { not = { check_variable = { which = grouping_fleets_auto_move_6 value = $NUMBER$ } } }
+		}
+		else_if = {
+			limit = { not = { check_variable = { which = grouping_fleets_auto_move_7 value = $NUMBER$ } } }
+		}
+		else_if = {
+			limit = { not = { check_variable = { which = grouping_fleets_auto_move_8 value = $NUMBER$ } } }
+		}
+		else = { always = yes }
+	}
+}

@@ -1,0 +1,17 @@
+# 外交官
+leader_trait_diplomat = {
+	cost = 1
+	icon = "gfx/interface/icons/traits/leader_trait_icons/shadow_broker.dds"
+	initial = no
+	leader_class = { envoy }
+	randomized = no
+}
+
+# 諜報員
+leader_trait_agent = {
+	cost = 1
+	icon = "gfx/interface/icons/traits/leader_trait_icons/spymaster.dds"
+	initial = no
+	leader_class = { envoy }
+	randomized = no
+}

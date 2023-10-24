@@ -1,0 +1,108 @@
+﻿character = {
+	size = { x = 472 y = 324 }
+
+	entity = {
+		orientation = center_down
+		position = { x = 50 y = -20 }
+		scale = 24
+	}
+	#2d Portrait position
+	icon = {
+		orientation = center_down
+		position = { x = 0 y = 0 }
+		scale = 1.0
+	}
+}
+
+portraits = {
+	
+	poron_01 = { texturefile = "gfx/models/portraits/poron/poron_01.dds" }
+	poron_02 = { texturefile = "gfx/models/portraits/poron/poron_02.dds" }
+}
+
+portrait_groups = {
+	poron = {
+		default = poron_01
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					poron_01
+					poron_02
+
+				}
+			}
+		}
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					poron_01
+					poron_02
+				}
+			}
+		}		
+		
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					poron_01
+					poron_02
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			
+			add = {
+				trigger = {
+					leader_class = governor
+				}
+				portraits = {
+					poron_01
+					poron_02
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = scientist
+				}
+				portraits = {
+					poron_01
+					poron_02
+
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = admiral
+				}
+				portraits = {
+					poron_01
+					poron_02
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = general
+				}
+				portraits = {
+					poron_01
+					poron_02
+				}
+			}
+		}
+		
+		#leader scope 
+		ruler = {
+			add = {
+			    	portraits = {
+					poron_01
+					poron_02
+				}
+			}
+
+		}
+	}

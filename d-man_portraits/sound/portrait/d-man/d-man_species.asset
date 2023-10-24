@@ -1,0 +1,92 @@
+###########################################################
+# ポートレート毎の挨拶時の音声設定を定義する
+###########################################################
+# D言語くん種族用挨拶音声定義
+category = {
+	name = "Effects"
+	soundeffects = {
+		d-man_portrait_sound_red
+		d-man_portrait_sound_green
+		d-man_portrait_sound_blue
+		d-man_portrait_sound_cyan
+		d-man_portrait_sound_magenta
+		d-man_portrait_sound_yellow
+	}
+}
+
+## D言語君(赤色)
+soundeffect = {
+	name = d-man_portrait_sound_red
+	sounds = {
+		sound = d-man_portrait_sound_01
+		sound = d-man_portrait_sound_02
+		sound = d-man_portrait_sound_03
+	}
+	volume = 0.30
+}
+## D言語君(緑色)
+soundeffect = {
+	name = d-man_portrait_sound_green
+	sounds = {
+		sound = d-man_portrait_sound_01
+		sound = d-man_portrait_sound_02
+		sound = d-man_portrait_sound_03
+	}
+	volume = 0.30
+}
+## D言語君(青色)
+soundeffect = {
+	name = d-man_portrait_sound_blue
+	sounds = {
+		sound = d-man_portrait_sound_01
+		sound = d-man_portrait_sound_02
+		sound = d-man_portrait_sound_03
+	}
+	volume = 0.30
+}
+## D言語君(シアン)
+soundeffect = {
+	name = d-man_portrait_sound_cyan
+	sounds = {
+		sound = d-man_portrait_sound_01
+		sound = d-man_portrait_sound_02
+		sound = d-man_portrait_sound_03
+	}
+	volume = 0.30
+}
+## D言語君(マゼンタ)
+soundeffect = {
+	name = d-man_portrait_sound_magenta
+	sounds = {
+		sound = d-man_portrait_sound_01
+		sound = d-man_portrait_sound_02
+		sound = d-man_portrait_sound_03
+	}
+	volume = 0.30
+}
+## D言語君(黄色)
+soundeffect = {
+	name = d-man_portrait_sound_yellow
+	sounds = {
+		sound = d-man_portrait_sound_01
+		sound = d-man_portrait_sound_02
+		sound = d-man_portrait_sound_03
+	}
+	volume = 0.30
+}
+
+## 音声ファイル定義
+## 色毎の種族で変更も可能だが、今回は使い回す
+sound = {
+	name = "d-man_portrait_sound_01"
+	file = "d-man-01.wav"
+}
+sound = {
+	name = "d-man_portrait_sound_02"
+	file = "d-man-02.wav"
+}
+sound = {
+	name = "d-man_portrait_sound_03"
+	file = "d-man-03.wav"
+}
+

@@ -1,0 +1,7 @@
+# リーダー雇用時のイベント
+# This = Leader
+on_leader_hired = {
+	events = {
+		next_generation_leader.1
+	}
+}

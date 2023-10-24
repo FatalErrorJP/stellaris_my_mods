@@ -1,0 +1,477 @@
+namespace = static_game_start
+
+###########################################################
+# 生成した国家の母星の種類を、起源や種族の設定に則ったものに変更する
+# root: country
+###########################################################
+country_event = {
+	id = static_game_start.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			galaxy_size = galaxy_aoi
+			galaxy_size = galaxy_aoi2
+			galaxy_size = galaxy_kotonoha
+		}
+		is_country_type = default
+	}
+
+	immediate = {
+		###
+		# 母星をゲーム開始時の設定に沿った惑星に変更する
+		# 変更対象の条件は、以下のファイルでtarting_colonyが定義されているもの
+		# ・common\governments\civics\00_origins.txt
+		###
+		switch = {
+			trigger = has_origin
+			origin_life_seeded      = { home_planet = { change_pc = pc_gaia    } }    # 生命の播種
+			origin_post_apocalyptic = { home_planet = { change_pc = pc_nuked   } }    # ポスト・アポカリプス
+			origin_remnants         = { home_planet = { change_pc = pc_relic   } }    # 残党
+			origin_shattered_ring   = {}                                              # 砕けたリング(initializersで惑星が固定されるのでなにもしない)
+			origin_void_dwellers    = {}                                              # 宇宙生まれ(initializersで惑星が固定されるのでなにもしない)
+			origin_machine          = { home_planet = { change_pc = pc_machine } }    # 資源統合
+			origin_ocean_paradise   = { home_planet = { change_pc = pc_ocean   } }    # 海の楽園
+			default                 = {
+				###
+				# 起源で判別できない場合は創始種族の居住適正に則った惑星に変更する
+				###
+				if = {                                                                # 機械知性の場合は正しいタイプを判定できないので、ランダムに変更する
+					limit = { has_authority = auth_machine_intelligence }
+					random_list = {
+						1 = { home_planet = { change_pc = pc_desert      } }          # 砂漠型惑星
+						1 = { home_planet = { change_pc = pc_arid        } }          # 乾燥型惑星
+						1 = { home_planet = { change_pc = pc_savannah    } }          # サバンナ型惑星
+						1 = { home_planet = { change_pc = pc_arctic      } }          # 極寒型惑星
+						1 = { home_planet = { change_pc = pc_tundra      } }          # ツンドラ型惑星
+						1 = { home_planet = { change_pc = pc_alpine      } }          # 高山型惑星
+						1 = { home_planet = { change_pc = pc_continental } }          # 大陸型惑星
+						1 = { home_planet = { change_pc = pc_tropical    } }          # 熱帯型惑星
+						1 = { home_planet = { change_pc = pc_ocean       } }          # 海洋型惑星
+					}
+				} else = {
+					home_planet = { change_pc = owner.species }                       # 母星を創始種族の居住適正に則った惑星に変更する
+				}
+			}
+		}
+	}
+}
+
+##############################################################
+# 静的銀河では、銀河生成時に発展した開始状態のAI用の処理がなされないため
+# on_initialize_advanced_colonyやon_become_advanced_empireの処理も呼び出されない
+#
+# 擬似的に発展した開始状態のAIを実現するために、隣接星系に基地、コロニーを建造し、
+# on_initialize_advanced_colonyやon_become_advanced_empireで呼ばれるイベントを開始する
+# root: capital planet
+# from: founder species
+##############################################################
+planet_event = {
+	id = static_game_start.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			galaxy_size = galaxy_aoi
+			galaxy_size = galaxy_aoi2
+			galaxy_size = galaxy_kotonoha
+		}
+		owner =  {
+			is_ai = yes
+			is_country_type = default
+		}
+	}
+
+	immediate = {
+		owner = {
+			# 処理済みの発展した開始状態のAI数を取得する
+			export_trigger_value_to_variable = {
+				trigger = count_playable_country
+				parameters = {
+					limit = { has_country_flag = is_advanced_start_AI }
+				}
+				variable = settings_advanced_empires
+			}
+
+			####
+			# 処理済みの開始状態のAI数がまだ足りない場合は、開始状態のAI用の処理を実施する
+			# なお、数に関わらず以下定義のmust_be_advanced_empireに記載されているものは必ず処理すること
+			# ・common\game_rules\00_rules.txt
+			# また、以下定義のadvanced_start = noのものは除外すること
+			# ・common\governments\civics\00_origins.txt
+			####
+			if = {
+				limit = {
+					is_ai = yes
+					OR = {
+						check_galaxy_setup_value = { setting = num_advanced_empires value > settings_advanced_empires }
+						has_country_flag = lost_colony_parent
+						has_country_flag = MSI
+					}
+					NOR = {
+						has_origin = origin_clone_army
+						has_origin = origin_payback
+					}
+				}
+
+				root = {
+					# 首都に関するon_initialize_advanced_colonyイベント
+					planet_event = { id = game_start.20 scopes = { from = root.owner } }
+					planet_event = { id = game_start.21 scopes = { from = root.owner } }
+					planet_event = { id = game_start.22 scopes = { from = root.owner } }
+					planet_event = { id = game_start.23 scopes = { from = root.owner } }
+
+					solar_system = {
+						# コロニーの建てられない星系は前哨地を建てる
+						every_neighbor_system = {
+							limit = {
+								has_owner = no
+								not = { any_system_planet = { is_colonizable = yes } }
+								not = { any_ship_in_system = { exists = owner owner = { is_hostile = root.owner } } }
+							}
+							create_starbase = {
+								owner = root.owner
+								size = starbase_outpost
+							}
+						}
+
+						# コロニーの建てられる星系は星系港を建て、コロニーを作成する
+						every_neighbor_system = {
+							limit = {
+								has_owner = no
+								any_system_planet = { is_colonizable = yes }
+								not = { any_ship_in_system = { exists = owner owner = { is_hostile = root.owner } } }
+							}
+							create_starbase = {
+								owner = root.owner
+								size = starbase_starport
+							}
+							every_system_planet = {
+								limit = { is_colonizable = yes }
+								create_colony = {
+									owner = root.owner
+									species = root.owner
+								}
+
+								# 首都以外のon_initialize_advanced_colonyイベント
+								planet_event = { id = game_start.20 scopes = { from = root.owner } }
+								planet_event = { id = game_start.21 scopes = { from = root.owner } }
+								planet_event = { id = game_start.22 scopes = { from = root.owner } }
+								planet_event = { id = game_start.23 scopes = { from = root.owner } }
+							}
+						}
+					}
+				}
+
+				# on_become_advanced_empireイベント
+				country_event = { id = game_start.6 }
+			}
+
+			clear_variable = settings_advanced_empires
+		}
+	}
+}
+
+###########################################################
+# 没落帝国を生成する
+###########################################################
+event = {
+	id = static_game_start.3
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			galaxy_size = galaxy_aoi
+			galaxy_size = galaxy_aoi2
+			galaxy_size = galaxy_kotonoha
+		}
+	}
+
+	immediate = {
+		# get_galaxy_setup_valueを使いたいので適当なスコープ内で対応する
+		random_country = {
+			limit = {}
+
+			# ゲーム開始時の没落帝国の設定数を確認する
+			get_galaxy_setup_value = { which = fallen_empires_count setting = num_fallen_empires }
+			set_spawn_system_batch = begin
+
+			while = {
+				count = fallen_empires_count
+
+				random_list = {
+					1 = { #物質没落
+						modifier = { factor = 0 any_country = { has_country_flag = fallen_empire_1 } }
+						random_system = {
+							limit = { has_owner = no }
+							spawn_system = { initializer = "static_fallen_1" }
+							last_created_system = {
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_1_2" }
+
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_1_orbitals_1" }
+								last_created_system = { save_event_target_as = orbitals_1 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_1_col_1" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_1 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_1_col_2" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_1 }
+
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_1_orbitals_2" }
+								last_created_system = { save_event_target_as = orbitals_2 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_1_col_1" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_2 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_1_col_2" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_2 }
+							}
+						}
+						clear_global_event_target = fallen_empire_1
+					}
+					1 = { #精神没落
+						modifier = { factor = 0 any_country = { has_country_flag = fallen_empire_2 } }
+						random_system = {
+							limit = { has_owner = no }
+							spawn_system = { initializer = "static_fallen_2" }
+							last_created_system = {
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_2_orbitals_1" }
+								last_created_system = { save_event_target_as = orbitals_1 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_2_col_1" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_1 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_2_col_2" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_1 }
+
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_2_orbitals_2" }
+								last_created_system = { save_event_target_as = orbitals_2 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_2_col_1" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_2 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_2_col_2" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_2 }
+
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_holy_01" }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_holy_02" }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_holy_03" }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_holy_04" }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_shrouded" }
+							}
+						}
+						clear_global_event_target = fallen_empire_2
+					}
+					1 = { #受容没落
+						modifier = { factor = 0 any_country = { has_country_flag = fallen_empire_3 } }
+						random_system = {
+							limit = { has_owner = no }
+							spawn_system = { initializer = "static_fallen_3" }
+							last_created_system = {
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_xeno_zoo" }
+
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_3_orbitals_1" }
+								last_created_system = { save_event_target_as = orbitals_1 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_3_col_1" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_1 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_3_col_2" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_1 }
+
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_3_orbitals_2" }
+								last_created_system = { save_event_target_as = orbitals_2 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_3_col_1" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_2 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_3_col_2" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_2 }
+							}
+						}
+						clear_global_event_target = fallen_empire_3
+					}
+					1 = { #排他没落
+						modifier = { factor = 0 any_country = { has_country_flag = fallen_empire_4 } }
+						random_system = {
+							limit = { has_owner = no }
+							spawn_system = { initializer = "static_fallen_4" }
+							last_created_system = {
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_4_orbitals_1" }
+								last_created_system = { save_event_target_as = orbitals_1 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_4_col_1" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_1 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_4_col_2" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_1 }
+
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_4_orbitals_2" }
+								last_created_system = { save_event_target_as = orbitals_2 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_4_col_1" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_2 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_4_col_2" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_2 }
+
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_shielded_1" }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_shielded_2" }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_shielded_3" }
+							}
+						}
+						clear_global_event_target = fallen_empire_4
+					}
+					1 = { #機械没落
+						modifier = {
+							factor = 0
+							OR = {
+								any_country = { has_country_flag = fallen_empire_machine }
+								has_synthethic_dawn = no
+							}
+						}
+						random_system = {
+							limit = { has_owner = no }
+							spawn_system = { initializer = "static_fallen_machine" }
+							last_created_system = {
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_machine_2" }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_machine_3" }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_machine_4" }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_machine_5" }
+							}
+						}
+						clear_global_event_target = fallen_empire_machine
+					}
+					1 = { # これ以上没落帝国を作成できない場合はなにもしない
+						modifier = {
+							factor = 0
+							OR = {
+								not = { any_country = { has_country_flag = fallen_empire_1 } }
+								not = { any_country = { has_country_flag = fallen_empire_2 } }
+								not = { any_country = { has_country_flag = fallen_empire_3 } }
+								not = { any_country = { has_country_flag = fallen_empire_4 } }
+								AND = {
+									not = { any_country = { has_country_flag = fallen_empire_machine } }
+									has_synthethic_dawn = yes
+								}
+							}
+						}
+					}
+				}
+			}
+
+			# サイオン起源の国家がいる場合、サイオンの没落帝国は首都星系しか生成されていないはずなので、隣接星系を作成する
+			if = {
+				limit = { any_country = { has_origin = origin_scion } }
+				random_country = {
+					limit = { has_origin = origin_scion }
+					overlord = {
+						if = {
+							# 物質没落のサイオン
+							limit = { has_country_flag = fallen_empire_1 }
+							save_global_event_target_as = fallen_empire_1
+							capital_scope.solar_system = {
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_1_2" }
+
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_1_orbitals_1" }
+								last_created_system = { save_event_target_as = orbitals_1 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_1_col_1" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_1 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_1_col_2" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_1 }
+
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_1_orbitals_2" }
+								last_created_system = { save_event_target_as = orbitals_2 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_1_col_1" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_2 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_1_col_2" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_2 }
+							}
+							clear_global_event_target = fallen_empire_1
+						} else = {
+							# 精神没落のサイオン
+							save_global_event_target_as = fallen_empire_2
+							capital_scope.solar_system = {
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_2_orbitals_1" }
+								last_created_system = { save_event_target_as = orbitals_1 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_2_col_1" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_1 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_2_col_2" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_1 }
+
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_2_orbitals_2" }
+								last_created_system = { save_event_target_as = orbitals_2 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_2_col_1" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_2 }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_2_col_2" }
+								static_add_hyperlane = { SYSTEM = event_target:orbitals_2 }
+
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_holy_01" }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_holy_02" }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_holy_03" }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_holy_04" }
+								static_spawn_fallen_neighbor_system = { INITIALIZER = "static_fallen_shrouded" }
+							}
+							clear_global_event_target = fallen_empire_2
+						}
+					}
+				}
+			}
+
+			set_spawn_system_batch = end
+			clear_variable = fallen_empires_count
+		}
+	}
+}
+
+###########################################################
+# 不要なマローダー帝国を不思議な力で成仏させる
+###########################################################
+event = {
+	id = static_game_start.4
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			galaxy_size = galaxy_aoi
+			galaxy_size = galaxy_aoi2
+			galaxy_size = galaxy_kotonoha
+		}
+	}
+
+	immediate = {
+		# get_galaxy_setup_valueを使いたいので適当なスコープ内で対応する
+		random_country = {
+			limit = {}
+
+			# ゲーム開始時のマローダーの設定数を確認する
+			# アポカリプスのDLCが入っていない場合はマローダーは出ないはずなので0にする
+			get_galaxy_setup_value = { which = marauder_empires_count setting = num_marauder_empires }
+			if = {
+				limit = { not = { host_has_dlc = "Apocalypse" } }
+				set_variable = { which = marauder_empires_count value = 0 }
+			}
+
+			# 開始設定より多い分のマローダーを昇天させる
+			while = {
+				limit = {
+					count_country = {
+						count > marauder_empires_count
+						limit = {
+							OR = {
+								has_country_flag = marauder_1
+								has_country_flag = marauder_2
+								has_country_flag = marauder_3
+							}
+						}
+					}
+				}
+
+				random_country = {
+					limit = {
+						OR = {
+							has_country_flag = marauder_1
+							has_country_flag = marauder_2
+							has_country_flag = marauder_3
+						}
+					}
+
+					# destroy_countryだけだと、このwhileループが回っている間はまだ国家が消えていないので無限ループになる
+					# 無限ループに陥らないようにフラグも削除する
+					remove_country_flag = marauder_1
+					remove_country_flag = marauder_2
+					remove_country_flag = marauder_3
+					destroy_country = yes
+				}
+			}
+			clear_variable = marauder_empires_count
+	}
+}

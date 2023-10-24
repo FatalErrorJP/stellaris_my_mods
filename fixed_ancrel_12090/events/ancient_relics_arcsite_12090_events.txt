@@ -1,0 +1,282 @@
+namespace = ancrel
+
+# 基本的にはancient_relics_arcsite_events_2.txtのancrel.12090のまま
+fleet_event = {
+	id = ancrel.12090
+	title = ancrel.12090.name
+	desc = ancrel.12090.desc
+	picture = GFX_evt_ai_planet
+	show_sound = event_mystic_reveal
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+		large_artifact_reward = yes
+	}
+
+	option = {
+		name = ancrel.12090.A
+		trigger = {
+			owner = { is_machine_empire = yes }
+		}
+		from.planet = {
+			change_pc = pc_machine
+			hidden_effect = {
+				set_owner = root.owner
+				create_species = {
+					class = MACHINE
+					name = NAME_Surveillance_Bots
+					portrait = random
+					traits = {
+						trait = trait_machine_unit
+						trait = trait_robot_logic_engines
+						trait = trait_robot_double_jointed
+						trait = trait_robot_enhanced_memory
+						trait = trait_robot_durable
+						trait = trait_robot_custom_made
+						trait = trait_robot_repurposed_hardware
+					}
+					effect = {
+						save_event_target_as = new_robots
+					}
+				}
+				add_building = building_machine_major_capital
+				add_building = building_machine_assembly_complex
+				while = {
+					count = 10
+					add_district = district_nexus
+				}
+				while = {
+					count = 5
+					add_district = district_industrial
+					add_district = district_generator_uncapped
+					add_district = district_mining_uncapped
+				}
+				while = {
+					count = 80
+					create_pop = {
+						species = event_target:new_robots
+					}
+				}
+			}
+		}
+
+		hidden_effect = {
+			owner = {
+				random = {
+					chance = 50
+					country_event = { id = ancrel.12095 days = 30 }
+				}
+			}
+		}
+	}
+	option = {
+		name = ancrel.12090.B
+		solar_system = {
+			spawn_megastructure = {
+				type = spy_orb_restored
+				planet = from.planet
+				graphical_culture = root.owner
+			}
+		}
+	}
+	option = {
+		name = ancrel.12090.C
+		allow = {
+			owner = { has_policy_flag = robots_allowed }
+		}
+		custom_tooltip = ancrel.12090.C.tooltip
+		hidden_effect = {
+			if = {
+				limit = {
+					owner = {
+						is_machine_empire = yes
+					}
+				}
+				create_species = {
+					class = MACHINE
+					name = NAME_Surveillance_Bots
+					portrait = random
+					traits = {
+						trait = trait_machine_unit
+						trait = trait_robot_logic_engines
+						trait = trait_robot_double_jointed
+						trait = trait_robot_enhanced_memory
+						trait = trait_robot_durable
+						trait = trait_robot_custom_made
+						trait = trait_robot_repurposed_hardware
+					}
+					effect = {
+						save_event_target_as = new_robots
+					}
+				}
+			}
+			else = {
+				create_species = {
+					class = ROBOT
+					name = NAME_Surveillance_Bots
+					portrait = random
+					traits = {
+						trait = trait_mechanical
+						trait = trait_robot_logic_engines
+						trait = trait_robot_double_jointed
+						trait = trait_robot_enhanced_memory
+						trait = trait_robot_durable
+						trait = trait_robot_custom_made
+						trait = trait_robot_repurposed_hardware
+					}
+					effect = {
+						save_event_target_as = new_robots
+					}
+				}
+			}
+			owner = {
+				while = {
+					count = 80
+					random_owned_planet = {
+						create_pop = {
+							species = event_target:new_robots
+						}
+						weights = {
+							base = 10
+							modifier = {
+								factor = 0.5
+								free_housing <= 0
+								num_free_districts = {
+									type = any
+									value <= 1
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		hidden_effect = {
+			owner = {
+				random = {
+					chance = 50
+					country_event = { id = ancrel.12095 days = 30 }
+				}
+			}
+		}
+	}
+	option = {
+		name = ancrel.12090.D
+		trigger = {
+			owner = { is_spiritualist = yes }
+		}
+		from.planet = {
+			add_deposit = d_alloys_25
+		}
+		hidden_effect = {
+			owner = {
+				random = {
+					chance = 50
+					country_event = { id = ancrel.12095 days = 30 }
+				}
+			}
+		}
+	}
+	option = {
+		name = ancrel.12090.E
+		custom_tooltip = ancrel.12090.E.tooltip
+		allow = {
+			owner = { is_spiritualist = no }
+		}
+		hidden_effect = {
+			from.planet = {
+				create_species = {
+					class = MACHINE
+					name = NAME_Surveillance_Bots
+					portrait = random
+					traits = {
+						trait = trait_machine_unit             # Mod追加コード
+						trait = trait_robot_logic_engines
+						trait = trait_robot_double_jointed
+						trait = trait_robot_enhanced_memory
+						trait = trait_robot_durable
+						trait = trait_robot_custom_made
+						trait = trait_robot_repurposed_hardware
+					}
+					effect = {
+						save_event_target_as = new_robots
+					}
+				}
+				create_country = {
+					type = default
+					name = "NAME_Repurposed_Surveillance_Network"
+					species = event_target:new_robots
+					ethos = {
+						ethic = ethic_gestalt_consciousness
+					}
+					authority = auth_machine_intelligence
+					civics = random
+
+					effect = {
+						prev.solar_system.starbase = {
+							set_owner = prev
+						}
+						give_starting_resources_effect = yes
+						add_resource = {
+							unity = 1000000
+						}
+						copy_techs_from = { target = root.owner }
+						set_subject_of = {
+							who = root.owner
+						}
+					}
+				}
+				change_pc = pc_machine
+				while = {
+					count = 80
+					create_pop = {
+						species = event_target:new_robots
+					}
+				}
+				while = {
+					count = 10
+					add_district = district_nexus
+				}
+				while = {
+					count = 5
+					add_district = district_industrial
+					add_district = district_generator_uncapped
+					add_district = district_mining_uncapped
+				}
+				add_building = building_machine_major_capital
+				add_building = building_machine_assembly_complex
+				solar_system = {
+					if = {
+						limit = {
+							NOR = {
+								has_megastructure = gateway_0
+								has_megastructure = gateway_final
+							}
+						}
+						spawn_megastructure = { #a bit weird, but otherwise they will probably be trapped here forever
+							type = gateway_ruined
+							random_pos = yes
+							orbit_angle = 360
+						}
+					}
+				}
+			}
+			owner = {
+				random = {
+					chance = 50
+					country_event = { id = ancrel.12095 days = 30 }
+				}
+			}
+		}
+	}
+}

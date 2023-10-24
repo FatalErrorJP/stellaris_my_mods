@@ -1,0 +1,272 @@
+﻿character = {
+	size = { x = 472 y = 324 }
+
+	entity = {
+		orientation = center_down
+		position = { x = 50 y = -20 }
+		scale = 24
+	}
+	#2d Portrait position
+	icon = {
+		orientation = center_down
+		position = { x = 0 y = 0 }
+		scale = 1.0
+	}
+}
+
+portraits = {
+	
+	itako_01 = { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_01.dds" }
+	itako_02 = { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_02.dds" }
+	itako_03 = { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_03.dds" }
+	itako_04 = { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_04.dds" }
+	itako_05 = { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_05.dds" }
+	itako_06 = { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_06.dds" }
+	zunko_01 = { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_01.dds" }
+	zunko_02 = { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_02.dds" }
+	zunko_03 = { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_03.dds" }
+	zunko_04 = { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_04.dds" }
+	zunko_05 = { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_05.dds" }
+	kiritan_01 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_01.dds" }
+	kiritan_02 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_02.dds" }
+	kiritan_03 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_03.dds" }
+	kiritan_04 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_04.dds" }
+	kiritan_05 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_05.dds" }
+	kiritan_06 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_06.dds" }
+	kiritan_07 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_07.dds" }
+	kiritan_08 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_08.dds" }
+	kiritan_09 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_09.dds" }
+}
+
+portrait_groups = {
+	touhokusimai = {
+		default = zunko_01
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					itako_01
+					itako_02
+					itako_03
+					itako_04
+					itako_05
+					itako_06
+					zunko_01
+					zunko_02
+					zunko_03
+					zunko_04
+					zunko_05
+					kiritan_01
+					kiritan_02
+					kiritan_03
+					kiritan_04
+					kiritan_05
+					kiritan_06
+					kiritan_07
+					kiritan_08
+					kiritan_09
+
+				}
+			}
+
+		}
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					itako_01
+					itako_02
+					itako_03
+					itako_04
+					itako_05
+					itako_06
+					zunko_01
+					zunko_02
+					zunko_03
+					zunko_04
+					zunko_05
+					kiritan_01
+					kiritan_02
+					kiritan_03
+					kiritan_04
+					kiritan_05
+					kiritan_06
+					kiritan_07
+					kiritan_08
+					kiritan_09
+				}
+			}
+		}		
+		
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					itako_01
+					itako_02
+					itako_03
+					itako_04
+					itako_05
+					itako_06
+					zunko_01
+					zunko_02
+					zunko_03
+					zunko_04
+					zunko_05
+					kiritan_01
+					kiritan_02
+					kiritan_03
+					kiritan_04
+					kiritan_05
+					kiritan_06
+					kiritan_07
+					kiritan_08
+					kiritan_09
+
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			
+			add = {
+				trigger = {
+					leader_class = governor
+				}
+				portraits = {
+					itako_01
+					itako_02
+					itako_03
+					itako_04
+					itako_05
+					itako_06
+					zunko_01
+					zunko_02
+					zunko_03
+					zunko_04
+					zunko_05
+					kiritan_01
+					kiritan_02
+					kiritan_03
+					kiritan_04
+					kiritan_05
+					kiritan_06
+					kiritan_07
+					kiritan_08
+					kiritan_09
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = scientist
+				}
+				portraits = {
+					itako_01
+					itako_02
+					itako_03
+					itako_04
+					itako_05
+					itako_06
+					zunko_01
+					zunko_02
+					zunko_03
+					zunko_04
+					zunko_05
+					kiritan_01
+					kiritan_02
+					kiritan_03
+					kiritan_04
+					kiritan_05
+					kiritan_06
+					kiritan_07
+					kiritan_08
+					kiritan_09
+
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = admiral
+				}
+				portraits = {
+					itako_01
+					itako_02
+					itako_03
+					itako_04
+					itako_05
+					itako_06
+					zunko_01
+					zunko_02
+					zunko_03
+					zunko_04
+					zunko_05
+					kiritan_01
+					kiritan_02
+					kiritan_03
+					kiritan_04
+					kiritan_05
+					kiritan_06
+					kiritan_07
+					kiritan_08
+					kiritan_09
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = general
+				}
+				portraits = {
+					itako_01
+					itako_02
+					itako_03
+					itako_04
+					itako_05
+					itako_06
+					zunko_01
+					zunko_02
+					zunko_03
+					zunko_04
+					zunko_05
+					kiritan_01
+					kiritan_02
+					kiritan_03
+					kiritan_04
+					kiritan_05
+					kiritan_06
+					kiritan_07
+					kiritan_08
+					kiritan_09
+				}
+			}
+		}
+		
+		#leader scope 
+		ruler = {
+			add = {
+			    	portraits = {
+					itako_01
+					itako_02
+					itako_03
+					itako_04
+					itako_05
+					itako_06
+					zunko_01
+					zunko_02
+					zunko_03
+					zunko_04
+					zunko_05
+					kiritan_01
+					kiritan_02
+					kiritan_03
+					kiritan_04
+					kiritan_05
+					kiritan_06
+					kiritan_07
+					kiritan_08
+					kiritan_09
+				}
+			}
+
+		}
+	}

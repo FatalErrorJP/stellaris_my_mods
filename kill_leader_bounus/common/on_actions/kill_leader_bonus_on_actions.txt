@@ -1,0 +1,29 @@
+# リーダー死亡時のイベント
+# This = Country
+# From = Leader
+on_leader_death_notify = {
+	events = {
+		kill_leader_bounus.1
+	}
+}
+
+# リーダー解雇時のイベント
+# This = Country
+# From = Leader
+on_leader_fired = {
+	events = {
+		kill_leader_bounus.1
+	}
+}
+
+# リーダープール追加時のイベント
+# This = Country
+# From = Leader
+on_added_to_leader_pool = {
+	events = {
+		kill_leader_bounus.2
+		kill_leader_bounus.3
+		kill_leader_bounus.4
+		kill_leader_bounus.5
+	}
+}

@@ -1,0 +1,30 @@
+﻿l_japanese:
+  TOOLTIP_SET_FLAGSHIP_0:0 "§H[Root.GetFleetName]§!は旗艦ではない"
+  TOOLTIP_SET_FLAGSHIP_1:0 "§H[Root.GetFleetName]§!は§H艦隊グループ[Root.grouping_fleets_flagship]§!の旗艦である"
+  TOOLTIP_ADD_FLEET_GROUPS_0:0 "§H[Root.GetFleetName]§!が所属中の艦隊グループ:§H未所属§!"
+  TOOLTIP_ADD_FLEET_GROUPS_1:0 "§H[Root.GetFleetName]§!が所属中の艦隊グループ:§H艦隊グループ[Root.grouping_fleets_fleet_group_num]§!"
+
+  TOOLTIP_UNFOLLOW_FLAGSHIP:0 "艦隊グループ$GROUP_NUMBER|*0$§!に所属中の各艦隊は、バラバラに行動中だ\n"
+  TOOLTIP_FOLLOW_FLAGSHIP:0 "艦隊グループ$GROUP_NUMBER|*0$§!に所属中の各艦隊は、旗艦に追従中だ\n"
+  TOOLTIP_FOLLOW_FLAGSHIP_0:0 "----\n§H艦隊グループ$GROUP_NUMBER|*0$§!の旗艦:\n§Hなし§!"
+  TOOLTIP_FOLLOW_FLAGSHIP_1:0 "----\n§H艦隊グループ$GROUP_NUMBER|*0$§!の旗艦:\n§H[event_target:target_flagship_fleet.GetFleetName]§!"
+  TOOLTIP_FLEET_LIST:0 "\n所属艦隊:\n"
+
+  TOOLTIP_GOTO_GATEWAY:0 "旗艦を自国領土内で稼働中の$gateway_final$軌道上に移動する"
+  TOOLTIP_GOTO_GATEWAY_FAIL:0 "旗艦を自国領土内で稼働中の$gateway_final$軌道上に移動する\n----\n§H$gateway_final$§!が見つからない"
+
+  TOOLTIP_GOTO_LGATE:0 "旗艦を§H$NAME_Final_Egress$§!の$lgate$軌道上に移動する"
+  TOOLTIP_GOTO_LGATE_FAIL:0 "旗艦を§H$NAME_Final_Egress$§!の$lgate$軌道上に移動する\n----\n§H$NAME_Final_Egress$§!が見つからない"
+
+  TOOLTIP_NO_FLAGSHIP:0 "旗艦が存在しない"
+
+  TOOLTIP_COLOSSUS_GODRAY:0 "§H神の光の自動照射を有効にする§!\n自国内の精神主義以外のPOPが一番多い惑星を自動で判別し、神の光を照射します。照射完了後は自動で次の惑星を探します。\n※敵艦に攻撃されるなどして強制的に処理が解除された場合は、もう一度ボタンを有効にしなおしてください。"
+  TOOLTIP_COLOSSUS_GODRAY_CANCEL:0 "§H神の光の自動照射を無効にする§!"
+
+  ######################################################
+  # 造船機能のONOFF Modとの互換性確保のための定義
+  ######################################################
+  TOOLTIP_DISABLE_STARBASE_SHIPYARD_BTN:0 "この基地の造船機能を§H無効§!にする。\n\n※現在キューに入っている造船の命令は、§Rゾンビプロセスとしてキューに残り続けてしまうため、無効化前に必ずキューの中身を空にしてください。§!"
+  TOOLTIP_ENABLE_STARBASE_SHIPYARD_BTN:0 "この基地の造船機能を§H有効§!にする。"
+  TOOLTIP_DISABLE_JUGGERNAUT_SHIPYARD_BTN:0 "ジャガーノートの造船機能を§H無効§!にする。\n\n※現在キューに入っている造船の命令は、§Rゾンビプロセスとしてキューに残り続けてしまうため、無効化前に必ずキューの中身を空にしてください。§!"
+  TOOLTIP_ENABLE_JUGGERNAUT_SHIPYARD_BTN:0 "ジャガーノートの造船機能を§H有効§!にする。"

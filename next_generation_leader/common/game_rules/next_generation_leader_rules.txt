@@ -1,0 +1,21 @@
+# リーダーの雇用上限に影響するかどうか
+# this = leader
+should_count_towards_leader_cap = {
+	NOR = {
+		leader_class = envoy
+		is_hidden = yes
+		has_leader_flag = hired_admiral_merc_leader
+		has_leader_flag = legendary_leader
+		AND = {
+			has_trait_tier1or2 = { TRAIT = leader_trait_eager }
+			has_skill < 4
+		}
+		#############################################################
+		# ここからMod追加コード
+		#############################################################
+		has_trait = trait_next_generation_leader
+		#############################################################
+		# ここまでMod追加コード
+		#############################################################
+	}
+}

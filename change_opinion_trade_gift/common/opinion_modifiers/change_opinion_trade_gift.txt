@@ -1,0 +1,15 @@
+# 有利な貿易協定
+# Favorable trade deal
+opinion_trade_gift = {
+	opinion = {
+		base = 1
+	}
+
+	accumulative = yes
+
+	max = 10
+
+	decay = {
+		base = 2
+	}
+}

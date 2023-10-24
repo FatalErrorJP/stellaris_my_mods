@@ -1,0 +1,103 @@
+##############################################################
+# D言語くん種族用の定義
+##############################################################
+# D言語くん種族(有機種族)
+d-man-biologicals = {
+	# 種別
+	# BIOLOGICAL:有機種族
+	# MACHINE:機械知性
+	# ROBOT:ロボティクス
+	# LITHOID:岩石種族
+	# PRESAPIENT:準知性
+	# OTHER:その他
+	archetype = BIOLOGICAL
+
+	# 権限の設定
+	# 機械知性は選択不可
+	possible = { authority = { NOT = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE } } }
+
+	# ポートレート
+	portraits = {
+		"d-man-biological-01" "d-man-biological-02"
+	}
+
+	# グラフィックカルチャー
+	graphical_culture = no_culture
+}
+
+# D言語くん種族(機械知性)
+d-man-machines = {
+	# 種別
+	# BIOLOGICAL:有機種族
+	# MACHINE:機械知性
+	# ROBOT:ロボティクス
+	# LITHOID:岩石種族
+	# PRESAPIENT:準知性
+	# OTHER:その他
+	archetype = MACHINE
+
+	# 機械知性はDLC(シンセティック・ドーン)が必須
+	playable = { host_has_dlc = "Synthetic Dawn Story Pack" }
+	randomized = {
+		host_has_dlc = "Synthetic Dawn Story Pack"
+		NOT = { has_global_flag = game_started }
+	}
+
+	# 権限の設定
+	# 機械知性のみ設定可
+	possible = { authority = { OR = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_USE_MACHINE_INTELLIGENCE } } }
+	possible_secondary = { always = no text = SECONDARY_SPECIES_CLASS_INVALID }
+
+	# 性別:オリジナルの機械知性だとなしだが、自由度を増やしたいので敢えて外しておく
+	# gender = no
+
+	# 居住特性の選択:なし
+	use_climate_preference = no
+
+	# 種族の改造時のポートレートの変更:あり
+	portrait_modding = yes
+
+	# 雇用時のリーダーの年齢
+	leader_age_min = 2
+	leader_age_max = 10
+
+	# ポートレート
+	portraits = {
+		"d-man-machine-01" "d-man-machine-02"
+	}
+
+	# グラフィックカルチャー
+	graphical_culture = no_culture
+}
+
+# D言語くん種族(岩石種族)
+d-man-lithoids = {
+	# 種別
+	# BIOLOGICAL:有機種族
+	# MACHINE:機械知性
+	# ROBOT:ロボティクス
+	# LITHOID:岩石種族
+	# PRESAPIENT:準知性
+	# OTHER:その他
+	archetype = LITHOID
+
+	# 権限の設定
+	# 機械知性は選択不可
+	playable = { has_lithoids = yes }
+	possible = { authority = { NOT = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE } } }
+
+	# ランダム帝国の設定
+	# 岩石種族として登録
+	randomized = { has_lithoids = yes }
+
+	# デフォルト種族特性「岩石」
+	trait = "trait_lithoid"
+
+	# ポートレート
+	portraits = {
+		"d-man-lithoid-01" "d-man-lithoid-02"
+	}
+
+	# グラフィックカルチャー
+	graphical_culture = no_culture
+}

@@ -1,0 +1,5 @@
+OR = {
+	galaxy_size = galaxy_aoi
+	galaxy_size = galaxy_aoi2
+	galaxy_size = galaxy_kotonoha
+}

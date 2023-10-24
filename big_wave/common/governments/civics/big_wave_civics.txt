@@ -1,0 +1,45 @@
+# 大波専用国是「食人契約」
+civic_big_wave = {
+	description = "civic_big_wave_effects"
+	playable = { always = yes }										# プレイヤーは利用可
+	ai_playable = { always = no }									# AIは利用不可
+	potential = {
+		# ゲシュタルトや企業は利用不可(選択肢に出てこない)
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		authority = { NOT = { value = auth_corporate } }
+	}
+	possible = {
+		# 第二種族の登場する起源や国是は選択不可、開始時に複数の入植地がある起源も選択不可
+		origin = {
+			NOR = {
+				value = origin_syncretic_evolution
+				value = origin_necrophage
+				value = origin_toxic_knights
+			}
+		}
+		# 平和・受容主義系等は選択不可
+		ethics = {
+			NOR = {
+				text = civic_tooltip_not_xenophile
+				value = ethic_xenophile
+				value = ethic_fanatic_xenophile
+			}
+			NOR = {
+				text = civic_tooltip_not_pacifist
+				value = ethic_pacifist
+				value = ethic_fanatic_pacifist
+			}
+		}
+	}
+	pickable_at_start = yes											# ゲーム開始時に設定可
+	modification = no												# 後からの追加や削除不可
+	has_secondary_species = {										# 第二種族の設定
+		title = civic_big_wave_secondary_species
+		traits = {
+			trait = trait_syncretic_proles
+			trait = trait_big_wave
+		}
+	}
+	random_weight = { base = @civic_default_random_weight }
+	ai_weight = { base = 0 }
+}

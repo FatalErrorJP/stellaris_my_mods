@@ -1,0 +1,270 @@
+﻿character = {
+	size = { x = 472 y = 324 }
+
+	entity = {
+		orientation = center_down
+		position = { x = 50 y = -20 }
+		scale = 24
+	}
+	#2d Portrait position
+	icon = {
+		orientation = center_down
+		position = { x = 0 y = 0 }
+		scale = 1.0
+	}
+}
+
+portraits = {
+	
+	aoiM_01 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_01.dds" }
+	aoiM_02 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_02.dds" }
+	aoiM_03 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_03.dds" }
+	aoiM_04 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_04.dds" }
+	aoiM_05 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_05.dds" }
+	aoiM_06 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_06.dds" }
+	aoiM_07 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_07.dds" }
+	aoiM_08 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_08.dds" }
+	aoiM_09 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_09.dds" }
+	aoiM_10 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiM_10.dds" }
+	aoiMC_01 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_01.dds" }
+	aoiMC_02 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_02.dds" }
+	aoiMC_03 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_03.dds" }
+	aoiMC_04 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_04.dds" }
+	aoiMC_05 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_05.dds" }
+	aoiMC_06 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_06.dds" }
+	aoiMC_07 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_07.dds" }
+	aoiMC_08 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_08.dds" }
+	aoiMC_09 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_09.dds" }
+	aoiMC_10 = { texturefile = "gfx/models/portraits/kotonoha/aoiM/aoiMC_10.dds" }
+}
+
+portrait_groups = {
+	aoiM = {
+		default = aoiM_01
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					aoiM_01
+					aoiMC_01
+					aoiM_02
+					aoiMC_02
+					aoiM_03
+					aoiMC_03
+					aoiM_04
+					aoiMC_04
+					aoiM_05
+					aoiMC_05
+					aoiM_06
+					aoiMC_06
+					aoiM_07
+					aoiMC_07
+					aoiM_08
+					aoiMC_08
+					aoiM_09
+					aoiMC_09
+					aoiM_10
+					aoiMC_10
+				}
+			}
+
+		}
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					aoiM_01
+					aoiM_02
+					aoiM_03
+					aoiM_04
+					aoiM_05
+					aoiM_06
+					aoiM_07
+					aoiM_08
+					aoiM_09
+					aoiM_10
+					aoiMC_01
+					aoiMC_02
+					aoiMC_03
+					aoiMC_04
+					aoiMC_05
+					aoiMC_06
+					aoiMC_07
+					aoiMC_08
+					aoiMC_09
+					aoiMC_10
+				}
+			}
+		}		
+		
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					aoiM_01
+					aoiM_02
+					aoiM_03
+					aoiM_04
+					aoiM_05
+					aoiM_06
+					aoiM_07
+					aoiM_08
+					aoiM_09
+					aoiM_10
+					aoiMC_01
+					aoiMC_02
+					aoiMC_03
+					aoiMC_04
+					aoiMC_05
+					aoiMC_06
+					aoiMC_07
+					aoiMC_08
+					aoiMC_09
+					aoiMC_10
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			
+			add = {
+				trigger = {
+					leader_class = governor
+				}
+				portraits = {
+					aoiM_01
+					aoiM_02
+					aoiM_03
+					aoiM_04
+					aoiM_05
+					aoiM_06
+					aoiM_07
+					aoiM_08
+					aoiM_09
+					aoiM_10
+					aoiMC_01
+					aoiMC_02
+					aoiMC_03
+					aoiMC_04
+					aoiMC_05
+					aoiMC_06
+					aoiMC_07
+					aoiMC_08
+					aoiMC_09
+					aoiMC_10
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = scientist
+				}
+				portraits = {
+					aoiM_01
+					aoiM_02
+					aoiM_03
+					aoiM_04
+					aoiM_05
+					aoiM_06
+					aoiM_07
+					aoiM_08
+					aoiM_09
+					aoiM_10
+					aoiMC_01
+					aoiMC_02
+					aoiMC_03
+					aoiMC_04
+					aoiMC_05
+					aoiMC_06
+					aoiMC_07
+					aoiMC_08
+					aoiMC_09
+					aoiMC_10
+
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = admiral
+				}
+				portraits = {
+					aoiM_01
+					aoiM_02
+					aoiM_03
+					aoiM_04
+					aoiM_05
+					aoiM_06
+					aoiM_07
+					aoiM_08
+					aoiM_09
+					aoiM_10
+					aoiMC_01
+					aoiMC_02
+					aoiMC_03
+					aoiMC_04
+					aoiMC_05
+					aoiMC_06
+					aoiMC_07
+					aoiMC_08
+					aoiMC_09
+					aoiMC_10
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = general
+				}
+				portraits = {
+					aoiM_01
+					aoiM_02
+					aoiM_03
+					aoiM_04
+					aoiM_05
+					aoiM_06
+					aoiM_07
+					aoiM_08
+					aoiM_09
+					aoiM_10
+					aoiMC_01
+					aoiMC_02
+					aoiMC_03
+					aoiMC_04
+					aoiMC_05
+					aoiMC_06
+					aoiMC_07
+					aoiMC_08
+					aoiMC_09
+					aoiMC_10
+				}
+			}
+		}
+		
+		#leader scope 
+		ruler = {
+			add = {
+			    	portraits = {
+					aoiM_01
+					aoiM_02
+					aoiM_03
+					aoiM_04
+					aoiM_05
+					aoiM_06
+					aoiM_07
+					aoiM_08
+					aoiM_09
+					aoiM_10
+					aoiMC_01
+					aoiMC_02
+					aoiMC_03
+					aoiMC_04
+					aoiMC_05
+					aoiMC_06
+					aoiMC_07
+					aoiMC_08
+					aoiMC_09
+					aoiMC_10
+				}
+			}
+
+		}
+	}

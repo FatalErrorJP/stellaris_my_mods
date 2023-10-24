@@ -1,0 +1,55 @@
+message_type = {
+	key = "MESSAGE_COUNCIL_AGENDA_STANCE_50"
+	icon = "GFX_message_council_election_result"
+	icon_frame = 1
+
+	name = "MESSAGE_COUNCIL_AGENDA_STANCE_50_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_yellow"
+	category = government
+}
+message_type = {
+	key = "MESSAGE_COUNCIL_AGENDA_STANCE_60"
+	icon = "GFX_message_council_election_result"
+	icon_frame = 1
+
+	name = "MESSAGE_COUNCIL_AGENDA_STANCE_60_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_yellow"
+	category = government
+}
+message_type = {
+	key = "MESSAGE_COUNCIL_AGENDA_STANCE_70"
+	icon = "GFX_message_council_election_result"
+	icon_frame = 1
+
+	name = "MESSAGE_COUNCIL_AGENDA_STANCE_70_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_yellow"
+	category = government
+}
+message_type = {
+	key = "MESSAGE_COUNCIL_AGENDA_STANCE_80"
+	icon = "GFX_message_council_election_result"
+	icon_frame = 1
+
+	name = "MESSAGE_COUNCIL_AGENDA_STANCE_80_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_yellow"
+	category = government
+}
+message_type = {
+	key = "MESSAGE_COUNCIL_AGENDA_STANCE_90"
+	icon = "GFX_message_council_election_result"
+	icon_frame = 1
+
+	name = "MESSAGE_COUNCIL_AGENDA_STANCE_90_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_yellow"
+	category = government
+}

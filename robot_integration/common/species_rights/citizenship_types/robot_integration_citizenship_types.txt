@@ -1,0 +1,33 @@
+# from = country
+# this = species
+
+citizenship_robot_integration = {
+	is_assimilation = yes
+
+	potential = {
+		exists = from
+
+		from = {
+			# ゲシュタルト意識ではない有機生命体国家のロボットPOPを対象とする
+			not = { has_ethic = ethic_gestalt_consciousness }
+			not = { has_country_flag = synth_assimilation }
+			ROOT = { is_robotic_species = yes }
+			exists = built_species
+			built_species = { is_robotic_species = yes }
+			has_technology = tech_robotic_workers
+		}
+	}
+
+	allow = {
+		hidden_trigger = { exists = from }
+		has_trait = trait_mechanical
+		custom_tooltip = {
+			fail_text = ROBOT_INTEGRATION_FAIL
+			not = { is_subspecies = from.built_species }
+		}
+	}
+
+	ai_will_do = {
+		factor = 100
+	}
+}

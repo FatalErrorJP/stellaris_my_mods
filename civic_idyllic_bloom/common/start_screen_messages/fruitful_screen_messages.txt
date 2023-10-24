@@ -1,0 +1,13 @@
+# Fruitful Partnership
+part = {
+	location = 0
+	localization = "START_SCREEN_FRUITFUL_PLANTOID"
+
+	trigger = {
+		has_origin = origin_fruitful
+		NOR = {
+			is_species_class = PLANT
+			is_species_class = FUN
+		}
+	}
+}

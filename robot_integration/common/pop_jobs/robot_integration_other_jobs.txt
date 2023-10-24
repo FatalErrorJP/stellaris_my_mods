@@ -1,0 +1,70 @@
+# 基本的な設定はバニラの「assimilation」を拝借
+# possibleのみ違う
+robot_integration = {
+	category = assimilation
+	is_capped_by_modifier = no
+	clothes_texture_index = 2
+
+	possible_pre_triggers = {
+		is_sapient = yes
+	}
+
+	ignores_sapience = yes
+
+	possible = {
+		has_citizenship_type = { type = citizenship_robot_integration country = owner }
+	}
+
+	resources = {
+		category = planet_jobs
+		upkeep = {
+			trigger = {
+				has_phototrophic_energy_upkeep = yes
+			}
+			energy = @living_standard_phototrophic_normal
+		}
+		upkeep = {
+			trigger = {
+				has_food_upkeep = yes
+				is_phototrophic = no
+			}
+			food = @living_standard_food_normal
+		}
+		upkeep = {
+			trigger = {
+				has_food_upkeep = yes
+				is_phototrophic = yes
+			}
+			food = @living_standard_phototrophic_normal
+		}
+		upkeep = {
+			trigger = {
+				has_mineral_upkeep = yes
+				is_phototrophic = no
+			}
+			minerals = @living_standard_food_normal
+		}
+		upkeep = {
+			trigger = {
+				has_mineral_upkeep = yes
+				is_phototrophic = yes
+			}
+			minerals = @living_standard_phototrophic_normal
+		}
+		upkeep = {
+			trigger = {
+				is_robotic_or_voidspawn_species = yes
+			}
+			energy = @living_standard_energy_normal
+		}
+	}
+
+	weight = {
+		weight = @special_job_weight
+
+		modifier = {
+			factor = 200 # brings @special_job_weight up to 2
+			is_being_assimilated = yes
+		}
+	}
+}

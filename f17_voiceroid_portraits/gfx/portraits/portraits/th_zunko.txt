@@ -1,0 +1,64 @@
+##############################################################
+# 東北ずんこ種族用のポートレート定義
+##############################################################
+# 画像、音声ファイルとのリンク設定
+portraits = {
+	zunko_01 = { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_01.dds" }
+	zunko_02 = { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_02.dds" }
+	zunko_03 = { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_03.dds" }
+	zunko_04 = { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_04.dds" }
+	zunko_05 = { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_05.dds" }
+}
+
+# 各場面別のポートレート
+portrait_groups = {
+	zunko = {
+		# デフォルト
+		default = zunko_01
+
+		# 帝国作成時
+		game_setup = {
+			add = {
+				portraits = {
+					zunko_01 zunko_02 zunko_03 zunko_04 zunko_05
+				}
+			}
+		}
+
+		# 汎用
+		species = {
+			add = {
+				portraits = {
+					zunko_01 zunko_02 zunko_03 zunko_04 zunko_05
+				}
+			}
+		}
+
+		# 惑星上のPOP
+		pop = {
+			add = {
+				portraits = {
+					zunko_01 zunko_02 zunko_03 zunko_04 zunko_05
+				}
+			}
+		}
+
+		#リーダー
+		leader = {
+			add = {
+				portraits = {
+					zunko_01 zunko_02 zunko_03 zunko_04 zunko_05
+				}
+			}
+		}
+
+		# 国家元首
+		ruler = {
+			add = {
+				portraits = {
+					zunko_01 zunko_02 zunko_03 zunko_04 zunko_05
+				}
+			}
+		}
+	}
+}

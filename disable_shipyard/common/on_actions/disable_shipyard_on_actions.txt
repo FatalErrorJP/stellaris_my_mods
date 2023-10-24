@@ -1,0 +1,8 @@
+# A ship has been built
+# Root = Ship
+# From = Planet
+on_ship_built = {
+	events = {
+		disable_shipyard.1
+	}
+}

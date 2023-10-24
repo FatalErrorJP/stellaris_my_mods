@@ -1,0 +1,82 @@
+# 評議会の進捗状況
+notice_council_agenda_stance = {
+	potential = {
+		is_ai = no
+	}
+
+	allow = {
+		always = yes
+	}
+
+	# お知らせしない
+	option = {
+		name = notice_council_agenda_stance_none
+		potential = { always = yes }
+		valid = { always = yes }
+		policy_flags = { notice_council_agenda_stance_none }
+		ai_weight = { weight = 10 }
+	}
+
+	# 進捗が50%以上ならお知らせする
+	option = {
+		name = notice_council_agenda_stance_50
+		potential = { always = yes }
+		valid = { always = yes }
+		policy_flags = {
+			notice_council_agenda_stance_50
+			notice_council_agenda_stance_60
+			notice_council_agenda_stance_70
+			notice_council_agenda_stance_80
+			notice_council_agenda_stance_90
+		}
+		ai_weight = { weight = 0 }
+	}
+
+	# 進捗が60%以上ならお知らせする
+	option = {
+		name = notice_council_agenda_stance_60
+		potential = { always = yes }
+		valid = { always = yes }
+		policy_flags = {
+			notice_council_agenda_stance_60
+			notice_council_agenda_stance_70
+			notice_council_agenda_stance_80
+			notice_council_agenda_stance_90
+		}
+		ai_weight = { weight = 0 }
+	}
+
+	# 進捗が70%以上ならお知らせする
+	option = {
+		name = notice_council_agenda_stance_70
+		potential = { always = yes }
+		valid = { always = yes }
+		policy_flags = {
+			notice_council_agenda_stance_70
+			notice_council_agenda_stance_80
+			notice_council_agenda_stance_90
+		}
+		ai_weight = { weight = 0 }
+	}
+
+	# 進捗が80%以上ならお知らせする
+	option = {
+		name = notice_council_agenda_stance_80
+		potential = { always = yes }
+		valid = { always = yes }
+		policy_flags = {
+			notice_council_agenda_stance_80
+			notice_council_agenda_stance_90
+		}
+		ai_weight = { weight = 0 }
+	}
+
+	# 進捗が90%以上ならお知らせする
+	option = {
+		name = notice_council_agenda_stance_90
+		potential = { always = yes }
+		valid = { always = yes }
+		policy_flags = { notice_council_agenda_stance_90 }
+		ai_weight = { weight = 0 }
+	}
+}

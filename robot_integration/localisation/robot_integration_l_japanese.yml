@@ -1,0 +1,12 @@
+﻿l_japanese:
+  # 種族の権利->市民権
+  citizenship_robot_integration:0 "規格統一化"
+  citizenship_robot_integration_tooltip:0 "このロボットPOPは、我が国の規格に則った形態となるように、各パーツを変更中だ。この作業中のPOPはいかなる資源も生み出さない。"
+  citizenship_robot_integration_tooltip_delayed:0 "§Lメンテナンスコスト削減の観点からも、我が国で製造している部品を流用できるようにしておく必要があるな§!"
+
+  ROBOT_INTEGRATION_FAIL:0 "$TRIGGER_FAIL$このロボットは我が国の規格に沿っているため、規格統一化の必要はない"
+
+  # pop_jobs
+  job_robot_integration:0 "規格統一化"
+  job_robot_integration_plural:0 "$job_robot_integration$"
+  job_robot_integration_desc:0 "このロボットPOPは、我が国の規格に則った形態となるように、各パーツを変更中だ。"

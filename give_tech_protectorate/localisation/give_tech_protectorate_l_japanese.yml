@@ -1,0 +1,16 @@
+﻿l_japanese:
+  # 貿易協定
+  trade_action_give_tech_overlord:0 "保護国への技術供与"
+  trade_action_give_tech_overlord_desc:0 "後進国である§H[Root.GetName]§!の技術力は、銀河各国の中でも最低レベルの水準であることは明白だ。我々の先進的な技術を提供し真っ当な文明レベルまで引き上げる必要があるだろう。"
+  trade_action_give_tech_subject:0 "保護国への技術供与"
+  trade_action_give_tech_subject_desc:0 "§H[Root.GetName]§!から技術供与を受け高度な技術力を持つことができれば、将来的には独立の道も開けるかもしれない。"
+
+  trade_action_give_tech_tooltip:0 "毎月宗主国である§H[From.GetName]§!の持つ、ランダムな研究技術に対して進捗ボーナスを得る"
+  trade_action_give_tech_tooltip_root:0 "([Root.GetName]):"
+  trade_action_give_tech_tooltip_from:0 "([From.GetName]):"
+  trade_action_give_tech_tooltip_lf:0 " \n"
+
+  give_tech_overlord:0 "保護国への技術供与"
+  give_tech_overlord_desc:0 "技術の劣っている§H保護国§!に対して、§H宗主国§!の先進的な技術を供与する。\n\n§H保護国§!は、毎月§H宗主国§!の持つ、ランダムな研究技術に対して進捗ボーナスを得る"
+  give_tech_subject:0 "保護国への技術供与"
+  give_tech_subject_desc:0 "§H宗主国§!から技術団を招聘し、技術を学ぶ。\n\n§H保護国§!は、毎月§H宗主国§!の持つ、ランダムな研究技術に対して進捗ボーナスを得る"

@@ -1,0 +1,3191 @@
+###############################################################################
+# button_effects
+#
+# 補足:
+#   各button_effectの記述の意味
+#   ・potential:画面にボタンを表示する条件
+#   ・allow:ボタンを押せる条件
+#   ・effects:実際にボタンを押した時の処理の内容
+#
+###############################################################################
+
+###############################################################################
+# バイパス
+###############################################################################
+#####
+# ワームホールのある星系を検索する
+#####
+find_bypass_wormhole_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_BYPASS_WORMHOLE_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					has_natural_wormhole = yes
+					not = { has_star_flag = shroud_tunnel_nexus }
+					not = { has_star_flag = shroud_tunnel_node }
+					OR = {
+						is_surveyed = { who = from status = yes }
+						from = { intel_level = { level > low system = prev.solar_system } }
+					}
+				}
+				save_event_target_as = target_system
+
+				from = {
+					create_message = {
+						type = FOUND_BYPASS_WORMHOLE
+						localization = FOUND_BYPASS_WORMHOLE_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# ゲートウェイのある星系を検索する
+#####
+find_bypass_gateway_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_BYPASS_GATEWAY_BTN"
+
+		hidden_effect = {
+			every_megastructure = {
+				limit = {
+					OR = {
+						is_megastructure_type = gateway_restored
+						is_megastructure_type = gateway_final
+					}
+					OR = {
+						star = {
+							solar_system = {
+								is_surveyed = { who = from status = yes }
+							}
+						}
+						from = { intel_level = { level > low system = prev.solar_system } }
+					}
+				}
+
+				star = {
+					solar_system = {
+						save_event_target_as = target_system
+					}
+				}
+
+				from = {
+					create_message = {
+						type = FOUND_BYPASS_GATEWAY
+						localization = FOUND_BYPASS_GATEWAY_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+###
+# Lゲートのある星系で検索する
+###
+find_bypass_lgate_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_BYPASS_LGATE_BTN"
+
+		hidden_effect = {
+			every_megastructure = {
+				limit = {
+					is_megastructure_type = lgate_base
+					OR = {
+						star = {
+							solar_system = {
+								is_surveyed = { who = from status = yes }
+							}
+						}
+						from = { intel_level = { level > low system = prev.solar_system } }
+					}
+				}
+
+				star = {
+					solar_system = {
+						save_event_target_as = target_system
+					}
+				}
+
+				from = {
+					create_message = {
+						type = FOUND_BYPASS_LGATE
+						localization = FOUND_BYPASS_LGATE_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# シュラウドトンネルのある星系を検索する
+#####
+find_bypass_shroudtunnel_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_BYPASS_SHROUDTUNNEL_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					OR = {
+						has_star_flag = shroud_tunnel_nexus
+						has_star_flag = shroud_tunnel_node
+					}
+					OR = {
+						is_surveyed = { who = from status = yes }
+						from = { intel_level = { level > low system = prev.solar_system } }
+					}
+				}
+				save_event_target_as = target_system
+
+				from = {
+					create_message = {
+						type = FOUND_BYPASS_SHROUDTUNNEL
+						localization = FOUND_BYPASS_SHROUDTUNNEL_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+###############################################################################
+# 基地/艦隊/リヴァイアサン/危機
+###############################################################################
+#####
+# 自国内の防衛プラットフォームの存在する前哨地
+#####
+find_military_station_small_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_MILITARY_STATION_SMALL_BTN"
+		hidden_effect = {
+			every_system = {
+				limit = {
+					exists = owner
+					owner = {
+						is_same_value = from
+					}
+
+					exists = starbase
+					starbase = {
+						has_starbase_size = starbase_outpost
+					}
+					solar_system = {
+						any_ship_in_system = {
+							is_ship_class = shipclass_military_station
+							owner = {
+								is_same_value = from
+							}
+						}
+					}
+				}
+
+				starbase = {
+					fleet = {
+						save_event_target_as = target_starbase
+					}
+				}
+
+				from = {
+					create_message = {
+						type = FOUND_MILITARY_STATION_SMALL
+						localization = FOUND_MILITARY_STATION_SMALL_MESSAGE
+						days = 30
+						target = event_target:target_starbase
+						variable = { type = name localization = STARBASE scope = event_target:target_starbase }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# リヴァイアサン
+#####
+find_leviathans_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_LEVIATHANS"
+
+		hidden_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						is_guardian_country = yes
+						is_country_type = ldragon_country
+					}
+					has_communications = from
+				}
+
+				every_owned_fleet = {
+					limit = {
+						from = { intel_level = { level > medium system = prev.solar_system } }
+					}
+
+					solar_system = { save_event_target_as = target_system }
+					save_event_target_as = target_fleet
+
+					from = {
+						create_message = {
+							type = FOUND_LEVIATHANS
+							localization = FOUND_LEVIATHANS_MESSAGE
+							days = 30
+							target = event_target:target_fleet
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# キャラバンの艦隊
+#####
+find_caravaneer_fleet_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_CARAVANEER_FLEET"
+
+		hidden_effect = {
+
+			every_country = {
+				limit = {
+					is_country_type = caravaneer_fleet
+				}
+
+				every_owned_fleet = {
+					limit = {
+						from = { intel_level = { level > medium system = prev.solar_system } }
+						OR = {
+							has_fleet_flag = cara_fleet1
+							has_fleet_flag = cara_fleet2
+							has_fleet_flag = cara_fleet3
+						}
+					}
+
+					solar_system = { save_event_target_as = target_system }
+					save_event_target_as = target_fleet
+
+					from = {
+						create_message = {
+							type = FOUND_CARAVANEER_FLEET
+							localization = FOUND_CARAVANEER_FLEET_MESSAGE
+							days = 30
+							target = event_target:target_fleet
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# プレスリン(汚染された惑星)を検索する
+#####
+find_crisis_swarm_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_CRISIS_SWARM"
+
+		hidden_effect = {
+			every_system = {
+				limit = {}
+
+				every_system_planet = {
+					limit = {
+						is_planet_class = pc_infested
+						OR = {
+							is_surveyed = { who = from status = yes }
+							from = { intel_level = { level > medium system = prev.solar_system } }
+						}
+					}
+
+					solar_system = { save_event_target_as = target_system }
+					save_event_target_as = target_planet
+
+					from = {
+						create_message = {
+							type = FOUND_CRISIS_SWARM
+							localization = FOUND_CRISIS_SWARM_MESSAGE
+							days = 30
+							target = event_target:target_planet
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							variable = { type = name localization = PLANET scope = event_target:target_planet }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 招かれざるもの(次元ポータル＆次元アンカー)
+#####
+find_crisis_extradimensional_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_CRISIS_EXTRADIMENSIONAL"
+
+		hidden_effect = {
+
+			# 次元アンカー
+			every_country = {
+				limit = {
+					OR = {
+						has_country_flag = unbidden
+						has_country_flag = aberrant
+						has_country_flag = vehement
+					}
+				}
+
+				every_controlled_ship = {
+					limit = {
+						is_ship_size = starbase_exd
+					}
+
+					solar_system = { save_event_target_as = target_system }
+					fleet = { save_event_target_as = target_fleet }
+
+					from = {
+						create_message = {
+							type = FOUND_DIMENSIONAL_ANCHORS
+							localization = FOUND_DIMENSIONAL_ANCHORS_MESSAGE
+							days = 30
+							target = event_target:target_fleet
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+						}
+					}
+				}
+			}
+
+			# 次元ポータル
+			every_country = {
+				limit = {
+					is_country_type = portal_holder
+				}
+
+				every_controlled_ship = {
+					limit = {
+						is_ship_size = dimensional_portal_ed
+					}
+
+					solar_system = { save_event_target_as = target_system }
+					fleet = { save_event_target_as = target_fleet }
+
+					from = {
+						create_message = {
+							type = FOUND_DIMENSIONAL_PORTALS
+							localization = FOUND_DIMENSIONAL_PORTALS_MESSAGE
+							days = 30
+							target = event_target:target_fleet
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+###############################################################################
+# 巨大建造物
+###############################################################################
+#####
+# セントリーアレイのある星系を検索する
+#####
+find_megastructure_spy_orb_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_MEGASTRUCTURE_SPY_ORB_BTN"
+		hidden_effect = {
+			every_megastructure = {
+				limit = {
+					OR = {
+						is_megastructure_type = spy_orb_0
+						is_megastructure_type = spy_orb_1
+						is_megastructure_type = spy_orb_2
+						is_megastructure_type = spy_orb_3
+						is_megastructure_type = spy_orb_4
+						is_megastructure_type = spy_orb_ruined
+						is_megastructure_type = spy_orb_restored
+					}
+					OR = {
+						star = {
+							solar_system = {
+								is_surveyed = { who = from status = yes }
+							}
+						}
+						from = { intel_level = { level > low system = prev.solar_system } }
+					}
+				}
+
+				star = {
+					solar_system = {
+						save_event_target_as = target_system
+					}
+				}
+
+				from = {
+					create_message = {
+						type = FOUND_MEGASTRUCTURE_SPY_ORB
+						localization = FOUND_MEGASTRUCTURE_SPY_ORB_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# サイエンスネクサスのある星系を検索する
+#####
+find_megastructure_think_tank_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_MEGASTRUCTURE_THINK_TANK_BTN"
+		hidden_effect = {
+			every_megastructure = {
+				limit = {
+					OR = {
+						is_megastructure_type = think_tank_0
+						is_megastructure_type = think_tank_1
+						is_megastructure_type = think_tank_2
+						is_megastructure_type = think_tank_3
+						is_megastructure_type = think_tank_4
+						is_megastructure_type = think_tank_ruined
+						is_megastructure_type = think_tank_restored
+					}
+					OR = {
+						star = {
+							solar_system = {
+								is_surveyed = { who = from status = yes }
+							}
+						}
+						from = { intel_level = { level > low system = prev.solar_system } }
+					}
+				}
+
+				star = {
+					solar_system = {
+						save_event_target_as = target_system
+					}
+				}
+
+				from = {
+					create_message = {
+						type = FOUND_MEGASTRUCTURE_THINK_TANK
+						localization = FOUND_MEGASTRUCTURE_THINK_TANK_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 巨大芸術体験施設のある星系を検索する
+#####
+find_megastructure_mega_art_installation_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_MEGASTRUCTURE_MEGA_ART_INSTALLATION_BTN"
+		hidden_effect = {
+			every_megastructure = {
+				limit = {
+					OR = {
+						is_megastructure_type = mega_art_installation_0
+						is_megastructure_type = mega_art_installation_1
+						is_megastructure_type = mega_art_installation_2
+						is_megastructure_type = mega_art_installation_3
+						is_megastructure_type = mega_art_installation_4
+						is_megastructure_type = mega_art_installation_ruined
+						is_megastructure_type = mega_art_installation_restored
+						is_megastructure_type = mega_art_installation_restored_2
+					}
+					OR = {
+						star = {
+							solar_system = {
+								is_surveyed = { who = from status = yes }
+							}
+						}
+						from = { intel_level = { level > low system = prev.solar_system } }
+					}
+				}
+
+				star = {
+					solar_system = {
+						save_event_target_as = target_system
+					}
+				}
+
+				from = {
+					create_message = {
+						type = FOUND_MEGASTRUCTURE_MEGA_ART_INSTALLATION
+						localization = FOUND_MEGASTRUCTURE_MEGA_ART_INSTALLATION_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 星間会議場のある星系を検索する
+#####
+find_megastructure_interstellar_assembly_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_MEGASTRUCTURE_INTERSTELLAR_ASSEMBLY_BTN"
+		hidden_effect = {
+			every_megastructure = {
+				limit = {
+					OR = {
+						is_megastructure_type = interstellar_assembly_0
+						is_megastructure_type = interstellar_assembly_1
+						is_megastructure_type = interstellar_assembly_2
+						is_megastructure_type = interstellar_assembly_3
+						is_megastructure_type = interstellar_assembly_4
+						is_megastructure_type = interstellar_assembly_ruined
+						is_megastructure_type = interstellar_assembly_restored
+					}
+					OR = {
+						star = {
+							solar_system = {
+								is_surveyed = { who = from status = yes }
+							}
+						}
+						from = { intel_level = { level > low system = prev.solar_system } }
+					}
+				}
+
+				star = {
+					solar_system = {
+						save_event_target_as = target_system
+					}
+				}
+
+				from = {
+					create_message = {
+						type = FOUND_MEGASTRUCTURE_INTERSTELLAR_ASSEMBLY
+						localization = FOUND_MEGASTRUCTURE_INTERSTELLAR_ASSEMBLY_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 戦略調整センターのある星系を検索する
+#####
+find_megastructure_strategic_coordination_center_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_MEGASTRUCTURE_STRATEGIC_COORDINATION_CENTER_BTN"
+		hidden_effect = {
+			every_megastructure = {
+				limit = {
+					OR = {
+						is_megastructure_type = strategic_coordination_center_0
+						is_megastructure_type = strategic_coordination_center_1
+						is_megastructure_type = strategic_coordination_center_2
+						is_megastructure_type = strategic_coordination_center_3
+						is_megastructure_type = strategic_coordination_center_ruined
+						is_megastructure_type = strategic_coordination_center_restored
+					}
+					OR = {
+						star = {
+							solar_system = {
+								is_surveyed = { who = from status = yes }
+							}
+						}
+						from = { intel_level = { level > low system = prev.solar_system } }
+					}
+				}
+
+				star = {
+					solar_system = {
+						save_event_target_as = target_system
+					}
+				}
+
+				from = {
+					create_message = {
+						type = FOUND_MEGASTRUCTURE_STRATEGIC_COORDINATION_CENTER
+						localization = FOUND_MEGASTRUCTURE_STRATEGIC_COORDINATION_CENTER_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 巨大造船所のある星系を検索する
+#####
+find_megastructure_mega_shipyard_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_MEGASTRUCTURE_MEGA_SHIPYARD_BTN"
+		hidden_effect = {
+			every_megastructure = {
+				limit = {
+					OR = {
+						is_megastructure_type = mega_shipyard_0
+						is_megastructure_type = mega_shipyard_1
+						is_megastructure_type = mega_shipyard_2
+						is_megastructure_type = mega_shipyard_3
+						is_megastructure_type = mega_shipyard_ruined
+						is_megastructure_type = mega_shipyard_restored
+					}
+					OR = {
+						star = {
+							solar_system = {
+								is_surveyed = { who = from status = yes }
+							}
+						}
+						from = { intel_level = { level > low system = prev.solar_system } }
+					}
+				}
+
+				star = {
+					solar_system = {
+						save_event_target_as = target_system
+					}
+				}
+
+				from = {
+					create_message = {
+						type = FOUND_MEGASTRUCTURE_MEGA_SHIPYARD
+						localization = FOUND_MEGASTRUCTURE_MEGA_SHIPYARD_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 量子カタパルトのある星系を検索する
+#####
+find_megastructure_quantum_catapult_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_MEGASTRUCTURE_QUANTUM_CATAPULT_BTN"
+		hidden_effect = {
+			every_megastructure = {
+				limit = {
+					OR = {
+						is_megastructure_type = quantum_catapult_0
+						is_megastructure_type = quantum_catapult_1
+						is_megastructure_type = quantum_catapult_2
+						is_megastructure_type = quantum_catapult_3
+						is_megastructure_type = quantum_catapult_ruined
+						is_megastructure_type = quantum_catapult_restored
+						is_megastructure_type = quantum_catapult_ruined_slingshot
+						is_megastructure_type = quantum_catapult_restored_slingshot
+						is_megastructure_type = quantum_catapult_improved_slingshot
+					}
+					OR = {
+						star = {
+							solar_system = {
+								is_surveyed = { who = from status = yes }
+							}
+						}
+						from = { intel_level = { level > low system = prev.solar_system } }
+					}
+				}
+
+				star = {
+					solar_system = {
+						save_event_target_as = target_system
+					}
+				}
+
+				from = {
+					create_message = {
+						type = FOUND_MEGASTRUCTURE_QUANTUM_CATAPULT
+						localization = FOUND_MEGASTRUCTURE_QUANTUM_CATAPULT_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# ダイソンスフィアのある星系を検索する
+#####
+find_megastructure_dyson_sphere_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_MEGASTRUCTURE_DYSON_SPHERE_BTN"
+		hidden_effect = {
+			every_megastructure = {
+				limit = {
+					OR = {
+						is_megastructure_type = dyson_sphere_0
+						is_megastructure_type = dyson_sphere_1
+						is_megastructure_type = dyson_sphere_2
+						is_megastructure_type = dyson_sphere_3
+						is_megastructure_type = dyson_sphere_4
+						is_megastructure_type = dyson_sphere_5
+						is_megastructure_type = dyson_sphere_ruined
+						is_megastructure_type = dyson_sphere_restored
+					}
+					OR = {
+						star = {
+							solar_system = {
+								is_surveyed = { who = from status = yes }
+							}
+						}
+						from = { intel_level = { level > low system = prev.solar_system } }
+					}
+				}
+
+				star = {
+					solar_system = {
+						save_event_target_as = target_system
+					}
+				}
+
+				from = {
+					create_message = {
+						type = FOUND_MEGASTRUCTURE_DYSON_SPHERE
+						localization = FOUND_MEGASTRUCTURE_DYSON_SPHERE_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 物質展開器のある星系を検索する
+#####
+find_megastructure_matter_decompressor_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_MEGASTRUCTURE_MATTER_DECOMPRESSOR_BTN"
+		hidden_effect = {
+			every_megastructure = {
+				limit = {
+					OR = {
+						is_megastructure_type = matter_decompressor_0
+						is_megastructure_type = matter_decompressor_1
+						is_megastructure_type = matter_decompressor_2
+						is_megastructure_type = matter_decompressor_3
+						is_megastructure_type = matter_decompressor_4
+						is_megastructure_type = matter_decompressor_ruined
+						is_megastructure_type = matter_decompressor_restored
+					}
+					OR = {
+						star = {
+							solar_system = {
+								is_surveyed = { who = from status = yes }
+							}
+						}
+						from = { intel_level = { level > low system = prev.solar_system } }
+					}
+				}
+
+				star = {
+					solar_system = {
+						save_event_target_as = target_system
+					}
+				}
+
+				from = {
+					create_message = {
+						type = FOUND_MEGASTRUCTURE_MATTER_DECOMPRESSOR
+						localization = FOUND_MEGASTRUCTURE_MATTER_DECOMPRESSOR_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# リングワールドのある星系を検索する
+#####
+find_megastructure_ring_world_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_MEGASTRUCTURE_RING_WORLD_BTN"
+		hidden_effect = {
+			every_system = {
+				limit = {
+					any_system_megastructure = {
+						OR = {
+							is_megastructure_type = ring_world_1
+							is_megastructure_type = ring_world_2_intermediate
+							is_megastructure_type = ring_world_2
+							is_megastructure_type = ring_world_3_intermediate
+							is_megastructure_type = ring_world_ruined
+							is_megastructure_type = ring_world_restored
+						}
+					}
+					OR = {
+						is_surveyed = { who = from status = yes }
+						from = { intel_level = { level > low system = prev.solar_system } }
+					}
+				}
+				save_event_target_as = target_system
+
+				from = {
+					create_message = {
+						type = FOUND_MEGASTRUCTURE_RING_WORLD
+						localization = FOUND_MEGASTRUCTURE_RING_WORLD_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# エーテル位相機関のある星系を検索する
+#####
+find_megastructure_crisis_sphere_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_MEGASTRUCTURE_CRISIS_SPHERE_BTN"
+		hidden_effect = {
+			every_megastructure = {
+				limit = {
+					OR = {
+						is_megastructure_type = crisis_sphere_0
+						is_megastructure_type = crisis_sphere_1
+						is_megastructure_type = crisis_sphere_2
+						is_megastructure_type = crisis_sphere_3
+						is_megastructure_type = crisis_sphere_4
+						is_megastructure_type = crisis_sphere_ruined
+					}
+					OR = {
+						star = {
+							solar_system = {
+								is_surveyed = { who = from status = yes }
+							}
+						}
+						from = { intel_level = { level > low system = prev.solar_system } }
+					}
+				}
+
+				star = {
+					solar_system = {
+						save_event_target_as = target_system
+					}
+				}
+
+				from = {
+					create_message = {
+						type = FOUND_MEGASTRUCTURE_CRISIS_SPHERE
+						localization = FOUND_MEGASTRUCTURE_CRISIS_SPHERE_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# アップグレード可能な自国内の巨大建造物
+#####
+find_upgradable_megastructure_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_UPGRADABLE_MEGASTRUCTURE_BTN"
+		hidden_effect = {
+			from = {
+				every_owned_megastructure = {
+					limit = {
+						OR = {
+							is_megastructure_type = ring_world_1
+							is_megastructure_type = ring_world_2_intermediate
+							is_megastructure_type = ring_world_2
+							is_megastructure_type = ring_world_ruined
+							is_megastructure_type = dyson_sphere_0
+							is_megastructure_type = dyson_sphere_1
+							is_megastructure_type = dyson_sphere_2
+							is_megastructure_type = dyson_sphere_3
+							is_megastructure_type = dyson_sphere_4
+							is_megastructure_type = dyson_sphere_ruined
+							is_megastructure_type = spy_orb_0
+							is_megastructure_type = spy_orb_1
+							is_megastructure_type = spy_orb_2
+							is_megastructure_type = spy_orb_3
+							is_megastructure_type = spy_orb_ruined
+							is_megastructure_type = think_tank_0
+							is_megastructure_type = think_tank_1
+							is_megastructure_type = think_tank_2
+							is_megastructure_type = think_tank_ruined
+							is_megastructure_type = gateway_0
+							is_megastructure_type = gateway_ruined
+							is_megastructure_type = matter_decompressor_0
+							is_megastructure_type = matter_decompressor_1
+							is_megastructure_type = matter_decompressor_2
+							is_megastructure_type = matter_decompressor_3
+							is_megastructure_type = matter_decompressor_ruined
+							is_megastructure_type = strategic_coordination_center_0
+							is_megastructure_type = strategic_coordination_center_1
+							is_megastructure_type = strategic_coordination_center_2
+							is_megastructure_type = strategic_coordination_center_ruined
+							is_megastructure_type = mega_art_installation_0
+							is_megastructure_type = mega_art_installation_1
+							is_megastructure_type = mega_art_installation_2
+							is_megastructure_type = mega_art_installation_3
+							is_megastructure_type = mega_art_installation_ruined
+							is_megastructure_type = mega_art_installation_restored
+							is_megastructure_type = interstellar_assembly_0
+							is_megastructure_type = interstellar_assembly_1
+							is_megastructure_type = interstellar_assembly_2
+							is_megastructure_type = interstellar_assembly_3
+							is_megastructure_type = interstellar_assembly_ruined
+							is_megastructure_type = mega_shipyard_0
+							is_megastructure_type = mega_shipyard_1
+							is_megastructure_type = mega_shipyard_2
+							is_megastructure_type = mega_shipyard_ruined
+							is_megastructure_type = crisis_sphere_ruined
+							is_megastructure_type = crisis_sphere_0
+							is_megastructure_type = crisis_sphere_1
+							is_megastructure_type = crisis_sphere_2
+							is_megastructure_type = crisis_sphere_3
+							is_megastructure_type = quantum_catapult_0
+							is_megastructure_type = quantum_catapult_1
+							is_megastructure_type = quantum_catapult_2
+							is_megastructure_type = quantum_catapult_ruined
+							is_megastructure_type = quantum_catapult_ruined_slingshot
+							is_megastructure_type = quantum_catapult_restored_slingshot
+							is_megastructure_type = hyper_relay_ruined
+							is_megastructure_type = orbital_ring_ruined
+						}
+						is_upgrading = no
+					}
+
+					star = {
+						solar_system = {
+							save_event_target_as = target_system
+						}
+					}
+					save_event_target_as = target_megastructure
+
+					from = {
+						create_message = {
+							type = FOUND_UPGRADABLE_MEGASTRUCTURE
+							localization = FOUND_UPGRADABLE_MEGASTRUCTURE_MESSAGE
+							days = 30
+							target = event_target:target_system
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							variable = { type = name localization = MEGASTRUCTURE scope = event_target:target_megastructure }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+###############################################################################
+# 未入植惑星
+###############################################################################
+#####
+# 粉末採取用トラップのある未入植惑星を検索する
+#####
+find_planet_mote_harvesters_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_PLANET_MOTE_HARVESTERS_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {}
+
+				every_system_planet = {
+					limit = {
+						is_colonizable = yes
+						OR = {
+							has_deposit = d_dust_caverns
+							has_deposit = d_dust_desert
+						}
+						is_surveyed = { who = from status = yes }
+					}
+
+					solar_system = { save_event_target_as = target_system }
+					save_event_target_as = target_planet
+
+					from = {
+						create_message = {
+							type = FOUND_PLANET_MOTE_HARVESTERS
+							localization = FOUND_PLANET_MOTE_HARVESTERS_MESSAGE
+							days = 30
+							target = event_target:target_planet
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							variable = { type = name localization = PLANET scope = event_target:target_planet }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# ガス抽出井のある未入植惑星を検索する
+#####
+find_planet_gas_extractors_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_PLANET_GAS_EXTRACTORS_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {}
+
+				every_system_planet = {
+					limit = {
+						is_colonizable = yes
+						OR = {
+							has_deposit = d_bubbling_swamp
+							has_deposit = d_fuming_bog
+						}
+						is_surveyed = { who = from status = yes }
+					}
+
+					solar_system = { save_event_target_as = target_system }
+					save_event_target_as = target_planet
+
+					from = {
+						create_message = {
+							type = FOUND_PLANET_GAS_EXTRACTORS
+							localization = FOUND_PLANET_GAS_EXTRACTORS_MESSAGE
+							days = 30
+							target = event_target:target_planet
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							variable = { type = name localization = PLANET scope = event_target:target_planet }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# クリスタル鉱山のある未入植惑星を検索する
+#####
+find_planet_crystal_mines_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_PLANET_CRYSTAL_MINES_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {}
+
+				every_system_planet = {
+					limit = {
+						is_colonizable = yes
+						OR = {
+							has_deposit = d_crystalline_caverns
+							has_deposit = d_crystal_forest
+							has_deposit = d_crystal_reef
+						}
+						is_surveyed = { who = from status = yes }
+					}
+
+					solar_system = { save_event_target_as = target_system }
+					save_event_target_as = target_planet
+
+					from = {
+						create_message = {
+							type = FOUND_PLANET_CRYSTAL_MINES
+							localization = FOUND_PLANET_CRYSTAL_MINES_MESSAGE
+							days = 30
+							target = event_target:target_planet
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							variable = { type = name localization = PLANET scope = event_target:target_planet }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 特殊な惑星(ガイア型惑星、機械惑星、集合意識惑星、遺物惑星、エキュメノポリス)を検索する
+#####
+find_planet_special_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_PLANET_SPECIAL_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {}
+
+				every_system_planet = {
+					limit = {
+						is_colonizable = yes
+						OR = {
+							is_planet_class = pc_gaia
+							is_planet_class = pc_machine
+							is_planet_class = pc_hive
+							is_planet_class = pc_relic
+							is_planet_class = pc_city
+						}
+						OR = {
+							is_surveyed = { who = from status = yes }
+							from = { intel_level = { level > medium system = prev.solar_system } }
+						}
+					}
+
+					solar_system = { save_event_target_as = target_system }
+					save_event_target_as = target_planet
+
+					from = {
+						create_message = {
+							type = FOUND_PLANET_SPECIAL
+							localization = FOUND_PLANET_SPECIAL_MESSAGE
+							days = 30
+							target = event_target:target_planet
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							variable = { type = name localization = PLANET scope = event_target:target_planet }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 準知性のいる惑星を検索する
+#####
+find_planet_pre_sapients_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_PLANET_PRE_SAPIENTS_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {}
+
+				every_system_planet = {
+					limit = {
+						is_colonizable = yes
+						OR = {
+							is_surveyed = { who = from status = yes }
+							from = { intel_level = { level > low system = prev.solar_system } }
+						}
+						any_owned_species = {
+							is_archetype = PRESAPIENT
+						}
+					}
+
+					solar_system = { save_event_target_as = target_system }
+					save_event_target_as = target_planet
+
+					from = {
+						create_message = {
+							type = FOUND_PLANET_PRE_SAPIENTS
+							localization = FOUND_PLANET_PRE_SAPIENTS_MESSAGE
+							days = 30
+							target = event_target:target_planet
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							variable = { type = name localization = PLANET scope = event_target:target_planet }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 原始文明の惑星を検索する
+#####
+find_planet_primitive_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_PLANET_PRIMITIVE_BTN"
+
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_primitive = yes
+				}
+
+				every_owned_planet = {
+					limit = {
+						OR = {
+							is_surveyed = { who = from status = yes }
+							from = { intel_level = { level > low system = prev.solar_system } }
+						}
+					}
+
+					solar_system = { save_event_target_as = target_system }
+					save_event_target_as = target_planet
+
+					from = {
+						create_message = {
+							type = FOUND_PLANET_PRIMITIVE
+							localization = FOUND_PLANET_PRIMITIVE_MESSAGE
+							days = 30
+							target = event_target:target_planet
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							variable = { type = name localization = PLANET scope = event_target:target_planet }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+###############################################################################
+# テラフォーム候補惑星
+###############################################################################
+#####
+# 自国内のテラフォーム候補惑星を検索する
+#####
+find_terraforming_candidate_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_TERRAFORMING_CANDIDATE_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					exists = owner
+					owner = {
+						is_same_value = from
+					}
+				}
+
+				every_system_planet = {
+					limit = {
+						has_modifier = terraforming_candidate
+					}
+
+					solar_system = { save_event_target_as = target_system }
+					save_event_target_as = target_planet
+
+					from = {
+						create_message = {
+							type = FOUND_TERRAFORMING_CANDIDATE
+							localization = FOUND_TERRAFORMING_CANDIDATE_MESSAGE
+							days = 30
+							target = event_target:target_planet
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							variable = { type = name localization = PLANET scope = event_target:target_planet }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 自国内の凍結したテラフォーム候補惑星を検索する
+#####
+find_frozen_terraforming_candidate_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_FROZEN_TERRAFORMING_CANDIDATE_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					exists = owner
+					owner = {
+						is_same_value = from
+					}
+				}
+
+				every_system_planet = {
+					limit = {
+						has_modifier = frozen_terraforming_candidate
+					}
+
+					solar_system = { save_event_target_as = target_system }
+					save_event_target_as = target_planet
+
+					from = {
+						create_message = {
+							type = FOUND_FROZEN_TERRAFORMING_CANDIDATE
+							localization = FOUND_FROZEN_TERRAFORMING_CANDIDATE_MESSAGE
+							days = 30
+							target = event_target:target_planet
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							variable = { type = name localization = PLANET scope = event_target:target_planet }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 自国内の有毒なテラフォーム候補惑星を検索する
+#####
+find_toxic_terraforming_candidate_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_TOXIC_TERRAFORMING_CANDIDATE_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					exists = owner
+					owner = {
+						is_same_value = from
+					}
+				}
+
+				every_system_planet = {
+					limit = {
+						has_modifier = toxic_terraforming_candidate
+					}
+
+					solar_system = { save_event_target_as = target_system }
+					save_event_target_as = target_planet
+
+					from = {
+						create_message = {
+							type = FOUND_TOXIC_TERRAFORMING_CANDIDATE
+							localization = FOUND_TOXIC_TERRAFORMING_CANDIDATE_MESSAGE
+							days = 30
+							target = event_target:target_planet
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							variable = { type = name localization = PLANET scope = event_target:target_planet }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+###############################################################################
+# 入植済惑星
+###############################################################################
+#####
+# 自国内の粉末採取用トラップを建設済/建設可能な入植済惑星を検索する
+#####
+find_colony_mote_harvesters_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_COLONY_MOTE_HARVESTERS_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					exists = owner
+					owner = {
+						is_same_value = from
+					}
+				}
+
+				every_system_planet = {
+					limit = {
+						is_colony = yes
+						OR = {
+							has_deposit = d_dust_caverns
+							has_deposit = d_dust_desert
+						}
+					}
+
+					solar_system = { save_event_target_as = target_system }
+					save_event_target_as = target_planet
+
+					from = {
+						create_message = {
+							type = FOUND_PLANET_MOTE_HARVESTERS
+							localization = FOUND_PLANET_MOTE_HARVESTERS_MESSAGE
+							days = 30
+							target = event_target:target_planet
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							variable = { type = name localization = PLANET scope = event_target:target_planet }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 自国内のガス抽出井を建設済/建設可能な入植済惑星を検索する
+#####
+find_colony_gas_extractors_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_COLONY_GAS_EXTRACTORS_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					exists = owner
+					owner = {
+						is_same_value = from
+					}
+				}
+
+				every_system_planet = {
+					limit = {
+						is_colony = yes
+						OR = {
+							has_deposit = d_bubbling_swamp
+							has_deposit = d_fuming_bog
+						}
+					}
+
+					solar_system = { save_event_target_as = target_system }
+					save_event_target_as = target_planet
+
+					from = {
+						create_message = {
+							type = FOUND_PLANET_GAS_EXTRACTORS
+							localization = FOUND_PLANET_GAS_EXTRACTORS_MESSAGE
+							days = 30
+							target = event_target:target_planet
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							variable = { type = name localization = PLANET scope = event_target:target_planet }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 自国内のクリスタル鉱山を建設済/建設可能な入植済惑星を検索する
+#####
+find_colony_crystal_mines_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_COLONY_CRYSTAL_MINES_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					exists = owner
+					owner = {
+						is_same_value = from
+					}
+				}
+
+				every_system_planet = {
+					limit = {
+						is_colony = yes
+						OR = {
+							has_deposit = d_crystalline_caverns
+							has_deposit = d_crystal_forest
+							has_deposit = d_crystal_reef
+						}
+					}
+
+					solar_system = { save_event_target_as = target_system }
+					save_event_target_as = target_planet
+
+					from = {
+						create_message = {
+							type = FOUND_PLANET_CRYSTAL_MINES
+							localization = FOUND_PLANET_CRYSTAL_MINES_MESSAGE
+							days = 30
+							target = event_target:target_planet
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							variable = { type = name localization = PLANET scope = event_target:target_planet }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 他国の特殊な惑星(ガイア型惑星、機械惑星、集合意識惑星、遺物惑星、エキュメノポリス)を検索する
+#####
+find_colony_special_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_COLONY_SPECIAL_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					exists = owner
+					owner = {
+						not = { is_same_value = from }
+					}
+				}
+
+				every_system_planet = {
+					limit = {
+						is_colony = yes
+						OR = {
+							is_planet_class = pc_gaia
+							is_planet_class = pc_machine
+							is_planet_class = pc_hive
+							is_planet_class = pc_relic
+							is_planet_class = pc_city
+						}
+					}
+
+					solar_system = { save_event_target_as = target_system }
+					save_event_target_as = target_planet
+
+					from = {
+						create_message = {
+							type = FOUND_PLANET_SPECIAL
+							localization = FOUND_PLANET_SPECIAL_MESSAGE
+							days = 30
+							target = event_target:target_planet
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							variable = { type = name localization = PLANET scope = event_target:target_planet }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 自国内の準知性のいる惑星を検索する
+#####
+find_colony_pre_sapients_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_COLONY_PRE_SAPIENTS_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					exists = owner
+					owner = {
+						is_same_value = from
+					}
+				}
+
+				every_system_planet = {
+					limit = {
+						is_colony = yes
+						any_owned_species = {
+							is_archetype = PRESAPIENT
+						}
+					}
+
+					solar_system = { save_event_target_as = target_system }
+					save_event_target_as = target_planet
+
+					from = {
+						create_message = {
+							type = FOUND_PLANET_PRE_SAPIENTS
+							localization = FOUND_PLANET_PRE_SAPIENTS_MESSAGE
+							days = 30
+							target = event_target:target_planet
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							variable = { type = name localization = PLANET scope = event_target:target_planet }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 銀河市場の開催先の星系を検索する
+#####
+find_galactic_market_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_GALACTIC_MARKET_BTN"
+
+		hidden_effect = {
+			if = {
+				limit = {
+					exists = event_target:galactic_market_station
+					exists = event_target:market_founder_planet
+				}
+
+				event_target:market_founder_planet = {
+					solar_system = { save_event_target_as = target_system }
+					save_event_target_as = target_planet
+
+					from = {
+						create_message = {
+							type = FOUND_GALACTIC_MARKET
+							localization = FOUND_GALACTIC_MARKET_MESSAGE
+							days = 30
+							target = event_target:target_planet
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							variable = { type = name localization = PLANET scope = event_target:target_planet }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+###############################################################################
+# 支社
+###############################################################################
+#####
+# 自国の支社の存在する惑星を検索する
+#####
+find_has_my_branch_office_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = {
+				is_scope_type = country
+				has_authority = auth_corporate
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_HAS_MY_BRANCH_OFFICE"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					exists = owner
+					owner = {
+						not = { is_same_value = from }
+						not = { has_authority = auth_corporate }
+						not = { has_ethic = ethic_gestalt_consciousness }
+					}
+				}
+
+				every_system_planet = {
+					limit = {
+						is_colony = yes
+						is_under_colonization = no
+						has_branch_office = from
+					}
+
+					solar_system = { save_event_target_as = target_system }
+					save_event_target_as = target_planet
+
+					from = {
+						create_message = {
+							type = FOUND_HAS_MY_BRANCH_OFFICE
+							localization = FOUND_HAS_MY_BRANCH_OFFICE_MESSAGE
+							days = 30
+							target = event_target:target_planet
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							variable = { type = name localization = PLANET scope = event_target:target_planet }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 他国の支社の存在する惑星を検索する
+#####
+find_has_other_branch_office_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = {
+				is_scope_type = country
+				has_authority = auth_corporate
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_HAS_OTHER_BRANCH_OFFICE"
+
+		hidden_effect = {
+			every_country = {
+				limit = {
+					# 相手国の条件
+					not = { is_same_value = from }
+					is_country_type = default                                                        # 通常帝国である
+					not = { is_country_type = fallen_empire }                                        # 没落帝国ではない
+					not = {	is_country_type = awakened_fallen_empire }                               # 覚醒帝国ではない
+					not = { has_authority = auth_corporate }                                         # 企業ではない
+					not = { has_civic = civic_galactic_sovereign_megacorp }                          # 銀河の支配企業ではない
+					not = { has_ethic = ethic_gestalt_consciousness }                                # ゲシュタルト意識ではない
+					not = { has_civic = civic_fanatic_purifiers }                                    # 狂信的な浄化主義ではない
+
+					# 自国の条件
+					OR = {
+						from = { is_criminal_syndicate = yes }                                       # 犯罪結社である
+						has_commercial_pact = from                                                   # 通商条約を結んでいる
+						is_in_federation_with = from                                                 # 同じ連邦に所属している
+						from = { is_overlord_to = prev }                                             # 自国が相手国の宗主国である
+						is_overlord_to = from                                                        # 自国が相手国の従属国である
+						# 宗主国が共通しており、共通の宗主国が企業ではない
+						from = {
+							is_subject = yes
+							overlord = {
+								is_same_value = prevprev.overlord
+								OR = {
+									has_authority = auth_corporate
+									has_civic = civic_galactic_sovereign_megacorp
+								}
+							}
+						}
+						# 自国が銀河の支配企業かつ、相手国が銀河コミュニティに所属している
+						AND = {
+							from = { has_civic = civic_galactic_sovereign_megacorp }
+							is_galactic_community_member = yes
+						}
+						# 自国が銀河帝国から勅許を得ている企業であるかつ、相手国が銀河コミュニティに所属している
+						AND = {
+							from = { has_modifier = imperial_charter }
+							is_galactic_community_member = yes
+						}
+					}
+				}
+
+				every_planet_within_border = {
+					limit = {
+						is_colony = yes
+						is_under_colonization = no
+						has_branch_office = yes
+						not = { has_branch_office = from }
+						OR = {
+							is_surveyed = { who = from status = yes }
+							from = { intel_level = { level > low system = prev.solar_system } }
+						}
+					}
+
+					solar_system = { save_event_target_as = target_system }
+					save_event_target_as = target_planet
+
+					from = {
+						create_message = {
+							type = FOUND_HAS_OTHER_BRANCH_OFFICE
+							localization = FOUND_HAS_OTHER_BRANCH_OFFICE_MESSAGE
+							days = 30
+							target = event_target:target_planet
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							variable = { type = name localization = PLANET scope = event_target:target_planet }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 支社の存在しない惑星を検索する
+#####
+find_has_not_branch_office_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = {
+				is_scope_type = country
+				has_authority = auth_corporate
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_HAS_NOT_BRANCH_OFFICE"
+
+		hidden_effect = {
+			every_country = {
+				limit = {
+					# 相手国の条件
+					not = { is_same_value = from }
+					is_country_type = default                                                        # 通常帝国である
+					not = { is_country_type = fallen_empire }                                        # 没落帝国ではない
+					not = {	is_country_type = awakened_fallen_empire }                               # 覚醒帝国ではない
+					not = { has_authority = auth_corporate }                                         # 企業ではない
+					not = { has_civic = civic_galactic_sovereign_megacorp }                          # 銀河の支配企業ではない
+					not = { has_ethic = ethic_gestalt_consciousness }                                # ゲシュタルト意識ではない
+					not = { has_civic = civic_fanatic_purifiers }                                    # 狂信的な浄化主義ではない
+
+					# 自国の条件
+					OR = {
+						from = { is_criminal_syndicate = yes }                                       # 犯罪結社である
+						has_commercial_pact = from                                                   # 通商条約を結んでいる
+						is_in_federation_with = from                                                 # 同じ連邦に所属している
+						from = { is_overlord_to = prev }                                             # 自国が相手国の宗主国である
+						is_overlord_to = from                                                        # 自国が相手国の従属国である
+						# 宗主国が共通しており、共通の宗主国が企業ではない
+						from = {
+							is_subject = yes
+							overlord = {
+								is_same_value = prevprev.overlord
+								OR = {
+									has_authority = auth_corporate
+									has_civic = civic_galactic_sovereign_megacorp
+								}
+							}
+						}
+						# 自国が銀河の支配企業かつ、相手国が銀河コミュニティに所属している
+						AND = {
+							from = { has_civic = civic_galactic_sovereign_megacorp }
+							is_galactic_community_member = yes
+						}
+						# 自国が銀河帝国から勅許を得ている企業であるかつ、相手国が銀河コミュニティに所属している
+						AND = {
+							from = { has_modifier = imperial_charter }
+							is_galactic_community_member = yes
+						}
+					}
+				}
+
+				every_planet_within_border = {
+					limit = {
+						is_colony = yes
+						is_under_colonization = no
+						has_branch_office = no
+						OR = {
+							is_surveyed = { who = from status = yes }
+							from = { intel_level = { level > low system = prev.solar_system } }
+						}
+					}
+
+					solar_system = { save_event_target_as = target_system }
+					save_event_target_as = target_planet
+
+					from = {
+						create_message = {
+							type = FOUND_HAS_OTHER_BRANCH_OFFICE
+							localization = FOUND_HAS_OTHER_BRANCH_OFFICE_MESSAGE
+							days = 30
+							target = event_target:target_planet
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							variable = { type = name localization = PLANET scope = event_target:target_planet }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+###############################################################################
+# 戦略資源
+###############################################################################
+#####
+# 揮発性粉末
+#####
+find_strategic_resource_volatile_motes_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_STRATEGIC_RESOURCE_VOLATILE_MOTES_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					any_system_planet = {
+						is_surveyed = { who = from status = yes }
+						has_resource = volatile_motes
+						has_any_megastructure = no
+						not = {
+							any_moon = {
+								has_planet_flag = habitat
+							}
+						}
+					}
+				}
+				save_event_target_as = target_system
+
+				from = {
+					create_message = {
+						type = FOUND_STRATEGIC_RESOURCE_VOLATILE_MOTES
+						localization = FOUND_STRATEGIC_RESOURCE_VOLATILE_MOTES_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# エキゾチックガス
+#####
+find_strategic_resource_exotic_gases_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_STRATEGIC_RESOURCE_EXOTIC_GASES_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					any_system_planet = {
+						is_surveyed = { who = from status = yes }
+						has_resource = exotic_gases
+						has_any_megastructure = no
+						not = {
+							any_moon = {
+								has_planet_flag = habitat
+							}
+						}
+					}
+				}
+				save_event_target_as = target_system
+
+				from = {
+					create_message = {
+						type = FOUND_STRATEGIC_RESOURCE_EXOTIC_GASES
+						localization = FOUND_STRATEGIC_RESOURCE_EXOTIC_GASES_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# レアクリスタル
+#####
+find_strategic_resource_rare_crystals_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_STRATEGIC_RESOURCE_RARE_CRYSTALS_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					any_system_planet = {
+						is_surveyed = { who = from status = yes }
+						has_resource = rare_crystals
+						has_any_megastructure = no
+						not = {
+							any_moon = {
+								has_planet_flag = habitat
+							}
+						}
+					}
+				}
+				save_event_target_as = target_system
+
+				from = {
+					create_message = {
+						type = FOUND_STRATEGIC_RESOURCE_RARE_CRYSTALS
+						localization = FOUND_STRATEGIC_RESOURCE_RARE_CRYSTALS_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 生体金属
+#####
+find_strategic_resource_sr_living_metal_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_STRATEGIC_RESOURCE_SR_LIVING_METAL_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					any_system_planet = {
+						is_surveyed = { who = from status = yes }
+						has_resource = sr_living_metal
+						has_any_megastructure = no
+						not = {
+							any_moon = {
+								has_planet_flag = habitat
+							}
+						}
+					}
+				}
+				save_event_target_as = target_system
+
+				from = {
+					create_message = {
+						type = FOUND_STRATEGIC_RESOURCE_SR_LIVING_METAL
+						localization = FOUND_STRATEGIC_RESOURCE_SR_LIVING_METAL_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# ズィロ
+#####
+find_strategic_resource_sr_zro_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_STRATEGIC_RESOURCE_SR_ZRO_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					any_system_planet = {
+						is_surveyed = { who = from status = yes }
+						has_resource = sr_zro
+						has_any_megastructure = no
+						not = {
+							any_moon = {
+								has_planet_flag = habitat
+							}
+						}
+					}
+				}
+				save_event_target_as = target_system
+
+				from = {
+					create_message = {
+						type = FOUND_STRATEGIC_RESOURCE_SR_ZRO
+						localization = FOUND_STRATEGIC_RESOURCE_SR_ZRO_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# ダークマター
+#####
+find_strategic_resource_sr_dark_matter_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_STRATEGIC_RESOURCE_SR_DARK_MATTER_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					any_system_planet = {
+						is_surveyed = { who = from status = yes }
+						has_resource = sr_dark_matter
+						has_any_megastructure = no
+						not = {
+							any_moon = {
+								has_planet_flag = habitat
+							}
+						}
+					}
+				}
+				save_event_target_as = target_system
+
+				from = {
+					create_message = {
+						type = FOUND_STRATEGIC_RESOURCE_SR_DARK_MATTER
+						localization = FOUND_STRATEGIC_RESOURCE_SR_DARK_MATTER_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# ナノマシン
+#####
+find_strategic_resource_nanites_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_STRATEGIC_RESOURCE_NANITES_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					any_system_planet = {
+						is_surveyed = { who = from status = yes }
+						has_resource = nanites
+						has_any_megastructure = no
+						not = {
+							any_moon = {
+								has_planet_flag = habitat
+							}
+						}
+					}
+				}
+				save_event_target_as = target_system
+
+				from = {
+					create_message = {
+						type = FOUND_STRATEGIC_RESOURCE_NANITES
+						localization = FOUND_STRATEGIC_RESOURCE_NANITES_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 統合力
+#####
+find_strategic_resource_unity_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_STRATEGIC_RESOURCE_UNITY_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					any_system_planet = {
+						is_surveyed = { who = from status = yes }
+						has_resource = unity
+						has_any_megastructure = no
+						not = {
+							any_moon = {
+								has_planet_flag = habitat
+							}
+						}
+						is_colony = no
+					}
+				}
+				save_event_target_as = target_system
+
+				from = {
+					create_message = {
+						type = FOUND_STRATEGIC_RESOURCE_UNITY
+						localization = FOUND_STRATEGIC_RESOURCE_UNITY_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 出土品
+#####
+find_strategic_resource_minor_artifacts_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_STRATEGIC_RESOURCE_MINOR_ARTIFACTS_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					any_system_planet = {
+						is_surveyed = { who = from status = yes }
+						has_resource = minor_artifacts
+						has_any_megastructure = no
+						not = {
+							any_moon = {
+								has_planet_flag = habitat
+							}
+						}
+						is_colony = no
+					}
+				}
+				save_event_target_as = target_system
+
+				from = {
+					create_message = {
+						type = FOUND_STRATEGIC_RESOURCE_MINOR_ARTIFACTS
+						localization = FOUND_STRATEGIC_RESOURCE_MINOR_ARTIFACTS_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 未建設の資源のある自国の星系
+#####
+find_strategic_resource_strategic_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_STRATEGIC_RESOURCE_STRATEGIC_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					exists = owner
+					owner = {
+						is_same_value = from
+					}
+					any_system_planet = {
+						OR = {
+							has_resource = energy
+							has_resource = minerals
+							has_resource = food
+							has_resource = consumer_goods
+							has_resource = alloys
+							has_resource = volatile_motes
+							has_resource = exotic_gases
+							has_resource = rare_crystals
+							has_resource = sr_zro
+							has_resource = sr_living_metal
+							has_resource = nanites
+							has_resource = physics_research
+							has_resource = society_research
+							has_resource = engineering_research
+							has_resource = sr_dark_matter
+							has_resource = unity
+							has_resource = minor_artifacts
+						}
+						has_mining_station = no
+						has_research_station = no
+						has_any_megastructure = no
+						not = {
+							any_moon = {
+								has_planet_flag = habitat
+							}
+						}
+						has_orbital_station = no
+						is_colony = no
+					}
+				}
+				save_event_target_as = target_system
+
+				from = {
+					create_message = {
+						type = FOUND_STRATEGIC_RESOURCE_STRATEGIC
+						localization = FOUND_STRATEGIC_RESOURCE_STRATEGIC_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+###############################################################################
+# 中立機構
+###############################################################################
+
+#####
+# 交易中立機構(リガン商業取引所、揮発性粉末)の本拠地を検索する
+#####
+find_enclave_trader_riggan_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_ENCLAVE_TRADER_RIGGAN_BTN"
+
+		hidden_effect = {
+			from = {
+				random_relation = {
+					limit = {
+						is_country_type = enclave
+						has_country_flag = trader_enclave_country_2
+						has_communications = from
+					}
+
+					every_owned_fleet = {
+						limit = {
+							solar_system = {
+								has_star_flag = enclave
+								OR = {
+									is_surveyed = { who = from status = yes }
+									from = { intel_level = { level >= low system = prev } }
+								}
+							}
+						}
+						solar_system = { save_event_target_as = target_system }
+						save_event_target_as = target_fleet
+
+						from = {
+							create_message = {
+								type = FOUND_ENCLAVE_TRADER_RIGGAN
+								localization = FOUND_ENCLAVE_TRADER_RIGGAN_MESSAGE
+								days = 30
+								target = event_target:target_fleet
+								variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 交易中立機構(ジュラコープ、エキゾチックガス)の本拠地を検索する
+#####
+find_enclave_trader_xuracorp_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_ENCLAVE_TRADER_XURACORP_BTN"
+
+		hidden_effect = {
+			from = {
+				random_relation = {
+					limit = {
+						is_country_type = enclave
+						has_country_flag = trader_enclave_country_1
+						has_communications = from
+					}
+
+					every_owned_fleet = {
+						limit = {
+							solar_system = {
+								has_star_flag = enclave
+								OR = {
+									is_surveyed = { who = from status = yes }
+									from = { intel_level = { level >= low system = prev } }
+								}
+							}
+						}
+						solar_system = { save_event_target_as = target_system }
+						save_event_target_as = target_fleet
+
+						from = {
+							create_message = {
+								type = FOUND_ENCLAVE_TRADER_XURACORP
+								localization = FOUND_ENCLAVE_TRADER_XURACORP_MESSAGE
+								days = 30
+								target = event_target:target_fleet
+								variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 交易中立機構(ムウタガン商業ギルド、レアクリスタル)の本拠地を検索する
+#####
+find_enclave_trader_muutagan_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_ENCLAVE_TRADER_MUUTAGAN_BTN"
+
+		hidden_effect = {
+			from = {
+				random_relation = {
+					limit = {
+						is_country_type = enclave
+						has_country_flag = trader_enclave_country_3
+						has_communications = from
+					}
+
+					every_owned_fleet = {
+						limit = {
+							solar_system = {
+								has_star_flag = enclave
+								OR = {
+									is_surveyed = { who = from status = yes }
+									from = { intel_level = { level >= low system = prev } }
+								}
+							}
+						}
+						solar_system = { save_event_target_as = target_system }
+						save_event_target_as = target_fleet
+
+						from = {
+							create_message = {
+								type = FOUND_ENCLAVE_TRADER_MUUTAGAN
+								localization = FOUND_ENCLAVE_TRADER_MUUTAGAN_MESSAGE
+								days = 30
+								target = event_target:target_fleet
+								variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 学術中立機構の本拠地を検索する
+#####
+find_enclave_curator_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_ENCLAVE_CURATOR_BTN"
+
+		hidden_effect = {
+			from = {
+				random_relation = {
+					limit = {
+						is_country_type = enclave
+						has_country_flag = curator_enclave_country
+						has_communications = from
+					}
+
+					every_owned_fleet = {
+						limit = {
+							solar_system = {
+								has_star_flag = enclave
+								OR = {
+									is_surveyed = { who = from status = yes }
+									from = { intel_level = { level >= low system = prev } }
+								}
+							}
+						}
+						solar_system = { save_event_target_as = target_system }
+						save_event_target_as = target_fleet
+
+						from = {
+							create_message = {
+								type = FOUND_ENCLAVE_CURATOR
+								localization = FOUND_ENCLAVE_CURATOR_MESSAGE
+								days = 30
+								target = event_target:target_fleet
+								variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 工匠中立機構の本拠地を検索する
+#####
+find_enclave_artist_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_ENCLAVE_ARTIST_BTN"
+
+		hidden_effect = {
+			from = {
+				random_relation = {
+					limit = {
+						is_country_type = enclave
+						has_country_flag = artist_enclave_country
+						has_communications = from
+					}
+
+					every_owned_fleet = {
+						limit = {
+							solar_system = {
+								has_star_flag = enclave
+								OR = {
+									is_surveyed = { who = from status = yes }
+									from = { intel_level = { level >= low system = prev } }
+								}
+							}
+						}
+						solar_system = { save_event_target_as = target_system }
+						save_event_target_as = target_fleet
+
+						from = {
+							create_message = {
+								type = FOUND_ENCLAVE_ARTIST
+								localization = FOUND_ENCLAVE_ARTIST_MESSAGE
+								days = 30
+								target = event_target:target_fleet
+								variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 回収者中立機構の本拠地を検索する
+#####
+find_enclave_salvager_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_ENCLAVE_SALVAGER_BTN"
+
+		hidden_effect = {
+			from = {
+				random_relation = {
+					limit = {
+						is_country_type = enclave
+						has_country_flag = salvager_enclave_country
+						has_communications = from
+					}
+
+					every_owned_fleet = {
+						limit = {
+							solar_system = {
+								has_star_flag = enclave
+								OR = {
+									is_surveyed = { who = from status = yes }
+									from = { intel_level = { level >= low system = prev } }
+								}
+							}
+						}
+						solar_system = { save_event_target_as = target_system }
+						save_event_target_as = target_fleet
+
+						from = {
+							create_message = {
+								type = FOUND_ENCLAVE_SALVAGER
+								localization = FOUND_ENCLAVE_SALVAGER_MESSAGE
+								days = 30
+								target = event_target:target_fleet
+								variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# シュラウドウォーカー中立機構の本拠地を検索する
+#####
+find_enclave_shroudwalker_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_ENCLAVE_SHROUDWALKER_BTN"
+
+		hidden_effect = {
+			from = {
+				random_relation = {
+					limit = {
+						is_country_type = enclave
+						has_country_flag = shroudwalker_enclave_country
+						has_communications = from
+					}
+
+					every_owned_fleet = {
+						limit = {
+							solar_system = {
+								has_star_flag = enclave
+								OR = {
+									is_surveyed = { who = from status = yes }
+									from = { intel_level = { level >= low system = prev } }
+								}
+							}
+						}
+						solar_system = { save_event_target_as = target_system }
+						save_event_target_as = target_fleet
+
+						from = {
+							create_message = {
+								type = FOUND_ENCLAVE_SHROUDWALKER
+								localization = FOUND_ENCLAVE_SHROUDWALKER_MESSAGE
+								days = 30
+								target = event_target:target_fleet
+								variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 傭兵中立機構(自国領土内のみ)の本拠地を検索する
+#####
+find_enclave_mercenary_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_ENCLAVE_MERCENARY_BTN"
+
+		hidden_effect = {
+			from = {
+				every_relation = {
+					limit = {
+						is_country_type = enclave_mercenary
+						has_country_flag = mercenary_enclave_country
+						has_communications = from
+					}
+
+					every_owned_fleet = {
+						limit = {
+							is_ship_size = enclave_mercenary_station
+							solar_system = {
+								owner = { is_same_value = from }
+							}
+						}
+						solar_system = { save_event_target_as = target_system }
+						save_event_target_as = target_fleet
+
+						from = {
+							create_message = {
+								type = FOUND_ENCLAVE_MERCENARY
+								localization = FOUND_ENCLAVE_MERCENARY_MESSAGE
+								days = 30
+								target = event_target:target_fleet
+								variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 傭兵中立機構(全部)の本拠地を検索する
+#####
+find_enclave_mercenary_all_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_ENCLAVE_MERCENARY_ALL_BTN"
+
+		hidden_effect = {
+			from = {
+				every_relation = {
+					limit = {
+						is_country_type = enclave_mercenary
+						has_country_flag = mercenary_enclave_country
+						has_communications = from
+					}
+
+					every_owned_fleet = {
+						limit = {
+							is_ship_size = enclave_mercenary_station
+							solar_system = {
+								OR = {
+									is_surveyed = { who = from status = yes }
+									from = { intel_level = { level >= low system = prev } }
+								}
+							}
+						}
+						solar_system = { save_event_target_as = target_system }
+						save_event_target_as = target_fleet
+
+						from = {
+							create_message = {
+								type = FOUND_ENCLAVE_MERCENARY_ALL
+								localization = FOUND_ENCLAVE_MERCENARY_ALL_MESSAGE
+								days = 30
+								target = event_target:target_fleet
+								variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# キャラバンの本拠地を検索する
+#####
+find_enclave_caravaneer_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_ENCLAVE_CARAVANEER_BTN"
+
+		hidden_effect = {
+			from = {
+				random_relation = {
+					limit = {
+						is_country_type = caravaneer_home
+						has_country_flag = caravaneer_home_country
+						has_communications = from
+					}
+
+					random_owned_starbase = {
+						limit = {}
+
+						solar_system = { save_event_target_as = target_system }
+						fleet = { save_event_target_as = target_fleet }
+
+						from = {
+							create_message = {
+								type = FOUND_ENCLAVE_CARAVANEER
+								localization = FOUND_ENCLAVE_CARAVANEER_MESSAGE
+								days = 30
+								target = event_target:target_fleet
+								variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 結晶帝国の本拠地を検索する
+#####
+find_enclave_central_crystal_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_ENCLAVE_CENTRAL_CRYSTAL_BTN"
+
+		hidden_effect = {
+			from = {
+				random_relation = {
+					limit = {
+						is_country_type = enclave
+						has_country_flag = central_crystal_country
+						has_communications = from
+					}
+
+					every_owned_fleet = {
+						limit = {
+							solar_system = {
+								has_star_flag = central_crystal_flag
+								OR = {
+									is_surveyed = { who = from status = yes }
+									from = { intel_level = { level >= low system = prev } }
+								}
+							}
+						}
+						solar_system = { save_event_target_as = target_system }
+						save_event_target_as = target_fleet
+
+						from = {
+							create_message = {
+								type = FOUND_ENCLAVE_CENTRAL_CRYSTAL
+								localization = FOUND_ENCLAVE_CENTRAL_CRYSTAL_MESSAGE
+								days = 30
+								target = event_target:target_fleet
+								variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

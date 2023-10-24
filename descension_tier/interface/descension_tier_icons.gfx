@@ -1,0 +1,7 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_button_descension_tier"
+		texturefile = "gfx/interface/buttons/button_descension_tier.dds"
+		noOfFrames = 3
+	}
+}

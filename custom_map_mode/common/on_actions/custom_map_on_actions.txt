@@ -1,0 +1,67 @@
+###############################################################################
+# 帝国マップを見やすくしたいModのon_actions定義
+# 原則あまり考えたくないので、何か起きる度に全国家のパラメータのふり直しを行う
+# ただし新規国家の成立時はその国家のみのパラメータの付与で良い
+#
+# 従属国の独立については、何故かon_actionsに対応するものがなかったため、
+# 直接各コードを上書きする形で対応しています。以下を参照してください。
+#
+###############################################################################
+
+#######################################
+# ゲーム開始時のイベント
+#######################################
+# Triggers when pressing begin in the intro window
+# This = country to press begin
+on_press_begin = {
+	events = {
+		custom_map.1
+	}
+}
+
+#######################################
+# 国家生成時のイベント
+#######################################
+# A country is created via create_country or create_rebels
+# This = created country
+# From = root of context where create_country/create_rebels happens
+on_country_created = {
+	events = {
+		custom_map.2
+	}
+}
+
+#######################################
+# 従属時のイベント
+#######################################
+# This = subject
+# From = subject's overlord
+on_becoming_subject = {
+	events = {
+		custom_map.2
+	}
+}
+
+#######################################
+# セクターの属国化時のイベント
+#######################################
+# This = released vassal
+# From = overlord
+on_released_as_vassal = {
+	events = {
+		custom_map.2
+	}
+}
+
+#######################################
+# イデオロギーパンチなど、戦争の結果新規に国家ができたときのイベント
+#######################################
+# Root = new country
+# From = country forcing the release
+# FromFrom = country they are released from
+# FromFromFrom = war
+on_country_released_in_war = {
+	events = {
+		custom_map.2
+	}
+}

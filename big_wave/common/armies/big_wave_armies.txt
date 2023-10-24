@@ -1,0 +1,12 @@
+big_wave_army = {
+	defensive = yes
+	damage = 5
+	health = 5
+	morale_damage = 5
+	collateral_damage = 5
+	has_morale = no
+	icon = GFX_army_type_xenomorph
+	potential_country = {
+		always = no
+	}
+}

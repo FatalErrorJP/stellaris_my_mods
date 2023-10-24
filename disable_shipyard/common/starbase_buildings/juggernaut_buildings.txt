@@ -1,0 +1,24 @@
+juggernaut_shipyard = {
+	icon = "GFX_starbase_shipyard"
+	construction_days = 1
+
+	potential = {
+		has_starbase_flag = juggernaut
+	}
+
+	station_modifier = {
+		starbase_shipyard_capacity_add = 2
+	}
+
+	triggered_station_modifier = {
+		potential = {
+			is_variable_set = shipyard_off
+			owner = { is_ai = no }
+		}
+		starbase_shipyard_capacity_add = -2
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

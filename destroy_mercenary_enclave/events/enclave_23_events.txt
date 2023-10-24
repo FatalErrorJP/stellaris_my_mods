@@ -1,0 +1,121 @@
+###############################################################################
+# 「傭兵中立機構を破壊するプレイヤー国家を許すな！」Modのイベント群
+###############################################################################
+namespace = enclave
+
+###########################################################
+# 傭兵中立機構破壊時のイベント
+# 元のenclave.23のイベントを上書き
+###########################################################
+# Merc Enclave Destroyed (HIDDEN)
+# This = owner of ship 1 (destroyed)
+# From = owner of ship 2 (combatant)
+# FromFrom = ship 1
+# FromFromFrom = ship 2
+country_event = {
+	id = enclave.23
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			is_country_type = enclave_mercenary
+			FROMFROM = {
+				is_ship_size = enclave_mercenary_station
+			}
+		}
+	}
+
+	immediate = {
+		FROMFROM = {
+			solar_system = {
+				save_event_target_as = merc_system
+				remove_star_flag = enclave
+			}
+		}
+		FROM = {
+			country_event = { id = enclave.25 }
+			save_event_target_as = mercenary_destroyer
+		}
+		every_country = {
+			limit = {
+				has_communications = ROOT
+				NOT = { is_country = event_target:mercenary_destroyer }
+				is_country_type = default
+			}
+			country_event = { id = enclave.26 }
+		}
+	}
+	after = {
+		###################################################
+		# ここから追加コード
+		###################################################
+		# 各国に外交補正値「傭兵中立機構を破壊した」を適用する
+		# 外交補正値の値は累積されるようにしているので、複数回適用されるとマイナス補正値はその分増加する
+		every_playable_country = {
+			limit = {
+				has_communications = root
+				NOR = {
+					is_same_value = from
+					has_valid_civic = civic_fanatic_purifiers    # 狂信的な浄化主義
+					has_valid_civic = civic_hive_devouring_swarm # 貪食する群れ
+					has_valid_civic = civic_machine_terminator   # 断固たる殺戮機械
+				}
+			}
+
+			# 対象の傭兵中立機構との関係値が30以上である
+			if = {
+				limit = {
+					root = { trust = { who = prev value >= 30 } }
+				}
+				add_opinion_modifier = {
+					who = from
+					modifier = opinion_destroy_mercenary_enclave
+				}
+			}
+
+			# 対象の傭兵中立機構の本拠地のある星系の領有国である
+			if = {
+				limit = {
+					FROMFROM = {
+						solar_system = {
+							exists = space_owner
+							space_owner = {
+								is_same_value = prevprevprev
+							}
+						}
+					}
+				}
+				add_opinion_modifier = {
+					who = from
+					modifier = opinion_destroy_mercenary_enclave
+				}
+			}
+		}
+
+		from = {
+			# 全ての傭兵中立機構との関係値を変更する
+			every_relation = {
+				limit = {
+					is_country_type = enclave_mercenary
+					has_country_flag = mercenary_enclave_country
+					has_communications = prev
+					not = { is_same_value = prevprev }
+				}
+				add_trust = { who = prev amount = -20 }
+			}
+		}
+		###################################################
+		# ここまで追加コード
+		###################################################
+
+		destroy_country = yes
+		every_country = {
+			limit = {
+				has_modifier = country_enclave_capacity_decrease_modifier
+			}
+			country_event = { id = enclave.24 days = 2 }
+		}
+	}
+}
+

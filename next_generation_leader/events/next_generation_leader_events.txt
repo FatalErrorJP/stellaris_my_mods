@@ -1,0 +1,42 @@
+namespace = next_generation_leader
+
+###############################################################################
+# リーダー雇用時のイベント
+# 寿命の近いリーダーがいる場合は、雇用時のリーダーに次世代のリーダーの特性を付与する
+###############################################################################
+leader_event = {
+	id = next_generation_leader.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		not = { leader_class = envoy }
+	}
+
+	immediate = {
+		switch = {
+			trigger = leader_class
+			governor  = { add_trait_next_generation_leader = { LEADER_CLASS = governor  } }
+			admiral   = { add_trait_next_generation_leader = { LEADER_CLASS = admiral   } }
+			scientist = { add_trait_next_generation_leader = { LEADER_CLASS = scientist } }
+			general   = { add_trait_next_generation_leader = { LEADER_CLASS = general   } }
+		}
+	}
+}
+
+###############################################################################
+# 次世代のリーダーの特性を削除する
+###############################################################################
+leader_event = {
+	id = next_generation_leader.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		exists = root
+	}
+
+	immediate = {
+		remove_trait = trait_next_generation_leader
+	}
+}

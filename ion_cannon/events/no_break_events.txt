@@ -1,0 +1,116 @@
+###############################################################################
+# 防衛プラットフォーム ＆ イオン砲を壊れないようにするためのイベント群
+###############################################################################
+namespace = break
+
+###########################################################
+# 建造完了時のイベント
+# Root = Ship
+# From = Planet
+###########################################################
+# 船体値が0になったら壊れる代わりに無効になるようにする
+# 新たに建造された防衛プラットフォームとイオン砲が対象
+ship_event = {
+	id = break.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ship_class = shipclass_military_station
+	}
+
+	immediate = {
+		set_disable_at_health = 0
+	}
+}
+
+#######################################
+# 基地側勝利時のイベント
+# This = owner of fleet 1 (winner)
+# From = owner of fleet 2 (loser)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+#######################################
+country_event = {
+	id = break.11
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		fromfrom = { is_ship_class = shipclass_starbase }
+	}
+
+	immediate = {
+		fromfrom = {
+			every_owned_ship = {
+				limit = {
+					is_ship_class = shipclass_military_station
+					is_disabled = yes
+				}
+				ship_event = { id = break.31 days = 1 scopes = { from = prev } }
+			}
+		}
+	}
+}
+
+#######################################
+# 基地側敗北時のイベント
+# This = Ship
+# From = Disabler Ship
+#######################################
+ship_event = {
+	id = break.21
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ship_class = shipclass_starbase
+	}
+
+	immediate = {
+		fleet = {
+			every_owned_ship = {
+				limit = {
+					is_ship_class = shipclass_military_station
+					is_disabled = yes
+				}
+				ship_event = { id = break.31 days = 1 scopes = { from = prev } }
+			}
+		}
+	}
+}
+
+#######################################
+# 基地側敗北時のイベント
+# This = Ship : 防衛プラットフォーム
+# From = Fleet : ステーション
+#######################################
+# 基地の復活に合わせて防衛プラットフォームとイオン砲の無効化を解除する
+ship_event = {
+	id = break.31
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ship_class = shipclass_military_station
+		is_disabled = yes
+		from = {
+			is_ship_class = shipclass_starbase
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				from = {
+					is_disabled = no
+					is_in_combat = no
+				}
+			}
+			set_disabled = no
+		}
+		else = {
+			ship_event = { id = break.31 days = 1 scopes = { from = from } }
+		}
+	}
+}

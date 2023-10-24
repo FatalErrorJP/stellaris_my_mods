@@ -1,0 +1,884 @@
+namespace = big_wave
+
+@BIGWAVE_STATUS_AGREEMENT = 1
+@BIGWAVE_STATUS_SUSPEND = 2
+@BIGWAVE_STATUS_BREAK = 3
+@BIGWAVE_STATUS_NONE = 4
+
+###########################################################
+# ゲーム開始前のイベント
+# 開始惑星のPOPのうち10POPを第二種族と置き換える
+# root: 惑星
+# from: 第一種族
+# last_created_species: 第二種族
+###########################################################
+planet_event = {
+	id = big_wave.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			is_ai = no
+			has_civic = civic_big_wave
+		}
+	}
+
+	immediate = {
+		last_created_species = {
+			set_species_flag = big_wave_species@root.owner
+		}
+		while = {
+			count = 10
+			random_owned_pop = {
+				limit = {
+					is_same_species = from
+					has_job_category = worker
+				}
+				kill_pop = yes
+			}
+			create_pop = { species = last_created_species ethos = random }
+		}
+	}
+}
+
+###########################################################
+# ゲーム開始時のイベント
+# 喰人鬼の状況イベントを発生させる
+# root: 国家
+###########################################################
+country_event = {
+	id = big_wave.11
+	title = "big_wave.11.name"
+	desc = big_wave.11.desc
+	picture = GFX_evt_enlightenment_failure
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		has_civic = civic_big_wave
+	}
+
+	option = {
+		name = big_wave.11.a
+		hidden_effect = {
+			set_variable = { which = bigwave_status value = @BIGWAVE_STATUS_AGREEMENT }
+		}
+		start_situation = { type = situation_big_wave target = root }
+	}
+}
+
+###########################################################
+# 2回目以降
+# 喰人鬼の状況イベントを発生させる
+# root: 国家
+###########################################################
+country_event = {
+	id = big_wave.12
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		has_civic = civic_big_wave
+	}
+
+	immediate = {
+		set_variable = { which = bigwave_status value = @BIGWAVE_STATUS_AGREEMENT }
+		start_situation = { type = situation_big_wave target = root }
+	}
+}
+
+###########################################################
+# 状況イベント Stage2 繁殖期
+###########################################################
+situation_event = {
+	id = big_wave.21
+	title = "big_wave.21.name"
+	desc = big_wave.21.desc
+	picture = GFX_evt_genetic_modification
+	is_triggered_only = yes
+	situation = this
+
+	trigger = {
+		owner = {
+			is_ai = no
+			has_civic = civic_big_wave
+		}
+	}
+
+	option = {
+		name = big_wave.21.a
+	}
+}
+
+###########################################################
+# 状況イベント Stage3 繁殖期
+# 喰人鬼POPが増える
+###########################################################
+situation_event = {
+	id = big_wave.22
+	title = "big_wave.22.name"
+	desc = big_wave.22.desc
+	picture = GFX_evt_happy_reunion
+	is_triggered_only = yes
+	situation = this
+
+	trigger = {
+		owner = {
+			is_ai = no
+			has_civic = civic_big_wave
+		}
+	}
+
+	option = {
+		name = big_wave.22.a
+		custom_tooltip = big_wave.22.a.tooltip
+	}
+
+	after = {
+		hidden_effect = {
+			owner = {
+				random_owned_species = {
+					limit = { has_trait = trait_big_wave }
+					save_event_target_as = big_wave_species
+				}
+
+				every_system_within_border = {
+					limit = {}
+					every_system_colony = {
+						limit = {
+							owner = { is_same_value = root.owner }
+						}
+						create_pop = {
+							species = event_target:big_wave_species
+							ethos = random
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+###########################################################
+# 状況イベント Stage3 時間がない
+###########################################################
+situation_event = {
+	id = big_wave.23
+	title = "big_wave.23.name"
+	desc = big_wave.23.desc
+	picture = GFX_evt_enlightenment_failure
+	is_triggered_only = yes
+	situation = this
+
+	trigger = {
+		owner = {
+			is_ai = no
+			owner = { has_civic = civic_big_wave }
+		}
+	}
+
+	option = {
+		name = big_wave.23.a
+	}
+}
+
+###########################################################
+# 状況イベント Complete 知性体POPを喰人鬼POPの数だけ減らす
+###########################################################
+situation_event = {
+	id = big_wave.24
+	title = "big_wave.24.name"
+	desc = big_wave.24.desc
+	picture = GFX_evt_surrender
+	is_triggered_only = yes
+	situation = this
+
+	trigger = {
+		owner = {
+			is_ai = no
+			has_civic = civic_big_wave
+		}
+	}
+
+	option = {
+		name = big_wave.24.a
+		custom_tooltip = big_wave.24.a.tooltip
+	}
+
+	after = {
+		hidden_effect = {
+			owner = {
+				# 喰人鬼POPの数を取得
+				export_trigger_value_to_variable = {
+					trigger = count_owned_pop
+					parameters = { limit = { has_trait = trait_big_wave } }
+					variable = num_big_wave_pops
+				}
+
+				# 喰人鬼POPの数だけ、知性体POPの数を減らす
+				while = {
+					count = this.num_big_wave_pops
+
+					if = { # 創始種族以外の知性体POPがいる場合は、そのPOPを減らす
+						limit = {
+							any_owned_pop = {
+								NOR = {
+									has_trait = trait_big_wave
+									has_trait = trait_mechanical
+									has_trait = trait_machine_unit
+								}
+								not = { is_subspecies = root.owner.owner_species }
+							}
+						}
+						random_owned_pop = {
+							limit = {
+								NOR = {
+									has_trait = trait_big_wave
+									has_trait = trait_mechanical
+									has_trait = trait_machine_unit
+								}
+								not = { is_subspecies = root.owner.owner_species }
+							}
+							kill_pop = yes
+						}
+					} else_if = { # 創始種族以外の知性体POPがいない場合は、創始種族POPを減らす
+						limit = {
+							any_owned_pop = {
+								NOR = {
+									has_trait = trait_big_wave
+									has_trait = trait_mechanical
+									has_trait = trait_machine_unit
+								}
+								is_subspecies = root.owner.owner_species
+							}
+						}
+						random_owned_pop = {
+							limit = {
+								NOR = {
+									has_trait = trait_big_wave
+									has_trait = trait_mechanical
+									has_trait = trait_machine_unit
+								}
+								is_subspecies = root.owner.owner_species
+							}
+							kill_pop = yes
+						}
+					} else = { # 知性体POPが以内場合は、契約不履行と見なす
+						set_variable = { which = bigwave_status value = @BIGWAVE_STATUS_BREAK }
+					}
+				}
+
+				if = {			# 契約不履行の場合は契約不履行用のイベントを呼び出す
+					limit = { check_variable = { which = bigwave_status value = @BIGWAVE_STATUS_BREAK } }
+					country_event = { id = big_wave.25 days = 1 }
+				} else_if = {	# 契約満了の場合は次のサイクルへ移行する
+					limit = {
+						any_owned_pop = {
+							NOR = {
+								has_trait = trait_big_wave
+								has_trait = trait_mechanical
+								has_trait = trait_machine_unit
+							}
+						}
+					}
+					country_event = { id = big_wave.12 days = 1 }
+				}
+				else = {		# 契約満了だが全滅の場合は、全滅用のイベントを呼び出す
+					country_event = { id = big_wave.26 days = 1 }
+				}
+			}
+			destroy_situation = this
+		}
+	}
+}
+
+###########################################################
+# 状況イベント Complete->Fail(=Game Over)
+# POPが足りない
+###########################################################
+country_event = {
+	id = big_wave.25
+	title = "big_wave.25.name"
+	desc = big_wave.25.desc
+	picture = GFX_evt_alien_cavemen
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		has_civic = civic_big_wave
+	}
+
+	immediate = {
+		destroy_country = yes
+	}
+
+	option = {
+		name = big_wave.25.a
+	}
+}
+
+###########################################################
+# 状況イベント Complete(Game Over)
+# POP0
+###########################################################
+country_event = {
+	id = big_wave.26
+	title = "big_wave.26.name"
+	desc = big_wave.26.desc
+	picture = GFX_evt_relic_world_street
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		has_civic = civic_big_wave
+	}
+
+	immediate = {
+		destroy_country = yes
+	}
+
+	option = {
+		name = big_wave.26.a
+	}
+}
+
+###########################################################
+# 状況イベント Fail
+# POP0
+###########################################################
+situation_event = {
+	id = big_wave.31
+	title = "big_wave.31.name"
+	desc = big_wave.31.desc
+	picture = GFX_evt_happy_reunion
+	is_triggered_only = yes
+	situation = this
+
+	trigger = {
+		owner = {
+			is_ai = no
+			has_civic = civic_big_wave
+		}
+	}
+
+	immediate = {
+		owner = { set_variable = { which = bigwave_status value = @BIGWAVE_STATUS_SUSPEND } }
+	}
+
+	option = {
+		name = big_wave.31.a
+	}
+
+	after = {
+		destroy_situation = this
+	}
+}
+
+###########################################################
+# 月次イベント、喰人鬼POP0でFail後に喰人鬼POPが領土獲得などで増えた場合
+# 契約はまだ終わっていないと迫られる。
+###########################################################
+country_event = {
+	id = big_wave.32
+	title = "big_wave.32.name"
+	desc = big_wave.32.desc
+	picture = GFX_evt_happy_reunion
+	is_triggered_only = yes
+	situation = this
+
+	trigger = {
+		is_ai = no
+		has_civic = civic_big_wave
+		check_variable = { which = bigwave_status value = @BIGWAVE_STATUS_SUSPEND }
+		not = { has_modifier = big_wave_curse }
+		count_owned_pop = {
+			limit = {
+				pop_has_trait = trait_big_wave
+			}
+			count > 0
+		}
+	}
+
+	option = {
+		name = big_wave.32.a
+		hidden_effect = {
+			set_variable = { which = bigwave_status value = @BIGWAVE_STATUS_AGREEMENT }
+		}
+		start_situation = { type = situation_big_wave target = root }
+	}
+	option = {
+		name = big_wave.32.b
+		hidden_effect = {
+			set_variable = { which = bigwave_status value = @BIGWAVE_STATUS_BREAK }
+			country_event = { id = big_wave.33 }
+		}
+	}
+}
+
+# 契約はもう終わっている
+country_event = {
+	id = big_wave.33
+	title = "big_wave.33.name"
+	desc = big_wave.33.desc
+	picture = GFX_evt_deficit
+	is_triggered_only = yes
+	situation = this
+
+	trigger = {
+		is_ai = no
+		has_civic = civic_big_wave
+		check_variable = { which = bigwave_status value = @BIGWAVE_STATUS_BREAK }
+		not = { has_modifier = big_wave_curse }
+	}
+
+	option = {
+		name = big_wave.33.a
+		add_modifier = { modifier = big_wave_curse }
+		hidden_effect = {
+			set_variable = { which = bigwave_status value = @BIGWAVE_STATUS_NONE }
+		}
+	}
+}
+
+###########################################################
+# 契約解除
+###########################################################
+# 契約解除の確認
+situation_event = {
+	id = big_wave.41
+	title = "big_wave.41.name"
+	desc = big_wave.41.desc
+	picture = GFX_evt_overtuned
+	is_triggered_only = yes
+	situation = this
+
+	trigger = {
+		owner = {
+			is_ai = no
+			has_civic = civic_big_wave
+			check_variable = { which = bigwave_status value = @BIGWAVE_STATUS_AGREEMENT }
+		}
+	}
+
+	option = {
+		name = MESSAGE_OK
+		situation_event = { id = big_wave.42 scopes = { from = from } }
+	}
+	option = {
+		name = CANCEL
+		hidden_effect = { set_situation_approach = situation_big_wave_fulfill }
+	}
+}
+
+# 契約解除イベント1
+situation_event = {
+	id = big_wave.42
+	title = "big_wave.42.name"
+	desc = big_wave.42.desc
+	picture = GFX_evt_happy_reunion
+	is_triggered_only = yes
+	situation = this
+
+	trigger = {
+		owner = {
+			is_ai = no
+			has_civic = civic_big_wave
+		}
+	}
+
+	immediate = {
+		owner = {
+			set_variable = { which = bigwave_status value = @BIGWAVE_STATUS_BREAK }
+			country_event = { id = big_wave.43 days = 10 }
+		}
+		destroy_situation = this
+	}
+
+	option = {
+		name = big_wave.42.a
+	}
+}
+
+# 契約解除イベント2
+country_event = {
+	id = big_wave.43
+	title = "big_wave.43.name"
+	desc = big_wave.43.desc
+	picture = GFX_evt_deficit
+	is_triggered_only = yes
+	situation = this
+
+	trigger = {
+		is_ai = no
+		has_civic = civic_big_wave
+		check_variable = { which = bigwave_status value = @BIGWAVE_STATUS_BREAK }
+	}
+
+	immediate = {
+		country_event = { id = big_wave.46 }
+	}
+
+	option = {
+		name = big_wave.43.a
+	}
+}
+
+# 奴隷売買で喰人鬼POPを売った場合
+# This = Country (seller)
+# From = Country (buyer)
+# Fromfrom = Pop
+country_event = {
+	id = big_wave.44
+	title = "big_wave.44.name"
+	desc = big_wave.44.desc
+	picture = GFX_evt_deficit
+	is_triggered_only = yes
+
+	trigger = {
+		fromfrom = { has_trait = trait_big_wave }
+		is_ai = no
+		has_civic = civic_big_wave
+		check_variable = { which = bigwave_status value = @BIGWAVE_STATUS_AGREEMENT }
+	}
+
+	immediate = {
+		set_variable = { which = bigwave_status value = @BIGWAVE_STATUS_BREAK }
+		random_situation = {
+			limit = { is_situation_type = situation_big_wave }
+			destroy_situation = this
+		}
+		country_event = { id = big_wave.46 }
+	}
+
+	option = {
+		name = big_wave.44.a
+	}
+}
+
+
+# 喰人鬼POPを浄化した場合
+# This = Planet scope
+# From = Country
+# FromFrom = Pop
+planet_event = {
+	id = big_wave.45
+	title = "big_wave.45.name"
+	desc = big_wave.45.desc
+	picture = GFX_evt_deficit
+	is_triggered_only = yes
+
+	trigger = {
+		fromfrom = { has_trait = trait_big_wave }
+		from = {
+			is_ai = no
+			has_civic = civic_big_wave
+			check_variable = { which = bigwave_status value = @BIGWAVE_STATUS_AGREEMENT }
+		}
+	}
+
+	immediate = {
+		from = {
+			set_variable = { which = bigwave_status value = @BIGWAVE_STATUS_BREAK }
+			random_situation = {
+				limit = { is_situation_type = situation_big_wave }
+				destroy_situation = this
+			}
+			country_event = { id = big_wave.46 }
+		}
+	}
+
+	option = {
+		name = big_wave.45.a
+	}
+}
+
+# 契約破棄：全ての惑星での地上戦
+country_event = {
+	id = big_wave.46
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		has_civic = civic_big_wave
+		check_variable = { which = bigwave_status value = @BIGWAVE_STATUS_BREAK }
+	}
+
+	immediate = {
+		# 喰人鬼国家の生成
+		create_country = {
+			name = "NAME_BIG_WAVE"
+			type = faction
+			effect = {
+				establish_communications_no_message = root
+				save_global_event_target_as = big_wave_country
+			}
+		}
+
+		# 喰人鬼国家の地上軍の生成
+		# 10 + 喰人鬼POP数
+		random_owned_species = {
+			limit = { has_trait = trait_big_wave }
+			save_event_target_as = big_wave_species
+		}
+		every_system_within_border = {
+			limit = {}
+			every_system_colony = {
+				limit = {
+					owner = { is_same_value = root.owner }
+				}
+
+				# 味方の喰人鬼の軍隊を敵側に変更する
+				every_planet_army = {
+					limit = { species = { has_trait = trait_big_wave } }
+					set_owner = event_target:big_wave_country
+				}
+
+				# 軍隊の基本値10を追加する
+				while = {
+					count = 10
+					create_army = {
+						name = "NAME_BIG_WAVE"
+						owner = event_target:big_wave_country
+						species = event_target:big_wave_species
+						type = "big_wave_army"
+					}
+				}
+
+				# 惑星内の喰人鬼POPの数だけ軍隊を追加する
+				every_owned_pop = {
+					limit = {
+						has_trait = trait_big_wave
+					}
+					prev = {
+						create_army = {
+							name = "NAME_BIG_WAVE"
+							owner = event_target:big_wave_country
+							species = event_target:big_wave_species
+							type = "big_wave_army"
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# 奴隷売買で喰人鬼POPを売った場合
+# This = Pop
+# From = Country (buyer)
+# Fromfrom = Country (seller)
+pop_event = {
+	id = big_wave.47
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {}
+
+	immediate = {
+		fromfrom = {
+			country_event = { id = big_wave.44 scopes = { from = from fromfrom = root } }
+		}
+	}
+}
+
+# 奴隷売買で喰人鬼POPを売った場合
+country_event = {
+	id = big_wave.48
+	title = "big_wave.48.name"
+	desc = big_wave.48.desc
+	picture = GFX_evt_deficit
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		has_civic = civic_big_wave
+		check_variable = { which = bigwave_status value = @BIGWAVE_STATUS_AGREEMENT }
+		OR = {
+			has_ascension_perk = ap_the_flesh_is_weak
+			has_ascension_perk = ap_synthetic_evolution
+		}
+	}
+
+	immediate = {
+		set_variable = { which = bigwave_status value = @BIGWAVE_STATUS_BREAK }
+		random_situation = {
+			limit = { is_situation_type = situation_big_wave }
+			destroy_situation = this
+		}
+		country_event = { id = big_wave.46 }
+	}
+
+	option = {
+		name = big_wave.48.a
+	}
+}
+
+# 地上軍：喰人鬼側の勝利
+# Triggers country_event for the attacker upon victory (before controller is switched)
+# This = country, lead attacker 喰人鬼
+# From = country, planet owner Player
+# FromFrom = planet
+country_event = {
+	id = big_wave.50
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		exists = event_target:big_wave_country
+		is_same_empire = event_target:big_wave_country
+		from = {
+			is_ai = no
+			has_civic = civic_big_wave
+			check_variable = { which = bigwave_status value = @BIGWAVE_STATUS_BREAK }
+		}
+	}
+
+	immediate = {
+		# 不毛な星にする
+		fromfrom = {
+			if = {
+				limit = {
+					OR = {
+						is_planet_class = pc_habitat
+						is_ringworld = yes
+					}
+				}
+				destroy_colony = yes
+			} else = {
+				change_pc = pc_barren
+				add_modifier = { modifier = terraforming_candidate }
+			}
+		}
+
+		# 全ての惑星の地上戦が終わっている場合は、地上戦終了用のイベントを表示する
+		from = {
+			set_country_flag = big_wave_attackers_win
+			country_event = { id = big_wave.52 }
+		}
+	}
+}
+
+# 地上軍：喰人鬼側の敗北
+# Triggers country_event for the defender upon victory
+# Root = country, planet owner Player
+# From = country, attack leader 喰人鬼
+# FromFrom = planet
+country_event = {
+	id = big_wave.51
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		from = {
+			exists = event_target:big_wave_country
+			is_same_empire = event_target:big_wave_country
+		}
+		is_ai = no
+		has_civic = civic_big_wave
+		check_variable = { which = bigwave_status value = @BIGWAVE_STATUS_BREAK }
+	}
+
+	immediate = {
+		# 死の星にして、喰人鬼POPを全て削除する
+		fromfrom = {
+			if = {
+				limit = {
+					NOR = {
+						is_planet_class = pc_habitat
+						is_ringworld = yes
+					}
+				}
+				change_pc = pc_nuked
+			}
+			every_owned_pop = {
+				limit = {
+					has_trait = trait_big_wave
+				}
+				kill_pop = yes
+			}
+		}
+
+		# 全ての惑星の地上戦が終わっている場合は、地上戦終了用のイベントを表示する
+		set_country_flag = big_wave_attackers_lose
+		country_event = { id = big_wave.52 }
+	}
+}
+
+# 全ての地上軍との戦いの終わり
+country_event = {
+	id = big_wave.52
+	title = "big_wave.52.name"
+	picture = GFX_evt_relic_world_street
+	is_triggered_only = yes
+
+	desc = {
+		trigger = {
+			has_country_flag = big_wave_attackers_win
+			has_country_flag = big_wave_attackers_lose
+		}
+		text = big_wave.52.desc
+	}
+	desc = {
+		trigger = {
+			not = { has_country_flag = big_wave_attackers_win }
+			has_country_flag = big_wave_attackers_lose
+		}
+		text = big_wave.52.attackers_lose.desc
+	}
+	desc = {
+		trigger = {
+			has_country_flag = big_wave_attackers_win
+			not = { has_country_flag = big_wave_attackers_lose }
+		}
+		text = big_wave.52.attackers_win.desc
+	}
+
+	trigger = {
+		is_ai = no
+		has_civic = civic_big_wave
+		check_variable = { which = bigwave_status value = @BIGWAVE_STATUS_BREAK }
+		count_system_within_border = {
+			count <= 0
+			limit = {
+				any_system_colony = {
+					owner = { is_same_empire = root }
+					has_ground_combat = yes
+					any_ground_combat_attacker = { owner = { is_same_empire = event_target:big_wave_country } }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = big_wave.52.a
+		trigger = {
+			has_country_flag = big_wave_attackers_win
+			has_country_flag = big_wave_attackers_lose
+		}
+	}
+	option = {
+		name = big_wave.52.attackers_lose.a
+		trigger = {
+			not = { has_country_flag = big_wave_attackers_win }
+			has_country_flag = big_wave_attackers_lose
+		}
+	}
+	option = {
+		name = big_wave.52.attackers_win.a
+		trigger = {
+			has_country_flag = big_wave_attackers_win
+			not = { has_country_flag = big_wave_attackers_lose }
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			remove_country_flag = big_wave_attackers_win
+			remove_country_flag = big_wave_attackers_lose
+			set_variable = { which = bigwave_status value = @BIGWAVE_STATUS_NONE }
+		}
+	}
+}

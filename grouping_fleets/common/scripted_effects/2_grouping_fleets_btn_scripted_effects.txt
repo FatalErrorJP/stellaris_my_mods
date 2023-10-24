@@ -1,0 +1,364 @@
+###########################################################
+# 艦隊グループ化Mod用のScripted effects
+###########################################################
+
+#######################################################
+#
+# ボタン処理
+#
+#######################################################
+#################################################
+# 旗艦設定ボタンのeffect処理
+# PARAMETER
+#   NUMBER: グループ番号
+#################################################
+grouping_fleets_set_flagship_effect = {
+	# ツールチップの表示
+	custom_tooltip = "TOOLTIP_SET_FLAGSHIP_0"
+
+	###
+	# ボタン押下時の処理内容
+	###
+	hidden_effect = {
+		# 旗艦追跡モード中だった場合は一旦解除する
+		set_variable = { which = grouping_fleets_temp value = $NUMBER$ }
+		if = {
+			limit = { grouping_fleets_has_auto_move = { NUMBER = $NUMBER$ } }
+			grouping_fleets_remove_auto_move = { NUMBER = $NUMBER$ }
+		}
+
+		# 既に旗艦に設定済みの艦隊がいる場合は解除する
+		grouping_fleets_remove_flagship = { NUMBER = $NUMBER$ }
+
+		# 改めて旗艦として設定する
+		grouping_fleets_set_flagship = { NUMBER = $NUMBER$ }
+		set_variable = { which = grouping_fleets_flagship value = grouping_fleets_fleet_group_num }
+
+		# 旗艦追跡モード中だった場合は本艦に追跡させる
+		if = {
+			limit = { grouping_fleets_has_auto_move = { NUMBER = $NUMBER$ } }
+			grouping_fleets_set_auto_move = { NUMBER = $NUMBER$ }
+		}
+	}
+}
+
+#################################################
+# 旗艦解除ボタンのeffect処理
+# PARAMETER
+#   NUMBER: グループ番号
+#################################################
+grouping_fleets_remove_flagship_effect = {
+	# ツールチップの表示
+	custom_tooltip = "TOOLTIP_SET_FLAGSHIP_1"
+
+	###
+	# ボタン押下時の処理内容
+	###
+	hidden_effect = {
+		# 旗艦追跡モード中だった場合は解除する
+		set_variable = { which = grouping_fleets_temp value = $NUMBER$ }
+		if = {
+			limit = { grouping_fleets_has_auto_move = { NUMBER = $NUMBER$ } }
+			grouping_fleets_remove_auto_move = { NUMBER = $NUMBER$ }
+		}
+
+		# 旗艦を解除する
+		set_variable = { which = grouping_fleets_flagship value = 0 }
+	}
+}
+
+#################################################
+# 艦隊グループ追加ボタンのeffect処理
+#################################################
+grouping_fleets_add_fleet_groups_effect = {
+	###
+	# ツールチップの表示設定：現在の所属グループを表示する
+	###
+	if = {
+		limit = {
+			check_variable = { which = grouping_fleets_fleet_group_num value > 0 }
+		}
+		custom_tooltip = "TOOLTIP_ADD_FLEET_GROUPS_1"
+	} else = {
+		custom_tooltip = "TOOLTIP_ADD_FLEET_GROUPS_0"
+	}
+
+	###
+	# ボタン押下時の処理内容
+	###
+	hidden_effect = {
+		# 変更前の艦隊グループが旗艦追跡モード中の場合は、追跡を解除する
+		if = {
+			limit = {
+				is_variable_set = grouping_fleets_fleet_group_num
+				grouping_fleets_has_auto_move = { NUMBER = root.grouping_fleets_fleet_group_num }
+			}
+
+			if = {
+				# 旗艦だった場合は、他の艦隊の追跡モードを解除する
+				limit = {
+					not = { check_variable = { which = grouping_fleets_fleet_group_num value = 0 } }
+					check_variable = { which = grouping_fleets_flagship value = grouping_fleets_fleet_group_num }
+				}
+				grouping_fleets_remove_auto_move = { NUMBER = root.grouping_fleets_fleet_group_num }
+				set_variable = { which = grouping_fleets_flagship value = 0 }
+			} else = {
+				# 旗艦を追跡中だった場合は解除する
+				remove_auto_move_target = yes
+			}
+		}
+
+		# 艦隊グループを変更する
+		if = {
+			limit = { is_variable_set = grouping_fleets_fleet_group_num }
+			change_variable = { which = grouping_fleets_fleet_group_num value = 1 }
+			modulo_variable = { which = grouping_fleets_fleet_group_num value = 9 }
+		} else = {
+			set_variable = { which = grouping_fleets_fleet_group_num value = 1 }
+		}
+
+		# 変更後の艦隊グループが旗艦追跡モードの場合は、追跡させる
+		if = {
+			limit = {
+				is_variable_set = grouping_fleets_fleet_group_num
+				grouping_fleets_has_auto_move = { NUMBER = root.grouping_fleets_fleet_group_num }
+			}
+			grouping_fleets_set_auto_move = { NUMBER = root.grouping_fleets_fleet_group_num }
+		}
+	}
+}
+
+#################################################
+# 旗艦を追跡ボタンのeffect処理
+# PARAMETER
+#   NUMBER: グループ番号
+#################################################
+grouping_fleets_follow_flagship_effect = {
+	###
+	# ツールチップの表示設定：旗艦と、所属グループの一覧を表示する
+	###
+	from = {
+		random_owned_fleet = {
+			limit = {
+				OR = {
+					is_ship_size = juggernaut
+					is_ship_class = shipclass_military
+				}
+				check_variable = { which = grouping_fleets_flagship value = $NUMBER$ }
+			}
+			save_event_target_as = target_flagship_fleet
+		}
+	}
+
+	custom_tooltip_with_params = {
+		description = "TOOLTIP_UNFOLLOW_FLAGSHIP"
+		description_parameters = {
+			"GROUP_NUMBER" = $NUMBER$
+		}
+	}
+	if = {
+		limit = { exists = event_target:target_flagship_fleet }
+		custom_tooltip_with_params = {
+			description = "TOOLTIP_FOLLOW_FLAGSHIP_1"
+			description_parameters = {
+				"GROUP_NUMBER" = $NUMBER$
+			}
+		}
+	} else = {
+		custom_tooltip_with_params = {
+			description = "TOOLTIP_FOLLOW_FLAGSHIP_0"
+			description_parameters = {
+				"GROUP_NUMBER" = $NUMBER$
+			}
+		}
+	}
+	from = {
+		custom_tooltip = "TOOLTIP_FLEET_LIST"
+		owned_fleet_list_tooltip = {
+			limit = {
+				check_variable = { which = grouping_fleets_fleet_group_num value = $NUMBER$ }
+				not = { check_variable = { which = grouping_fleets_flagship value = $NUMBER$ } }
+			}
+		}
+	}
+
+	###
+	# ボタン押下時の処理内容
+	###
+	hidden_effect = {
+		grouping_fleets_set_auto_move = { NUMBER = $NUMBER$ }
+		grouping_fleets_set_auto_move_parameter = { NUMBER = $NUMBER$ VALUE = 1 }
+	}
+}
+
+#################################################
+# 旗艦への追従の解除ボタンのeffect処理
+# PARAMETER
+#   NUMBER: グループ番号
+#################################################
+grouping_fleets_remove_follow_flagship_effect = {
+	###
+	# ツールチップの表示設定：旗艦と、所属グループの一覧を表示する
+	###
+	from = {
+		random_owned_fleet = {
+			limit = {
+				OR = {
+					is_ship_size = juggernaut
+					is_ship_class = shipclass_military
+				}
+				check_variable = { which = grouping_fleets_flagship value = $NUMBER$ }
+			}
+			save_event_target_as = target_flagship_fleet
+		}
+	}
+
+	custom_tooltip_with_params = {
+		description = "TOOLTIP_FOLLOW_FLAGSHIP"
+		description_parameters = {
+			"GROUP_NUMBER" = $NUMBER$
+		}
+	}
+	if = {
+		limit = { exists = event_target:target_flagship_fleet }
+		custom_tooltip_with_params = {
+			description = "TOOLTIP_FOLLOW_FLAGSHIP_1"
+			description_parameters = {
+				"GROUP_NUMBER" = $NUMBER$
+			}
+		}
+	} else = {
+		custom_tooltip_with_params = {
+			description = "TOOLTIP_FOLLOW_FLAGSHIP_0"
+			description_parameters = {
+				"GROUP_NUMBER" = $NUMBER$
+			}
+		}
+	}
+	from = {
+		custom_tooltip = "TOOLTIP_FLEET_LIST"
+		owned_fleet_list_tooltip = {
+			limit = {
+				check_variable = { which = grouping_fleets_fleet_group_num value = $NUMBER$ }
+				not = { check_variable = { which = grouping_fleets_flagship value = $NUMBER$ } }
+			}
+		}
+	}
+
+	###
+	# ボタン押下時の処理内容
+	###
+	hidden_effect = {
+		grouping_fleets_remove_auto_move = { NUMBER = $NUMBER$ }
+		grouping_fleets_set_auto_move_parameter = { NUMBER = $NUMBER$ VALUE = 0 }
+	}
+}
+
+#################################################
+# ゲートウェイの軌道上へ移動ボタンのeffect処理
+# PARAMETER
+#   NUMBER: グループ番号
+#################################################
+grouping_fleets_goto_gateway_effect = {
+	###
+	# ツールチップの表示設定
+	###
+	custom_tooltip = "TOOLTIP_GOTO_GATEWAY"
+
+	###
+	# ボタン押下時の処理内容
+	###
+	hidden_effect = {
+		# 旗艦に移動を命令する
+		from = {
+			random_owned_fleet = {
+				limit = {
+					OR = {
+						is_ship_size = juggernaut
+						is_ship_class = shipclass_military
+					}
+					check_variable = { which = grouping_fleets_flagship value = $NUMBER$ }
+				}
+				save_event_target_as = target_fleet
+
+				# ゲートウェイを探す
+				queue_actions = {
+					find_closest_system = {
+						trigger = {
+							id = search_gateway.trigger.$NUMBER$
+							any_system_megastructure = {
+								owner = { is_same_value = from }
+								OR = {
+									is_megastructure_type = gateway_restored
+									is_megastructure_type = gateway_final
+								}
+							}
+						}
+						found_system = {
+							effect = {
+								id = search_gateway.found.$NUMBER$
+								random_system_megastructure = {
+									limit = {
+										OR = {
+											is_megastructure_type = gateway_restored
+											is_megastructure_type = gateway_final
+										}
+									}
+									save_event_target_as = target_gateway
+								}
+								event_target:target_fleet = {
+									queue_actions = {
+										move_to = event_target:target_gateway
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#################################################
+# Lゲートの軌道上へ移動ボタンのeffect処理
+# PARAMETER
+#   NUMBER: グループ番号
+#################################################
+grouping_fleets_goto_lgate_effect = {
+	###
+	# ツールチップの表示設定
+	###
+	custom_tooltip = "TOOLTIP_GOTO_LGATE"
+
+	###
+	# ボタン押下時の処理内容
+	###
+	hidden_effect = {
+		# lgateを探す
+		random_system = {
+			limit = { has_star_flag = lcluster1 }
+			save_event_target_as = target_lgate
+			random_system_megastructure = {
+				limit = { is_megastructure_type = lgate_base }
+				save_event_target_as = target_lgate
+			}
+		}
+
+		# 旗艦に移動を命令する
+		from = {
+			random_owned_fleet = {
+				limit = {
+					OR = {
+						is_ship_size = juggernaut
+						is_ship_class = shipclass_military
+					}
+					check_variable = { which = grouping_fleets_flagship value = $NUMBER$ }
+				}
+				queue_actions = {
+					move_to = event_target:target_lgate
+				}
+			}
+		}
+	}
+}

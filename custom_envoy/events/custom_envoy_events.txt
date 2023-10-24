@@ -1,0 +1,104 @@
+###############################################################################
+# 外交使節と諜報要員を分離したいModイベント
+###############################################################################
+namespace = custom_envoy
+
+###########################################################
+# スポーン時のイベント
+# Root = Country
+# FROM = Leader
+###########################################################
+country_event = {
+	id = custom_envoy.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		from = { leader_class = envoy }
+	}
+
+	immediate = {
+		# 外交使節の数をカウントする
+		set_variable = { which = custom_envoy_diplomat_number value = 0 }
+		every_envoy = {
+			limit = { has_trait = leader_trait_diplomat }
+			prev = { change_variable = { which = custom_envoy_diplomat_number value = 1 }  }
+		}
+
+		# 諜報要員の数をカウントする
+		set_variable = { which = custom_envoy_agent_number value = 0 }
+		every_envoy = {
+			limit = { has_trait = leader_trait_agent }
+			prev = { change_variable = { which = custom_envoy_agent_number value = 1 }  }
+		}
+
+		# 新しくスポーンした使節に専用スキルを付与する
+		# 外交使節の数の方が多い場合は諜報要員を、そうでない場合は外交使節のスキルを付与する
+		if = {
+			limit = { check_variable = { which = custom_envoy_diplomat_number value > custom_envoy_agent_number } }
+			from = { add_trait_no_notify = leader_trait_agent }
+		} else = {
+			from = { add_trait_no_notify = leader_trait_diplomat }
+		}
+
+		clear_variable = custom_envoy_diplomat_number
+		clear_variable = custom_envoy_agent_number
+	}
+}
+
+###########################################################
+# 割り当て時のイベント
+# Root = Leader
+###########################################################
+# スキルと異なるタスク割り当てをしてしまった場合は、割り当てを解除する。プレイヤー国家専用イベント
+# AI国家はスキルと一致しているかどうかを制御できないため、スキルを無視して割り当て可能
+leader_event = {
+	id = custom_envoy.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		owner = { is_ai = no }
+		leader_class = envoy
+		not = { has_envoy_task = { task = none } }
+	}
+
+	immediate = {
+		if = {
+			# 外交官ではないのに外交関連に割り当てをしてしまった場合は、割り当てを解除する
+			limit = {
+				not = { has_trait = leader_trait_diplomat }
+				not = { has_envoy_task = { task = spy_network } }
+			}
+			unassign_leader = this
+			set_cooldown = 0
+
+			owner = {
+				create_message = {
+					type = ASSIGNED_MISTAKE_DIPLOMAT
+					localization = ASSIGNED_MISTAKE_DIPLOMAT_MESSAGE
+					days = 30
+					variable = { type = name localization = NAME scope = root }
+				}
+			}
+		} else_if = {
+			# 諜報員ではないのに、諜報に割り当ててしまった場合は、割り当てを解除する
+			limit = {
+				not = { has_trait = leader_trait_agent }
+				has_envoy_task = { task = spy_network }
+			}
+			unassign_leader = this
+			set_cooldown = 0
+
+			owner = {
+				create_message = {
+					type = ASSIGNED_MISTAKE_AGENT
+					localization = ASSIGNED_MISTAKE_AGENT_MESSAGE
+					days = 30
+					variable = { type = name localization = NAME scope = root }
+				}
+			}
+		}
+	}
+}
+

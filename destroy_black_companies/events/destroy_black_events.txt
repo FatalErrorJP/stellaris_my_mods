@@ -1,0 +1,492 @@
+###########################################################
+# ブラック企業を許さないマローダーの会Mod用のイベント定義
+###########################################################
+namespace = destroy
+
+#################################################
+# マローダーの契約更新イベント
+# バニラオリジナル(events/marauder_events.txt)の
+# marauder.50をベースにイベント処理を追加
+# SCOPE: fleet(契約を満了したマローダー艦隊)
+#################################################
+fleet_event = {
+	id = destroy.1
+	title = "marauder.50.name"
+	desc = "marauder.50.desc"
+	picture = GFX_evt_pirate_armada
+	show_sound = event_radio_chatter
+	location = this
+
+	is_triggered_only = yes
+
+	option = { # Extend contract 1
+		name = marauder.50.a
+		allow = { owner = { resource_stockpile_compare = { resource = energy value >= @largemercallow } } }
+		trigger = {
+			OR = {
+				has_fleet_flag = armada_of_the_voidborn
+				has_fleet_flag = dwamak_bashers
+				has_fleet_flag = her_chosen_champions
+			}
+		}
+		owner = { add_resource = { energy = @largemerccost } }
+		hidden_effect = {
+			fleet_event = { id = marauder.50 days = 1800 }
+		}
+	}
+	option = { # Extend contract 2
+		name = marauder.50.a
+		allow = { owner = { resource_stockpile_compare = { resource = energy value >= @mediummercallow } } }
+		trigger = {
+			OR = {
+				has_fleet_flag = star_rider_flotilla
+				has_fleet_flag = unhinged_screamer_flotilla
+				has_fleet_flag = order_of_eternal_night
+			}
+		}
+		owner = { add_resource = { energy = @mediummerccost } }
+		hidden_effect = {
+			fleet_event = { id = marauder.50 days = 1800 }
+		}
+	}
+	option = { # Extend contract 3
+		name = marauder.50.a
+		allow = { owner = { resource_stockpile_compare = { resource = energy value >= @smallmercallow } } }
+		trigger = {
+			OR = {
+				has_fleet_flag = first_storm_wing
+				has_fleet_flag = frenzied_volunteer_squadron
+				has_fleet_flag = twilight_congregation
+			}
+		}
+		owner = { add_resource = { energy = @smallmerccost } }
+		hidden_effect = {
+			fleet_event = { id = marauder.50 days = 1800 }
+		}
+	}
+	option = { # Decline
+		name = marauder.50.b
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			# Marauder 1 fleets
+			if = {
+				limit = {
+					exists = event_target:marauder_country_1
+					has_fleet_flag = armada_of_the_voidborn
+				}
+				event_target:marauder_country_1 = {
+					remove_country_flag = merc_fleet_1_hired
+				}
+			}
+			if = {
+				limit = {
+					exists = event_target:marauder_country_1
+					has_fleet_flag = star_rider_flotilla
+				}
+				event_target:marauder_country_1 = {
+					remove_country_flag = merc_fleet_2_hired
+				}
+			}
+			if = {
+				limit = {
+					exists = event_target:marauder_country_1
+					has_fleet_flag = first_storm_wing
+				}
+				event_target:marauder_country_1 = {
+					remove_country_flag = merc_fleet_3_hired
+				}
+			}
+			# Marauder 2 fleets
+			if = {
+				limit = {
+					exists = event_target:marauder_country_2
+					has_fleet_flag = dwamak_bashers
+				}
+				event_target:marauder_country_2 = {
+					remove_country_flag = merc_fleet_1_hired
+				}
+			}
+			if = {
+				limit = {
+					exists = event_target:marauder_country_2
+					has_fleet_flag = unhinged_screamer_flotilla
+				}
+				event_target:marauder_country_2 = {
+					remove_country_flag = merc_fleet_2_hired
+				}
+			}
+			if = {
+				limit = {
+					exists = event_target:marauder_country_2
+					has_fleet_flag = frenzied_volunteer_squadron
+				}
+				event_target:marauder_country_2 = {
+					remove_country_flag = merc_fleet_3_hired
+				}
+			}
+			# Marauder 3 fleets
+			if = {
+				limit = {
+					exists = event_target:marauder_country_3
+					has_fleet_flag = her_chosen_champions
+				}
+				event_target:marauder_country_3 = {
+					remove_country_flag = merc_fleet_1_hired
+				}
+			}
+			if = {
+				limit = {
+					exists = event_target:marauder_country_3
+					has_fleet_flag = order_of_eternal_night
+				}
+				event_target:marauder_country_3 = {
+					remove_country_flag = merc_fleet_2_hired
+				}
+			}
+			if = {
+				limit = {
+					exists = event_target:marauder_country_3
+					has_fleet_flag = twilight_congregation
+				}
+				event_target:marauder_country_3 = {
+					remove_country_flag = merc_fleet_3_hired
+				}
+			}
+			leader = {
+				remove_leader_flag = marauder_merc_leader
+				kill_leader = { show_notification = no }
+			}
+			delete_fleet = this
+		}
+	}
+
+	# ---- ここまでは元のコード ----
+	after = {
+		# 滞納金の支払いイベントを発火する
+		hidden_effect = {
+			destroy_black_exec_scripted_effect2 = { EFFECT_NAME = call_arrears_event }
+		}
+	}
+}
+
+#################################################
+# マローダーの契約更新の選択肢を選んだ後のイベント
+# 襲撃部隊が出現している場合は、滞納分の支払いを要求される
+# SCOPE: fleet(契約を満了したマローダー艦隊)
+# from: country(契約を満了したマローダー艦隊の所属するマローダー国家)
+#################################################
+fleet_event = {
+	id = destroy.2
+	hide_window = no
+	is_triggered_only = yes
+
+	# AI国家はこのイベント発火を起こすことはないため、適用しない
+	trigger = {
+		owner = { is_ai = no }
+	}
+
+	# 滞納金の支払い要求のメッセージの表示
+	title = destroy.2.name
+	desc = {
+		text = destroy.2.desc_1
+		trigger = {
+			from = { has_country_flag = marauder_1 }
+		}
+	}
+	desc = {
+		text = destroy.2.desc_2
+		trigger = {
+			from = { has_country_flag = marauder_2 }
+		}
+	}
+	desc = {
+		text = destroy.2.desc_3
+		trigger = {
+			from = { has_country_flag = marauder_3 }
+		}
+	}
+	diplomatic = yes
+	picture_event_data = {
+		portrait = from
+		room = "ethic_spaceship_room"
+	}
+	force_open = yes
+
+	# 選択肢の表示
+	option = {
+		name = destroy.2a
+		trigger = { has_fleet_flag = armada_of_the_voidborn }
+		allow = { owner = { resource_stockpile_compare = { resource = energy value >= 1000 mult = root.armada_of_the_voidborn_count } } }
+		owner = { add_resource = { energy = -1000 mult = root.armada_of_the_voidborn_count } }
+		hidden_effect = {
+			fleet_event = { id = destroy.3 scopes = { from = from } }
+		}
+	}
+	option = {
+		name = destroy.2a
+		trigger = { has_fleet_flag = star_rider_flotilla }
+		allow = { owner = { resource_stockpile_compare = { resource = energy value >= 1000 mult = root.star_rider_flotilla_count } } }
+		owner = { add_resource = { energy = -1000 mult = root.star_rider_flotilla_count } }
+		hidden_effect = {
+			fleet_event = { id = destroy.3 scopes = { from = from } }
+		}
+	}
+	option = {
+		name = destroy.2a
+		trigger = { has_fleet_flag = first_storm_wing }
+		allow = { owner = { resource_stockpile_compare = { resource = energy value >= 1000 mult = root.first_storm_wing_count } } }
+		owner = { add_resource = { energy = -1000 mult = root.first_storm_wing_count } }
+		hidden_effect = {
+			fleet_event = { id = destroy.3 scopes = { from = from } }
+		}
+	}
+	option = {
+		name = destroy.2a
+		trigger = { has_fleet_flag = dwamak_bashers }
+		allow = { owner = { resource_stockpile_compare = { resource = energy value >= 1000 mult = root.dwamak_bashers_count } } }
+		owner = { add_resource = { energy = -1000 mult = root.dwamak_bashers_count } }
+		hidden_effect = {
+			fleet_event = { id = destroy.3 scopes = { from = from } }
+		}
+	}
+	option = {
+		name = destroy.2a
+		trigger = { has_fleet_flag = unhinged_screamer_flotilla }
+		allow = { owner = { resource_stockpile_compare = { resource = energy value >= 1000 mult = root.unhinged_screamer_flotilla_count } } }
+		owner = { add_resource = { energy = -1000 mult = root.unhinged_screamer_flotilla_count } }
+		hidden_effect = {
+			fleet_event = { id = destroy.3 scopes = { from = from } }
+		}
+	}
+	option = {
+		name = destroy.2a
+		trigger = { has_fleet_flag = frenzied_volunteer_squadron }
+		allow = { owner = { resource_stockpile_compare = { resource = energy value >= 1000 mult = root.frenzied_volunteer_squadron_count } } }
+		owner = { add_resource = { energy = -1000 mult = root.frenzied_volunteer_squadron_count } }
+		hidden_effect = {
+			fleet_event = { id = destroy.3 scopes = { from = from } }
+		}
+	}
+	option = {
+		name = destroy.2a
+		trigger = { has_fleet_flag = her_chosen_champions }
+		allow = { owner = { resource_stockpile_compare = { resource = energy value >= 1000 mult = root.her_chosen_champions_count } } }
+		owner = { add_resource = { energy = -1000 mult = root.her_chosen_champions_count } }
+		hidden_effect = {
+			fleet_event = { id = destroy.3 scopes = { from = from } }
+		}
+	}
+	option = {
+		name = destroy.2a
+		trigger = { has_fleet_flag = order_of_eternal_night }
+		allow = { owner = { resource_stockpile_compare = { resource = energy value >= 1000 mult = root.order_of_eternal_night_count } } }
+		owner = { add_resource = { energy = -1000 mult = root.order_of_eternal_night_count } }
+		hidden_effect = {
+			fleet_event = { id = destroy.3 scopes = { from = from } }
+		}
+	}
+	option = {
+		name = destroy.2a
+		trigger = { has_fleet_flag = twilight_congregation }
+		allow = { owner = { resource_stockpile_compare = { resource = energy value >= 1000 mult = root.twilight_congregation_count } } }
+		owner = { add_resource = { energy = -1000 mult = root.twilight_congregation_count } }
+		hidden_effect = {
+			fleet_event = { id = destroy.3 scopes = { from = from } }
+		}
+	}
+	option = {
+		name = destroy.2b
+		hidden_effect = {
+			fleet_event = { id = destroy.4 scopes = { from = from } }
+		}
+	}
+}
+
+#################################################
+# 滞納金を支払った時のイベント
+# 襲撃部隊が出現している場合は、撤収させる
+# SCOPE: fleet(契約を満了したマローダー艦隊)
+# from: country(契約を満了したマローダー艦隊の所属するマローダー国家)
+#################################################
+fleet_event = {
+	id = destroy.3
+	hide_window = no
+	is_triggered_only = yes
+
+	# AI国家はこのイベント発火を起こすことはないため、適用しない
+	trigger = {
+		owner = { is_ai = no }
+	}
+
+	# 滞納金の支払い要求のメッセージの表示
+	title = destroy.3.name
+	desc = {
+		text = destroy.3.desc_1
+		trigger = {
+			from = { has_country_flag = marauder_1 }
+		}
+	}
+	desc = {
+		text = destroy.3.desc_2
+		trigger = {
+			from = { has_country_flag = marauder_2 }
+		}
+	}
+	desc = {
+		text = destroy.3.desc_3
+		trigger = {
+			from = { has_country_flag = marauder_3 }
+		}
+	}
+	diplomatic = yes
+	picture_event_data = {
+		portrait = from
+		room = "ethic_spaceship_room"
+	}
+	force_open = yes
+
+	# 選択肢の表示
+	option = {
+		name = destroy.3a
+		custom_tooltip = destroy.3a.tooltip
+		hidden_effect = {
+			# 襲撃部隊を撤収する
+			fleet_event = { id = destroy.5 }
+
+			# 返答を保留されている月数を初期化する
+			destroy_black_exec_scripted_effect = { EFFECT_NAME = count_clear }
+		}
+	}
+}
+
+#################################################
+# 滞納金の支払いを拒否した場合のイベント
+# 2年後に襲撃部隊の撤収イベントを発火させる
+# SCOPE: fleet(契約を満了したマローダー艦隊)
+# from: country(契約を満了したマローダー艦隊の所属するマローダー国家)
+#################################################
+fleet_event = {
+	id = destroy.4
+	hide_window = no
+	is_triggered_only = yes
+
+	# AI国家はこのイベント発火を起こすことはないため、適用しない
+	trigger = {
+		owner = { is_ai = no }
+	}
+
+	# 滞納金の支払い要求のメッセージの表示
+	title = destroy.4.name
+	desc = {
+		text = destroy.4.desc_1
+		trigger = {
+			from = { has_country_flag = marauder_1 }
+		}
+	}
+	desc = {
+		text = destroy.4.desc_2
+		trigger = {
+			from = { has_country_flag = marauder_2 }
+		}
+	}
+	desc = {
+		text = destroy.4.desc_3
+		trigger = {
+			from = { has_country_flag = marauder_3 }
+		}
+	}
+	diplomatic = yes
+	picture_event_data = {
+		portrait = from
+		room = "ethic_spaceship_room"
+	}
+	force_open = yes
+
+	# 選択肢の表示
+	option = {
+		name = destroy.4a
+		custom_tooltip = destroy.4a.tooltip
+		hidden_effect = {
+			# 襲撃部隊を撤収する
+			fleet_event = { id = destroy.5 days = 720 }
+
+			# 返答を保留されている月数を初期化する
+			destroy_black_exec_scripted_effect = { EFFECT_NAME = count_clear }
+		}
+	}
+}
+
+#################################################
+# 襲撃部隊の撤収
+# SCOPE: fleet(契約を満了したマローダー艦隊)
+# from: country(契約を満了したマローダー艦隊の所属するマローダー国家)
+#################################################
+fleet_event = {
+	id = destroy.5
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		# 襲撃部隊を撤収する
+		destroy_black_exec_scripted_effect2 = { EFFECT_NAME = delete_fleets }
+	}
+}
+
+#################################################
+# マローダーの契約に答えなかった時のイベント
+# 契約更新イベントを放置したままの状態で、30日毎に発生
+# 契約に答えていなかった場合、無償労働させられた腹いせに
+# 契約国を襲撃するイベントを発火する
+# SCOPE: fleet(契約を満了したマローダー艦隊)
+#################################################
+fleet_event = {
+	id = destroy.11
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		destroy_black_exec_scripted_effect = { EFFECT_NAME = check_on_hold }
+	}
+}
+
+###########################################################
+# 襲撃関連のイベント
+# 契約国を襲撃する部隊を作成し、襲撃させる
+# SCOPE: fleet(契約を満了したマローダー艦隊)
+###########################################################
+fleet_event = {
+	id = destroy.12
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		destroy_black_exec_scripted_effect2 = { EFFECT_NAME = create_fleets }
+	}
+}
+
+###########################################################
+# 襲撃関連のイベント
+# 襲撃時のメッセージを表示する
+# SCOPE: fleet(契約を満了したマローダー艦隊)
+# from : 襲撃艦隊
+# fromfrom : 襲撃先の惑星
+###########################################################
+fleet_event = {
+	id = destroy.13
+	title = destroy.13.name
+	desc = destroy.13.desc
+	picture = GFX_evt_pirate_armada
+	show_sound = event_radio_chatter
+	location = from
+	hide_window = no
+
+	is_triggered_only = yes
+
+	## イベントに出す選択肢
+	option = {
+		name = destroy.13a
+		custom_tooltip = destroy.13a.tooltip
+	}
+}

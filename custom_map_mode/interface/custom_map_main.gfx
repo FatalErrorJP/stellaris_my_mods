@@ -1,0 +1,37 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_map_mode_war"
+		texturefile = "gfx/interface/icons/map_mode_war.dds"
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		name = "GFX_map_mode_fleet"
+		texturefile = "gfx/interface/icons/map_mode_fleet.dds"
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		name = "GFX_map_mode_economy"
+		texturefile = "gfx/interface/icons/map_mode_economy.dds"
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		name = "GFX_map_mode_technology"
+		texturefile = "gfx/interface/icons/map_mode_technology.dds"
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		name = "GFX_map_mode_relative_all"
+		texturefile = "gfx/interface/icons/map_mode_relative_all.dds"
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		name = "GFX_map_mode_fealty"
+		texturefile = "gfx/interface/icons/map_mode_fealty.dds"
+		noOfFrames = 2
+	}
+}

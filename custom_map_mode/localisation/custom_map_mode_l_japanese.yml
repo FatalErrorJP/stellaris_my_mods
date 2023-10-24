@@ -1,0 +1,88 @@
+﻿l_japanese:
+  #################################################################################################
+  # 布告
+  #################################################################################################
+  edict_custom_map_mode_menu:0 "マップモード用パラメータの付与"
+  edict_custom_map_mode_menu_desc:0 "同盟マップ、帝国マップ用のパラメータを再度付与しなおします。色づけが上手くいってない時に利用してください。"
+
+  #################################################################################################
+  # マップモード
+  #################################################################################################
+  # 同盟マップ
+  custom_map_alliance_mode:0 "同盟マップ(MOD)"
+  custom_map_alliance_mode_desc:0 "政治的な連合 (従属国や連邦)を同じ色で表示する。(※最大125色)"
+
+  # 帝国マップ
+  custom_map_empire_mode:0 "帝国マップ(MOD)"
+  custom_map_empire_mode_desc:0 "国境を国家別に色分けして表示する。(※最大125色)"
+
+  # 戦争マップ
+  custom_map_war_mode:0 "戦争マップ"
+  custom_map_war_mode_desc:0 "選択した帝国との戦争状態を表示する。"
+  WAR_MODE_FOE_COUNTRY:0 "§H[Root.GetName]§!は§H[From.GetName]§!と戦争中だ"
+  WAR_MODE_FRIEND_COUNTRY:0 "§H[Root.GetName]§!は§H[From.GetName]§!の味方国として戦争中だ"
+  WAR_MODE_CLOSED_GATEWAY:0 "§H[Root.GetName]§!は§H[From.GetName]§!との国境を閉じている\n強引に通過することは可能だが、§Yゲートウェイ§!と§Yハイパーリレイ§!は使用できないようだ"
+  WAR_MODE_CLOSED_BORDERS:0 "§H[Root.GetName]§!は§H[From.GetName]§!との国境を閉じている"
+  WAR_MODE_NO_WAR:0 "§H[Root.GetName]§!は§H[From.GetName]§!とは戦争をしていないようだ"
+
+  # 国力比較(経済力)
+  custom_map_relative_fleet_mode:0 "国力比較(艦隊戦力)"
+  custom_map_relative_fleet_mode_desc:0 "選択した帝国に対する他国との相対的な艦隊戦力を可視化する。"
+  RELATIVE_FLEET_MODE_UNKNOWN:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する艦隊戦力：§W未知§!"
+  RELATIVE_FLEET_MODE_PATHETIC:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する艦隊戦力：§G悲惨§!"
+  RELATIVE_FLEET_MODE_INFERIOR:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する艦隊戦力：§G劣等§!"
+  RELATIVE_FLEET_MODE_EQUIVALENT:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する艦隊戦力：§Y同等§!"
+  RELATIVE_FLEET_MODE_SUPERIOR:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する艦隊戦力：§H優越§!"
+  RELATIVE_FLEET_MODE_OVERWHELMING:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する艦隊戦力：§R圧倒§!"
+
+  # 国力比較(経済力)
+  custom_map_relative_economy_mode:0 "国力比較(経済力)"
+  custom_map_relative_economy_mode_desc:0 "選択した帝国に対する他国との相対的な経済力を可視化する。"
+  RELATIVE_ECONOMY_MODE_UNKNOWN:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する経済力：§W未知§!"
+  RELATIVE_ECONOMY_MODE_PATHETIC:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する経済力：§G悲惨§!"
+  RELATIVE_ECONOMY_MODE_INFERIOR:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する経済力：§G劣等§!"
+  RELATIVE_ECONOMY_MODE_EQUIVALENT:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する経済力：§Y同等§!"
+  RELATIVE_ECONOMY_MODE_SUPERIOR:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する経済力：§H優越§!"
+  RELATIVE_ECONOMY_MODE_OVERWHELMING:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する経済力：§R圧倒§!"
+
+  # 国力比較(技術水準)
+  custom_map_relative_technology_mode:0 "国力比較(技術水準)"
+  custom_map_relative_technology_mode_desc:0 "選択した帝国に対する他国との相対的な技術水準を可視化する。"
+  RELATIVE_TECHNOLOGY_MODE_UNKNOWN:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する技術水準：§W未知§!"
+  RELATIVE_TECHNOLOGY_MODE_PATHETIC:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する技術水準：§G悲惨§!"
+  RELATIVE_TECHNOLOGY_MODE_INFERIOR:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する技術水準：§G劣等§!"
+  RELATIVE_TECHNOLOGY_MODE_EQUIVALENT:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する技術水準：§Y同等§!"
+  RELATIVE_TECHNOLOGY_MODE_SUPERIOR:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する技術水準：§H優越§!"
+  RELATIVE_TECHNOLOGY_MODE_OVERWHELMING:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する技術水準：§R圧倒§!"
+
+  # 国力比較(総合力)
+  custom_map_relative_all_mode:0 "国力比較(総合)"
+  custom_map_relative_all_mode_desc:0 "選択した帝国に対する他国との相対的な国力を可視化する。"
+  RELATIVE_ALL_MODE_UNKNOWN:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する国力：§W未知§!"
+  RELATIVE_ALL_MODE_PATHETIC:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する国力：§G悲惨§!"
+  RELATIVE_ALL_MODE_INFERIOR:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する国力：§G劣等§!"
+  RELATIVE_ALL_MODE_EQUIVALENT:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する国力：§Y同等§!"
+  RELATIVE_ALL_MODE_SUPERIOR:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する国力：§H優越§!"
+  RELATIVE_ALL_MODE_OVERWHELMING:0 "§H[Root.GetName]§!の§H[From.GetName]§!に対する国力：§R圧倒§!"
+
+  # 忠誠マップ
+  custom_map_fealty_mode:0 "忠誠マップ"
+  custom_map_fealty_mode_desc:0 "宗主国と従属国との忠誠関係を可視化する。"
+
+  FEALTY_MODE_OVERLORD1:0 "§H[From.GetName]§!は宗主国だ"
+  FEALTY_MODE_OVERLORD2:0 "§H[Root.GetName]§!は宗主国だ"
+  FEALTY_MODE_INDEPENDENT:0 "§H[From.GetName]§!は独立国だ"
+
+  FEALTY_MODE_SUBJECT_UNKNOWN:0 "§H[Root.GetName]§!は§H[overlord.GetName]§!の従属国だ\nこの国と宗主国の関係性は不透明だ"
+  FEALTY_MODE_SUBJECT_SECRET:0 "§H[Root.GetName]§!は§H[overlord.GetName]§!の従属国だ\nこの国はどこかの国と秘匿忠誠を結んでいるようだ"
+  FEALTY_MODE_SUBJECT_DISLOYAL:0 "§H[Root.GetName]§!は§H[overlord.GetName]§!の従属国だ\nこの国は宗主国のことをあまり良くは思っていないようだ"
+  FEALTY_MODE_SUBJECT_LOYAL:0 "§H[Root.GetName]§!は§H[overlord.GetName]§!の従属国だ\nこの国は宗主国に忠実だ"
+
+  FEALTY_MODE_SECRET1:0 "§H[Root.GetName]§!は§H[From.GetName]§!に秘匿忠誠を誓っている"
+  FEALTY_MODE_SECRET2:0 "§H[Root.GetName]§!は§H[From.overlord.GetName]§!に秘匿忠誠を誓っている"
+
+  FEALTY_MODE_SECRET_OVERLORD1:0 "§H[Root.GetName]§!の従属国は§H[From.GetName]§!から秘匿忠誠を受けている"
+  FEALTY_MODE_SECRET_OVERLORD2:0 "§H[Root.GetName]§!の従属国は§H[From.overlord.GetName]§!から秘匿忠誠を受けている"
+
+  FEALTY_MODE_SECRET_SUBJECT1:0 "§H[Root.GetName]§!は§H[From.GetName]§!の従属国から秘匿忠誠を受けている"
+  FEALTY_MODE_SECRET_SUBJECT2:0 "§H[Root.GetName]§!は§H[From.overlord.GetName]§!の従属国から秘匿忠誠を受けている"

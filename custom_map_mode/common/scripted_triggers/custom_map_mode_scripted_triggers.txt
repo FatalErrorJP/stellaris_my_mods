@@ -1,0 +1,213 @@
+###########################################################
+# 帝国マップを見やすくしたいMod用のScripted triggers
+###########################################################
+
+#################################################
+# 対象国家かどうかをチェックする
+# SCOPE: COUNTRY
+#################################################
+custom_map_mode_is_target_country = {
+	OR = {
+		is_country_type = default
+		is_country_type = fallen_empire
+		is_country_type = awakened_fallen_empire
+		is_country_type = caravaneer_home
+		is_country_type = dormant_marauders
+		is_country_type = ruined_marauders
+		is_country_type = awakened_marauders
+		is_country_type = swarm
+		is_country_type = feral_prethoryn
+		is_country_type = feral_prethoryn_infighting
+		is_country_type = portal_holder
+		is_country_type = extradimensional
+		is_country_type = extradimensional_2
+		is_country_type = extradimensional_3
+		is_country_type = ai_empire
+		is_country_type = gate_builders
+		is_primitive = yes
+	}
+	is_pirate = no
+}
+
+#################################################
+# 同盟マップの対象カラーのチェック用
+# SCOPE: COUNTRY
+# PARAMETER:
+#  COUNTRY_NUMBER: 帝国マップの管理番号
+#################################################
+custom_map_mode_check_alliance_number = {
+	OR = {
+		# 連邦所属でも従属国でもない場合は、自分自身の値で比較する
+		AND = {
+			has_federation = no
+			is_subject = no
+			check_variable = { which = custom_map_country_number value = $COUNTRY_NUMBER$ }
+		}
+		# 連邦所属の場合は、連邦リーダーの値で比較する
+		AND = {
+			has_federation = yes
+			federation.federation_leader = {
+				check_variable = { which = custom_map_country_number value = $COUNTRY_NUMBER$ }
+			}
+		}
+		# 従属国かつ宗主国が連邦所属でない場合は、宗主国の値で比較する
+		AND = {
+			has_federation = no
+			is_subject = yes
+			overlord = {
+				has_federation = no
+				check_variable = { which = custom_map_country_number value = $COUNTRY_NUMBER$ }
+			}
+		}
+		# 従属国かつ宗主国が連邦所属の場合は、宗主国の所属する連邦リーダーの値で比較する
+		AND = {
+			has_federation = no
+			is_subject = yes
+			overlord = {
+				has_federation = yes
+				federation.federation_leader = {
+					check_variable = { which = custom_map_country_number value = $COUNTRY_NUMBER$ }
+				}
+			}
+		}
+	}
+}
+
+#################################################
+# 相対国力マップの情報値チェック用
+# SCOPE: COUNTRY
+# $TARGET$: 比較対象のCOUNTRY
+#################################################
+# 艦隊戦力
+custom_map_relative_fleet_mode_check_military_intel = {
+	OR = {
+		# militaryの情報値が一定以上ある
+		has_intel_level = { who = $TARGET$ category = military level >= 1 }
+
+		# 銀河守護者
+		AND = {
+			is_galactic_custodian = yes
+			$TARGET$ = { is_galactic_community_member = yes }
+		}
+
+		# 銀河皇帝
+		AND = {
+			is_galactic_emperor = yes
+			$TARGET$ = { is_galactic_community_member = yes }
+		}
+
+		# 防衛協定
+		has_defensive_pact = $TARGET$
+
+		# 軍事同盟
+		has_federation = yes
+		$TARGET$ = {
+			has_federation = yes
+			federation = {
+				is_same_value = prev.prev.federation
+				has_federation_type = military_federation
+			}
+		}
+	}
+}
+
+# 経済力
+custom_map_relative_economy_mode_check_economy_intel = {
+	OR = {
+		# economyの情報値が一定以上ある
+		has_intel_level = { who = $TARGET$ category = economy level >= 1 }
+
+		# 通商条約
+		has_commercial_pact = $TARGET$
+
+		# 通商連合
+		has_federation = yes
+		$TARGET$ = {
+			has_federation = yes
+			federation = {
+				is_same_value = prev.prev.federation
+				has_federation_type = trade_federation
+			}
+		}
+	}
+}
+
+# 研究力
+custom_map_relative_technology_mode_check_technology_intel = {
+	OR = {
+		# technologyの情報値が一定以上ある
+		has_intel_level = { who = $TARGET$ category = technology level >= 1 }
+
+		# 研究協定
+		has_research_agreement = $TARGET$
+
+		# 研究共同体
+		has_federation = yes
+		$TARGET$ = {
+			has_federation = yes
+			federation = {
+				is_same_value = prev.prev.federation
+				has_federation_type = research_federation
+			}
+		}
+	}
+}
+
+# 全体
+custom_map_relative_all_mode_check_intel = {
+	# diplomacyの情報値が一定以上ある
+	has_intel_level = { who = $TARGET$ category = diplomacy level >= 1 }
+}
+
+#################################################
+# 忠誠マップのチェック用
+# SCOPE: COUNTRY
+#################################################
+# 情報値不足
+custom_map_fealty_mode_check_intel_level = {
+	overlord = {
+		is_ai = yes
+		not = { any_subject = { is_ai = no } }
+	}
+	any_country = {
+		is_ai = no
+		OR = {
+			has_intel_level = { who = prev category = diplomacy level < 2 }
+			has_intel_level = { who = $TARGET$ category = diplomacy level < 2 }
+		}
+	}
+}
+
+# 従属国(root)が、どこかの国と秘匿忠誠を結んでいる
+custom_map_fealty_mode_check_secret_fealty = {
+	any_country = {
+		prev = { has_secret_fealty_with = prev }
+		OR = {
+			is_ai = no
+			prev = { is_ai = no }
+			any_country = {
+				is_ai = no
+				OR = {
+					has_intel_level = { who = prevprev category = diplomacy level = 4 }
+					has_intel_level = { who = prev category = diplomacy level = 4 }
+				}
+			}
+		}
+	}
+}
+
+# 宗主国(TARGET)が、どこかの国(root)と秘匿忠誠を結んでいる
+custom_map_fealty_mode_check_secret_fealty_from = {
+	has_secret_fealty_with = $TARGET$
+	OR = {
+		is_ai = no
+		$TARGET$ = { is_ai = no }
+		any_country = {
+			is_ai = no
+			OR = {
+				has_intel_level = { who = prev category = diplomacy level = 4 }
+				has_intel_level = { who = $TARGET$ category = diplomacy level = 4 }
+			}
+		}
+	}
+}

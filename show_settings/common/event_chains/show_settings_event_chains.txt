@@ -1,0 +1,4 @@
+show_settings_game_start_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_engineering.dds"
+	picture = GFX_evt_ship_in_orbit
+}

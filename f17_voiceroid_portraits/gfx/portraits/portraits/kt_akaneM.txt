@@ -1,0 +1,120 @@
+##############################################################
+# 琴葉茜種族用のポートレート定義
+##############################################################
+# 画像、音声ファイルとのリンク設定
+portraits = {
+	akaneM_01 =  { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_01.dds"  }
+	akaneM_02 =  { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_02.dds"  }
+	akaneM_03 =  { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_03.dds"  }
+	akaneM_04 =  { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_04.dds"  }
+	akaneM_05 =  { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_05.dds"  }
+	akaneM_06 =  { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_06.dds"  }
+	akaneM_07 =  { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_07.dds"  }
+	akaneM_08 =  { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_08.dds"  }
+	akaneM_09 =  { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_09.dds"  }
+	akaneM_10 =  { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneM_10.dds"  }
+	akaneMC_01 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_01.dds" }
+	akaneMC_02 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_02.dds" }
+	akaneMC_03 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_03.dds" }
+	akaneMC_04 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_04.dds" }
+	akaneMC_05 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_05.dds" }
+	akaneMC_06 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_06.dds" }
+	akaneMC_07 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_07.dds" }
+	akaneMC_08 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_08.dds" }
+	akaneMC_09 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_09.dds" }
+	akaneMC_10 = { texturefile = "gfx/models/portraits/kotonoha/akaneM/akaneMC_10.dds" }
+}
+
+# 各場面別のポートレート
+portrait_groups = {
+	akaneM = {
+		# デフォルト
+		default = akaneM_01
+
+		# 帝国作成時
+		game_setup = {
+			add = {
+				trigger = { ruler = { OR = { gender = male gender = indeterminable } } }
+				portraits = {
+					akaneM_01 akaneM_02 akaneM_03 akaneM_04 akaneM_05 akaneM_06 akaneM_07 akaneM_08 akaneM_09 akaneM_10
+				}
+			}
+			add = {
+				trigger = { ruler = { OR = { gender = female gender = indeterminable } } }
+				portraits = {
+					akaneMC_01 akaneMC_02 akaneMC_03 akaneMC_04 akaneMC_05 akaneMC_06 akaneMC_07 akaneMC_08 akaneMC_09 akaneMC_10
+				}
+			}
+		}
+
+		# 汎用
+		species = {
+			add = {
+				trigger = {
+					exists = species
+					NOT = { species = { species_gender = female } }
+				}
+				portraits = {
+					akaneM_01 akaneM_02 akaneM_03 akaneM_04 akaneM_05 akaneM_06 akaneM_07 akaneM_08 akaneM_09 akaneM_10
+				}
+			}
+			add = {
+				trigger = {
+					exists = species
+					NOT = { species = { species_gender = male } }
+				}
+				portraits = {
+					akaneMC_01 akaneMC_02 akaneMC_03 akaneMC_04 akaneMC_05 akaneMC_06 akaneMC_07 akaneMC_08 akaneMC_09 akaneMC_10
+				}
+			}
+		}
+
+		# 惑星上のPOP
+		pop = {
+			add = {
+				trigger = { NOT = { species = { species_gender = female } } }
+				portraits = {
+					akaneM_01 akaneM_02 akaneM_03 akaneM_04 akaneM_05 akaneM_06 akaneM_07 akaneM_08 akaneM_09 akaneM_10
+				}
+			}
+			add = {
+				trigger = { NOT = { species = { species_gender = male } } }
+				portraits = {
+					akaneMC_01 akaneMC_02 akaneMC_03 akaneMC_04 akaneMC_05 akaneMC_06 akaneMC_07 akaneMC_08 akaneMC_09 akaneMC_10
+				}
+			}
+		}
+
+		#リーダー
+		leader = {
+			add = {
+				trigger = { OR = { gender = male gender = indeterminable } }
+				portraits = {
+					akaneM_01 akaneM_02 akaneM_03 akaneM_04 akaneM_05 akaneM_06 akaneM_07 akaneM_08 akaneM_09 akaneM_10
+				}
+			}
+			add = {
+				trigger = { OR = { gender = female gender = indeterminable } }
+				portraits = {
+					akaneMC_01 akaneMC_02 akaneMC_03 akaneMC_04 akaneMC_05 akaneMC_06 akaneMC_07 akaneMC_08 akaneMC_09 akaneMC_10
+				}
+			}
+		}
+
+		# 国家元首
+		ruler = {
+			add = {
+				trigger = { OR = { gender = male gender = indeterminable } }
+				portraits = {
+					akaneM_01 akaneM_02 akaneM_03 akaneM_04 akaneM_05 akaneM_06 akaneM_07 akaneM_08 akaneM_09 akaneM_10
+				}
+			}
+			add = {
+				trigger = { OR = { gender = female gender = indeterminable } }
+				portraits = {
+					akaneMC_01 akaneMC_02 akaneMC_03 akaneMC_04 akaneMC_05 akaneMC_06 akaneMC_07 akaneMC_08 akaneMC_09 akaneMC_10
+				}
+			}
+		}
+	}
+}

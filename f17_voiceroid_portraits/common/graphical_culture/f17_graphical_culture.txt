@@ -1,0 +1,7 @@
+no_culture = {
+	fallback = mammalian_01
+	has_city_graphics = no
+	selectable = { always = no }
+	randomized = { always = no }
+	ship_color = yes
+}

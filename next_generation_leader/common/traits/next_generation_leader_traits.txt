@@ -1,0 +1,16 @@
+# 次世代のリーダーの特性
+# この特性を持つリーダーはリーダーの雇用上限に影響しない
+trait_next_generation_leader = {
+	inline_script = {
+		script = trait/icon_specialist
+		CLASS = leader
+		ICON = "GFX_leader_trait_champion_of_the_people"
+		RARITY = common
+		COUNCIL = triggered
+		TIER = none
+	}
+	custom_tooltip_with_modifiers = "trait_next_generation_leader_tooltip"
+	leader_class = { admiral scientist general governor }
+	initial = no
+	randomized = no
+}

@@ -1,0 +1,91 @@
+############################################################
+# ブラック企業を許さないマローダーの会Mod用のScripted effects
+#
+# このファイルは、01_destroy_black_effects.txtで定義した
+# 各Scripted effectsの処理を呼び出すための
+# 前処理用の定義をまとめたファイルとなります。
+#
+# Vanillaや他ModのScripted effectsとの互換性を保つため、
+# 本ModのScripted effectsの名前は必ず頭にdestroy_blackを
+# 付けるようにしています。
+###########################################################
+
+#################################################
+# 任意の本Mod用のScripted Effectsを実行する
+# SCOPE: fleet
+# Parameters:
+#  EFFECT_NAME:実行したいScripted Effectsの名前
+#   initilize_count
+#   check_on_hold
+#   count_clear
+#################################################
+destroy_black_exec_scripted_effect = {
+	if = {
+		limit = { has_fleet_flag = armada_of_the_voidborn }
+		destroy_black_$EFFECT_NAME$ = { FLEETTYPE = armada_of_the_voidborn }
+	} else_if = {
+		limit = { has_fleet_flag = star_rider_flotilla }
+		destroy_black_$EFFECT_NAME$ = { FLEETTYPE = star_rider_flotilla }
+	} else_if = {
+		limit = { has_fleet_flag = first_storm_wing }
+		destroy_black_$EFFECT_NAME$ = { FLEETTYPE = first_storm_wing }
+	} else_if = {
+		limit = { has_fleet_flag = dwamak_bashers }
+		destroy_black_$EFFECT_NAME$ = { FLEETTYPE = dwamak_bashers }
+	} else_if = {
+		limit = { has_fleet_flag = unhinged_screamer_flotilla }
+		destroy_black_$EFFECT_NAME$ = { FLEETTYPE = unhinged_screamer_flotilla }
+	} else_if = {
+		limit = { has_fleet_flag = frenzied_volunteer_squadron }
+		destroy_black_$EFFECT_NAME$ = { FLEETTYPE = frenzied_volunteer_squadron }
+	} else_if = {
+		limit = { has_fleet_flag = her_chosen_champions }
+		destroy_black_$EFFECT_NAME$ = { FLEETTYPE = her_chosen_champions }
+	} else_if = {
+		limit = { has_fleet_flag = order_of_eternal_night }
+		destroy_black_$EFFECT_NAME$ = { FLEETTYPE = order_of_eternal_night }
+	} else_if = {
+		limit = { has_fleet_flag = twilight_congregation }
+		destroy_black_$EFFECT_NAME$ = { FLEETTYPE = twilight_congregation }
+	}
+}
+
+#################################################
+# 任意の本Mod用のScripted Effectsを実行する
+# SCOPE: fleet
+# Parameters:
+#  EFFECT_NAME:実行したいScripted Effectsの名前
+#   call_arrears_event
+#   create_fleets
+#   delete_fleets
+#################################################
+destroy_black_exec_scripted_effect2 = {
+	if = {
+		limit = { has_fleet_flag = armada_of_the_voidborn }
+		destroy_black_$EFFECT_NAME$ = { COUNTRY = marauder_1 FLEETTYPE = armada_of_the_voidborn }
+	} else_if = {
+		limit = { has_fleet_flag = star_rider_flotilla }
+		destroy_black_$EFFECT_NAME$ = { COUNTRY = marauder_1 FLEETTYPE = star_rider_flotilla }
+	} else_if = {
+		limit = { has_fleet_flag = first_storm_wing }
+		destroy_black_$EFFECT_NAME$ = { COUNTRY = marauder_1 FLEETTYPE = first_storm_wing }
+	} else_if = {
+		limit = { has_fleet_flag = dwamak_bashers }
+		destroy_black_$EFFECT_NAME$ = { COUNTRY = marauder_2 FLEETTYPE = dwamak_bashers }
+	} else_if = {
+		limit = { has_fleet_flag = unhinged_screamer_flotilla }
+		destroy_black_$EFFECT_NAME$ = { COUNTRY = marauder_2 FLEETTYPE = unhinged_screamer_flotilla }
+	} else_if = {
+		limit = { has_fleet_flag = frenzied_volunteer_squadron }
+		destroy_black_$EFFECT_NAME$ = { COUNTRY = marauder_2 FLEETTYPE = frenzied_volunteer_squadron }
+	} else_if = {
+		limit = { has_fleet_flag = her_chosen_champions }
+		destroy_black_$EFFECT_NAME$ = { COUNTRY = marauder_3 FLEETTYPE = her_chosen_champions }
+	} else_if = {
+		limit = { has_fleet_flag = order_of_eternal_night }
+		destroy_black_$EFFECT_NAME$ = { COUNTRY = marauder_3 FLEETTYPE = order_of_eternal_night }
+	} else_if = {
+		limit = { has_fleet_flag = twilight_congregation }
+		destroy_black_$EFFECT_NAME$ = { COUNTRY = marauder_3 FLEETTYPE = twilight_congregation }
+	}
+}

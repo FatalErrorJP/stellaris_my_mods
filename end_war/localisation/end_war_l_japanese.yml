@@ -1,0 +1,69 @@
+﻿l_japanese:
+  # 布告
+  edict_locateit_end_war_menu_1:0 "未占領の敵国星系を表示する"
+  edict_locateit_end_war_menu_1_desc:0 "戦争相手国の全ての未占領地域を表示する"
+  edict_locateit_end_war_menu_2:0 "未占領かつ請求中の敵国星系を表示する"
+  edict_locateit_end_war_menu_2_desc:0 "自国及び同盟国が請求している全ての未占領地域を表示する"
+
+  # イベント
+  end_war_menu.1.name:0 "未占領の敵国星系を表示する"
+  end_war_menu.1.desc:0 "どの戦争の未占領地域を表示しますか？"
+  end_war_menu.1.a:0 "[target_war_1.GetName]"
+  end_war_menu.1.a.tooltip:0 "[target_war_1.GetName]の未占領地域を表示する"
+  end_war_menu.1.b:0 "[target_war_2.GetName]"
+  end_war_menu.1.b.tooltip:0 "[target_war_2.GetName]の未占領地域を表示する"
+  end_war_menu.1.c:0 "[target_war_3.GetName]"
+  end_war_menu.1.c.tooltip:0 "[target_war_3.GetName]の未占領地域を表示する"
+  end_war_menu.1.d:0 "[target_war_4.GetName]"
+  end_war_menu.1.d.tooltip:0 "[target_war_4.GetName]の未占領地域を表示する"
+  end_war_menu.1.e:0 "[target_war_5.GetName]"
+  end_war_menu.1.e.tooltip:0 "[target_war_5.GetName]の未占領地域を表示する"
+  end_war_menu.1.f:0 "やっぱりやめる"
+  end_war_menu.1.f.tooltip:0 "未占領地域を表示はしない"
+
+  end_war_menu.2.name:0 "未占領かつ請求中の敵国星系を表示する"
+  end_war_menu.2.desc:0 "どの戦争の未占領地域を表示しますか？"
+  end_war_menu.2.a:0 "[target_war_1.GetName]"
+  end_war_menu.2.a.tooltip:0 "[target_war_1.GetName]の未占領かつ請求中の地域を表示する"
+  end_war_menu.2.b:0 "[target_war_2.GetName]"
+  end_war_menu.2.b.tooltip:0 "[target_war_2.GetName]の未占領かつ請求中の地域を表示する"
+  end_war_menu.2.c:0 "[target_war_3.GetName]"
+  end_war_menu.2.c.tooltip:0 "[target_war_3.GetName]の未占領かつ請求中の地域を表示する"
+  end_war_menu.2.d:0 "[target_war_4.GetName]"
+  end_war_menu.2.d.tooltip:0 "[target_war_4.GetName]の未占領かつ請求中の地域を表示する"
+  end_war_menu.2.e:0 "[target_war_5.GetName]"
+  end_war_menu.2.e.tooltip:0 "[target_war_5.GetName]の未占領かつ請求中の地域を表示する"
+  end_war_menu.2.f:0 "やっぱりやめる"
+  end_war_menu.2.f.tooltip:0 "未占領かつ請求中の地域の表示はしない"
+
+  # スペシャルプロジェクト
+  show_war_unoccupied_systems_chain_title:0 "未占領の敵国星系を確認する"
+  show_war_unoccupied_systems_chain_desc:0 "[From.GetName]の未占領の敵国星系を表示します"
+  SHOW_WAR_UNOCCUPIED_SYSTEMS:0 "[This.GetName]"
+  SHOW_WAR_UNOCCUPIED_SYSTEMS_DESC:0 "[Prev.Prev.GetName]の未占領の星系"
+  CLEAN_WAR_UNOCCUPIED_SYSTEMS:0 "確認を終了する"
+  CLEAN_WAR_UNOCCUPIED_SYSTEMS_DESC:0 "未占領の星系の確認を終了します。"
+
+  show_war_unoccupied_planets_chain_title:0 "未占領の敵国の入植地を表示する"
+  show_war_unoccupied_planets_chain_desc:0 "[From.GetName]の未占領の敵国の入植地を表示します"
+  SHOW_WAR_UNOCCUPIED_PLANETS:0 "[This.GetName]"
+  SHOW_WAR_UNOCCUPIED_PLANETS_DESC:0 "[Prev.Prev.GetName]の未占領の入植地"
+  CLEAN_WAR_UNOCCUPIED_PLANETS:0 "確認を終了する"
+  CLEAN_WAR_UNOCCUPIED_PLANETS_DESC:0 "未占領の入植地の確認を終了します。"
+
+  show_war_unoccupied_claim_systems_chain_title:0 "未占領かつ請求中の敵国星系を確認する"
+  show_war_unoccupied_claim_systems_chain_desc:0 "[From.GetName]の未占領かつ請求中の敵国星系を表示します"
+  SHOW_WAR_UNOCCUPIED_CLAIM_SYSTEMS:0 "[This.GetName]"
+  SHOW_WAR_UNOCCUPIED_CLAIM_SYSTEMS_DESC:0 "[Prev.Prev.GetName]の未占領かつ請求中の星系"
+  CLEAN_WAR_UNOCCUPIED_CLAIM_SYSTEMS:0 "確認を終了する"
+  CLEAN_WAR_UNOCCUPIED_CLAIM_SYSTEMS_DESC:0 "未占領かつ請求中の星系の確認を終了します。"
+
+  show_war_unoccupied_claim_planets_chain_title:0 "未占領かつ請求中の敵国の入植地を表示する"
+  show_war_unoccupied_claim_planets_chain_desc:0 "[From.GetName]の未占領かつ請求中の敵国の入植地を表示します"
+  SHOW_WAR_UNOCCUPIED_CLAIM_PLANETS:0 "[This.GetName]"
+  SHOW_WAR_UNOCCUPIED_CLAIM_PLANETS_DESC:0 "[Prev.Prev.GetName]の未占領かつ請求中の入植地"
+  CLEAN_WAR_UNOCCUPIED_CLAIM_PLANETS:0 "確認を終了する"
+  CLEAN_WAR_UNOCCUPIED_CLAIM_PLANETS_DESC:0 "未占領かつ請求中の入植地の確認を終了します。"
+
+
+

@@ -1,0 +1,12 @@
+﻿l_japanese:
+  # スキル
+  leader_trait_diplomat:0 "外交官"
+  leader_trait_diplomat_desc:0 "§H関係改善活動/関係悪化活動/連邦や銀河共同体への使節の割り当て§!をするためにはこのスキルを持った要員が必要だ。"
+  leader_trait_agent:0 "諜報員"
+  leader_trait_agent_desc:0 "§H諜報網の構築§!をするためにはこのスキルを持った要員が必要だ。"
+
+  # 通知
+  ASSIGNED_MISTAKE_DIPLOMAT_TITLE:0 "外交官でない使節を割り当てた"
+  ASSIGNED_MISTAKE_DIPLOMAT_MESSAGE:0 "外交官ではない使節：$NAME|H$が割り当てられたため、割り当てを解除しました。"
+  ASSIGNED_MISTAKE_AGENT_TITLE:0 "諜報員でない使節を割り当てた"
+  ASSIGNED_MISTAKE_AGENT_MESSAGE:0 "諜報員ではない使節：$NAME|H$が割り当てられたため、割り当てを解除しました。"

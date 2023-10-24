@@ -1,0 +1,606 @@
+#################################################
+# 対象の国の所有する艦隊の名称を変更する
+# 名前はID順(アウトライナー表示順)に連番で作成される
+# ・第○艦隊
+# ・第○連邦艦隊
+# ・第○銀河防衛艦隊
+#
+# SCOPE: country
+#################################################
+rename_fleets = {
+	set_variable = { which = rename_fleets_fleet_num value = 1 }
+	set_variable = { which = rename_fleets_fed_fleet_num value = 1 }
+	set_variable = { which = rename_fleets_gdf_fleet_num value = 1 }
+
+	every_owned_fleet = {
+		# 条件をつけないで取得すると、ID順に取得できる
+		# 条件をつけるとソート順が変わってしまうため、条件式はこの後のIFで確認する
+		limit = {}
+
+		####
+		# 第○艦隊
+		####
+		if = {
+			limit = {
+				has_ship_owner_type = country					# 対象はプレイヤー国家の所有艦のみ(連邦、GDFの設計艦は除外する)
+				is_ship_class = shipclass_military				# 軍艦のみ
+				is_leased = no									# 他国から借りている艦隊は除外する
+				not = { has_fleet_order = merge_fleet_order }	# 合流処理中の艦隊は除外する
+
+				# マローダーから借りている艦隊は除外する
+				NOR = {
+					has_fleet_flag = armada_of_the_voidborn
+					has_fleet_flag = dwamak_bashers
+					has_fleet_flag = her_chosen_champions
+					has_fleet_flag = star_rider_flotilla
+					has_fleet_flag = unhinged_screamer_flotilla
+					has_fleet_flag = order_of_eternal_night
+					has_fleet_flag = first_storm_wing
+					has_fleet_flag = frenzied_volunteer_squadron
+					has_fleet_flag = twilight_congregation
+				}
+
+				# エラーコード解消用
+				prev = { is_variable_set = rename_fleets_fleet_num }
+			}
+
+			# 艦隊名変更
+			set_variable = { which = rename_fleets_fleet_num value = prev.rename_fleets_fleet_num }
+			set_name = {
+				key = "SET_FLEET_NAME"
+				variable_string = "\\[This.GetFleetNumber]"
+			}
+			clear_variable = rename_fleets_fleet_num
+
+			# 艦隊番号を1加算
+			prev = { change_variable = { which = rename_fleets_fleet_num value = 1 } }
+		}
+		####
+		# 第○連邦艦隊
+		####
+		else_if = {
+			limit = {
+				has_ship_owner_type = federation				# 対象は連邦艦隊のみ
+				is_ship_class = shipclass_military				# 軍艦のみ
+				not = { has_fleet_order = merge_fleet_order }	# 合流処理中の艦隊は除外する
+
+				# エラーコード解消用
+				prev = { is_variable_set = rename_fleets_fed_fleet_num }
+			}
+
+			# 艦隊名変更
+			set_variable = { which = rename_fleets_fed_fleet_num value = prev.rename_fleets_fed_fleet_num }
+			set_name = {
+				key = "SET_FED_FLEET_NAME"
+				variable_string = "\\[This.GetFedFleetNumber]"
+			}
+			clear_variable = rename_fleets_fed_fleet_num
+
+			# 艦隊番号を1加算
+			prev = { change_variable = { which = rename_fleets_fed_fleet_num value = 1 } }
+		}
+		####
+		# 第○銀河防衛艦隊
+		####
+		else_if = {
+			limit = {
+				has_ship_owner_type = galactic_community		# 対象はGDF艦隊のみ
+				is_ship_class = shipclass_military				# 軍艦のみ
+				not = { has_fleet_order = merge_fleet_order }	# 合流処理中の艦隊は除外する
+
+				# エラーコード解消用
+				prev = { is_variable_set = rename_fleets_gdf_fleet_num }
+			}
+
+			# 艦隊名変更
+			set_variable = { which = rename_fleets_gdf_fleet_num value = prev.rename_fleets_gdf_fleet_num }
+			set_name = {
+				key = "SET_GDF_FLEET_NAME"
+				variable_string = "\\[This.GetGdfFleetNumber]"
+			}
+			clear_variable = rename_fleets_gdf_fleet_num
+
+			# 艦隊番号を1加算
+			prev = { change_variable = { which = rename_fleets_gdf_fleet_num value = 1 } }
+		}
+	}
+
+	clear_variable = rename_fleets_fleet_num
+	clear_variable = rename_fleets_fed_fleet_num
+	clear_variable = rename_fleets_gdf_fleet_num
+}
+
+#################################################
+# 対象の国の所有する艦隊の名称を、
+# 「艦隊をグループ化したかった」Modの設定に応じて変更する
+#
+# 名前はID順(アウトライナー表示順)に通し番号で作成される
+# (X)の部分はグループ番号
+# ・(X)第○艦隊
+# ・(X)第○連邦艦隊
+# ・(X)第○銀河防衛艦隊
+#
+# SCOPE: country
+#################################################
+rename_grouping_fleets = {
+	set_variable = { which = rename_fleets_fleet_num value = 1 }
+	set_variable = { which = rename_fleets_fed_fleet_num value = 1 }
+	set_variable = { which = rename_fleets_gdf_fleet_num value = 1 }
+
+	every_owned_fleet = {
+		# 条件をつけないで取得すると、ID順に取得できる
+		# 条件をつけるとソート順が変わってしまうため、条件式はこの後のIFで確認する
+		limit = {}
+
+		# 所属グループ確認用の変数が付与されていない艦隊には、予め未所属であることを示す変数を入れておく
+		if = {
+			limit = { not = { is_variable_set = grouping_fleets_fleet_group_num } }
+			set_variable = { which = grouping_fleets_fleet_group_num value = 0 }
+		}
+		if = {
+			limit = { not = { is_variable_set = grouping_fleets_flagship } }
+			set_variable = { which = grouping_fleets_flagship value = 0 }
+		}
+
+		####
+		# 第○艦隊
+		####
+		if = {
+			limit = {
+				has_ship_owner_type = country					# 対象はプレイヤー国家の所有艦のみ(連邦、GDFの設計艦は除外する)
+				is_ship_class = shipclass_military				# 軍艦のみ
+				is_leased = no									# 他国から借りている艦隊は除外する
+				not = { has_fleet_order = merge_fleet_order }	# 合流処理中の艦隊は除外する
+
+				# マローダーから借りている艦隊は除外する
+				NOR = {
+					has_fleet_flag = armada_of_the_voidborn
+					has_fleet_flag = dwamak_bashers
+					has_fleet_flag = her_chosen_champions
+					has_fleet_flag = star_rider_flotilla
+					has_fleet_flag = unhinged_screamer_flotilla
+					has_fleet_flag = order_of_eternal_night
+					has_fleet_flag = first_storm_wing
+					has_fleet_flag = frenzied_volunteer_squadron
+					has_fleet_flag = twilight_congregation
+				}
+
+				# エラーコード解消用
+				prev = { is_variable_set = rename_fleets_fleet_num }
+			}
+
+			set_variable = { which = rename_fleets_fleet_num value = prev.rename_fleets_fleet_num }
+
+			# 旗艦
+			if = {
+				limit = {
+					is_variable_set = grouping_fleets_flagship
+					check_variable = { which = grouping_fleets_flagship value > 0 }
+				}
+				set_name = {
+					key = "SET_FLAGSHIP_FLEET_NAME"
+					variable_string = "\\[This.GetGroupColor]"
+					variable_string = "\\[This.GetGroupNumberIcon]"
+					variable_string = "\\[This.GetFleetNumber]"
+				}
+			}
+			# グループ所属艦
+			else_if = {
+				limit = {
+					check_variable = { which = grouping_fleets_fleet_group_num value > 0 }
+				}
+				set_name = {
+					key = "SET_GROUP_FLEET_NAME"
+					variable_string = "\\[This.GetGroupColor]"
+					variable_string = "\\[This.GetGroupNumberIcon]"
+					variable_string = "\\[This.GetFleetNumber]"
+				}
+			}
+			# その他
+			else = {
+				set_name = {
+					key = "SET_FLEET_NAME"
+					variable_string = "\\[This.GetFleetNumber]"
+				}
+			}
+
+			clear_variable = rename_fleets_fleet_num
+			prev = { change_variable = { which = rename_fleets_fleet_num value = 1 } }
+		}
+		####
+		# 第○連邦艦隊
+		####
+		else_if = {
+			limit = {
+				has_ship_owner_type = federation				# 対象は連邦艦隊のみ
+				is_ship_class = shipclass_military				# 軍艦のみ
+				not = { has_fleet_order = merge_fleet_order }	# 合流処理中の艦隊は除外する
+
+				# エラーコード解消用
+				prev = { is_variable_set = rename_fleets_fed_fleet_num }
+			}
+
+			set_variable = { which = rename_fleets_fed_fleet_num value = prev.rename_fleets_fed_fleet_num }
+
+			# 旗艦
+			if = {
+				limit = {
+					is_variable_set = grouping_fleets_flagship
+					check_variable = { which = grouping_fleets_flagship value > 0 }
+				}
+				set_name = {
+					key = "SET_FLAGSHIP_FED_FLEET_NAME"
+					variable_string = "\\[This.GetGroupColor]"
+					variable_string = "\\[This.GetGroupNumberIcon]"
+					variable_string = "\\[This.GetFedFleetNumber]"
+				}
+			}
+			# グループ所属艦
+			else_if = {
+				limit = {
+					check_variable = { which = grouping_fleets_fleet_group_num value > 0 }
+				}
+				set_name = {
+					key = "SET_GROUP_FED_FLEET_NAME"
+					variable_string = "\\[This.GetGroupColor]"
+					variable_string = "\\[This.GetGroupNumberIcon]"
+					variable_string = "\\[This.GetFedFleetNumber]"
+				}
+			}
+			# その他
+			else = {
+				set_name = {
+					key = "SET_FED_FLEET_NAME"
+					variable_string = "\\[This.GetFedFleetNumber]"
+				}
+			}
+
+			clear_variable = rename_fleets_fed_fleet_num
+			prev = { change_variable = { which = rename_fleets_fed_fleet_num value = 1 } }
+		}
+		####
+		# 第○銀河防衛艦隊
+		####
+		else_if = {
+			limit = {
+				has_ship_owner_type = galactic_community		# 対象はGDF艦隊のみ
+				is_ship_class = shipclass_military				# 軍艦のみ
+				not = { has_fleet_order = merge_fleet_order }	# 合流処理中の艦隊は除外する
+
+				# エラーコード解消用
+				prev = { is_variable_set = rename_fleets_gdf_fleet_num }
+			}
+
+			set_variable = { which = rename_fleets_gdf_fleet_num value = prev.rename_fleets_gdf_fleet_num }
+
+			# 旗艦
+			if = {
+				limit = {
+					is_variable_set = grouping_fleets_flagship
+					check_variable = { which = grouping_fleets_flagship value > 0 }
+				}
+				set_name = {
+					key = "SET_FLAGSHIP_GDF_FLEET_NAME"
+					variable_string = "\\[This.GetGroupColor]"
+					variable_string = "\\[This.GetGroupNumberIcon]"
+					variable_string = "\\[This.GetGdfFleetNumber]"
+				}
+			}
+			# グループ所属艦
+			else_if = {
+				limit = {
+					check_variable = { which = grouping_fleets_fleet_group_num value > 0 }
+				}
+				set_name = {
+					key = "SET_GROUP_GDF_FLEET_NAME"
+					variable_string = "\\[This.GetGroupColor]"
+					variable_string = "\\[This.GetGroupNumberIcon]"
+					variable_string = "\\[This.GetGdfFleetNumber]"
+				}
+			}
+			# その他
+			else = {
+				set_name = {
+					key = "SET_GDF_FLEET_NAME"
+					variable_string = "\\[This.GetGdfFleetNumber]"
+				}
+			}
+
+			clear_variable = rename_fleets_gdf_fleet_num
+			prev = { change_variable = { which = rename_fleets_gdf_fleet_num value = 1 } }
+		}
+	}
+
+	clear_variable = rename_fleets_fleet_num
+	clear_variable = rename_fleets_fed_fleet_num
+	clear_variable = rename_fleets_gdf_fleet_num
+}
+
+
+#################################################
+# 対象の国の所有する艦隊の名称を、
+# 「艦隊をグループ化したかった」Modの設定に応じて変更する
+#
+# 艦隊番号は所属グループ毎に振り直しされ、旗艦が必ず第1艦隊となる
+# 所属艦隊はID順(アウトライナー表示順)で第2艦隊から連番となる
+#
+# (X)の部分はグループ番号
+# ・(X)第○艦隊
+# ・(X)第○連邦艦隊
+# ・(X)第○銀河防衛艦隊
+#
+# SCOPE: country
+#################################################
+rename_grouping_fleets2 = {
+	set_variable = { which = rename_fleets_fleet_num value = 1 }
+	set_variable = { which = rename_fleets_fed_fleet_num value = 1 }
+	set_variable = { which = rename_fleets_gdf_fleet_num value = 1 }
+
+	#############################################
+	# 旗艦の名称を変更する
+	#############################################
+	every_owned_fleet = {
+		limit = {
+			is_ship_class = shipclass_military
+			is_variable_set = grouping_fleets_flagship
+			check_variable = { which = grouping_fleets_flagship value > 0 }
+		}
+
+		####
+		# 第○艦隊
+		####
+		if = {
+			limit = {
+				has_ship_owner_type = country					# 対象はプレイヤー国家の所有艦のみ(連邦、GDFの設計艦は除外する)
+				is_ship_class = shipclass_military				# 軍艦のみ
+				is_leased = no									# 他国から借りている艦隊は除外する
+				not = { has_fleet_order = merge_fleet_order }	# 合流処理中の艦隊は除外する
+
+				# マローダーから借りている艦隊は除外する
+				NOR = {
+					has_fleet_flag = armada_of_the_voidborn
+					has_fleet_flag = dwamak_bashers
+					has_fleet_flag = her_chosen_champions
+					has_fleet_flag = star_rider_flotilla
+					has_fleet_flag = unhinged_screamer_flotilla
+					has_fleet_flag = order_of_eternal_night
+					has_fleet_flag = first_storm_wing
+					has_fleet_flag = frenzied_volunteer_squadron
+					has_fleet_flag = twilight_congregation
+				}
+
+				# エラーコード解消用
+				prev = { is_variable_set = rename_fleets_fleet_num }
+			}
+
+			set_variable = { which = rename_fleets_fleet_num value = prev.rename_fleets_fleet_num }
+			set_name = {
+				key = "SET_FLAGSHIP_FLEET_NAME"
+				variable_string = "\\[This.GetGroupColor]"
+				variable_string = "\\[This.GetGroupNumberIcon]"
+				variable_string = "\\[This.GetFleetNumber]"
+			}
+			clear_variable = rename_fleets_fleet_num
+		}
+		####
+		# 第○連邦艦隊
+		####
+		else_if = {
+			limit = {
+				has_ship_owner_type = federation				# 対象は連邦艦隊のみ
+				is_ship_class = shipclass_military				# 軍艦のみ
+				not = { has_fleet_order = merge_fleet_order }	# 合流処理中の艦隊は除外する
+
+				# エラーコード解消用
+				prev = { is_variable_set = rename_fleets_fed_fleet_num }
+			}
+
+			set_variable = { which = rename_fleets_fed_fleet_num value = prev.rename_fleets_fed_fleet_num }
+			set_name = {
+				key = "SET_FLAGSHIP_FED_FLEET_NAME"
+				variable_string = "\\[This.GetGroupColor]"
+				variable_string = "\\[This.GetGroupNumberIcon]"
+				variable_string = "\\[This.GetFedFleetNumber]"
+			}
+			clear_variable = rename_fleets_fed_fleet_num
+		}
+		####
+		# 第○銀河防衛艦隊
+		####
+		else_if = {
+			limit = {
+				has_ship_owner_type = galactic_community		# 対象はGDF艦隊のみ
+				is_ship_class = shipclass_military				# 軍艦のみ
+				not = { has_fleet_order = merge_fleet_order }	# 合流処理中の艦隊は除外する
+
+				# エラーコード解消用
+				prev = { is_variable_set = rename_fleets_gdf_fleet_num }
+			}
+
+			set_variable = { which = rename_fleets_gdf_fleet_num value = prev.rename_fleets_gdf_fleet_num }
+			set_name = {
+				key = "SET_FLAGSHIP_GDF_FLEET_NAME"
+				variable_string = "\\[This.GetGroupColor]"
+				variable_string = "\\[This.GetGroupNumberIcon]"
+				variable_string = "\\[This.GetGdfFleetNumber]"
+			}
+			clear_variable = rename_fleets_gdf_fleet_num
+		}
+	}
+
+	#############################################
+	# 未所属＆グループ所属艦の名称を変更する
+	#############################################
+	set_variable = { which = loop_counter value = 0 }
+	while = {
+		limit = { check_variable = { which = loop_counter value <= 8 } }
+
+		if = {
+			limit = { check_variable = { which = loop_counter value > 0 } }
+			set_variable = { which = rename_fleets_fleet_num value = 2 }
+			set_variable = { which = rename_fleets_fed_fleet_num value = 2 }
+			set_variable = { which = rename_fleets_gdf_fleet_num value = 2 }
+		}
+
+		every_owned_fleet = {
+			# 条件をつけないで取得すると、ID順に取得できる
+			# 条件をつけるとソート順が変わってしまうため、条件式はこの後のIFで確認する
+			limit = {}
+
+			# 所属グループ確認用の変数が付与されていない艦隊には、予め未所属であることを示す変数を入れておく
+			if = {
+				limit = { not = { is_variable_set = grouping_fleets_fleet_group_num } }
+				set_variable = { which = grouping_fleets_fleet_group_num value = 0 }
+			}
+			if = {
+				limit = { not = { is_variable_set = grouping_fleets_flagship } }
+				set_variable = { which = grouping_fleets_flagship value = 0 }
+			}
+
+			# loop_counterと同じ番号の所属グループの艦隊のみを対象とし、名称変更を実施する
+			if = {
+				limit = {
+					prev = { is_variable_set = loop_counter } # エラーログ対策
+					check_variable = { which = grouping_fleets_flagship value = 0 }
+					check_variable = { which = grouping_fleets_fleet_group_num value = prev.loop_counter }
+				}
+
+				####
+				# 第○艦隊
+				####
+				if = {
+					limit = {
+						has_ship_owner_type = country					# 対象はプレイヤー国家の所有艦のみ(連邦、GDFの設計艦は除外する)
+						is_ship_class = shipclass_military				# 軍艦のみ
+						is_leased = no									# 他国から借りている艦隊は除外する
+						not = { has_fleet_order = merge_fleet_order }	# 合流処理中の艦隊は除外する
+
+						# マローダーから借りている艦隊は除外する
+						NOR = {
+							has_fleet_flag = armada_of_the_voidborn
+							has_fleet_flag = dwamak_bashers
+							has_fleet_flag = her_chosen_champions
+							has_fleet_flag = star_rider_flotilla
+							has_fleet_flag = unhinged_screamer_flotilla
+							has_fleet_flag = order_of_eternal_night
+							has_fleet_flag = first_storm_wing
+							has_fleet_flag = frenzied_volunteer_squadron
+							has_fleet_flag = twilight_congregation
+						}
+
+						# エラーコード解消用
+						prev = { is_variable_set = rename_fleets_fleet_num }
+					}
+
+					set_variable = { which = rename_fleets_fleet_num value = prev.rename_fleets_fleet_num }
+
+					# グループ所属艦
+					if = {
+						limit = {
+							check_variable = { which = grouping_fleets_fleet_group_num value > 0 }
+						}
+						set_name = {
+							key = "SET_GROUP_FLEET_NAME"
+							variable_string = "\\[This.GetGroupColor]"
+							variable_string = "\\[This.GetGroupNumberIcon]"
+							variable_string = "\\[This.GetFleetNumber]"
+						}
+					}
+					# その他
+					else = {
+						set_name = {
+							key = "SET_FLEET_NAME"
+							variable_string = "\\[This.GetFleetNumber]"
+						}
+					}
+
+					clear_variable = rename_fleets_fleet_num
+					prev = { change_variable = { which = rename_fleets_fleet_num value = 1 } }
+				}
+				####
+				# 第○連邦艦隊
+				####
+				else_if = {
+					limit = {
+						has_ship_owner_type = federation				# 対象は連邦艦隊のみ
+						is_ship_class = shipclass_military				# 軍艦のみ
+						not = { has_fleet_order = merge_fleet_order }	# 合流処理中の艦隊は除外する
+
+						# エラーコード解消用
+						prev = { is_variable_set = rename_fleets_fed_fleet_num }
+					}
+
+					set_variable = { which = rename_fleets_fed_fleet_num value = prev.rename_fleets_fed_fleet_num }
+
+					# グループ所属艦
+					if = {
+						limit = {
+							check_variable = { which = grouping_fleets_fleet_group_num value > 0 }
+						}
+						set_name = {
+							key = "SET_GROUP_FED_FLEET_NAME"
+							variable_string = "\\[This.GetGroupColor]"
+							variable_string = "\\[This.GetGroupNumberIcon]"
+							variable_string = "\\[This.GetFedFleetNumber]"
+						}
+					}
+					# その他
+					else = {
+						set_name = {
+							key = "SET_FED_FLEET_NAME"
+							variable_string = "\\[This.GetFedFleetNumber]"
+						}
+					}
+
+					clear_variable = rename_fleets_fed_fleet_num
+					prev = { change_variable = { which = rename_fleets_fed_fleet_num value = 1 } }
+				}
+				####
+				# 第○銀河防衛艦隊
+				####
+				else_if = {
+					limit = {
+						has_ship_owner_type = galactic_community		# 対象はGDF艦隊のみ
+						is_ship_class = shipclass_military				# 軍艦のみ
+						not = { has_fleet_order = merge_fleet_order }	# 合流処理中の艦隊は除外する
+
+						# エラーコード解消用
+						prev = { is_variable_set = rename_fleets_gdf_fleet_num }
+					}
+
+					set_variable = { which = rename_fleets_gdf_fleet_num value = prev.rename_fleets_gdf_fleet_num }
+
+					# グループ所属艦
+					if = {
+						limit = {
+							check_variable = { which = grouping_fleets_fleet_group_num value > 0 }
+						}
+						set_name = {
+							key = "SET_GROUP_GDF_FLEET_NAME"
+							variable_string = "\\[This.GetGroupColor]"
+							variable_string = "\\[This.GetGroupNumberIcon]"
+							variable_string = "\\[This.GetGdfFleetNumber]"
+						}
+					}
+					# その他
+					else = {
+						set_name = {
+							key = "SET_GDF_FLEET_NAME"
+							variable_string = "\\[This.GetGdfFleetNumber]"
+						}
+					}
+
+					clear_variable = rename_fleets_gdf_fleet_num
+					prev = { change_variable = { which = rename_fleets_gdf_fleet_num value = 1 } }
+				}
+			}
+		}
+
+		change_variable = { which = loop_counter value = 1 }
+	}
+
+	clear_variable = rename_fleets_fleet_num
+	clear_variable = rename_fleets_fed_fleet_num
+	clear_variable = rename_fleets_gdf_fleet_num
+	clear_variable = loop_counter
+}

@@ -1,0 +1,10 @@
+version="1.0.0"
+tags={
+	"Balance"
+	"Buildings"
+	"Military"
+}
+name="星系基地の製造コスト削減"
+picture="thumbnail.png"
+supported_version="3.9.*"
+remote_file_id="2759334076"

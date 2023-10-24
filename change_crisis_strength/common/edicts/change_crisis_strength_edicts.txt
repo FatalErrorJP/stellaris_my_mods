@@ -1,0 +1,41 @@
+###############################################################################
+# 布告メニューの項目設定
+###############################################################################
+double_crisis_strength = {
+	length = 1
+	icon = "GFX_resource_menace"
+
+	potential = {
+		is_ai = no
+	}
+
+	effect = {
+		hidden_effect = {
+			multiply_crisis_strength = 2
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+half_crisis_strength = {
+	length = 1
+	icon = "GFX_resource_menace"
+
+	potential = {
+		is_ai = no
+	}
+
+	effect = {
+		hidden_effect = {
+			multiply_crisis_strength = 0.5
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+

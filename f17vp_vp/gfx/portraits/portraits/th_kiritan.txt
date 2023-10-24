@@ -1,0 +1,68 @@
+##############################################################
+# 東北きりたん種族用のポートレート定義
+##############################################################
+# 画像、音声ファイルとのリンク設定
+portraits = {
+	kiritanA_01 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_01.dds" }
+	kiritanA_02 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_02.dds" }
+	kiritanA_03 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_03.dds" }
+	kiritanA_04 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_04.dds" }
+	kiritanA_05 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_05.dds" }
+	kiritanA_06 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_06.dds" }
+	kiritanA_07 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_07.dds" }
+	kiritanA_08 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_08.dds" }
+	kiritanA_09 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_09.dds" }
+}
+
+# 各場面別のポートレート
+portrait_groups = {
+	touhoku_kiritan = {
+		# デフォルト
+		default = kiritanA_01
+
+		# 帝国作成時
+		game_setup = {
+			add = {
+				portraits = {
+					kiritanA_01 kiritanA_02 kiritanA_03 kiritanA_04 kiritanA_05 kiritanA_06 kiritanA_07 kiritanA_08 kiritanA_09
+				}
+			}
+		}
+
+		# 汎用
+		species = {
+			add = {
+				portraits = {
+					kiritanA_01 kiritanA_02 kiritanA_03 kiritanA_04 kiritanA_05 kiritanA_06 kiritanA_07 kiritanA_08 kiritanA_09
+				}
+			}
+		}
+
+		# 惑星上のPOP
+		pop = {
+			add = {
+				portraits = {
+					kiritanA_01 kiritanA_02 kiritanA_03 kiritanA_04 kiritanA_05 kiritanA_06 kiritanA_07 kiritanA_08 kiritanA_09
+				}
+			}
+		}
+
+		#リーダー
+		leader = {
+			add = {
+				portraits = {
+					kiritanA_01 kiritanA_02 kiritanA_03 kiritanA_04 kiritanA_05 kiritanA_06 kiritanA_07 kiritanA_08 kiritanA_09
+				}
+			}
+		}
+
+		# 国家元首
+		ruler = {
+			add = {
+				portraits = {
+					kiritanA_01 kiritanA_02 kiritanA_03 kiritanA_04 kiritanA_05 kiritanA_06 kiritanA_07 kiritanA_08 kiritanA_09
+				}
+			}
+		}
+	}
+}

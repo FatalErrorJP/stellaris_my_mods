@@ -1,0 +1,128 @@
+###############################################
+# バニラのPirate Eventsの修正
+# 海賊発生時に、艦隊を作る代わりに状況イベントを発生させる
+###############################################
+namespace = pirate
+
+# Birth of Space Piracy
+country_event = {
+	id = pirate.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = default
+		NOR = {
+			has_country_flag = birth_of_piracy
+			has_ethic = ethic_gestalt_consciousness
+		}
+		exists = capital_scope
+		any_system_within_border = {
+			has_trade_route = yes
+			trade_intercepted_value > 0
+		}
+	}
+
+	immediate = {
+		country_event = { id = pirate_situation.1 }
+	}
+}
+
+# Birth of Space Piracy (Hive Mind version)
+country_event = {
+	id = pirate.6
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = default
+		NOT = { has_country_flag = birth_of_piracy }
+		exists = capital_scope
+		any_system_within_border = {
+			has_trade_route = yes
+			trade_intercepted_value > 0
+		}
+	}
+
+	immediate = {
+		country_event = { id = pirate_situation.1 }
+	}
+}
+
+# Birth of Space Piracy (Machine version)
+country_event = {
+	id = pirate.7
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = default
+		NOT = { has_country_flag = birth_of_piracy }
+		exists = capital_scope
+		any_system_within_border = {
+			has_trade_route = yes
+			trade_intercepted_value > 0
+		}
+	}
+
+	immediate = {
+		country_event = { id = pirate_situation.1 }
+	}
+}
+
+# Pirates Sighted
+country_event = {
+	id = pirate.50
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = pirate_situation.1 }
+	}
+}
+
+
+# Pirates Sighted (Drones)
+country_event = {
+	id = pirate.53
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = pirate_situation.1 }
+	}
+}
+
+# Pirates Sighted (Non-Drones)
+country_event = {
+	id = pirate.54
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = pirate_situation.1 }
+	}
+}
+
+
+# Pirates Sighted (Machines)
+country_event = {
+	id = pirate.56
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = pirate_situation.1 }
+	}
+}
+
+# Pirates Sighted (Non-Machines)
+country_event = {
+	id = pirate.57
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = pirate_situation.1 }
+	}
+}

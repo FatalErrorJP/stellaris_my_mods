@@ -1,0 +1,233 @@
+# 銀河サイズ
+defined_text = {
+	name = GetGalaxySize
+	text = {
+		trigger = {
+			galaxy_size = tiny
+		}
+		localization_key = tiny
+	}
+	text = {
+		trigger = {
+			galaxy_size = small
+		}
+		localization_key = small
+	}
+	text = {
+		trigger = {
+			galaxy_size = medium
+		}
+		localization_key = medium
+	}
+	text = {
+		trigger = {
+			galaxy_size = large
+		}
+		localization_key = large
+	}
+	text = {
+		trigger = {
+			galaxy_size = huge
+		}
+		localization_key = huge
+	}
+	default = UNKNOWN
+}
+
+# 銀河の形状
+defined_text = {
+	name = GetGalaxyShape
+	text = {
+		trigger = {
+			galaxy_shape = elliptical
+		}
+		localization_key = elliptical
+	}
+	text = {
+		trigger = {
+			galaxy_shape = ring
+		}
+		localization_key = ring
+	}
+	text = {
+		trigger = {
+			galaxy_shape = spiral_2
+		}
+		localization_key = spiral_2
+	}
+	text = {
+		trigger = {
+			galaxy_shape = spiral_3
+		}
+		localization_key = spiral_3
+	}
+	text = {
+		trigger = {
+			galaxy_shape = spiral_4
+		}
+		localization_key = spiral_4
+	}
+	text = {
+		trigger = {
+			galaxy_shape = spiral_6
+		}
+		localization_key = spiral_6
+	}
+	text = {
+		trigger = {
+			galaxy_shape = bar
+		}
+		localization_key = bar
+	}
+	text = {
+		trigger = {
+			galaxy_shape = starburst
+		}
+		localization_key = starburst
+	}
+	text = {
+		trigger = {
+			galaxy_shape = cartwheel
+		}
+		localization_key = cartwheel
+	}
+	text = {
+		trigger = {
+			galaxy_shape = spoked
+		}
+		localization_key = spoked
+	}
+	default = UNKNOWN
+}
+
+# 危機のタイプ
+defined_text = {
+	name = GetAllowedCrisisType
+	text = {
+		trigger = {
+			allowed_crisis_type = all
+		}
+		localization_key = CRISIS_TYPE_ALL
+	}
+	text = {
+		trigger = {
+			allowed_crisis_type = prethoryn
+		}
+		localization_key = CRISIS_TYPE_PRETHORYN
+	}
+	text = {
+		trigger = {
+			allowed_crisis_type = unbidden
+		}
+		localization_key = CRISIS_TYPE_UNBIDDEN
+	}
+	text = {
+		trigger = {
+			allowed_crisis_type = contingency
+		}
+		localization_key = CRISIS_TYPE_CONTINGENCY
+	}
+	default = CRISIS_TYPE_ANY
+}
+
+# 難易度
+defined_text = {
+	name = GetDifficulty
+	text = {
+		trigger = {
+			is_difficulty = 0
+		}
+		localization_key = DIFFICULTY_CIVILIAN
+	}
+	text = {
+		trigger = {
+			is_difficulty = 1
+		}
+		localization_key = DIFFICULTY_CADET
+	}
+	text = {
+		trigger = {
+			is_difficulty = 2
+		}
+		localization_key = DIFFICULTY_ENSIGN
+	}
+	text = {
+		trigger = {
+			is_difficulty = 3
+		}
+		localization_key = DIFFICULTY_CAPTAIN
+	}
+	text = {
+		trigger = {
+			is_difficulty = 4
+		}
+		localization_key = DIFFICULTY_COMMODORE
+	}
+	text = {
+		trigger = {
+			is_difficulty = 5
+		}
+		localization_key = DIFFICULTY_ADMIRAL
+	}
+	text = {
+		trigger = {
+			is_difficulty = 6
+		}
+		localization_key = DIFFICULTY_GRAND_ADMIRAL
+	}
+	default = UNKNOWN
+}
+
+# キャラバン勢力
+defined_text = {
+	name = GetCaravaneersEnabled
+	text = {
+		trigger = {
+			caravaneers_enabled = yes
+		}
+		localization_key = ON
+	}
+	default = OFF
+}
+
+# Lゲート
+defined_text = {
+	name = GetLGateEnabled
+	text = {
+		trigger = {
+			lgate_enabled = yes
+		}
+		localization_key = ON
+	}
+	default = OFF
+}
+
+# 異種族間交配
+defined_text = {
+	name = GetXenoCompatibilityEnabled
+	text = {
+		trigger = {
+			xeno_compatibility_enabled = yes
+		}
+		localization_key = ON
+	}
+	default = OFF
+}
+
+# 鉄人モード
+defined_text = {
+	name = GetIsIronman
+	text = {
+		trigger = {
+			is_ironman = yes
+		}
+		localization_key = ON
+	}
+	default = OFF
+}
+
+# 現在の危機の倍率
+defined_text = {
+	name = GetCrisisStrengthValue
+	value = value:crisis_strength_value
+}

@@ -1,0 +1,23 @@
+# 諜報要員でない要員を諜報に割り当ててしまった場合のメッセージ
+message_type = {
+	key = "ASSIGNED_MISTAKE_AGENT"
+	icon = "GFX_leader_assigned_mistake"
+	icon_frame = 1
+
+	name = "ASSIGNED_MISTAKE_AGENT_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_red"
+}
+
+# 外交官でない要員を外交関連に割り当ててしまった場合のメッセージ
+message_type = {
+	key = "ASSIGNED_MISTAKE_DIPLOMAT"
+	icon = "GFX_leader_assigned_mistake"
+	icon_frame = 1
+
+	name = "ASSIGNED_MISTAKE_DIPLOMAT_TITLE"
+	sound = "notification"
+	auto_opens = none
+	ping = "ping_notification_red"
+}

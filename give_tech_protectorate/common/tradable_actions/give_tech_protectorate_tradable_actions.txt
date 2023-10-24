@@ -1,0 +1,242 @@
+###############################################################################
+# ■宗主国から保護国への技術供与
+#
+# 研究済技術の差が5割以上ある場合のみ結べる協定
+# 研究済技術の差が4割未満になるか、関係が悪化したら協定は破棄される
+#
+# 協定を結んだ場合の影響
+# ・宗主国
+#   影響力:+0.1
+#   研究力補正:-5%
+#
+# ・保護国
+#   研究の選択肢 -1
+#   影響力:-0.5
+#   宗主国への毎月の態度の変化 +1
+#   研究済技術の差が8割以上開いている場合:毎月宗主国からランダムに研究技術を1つ供与される
+#   研究済技術の差が6～8割の場合:毎月宗主国からランダムな研究技術の進捗5割を供与される
+#   研究済技術の差が4～5割の場合:毎月宗主国からランダムな研究技術の進捗3割を供与される
+#
+# 注意)
+#  ai_weightの制御が上手くできなかった関係で以下の2つの処理に分かれている
+#  どちらも内容は上記の通りで変わらない
+# ・trade_action_give_tech_overlord
+# ・trade_action_give_tech_subject
+###############################################################################
+# プレイヤー国家が宗主国の場合の「保護国への技術供与」
+trade_action_give_tech_overlord = {
+	###
+	# 取引を何度もできるかどうか
+	# noの場合は、少なくとも19年以上続く取引の種別となります
+	###
+	fire_and_forget = no
+
+	###
+ 	# 貿易協定にこの取引が表示されるための条件を記載するブロック
+	# SCOPE
+	#   root: 技術共有される側の国(保護国)
+	#   from: 技術供与する側の国(宗主国)
+	###
+	# 宗主国と保護国の関係の時のみ表示
+ 	potential = {
+		from = {
+			is_overlord = yes
+			is_ai = no
+		}
+		not = { has_modifier = give_tech_overlord }
+		is_subject = yes
+		overlord = {
+			is_same_value = from
+		}
+		can_copy_random_tech_from = { who = overlord }
+		any_agreement = { agreement_preset = preset_protectorate }
+		tech_unlocked_ratio = { who = overlord ratio < 0.5 }
+ 	}
+
+	####
+	# fire_and_forget = noの時のみ有効となるブロック
+	# この条件を満たさなくなると、強制的に取引が失効されます。
+	# SCOPE
+	#   root: 技術共有される側の国(保護国)
+	#   from: 技術供与する側の国(宗主国)
+	####
+	active = {
+		from = { is_overlord = yes }
+		is_subject = yes
+		overlord = {
+			is_same_value = from
+		}
+		is_loyal_to = overlord
+		can_copy_random_tech_from = { who = overlord }
+		any_agreement = { agreement_preset = preset_protectorate }
+		tech_unlocked_ratio = { who = overlord ratio < 0.6 }
+	}
+
+	####
+	# 取引が受け入れられた時に発生するイベントを記載するブロック
+	# SCOPE
+	#   root: 技術共有される側の国(保護国)
+	#   from: 技術供与する側の国(宗主国)
+	####
+	# 専用の帝国補正を付与する
+	on_traded_effect = {
+		custom_tooltip = trade_action_give_tech_tooltip_from
+		from = {
+			add_modifier = { modifier = give_tech_overlord }
+		}
+
+		custom_tooltip = trade_action_give_tech_tooltip_lf
+
+		custom_tooltip = trade_action_give_tech_tooltip_root
+		add_modifier = { modifier = give_tech_subject }
+		custom_tooltip = trade_action_give_tech_tooltip
+	}
+
+	####
+	# 取引終了時に発生するイベントを記載する技術供与する側のブロック
+	# SCOPE
+	#   root: 技術共有される側の国(保護国)
+	#   from: 技術供与する側の国(宗主国) ※保護国が滅んだときも発生する可能性があるため、fromは使えない場合もあり
+	####
+	# 宗主国側のパラメータと補正を削除する
+	on_deal_ended_sender_effect = {
+		remove_modifier = give_tech_subject
+	}
+
+	####
+	# 取引終了時に発生するイベントを記載する技術供与される側のブロック
+	# SCOPE
+	#   root: 技術供与する側の国(宗主国)
+	#   from: 技術共有される側の国(保護国) ※宗主国が滅んだときも発生する可能性があるため、fromは使えない場合もあり
+	####
+	# 宗主国側のパラメータと補正を削除する
+	on_deal_ended_recipient_effect = {
+		remove_modifier = give_tech_overlord
+	}
+
+	####
+	# AIの受け入れの補正値を記述する
+	# SCOPE
+	#   root: 技術共有される側の国(保護国)
+	#   from: 技術供与する側の国(宗主国)
+	###
+	ai_weight = {
+		weight = 2
+		modifier = {
+			weight = 1000
+			from = { has_modifier = give_tech_overlord }
+		}
+		modifier = {
+			weight = 1000
+			is_disloyal_to = from
+		}
+	}
+}
+
+# プレイヤー国家が従属国の場合の「保護国への技術供与」
+trade_action_give_tech_subject = {
+	###
+	# 取引を何度もできるかどうか
+	# noの場合は、少なくとも19年以上続く取引の種別となります
+	###
+	fire_and_forget = no
+
+	###
+	# 貿易協定にこの取引が表示されるための条件を記載するブロック
+	# SCOPE
+	#   root: 技術供与する側の国(宗主国)
+	#   from: 技術共有される側の国(保護国)
+	###
+	# 宗主国と保護国の関係の時のみ表示
+	potential = {
+		is_overlord = yes
+		not = { has_modifier = give_tech_overlord }
+		from = {
+			is_ai = no
+			is_subject = yes
+			overlord = {
+				is_same_value = root
+			}
+			any_agreement = { agreement_preset = preset_protectorate }
+			tech_unlocked_ratio = { who = overlord ratio < 0.5 }
+		}
+	}
+
+	####
+	# fire_and_forget = noの時のみ有効となるブロック
+	# この条件を満たさなくなると、強制的に取引が失効されます。
+	# SCOPE
+	#   root: 技術供与する側の国(宗主国)
+	#   from: 技術共有される側の国(保護国)
+	####
+	active = {
+		is_overlord = yes
+		from = {
+			is_subject = yes
+			overlord = {
+				is_same_value = root
+			}
+			is_loyal_to = overlord
+			any_agreement = { agreement_preset = preset_protectorate }
+			tech_unlocked_ratio = { who = overlord ratio < 0.6 }
+		}
+	}
+
+	####
+	# 取引が受け入れられた時に発生するイベントを記載するブロック
+	# SCOPE
+	#   root: 技術供与する側の国(宗主国)
+	#   from: 技術共有される側の国(保護国)
+	####
+	# 専用の帝国補正を付与する
+	on_traded_effect = {
+		custom_tooltip = trade_action_give_tech_tooltip_root
+		add_modifier = { modifier = give_tech_overlord }
+
+		custom_tooltip = trade_action_give_tech_tooltip_lf
+
+		custom_tooltip = trade_action_give_tech_tooltip_from
+		from = { add_modifier = { modifier = give_tech_subject } }
+		custom_tooltip = trade_action_give_tech_tooltip
+	}
+
+	####
+	# 取引終了時に発生するイベントを記載する技術供与する側のブロック
+	# SCOPE
+	#   root: 技術供与する側の国(宗主国)
+	#   from: 技術共有される側の国(保護国) ※保護国が滅んだときも発生する可能性があるため、fromは使えない場合もあり
+	####
+	# 宗主国側のパラメータと補正を削除する
+	on_deal_ended_sender_effect = {
+		remove_modifier = give_tech_overlord
+	}
+
+	####
+	# 取引終了時に発生するイベントを記載する技術供与される側のブロック
+	# SCOPE
+	#   root: 技術共有される側の国(保護国)
+	#   from: 技術供与する側の国(宗主国) ※宗主国が滅んだときも発生する可能性があるため、fromは使えない場合もあり
+	####
+	# 宗主国側のパラメータと補正を削除する
+	on_deal_ended_recipient_effect = {
+		remove_modifier = give_tech_subject
+	}
+
+	####
+	# AIの受け入れの補正値を記述する
+	# SCOPE
+	#   root: 技術供与する側の国(宗主国)
+	#   from: 技術共有される側の国(保護国)
+	###
+	ai_weight = {
+		weight = 10
+		modifier = {
+			weight = 1000
+			has_modifier = give_tech_overlord
+		}
+		modifier = {
+			weight = 1000
+			from = { is_disloyal_to = root }
+		}
+	}
+}

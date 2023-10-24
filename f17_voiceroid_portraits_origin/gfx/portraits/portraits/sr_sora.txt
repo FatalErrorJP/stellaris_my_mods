@@ -1,0 +1,279 @@
+﻿character = {
+	size = { x = 472 y = 324 }
+
+	entity = {
+		orientation = center_down
+		position = { x = 50 y = -20 }
+		scale = 24
+	}
+	#2d Portrait position
+	icon = {
+		orientation = center_down
+		position = { x = 0 y = 0 }
+		scale = 1.0
+	}
+}
+
+portraits = {
+	
+	sora_01 = { texturefile = "gfx/models/portraits/sora/sora_01.dds" }
+	sora_02 = { texturefile = "gfx/models/portraits/sora/sora_02.dds" }
+	sora_03 = { texturefile = "gfx/models/portraits/sora/sora_03.dds" }
+	sora_04 = { texturefile = "gfx/models/portraits/sora/sora_04.dds" }
+	sora_05 = { texturefile = "gfx/models/portraits/sora/sora_05.dds" }
+	sora_06 = { texturefile = "gfx/models/portraits/sora/sora_06.dds" }
+	sora_07 = { texturefile = "gfx/models/portraits/sora/sora_07.dds" }
+	sora_08 = { texturefile = "gfx/models/portraits/sora/sora_08.dds" }
+	sora_09 = { texturefile = "gfx/models/portraits/sora/sora_09.dds" }
+	sora_10 = { texturefile = "gfx/models/portraits/sora/sora_10.dds" }
+	sora_11 = { texturefile = "gfx/models/portraits/sora/sora_11.dds" }
+	sora_12 = { texturefile = "gfx/models/portraits/sora/sora_12.dds" }
+	sora_13 = { texturefile = "gfx/models/portraits/sora/sora_13.dds" }
+	sora_14 = { texturefile = "gfx/models/portraits/sora/sora_14.dds" }
+	sora_15 = { texturefile = "gfx/models/portraits/sora/sora_15.dds" }
+	soraN_01 = { texturefile = "gfx/models/portraits/sora/soraN_01.dds" }
+	soraN_02 = { texturefile = "gfx/models/portraits/sora/soraN_02.dds" }
+	soraN_03 = { texturefile = "gfx/models/portraits/sora/soraN_03.dds" }
+	soraN_04 = { texturefile = "gfx/models/portraits/sora/soraN_04.dds" }
+	soraN_05 = { texturefile = "gfx/models/portraits/sora/soraN_05.dds" }
+	soraN_06 = { texturefile = "gfx/models/portraits/sora/soraN_06.dds" }
+	soraN_07 = { texturefile = "gfx/models/portraits/sora/soraN_07.dds" }
+	soraN_08 = { texturefile = "gfx/models/portraits/sora/soraN_08.dds" }
+	soraN_09 = { texturefile = "gfx/models/portraits/sora/soraN_09.dds" }
+	soraN_10 = { texturefile = "gfx/models/portraits/sora/soraN_10.dds" }
+	soraN_11 = { texturefile = "gfx/models/portraits/sora/soraN_11.dds" }
+	soraN_12 = { texturefile = "gfx/models/portraits/sora/soraN_12.dds" }
+	soraN_13 = { texturefile = "gfx/models/portraits/sora/soraN_13.dds" }
+	soraN_14 = { texturefile = "gfx/models/portraits/sora/soraN_14.dds" }
+	soraC_01 = { texturefile = "gfx/models/portraits/sora/soraC_01.dds" }
+	soraC_02 = { texturefile = "gfx/models/portraits/sora/soraC_02.dds" }
+	soraC_03 = { texturefile = "gfx/models/portraits/sora/soraC_03.dds" }
+	soraC_04 = { texturefile = "gfx/models/portraits/sora/soraC_04.dds" }
+	soraC_05 = { texturefile = "gfx/models/portraits/sora/soraC_05.dds" }
+	soraC_06 = { texturefile = "gfx/models/portraits/sora/soraC_06.dds" }
+	soraC_07 = { texturefile = "gfx/models/portraits/sora/soraC_07.dds" }
+	soraC_08 = { texturefile = "gfx/models/portraits/sora/soraC_08.dds" }
+	soraC_09 = { texturefile = "gfx/models/portraits/sora/soraC_09.dds" }
+	soraC_10 = { texturefile = "gfx/models/portraits/sora/soraC_10.dds" }
+	soraC_11 = { texturefile = "gfx/models/portraits/sora/soraC_11.dds" }
+	soraC_12 = { texturefile = "gfx/models/portraits/sora/soraC_12.dds" }
+	soraC_13 = { texturefile = "gfx/models/portraits/sora/soraC_13.dds" }
+	soraC_14 = { texturefile = "gfx/models/portraits/sora/soraC_14.dds" }
+}
+
+portrait_groups = {
+	sora = {
+		default = sora_01
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					sora_01
+					sora_02
+					sora_03
+					sora_04
+					sora_05
+					sora_06
+					sora_07
+					sora_08
+					sora_09
+					sora_10
+					sora_11
+					sora_12
+					sora_13
+					sora_14
+					sora_15
+
+				}
+			}
+
+		}
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					sora_01
+					sora_02
+					sora_03
+					sora_04
+					sora_05
+					sora_06
+					sora_07
+					sora_08
+					sora_09
+					sora_10
+					sora_11
+					sora_12
+					sora_13
+					sora_14
+					sora_15
+				}
+			}
+		}		
+		
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					sora_01
+					sora_02
+					sora_03
+					sora_04
+					sora_05
+					sora_06
+					sora_07
+					sora_08
+					sora_09
+					sora_10
+					sora_11
+					sora_12
+					sora_13
+					sora_14
+					sora_15
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			
+			add = {
+				trigger = {
+					leader_class = governor
+				}
+				portraits = {
+					sora_01
+					sora_02
+					sora_03
+					sora_04
+					sora_05
+					sora_06
+					sora_07
+					sora_08
+					sora_09
+					sora_10
+					sora_11
+					sora_12
+					sora_13
+					sora_14
+					sora_15
+					soraN_01
+					soraN_02
+					soraN_03
+					soraN_04
+					soraN_05
+					soraN_06
+					soraN_07
+					soraN_08
+					soraN_09
+					soraN_10
+					soraN_11
+					soraN_12
+					soraN_13
+					soraN_14
+					soraC_01
+					soraC_02
+					soraC_03
+					soraC_04
+					soraC_05
+					soraC_06
+					soraC_07
+					soraC_08
+					soraC_09
+					soraC_10
+					soraC_11
+					soraC_12
+					soraC_13
+					soraC_14
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = scientist
+				}
+				portraits = {
+					soraN_01
+					soraN_02
+					soraN_03
+					soraN_04
+					soraN_05
+					soraN_06
+					soraN_07
+					soraN_08
+					soraN_09
+					soraN_10
+					soraN_11
+					soraN_12
+					soraN_13
+					soraN_14
+
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = admiral
+				}
+				portraits = {
+					soraC_01
+					soraC_02
+					soraC_03
+					soraC_04
+					soraC_05
+					soraC_06
+					soraC_07
+					soraC_08
+					soraC_09
+					soraC_10
+					soraC_11
+					soraC_12
+					soraC_13
+					soraC_14
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = general
+				}
+				portraits = {
+					soraC_01
+					soraC_02
+					soraC_03
+					soraC_04
+					soraC_05
+					soraC_06
+					soraC_07
+					soraC_08
+					soraC_09
+					soraC_10
+					soraC_11
+					soraC_12
+					soraC_13
+					soraC_14
+				}
+			}
+		}
+		
+		#leader scope 
+		ruler = {
+			add = {
+			    	portraits = {
+					sora_01
+					sora_02
+					sora_03
+					sora_04
+					sora_05
+					sora_06
+					sora_07
+					sora_08
+					sora_09
+					sora_10
+					sora_11
+					sora_12
+					sora_13
+					sora_14
+					sora_15
+				}
+			}
+
+		}
+	}

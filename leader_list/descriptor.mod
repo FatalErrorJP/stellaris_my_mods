@@ -1,0 +1,9 @@
+version="1.0.0"
+tags={
+	"Fixes"
+	"Graphics"
+	"Overhaul"
+}
+name="リーダー一覧を見やすくしたい"
+supported_version="3.9.*"
+remote_file_id="2975111400"

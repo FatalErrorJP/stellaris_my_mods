@@ -1,0 +1,59 @@
+add_leader_years = {
+	if = {
+		limit = { not = { is_variable_set = leader_years_$LEADER_CLASS$ } }
+		set_variable = { which = leader_years_$LEADER_CLASS$ value = 0 }
+	}
+	prev = {
+		change_variable = { which = leader_years_$LEADER_CLASS$  value = from.leader_years }
+	}
+}
+
+add_leader_bounus = {
+	if = {
+		limit = { check_variable = { which = leader_years_$LEADER_CLASS$ value >= 1350 } }
+		set_variable = { which = add_level value = 9 }
+	} else_if = {
+		limit = { check_variable = { which = leader_years_$LEADER_CLASS$ value >= 1100 } }
+		set_variable = { which = add_level value = 8 }
+	} else_if = {
+		limit = { check_variable = { which = leader_years_$LEADER_CLASS$ value >= 875 } }
+		set_variable = { which = add_level value = 7 }
+	} else_if = {
+		limit = { check_variable = { which = leader_years_$LEADER_CLASS$ value >= 675 } }
+		set_variable = { which = add_level value = 6 }
+	} else_if = {
+		limit = { check_variable = { which = leader_years_$LEADER_CLASS$ value >= 500 } }
+		set_variable = { which = add_level value = 5 }
+	} else_if = {
+		limit = { check_variable = { which = leader_years_$LEADER_CLASS$ value >= 350 } }
+		set_variable = { which = add_level value = 4 }
+	} else_if = {
+		limit = { check_variable = { which = leader_years_$LEADER_CLASS$ value >= 225 } }
+		set_variable = { which = add_level value = 3 }
+	} else_if = {
+		limit = { check_variable = { which = leader_years_$LEADER_CLASS$ value >= 125 } }
+		set_variable = { which = add_level value = 2 }
+	} else = {
+		set_variable = { which = add_level value = 1 }
+	}
+
+	from = {
+		while = {
+			count = prev.add_level
+			if = {
+				limit = {
+					has_skill < 10
+					has_skill >= 4
+				}
+				add_skill_without_trait_selection = 1
+			} else_if = {
+				limit = {
+					has_skill < 4
+				}
+				add_skill = 1
+			}
+		}
+	}
+
+	clear_variable = add_level
+}

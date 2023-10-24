@@ -1,0 +1,6 @@
+# No scope, like on_game_start
+on_monthly_pulse = {
+	events = {
+		robot_integration.1
+	}
+}
