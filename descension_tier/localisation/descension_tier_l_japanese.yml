@@ -1,2 +1,3 @@
 ﻿l_japanese:
   PLANET_ASCENSION_TIER_DOWNGRADE:0 "§Hアセンション・ティアのダウングレード§!"
+  BUILDINGS_TOOLTIP_TEXT:0 "建造物スロット数: §G+[This.PlanetMaxBuildings]§!\n空きスロット数: §G[This.FreeBuildingsSlots]§!"

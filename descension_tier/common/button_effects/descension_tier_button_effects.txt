@@ -40,3 +40,23 @@ descension_tier_btn = {
 		}
 	}
 }
+
+#####
+# 建造物スロットの数
+#####
+buildings_tooltip_btn = {
+	potential = {
+		is_scope_type = planet
+		exists = from
+		from = {
+			is_scope_type = country
+		}
+		has_owner = yes
+		is_colony = yes
+		is_under_colonization = no
+	}
+	allow = {}
+	effect = {
+		custom_tooltip = "BUILDINGS_TOOLTIP_TEXT"
+	}
+}

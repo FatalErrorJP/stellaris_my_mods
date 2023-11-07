@@ -1285,6 +1285,20 @@ guiTypes = {
 						format = left
 						orientation = upper_left
 					}
+
+					###################################################
+					# ここから、Mod追加コード
+					###################################################
+					effectButtonType  = {
+						name ="buildings_tooltip_btn"
+						quadTextureSprite = "GFX_tiled_window_transparent"
+						position = { x = 10 y = 12 }
+						orientation = "UPPER_LEFT"
+						effect = "buildings_tooltip_btn"
+					}
+					###################################################
+					# ここまで、Mod追加コード
+					###################################################
 				}
 
 				gridBoxType = {
