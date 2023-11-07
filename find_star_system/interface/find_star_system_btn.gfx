@@ -192,6 +192,12 @@ spriteTypes = {
 		texturefile = "gfx/interface/icons/find_toxic_terraforming_candidate_btn.dds"
 		noOfFrames = 3
 	}
+	# 軌道上居住地建造候補の星系
+	spriteType = {
+		name = "GFX_find_habitat_system_btn"
+		texturefile = "gfx/interface/icons/find_habitat_system_btn.dds"
+		noOfFrames = 3
+	}
 
 	####
 	# 入植済惑星

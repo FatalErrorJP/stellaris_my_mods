@@ -1,0 +1,63 @@
+# 軌道上居住地生成に適しているかのポイント付け
+habitats_points = {
+	base = 0
+
+	# 星系内の惑星数
+	complex_trigger_modifier = {
+		trigger = num_planets_in_system
+		mode = add
+		mult = 0.5
+	}
+
+	# 反応炉&宇宙採掘軌道の候補となる惑星数
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				OR = {
+					has_resource = energy
+					has_resource = minerals
+					has_resource = alloys
+				}
+				has_any_megastructure = no
+			}
+		}
+		mode = add
+		mult = 1
+	}
+
+	# 無重力研究軌道の候補となる惑星数
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				OR = {
+					has_resource = physics_research
+					has_resource = society_research
+					has_resource = engineering_research
+					has_resource = unity
+				}
+				has_any_megastructure = no
+			}
+		}
+		mode = add
+		mult = 3
+	}
+
+	# 戦略資源の職業枠の増える候補となる惑星数
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		parameters = {
+			limit = {
+				OR = {
+					has_resource = volatile_motes
+					has_resource = exotic_gases
+					has_resource = rare_crystals
+				}
+				has_any_megastructure = no
+			}
+		}
+		mode = add
+		mult = 2
+	}
+}

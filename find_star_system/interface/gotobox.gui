@@ -456,6 +456,14 @@ guiTypes = {
 			orientation = "UPPER_LEFT"
 			effect = "find_toxic_terraforming_candidate_btn"
 		}
+		# 軌道上居住地建造候補の星系
+		effectButtonType  = {
+			name ="find_habitat_system_btn"
+			quadTextureSprite = "GFX_find_habitat_system_btn"
+			position = { x = 660 y = 225 }
+			orientation = "UPPER_LEFT"
+			effect = "find_habitat_system_btn"
+		}
 
 		####
 		# 入植済惑星

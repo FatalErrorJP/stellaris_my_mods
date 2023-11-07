@@ -48,6 +48,7 @@
   TOOLTIP_FIND_TERRAFORMING_CANDIDATE_BTN:0 "§H自国内のテラフォーム候補惑星§!を検索する"
   TOOLTIP_FIND_FROZEN_TERRAFORMING_CANDIDATE_BTN:0 "§H自国内の凍結したテラフォーム候補惑星§!を検索する\n※テラフォームするためには§H$ap_hydrocentric$§!のアセンションパークが必要"
   TOOLTIP_FIND_TOXIC_TERRAFORMING_CANDIDATE_BTN:0 "§H自国内の有毒なテラフォーム候補惑星§!を検索する\n※テラフォームするためには§H$ap_detox$§!のアセンションパークが必要"
+  TOOLTIP_FIND_HABITAT_SYSTEM_BTN:0 "§H自国内の一定以上の基準(※)を満たした軌道上居住地建造候補の星系§!を検索する\n※(星系内の恒星、惑星、小惑星等の合計数) * 0.5 + (反応炉&宇宙採掘軌道の扱いになる惑星数) + (無重力研究軌道の扱いになる惑星数) * 3 + (戦略資源の職業枠の増える扱いになる惑星数) * 2 >= 18"
 
   TOOLTIP_FIND_COLONY_MOTE_HARVESTERS_BTN:0 "§H自国内の粉末採取用トラップ§!を建設済/建設可能な入植済惑星を検索する"
   TOOLTIP_FIND_COLONY_GAS_EXTRACTORS_BTN:0 "§H自国内のガス抽出井§!を建設済/建設可能な入植済惑星を検索する"
@@ -150,6 +151,8 @@
   FOUND_FROZEN_TERRAFORMING_CANDIDATE_MESSAGE:0 "凍結したテラフォーム候補惑星：$PLANET|H$\n星系：$SYSTEM|H$"
   FOUND_TOXIC_TERRAFORMING_CANDIDATE_TITLE:0 "検索条件：有毒なテラフォーム候補惑星"
   FOUND_TOXIC_TERRAFORMING_CANDIDATE_MESSAGE:0 "有毒なテラフォーム候補惑星：$PLANET|H$\n星系：$SYSTEM|H$"
+  FOUND_HABITAT_SYSTEM_TITLE:0 "検索条件：自国内の軌道上居住地建造候補の星系"
+  FOUND_HABITAT_SYSTEM_MESSAGE:0 "軌道上居住地建造候補の星系：$SYSTEM|H$\nスコア：$SCORE|H$"
 
   FOUND_GALACTIC_MARKET_TITLE:0 "検索条件：銀河市場の開催先の惑星"
   FOUND_GALACTIC_MARKET_MESSAGE:0 "銀河市場の開催先の惑星：$PLANET|H$\n星系：$SYSTEM|H$"
