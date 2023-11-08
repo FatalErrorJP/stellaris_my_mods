@@ -1,7 +1,14 @@
+on_game_start_country = {
+	events = {
+		ship_design.11 # 対ミサイルコルベット級コルベット
+	}
+}
+
 # A country has increased the level of a tech, use last_increased_tech trigger to check tech and level.
 # This = Country
 on_tech_increased = {
 	events = {
+		ship_design.11  # 対ミサイルコルベット級コルベット
 		ship_design.114 # 対招かれざるもの級巡洋艦
 		ship_design.115 # 対招かれざるもの級戦艦
 		ship_design.215 # 対プレスリン級戦艦

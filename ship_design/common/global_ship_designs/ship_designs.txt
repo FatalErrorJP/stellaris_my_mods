@@ -1,4 +1,54 @@
 #####################################################################
+# 対AI
+#####################################################################
+# 対ミサイルコルベット級コルベット
+ship_design = {
+	name = "NAME_ANTI_MISSILE_CORVETTE"
+	ship_size = corvette
+	upgrade_ship_components = yes
+
+	section = {
+		template = "CORVETTE_MID_S2PD1"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "POINT_DEFENCE_1"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_RED_LASER"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_MASS_DRIVER_1"
+		}
+
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_ARMOR_1"
+		}
+
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_ARMOR_1"
+		}
+
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_SHIELD_1"
+		}
+	}
+
+	required_component="CORVETTE_FISSION_REACTOR"
+	required_component="HYPER_DRIVE_1"
+	required_component="SHIP_THRUSTER_1"
+	required_component="SENSOR_1"
+	required_component="COMBAT_COMPUTER_SWARM_DEFAULT"
+}
+
+
+#####################################################################
 # 対招かれざるもの
 #####################################################################
 # 対招かれざるもの級巡洋艦

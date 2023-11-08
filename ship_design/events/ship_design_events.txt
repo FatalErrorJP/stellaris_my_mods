@@ -8,6 +8,7 @@ namespace = ship_design
 # イベント番号はship_design.abcというように3桁で表現する
 #
 # a:役割
+# 0:対AI ※0は省略する
 # 1:対招かれざるもの
 # 2:対プレスリン
 # 3:対コンティンジェンシー
@@ -25,6 +26,33 @@ namespace = ship_design
 # 5:戦艦
 # 6:タイタン
 ###########################################################
+# 対ミサイルコルベット級コルベット
+country_event = {
+	id = ship_design.11
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		not = { has_country_flag = anti_missile_corvette_design }
+		has_technology = tech_corvettes
+		has_technology = tech_pd_tracking_1
+		has_technology = tech_lasers_1
+		has_technology = tech_mass_drivers_1
+		has_technology = tech_ship_armor_1
+		has_technology = tech_shields_1
+
+		has_technology = tech_fission_power
+		has_technology = tech_hyper_drive_1
+		has_technology = tech_thrusters_1
+	}
+
+	immediate = {
+		create_ship_design = { design = "NAME_ANTI_MISSILE_CORVETTE" }
+		add_ship_design = last_created_design
+		set_country_flag = anti_missile_corvette_design
+	}
+}
 
 # 対招かれざるもの級巡洋艦
 country_event = {
