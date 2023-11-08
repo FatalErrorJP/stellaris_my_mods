@@ -253,17 +253,6 @@ message_type = {
 	auto_opens = none
 	ping = "ping_notification_green"
 }
-# アップグレード可能な自国内の巨大建造物
-message_type = {
-	key = "FOUND_UPGRADABLE_MEGASTRUCTURE"
-	icon = "GFX_message_event_completion"
-	icon_frame = 1
-
-	name = "FOUND_UPGRADABLE_MEGASTRUCTURE_TITLE"
-	sound = "notification"
-	auto_opens = none
-	ping = "ping_notification_green"
-}
 
 ####
 # 入植可能惑星

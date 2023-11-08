@@ -2,7 +2,13 @@ spriteTypes = {
 	####
 	# バイパス系
 	####
-	# ワームホール
+	# ワームホール(未探索)
+	spriteType = {
+		name = "GFX_find_wormhole_off_btn"
+		texturefile = "gfx/interface/icons/find_wormhole_off_btn.dds"
+		noOfFrames = 3
+	}
+	# ワームホール(探索済)
 	spriteType = {
 		name = "GFX_find_wormhole_btn"
 		texturefile = "gfx/interface/icons/find_wormhole_btn.dds"
@@ -18,6 +24,12 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_find_lgate_btn"
 		texturefile = "gfx/interface/icons/find_lgate_btn.dds"
+		noOfFrames = 3
+	}
+	# シュラウドトンネル
+	spriteType = {
+		name = "GFX_find_shroudtunnel_btn"
+		texturefile = "gfx/interface/icons/find_shroudtunnel_btn.dds"
 		noOfFrames = 3
 	}
 

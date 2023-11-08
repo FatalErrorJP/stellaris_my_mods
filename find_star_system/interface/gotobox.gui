@@ -179,20 +179,20 @@ guiTypes = {
 		# シュラウドトンネル
 		effectButtonType  = {
 			name ="find_bypass_shroudtunnel_btn"
-			quadTextureSprite = "GFX_find_gateway_btn"
+			quadTextureSprite = "GFX_find_shroudtunnel_btn"
 			position = { x = 415 y = 105 }
 			orientation = "UPPER_LEFT"
 			effect = "find_bypass_shroudtunnel_btn"
 		}
 
 		####
-		# 基地/艦隊/リヴァイヤサン/危機
+		# 基地/艦隊/リヴァイアサン/危機
 		####
 		instantTextBoxType = {
 			name = "find_fleet_desc"
 			font = "cg_16b"
 			text = "GOTOBOX_FIND_FLEET_TYPE_DESC"
-			position = { x = 490 y = 90 }
+			position = { x = 525 y = 90 }
 			maxWidth = 280
 			maxHeight = 20
 			fixedsize = yes
@@ -204,7 +204,7 @@ guiTypes = {
 		effectButtonType  = {
 			name ="find_military_station_small_btn"
 			quadTextureSprite = "GFX_find_military_station_small_btn"
-			position = { x = 485 y = 105 }
+			position = { x = 520 y = 105 }
 			orientation = "UPPER_LEFT"
 			effect = "find_military_station_small_btn"
 		}
@@ -212,7 +212,7 @@ guiTypes = {
 		effectButtonType  = {
 			name ="find_leviathans_btn"
 			quadTextureSprite = "GFX_find_leviathans_btn"
-			position = { x = 520 y = 105 }
+			position = { x = 555 y = 105 }
 			orientation = "UPPER_LEFT"
 			effect = "find_leviathans_btn"
 		}
@@ -220,7 +220,7 @@ guiTypes = {
 		effectButtonType  = {
 			name ="find_caravaneer_fleet_btn"
 			quadTextureSprite = "GFX_find_caravaneer_fleet_btn"
-			position = { x = 555 y = 105 }
+			position = { x = 590 y = 105 }
 			orientation = "UPPER_LEFT"
 			effect = "find_caravaneer_fleet_btn"
 		}
@@ -228,7 +228,7 @@ guiTypes = {
 		effectButtonType  = {
 			name ="find_crisis_swarm_btn"
 			quadTextureSprite = "GFX_find_crisis_swarm_btn"
-			position = { x = 590 y = 105 }
+			position = { x = 625 y = 105 }
 			orientation = "UPPER_LEFT"
 			effect = "find_crisis_swarm_btn"
 		}
@@ -236,7 +236,7 @@ guiTypes = {
 		effectButtonType  = {
 			name ="find_crisis_extradimensional_btn"
 			quadTextureSprite = "GFX_find_crisis_extradimensional_btn"
-			position = { x = 625 y = 105 }
+			position = { x = 660 y = 105 }
 			orientation = "UPPER_LEFT"
 			effect = "find_crisis_extradimensional_btn"
 		}
@@ -344,14 +344,6 @@ guiTypes = {
 			position = { x = 660 y = 165 }
 			orientation = "UPPER_LEFT"
 			effect = "find_megastructure_crisis_sphere_btn"
-		}
-		# アップグレード可能な自国内の巨大建造物
-		effectButtonType  = {
-			name ="find_upgradable_megastructure_btn"
-			quadTextureSprite = "GFX_find_megastructure_btn"
-			position = { x = 695 y = 165 }
-			orientation = "UPPER_LEFT"
-			effect = "find_upgradable_megastructure_btn"
 		}
 
 		####
