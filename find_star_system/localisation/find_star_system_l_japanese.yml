@@ -49,9 +49,9 @@
   TOOLTIP_FIND_TOXIC_TERRAFORMING_CANDIDATE_BTN:0 "§H自国内の有毒なテラフォーム候補惑星§!を検索する\n※テラフォームするためには§H$ap_detox$§!のアセンションパークが必要"
   TOOLTIP_FIND_HABITAT_SYSTEM_BTN:0 "§H自国内の一定以上の基準(※)を満たした軌道上居住地建造候補の星系§!を検索する\n※(星系内の恒星、惑星、小惑星等の合計数) * 0.5 + (反応炉&宇宙採掘軌道の扱いになる惑星数) + (無重力研究軌道の扱いになる惑星数) * 3 + (戦略資源の職業枠の増える扱いになる惑星数) * 2 >= 18"
 
-  TOOLTIP_FIND_COLONY_MOTE_HARVESTERS_BTN:0 "§H自国内の粉末採取用トラップ§!を建設済/建設可能な入植済惑星を検索する"
-  TOOLTIP_FIND_COLONY_GAS_EXTRACTORS_BTN:0 "§H自国内のガス抽出井§!を建設済/建設可能な入植済惑星を検索する"
-  TOOLTIP_FIND_COLONY_CRYSTAL_MINES_BTN:0 "§H自国内のクリスタル鉱山§!を建設済/建設可能な入植済惑星を検索する"
+  TOOLTIP_FIND_COLONY_MOTE_HARVESTERS_BTN:0 "§H自国内の粉末採取用トラップ§!を建設可能な入植済惑星を検索する"
+  TOOLTIP_FIND_COLONY_GAS_EXTRACTORS_BTN:0 "§H自国内のガス抽出井§!を建設可能な入植済惑星を検索する"
+  TOOLTIP_FIND_COLONY_CRYSTAL_MINES_BTN:0 "§H自国内のクリスタル鉱山§!を建設可能な入植済惑星を検索する"
   TOOLTIP_FIND_COLONY_SPECIAL_BTN:0 "§H自国以外の以下の特殊な惑星§!を検索する\n・ガイア型惑星\n・機械惑星\n・集合意識惑星\n・遺物惑星\n・エキュメノポリス"
   TOOLTIP_FIND_COLONY_PRE_SAPIENTS_BTN:0 "§H自国内の準知性§!の住んでいる惑星を検索する"
   TOOLTIP_FIND_GALACTIC_MARKET_BTN:0 "§H銀河市場§!の開催先の惑星を検索する"

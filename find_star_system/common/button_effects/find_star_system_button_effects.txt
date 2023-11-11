@@ -1094,10 +1094,7 @@ find_planet_mote_harvesters_btn = {
 				every_system_planet = {
 					limit = {
 						is_colonizable = yes
-						OR = {
-							has_deposit = d_dust_caverns
-							has_deposit = d_dust_desert
-						}
+						num_buildings = { type = building_mote_harvesters in_construction = any value < modifier:building_mote_harvesters_max }
 						is_surveyed = { who = from status = yes }
 					}
 
@@ -1141,10 +1138,7 @@ find_planet_gas_extractors_btn = {
 				every_system_planet = {
 					limit = {
 						is_colonizable = yes
-						OR = {
-							has_deposit = d_bubbling_swamp
-							has_deposit = d_fuming_bog
-						}
+						num_buildings = { type = building_gas_extractors in_construction = any value < modifier:building_gas_extractors_max }
 						is_surveyed = { who = from status = yes }
 					}
 
@@ -1188,11 +1182,7 @@ find_planet_crystal_mines_btn = {
 				every_system_planet = {
 					limit = {
 						is_colonizable = yes
-						OR = {
-							has_deposit = d_crystalline_caverns
-							has_deposit = d_crystal_forest
-							has_deposit = d_crystal_reef
-						}
+						num_buildings = { type = building_crystal_mines in_construction = any value < modifier:building_crystal_mines_max }
 						is_surveyed = { who = from status = yes }
 					}
 
@@ -1574,7 +1564,7 @@ find_habitat_system_btn = {
 # 入植済惑星
 ###############################################################################
 #####
-# 自国内の粉末採取用トラップを建設済/建設可能な入植済惑星を検索する
+# 自国内の粉末採取用トラップを建設可能な入植済惑星を検索する
 #####
 find_colony_mote_harvesters_btn = {
 	potential = {}
@@ -1599,10 +1589,7 @@ find_colony_mote_harvesters_btn = {
 				every_system_planet = {
 					limit = {
 						is_colony = yes
-						OR = {
-							has_deposit = d_dust_caverns
-							has_deposit = d_dust_desert
-						}
+						num_buildings = { type = building_mote_harvesters in_construction = any value < modifier:building_mote_harvesters_max }
 					}
 
 					solar_system = { save_event_target_as = target_system }
@@ -1650,10 +1637,7 @@ find_colony_gas_extractors_btn = {
 				every_system_planet = {
 					limit = {
 						is_colony = yes
-						OR = {
-							has_deposit = d_bubbling_swamp
-							has_deposit = d_fuming_bog
-						}
+						num_buildings = { type = building_gas_extractors in_construction = any value < modifier:building_gas_extractors_max }
 					}
 
 					solar_system = { save_event_target_as = target_system }
@@ -1701,11 +1685,7 @@ find_colony_crystal_mines_btn = {
 				every_system_planet = {
 					limit = {
 						is_colony = yes
-						OR = {
-							has_deposit = d_crystalline_caverns
-							has_deposit = d_crystal_forest
-							has_deposit = d_crystal_reef
-						}
+						num_buildings = { type = building_crystal_mines in_construction = any value < modifier:building_crystal_mines_max }
 					}
 
 					solar_system = { save_event_target_as = target_system }
