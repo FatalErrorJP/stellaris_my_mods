@@ -56,7 +56,7 @@ https://steamcommunity.com/profiles/76561199152309881/myworkshopfiles/?p=1&numpe
 | {counter:index} | ぼくのかんがえたさいきょうのとっぷばー                               | custom_topbar
 | {counter:index} | 出土品も貯蔵物だろ！                                                 | no_fixed_max_amount_minor_artifacts
 | {counter:index} | 君たちは機械なんだ、誰がなんと言おうと機械なんだよ…                 | fixed_ancrel_12090
-| {counter:index} | 何がアセンションだよディセンションしてくれ                           | descension_tier
+| {counter:index} | 惑星ビューをもっと便利にしたい                                       | custom_planet_view
 | {counter:index} | Galaxy AOI Chaaaaan                                                  | galaxy_aoi
 | {counter:index} | 先駆けの無効化を確認、ヨシッ                                         | fixed_game_start_9_events
 | {counter:index} | 同一タイプなら同一種族でいいだろ                                     | same_species

@@ -1,0 +1,6 @@
+﻿l_japanese:
+  PLANET_ASCENSION_TIER_DOWNGRADE:0 "§Hアセンション・ティアのダウングレード§!"
+  BUILDINGS_TOOLTIP_TEXT:0 "建造物スロット数: §G+[This.PlanetMaxBuildings]§!\n空きスロット数: §G[This.FreeBuildingsSlots]§!"
+  CAN_BUILD_MOTO_HARVESTERS_TOOLTIP_TEXT:0 "この惑星には、新たに§H$building_mote_harvesters$§!を建設可能だ。"
+  CAN_BUILD_GAS_EXTRACTORS_TOOLTIP_TEXT:0 "この惑星には、新たに§H$building_gas_extractors$§!を建設可能だ。"
+  CAN_BUILD_CRYSTAL_MINES_TOOLTIP_TEXT:0 "この惑星には、新たに§H$building_crystal_mines$§!を建設可能だ。"

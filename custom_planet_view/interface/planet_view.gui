@@ -1296,6 +1296,31 @@ guiTypes = {
 						orientation = "UPPER_LEFT"
 						effect = "buildings_tooltip_btn"
 					}
+
+					effectButtonType  = {
+						name ="volatile_motes_tooltip_btn"
+						quadTextureSprite = "GFX_resource_volatile_motes"
+						position = { x = 320 y = 12 }
+						orientation = "UPPER_LEFT"
+						effect = "volatile_motes_tooltip_btn"
+					}
+
+					effectButtonType  = {
+						name ="exotic_gases_tooltip_btn"
+						quadTextureSprite = "GFX_resource_exotic_gases"
+						position = { x = 340 y = 12 }
+						orientation = "UPPER_LEFT"
+						effect = "exotic_gases_tooltip_btn"
+					}
+
+					effectButtonType  = {
+						name ="rare_crystals_tooltip_btn"
+						quadTextureSprite = "GFX_resource_rare_crystals"
+						position = { x = 360 y = 12 }
+						orientation = "UPPER_LEFT"
+						effect = "rare_crystals_tooltip_btn"
+					}
+
 					###################################################
 					# ここまで、Mod追加コード
 					###################################################
