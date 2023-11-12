@@ -1298,6 +1298,14 @@ guiTypes = {
 					}
 
 					effectButtonType  = {
+						name ="betharian_tooltip_btn"
+						quadTextureSprite = "GFX_resource_energy"
+						position = { x = 300 y = 12 }
+						orientation = "UPPER_LEFT"
+						effect = "betharian_tooltip_btn"
+					}
+
+					effectButtonType  = {
 						name ="volatile_motes_tooltip_btn"
 						quadTextureSprite = "GFX_resource_volatile_motes"
 						position = { x = 320 y = 12 }

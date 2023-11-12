@@ -62,6 +62,30 @@ buildings_tooltip_btn = {
 }
 
 #####
+# ベザリアン発電所
+#####
+betharian_tooltip_btn = {
+	potential = {
+		is_scope_type = planet
+		exists = from
+		from = {
+			is_scope_type = country
+		}
+		has_owner = yes
+		is_colony = yes
+		is_under_colonization = no
+
+		OR = {
+			num_buildings = { type = building_betharian_power_plant in_construction = any value < modifier:building_betharian_power_plant_max }
+		}
+	}
+	allow = {}
+	effect = {
+		custom_tooltip = "CAN_BUILD_BETHARIAN_TOOLTIP_TEXT"
+	}
+}
+
+#####
 # 粉末採取用トラップ
 #####
 volatile_motes_tooltip_btn = {
@@ -75,9 +99,7 @@ volatile_motes_tooltip_btn = {
 		is_colony = yes
 		is_under_colonization = no
 
-		OR = {
-			num_buildings = { type = building_mote_harvesters in_construction = any value < modifier:building_mote_harvesters_max }
-		}
+		num_buildings = { type = building_mote_harvesters in_construction = any value < modifier:building_mote_harvesters_max }
 	}
 	allow = {}
 	effect = {
@@ -99,9 +121,7 @@ exotic_gases_tooltip_btn = {
 		is_colony = yes
 		is_under_colonization = no
 
-		OR = {
-			num_buildings = { type = building_gas_extractors in_construction = any value < modifier:building_gas_extractors_max }
-		}
+		num_buildings = { type = building_gas_extractors in_construction = any value < modifier:building_gas_extractors_max }
 	}
 	allow = {}
 	effect = {
@@ -123,9 +143,7 @@ rare_crystals_tooltip_btn = {
 		is_colony = yes
 		is_under_colonization = no
 
-		OR = {
-			num_buildings = { type = building_crystal_mines in_construction = any value < modifier:building_crystal_mines_max }
-		}
+		num_buildings = { type = building_crystal_mines in_construction = any value < modifier:building_crystal_mines_max }
 	}
 	allow = {}
 	effect = {
