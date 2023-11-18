@@ -1,36 +1,9 @@
-# 00_aptitude.txt
-# 才能の伝統
-# 健康管理プログラム
-tr_aptitude_healthcare_program = {
-	possible = { has_tradition = tr_aptitude_the_empire_needs_you }
-	modifier = {
-		leader_age = 4								# MOD修正箇所 20 -> 4
-	}
-	ai_weight = { factor = 1000 }
-
-	inline_script = {
-		script = paragon/tradition_swap_desc_hive
-		tradition = tr_aptitude_healthcare_program
-	}
-
-	# MACHINE Text and Modifier swap.
-	tradition_swap = {
-		trigger = { is_machine_empire = yes }
-		name = tr_aptitude_healthcare_program_machine
-		inherit_icon = yes
-		modifier = {
-			leaders_upkeep_mult = -0.25
-		}
-		weight = { factor = 1 }
-	}
-}
-
 # 00_harmony.txt
 # 調和の伝統
 # 精神と肉体
 tr_harmony_mind_and_body = {
 	modifier = {
-		leader_age = 2								# MOD修正箇所 10 -> 2
+		leader_lifespan_add = 2								# MOD修正箇所 10 -> 2
 		negative_traits_country = -1
 	}
 
@@ -62,7 +35,7 @@ tr_harmony_mind_and_body = {
 # クローン臓器
 tr_synchronicity_cloned_organs = {
 	modifier = {
-		leader_age = 2								# MOD修正箇所 10 -> 2
+		leader_lifespan_add = 2								# MOD修正箇所 10 -> 2
 		negative_traits_country = -1
 	}
 

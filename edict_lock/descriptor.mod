@@ -4,5 +4,5 @@ tags={
 	"Fixes"
 }
 name="布告は急には止まらない"
-supported_version="3.9.3"
+supported_version="3.10.*"
 remote_file_id="3077074115"

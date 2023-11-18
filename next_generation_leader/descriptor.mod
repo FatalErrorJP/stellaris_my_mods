@@ -5,5 +5,5 @@ tags={
 	"Fixes"
 }
 name="次世代のリーダーは君だ！"
-supported_version="3.9.*"
+supported_version="3.10.*"
 remote_file_id="2988759983"

@@ -896,6 +896,22 @@ guiTypes = {
 					maxHeight = 40
 					format = left
 				}
+
+				checkboxType = {
+					name = "automate_astral_rift"
+					position = { x = @checkbox_pos_x y = 150 }
+		 			quadTextureSprite = "GFX_checkbox_20_20_01"
+		 		}
+
+		 		instantTextBoxType = {
+					name = "automate_astral_rift_title"
+					font = "cg_16b"
+					text = "AUTOMATION_ASTRAL_RIFTS"
+					position = { x = @checkbox_title_pos_x y = 155 }
+					maxWidth = @checkbox_title_width
+					maxHeight = 40
+					format = left
+				}
 			}
 
 			buttonType = {

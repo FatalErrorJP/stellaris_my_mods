@@ -10,5 +10,5 @@ tags={
 	"Fixes"
 }
 name="[互換パッチ]SpeedDial&艦隊をグループ化したかった"
-supported_version="3.9.*"
+supported_version="3.10.*"
 remote_file_id="2816830820"

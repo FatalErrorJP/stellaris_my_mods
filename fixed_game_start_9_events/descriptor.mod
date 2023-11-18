@@ -4,5 +4,5 @@ tags={
 	"Gameplay"
 }
 name="先駆けの無効化を確認、ヨシッ"
-supported_version="3.9.*"
+supported_version="3.10.*"
 remote_file_id="2955292377"

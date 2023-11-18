@@ -10,7 +10,7 @@ tech_neuroregeneration = {
 
 	modifier = {
 		species_leader_exp_gain = 0.25
-		leader_age = 2								# MOD修正箇所 10 -> 2
+		leader_lifespan_add = 2								# MOD修正箇所 10 -> 2
 	}
 
 	weight_modifier = {
@@ -29,7 +29,7 @@ tech_vitality_boosters = {
 	weight = @tier2weight2
 
 	modifier = {
-		leader_age = 2								# MOD修正箇所 10 -> 2
+		leader_lifespan_add = 2								# MOD修正箇所 10 -> 2
 	}
 
 	potential = {
@@ -87,6 +87,6 @@ tech_repeatable_improved_leader_life_span = {
 	}
 
 	modifier = {
-		leader_age = 1								# MOD修正箇所 5 -> 1
+		leader_lifespan_add = 1								# MOD修正箇所 5 -> 1
 	}
 }

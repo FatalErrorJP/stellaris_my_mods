@@ -5,5 +5,5 @@ tags={
 	"Overhaul"
 }
 name="リーダー一覧を見やすくしたい"
-supported_version="3.9.*"
+supported_version="3.10.*"
 remote_file_id="2975111400"

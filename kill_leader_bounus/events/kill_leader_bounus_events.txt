@@ -31,10 +31,9 @@ country_event = {
 			# リーダーの所属年数の加算
 			switch = {
 				trigger = leader_class
-				governor  = { add_leader_years = { LEADER_CLASS = governor  } }
-				admiral   = { add_leader_years = { LEADER_CLASS = admiral   } }
+				official  = { add_leader_years = { LEADER_CLASS = official  } }
+				commander = { add_leader_years = { LEADER_CLASS = commander } }
 				scientist = { add_leader_years = { LEADER_CLASS = scientist } }
-				general   = { add_leader_years = { LEADER_CLASS = general   } }
 			}
 		}
 	}
@@ -44,7 +43,7 @@ country_event = {
 # リーダープール追加時のイベント
 # リーダーとして対象の国家に従事した年数分だけ、国家に内部ポイントを付与する
 ###############################################################################
-# 総督
+# 役人
 # This = Country
 # From = Leader
 country_event = {
@@ -55,15 +54,15 @@ country_event = {
 
 	trigger = {
 		not = { has_country_flag = spawning_renowned_leader }
-		is_leader_pool_bonus_event= { LEADER_CLASS = governor }
+		is_leader_pool_bonus_event= { LEADER_CLASS = official }
 	}
 
 	immediate = {
-		add_leader_bounus = { LEADER_CLASS = governor }
+		add_leader_bounus = { LEADER_CLASS = official }
 	}
 }
 
-# 提督
+# 司令官
 # This = Country
 # From = Leader
 country_event = {
@@ -74,11 +73,11 @@ country_event = {
 
 	trigger = {
 		not = { has_country_flag = spawning_renowned_leader }
-		is_leader_pool_bonus_event= { LEADER_CLASS = admiral }
+		is_leader_pool_bonus_event= { LEADER_CLASS = commander }
 	}
 
 	immediate = {
-		add_leader_bounus = { LEADER_CLASS = admiral }
+		add_leader_bounus = { LEADER_CLASS = commander }
 	}
 }
 
@@ -98,24 +97,5 @@ country_event = {
 
 	immediate = {
 		add_leader_bounus = { LEADER_CLASS = scientist }
-	}
-}
-
-# 将軍
-# This = Country
-# From = Leader
-country_event = {
-	id = kill_leader_bounus.5
-	hide_window = yes
-
-	is_triggered_only = yes
-
-	trigger = {
-		not = { has_country_flag = spawning_renowned_leader }
-		is_leader_pool_bonus_event= { LEADER_CLASS = general }
-	}
-
-	immediate = {
-		add_leader_bounus = { LEADER_CLASS = general }
 	}
 }

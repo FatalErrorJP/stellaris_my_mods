@@ -93,6 +93,6 @@ civic_hive_idyllic_bloom = {
 		base = @civic_rare_random_weight
 	}
 	modifier = {
-		councilor_gestalt_governor_exp_gain = @gestalt_civic_node_xp_rate
+		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
 	}
 }

@@ -16,10 +16,9 @@ leader_event = {
 	immediate = {
 		switch = {
 			trigger = leader_class
-			governor  = { add_trait_next_generation_leader = { LEADER_CLASS = governor  } }
-			admiral   = { add_trait_next_generation_leader = { LEADER_CLASS = admiral   } }
+			official  = { add_trait_next_generation_leader = { LEADER_CLASS = official  } }
+			commander = { add_trait_next_generation_leader = { LEADER_CLASS = commander } }
 			scientist = { add_trait_next_generation_leader = { LEADER_CLASS = scientist } }
-			general   = { add_trait_next_generation_leader = { LEADER_CLASS = general   } }
 		}
 	}
 }

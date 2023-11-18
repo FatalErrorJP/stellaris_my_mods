@@ -5,5 +5,5 @@ tags={
 	"Technologies"
 }
 name="保護国に技術供与したい"
-supported_version="3.9.*"
+supported_version="3.10.*"
 remote_file_id="2900285811"

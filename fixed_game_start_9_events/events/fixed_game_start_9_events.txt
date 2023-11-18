@@ -4,6 +4,7 @@ namespace = game_start
 # 原則バニラのgame_start.9と同じ
 # set_take_pointの部分のみコメントアウト
 ###########################################################
+### Empire init - add ships
 country_event = {
 	id = game_start.9
 	hide_window = yes
@@ -35,6 +36,15 @@ country_event = {
 							species = owner_main_species
 						}
 					}
+					last_created_leader = {
+						if = {
+							limit = {
+								has_skill > 1
+								num_traits = 0
+							}
+							add_trait_no_notify = random_common
+						}
+					}
 					set_leader = last_created_leader
 				}
 			}
@@ -48,6 +58,15 @@ country_event = {
 				name = random
 				species = owner_main_species
 			}
+			last_created_leader = {
+				if = {
+					limit = {
+						has_skill > 1
+						num_traits = 0
+					}
+					add_trait_no_notify = random_common
+				}
+			}
 		}
 
 		if = {
@@ -59,21 +78,30 @@ country_event = {
 				create_fleet = {
 					effect = {
 						set_owner = prev
-	
+
 						create_ship = {
 							name = random
 							random_existing_design = explorer_vessel
 						}
-	
+
 						set_fleet_stance = passive
 						set_location = prev.capital_scope.star
-	
+
 						owner = {
 							create_leader = {
 								class = scientist
 								sub_type = survey
 								name = random
 								species = owner_main_species
+							}
+							last_created_leader = {
+								if = {
+									limit = {
+										has_skill > 1
+										num_traits = 0
+									}
+									add_trait_no_notify = random_common
+								}
 							}
 						}
 						if = {
@@ -84,12 +112,12 @@ country_event = {
 								set_country_flag = created_first_eager_ship
 							}
 							last_created_leader = {
-								add_trait = leader_trait_meticulous
+								add_trait_no_notify = leader_trait_meticulous
 							}
 						}
 						else = {
 							last_created_leader = {
-								add_trait = leader_trait_roamer
+								add_trait_no_notify = leader_trait_roamer
 							}
 						}
 						set_leader = last_created_leader
@@ -230,16 +258,25 @@ country_event = {
 					}
 					owner = {
 						create_leader = {
-							class = admiral
+							class = commander
 							name = random
 							species = owner_main_species
+						}
+					}
+					last_created_leader = {
+						if = {
+							limit = {
+								has_skill > 1
+								num_traits = 0
+							}
+							add_trait_no_notify = random_common
 						}
 					}
 					set_leader = last_created_leader
 				}
 			}
 		}
-		
+
 		else_if = {
 			limit = {
 				has_civic = civic_hive_cordyceptic_drones
@@ -260,15 +297,24 @@ country_event = {
 					set_location = prev.capital_star
 					owner = {
 						create_leader = {
-							class = admiral
+							class = commander
 							name = random
 							species = owner_main_species
+						}
+					}
+					last_created_leader = {
+						if = {
+							limit = {
+								has_skill > 1
+								num_traits = 0
+							}
+							add_trait_no_notify = random_common
 						}
 					}
 					set_leader = last_created_leader
 				}
 			}
-				}
+		}
 
 		else_if = {
 			limit = {
@@ -278,9 +324,18 @@ country_event = {
 				}
 			}
 			create_leader = {
-				class = admiral
+				class = commander
 				name = random
 				species = owner_main_species
+			}
+			last_created_leader = {
+				if = {
+					limit = {
+						has_skill > 1
+						num_traits = 0
+					}
+					add_trait_no_notify = random_common
+				}
 			}
 		}
 	}

@@ -3,5 +3,5 @@ tags={
 	"Balance"
 }
 name="AI国家のゲートウェイ建造ラッシュがうざい！"
-supported_version="3.9.*"
+supported_version="3.10.*"
 remote_file_id="2874290799"

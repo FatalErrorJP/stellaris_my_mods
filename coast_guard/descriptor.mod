@@ -3,5 +3,5 @@ tags={
 	"Balance"
 }
 name="沿岸警備をなんとかしたい"
-supported_version="3.9.*"
+supported_version="3.10.*"
 remote_file_id="3048147681"

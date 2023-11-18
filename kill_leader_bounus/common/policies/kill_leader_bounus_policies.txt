@@ -48,8 +48,8 @@ leader_enhancement = {
 			leader_enhancement_selected_lineages
 		}
 		modifier = {
-			species_leader_exp_gain = 0.1
-			leader_age = 2								# MOD修正箇所 10 -> 2
+			leader_initial_skill = 1
+			leader_lifespan_add = 2								# MOD修正箇所 10 -> 2
 			leaders_cost_mult = 0.5
 		}
 
@@ -102,8 +102,8 @@ leader_enhancement = {
 			leader_enhancement_capacity_boosters
 		}
 		modifier = {
-			species_leader_exp_gain = 0.2
-			leader_age = 4								# MOD修正箇所 20 -> 4
+			leader_initial_skill = 2
+			leader_lifespan_add = 4								# MOD修正箇所 20 -> 4
 			leaders_cost_mult = 1
 		}
 

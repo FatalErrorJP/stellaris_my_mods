@@ -5,5 +5,5 @@ tags={
 	"Leaders"
 }
 name="後進の育成は大事だよ"
-supported_version="3.9.*"
+supported_version="3.10.*"
 remote_file_id="2987444739"

@@ -1,5 +1,4 @@
 big_wave_curse = {
 	pop_growth_speed = -0.2
-	leader_age = -0
 	planet_jobs_worker_produces_mult = -0.2
 }

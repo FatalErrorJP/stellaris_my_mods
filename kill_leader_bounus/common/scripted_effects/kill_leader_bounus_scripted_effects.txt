@@ -38,21 +38,7 @@ add_leader_bounus = {
 	}
 
 	from = {
-		while = {
-			count = prev.add_level
-			if = {
-				limit = {
-					has_skill < 10
-					has_skill >= 4
-				}
-				add_skill_without_trait_selection = 1
-			} else_if = {
-				limit = {
-					has_skill < 4
-				}
-				add_skill = 1
-			}
-		}
+		add_skill_without_trait_selection = prev.add_level
 	}
 
 	clear_variable = add_level

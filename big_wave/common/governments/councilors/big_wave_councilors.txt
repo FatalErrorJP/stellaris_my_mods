@@ -1,6 +1,6 @@
 councilor_big_wave = {
-	leader_class = { general }								# 割り当て可能なリーダークラス(新規採用時)
-	is_leader_possible = { leader_class = general }			# 割り当て可能なリーダークラス(既存のリーダー)
+	leader_class = { commander }							# 割り当て可能なリーダークラス(新規採用時)
+	is_leader_possible = { leader_class = commander }		# 割り当て可能なリーダークラス(既存のリーダー)
 	civic = civic_big_wave									# この評議会をアンロックできる国是
 	modifier = {
 		planet_jobs_worker_produces_mult = 0.02

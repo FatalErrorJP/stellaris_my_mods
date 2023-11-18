@@ -51,6 +51,9 @@ can_species_procreate = {
 # Root = Planet
 can_species_be_assembled = {
 	is_sapient = yes
+	NOT = {
+		has_trait = trait_exd
+	}
 	OR = {
 		AND = {
 			is_robotic = yes

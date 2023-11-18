@@ -4,5 +4,5 @@ tags={
 	"Utilities"
 }
 name="帝国マップを見やすくしたい"
-supported_version="3.9.*"
+supported_version="3.10.*"
 remote_file_id="2810645667"

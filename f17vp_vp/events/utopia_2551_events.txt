@@ -232,16 +232,16 @@ country_event = {
 		every_owned_army = {
 			limit = {
 				exists = species
-				exists = planet
+				#exists = planet
 				species = {
 					is_robotic = no
 					is_livestock = no
 				}
-				army_type = defense_army
+				army_type = assault_army
 			}
 			modify_army = {
 				name = random
-				type = "robotic_defense_army"
+				type = "robotic_army"
 				species = event_target:new_robotic_species
 			}
 		}

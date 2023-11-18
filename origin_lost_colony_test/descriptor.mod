@@ -7,5 +7,5 @@ tags={
 	"Gameplay"
 }
 name="消えた移民団_国家固定テスト"
-supported_version="3.4.5"
+supported_version="3.10.*"
 remote_file_id="2822494772"
