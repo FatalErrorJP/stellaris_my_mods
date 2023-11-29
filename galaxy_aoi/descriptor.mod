@@ -3,5 +3,5 @@ tags={
 	"Galaxy Generation"
 }
 name="Galaxy AOI Chaaaaan"
-supported_version="3.10.0"
+supported_version="3.10.*"
 remote_file_id="2953438064"

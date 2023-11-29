@@ -307,14 +307,13 @@ nanites = {
 
 # Minor Artifacts
 minor_artifacts = {
-	tradable = yes
+	tradable = no
 	category = rare
 	max = 2000
-
-	#Mod修正箇所
-	#fixed_max_amount = yes
+	#special_max_amount = yes #Mod修正箇所
 
 	visibility_prerequisite = { has_ancrel = yes }
+
 	ai_weight = {
 		weight = 100
 	}
@@ -326,7 +325,7 @@ minor_artifacts = {
 
 # Astral Thread
 astral_threads = {
-	tradable = yes
+	tradable = no
 	category = rare
 	max = 500
 	special_max_amount = yes
