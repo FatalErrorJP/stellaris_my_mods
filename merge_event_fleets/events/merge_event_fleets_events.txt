@@ -26,7 +26,7 @@ country_event = {
 				is_ship_class = shipclass_military				# 軍艦のみ
 				is_leased = no									# 他国から借りている艦隊は除外する
 
-				# マローダーから借りている艦隊及び、グレイは除外する
+				# マローダーから借りている艦隊、次元艦隊、グレイは除外する
 				NOR = {
 					has_fleet_flag = armada_of_the_voidborn
 					has_fleet_flag = dwamak_bashers
@@ -37,6 +37,7 @@ country_event = {
 					has_fleet_flag = first_storm_wing
 					has_fleet_flag = frenzied_volunteer_squadron
 					has_fleet_flag = twilight_congregation
+					has_fleet_flag = dimensional_fleet
 					is_ship_size = graygoo_mothership
 				}
 
