@@ -5,5 +5,5 @@ tags={
 	"Utilities"
 }
 name="【簡易版】Auto Sort Buildings"
-supported_version="3.10.1"
+supported_version="3.10.*"
 remote_file_id="3094059253"
