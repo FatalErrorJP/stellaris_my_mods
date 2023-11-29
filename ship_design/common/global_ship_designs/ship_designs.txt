@@ -47,6 +47,66 @@ ship_design = {
 	required_component="COMBAT_COMPUTER_SWARM_DEFAULT"
 }
 
+# 対コルベット級防衛プラットフォーム
+ship_design = {
+	name = "NAME_ANTI_CORVETTE_PF"
+	ship_size = military_station_small
+	upgrade_ship_components = yes
+
+	section = {
+		template = "HANGAR_MILITARY_STATION_SECTION"
+		slot = "west"
+
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "LARGE_SCOUT_HANGAR_1"
+		}
+
+		component = {
+			slot = "MEDIUM_UTILITY_1"
+			template = "MEDIUM_SHIELD_1"
+		}
+
+		component = {
+			slot = "MEDIUM_UTILITY_2"
+			template = "MEDIUM_ARMOR_1"
+		}
+
+		component = {
+			slot = "MEDIUM_UTILITY_3"
+			template = "MEDIUM_ARMOR_1"
+		}
+	}
+
+	section = {
+		template = "HANGAR_MILITARY_STATION_SECTION"
+		slot = "east"
+
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "LARGE_SCOUT_HANGAR_1"
+		}
+
+		component = {
+			slot = "MEDIUM_UTILITY_1"
+			template = "MEDIUM_SHIELD_1"
+		}
+
+		component = {
+			slot = "MEDIUM_UTILITY_2"
+			template = "MEDIUM_ARMOR_1"
+		}
+
+		component = {
+			slot = "MEDIUM_UTILITY_3"
+			template = "MEDIUM_ARMOR_1"
+		}
+	}
+
+	required_component="PLATFORM_FISSION_REACTOR"
+	required_component="SENSOR_1"
+	required_component="COMBAT_COMPUTER_PLATFORM_DEFAULT"
+}
 
 #####################################################################
 # 対招かれざるもの

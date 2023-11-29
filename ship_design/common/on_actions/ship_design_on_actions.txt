@@ -9,6 +9,7 @@ on_game_start_country = {
 on_tech_increased = {
 	events = {
 		ship_design.11  # 対ミサイルコルベット級コルベット
+		ship_design.17  # 対コルベット級防衛プラットフォーム
 		ship_design.114 # 対招かれざるもの級巡洋艦
 		ship_design.115 # 対招かれざるもの級戦艦
 		ship_design.215 # 対プレスリン級戦艦

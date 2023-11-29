@@ -25,6 +25,7 @@ namespace = ship_design
 # 4:巡洋艦
 # 5:戦艦
 # 6:タイタン
+# 7:防衛プラットフォーム
 ###########################################################
 # 対ミサイルコルベット級コルベット
 country_event = {
@@ -51,6 +52,28 @@ country_event = {
 		create_ship_design = { design = "NAME_ANTI_MISSILE_CORVETTE" }
 		add_ship_design = last_created_design
 		set_country_flag = anti_missile_corvette_design
+	}
+}
+
+# 対コルベット級防衛プラットフォーム
+country_event = {
+	id = ship_design.17
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		not = { has_country_flag = anti_corvette_pf_design }
+		has_technology = tech_space_defense_station_1
+		has_technology = tech_ship_armor_1
+		has_technology = tech_shields_1
+		has_technology = tech_fission_power
+	}
+
+	immediate = {
+		create_ship_design = { design = "NAME_ANTI_CORVETTE_PF" }
+		add_ship_design = last_created_design
+		set_country_flag = anti_corvette_pf_design
 	}
 }
 
