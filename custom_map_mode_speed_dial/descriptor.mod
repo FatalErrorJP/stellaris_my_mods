@@ -1,9 +1,7 @@
 version="1.0.0"
 dependencies={
 	"帝国マップを見やすくしたい"
-	"SpeedDial"
-	"[JP localize patch]SpeedDial"
-	"[Fix Patch][JP localize patch]SpeedDial"
+	"[JP_EN]SpeedDial 3.8"
 }
 tags={
 	"Utilities"

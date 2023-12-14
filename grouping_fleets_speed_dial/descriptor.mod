@@ -1,8 +1,6 @@
 version="1.0.0"
 dependencies={
-	"SpeedDial"
-	"[JP localize patch]SpeedDial"
-	"[Fix Patch][JP localize patch]SpeedDial"
+	"[JP_EN]SpeedDial 3.8"
 	"艦隊をグループ化したかった"
 }
 tags={
