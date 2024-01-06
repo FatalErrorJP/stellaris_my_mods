@@ -5,6 +5,9 @@
   SET_FLEET_NAME:0 "第[This.GetFleetNumber]艦隊"
   SET_FED_FLEET_NAME:0 "第[This.GetFedFleetNumber]連邦艦隊"
   SET_GDF_FLEET_NAME:0 "第[This.GetGdfFleetNumber]銀河防衛艦隊"
+  SET_JUGGERNAUT_NAME:0 "ジャガーノート"
+  SET_FED_JUGGERNAUT_NAME:0 "FEDジャガーノート"
+  SET_GDF_JUGGERNAUT_NAME:0 "GDFジャガーノート"
 
   ####
   # 「艦隊をグループ化したかった」Modの艦隊名変更用定義
@@ -13,11 +16,17 @@
   SET_FLAGSHIP_FLEET_NAME:0 "[This.GetGroupColor][This.GetGroupNumberIcon]第[This.GetFleetNumber]艦隊§!"
   SET_FLAGSHIP_FED_FLEET_NAME:0 "[This.GetGroupColor][This.GetGroupNumberIcon]第[This.GetFedFleetNumber]連邦艦隊§!"
   SET_FLAGSHIP_GDF_FLEET_NAME:0 "[This.GetGroupColor][This.GetGroupNumberIcon]第[This.GetGdfFleetNumber]銀河防衛艦隊§!"
+  SET_FLAGSHIP_JUGGERNAUT_NAME:0 "[This.GetGroupColor][This.GetGroupNumberIcon]ジャガーノート§!"
+  SET_FLAGSHIP_FED_JUGGERNAUT_NAME:0 "[This.GetGroupColor][This.GetGroupNumberIcon]FEDジャガーノート§!"
+  SET_FLAGSHIP_GDF_JUGGERNAUT_NAME:0 "[This.GetGroupColor][This.GetGroupNumberIcon]GDFジャガーノート§!"
 
   # 所属艦
   SET_GROUP_FLEET_NAME:0 "[This.GetGroupColor][This.GetGroupNumberIcon]第[This.GetFleetNumber]艦隊§!"
   SET_GROUP_FED_FLEET_NAME:0 "[This.GetGroupColor][This.GetGroupNumberIcon]第[This.GetFedFleetNumber]連邦艦隊§!"
   SET_GROUP_GDF_FLEET_NAME:0 "[This.GetGroupColor][This.GetGroupNumberIcon]第[This.GetGdfFleetNumber]銀河防衛艦隊§!"
+  SET_GROUP_JUGGERNAUT_NAME:0 "[This.GetGroupColor][This.GetGroupNumberIcon]ジャガーノート§!"
+  SET_GROUP_FED_JUGGERNAUT_NAME:0 "[This.GetGroupColor][This.GetGroupNumberIcon]FEDジャガーノート§!"
+  SET_GROUP_GDF_JUGGERNAUT_NAME:0 "[This.GetGroupColor][This.GetGroupNumberIcon]GDFジャガーノート§!"
 
   # 所属グループに応じた色 GetGroupColorから呼ばれる
   FLEET_GROUP_COLOR_0:0 "§W"
@@ -70,11 +79,11 @@
   rename_fleets.2.a:0 "変更する"
 
   rename_fleets.3.name:0 "$OUTLINER$順に艦隊番号を振り直す(※)"
-  rename_fleets.3.desc:0 "艦隊名称を以下の命名規則に従って振り直します。\n艦隊グループに所属している艦隊には、\nグループに応じた色と、アイコンが付与されます。\n$rename_fleets_exsample4$$rename_fleets_exsample5$$rename_fleets_exsample6$$rename_fleets_no_target$"
+  rename_fleets.3.desc:0 "艦隊名称を以下の命名規則に従って振り直します。\n艦隊グループに所属している艦隊には、\nグループに応じた色と、アイコンが付与されます。\n$rename_fleets_exsample4$$rename_fleets_exsample5$$rename_fleets_exsample6$$rename_fleets_no_target2$"
   rename_fleets.3.a:0 "変更する"
 
   rename_fleets.4.name:0 "所属グループ毎に艦隊番号を振り直す(※)"
-  rename_fleets.4.desc:0 "艦隊名称を以下の命名規則に従って振り直します。\n艦隊グループに所属している艦隊には、\nグループに応じた色と、アイコンが付与されます。\nまた、旗艦は必ず1番目となります。\n$rename_fleets_exsample4$$rename_fleets_exsample5$$rename_fleets_exsample6$$rename_fleets_no_target$"
+  rename_fleets.4.desc:0 "艦隊名称を以下の命名規則に従って振り直します。\n艦隊グループに所属している艦隊には、\nグループに応じた色と、アイコンが付与されます。\nまた、旗艦は必ず1番目となります。\n$rename_fleets_exsample4$$rename_fleets_exsample5$$rename_fleets_exsample6$$rename_fleets_no_target2$"
   rename_fleets.4.a:0 "変更する"
 
   rename_fleets_exsample1:0 "・通常の艦隊の場合: 第○艦隊\n"
@@ -86,4 +95,5 @@
   rename_fleets_exsample6:0 "・GDFの場合: $FLEET_GROUP_NUMBER_ICON_5$$FLEET_GROUP_COLOR_5$第○銀河防衛艦隊§!\n"
 
   rename_fleets_no_target:0 "\n※以下は命名対象外となります\n・ジャガーノート\n・コロッサス\n・マローダー艦隊\n・他国から借りた艦隊\n・傭兵から借りた艦隊\n"
+  rename_fleets_no_target2:0 "\n※以下は命名対象外となります\n・コロッサス\n・マローダー艦隊\n・他国から借りた艦隊\n・傭兵から借りた艦隊\n"
   rename_fleets.tooltip:0 "§R※変更前にセーブしておくことをおすすめします§!"

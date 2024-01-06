@@ -119,6 +119,7 @@ rename_fleets = {
 # ・(X)第○艦隊
 # ・(X)第○連邦艦隊
 # ・(X)第○銀河防衛艦隊
+# ・(X)ジャガーノート
 #
 # SCOPE: country
 #################################################
@@ -309,6 +310,69 @@ rename_grouping_fleets = {
 			clear_variable = rename_fleets_gdf_fleet_num
 			prev = { change_variable = { which = rename_fleets_gdf_fleet_num value = 1 } }
 		}
+		####
+		# ジャガーノート
+		####
+		else_if = {
+			limit = {
+				is_ship_size = juggernaut						# ジャガーノートのみ
+				is_leased = no									# 他国から借りている艦隊は除外する
+				not = { has_fleet_order = merge_fleet_order }	# 合流処理中の艦隊は除外する
+			}
+
+			# 旗艦
+			if = {
+				limit = {
+					is_variable_set = grouping_fleets_flagship
+					check_variable = { which = grouping_fleets_flagship value > 0 }
+				}
+				if = {
+					limit = { has_ship_owner_type = country }
+					set_name = { key = "SET_FLAGSHIP_JUGGERNAUT_NAME" variable_string = "\\[This.GetGroupColor]" variable_string = "\\[This.GetGroupNumberIcon]" }
+				}
+				else_if = {
+					limit = { has_ship_owner_type = federation }
+					set_name = { key = "SET_FLAGSHIP_FED_JUGGERNAUT_NAME" variable_string = "\\[This.GetGroupColor]" variable_string = "\\[This.GetGroupNumberIcon]" }
+				}
+				else_if = {
+					limit = { has_ship_owner_type = galactic_community }
+					set_name = { key = "SET_FLAGSHIP_GDF_JUGGERNAUT_NAME" variable_string = "\\[This.GetGroupColor]" variable_string = "\\[This.GetGroupNumberIcon]" }
+				}
+			}
+			# グループ所属艦
+			else_if = {
+				limit = {
+					check_variable = { which = grouping_fleets_fleet_group_num value > 0 }
+				}
+				if = {
+					limit = { has_ship_owner_type = country }
+					set_name = { key = "SET_GROUP_JUGGERNAUT_NAME" variable_string = "\\[This.GetGroupColor]" variable_string = "\\[This.GetGroupNumberIcon]" }
+				}
+				else_if = {
+					limit = { has_ship_owner_type = federation }
+					set_name = { key = "SET_GROUP_FED_JUGGERNAUT_NAME" variable_string = "\\[This.GetGroupColor]" variable_string = "\\[This.GetGroupNumberIcon]" }
+				}
+				else_if = {
+					limit = { has_ship_owner_type = galactic_community }
+					set_name = { key = "SET_GROUP_GDF_JUGGERNAUT_NAME" variable_string = "\\[This.GetGroupColor]" variable_string = "\\[This.GetGroupNumberIcon]" }
+				}
+			}
+			# その他
+			else = {
+				if = {
+					limit = { has_ship_owner_type = country }
+					set_name = { key = "SET_JUGGERNAUT_NAME" }
+				}
+				else_if = {
+					limit = { has_ship_owner_type = federation }
+					set_name = { key = "SET_FED_JUGGERNAUT_NAME" }
+				}
+				else_if = {
+					limit = { has_ship_owner_type = galactic_community }
+					set_name = { key = "SET_GDF_JUGGERNAUT_NAME" }
+				}
+			}
+		}
 	}
 
 	clear_variable = rename_fleets_fleet_num
@@ -437,9 +501,44 @@ rename_grouping_fleets2 = {
 
 		if = {
 			limit = { check_variable = { which = loop_counter value > 0 } }
-			set_variable = { which = rename_fleets_fleet_num value = 2 }
-			set_variable = { which = rename_fleets_fed_fleet_num value = 2 }
-			set_variable = { which = rename_fleets_gdf_fleet_num value = 2 }
+			set_variable = { which = rename_fleets_fleet_num value = 1 }
+			set_variable = { which = rename_fleets_fed_fleet_num value = 1 }
+			set_variable = { which = rename_fleets_gdf_fleet_num value = 1 }
+
+			if = {
+				limit = {
+					any_owned_fleet = {
+						is_ship_class = shipclass_military
+						is_variable_set = grouping_fleets_flagship
+						check_variable = { which = grouping_fleets_flagship value = prev.loop_counter }
+						not = { has_fleet_order = merge_fleet_order }
+						has_ship_owner_type = country
+					}
+				}
+				set_variable = { which = rename_fleets_fleet_num value = 2 }
+			} else_if = {
+				limit = {
+					any_owned_fleet = {
+						is_ship_class = shipclass_military
+						is_variable_set = grouping_fleets_flagship
+						check_variable = { which = grouping_fleets_flagship value = prev.loop_counter }
+						not = { has_fleet_order = merge_fleet_order }
+						has_ship_owner_type = federation
+					}
+				}
+				set_variable = { which = rename_fleets_fed_fleet_num value = 2 }
+			} else_if = {
+				limit = {
+					any_owned_fleet = {
+						is_ship_class = shipclass_military
+						is_variable_set = grouping_fleets_flagship
+						check_variable = { which = grouping_fleets_flagship value = prev.loop_counter }
+						not = { has_fleet_order = merge_fleet_order }
+						has_ship_owner_type = galactic_community
+					}
+				}
+				set_variable = { which = rename_fleets_gdf_fleet_num value = 2 }
+			}
 		}
 
 		every_owned_fleet = {
@@ -597,6 +696,81 @@ rename_grouping_fleets2 = {
 		}
 
 		change_variable = { which = loop_counter value = 1 }
+	}
+
+
+	#############################################
+	# ジャガーノート
+	#############################################
+	every_owned_fleet = {
+		limit = {
+			is_ship_size = juggernaut						# ジャガーノートのみ
+			is_leased = no									# 他国から借りている艦隊は除外する
+			not = { has_fleet_order = merge_fleet_order }	# 合流処理中の艦隊は除外する
+		}
+
+		# 所属グループ確認用の変数が付与されていない艦隊には、予め未所属であることを示す変数を入れておく
+		if = {
+			limit = { not = { is_variable_set = grouping_fleets_fleet_group_num } }
+			set_variable = { which = grouping_fleets_fleet_group_num value = 0 }
+		}
+		if = {
+			limit = { not = { is_variable_set = grouping_fleets_flagship } }
+			set_variable = { which = grouping_fleets_flagship value = 0 }
+		}
+
+		# 旗艦
+		if = {
+			limit = {
+				is_variable_set = grouping_fleets_flagship
+				check_variable = { which = grouping_fleets_flagship value > 0 }
+			}
+			if = {
+				limit = { has_ship_owner_type = country }
+				set_name = { key = "SET_FLAGSHIP_JUGGERNAUT_NAME" variable_string = "\\[This.GetGroupColor]" variable_string = "\\[This.GetGroupNumberIcon]" }
+			}
+			else_if = {
+				limit = { has_ship_owner_type = federation }
+				set_name = { key = "SET_FLAGSHIP_FED_JUGGERNAUT_NAME" variable_string = "\\[This.GetGroupColor]" variable_string = "\\[This.GetGroupNumberIcon]" }
+			}
+			else_if = {
+				limit = { has_ship_owner_type = galactic_community }
+				set_name = { key = "SET_FLAGSHIP_GDF_JUGGERNAUT_NAME" variable_string = "\\[This.GetGroupColor]" variable_string = "\\[This.GetGroupNumberIcon]" }
+			}
+		}
+		# グループ所属艦
+		else_if = {
+			limit = {
+				check_variable = { which = grouping_fleets_fleet_group_num value > 0 }
+			}
+			if = {
+				limit = { has_ship_owner_type = country }
+				set_name = { key = "SET_GROUP_JUGGERNAUT_NAME" variable_string = "\\[This.GetGroupColor]" variable_string = "\\[This.GetGroupNumberIcon]" }
+			}
+			else_if = {
+				limit = { has_ship_owner_type = federation }
+				set_name = { key = "SET_GROUP_FED_JUGGERNAUT_NAME" variable_string = "\\[This.GetGroupColor]" variable_string = "\\[This.GetGroupNumberIcon]" }
+			}
+			else_if = {
+				limit = { has_ship_owner_type = galactic_community }
+				set_name = { key = "SET_GROUP_GDF_JUGGERNAUT_NAME" variable_string = "\\[This.GetGroupColor]" variable_string = "\\[This.GetGroupNumberIcon]" }
+			}
+		}
+		# その他
+		else = {
+			if = {
+				limit = { has_ship_owner_type = country }
+				set_name = { key = "SET_JUGGERNAUT_NAME" }
+			}
+			else_if = {
+				limit = { has_ship_owner_type = federation }
+				set_name = { key = "SET_FED_JUGGERNAUT_NAME" }
+			}
+			else_if = {
+				limit = { has_ship_owner_type = galactic_community }
+				set_name = { key = "SET_GDF_JUGGERNAUT_NAME" }
+			}
+		}
 	}
 
 	clear_variable = rename_fleets_fleet_num
