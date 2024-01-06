@@ -78,4 +78,5 @@ https://steamcommunity.com/profiles/76561199152309881/myworkshopfiles/?p=1&numpe
 | {counter:index} | 真・特性選択画面を見やすくしたい                                     | custom_assign_trait_view2
 | {counter:index} | 布告は急には止まらない                                               | edict_lock
 | {counter:index} | 【簡易版】Auto Sort Buildings                                        | auto_sort_buildings
+| {counter:index} | Voice Checker                                                        | voice_test
 |===

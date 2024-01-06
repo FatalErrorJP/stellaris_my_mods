@@ -1,0 +1,503 @@
+voice_test_01 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_01_desc"
+		play_sound = advisor_notification_system_survey_complete
+	}
+}
+
+voice_test_02 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_02_desc"
+		play_sound = advisor_notification_science_ship_destroyed
+	}
+}
+
+voice_test_03 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_03_desc"
+		play_sound = advisor_notification_science_ship_under_attack
+	}
+}
+
+voice_test_04 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_04_desc"
+		play_sound = advisor_notification_construction_complete
+	}
+}
+
+voice_test_05 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_05_desc"
+		play_sound = advisor_notification_construction_ship_destroyed
+	}
+}
+
+voice_test_06 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_06_desc"
+		play_sound = advisor_notification_construction_ship_under_attack
+	}
+}
+
+voice_test_07 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_07_desc"
+		play_sound = advisor_notification_colony_established
+	}
+}
+
+voice_test_08 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_08_desc"
+		play_sound = advisor_notification_colony_ship_under_attack
+	}
+}
+
+voice_test_09 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_09_desc"
+		play_sound = advisor_notification_colony_ship_destroyed_01
+	}
+}
+
+voice_test_10 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_10_desc"
+		play_sound = advisor_notification_spaceport_lost
+	}
+}
+
+voice_test_11 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_11_desc"
+		play_sound = advisor_notification_enemy_invasion_defeated
+	}
+}
+
+voice_test_12 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_12_desc"
+		play_sound = advisor_notification_invasion_enemy_won
+	}
+}
+
+voice_test_13 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_13_desc"
+		play_sound = advisor_notification_invasion_failed
+	}
+}
+
+voice_test_14 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_14_desc"
+		play_sound = advisor_notification_invasion_success
+	}
+}
+
+voice_test_15 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_15_desc"
+		play_sound = advisor_notification_military_station_lost
+	}
+}
+
+voice_test_16 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_16_desc"
+		play_sound = advisor_notification_mining_station_lost
+	}
+}
+
+voice_test_17 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_17_desc"
+		play_sound = advisor_notification_research_station_lost
+	}
+}
+
+voice_test_18 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_18_desc"
+		play_sound = advisor_notification_observation_post_lost
+	}
+}
+
+voice_test_19 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_19_desc"
+		play_sound = advisor_notification_outpost_station_lost
+	}
+}
+
+voice_test_20 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_20_desc"
+		play_sound = advisor_notification_wormhole_station_lost
+	}
+}
+
+voice_test_21 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_21_desc"
+		play_sound = advisor_notification_hostile_fleet_detected
+	}
+}
+
+voice_test_22 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_22_desc"
+		play_sound = advisor_notification_hostile_fleet_engaged
+	}
+}
+
+voice_test_23 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_23_desc"
+		play_sound = advisor_notification_fleet_destroyed
+	}
+}
+
+voice_test_24 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_24_desc"
+		play_sound = advisor_notification_station_under_attack
+	}
+}
+
+voice_test_25 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_25_desc"
+		play_sound = advisor_notification_special_project_complete
+	}
+}
+
+voice_test_26 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_26_desc"
+		play_sound = advisor_notification_situation_log
+	}
+}
+
+voice_test_27 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_27_desc"
+		play_sound = advisor_notification_enemy_troops_landing
+	}
+}
+
+voice_test_28 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_28_desc"
+		play_sound = advisor_notification_incoming_transmission
+	}
+}
+
+voice_test_29 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_29_desc"
+		play_sound = advisor_notification_research_complete
+	}
+}
+
+voice_test_30 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_30_desc"
+		play_sound = advisor_notification_discovery_detected
+	}
+}
+
+voice_test_31 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_31_desc"
+		play_sound = advisor_notification_ships_upgraded
+	}
+}
+
+voice_test_32 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_32_desc"
+		play_sound = advisor_notification_evade_hostile_fleet
+	}
+}
+
+voice_test_33 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_33_desc"
+		play_sound = advisor_notification_alien_spaceport_engaged
+	}
+}
+
+voice_test_34 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_34_desc"
+		play_sound = advisor_notification_building_ruined
+	}
+}
+
+voice_test_35 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_35_desc"
+		play_sound = advisor_notification_colonization_progress
+	}
+}
+
+voice_test_36 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_36_desc"
+		play_sound = advisor_notification_debris_analysed
+	}
+}
+
+voice_test_37 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_37_desc"
+		play_sound = advisor_notification_enemy_declared_war
+	}
+}
+
+voice_test_38 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_38_desc"
+		play_sound = advisor_notification_federation_formed
+	}
+}
+
+voice_test_39 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_39_desc"
+		play_sound = advisor_notification_frontier_outpost_lost
+	}
+}
+
+voice_test_40 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_40_desc"
+		play_sound = advisor_notification_hostile_station_engaged
+	}
+}
+
+voice_test_41 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_41_desc"
+		play_sound = advisor_notification_player_declare_war
+	}
+}
+
+voice_test_42 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_42_desc"
+		play_sound = advisor_notification_primitive_enlighted
+	}
+}
+
+voice_test_43 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_43_desc"
+		play_sound = advisor_notification_species_modified
+	}
+}
+
+voice_test_44 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_44_desc"
+		play_sound = advisor_notification_tile_blocker_clear
+	}
+}
+
+voice_test_45 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_45_desc"
+		play_sound = advisor_notification_unidentified_object
+	}
+}
+
+voice_test_46 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_46_desc"
+		play_sound = advisor_notification_alien_empire_communication_01
+	}
+}
+
+voice_test_47 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_47_desc"
+		play_sound = advisor_notification_alien_federation_formed
+	}
+}
+
+voice_test_48 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_48_desc"
+		play_sound = advisor_notification_alien_vessel_encountered
+	}
+}
+
+voice_test_49 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_49_desc"
+		play_sound = advisor_notification_generic_war_declare
+	}
+}
+
+voice_test_50 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_50_desc"
+		play_sound = advisor_notification_invasion_progress
+	}
+}
+
+voice_test_51 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_51_desc"
+		play_sound = advisor_notification_planet_in_revolt
+	}
+}
+
+voice_test_52 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_52_desc"
+		play_sound = advisor_notification_pre_sapient_uplifted
+	}
+}
+
+voice_test_53 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_53_desc"
+		play_sound = advisor_notification_spaceborne_encounter
+	}
+}
+
+voice_test_54 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_54_desc"
+		play_sound = advisor_notification_spaceport_under_attack
+	}
+}
+
+voice_test_55 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_55_desc"
+		play_sound = advisor_tutorial_agenda_available
+	}
+}
+
+voice_test_56 = {
+	potential = {}
+	allow = {}
+	effect = {
+		custom_tooltip = "voice_test_56_desc"
+		play_sound = advisor_tutorial_agenda_ready
+	}
+}
