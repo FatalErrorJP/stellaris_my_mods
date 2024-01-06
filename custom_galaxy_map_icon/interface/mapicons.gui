@@ -920,13 +920,13 @@ guiTypes = {
 		iconType = {
 			name = "dimensional_lock"
 			spriteType = "GFX_ship_class_small"
-			position = { x = 4 y = 2 }
+			position = { x = -10 y = 26 }
 			alwaysTransparent = yes
 		}
 
 		iconType = {
 			name = "dimensional_lock_bg"
-			position = { x = 0 y = 0 }
+			position = { x = -14 y = 24 }
 			quadTextureSprite = "GFX_type_frame"
 		}
 	}
