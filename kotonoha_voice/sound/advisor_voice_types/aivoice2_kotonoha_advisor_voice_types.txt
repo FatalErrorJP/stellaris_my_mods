@@ -1,0 +1,14 @@
+l_aivoice2_kotonoha_aoi = {
+	name = "aivoice2_kotonoha_aoi"
+	icon = "gfx/interface/icons/aivoice2_kotonoha_aoi.dds"
+}
+
+l_aivoice2_kotonoha_akane = {
+	name = "aivoice2_kotonoha_akane"
+	icon = "gfx/interface/icons/aivoice2_kotonoha_akane.dds"
+}
+
+l_aivoice2_kotonoha_sisters = {
+	name = "aivoice2_kotonoha_sisters"
+	icon = "gfx/interface/icons/aivoice2_kotonoha_sisters.dds"
+}

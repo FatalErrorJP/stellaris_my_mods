@@ -79,4 +79,5 @@ https://steamcommunity.com/profiles/76561199152309881/myworkshopfiles/?p=1&numpe
 | {counter:index} | 布告は急には止まらない                                               | edict_lock
 | {counter:index} | 【簡易版】Auto Sort Buildings                                        | auto_sort_buildings
 | {counter:index} | Voice Checker                                                        | voice_test
+| {counter:index} | Kotonoha Voice                                                       | kotonoha_voice
 |===

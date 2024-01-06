@@ -1,0 +1,1205 @@
+category = {
+	name = "Voice"
+	soundeffects = {
+		aivoice2_kotonoha_sisters_advisor_notification_system_survey_complete
+		aivoice2_kotonoha_sisters_advisor_notification_science_ship_destroyed
+		aivoice2_kotonoha_sisters_advisor_notification_science_ship_under_attack
+		aivoice2_kotonoha_sisters_advisor_notification_construction_complete
+		aivoice2_kotonoha_sisters_advisor_notification_construction_ship_destroyed
+		aivoice2_kotonoha_sisters_advisor_notification_construction_ship_under_attack
+		aivoice2_kotonoha_sisters_advisor_notification_colony_established
+		aivoice2_kotonoha_sisters_advisor_notification_colony_ship_under_attack
+		aivoice2_kotonoha_sisters_advisor_notification_colony_ship_destroyed
+		aivoice2_kotonoha_sisters_advisor_notification_spaceport_lost
+		aivoice2_kotonoha_sisters_advisor_notification_enemy_invasion_defeated
+		aivoice2_kotonoha_sisters_advisor_notification_invasion_enemy_won
+		aivoice2_kotonoha_sisters_advisor_notification_invasion_failed
+		aivoice2_kotonoha_sisters_advisor_notification_invasion_success
+		aivoice2_kotonoha_sisters_advisor_notification_military_station_lost
+		aivoice2_kotonoha_sisters_advisor_notification_mining_station_lost
+		aivoice2_kotonoha_sisters_advisor_notification_research_station_lost
+		aivoice2_kotonoha_sisters_advisor_notification_observation_post_lost
+		aivoice2_kotonoha_sisters_advisor_notification_outpost_station_lost
+		aivoice2_kotonoha_sisters_advisor_notification_wormhole_station_lost
+		aivoice2_kotonoha_sisters_advisor_notification_hostile_fleet_detected
+		aivoice2_kotonoha_sisters_advisor_notification_hostile_fleet_engaged
+		aivoice2_kotonoha_sisters_advisor_notification_fleet_destroyed
+		aivoice2_kotonoha_sisters_advisor_notification_station_under_attack
+		aivoice2_kotonoha_sisters_advisor_notification_special_project_complete
+		aivoice2_kotonoha_sisters_advisor_notification_situation_log
+		aivoice2_kotonoha_sisters_advisor_notification_enemy_troops_landing
+		aivoice2_kotonoha_sisters_advisor_notification_incoming_transmission
+		aivoice2_kotonoha_sisters_advisor_notification_research_complete
+		aivoice2_kotonoha_sisters_advisor_notification_discovery_detected
+		aivoice2_kotonoha_sisters_advisor_notification_ships_upgraded
+		aivoice2_kotonoha_sisters_advisor_notification_evade_hostile_fleet
+		aivoice2_kotonoha_sisters_advisor_notification_alien_spaceport_engaged
+		aivoice2_kotonoha_sisters_advisor_notification_building_ruined
+		aivoice2_kotonoha_sisters_advisor_notification_colonization_progress
+		aivoice2_kotonoha_sisters_advisor_notification_debris_analysed
+		aivoice2_kotonoha_sisters_advisor_notification_enemy_declared_war
+		aivoice2_kotonoha_sisters_advisor_notification_federation_formed
+		aivoice2_kotonoha_sisters_advisor_notification_frontier_outpost_lost
+		aivoice2_kotonoha_sisters_advisor_notification_hostile_station_engaged
+		aivoice2_kotonoha_sisters_advisor_notification_player_declare_war
+		aivoice2_kotonoha_sisters_advisor_notification_primitive_enlighted
+		aivoice2_kotonoha_sisters_advisor_notification_species_modified
+		aivoice2_kotonoha_sisters_advisor_notification_tile_blocker_clear
+		aivoice2_kotonoha_sisters_advisor_notification_unidentified_object
+		aivoice2_kotonoha_sisters_advisor_notification_alien_empire_communication
+		aivoice2_kotonoha_sisters_advisor_notification_alien_federation_formed
+		aivoice2_kotonoha_sisters_advisor_notification_alien_vessel_encountered
+		aivoice2_kotonoha_sisters_advisor_notification_generic_war_declare
+		aivoice2_kotonoha_sisters_advisor_notification_invasion_progress
+		aivoice2_kotonoha_sisters_advisor_notification_planet_in_revolt
+		aivoice2_kotonoha_sisters_advisor_notification_pre_sapient_uplifted
+		aivoice2_kotonoha_sisters_advisor_notification_spaceborne_encounter
+		aivoice2_kotonoha_sisters_advisor_notification_spaceport_under_attack
+		aivoice2_kotonoha_sisters_advisor_tutorial_agenda_available
+		aivoice2_kotonoha_sisters_advisor_tutorial_agenda_ready
+		aivoice2_kotonoha_sisters_advisor_sample_voice_type
+	}
+}
+
+soundgroup = {
+	name = l_aivoice2_kotonoha_sisters
+
+	soundeffectoverrides = {
+		advisor_notification_system_survey_complete = aivoice2_kotonoha_sisters_advisor_notification_system_survey_complete
+		advisor_notification_science_ship_destroyed = aivoice2_kotonoha_sisters_advisor_notification_science_ship_destroyed
+		advisor_notification_science_ship_under_attack = aivoice2_kotonoha_sisters_advisor_notification_science_ship_under_attack
+		advisor_notification_construction_complete = aivoice2_kotonoha_sisters_advisor_notification_construction_complete
+		advisor_notification_construction_ship_destroyed = aivoice2_kotonoha_sisters_advisor_notification_construction_ship_destroyed
+		advisor_notification_construction_ship_under_attack = aivoice2_kotonoha_sisters_advisor_notification_construction_ship_under_attack
+		advisor_notification_colony_established = aivoice2_kotonoha_sisters_advisor_notification_colony_established
+		advisor_notification_colony_ship_under_attack = aivoice2_kotonoha_sisters_advisor_notification_colony_ship_under_attack
+		advisor_notification_colony_ship_destroyed_01 = aivoice2_kotonoha_sisters_advisor_notification_colony_ship_destroyed
+		advisor_notification_spaceport_lost = aivoice2_kotonoha_sisters_advisor_notification_spaceport_lost
+		advisor_notification_enemy_invasion_defeated = aivoice2_kotonoha_sisters_advisor_notification_enemy_invasion_defeated
+		advisor_notification_invasion_enemy_won = aivoice2_kotonoha_sisters_advisor_notification_invasion_enemy_won
+		advisor_notification_invasion_failed = aivoice2_kotonoha_sisters_advisor_notification_invasion_failed
+		advisor_notification_invasion_success = aivoice2_kotonoha_sisters_advisor_notification_invasion_success
+		advisor_notification_military_station_lost = aivoice2_kotonoha_sisters_advisor_notification_military_station_lost
+		advisor_notification_mining_station_lost = aivoice2_kotonoha_sisters_advisor_notification_mining_station_lost
+		advisor_notification_research_station_lost = aivoice2_kotonoha_sisters_advisor_notification_research_station_lost
+		advisor_notification_observation_post_lost = aivoice2_kotonoha_sisters_advisor_notification_observation_post_lost
+		advisor_notification_outpost_station_lost = aivoice2_kotonoha_sisters_advisor_notification_outpost_station_lost
+		advisor_notification_wormhole_station_lost = aivoice2_kotonoha_sisters_advisor_notification_wormhole_station_lost
+		advisor_notification_hostile_fleet_detected = aivoice2_kotonoha_sisters_advisor_notification_hostile_fleet_detected
+		advisor_notification_hostile_fleet_engaged = aivoice2_kotonoha_sisters_advisor_notification_hostile_fleet_engaged
+		advisor_notification_fleet_destroyed = aivoice2_kotonoha_sisters_advisor_notification_fleet_destroyed
+		advisor_notification_station_under_attack = aivoice2_kotonoha_sisters_advisor_notification_station_under_attack
+		advisor_notification_special_project_complete = aivoice2_kotonoha_sisters_advisor_notification_special_project_complete
+		advisor_notification_situation_log = aivoice2_kotonoha_sisters_advisor_notification_situation_log
+		advisor_notification_enemy_troops_landing = aivoice2_kotonoha_sisters_advisor_notification_enemy_troops_landing
+		advisor_notification_incoming_transmission = aivoice2_kotonoha_sisters_advisor_notification_incoming_transmission
+		advisor_notification_research_complete = aivoice2_kotonoha_sisters_advisor_notification_research_complete
+		advisor_notification_discovery_detected = aivoice2_kotonoha_sisters_advisor_notification_discovery_detected
+		advisor_notification_ships_upgraded = aivoice2_kotonoha_sisters_advisor_notification_ships_upgraded
+		advisor_notification_evade_hostile_fleet = aivoice2_kotonoha_sisters_advisor_notification_evade_hostile_fleet
+		advisor_notification_alien_spaceport_engaged = aivoice2_kotonoha_sisters_advisor_notification_alien_spaceport_engaged
+		advisor_notification_building_ruined = aivoice2_kotonoha_sisters_advisor_notification_building_ruined
+		advisor_notification_colonization_progress = aivoice2_kotonoha_sisters_advisor_notification_colonization_progress
+		advisor_notification_debris_analysed = aivoice2_kotonoha_sisters_advisor_notification_debris_analysed
+		advisor_notification_enemy_declared_war = aivoice2_kotonoha_sisters_advisor_notification_enemy_declared_war
+		advisor_notification_federation_formed = aivoice2_kotonoha_sisters_advisor_notification_federation_formed
+		advisor_notification_frontier_outpost_lost = aivoice2_kotonoha_sisters_advisor_notification_frontier_outpost_lost
+		advisor_notification_hostile_station_engaged = aivoice2_kotonoha_sisters_advisor_notification_hostile_station_engaged
+		advisor_notification_player_declare_war = aivoice2_kotonoha_sisters_advisor_notification_player_declare_war
+		advisor_notification_primitive_enlighted = aivoice2_kotonoha_sisters_advisor_notification_primitive_enlighted
+		advisor_notification_species_modified = aivoice2_kotonoha_sisters_advisor_notification_species_modified
+		advisor_notification_tile_blocker_clear = aivoice2_kotonoha_sisters_advisor_notification_tile_blocker_clear
+		advisor_notification_unidentified_object = aivoice2_kotonoha_sisters_advisor_notification_unidentified_object
+		advisor_notification_alien_empire_communication_01 = aivoice2_kotonoha_sisters_advisor_notification_alien_empire_communication
+		advisor_notification_alien_federation_formed = aivoice2_kotonoha_sisters_advisor_notification_alien_federation_formed
+		advisor_notification_alien_vessel_encountered = aivoice2_kotonoha_sisters_advisor_notification_alien_vessel_encountered
+		advisor_notification_generic_war_declare = aivoice2_kotonoha_sisters_advisor_notification_generic_war_declare
+		advisor_notification_invasion_progress = aivoice2_kotonoha_sisters_advisor_notification_invasion_progress
+		advisor_notification_planet_in_revolt = aivoice2_kotonoha_sisters_advisor_notification_planet_in_revolt
+		advisor_notification_pre_sapient_uplifted = aivoice2_kotonoha_sisters_advisor_notification_pre_sapient_uplifted
+		advisor_notification_spaceborne_encounter = aivoice2_kotonoha_sisters_advisor_notification_spaceborne_encounter
+		advisor_notification_spaceport_under_attack = aivoice2_kotonoha_sisters_advisor_notification_spaceport_under_attack
+		advisor_tutorial_agenda_available = aivoice2_kotonoha_sisters_advisor_tutorial_agenda_available
+		advisor_tutorial_agenda_ready = aivoice2_kotonoha_sisters_advisor_tutorial_agenda_ready
+		advisor_sample_voice_type = aivoice2_kotonoha_sisters_advisor_sample_voice_type
+	}
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_system_survey_complete
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_system_survey_complete_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_system_survey_complete_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_system_survey_complete_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_system_survey_complete_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_system_survey_complete_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_system_survey_complete_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_science_ship_destroyed
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_science_ship_destroyed_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_science_ship_destroyed_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_science_ship_destroyed_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_science_ship_destroyed_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_science_ship_destroyed_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_science_ship_destroyed_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_science_ship_under_attack
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_science_ship_under_attack_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_science_ship_under_attack_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_science_ship_under_attack_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_science_ship_under_attack_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_science_ship_under_attack_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_science_ship_under_attack_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_construction_complete
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_construction_complete_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_construction_complete_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_construction_complete_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_construction_complete_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_construction_complete_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_construction_complete_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_construction_ship_destroyed
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_construction_ship_destroyed_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_construction_ship_destroyed_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_construction_ship_destroyed_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_construction_ship_destroyed_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_construction_ship_destroyed_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_construction_ship_destroyed_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_construction_ship_under_attack
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_construction_ship_under_attack_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_construction_ship_under_attack_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_construction_ship_under_attack_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_construction_ship_under_attack_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_construction_ship_under_attack_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_construction_ship_under_attack_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_colony_established
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_colony_established_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_colony_established_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_colony_established_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_colony_established_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_colony_established_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_colony_established_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_colony_ship_under_attack
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_colony_ship_under_attack_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_colony_ship_under_attack_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_colony_ship_under_attack_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_colony_ship_under_attack_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_colony_ship_under_attack_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_colony_ship_under_attack_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_colony_ship_destroyed
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_colony_ship_destroyed_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_colony_ship_destroyed_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_colony_ship_destroyed_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_colony_ship_destroyed_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_colony_ship_destroyed_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_colony_ship_destroyed_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_spaceport_lost
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_spaceport_lost_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_spaceport_lost_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_spaceport_lost_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_spaceport_lost_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_spaceport_lost_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_spaceport_lost_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_enemy_invasion_defeated
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_enemy_invasion_defeated_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_enemy_invasion_defeated_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_enemy_invasion_defeated_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_enemy_invasion_defeated_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_enemy_invasion_defeated_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_enemy_invasion_defeated_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_invasion_enemy_won
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_invasion_enemy_won_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_invasion_enemy_won_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_invasion_enemy_won_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_invasion_enemy_won_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_invasion_enemy_won_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_invasion_enemy_won_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_invasion_failed
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_invasion_failed_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_invasion_failed_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_invasion_failed_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_invasion_failed_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_invasion_failed_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_invasion_failed_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_invasion_success
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_invasion_success_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_invasion_success_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_invasion_success_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_invasion_success_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_invasion_success_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_invasion_success_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_military_station_lost
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_military_station_lost_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_military_station_lost_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_military_station_lost_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_military_station_lost_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_military_station_lost_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_military_station_lost_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_mining_station_lost
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_mining_station_lost_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_mining_station_lost_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_mining_station_lost_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_mining_station_lost_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_mining_station_lost_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_mining_station_lost_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_research_station_lost
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_research_station_lost_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_research_station_lost_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_research_station_lost_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_research_station_lost_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_research_station_lost_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_research_station_lost_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_observation_post_lost
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_observation_post_lost_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_observation_post_lost_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_observation_post_lost_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_observation_post_lost_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_observation_post_lost_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_observation_post_lost_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_outpost_station_lost
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_outpost_station_lost_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_outpost_station_lost_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_outpost_station_lost_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_outpost_station_lost_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_outpost_station_lost_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_outpost_station_lost_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_wormhole_station_lost
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_wormhole_station_lost_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_wormhole_station_lost_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_wormhole_station_lost_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_wormhole_station_lost_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_wormhole_station_lost_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_wormhole_station_lost_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_hostile_fleet_detected
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_hostile_fleet_detected_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_hostile_fleet_detected_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_hostile_fleet_detected_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_hostile_fleet_detected_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_hostile_fleet_detected_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_hostile_fleet_detected_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_hostile_fleet_engaged
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_hostile_fleet_engaged_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_hostile_fleet_engaged_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_hostile_fleet_engaged_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_hostile_fleet_engaged_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_hostile_fleet_engaged_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_hostile_fleet_engaged_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_fleet_destroyed
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_fleet_destroyed_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_fleet_destroyed_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_fleet_destroyed_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_fleet_destroyed_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_fleet_destroyed_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_fleet_destroyed_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_station_under_attack
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_station_under_attack_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_station_under_attack_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_station_under_attack_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_station_under_attack_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_station_under_attack_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_station_under_attack_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_special_project_complete
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_special_project_complete_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_special_project_complete_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_special_project_complete_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_special_project_complete_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_special_project_complete_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_special_project_complete_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_situation_log
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_situation_log_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_situation_log_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_situation_log_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_situation_log_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_situation_log_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_situation_log_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_enemy_troops_landing
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_enemy_troops_landing_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_enemy_troops_landing_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_enemy_troops_landing_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_enemy_troops_landing_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_enemy_troops_landing_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_enemy_troops_landing_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_incoming_transmission
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_incoming_transmission_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_incoming_transmission_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_incoming_transmission_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_incoming_transmission_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_incoming_transmission_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_incoming_transmission_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_research_complete
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_research_complete_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_research_complete_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_research_complete_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_research_complete_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_research_complete_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_research_complete_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_discovery_detected
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_discovery_detected_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_discovery_detected_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_discovery_detected_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_discovery_detected_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_discovery_detected_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_discovery_detected_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_ships_upgraded
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_ships_upgraded_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_ships_upgraded_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_ships_upgraded_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_ships_upgraded_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_ships_upgraded_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_ships_upgraded_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_evade_hostile_fleet
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_evade_hostile_fleet_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_evade_hostile_fleet_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_evade_hostile_fleet_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_evade_hostile_fleet_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_evade_hostile_fleet_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_evade_hostile_fleet_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_alien_spaceport_engaged
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_alien_spaceport_engaged_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_alien_spaceport_engaged_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_alien_spaceport_engaged_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_alien_spaceport_engaged_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_alien_spaceport_engaged_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_alien_spaceport_engaged_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_building_ruined
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_building_ruined_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_building_ruined_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_building_ruined_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_building_ruined_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_building_ruined_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_building_ruined_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_colonization_progress
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_colonization_progress_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_colonization_progress_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_colonization_progress_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_colonization_progress_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_colonization_progress_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_colonization_progress_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_debris_analysed
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_debris_analysed_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_debris_analysed_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_debris_analysed_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_debris_analysed_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_debris_analysed_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_debris_analysed_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_enemy_declared_war
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_enemy_declared_war_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_enemy_declared_war_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_enemy_declared_war_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_enemy_declared_war_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_enemy_declared_war_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_enemy_declared_war_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_federation_formed
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_federation_formed_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_federation_formed_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_federation_formed_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_federation_formed_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_federation_formed_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_federation_formed_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_frontier_outpost_lost
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_frontier_outpost_lost_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_frontier_outpost_lost_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_frontier_outpost_lost_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_frontier_outpost_lost_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_frontier_outpost_lost_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_frontier_outpost_lost_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_hostile_station_engaged
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_hostile_station_engaged_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_hostile_station_engaged_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_hostile_station_engaged_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_hostile_station_engaged_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_hostile_station_engaged_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_hostile_station_engaged_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_player_declare_war
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_player_declare_war_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_player_declare_war_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_player_declare_war_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_player_declare_war_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_player_declare_war_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_player_declare_war_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_primitive_enlighted
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_primitive_enlighted_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_primitive_enlighted_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_primitive_enlighted_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_primitive_enlighted_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_primitive_enlighted_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_primitive_enlighted_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_species_modified
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_species_modified_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_species_modified_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_species_modified_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_species_modified_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_species_modified_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_species_modified_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_tile_blocker_clear
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_tile_blocker_clear_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_tile_blocker_clear_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_tile_blocker_clear_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_tile_blocker_clear_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_tile_blocker_clear_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_tile_blocker_clear_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_unidentified_object
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_unidentified_object_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_unidentified_object_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_unidentified_object_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_unidentified_object_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_unidentified_object_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_unidentified_object_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_alien_empire_communication
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_alien_empire_communication_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_alien_empire_communication_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_alien_empire_communication_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_alien_empire_communication_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_alien_empire_communication_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_alien_empire_communication_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_alien_federation_formed
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_alien_federation_formed_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_alien_federation_formed_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_alien_federation_formed_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_alien_federation_formed_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_alien_federation_formed_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_alien_federation_formed_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_alien_vessel_encountered
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_alien_vessel_encountered_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_alien_vessel_encountered_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_alien_vessel_encountered_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_alien_vessel_encountered_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_alien_vessel_encountered_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_alien_vessel_encountered_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_generic_war_declare
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_generic_war_declare_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_generic_war_declare_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_generic_war_declare_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_generic_war_declare_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_generic_war_declare_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_generic_war_declare_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_invasion_progress
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_invasion_progress_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_invasion_progress_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_invasion_progress_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_invasion_progress_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_invasion_progress_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_invasion_progress_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_planet_in_revolt
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_planet_in_revolt_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_planet_in_revolt_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_planet_in_revolt_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_planet_in_revolt_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_planet_in_revolt_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_planet_in_revolt_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_pre_sapient_uplifted
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_pre_sapient_uplifted_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_pre_sapient_uplifted_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_pre_sapient_uplifted_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_pre_sapient_uplifted_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_pre_sapient_uplifted_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_pre_sapient_uplifted_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_spaceborne_encounter
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_spaceborne_encounter_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_spaceborne_encounter_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_spaceborne_encounter_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_spaceborne_encounter_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_spaceborne_encounter_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_spaceborne_encounter_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_spaceport_under_attack
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_spaceport_under_attack_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_spaceport_under_attack_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_spaceport_under_attack_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_notification_spaceport_under_attack_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_notification_spaceport_under_attack_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_notification_spaceport_under_attack_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_tutorial_agenda_available
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_tutorial_agenda_available_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_tutorial_agenda_available_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_tutorial_agenda_available_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_tutorial_agenda_available_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_tutorial_agenda_available_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_tutorial_agenda_available_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_tutorial_agenda_ready
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_tutorial_agenda_ready_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_tutorial_agenda_ready_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_tutorial_agenda_ready_aoi
+	file = "vo/aivoice2_kotonoha_aoi/advisor_tutorial_agenda_ready_aoi.wav"
+}
+sound = {
+	name = aivoice2_kotonoha_sisters_advisor_tutorial_agenda_ready_akane
+	file = "vo/aivoice2_kotonoha_akane/advisor_tutorial_agenda_ready_akane.wav"
+}
+
+soundeffect = {
+	name = aivoice2_kotonoha_sisters_advisor_sample_voice_type
+	sounds = {
+		sound = aivoice2_kotonoha_sisters_advisor_notification_system_survey_complete_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_system_survey_complete_akane
+		sound = aivoice2_kotonoha_sisters_advisor_notification_research_complete_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_research_complete_akane
+		sound = aivoice2_kotonoha_sisters_advisor_notification_situation_log_aoi
+		sound = aivoice2_kotonoha_sisters_advisor_notification_situation_log_akane
+	}
+	volume = 0.45
+	max_audible = 1
+	max_audible_behaviour = fail
+}
