@@ -1,6 +1,7 @@
 on_game_start_country = {
 	events = {
 		ship_design.11 # 対ミサイルコルベット級コルベット
+		ship_design.17  # 対コルベット級防衛プラットフォーム
 	}
 }
 
