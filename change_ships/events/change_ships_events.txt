@@ -1,0 +1,137 @@
+namespace = change_ships
+
+###########################################################
+# AI国家にコルベットが50隻より多い艦隊がいる場合は、
+# 50隻以下となるまで以下の対応を実施する
+# ・20隻のコルベットを10隻の駆逐艦に変換する
+###########################################################
+country_event = {
+	id = change_ships.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = yes
+		is_country_type = default
+		has_technology = tech_corvettes
+		has_technology = tech_destroyers
+	}
+
+	immediate = {
+		change_ships = {
+			TARGET_SHIP_SIZE = corvette
+			AFTER_SHIP_SIZE = destroyer
+			MAXIMUM_NUMBER_OF_SHIPS = 50
+			NUMBER_OF_DESTRUCTIONS = 20
+			NUMBER_OF_CREATIONS = 10
+		}
+	}
+}
+
+###########################################################
+# AI国家にフリゲートが50隻より多い艦隊がいる場合は、
+# 50隻以下となるまで以下の対応を実施する
+# ・20隻のフリゲートを10隻の駆逐艦に変換する
+###########################################################
+country_event = {
+	id = change_ships.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = yes
+		is_country_type = default
+		has_technology = tech_torpedoes_1
+		has_technology = tech_destroyers
+	}
+
+	immediate = {
+		change_ships = {
+			TARGET_SHIP_SIZE = frigate
+			AFTER_SHIP_SIZE = destroyer
+			MAXIMUM_NUMBER_OF_SHIPS = 50
+			NUMBER_OF_DESTRUCTIONS = 20
+			NUMBER_OF_CREATIONS = 10
+		}
+	}
+}
+
+###########################################################
+# AI国家に駆逐艦が40隻より多い艦隊がいる場合は、
+# 40隻以下となるまで以下の対応を実施する
+# ・20隻の駆逐艦を10隻の巡洋艦に変換する
+###########################################################
+country_event = {
+	id = change_ships.3
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = yes
+		is_country_type = default
+		has_technology = tech_destroyers
+		has_technology = tech_cruisers
+	}
+
+	immediate = {
+		change_ships = {
+			TARGET_SHIP_SIZE = destroyer
+			AFTER_SHIP_SIZE = cruiser
+			MAXIMUM_NUMBER_OF_SHIPS = 40
+			NUMBER_OF_DESTRUCTIONS = 20
+			NUMBER_OF_CREATIONS = 10
+		}
+	}
+}
+
+###########################################################
+# AI国家に巡洋艦が20隻より多い艦隊がいる場合は、
+# 20隻以下となるまで以下の対応を実施する
+# ・10隻の巡洋艦を5隻の戦艦に変換する
+###########################################################
+country_event = {
+	id = change_ships.4
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = yes
+		is_country_type = default
+		has_technology = tech_cruisers
+		has_technology = tech_battleships
+	}
+
+	immediate = {
+		change_ships = {
+			TARGET_SHIP_SIZE = cruiser
+			AFTER_SHIP_SIZE = battleship
+			MAXIMUM_NUMBER_OF_SHIPS = 20
+			NUMBER_OF_DESTRUCTIONS = 10
+			NUMBER_OF_CREATIONS = 5
+		}
+	}
+}
+
+###########################################################
+# デバッグ用
+###########################################################
+event = {
+	id = change_ships.99
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {}
+
+	immediate = {
+		every_country = {
+			limit = {
+				is_ai = yes
+				is_country_type = default
+			}
+			country_event = { id = change_ships.1 }
+			country_event = { id = change_ships.2 }
+			country_event = { id = change_ships.3 }
+			country_event = { id = change_ships.4 }
+		}
+	}
+}

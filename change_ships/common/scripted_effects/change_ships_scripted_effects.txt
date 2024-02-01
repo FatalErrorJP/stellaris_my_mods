@@ -1,0 +1,48 @@
+change_ships = {
+	random_owned_design = {
+		limit = { is_ship_size = $AFTER_SHIP_SIZE$ }
+		save_event_target_as = target_design
+	}
+
+	while = {
+		limit = {
+			any_owned_fleet = {
+				count_owned_ship = { limit = { is_ship_size = $TARGET_SHIP_SIZE$ } count > $MAXIMUM_NUMBER_OF_SHIPS$ }
+				is_leased = no									# 他国から借りている艦隊は除外する
+				not = { has_fleet_order = merge_fleet_order }	# 合流処理中の艦隊は除外する
+			}
+		}
+		every_owned_fleet = {
+			limit = {
+				count_owned_ship = { limit = { is_ship_size = $TARGET_SHIP_SIZE$ } count > $MAXIMUM_NUMBER_OF_SHIPS$ }
+				is_leased = no									# 他国から借りている艦隊は除外する
+				not = { has_fleet_order = merge_fleet_order }	# 合流処理中の艦隊は除外する
+			}
+
+			# 艦隊をdelete_shipで壊すとリーダーが死亡する場合があるので、待避させておく
+			if = {
+				limit = { exists = leader }
+				leader = {
+					save_event_target_as = target_leader
+				}
+				unassign_leader = this
+			}
+
+			while = {
+				count = $NUMBER_OF_DESTRUCTIONS$
+				random_owned_ship = { limit = { is_ship_size = $TARGET_SHIP_SIZE$ } delete_ship = this }
+			}
+			while = {
+				count = $NUMBER_OF_CREATIONS$
+				create_ship = { name = random design = event_target:target_design graphical_culture = root }
+			}
+
+			# 待避させていたリーダーを戻す
+			if = {
+				limit = { exists = event_target:target_leader }
+				assign_leader = event_target:target_leader
+			}
+
+		}
+	}
+}

@@ -1,0 +1,9 @@
+# this = country
+on_yearly_pulse_country = {
+	events = {
+		change_ships.1
+		change_ships.2
+		change_ships.3
+		change_ships.4
+	}
+}
