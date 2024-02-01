@@ -1,0 +1,4 @@
+﻿l_japanese:
+  action_summon_dimensional_fleet_tooltip: "強力な艦隊を未知の時空から召喚する。 艦隊は我々の次元に最長10年間留まることができる。$action_summon_dimensional_fleet_tooltip_add_text_1$$action_summon_dimensional_fleet_tooltip_add_text_2$"
+  action_summon_dimensional_fleet_tooltip_add_text_1: "召喚される異次元艦隊の編成は§Sゲーム開始時点からの経過年数§!、§S宇宙軍許容量§!、§S完了した天体の裂け目の数§!に応じて変化する。"
+  action_summon_dimensional_fleet_tooltip_add_text_2: "今艦隊を召喚すると、異次元艦隊は以下の編成となるだろう。\n・$small_ship_ed$：§S[This.NumDimensionalFleetSmallShips]隻§!\n・$medium_ship_ed$：§S[This.NumDimensionalFleetBigShips]隻§!\n・艦隊サイズ：§S[This.DimensionalFleetCap]§!"

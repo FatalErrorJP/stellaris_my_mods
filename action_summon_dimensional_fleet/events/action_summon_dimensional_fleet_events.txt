@@ -1,0 +1,37 @@
+namespace = action_summon_dimensional_fleet
+
+# 船体値が0になったら壊れる代わりに無効になるようにする
+# 新たに建造された防衛プラットフォームとイオン砲が対象
+country_event = {
+	id = action_summon_dimensional_fleet.1
+	hide_window = yes
+
+	trigger = {
+		is_country_type = default
+		is_ai = no
+	}
+
+	immediate = {
+		set_variable = {
+			which = final_dimensional_fleet_value
+			value = value:dimensional_fleet_power_scaling|YEARS|trigger:years_passed|NAVAL_CAPACITY|trigger:max_naval_capacity|
+		}
+		set_variable = {
+			which = num_dimensional_fleet_big_ships
+			value = value:num_dimensional_fleet_big_ships|VALUE|this.final_dimensional_fleet_value|SHIP_STRENGTH|1200|
+		}
+		set_variable = {
+			which = num_dimensional_fleet_small_ships
+			value = value:num_dimensional_fleet_small_ships|VALUE|this.final_dimensional_fleet_value|BIG_SHIP_STRENGTH|1200|SMALL_SHIP_STRENGTH|400|
+		}
+
+		set_variable = { which = dimensional_fleet_big_cap value = this.num_dimensional_fleet_big_ships }
+		multiply_variable = { which = dimensional_fleet_big_cap value = 4 }
+
+		set_variable = { which = dimensional_fleet_small_cap value = this.num_dimensional_fleet_small_ships }
+		multiply_variable = { which = dimensional_fleet_small_cap value = 2 }
+
+		set_variable = { which = dimensional_fleet_cap value = this.dimensional_fleet_big_cap }
+		change_variable = { which = dimensional_fleet_cap value = this.dimensional_fleet_small_cap }
+	}
+}
