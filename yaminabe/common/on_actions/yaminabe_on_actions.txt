@@ -1,0 +1,31 @@
+# Triggers when the game starts
+on_game_start = {
+	events = {
+		yaminabe.1
+	}
+}
+
+# No scope, like on_game_start
+on_monthly_pulse = {
+	events = {
+		yaminabe.1
+	}
+}
+
+#This = ship (starbase)
+#From = owner country
+on_building_starbase_outpost = {
+	events = {
+		yaminabe.2
+	}
+}
+
+# Scope: Ship Event
+#A ship has been built
+# Root = Ship
+# From = Planet
+on_ship_built = {
+	events = {
+		yaminabe.2
+	}
+}

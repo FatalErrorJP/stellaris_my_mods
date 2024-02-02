@@ -1,0 +1,73 @@
+namespace = yaminabe
+
+# 全ての艦隊の設定をis_boss = yes(ドクロマーク)に設定して戦力値を見えないようにする
+event = {
+	id = yaminabe.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {}
+
+	immediate = {
+		every_country = {
+			limit = {}
+			every_owned_fleet = {
+				limit = {
+					OR = {
+						is_ship_class = shipclass_military
+						is_ship_class = shipclass_starbase
+					}
+					is_leased = no									# 他国から借りている艦隊は除外する
+					NOR = {
+						has_fleet_flag = armada_of_the_voidborn
+						has_fleet_flag = dwamak_bashers
+						has_fleet_flag = her_chosen_champions
+						has_fleet_flag = star_rider_flotilla
+						has_fleet_flag = unhinged_screamer_flotilla
+						has_fleet_flag = order_of_eternal_night
+						has_fleet_flag = first_storm_wing
+						has_fleet_flag = frenzied_volunteer_squadron
+						has_fleet_flag = twilight_congregation
+						has_fleet_flag = dimensional_fleet
+					}
+				}
+				set_fleet_settings = { is_boss = yes }
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = yaminabe.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		fleet = {
+			OR = {
+				is_ship_class = shipclass_military
+				is_ship_class = shipclass_starbase
+			}
+			is_leased = no									# 他国から借りている艦隊は除外する
+			NOR = {
+				has_fleet_flag = armada_of_the_voidborn
+				has_fleet_flag = dwamak_bashers
+				has_fleet_flag = her_chosen_champions
+				has_fleet_flag = star_rider_flotilla
+				has_fleet_flag = unhinged_screamer_flotilla
+				has_fleet_flag = order_of_eternal_night
+				has_fleet_flag = first_storm_wing
+				has_fleet_flag = frenzied_volunteer_squadron
+				has_fleet_flag = twilight_congregation
+				has_fleet_flag = dimensional_fleet
+			}
+		}
+	}
+
+	immediate = {
+		fleet = {
+			set_fleet_settings = { is_boss = yes }
+		}
+	}
+}
+
