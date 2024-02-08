@@ -83,4 +83,5 @@ https://steamcommunity.com/profiles/76561199152309881/myworkshopfiles/?p=1&numpe
 | {counter:index} | 小型艦ばかり作るな！                                                 | change_ships
 | {counter:index} | 事前に次元艦隊の数を確認できるようにしてくれパラド                   | action_summon_dimensional_fleet
 | {counter:index} | 敵戦力なんて現実ではそう簡単に数値化できるものじゃないよね           | yaminabe
+| {counter:index} | 成り行き任せでも布告資金を使いたい                                   | damn_the_consequences
 |===
