@@ -1,7 +1,5 @@
 namespace = action_summon_dimensional_fleet
 
-# 船体値が0になったら壊れる代わりに無効になるようにする
-# 新たに建造された防衛プラットフォームとイオン砲が対象
 country_event = {
 	id = action_summon_dimensional_fleet.1
 	hide_window = yes

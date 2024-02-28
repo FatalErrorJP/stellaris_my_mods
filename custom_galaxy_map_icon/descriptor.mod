@@ -4,5 +4,5 @@ tags={
 	"Fixes"
 }
 name="銀河地図のアイコンよ、重なるな"
-supported_version="3.10.*"
+supported_version="3.11.*"
 remote_file_id="2827245830"

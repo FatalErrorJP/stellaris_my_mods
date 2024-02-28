@@ -3,5 +3,5 @@ tags={
 	"Fixes"
 }
 name="わが偉大なるパトロンよ、艦隊を…え、いらない？"
-supported_version="3.10.*"
+supported_version="3.11.*"
 remote_file_id="2969246004"

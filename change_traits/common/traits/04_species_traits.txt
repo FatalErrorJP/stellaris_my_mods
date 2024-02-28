@@ -1435,7 +1435,7 @@ trait_plantoid_bloomed = {
 			planet = {
 				is_planet_class = pc_gaia
 				OR = {
-				has_active_building = building_gaiaseeders_4
+					has_active_building = building_gaiaseeders_4
 					has_active_building = building_gaiaseeders_pc_gaia
 				}
 			}
@@ -1465,7 +1465,7 @@ trait_plantoid_bloomed = {
 			planet = {
 				is_planet_class = pc_gaia
 				OR = {
-				has_active_building = building_gaiaseeders_4
+					has_active_building = building_gaiaseeders_4
 					has_active_building = building_gaiaseeders_pc_gaia
 				}
 			}
@@ -1513,7 +1513,7 @@ trait_plantoid_radiotrophic = {
 	allowed_archetypes = { BIOLOGICAL }
 	species_class = { PLANT FUN }
 	custom_tooltip = TRAIT_PLANTOID_RADIOTROPHIC_EFFECT
-	inline_script = "traits/radiotrophic_effects" 
+	inline_script = "traits/radiotrophic_effects"
 }
 
 trait_plantoid_budding = {
@@ -1618,7 +1618,7 @@ trait_harvested_radiotrophic = {
 	}
 
 	custom_tooltip = TRAIT_PLANTOID_RADIOTROPHIC_EFFECT
-	inline_script = "traits/radiotrophic_effects" 
+	inline_script = "traits/radiotrophic_effects"
 }
 
 trait_lithoid_radiotrophic = {
@@ -1635,7 +1635,7 @@ trait_lithoid_radiotrophic = {
 	opposites = { "trait_plantoid_phototrophic" "trait_plantoid_radiotrophic" "trait_harvested_radiotrophic" "trait_advanced_phototrophic" "trait_advanced_radiotrophic" "trait_voidling" }
 	allowed_archetypes = { LITHOID }
 	custom_tooltip = TRAIT_LITHOID_RADIOTROPHIC_EFFECT
-	inline_script = "traits/radiotrophic_effects" 
+	inline_script = "traits/radiotrophic_effects"
 }
 
 trait_zombie = {
@@ -1662,6 +1662,17 @@ trait_zombie = {
 		planet_jobs_produces_mult = -0.25
 		planet_pops_upkeep_mult = -1
 	}
+
+	triggered_pop_modifier = {
+		potential = {
+			OR = {
+				is_pop_category = ruler
+				is_pop_category = specialist
+			}
+		}
+		pop_demotion_time_mult = -10.0
+	}
+	
 	icon = "gfx/interface/icons/traits/trait_zombie.dds"
 	custom_tooltip = TRAIT_ZOMBIE_EFFECT
 	slave_cost = {

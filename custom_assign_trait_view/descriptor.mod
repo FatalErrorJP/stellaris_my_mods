@@ -5,5 +5,5 @@ tags={
 	"Fixes"
 }
 name="特性選択画面を見やすくしたい"
-supported_version="3.10.*"
+supported_version="3.11.*"
 remote_file_id="2984480876"
