@@ -17,11 +17,11 @@ ship_design = {
 		}
 		component = {
 			slot = "SMALL_GUN_02"
-			template = "SMALL_RED_LASER"
+			template = "SMALL_MASS_DRIVER_1"
 		}
 		component = {
 			slot = "SMALL_GUN_03"
-			template = "SMALL_MASS_DRIVER_1"
+			template = "SMALL_RED_LASER"
 		}
 
 		component = {
@@ -215,29 +215,6 @@ ship_design = {
 	upgrade_ship_components = yes
 
 	section = {
-		template = "BATTLESHIP_BOW_M2S4"
-		slot = "bow"
-
-		component = {
-			slot = "EXTRA_LARGE_01"
-			template = "MASS_ACCELERATOR_1"
-		}
-
-		component = {
-			slot = "LARGE_UTILITY_1"
-			template = "LARGE_SHIELD_1"
-		}
-		component = {
-			slot = "LARGE_UTILITY_2"
-			template = "LARGE_SHIELD_1"
-		}
-		component = {
-			slot = "LARGE_UTILITY_3"
-			template = "LARGE_SHIELD_1"
-		}
-	}
-
-	section = {
 		template = "BATTLESHIP_MID_L3"
 		slot = "mid"
 
@@ -265,6 +242,29 @@ ship_design = {
 		component = {
 			slot = "LARGE_UTILITY_3"
 			template = "LARGE_ARMOR_1"
+		}
+	}
+
+	section = {
+		template = "BATTLESHIP_BOW_M2S4"
+		slot = "bow"
+
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "MASS_ACCELERATOR_1"
+		}
+
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_SHIELD_1"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_SHIELD_1"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_SHIELD_1"
 		}
 	}
 
@@ -347,20 +347,20 @@ ship_design = {
 			template = "SMALL_PLASMA_1"
 		}
 		component = {
-			slot = "SMALL_GUN_03"
-			template = "POINT_DEFENCE_1"
-		}
-		component = {
-			slot = "SMALL_GUN_04"
-			template = "POINT_DEFENCE_1"
-		}
-		component = {
 			slot = "STRIKE_CRAFT_01"
 			template = "LARGE_SCOUT_HANGAR_1"
 		}
 		component = {
 			slot = "STRIKE_CRAFT_02"
 			template = "LARGE_SCOUT_HANGAR_1"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "FLAK_BATTERY_1"
+		}
+		component = {
+			slot = "SMALL_GUN_04"
+			template = "FLAK_BATTERY_1"
 		}
 
 		component = {
