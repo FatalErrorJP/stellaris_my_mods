@@ -73,6 +73,7 @@ find_bypass_gateway_btn = {
 					OR = {
 						is_megastructure_type = gateway_restored
 						is_megastructure_type = gateway_final
+						is_megastructure_type = gateway_derelict
 					}
 					OR = {
 						star = {
@@ -883,6 +884,8 @@ find_megastructure_dyson_sphere_btn = {
 						is_megastructure_type = dyson_sphere_5
 						is_megastructure_type = dyson_sphere_ruined
 						is_megastructure_type = dyson_sphere_restored
+						is_megastructure_type = dyson_sphere_disco
+						is_megastructure_type = dyson_sphere_disco_restored
 					}
 					OR = {
 						star = {
