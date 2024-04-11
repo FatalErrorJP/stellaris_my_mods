@@ -1,0 +1,176 @@
+#######################################
+# 基本的にはバニラのenclave.6000を踏襲
+#######################################
+namespace = enclave
+
+## Strange Manifestations - Shroud Tunnel Event
+fleet_event = {
+	id = enclave.6000
+	title = "enclave.6000.name"
+	desc = {
+		trigger = {
+			hidden:owner = {
+				switch = {
+					trigger = has_ethic
+					ethic_xenophile = { text = enclave.6000.a.desc }
+					ethic_xenophobe = { text = enclave.6000.b.desc }
+					ethic_gestalt_consciousness = {
+						if = {
+							limit = { has_authority = auth_machine_intelligence }
+							text = enclave.6000.d.desc
+						}
+						else = { text = enclave.6000.e.desc }
+					}
+					default = { text = enclave.6000.a.desc }
+				}
+			}
+		}
+	}
+	picture = GFX_evt_shroud_tunnel
+	show_sound = event_mystic_reveal
+	location = FROM
+
+	is_triggered_only = yes
+
+	trigger = {
+		exists = leader
+		leader = {
+			NOR = {
+				has_leader_flag = renowned_leader
+				has_leader_flag = legendary_leader
+			}
+		}
+		NOR = {
+			owner = { has_country_flag = strange_manifestations_cooldown }
+			has_fleet_flag = strange_manifestations
+		}
+	}
+
+	immediate = {
+		set_fleet_flag = strange_manifestations
+		owner = {
+			set_timed_country_flag = {
+				flag = strange_manifestations_cooldown
+				days = 720
+			}
+		}
+		#####################################################################
+		# ここからMod修正箇所
+		#####################################################################
+		leader = { change_leader_portrait = aoiM }
+#		if = {
+#			limit = {
+#				exists = leader
+#				leader = {
+#					species = {
+#						species_portrait = mol12
+#					}
+#				}
+#			}
+#			leader = {
+#				change_leader_portrait = mam_rat
+#			}
+#		}
+#		else = {
+#			leader = {
+#				change_leader_portrait = mol12
+#			}
+#		}
+		#######################################################################
+		# ここまでMod修正箇所
+		#####################################################################
+	}
+
+	option = {
+		name = INTERESTING
+		leader = { add_experience = 200 }
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = enclave.6000b.a
+		trigger = {
+			owner = {
+				has_ethic = ethic_xenophobe
+			}
+		}
+		leader = {
+			save_event_target_as = dissected_leader
+			exile_leader_as = dissected_leader
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+	}
+
+	option = {
+		name = enclave.6000b.b
+		trigger = {
+			owner = {
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+		leader = {
+			save_event_target_as = dissected_leader
+			exile_leader_as = dissected_leader
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+	}
+
+	option = {
+		name = enclave.6000d.a
+		trigger = {
+			owner = {
+				has_authority = auth_machine_intelligence
+			}
+		}
+		leader = {
+			save_event_target_as = terminated_leader
+			exile_leader_as = terminated_leader
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+	}
+
+	option = {
+		name = enclave.6000e.a
+		trigger = {
+			owner = {
+				has_ethic = ethic_gestalt_consciousness
+				NOT = {has_authority = auth_machine_intelligence }
+			}
+		}
+		leader = {
+			save_event_target_as = dissected_leader
+			exile_leader_as = dissected_leader
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier1researchreward
+				min = @tier1researchmin
+				max = @tier1researchmax
+			}
+		}
+	}
+}
