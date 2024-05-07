@@ -1,0 +1,15 @@
+namespace = no_ai_habitats_plus
+
+# Create Gestalt Council.
+event = {
+	id = no_ai_habitats_plus.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_system = {
+			limit = { check_variable_arithmetic = { which = value:habitats_points value >= 18 } }
+			set_star_flag = can_build_habitats
+		}
+	}
+}

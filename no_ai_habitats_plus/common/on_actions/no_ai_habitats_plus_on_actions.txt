@@ -1,0 +1,13 @@
+# Triggers when the game starts
+on_game_start = {
+	events = {
+		no_ai_habitats_plus.1
+	}
+}
+
+# No scope, like on_game_start
+on_five_year_pulse = {
+	events = {
+		no_ai_habitats_plus.1
+	}
+}

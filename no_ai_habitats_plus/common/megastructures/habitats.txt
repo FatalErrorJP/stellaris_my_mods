@@ -182,35 +182,20 @@ habitat_central_complex = {
 		#############################################################
 		# ここからMod追加コード
 		#############################################################
-		# 軌道上居住地を作ってもあまり旨みのない、閾値以下の星系には作らない
 		modifier = {
 			factor = 0
-			check_variable_arithmetic = {
-				which = value:habitats_points
-				value < 18
+			OR = {
+				# 軌道上居住地を作ってもあまり旨みのない、閾値以下の星系には作らない
+				not = { has_star_flag = can_build_habitats }
+
+				# 帝国内の軌道上居住地の数は2つまでとする。それ以上建っている場合は作らない
+				from = { count_planet_within_border = { limit = { is_planet_class = pc_habitat } count >= 2 } }
+
+				# 建設船で巨大建造物を建造中の場合は、建設しない
+				# ※軌道上居住地の数を2つに制限しても、2つ目を建造中に3つ目の建造指示が出てしまうためそれ対策
+				from = { any_owned_fleet = { has_fleet_order = build_megastructure_fleet_order } }
 			}
 		}
-
-		# 帝国内の軌道上居住地の数は2つまでとする。それ以上建っている場合は作らない
-		modifier = {
-			factor = 0
-			from = {
-				count_planet_within_border = {
-					limit = { is_planet_class = pc_habitat }
-					count >= 2
-				}
-			}
-		}
-
-		# 建設船で巨大建造物を建造中の場合は、建設しない
-		# ※軌道上居住地の数を2つに制限しても、2つ目を建造中に3つ目の建造指示が出てしまうためそれ対策
-		modifier = {
-			factor = 0
-			from = {
-				any_owned_fleet = { has_fleet_order = build_megastructure_fleet_order }
-			}
-		}
-
 		#############################################################
 		# ここまでMod追加コード
 		#############################################################
@@ -444,10 +429,10 @@ major_orbital = {
 			}
 			add_deposit_if_missing = {
 				DEPOSIT = d_orbital_research
-					}
+			}
 			add_deposit_if_missing = {
 				DEPOSIT = d_orbital_energy
-				}
+			}
 			add_deposit_if_missing = {
 				DEPOSIT = d_orbital_mining
 			}
@@ -626,10 +611,10 @@ minor_orbital = {
 			}
 			add_deposit_if_missing = {
 				DEPOSIT = d_orbital_research
-					}
+			}
 			add_deposit_if_missing = {
 				DEPOSIT = d_orbital_energy
-				}
+			}
 			add_deposit_if_missing = {
 				DEPOSIT = d_orbital_mining
 			}
@@ -780,10 +765,10 @@ major_orbital_knights = {
 			}
 			add_deposit_if_missing = {
 				DEPOSIT = d_orbital_research
-					}
+			}
 			add_deposit_if_missing = {
 				DEPOSIT = d_orbital_energy
-				}
+			}
 			add_deposit_if_missing = {
 				DEPOSIT = d_orbital_mining
 			}
