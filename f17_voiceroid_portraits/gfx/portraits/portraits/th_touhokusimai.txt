@@ -3,41 +3,41 @@
 ##############################################################
 # 画像、音声ファイルとのリンク設定
 portraits = {
-	itako_01 =   { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_01.dds"     }
-	itako_02 =   { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_02.dds"     }
-	itako_03 =   { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_03.dds"     }
-	itako_04 =   { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_04.dds"     }
-	itako_05 =   { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_05.dds"     }
-	itako_06 =   { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_06.dds"     }
-	zunko_01 =   { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_01.dds"     }
-	zunko_02 =   { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_02.dds"     }
-	zunko_03 =   { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_03.dds"     }
-	zunko_04 =   { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_04.dds"     }
-	zunko_05 =   { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_05.dds"     }
-	kiritan_01 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_01.dds" }
-	kiritan_02 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_02.dds" }
-	kiritan_03 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_03.dds" }
-	kiritan_04 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_04.dds" }
-	kiritan_05 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_05.dds" }
-	kiritan_06 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_06.dds" }
-	kiritan_07 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_07.dds" }
-	kiritan_08 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_08.dds" }
-	kiritan_09 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_09.dds" }
+	touhoku_itako_01 =   { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_01.dds"     }
+	touhoku_itako_02 =   { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_02.dds"     }
+	touhoku_itako_03 =   { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_03.dds"     }
+	touhoku_itako_04 =   { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_04.dds"     }
+	touhoku_itako_05 =   { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_05.dds"     }
+	touhoku_itako_06 =   { texturefile = "gfx/models/portraits/touhoku/itako/itakoK_06.dds"     }
+	touhoku_zunko_01 =   { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_01.dds"     }
+	touhoku_zunko_02 =   { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_02.dds"     }
+	touhoku_zunko_03 =   { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_03.dds"     }
+	touhoku_zunko_04 =   { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_04.dds"     }
+	touhoku_zunko_05 =   { texturefile = "gfx/models/portraits/touhoku/zunko/zunkoK_05.dds"     }
+	touhoku_kiritan_01 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_01.dds" }
+	touhoku_kiritan_02 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_02.dds" }
+	touhoku_kiritan_03 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_03.dds" }
+	touhoku_kiritan_04 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_04.dds" }
+	touhoku_kiritan_05 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_05.dds" }
+	touhoku_kiritan_06 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_06.dds" }
+	touhoku_kiritan_07 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_07.dds" }
+	touhoku_kiritan_08 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_08.dds" }
+	touhoku_kiritan_09 = { texturefile = "gfx/models/portraits/touhoku/kiritan/kiritanK_09.dds" }
 }
 
 # 各場面別のポートレート
 portrait_groups = {
 	touhokusimai = {
 		# デフォルト
-		default = zunko_01
+		default = touhoku_zunko_01
 
 		# 帝国作成時
 		game_setup = {
 			add = {
 				portraits = {
-					zunko_01 zunko_02 zunko_03 zunko_04 zunko_05
-					kiritan_01 kiritan_02 kiritan_03 kiritan_04 kiritan_05 kiritan_06 kiritan_07 kiritan_08 kiritan_09
-					itako_01 itako_02 itako_03 itako_04 itako_05 itako_06
+					touhoku_zunko_01 touhoku_zunko_02 touhoku_zunko_03 touhoku_zunko_04 touhoku_zunko_05
+					touhoku_kiritan_01 touhoku_kiritan_02 touhoku_kiritan_03 touhoku_kiritan_04 touhoku_kiritan_05 touhoku_kiritan_06 touhoku_kiritan_07 touhoku_kiritan_08 touhoku_kiritan_09
+					touhoku_itako_01 touhoku_itako_02 touhoku_itako_03 touhoku_itako_04 touhoku_itako_05 touhoku_itako_06
 				}
 			}
 		}
@@ -46,9 +46,9 @@ portrait_groups = {
 		species = {
 			add = {
 				portraits = {
-					zunko_01 zunko_02 zunko_03 zunko_04 zunko_05
-					kiritan_01 kiritan_02 kiritan_03 kiritan_04 kiritan_05 kiritan_06 kiritan_07 kiritan_08 kiritan_09
-					itako_01 itako_02 itako_03 itako_04 itako_05 itako_06
+					touhoku_zunko_01 touhoku_zunko_02 touhoku_zunko_03 touhoku_zunko_04 touhoku_zunko_05
+					touhoku_kiritan_01 touhoku_kiritan_02 touhoku_kiritan_03 touhoku_kiritan_04 touhoku_kiritan_05 touhoku_kiritan_06 touhoku_kiritan_07 touhoku_kiritan_08 touhoku_kiritan_09
+					touhoku_itako_01 touhoku_itako_02 touhoku_itako_03 touhoku_itako_04 touhoku_itako_05 touhoku_itako_06
 				}
 			}
 		}
@@ -57,9 +57,9 @@ portrait_groups = {
 		pop = {
 			add = {
 				portraits = {
-					zunko_01 zunko_02 zunko_03 zunko_04 zunko_05
-					kiritan_01 kiritan_02 kiritan_03 kiritan_04 kiritan_05 kiritan_06 kiritan_07 kiritan_08 kiritan_09
-					itako_01 itako_02 itako_03 itako_04 itako_05 itako_06
+					touhoku_zunko_01 touhoku_zunko_02 touhoku_zunko_03 touhoku_zunko_04 touhoku_zunko_05
+					touhoku_kiritan_01 touhoku_kiritan_02 touhoku_kiritan_03 touhoku_kiritan_04 touhoku_kiritan_05 touhoku_kiritan_06 touhoku_kiritan_07 touhoku_kiritan_08 touhoku_kiritan_09
+					touhoku_itako_01 touhoku_itako_02 touhoku_itako_03 touhoku_itako_04 touhoku_itako_05 touhoku_itako_06
 				}
 			}
 		}
@@ -68,9 +68,9 @@ portrait_groups = {
 		leader = {
 			add = {
 				portraits = {
-					zunko_01 zunko_02 zunko_03 zunko_04 zunko_05
-					kiritan_01 kiritan_02 kiritan_03 kiritan_04 kiritan_05 kiritan_06 kiritan_07 kiritan_08 kiritan_09
-					itako_01 itako_02 itako_03 itako_04 itako_05 itako_06
+					touhoku_zunko_01 touhoku_zunko_02 touhoku_zunko_03 touhoku_zunko_04 touhoku_zunko_05
+					touhoku_kiritan_01 touhoku_kiritan_02 touhoku_kiritan_03 touhoku_kiritan_04 touhoku_kiritan_05 touhoku_kiritan_06 touhoku_kiritan_07 touhoku_kiritan_08 touhoku_kiritan_09
+					touhoku_itako_01 touhoku_itako_02 touhoku_itako_03 touhoku_itako_04 touhoku_itako_05 touhoku_itako_06
 				}
 			}
 		}
@@ -79,9 +79,9 @@ portrait_groups = {
 		ruler = {
 			add = {
 				portraits = {
-					zunko_01 zunko_02 zunko_03 zunko_04 zunko_05
-					kiritan_01 kiritan_02 kiritan_03 kiritan_04 kiritan_05 kiritan_06 kiritan_07 kiritan_08 kiritan_09
-					itako_01 itako_02 itako_03 itako_04 itako_05 itako_06
+					touhoku_zunko_01 touhoku_zunko_02 touhoku_zunko_03 touhoku_zunko_04 touhoku_zunko_05
+					touhoku_kiritan_01 touhoku_kiritan_02 touhoku_kiritan_03 touhoku_kiritan_04 touhoku_kiritan_05 touhoku_kiritan_06 touhoku_kiritan_07 touhoku_kiritan_08 touhoku_kiritan_09
+					touhoku_itako_01 touhoku_itako_02 touhoku_itako_03 touhoku_itako_04 touhoku_itako_05 touhoku_itako_06
 				}
 			}
 		}

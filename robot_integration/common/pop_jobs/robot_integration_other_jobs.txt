@@ -12,6 +12,7 @@ robot_integration = {
 	ignores_sapience = yes
 
 	possible = {
+		exists = owner
 		has_citizenship_type = { type = citizenship_robot_integration country = owner }
 	}
 

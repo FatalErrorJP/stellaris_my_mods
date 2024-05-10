@@ -5,7 +5,7 @@ relay_bypass = {
 	always_active = yes
 	windup_time = 10
 	winddown_time = 0
-	icon_frame = 54										# MOD修正箇所
+	icon_frame = 55										# MOD修正箇所
 	remember_instances = no
 	galactic_map_tooltip_header = HYPER_RELAY_GALACTIC
 	galactic_map_tooltip_desc = HYPER_RELAY_GALACTIC_DESC
@@ -13,6 +13,12 @@ relay_bypass = {
 	animation_time = 1
 	ftl_ship_effect = "gateway_ftl_ship_effect_entity"
 	ftl_bypass_effect = "gateway_ftl_bypass_effect_entity"
+
+	country_can_use = {
+		NOT = {
+			is_country_type = synth_queen_convoys
+		}
+	}
 
 	respect_closed_borders = yes
 	block_access_if_hostile = yes
@@ -27,7 +33,7 @@ quantum_catapult = {
 	windup_time = 30
 	winddown_time = 360
 	ftl_multiplier = 0			# 0 means instant
-	icon_frame = 55										# MOD修正箇所
+	icon_frame = 56										# MOD修正箇所
 	remember_instances = no	# whether countries remember meeting a specific instance of that type, or if they just remember seeing the type in general
 	galactic_map_tooltip_header=quantum_catapult_BYPASS
 	galactic_map_tooltip_desc=quantum_catapult_BYPASS_DESC

@@ -1,0 +1,14 @@
+# Categories of portrait sets used in empire design view.
+# Portrait sets are listed in portrait_sets database.
+d-man-biologicals = {
+	name = d-man-biologicals
+	sets = { d-man-biologicals }
+}
+d-man-machines = {
+	name = d-man-machines
+	sets = { d-man-machines }
+}
+d-man-lithoids = {
+	name = d-man-lithoids
+	sets = { d-man-lithoids }
+}

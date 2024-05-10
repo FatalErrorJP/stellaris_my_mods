@@ -127,6 +127,12 @@ defined_text = {
 		}
 		localization_key = CRISIS_TYPE_CONTINGENCY
 	}
+	text = {
+		trigger = {
+			allowed_crisis_type = synth_queen
+		}
+		localization_key = CRISIS_TYPE_SYNTH_QUEEN
+	}
 	default = CRISIS_TYPE_ANY
 }
 

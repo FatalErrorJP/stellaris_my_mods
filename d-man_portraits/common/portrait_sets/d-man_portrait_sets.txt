@@ -1,0 +1,36 @@
+# Portrait sets associated with species classes.
+# Portrait sets are grouped into portrait categories to be shown on empire editor. Check out portrait_categories database.
+# portraits = {}									List of portraits which are available for the species class without any conditions
+# conditional_portraits = {}
+#	randomizable = yes/no/trigger (default: yes)	Condition that specifies if the portraits in the list below can be used with species which design is randomly generated
+#	playable = yes/no/trigger (default: yes)		Condition that specifies if the portraits in the list below are available in empire design view
+#	portraits = {}									List of portraits which can be used by species of corresponding class depending on the
+# non_randomized_portraits							List of portraits which are not available for empires whose design was randomly generated
+# non_pre_ftl_portraits								List of portraits which are not available for pre-ftl empires
+# uplifted_portraits = {}							List of portraits which will be used by species of corresponding class after uplifting
+#													(the number of uplifted portraits must be the same as the number of portraits in 'portraits' list).
+
+d-man-biologicals = {
+	species_class = d-man-biologicals
+	portraits = { "d-man-biological-01" "d-man-biological-02" }
+}
+
+d-man-machines = {
+	species_class = d-man-machines
+
+	conditional_portraits = {
+		randomizable = { OR = { has_synthetic_dawn = yes has_machine_age_dlc = yes } }
+		playable = { OR = { has_synthetic_dawn = yes has_machine_age_dlc = yes } }
+		portraits = { "d-man-machine-01" "d-man-machine-02" }
+	}
+}
+
+d-man-lithoids = {
+	species_class = d-man-lithoids
+
+	conditional_portraits = {
+		randomizable = { has_lithoids = yes }
+		playable = { has_lithoids = yes }
+		portraits = { "d-man-lithoid-01" "d-man-lithoid-02" }
+	}
+}

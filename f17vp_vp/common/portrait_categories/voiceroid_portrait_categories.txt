@@ -1,0 +1,15 @@
+# Categories of portrait sets used in empire design view.
+# Portrait sets are listed in portrait_sets database.
+
+voiceroid = {
+	name = VOICEROID
+	sets = { voiceroid }
+}
+voiceroid-machines = {
+	name = VOICEMACH
+	sets = { voiceroid-machines }
+}
+voiceroid-lithoids = {
+	name = VOICELITH
+	sets = { voiceroid-lithoids }
+}

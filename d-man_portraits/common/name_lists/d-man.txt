@@ -70,6 +70,10 @@
 
 	army_names = {
 
+		generic = {
+			sequential_name = HUMAN1_EXPEDITIONARYFORCE
+		}
+
 		machine_defense = {
 			sequential_name = HUMAN1_PLANETARYGUARD
 		}
@@ -134,6 +138,10 @@
 			sequential_name = HUMAN1_GARRISONFORCE
 		}
 
+		individual_machine_occupation_army = {
+			sequential_name = HUMAN1_GARRISONFORCE
+		}
+
 		robotic_occupation_army = {
 			sequential_name = HUMAN1_MECHANIZEDGARRISON
 		}
@@ -141,11 +149,17 @@
 		primitive_army = {
 			sequential_name = HUMAN1_PRIMITIVEARMY
 		}
+
 		industrial_army = {
 			sequential_name = HUMAN1_INDUSTRIALARMY
 		}
+
 		postatomic_army = {
 			sequential_name = HUMAN1_POSTATOMICARMY
+		}
+
+		warpling_army = {
+			sequential_name = seq_warpling_army
 		}
 	}
 
@@ -387,6 +401,10 @@ d-man-machines = {
 
 	army_names = {
 
+		generic = {
+			sequential_name = MACHINE1_MECHANIZEDASSAULTFORCE
+		}
+
 		machine_assault_1 = {
 			sequential_name = MACHINE1_MECHANIZEDASSAULTFORCE
 		}
@@ -415,22 +433,64 @@ d-man-machines = {
 			sequential_name = MACHINE1_MECHANIZEDCLONEFORCE
 		}
 
+		slave_army = {
+			sequential_name = MACHINE1_MECHANIZEDINDENTUREDFORCE
+		}
+
 		undead_army = {
 			sequential_name = MACHINE1_MECHANIZEDUNDEADFORCE
+		}
+
+		robotic_army = {
+			sequential_name = MACHINE1_AUTOMATONFORCE
+		}
+
+		psionic_army = {
+			sequential_name = MACHINE2_PSIBOTS
+		}
+
+		xenomorph_army = {
+			sequential_name = MACHINE1_XENOFORCE
+		}
+
+		gene_warrior_army = {
+			sequential_name = MACHINE1_FLESHFORCE
+		}
+
+		occupation_army = {
+			sequential_name = MACHINE1_OCCUPYINGFORCE
+		}
+
+		individual_machine_occupation_army = {
+			sequential_name = MACHINE1_OCCUPYINGFORCE
+		}
+
+		robotic_occupation_army = {
+			sequential_name = MACHINE3_AUTOMATEDPROTECTORS
 		}
 
 		machine_occupation_army = {
 			sequential_name = MACHINE1_MECHANIZEDGARRISONFORCE
 		}
 
+		robotic_defense_army = {
+			sequential_name = MACHINE1_AUTOMATEDOCCUPIERS
+		}
+
 		primitive_army = {
 			sequential_name = MACHINE1_PRIMITIVEARMY
 		}
+
 		industrial_army = {
 			sequential_name = MACHINE1_INDUSTRIALARMY
 		}
+
 		postatomic_army = {
 			sequential_name = MACHINE1_POSTATOMICARMY
+		}
+
+		warpling_army = {
+			sequential_name = seq_warpling_army
 		}
 	}
 
@@ -632,6 +692,9 @@ d-man-lithoids = {
 	}
 
 	army_names = {
+		generic = {
+			sequential_name = LITHOID1_ATTKKOT
+		}
 
 		machine_defense = {
 			sequential_name = LITHOID1_DETUKKOT
@@ -723,6 +786,13 @@ d-man-lithoids = {
 			sequential_name = LITHOID1_OKKTEOT
 		}
 
+		individual_machine_occupation_army = {
+			random_names = {
+				LITHOID1_ARMY_OkkTeVerk LITHOID1_ARMY_OkkTeRakr LITHOID1_ARMY_OkkTeRerr LITHOID1_ARMY_OkkTeArkk LITHOID1_ARMY_OkkTeVekt LITHOID1_ARMY_OkkTeIkrot LITHOID1_ARMY_OkkTeKerr LITHOID1_ARMY_OkkTeKrikk LITHOID1_ARMY_OkkTeBrek LITHOID1_ARMY_OkkTeRakt LITHOID1_ARMY_OkkTeKrek LITHOID1_ARMY_OkkTeRaktt LITHOID1_ARMY_OkkTePrek
+			}
+			sequential_name = LITHOID1_OKKTEOT
+		}
+
 		robotic_occupation_army = {
 			random_names = {
 				LITHOID1_ARMY_TekTeFrekk LITHOID1_ARMY_TekTeRekk LITHOID1_ARMY_TekTeVrek LITHOID1_ARMY_TekTeRett LITHOID1_ARMY_TekTeTruktt LITHOID1_ARMY_TekTeFerr LITHOID1_ARMY_TekTeTerrt LITHOID1_ARMY_TekTeDturr LITHOID1_ARMY_TekTeKrekk LITHOID1_ARMY_TekTeRutt LITHOID1_ARMY_TekTeVertt LITHOID1_ARMY_TekTeFeterr LITHOID1_ARMY_TekTeFtur
@@ -749,6 +819,10 @@ d-man-lithoids = {
 				LITHOID1_ARMY_AtEnkurRottr LITHOID1_ARMY_AtEnkurKrett LITHOID1_ARMY_AtEnkurVrat LITHOID1_ARMY_AtEnkurVrik LITHOID1_ARMY_AtEnkurKrikk LITHOID1_ARMY_AtEnkurNotrr LITHOID1_ARMY_AtEnkurTnerr LITHOID1_ARMY_AtEnkurTrik LITHOID1_ARMY_AtEnkurAter LITHOID1_ARMY_AtEnkurTerk LITHOID1_ARMY_AtEnkurAkkre LITHOID1_ARMY_AtEnkurKrot LITHOID1_ARMY_AtEnkurNekt
 			}
 			sequential_name = LITHOID1_ATENKUROT
+		}
+
+		warpling_army = {
+			sequential_name = seq_warpling_army
 		}
 	}
 

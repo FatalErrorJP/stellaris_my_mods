@@ -12,6 +12,7 @@ can_species_procreate = {
 	NOR = {
 		has_trait = trait_machine_unit
 		has_trait = trait_mechanical
+		has_trait = trait_limited_cybernetic
 	}
 	NAND = {
 		root = { has_modifier = slave_colony }
@@ -31,6 +32,7 @@ can_species_procreate = {
 		}
 	}
 	NOT = { has_species_flag = nivlac_no_procreation }
+	has_cybernetic_creed_trait = no
 	####################################
 	# ここからMOD追加コード
 	####################################
@@ -54,6 +56,21 @@ can_species_be_assembled = {
 	NOT = {
 		has_trait = trait_exd
 	}
+	NOT = {
+		AND = {
+			has_trait = trait_mechanical
+			root.owner = { is_individual_machine = yes }
+		}
+	}
+	NOT = {
+		AND = {
+			has_virtual_species_trait = yes
+			root.owner = {
+				is_fallen_empire = no
+				has_active_tradition = tr_virtuality_finish
+			}
+		}
+	}
 	OR = {
 		AND = {
 			is_robotic = yes
@@ -61,6 +78,9 @@ can_species_be_assembled = {
 				check_modifier_value = {
 					modifier = planet_pop_assembly_add
 					value > 0
+				}
+				owner = {
+					NOT = { has_country_flag = synth_assembly_stopped }
 				}
 			}
 		}
@@ -83,15 +103,6 @@ can_species_be_assembled = {
 				root = {
 					any_owned_species = { is_exact_same_species = prevprev }
 				}
-			}
-			else_if = {
-				limit = {
-					root.owner = {
-						has_tradition = tr_cybernetics_assembly_standards
-						has_policy_flag = roboticist_output_build_cyborgs
-					}
-				}
-				has_trait = trait_cybernetic
 			}
 			else_if = {
 				limit = {

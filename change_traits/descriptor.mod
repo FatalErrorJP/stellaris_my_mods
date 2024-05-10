@@ -4,5 +4,5 @@ tags={
 	"Species"
 }
 name="Mod追加種族が放射線栄養生物なことだってあるさ"
-supported_version="3.11.*"
+supported_version="3.12.*"
 remote_file_id="2886762476"

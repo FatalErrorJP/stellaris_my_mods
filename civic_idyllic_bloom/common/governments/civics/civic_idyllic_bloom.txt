@@ -40,7 +40,11 @@ civic_idyllic_bloom = {
 			}
 		}
 		civics = {
-			NOT = { value = civic_relentless_industrialists }
+			NOR = {
+				text = civic_tooltip_not_relentless_industrialists
+				value = civic_relentless_industrialists
+				value = civic_corporate_relentless_industrialists
+			}
 		}
 	}
 	random_weight = {

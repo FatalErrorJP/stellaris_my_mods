@@ -36,7 +36,7 @@
   akari_remnant_plural:0 "骨格"
   name_list_akari:0 "紲星あかり"
 
-  AKAMACH:0 "紲星あかり（機械）"
+  AKAMACH:0 "紲星あかり(機械)"
   AKAMACH_desc:0 "明るい女の子の可愛らしい中にも優しさあふれる声を持つ"
   AKAMACH_plural:0 "紲星あかり"
   AKAMACH_adj:0 "紲星あかり"
@@ -68,9 +68,9 @@
   AKAMACH_fossil_plural:0 "化石"
   AKAMACH_remnant:0 "骨格"
   AKAMACH_remnant_plural:0 "骨格"
-  name_list_AKAMACH:0 "紲星あかり（機械）"
+  name_list_AKAMACH:0 "紲星あかり(機械)"
 
-  AKALITHOID:0 "紲星あかり（岩石）"
+  AKALITHOID:0 "紲星あかり(岩石)"
   AKALITHOID_desc:0 "明るい女の子の可愛らしい中にも優しさあふれる声を持つ"
   AKALITHOID_plural:0 "紲星あかり"
   AKALITHOID_adj:0 "紲星あかり"
@@ -102,7 +102,7 @@
   AKALITHOID_fossil_plural:0 "化石"
   AKALITHOID_remnant:0 "骨格"
   AKALITHOID_remnant_plural:0 "骨格"
-  name_list_AKALITHOID:0 "紲星あかり（岩石）"
+  name_list_AKALITHOID:0 "紲星あかり(岩石)"
 
 
   kotonoha:0 "琴葉姉妹(有機)"
@@ -139,7 +139,7 @@
   kotonoha_remnant_plural:0 "骨格"
   name_list_kotonoha:0 "琴葉姉妹"
 
-  KOTOMACH:0 "琴葉姉妹（機械）"
+  KOTOMACH:0 "琴葉姉妹(機械)"
   KOTOMACH_desc:0 "少し天然の姉としっかりものの妹の双子姉妹"
   KOTOMACH_plural:0 "琴葉姉妹"
   KOTOMACH_adj:0 "琴葉姉妹"
@@ -171,9 +171,9 @@
   KOTOMACH_fossil_plural:0 "化石"
   KOTOMACH_remnant:0 "骨格"
   KOTOMACH_remnant_plural:0 "骨格"
-  name_list_KOTOMACH:0 "琴葉姉妹（機械）"
+  name_list_KOTOMACH:0 "琴葉姉妹(機械)"
 
-  KOTOLITHOID:0 "琴葉姉妹（岩石）"
+  KOTOLITHOID:0 "琴葉姉妹(岩石)"
   KOTOLITHOID_desc:0 "少し天然の姉としっかりものの妹の双子姉妹"
   KOTOLITHOID_plural:0 "琴葉姉妹"
   KOTOLITHOID_adj:0 "琴葉姉妹"
@@ -205,7 +205,7 @@
   KOTOLITHOID_fossil_plural:0 "化石"
   KOTOLITHOID_remnant:0 "骨格"
   KOTOLITHOID_remnant_plural:0 "骨格"
-  name_list_KOTOLITHOID:0 "琴葉姉妹（岩石）"
+  name_list_KOTOLITHOID:0 "琴葉姉妹(岩石)"
 
   akane:0 "琴葉茜"
   name_list_akane:0 "琴葉茜"
@@ -246,7 +246,7 @@
   meika_remnant_plural:0 "骨格"
   name_list_meika:0 "鳴花ーズ"
 
-  MEKAMACH:0 "鳴花ーズ（機械）"
+  MEKAMACH:0 "鳴花ーズ(機械)"
   MEKAMACH_desc:0 "梅をモチーフにしたボーカロイド"
   MEKAMACH_plural:0 "鳴花ーズ"
   MEKAMACH_adj:0 "鳴花ーズ"
@@ -276,9 +276,9 @@
   MEKAMACH_fossil_plural:0 "化石"
   MEKAMACH_remnant:0 "骨格"
   MEKAMACH_remnant_plural:0 "骨格"
-  name_list_MEKAMACH:0 "鳴花ーズ（機械）"
+  name_list_MEKAMACH:0 "鳴花ーズ(機械)"
 
-  MEIKALITHOID:0 "鳴花ーズ（岩石）"
+  MEIKALITHOID:0 "鳴花ーズ(岩石)"
   MEIKALITHOID_desc:0 "梅をモチーフにしたボーカロイド"
   MEIKALITHOID_plural:0 "鳴花ーズ"
   MEIKALITHOID_adj:0 "鳴花ーズ"
@@ -308,7 +308,7 @@
   MEIKALITHOID_fossil_plural:0 "化石"
   MEIKALITHOID_remnant:0 "骨格"
   MEIKALITHOID_remnant_plural:0 "骨格"
-  name_list_MEIKALITHOID:0 "鳴花ーズ（岩石）"
+  name_list_MEIKALITHOID:0 "鳴花ーズ(岩石)"
 
   hime:0 "鳴花ヒメ"
   name_list_hime:0 "鳴花ヒメ"
@@ -317,7 +317,7 @@
   name_list_mikoto:0 "鳴花ミコト"
 
   hinomoto:0 "役ついな(有機)"
-  hinomoto_desc:0 "自称・修験道の開祖「役小角」の子孫にして節分の儀式「追儺」の儀式に登場する鬼退治師「方相氏（ほうそうし）」の末裔"
+  hinomoto_desc:0 "自称・修験道の開祖「役小角」の子孫にして節分の儀式「追儺」の儀式に登場する鬼退治師「方相氏(ほうそうし)」の末裔"
   hinomoto_plural:0 "役ついな"
   hinomoto_adj:0 "役ついな"
   hinomoto_insult_01:0 "人形"
@@ -348,8 +348,8 @@
   hinomoto_remnant_plural:0 "骨格"
   name_list_hinomoto:0 "役ついな"
 
-  HINOMACH:0 "役ついな（機械）"
-  HINOMACH_desc:0 "自称・修験道の開祖「役小角」の子孫にして節分の儀式「追儺」の儀式に登場する鬼退治師「方相氏（ほうそうし）」の末裔"
+  HINOMACH:0 "役ついな(機械)"
+  HINOMACH_desc:0 "自称・修験道の開祖「役小角」の子孫にして節分の儀式「追儺」の儀式に登場する鬼退治師「方相氏(ほうそうし)」の末裔"
   HINOMACH_plural:0 "役ついな"
   HINOMACH_adj:0 "役ついな"
   HINOMACH_insult_01:0 "人形"
@@ -378,10 +378,10 @@
   HINOMACH_fossil_plural:0 "化石"
   HINOMACH_remnant:0 "骨格"
   HINOMACH_remnant_plural:0 "骨格"
-  name_list_HINOMACH:0 "役ついな（機械）"
+  name_list_HINOMACH:0 "役ついな(機械)"
 
-  HINOLITHOID:0 "役ついな（岩石）"
-  HINOLITHOID_desc:0 "自称・修験道の開祖「役小角」の子孫にして節分の儀式「追儺」の儀式に登場する鬼退治師「方相氏（ほうそうし）」の末裔"
+  HINOLITHOID:0 "役ついな(岩石)"
+  HINOLITHOID_desc:0 "自称・修験道の開祖「役小角」の子孫にして節分の儀式「追儺」の儀式に登場する鬼退治師「方相氏(ほうそうし)」の末裔"
   HINOLITHOID_plural:0 "役ついな"
   HINOLITHOID_adj:0 "役ついな"
   HINOLITHOID_insult_01:0 "人形"
@@ -410,7 +410,7 @@
   HINOLITHOID_fossil_plural:0 "化石"
   HINOLITHOID_remnant:0 "骨格"
   HINOLITHOID_remnant_plural:0 "骨格"
-  name_list_HINOLITHOID:0 "役ついな（岩石）"
+  name_list_HINOLITHOID:0 "役ついな(岩石)"
 
   tuina:0 "役ついな"
   name_list_tuina:0 "役ついな"
@@ -448,7 +448,7 @@
   sora_remnant_plural:0 "骨格"
   name_list_sora:0 "桜乃そら"
 
-  SORAMACH:0 "桜乃そら（機械）"
+  SORAMACH:0 "桜乃そら(機械)"
   SORAMACH_desc:0 "おっとりとしたお姉さんタイプの17歳"
   SORAMACH_plural:0 "桜乃そら"
   SORAMACH_adj:0 "桜乃そら"
@@ -478,9 +478,9 @@
   SORAMACH_fossil_plural:0 "化石"
   SORAMACH_remnant:0 "骨格"
   SORAMACH_remnant_plural:0 "骨格"
-  name_list_SORAMACH:0 "桜乃そら（機械）"
+  name_list_SORAMACH:0 "桜乃そら(機械)"
 
-  SORALITHOID:0 "桜乃そら（岩石）"
+  SORALITHOID:0 "桜乃そら(岩石)"
   SORALITHOID_desc:0 "おっとりとしたお姉さんタイプの17歳"
   SORALITHOID_plural:0 "桜乃そら"
   SORALITHOID_adj:0 "桜乃そら"
@@ -510,16 +510,16 @@
   SORALITHOID_fossil_plural:0 "化石"
   SORALITHOID_remnant:0 "骨格"
   SORALITHOID_remnant_plural:0 "骨格"
-  name_list_SORALITHOID:0 "桜乃そら（岩石）"
+  name_list_SORALITHOID:0 "桜乃そら(岩石)"
 
   poron:0 "ポロン(有機)"
   name_list_poron:0 "ポロン"
 
-  PORONMMACH:0 "ポロン（機械）"
-  name_list_PORONMMACH:0 "ポロン（機械）"
+  PORONMMACH:0 "ポロン(機械)"
+  name_list_PORONMMACH:0 "ポロン(機械)"
 
-  PORONLITHOID:0 "ポロン（岩石）"
-  name_list_PORONLITHOID:0 "ポロン（岩石）"
+  PORONLITHOID:0 "ポロン(岩石)"
+  name_list_PORONLITHOID:0 "ポロン(岩石)"
 
 
   touhoku:0 "東北姉妹(有機)"
@@ -554,7 +554,7 @@
   touhoku_remnant_plural:0 "骨格"
   name_list_touhoku:0 "東北姉妹"
 
-  TOHOMACH:0 "東北姉妹（機械）"
+  TOHOMACH:0 "東北姉妹(機械)"
   TOHOMACH_desc:0 "東北応援キャラクターの三姉妹"
   TOHOMACH_plural:0 "桜乃そら"
   TOHOMACH_adj:0 "桜乃そら"
@@ -584,9 +584,9 @@
   TOHOMACH_fossil_plural:0 "化石"
   TOHOMACH_remnant:0 "骨格"
   TOHOMACH_remnant_plural:0 "骨格"
-  name_list_TOHOMACH:0 "東北姉妹（機械）"
+  name_list_TOHOMACH:0 "東北姉妹(機械)"
 
-  TOHOLITHOID:0 "東北姉妹（岩石）"
+  TOHOLITHOID:0 "東北姉妹(岩石)"
   TOHOLITHOID_desc:0 "東北応援キャラクターの三姉妹"
   TOHOLITHOID_plural:0 "東北姉妹"
   TOHOLITHOID_adj:0 "東北姉妹"
@@ -616,7 +616,7 @@
   TOHOLITHOID_fossil_plural:0 "化石"
   TOHOLITHOID_remnant:0 "骨格"
   TOHOLITHOID_remnant_plural:0 "骨格"
-  name_list_TOHOLITHOID:0 "東北姉妹（岩石）"
+  name_list_TOHOLITHOID:0 "東北姉妹(岩石)"
 
   itako:0 "東北イタコ"
   name_list_itako:0 "東北イタコ"
@@ -661,7 +661,7 @@
   yukari_remnant_plural:0 "骨格"
   name_list_yukari:0 "結月ゆかり"
 
-  YUKAMACH:0 "結月ゆかり（機械）"
+  YUKAMACH:0 "結月ゆかり(機械)"
   YUKAMACH_desc:0 "落ち着きのある、大人びた女性の表現力豊かな声を持つ"
   YUKAMACH_plural:0 "結月ゆかり"
   YUKAMACH_adj:0 "結月ゆかり"
@@ -693,9 +693,9 @@
   YUKAMACH_fossil_plural:0 "化石"
   YUKAMACH_remnant:0 "骨格"
   YUKAMACH_remnant_plural:0 "骨格"
-  name_list_YUKAMACH:0 "結月ゆかり（機械）"
+  name_list_YUKAMACH:0 "結月ゆかり(機械)"
 
-  YUKALITHOID:0 "結月ゆかり（岩石）"
+  YUKALITHOID:0 "結月ゆかり(岩石)"
   YUKALITHOID_desc:0 "落ち着きのある、大人びた女性の表現力豊かな声を持つ"
   YUKALITHOID_plural:0 "結月ゆかり"
   YUKALITHOID_adj:0 "結月ゆかり"
@@ -727,7 +727,7 @@
   YUKALITHOID_fossil_plural:0 "化石"
   YUKALITHOID_remnant:0 "骨格"
   YUKALITHOID_remnant_plural:0 "骨格"
-  name_list_YUKALITHOID:0 "結月ゆかり（岩石）"
+  name_list_YUKALITHOID:0 "結月ゆかり(岩石)"
 
   ###################################################################
   # ネームリストのローカライズ定義

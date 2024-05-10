@@ -16,13 +16,8 @@ touhoku = {
 	# 機械知性は選択不可
 	possible = { authority = { NOT = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE } } }
 
-	# ポートレート
-	portraits = {
-		"itako" "zunko" "kiritan" "touhokusimai"
-	}
-
+	# グラフィックカルチャー
 	graphical_culture = no_culture
-	move_pop_sound_effect = "moving_pop_confirmation"
 }
 
 # 機械知性
@@ -36,20 +31,43 @@ TOHOMACH = {
 	# OTHER:その他
 	archetype = MACHINE
 
-	# 機械知性はDLC(シンセティック・ドーン)が必須
-	playable = { host_has_dlc = "Synthetic Dawn Story Pack" }
+	# この種族を利用可能な条件
+	# バニラの機械種族の条件に準拠
+	possible = {
+		OR = {
+			AND = { host_has_dlc = "The Machine Age" authority = { NOT = { value = auth_hive_mind } } }
+			authority = { OR = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_USE_MACHINE_INTELLIGENCE } }
+		}
+	}
+	possible_secondary = {
+		OR = {
+			AND = { host_has_dlc = "The Machine Age" civics = { NOT = { value = civic_machine_servitor } } }
+			OR = { always = no text = SECONDARY_SPECIES_CLASS_INVALID }
+		}
+	}
+
+	# プレイ可能な条件
+	# バニラの機械種族の条件に準拠
+	# 機械知性はDLC(Synthetic Dawn)または(Machine Age)が必須
+	playable = {
+		OR = {
+			host_has_dlc = "Synthetic Dawn Story Pack"
+			has_machine_age_dlc = yes
+		}
+	}
 	randomized = {
-		host_has_dlc = "Synthetic Dawn Story Pack"
+		OR = {
+			host_has_dlc = "Synthetic Dawn Story Pack"
+			has_machine_age_dlc = yes
+		}
 		NOT = { has_global_flag = game_started }
 	}
 
-	# 権限の設定
-	# 機械知性のみ設定可
-	possible = { authority = { OR = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_USE_MACHINE_INTELLIGENCE } } }
-	possible_secondary = { always = no text = SECONDARY_SPECIES_CLASS_INVALID }
+	# デフォルト種族特性「機械」
+	trait = trait_machine_unit
 
-	# 性別:オリジナルの機械知性だとなしだが、自由度を増やしたいので敢えて外しておく
-	# gender = no
+	# 性別:オリジナルの機械知性だとyesだが、自由度を増やしたいので敢えて外しておく
+	# gender = yes
 
 	# 居住特性の選択:なし
 	use_climate_preference = no
@@ -58,17 +76,11 @@ TOHOMACH = {
 	portrait_modding = yes
 
 	# 雇用時のリーダーの年齢
-	leader_age_min = 2
+	leader_age_min = 5
 	leader_age_max = 10
 
-	# ポートレート
-	portraits = {
-		"itako" "zunko" "kiritan" "touhokusimai"
-	}
-
+	# グラフィックカルチャー
 	graphical_culture = no_culture
-	move_pop_sound_effect = "robot_pops_move"
-	resources = {}
 }
 
 # 岩石種族
@@ -82,24 +94,18 @@ TOHOLITHOID = {
 	# OTHER:その他
 	archetype = LITHOID
 
-	# 権限の設定
-	# 機械知性は選択不可
-	playable = { has_lithoids = yes }
+	# この種族を利用可能な条件
+	# バニラの岩石種族の条件に準拠
 	possible = { authority = { NOT = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE } } }
 
-	# ランダム帝国の設定
-	# 岩石種族として登録
+	# プレイ可能な条件
+	# バニラの岩石種族の条件に準拠
+	playable = { has_lithoids = yes }
 	randomized = { has_lithoids = yes }
 
 	# デフォルト種族特性「岩石」
 	trait = "trait_lithoid"
 
-	# ポートレート
-	portraits = {
-		"itako" "zunko" "kiritan" "touhokusimai"
-	}
-
+	# グラフィックカルチャー
 	graphical_culture = no_culture
-	move_pop_sound_effect = "reptilian_pops_move"
-	resources = {}
 }

@@ -3,5 +3,5 @@ tags={
 	"Fixes"
 }
 name="出土品も貯蔵物だろ！"
-supported_version="3.11.*"
+supported_version="3.12.*"
 remote_file_id="2948073474"

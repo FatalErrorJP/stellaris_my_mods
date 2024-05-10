@@ -1,0 +1,192 @@
+# Portrait sets associated with species classes.
+# Portrait sets are grouped into portrait categories to be shown on empire editor. Check out portrait_categories database.
+# portraits = {}									List of portraits which are available for the species class without any conditions
+# conditional_portraits = {}
+#	randomizable = yes/no/trigger (default: yes)	Condition that specifies if the portraits in the list below can be used with species which design is randomly generated
+#	playable = yes/no/trigger (default: yes)		Condition that specifies if the portraits in the list below are available in empire design view
+#	portraits = {}									List of portraits which can be used by species of corresponding class depending on the
+# non_randomized_portraits							List of portraits which are not available for empires whose design was randomly generated
+# non_pre_ftl_portraits								List of portraits which are not available for pre-ftl empires
+# uplifted_portraits = {}							List of portraits which will be used by species of corresponding class after uplifting
+#													(the number of uplifted portraits must be the same as the number of portraits in 'portraits' list).
+
+akari = {
+	species_class = akari
+	portraits = { "akariA" }
+}
+
+akari-machines = {
+	species_class = AKAMACH
+
+	conditional_portraits = {
+		randomizable = { OR = { has_synthetic_dawn = yes has_machine_age_dlc = yes } }
+		playable = { OR = { has_synthetic_dawn = yes has_machine_age_dlc = yes } }
+		portraits = { "akariA" }
+	}
+}
+
+akari-lithoids = {
+	species_class = AKALITHOID
+
+	conditional_portraits = {
+		randomizable = { has_lithoids = yes }
+		playable = { has_lithoids = yes }
+		portraits = { "akariA" }
+	}
+}
+
+
+kotonoha = {
+	species_class = kotonoha
+	portraits = { "akaneM" "aoiM" "kotoM" }
+}
+
+kotonoha-machines = {
+	species_class = KOTOMACH
+
+	conditional_portraits = {
+		randomizable = { OR = { has_synthetic_dawn = yes has_machine_age_dlc = yes } }
+		playable = { OR = { has_synthetic_dawn = yes has_machine_age_dlc = yes } }
+		portraits = { "akaneM" "aoiM" "kotoM" }
+	}
+}
+
+kotonoha-lithoids = {
+	species_class = KOTOLITHOID
+
+	conditional_portraits = {
+		randomizable = { has_lithoids = yes }
+		playable = { has_lithoids = yes }
+		portraits = { "akaneM" "aoiM" "kotoM" }
+	}
+}
+
+
+meika = {
+	species_class = meika
+	portraits = { "hime" "mikoto" "himemiko" }
+}
+
+meika-machines = {
+	species_class = MEKAMACH
+
+	conditional_portraits = {
+		randomizable = { OR = { has_synthetic_dawn = yes has_machine_age_dlc = yes } }
+		playable = { OR = { has_synthetic_dawn = yes has_machine_age_dlc = yes } }
+		portraits = { "hime" "mikoto" "himemiko" }
+	}
+}
+
+meika-lithoids = {
+	species_class = MEIKALITHOID
+
+	conditional_portraits = {
+		randomizable = { has_lithoids = yes }
+		playable = { has_lithoids = yes }
+		portraits = { "hime" "mikoto" "himemiko" }
+	}
+}
+
+
+hinomoto = {
+	species_class = hinomoto
+	portraits = { "tuina" }
+}
+
+hinomoto-machines = {
+	species_class = HINOMACH
+
+	conditional_portraits = {
+		randomizable = { OR = { has_synthetic_dawn = yes has_machine_age_dlc = yes } }
+		playable = { OR = { has_synthetic_dawn = yes has_machine_age_dlc = yes } }
+		portraits = { "tuina" }
+	}
+}
+
+hinomoto-lithoids = {
+	species_class = HINOLITHOID
+
+	conditional_portraits = {
+		randomizable = { has_lithoids = yes }
+		playable = { has_lithoids = yes }
+		portraits = { "tuina" }
+	}
+}
+
+
+sora = {
+	species_class = sora
+	portraits = { "sora" "poron" }
+}
+
+sora-machines = {
+	species_class = SORAMACH
+
+	conditional_portraits = {
+		randomizable = { OR = { has_synthetic_dawn = yes has_machine_age_dlc = yes } }
+		playable = { OR = { has_synthetic_dawn = yes has_machine_age_dlc = yes } }
+		portraits = { "sora" "poron" }
+	}
+}
+
+sora-lithoids = {
+	species_class = SORALITHOID
+
+	conditional_portraits = {
+		randomizable = { has_lithoids = yes }
+		playable = { has_lithoids = yes }
+		portraits = { "sora" "poron" }
+	}
+}
+
+
+touhoku = {
+	species_class = touhoku
+	portraits = { "itako" "zunko" "kiritan" "touhokusimai" }
+}
+
+touhoku-machines = {
+	species_class = TOHOMACH
+
+	conditional_portraits = {
+		randomizable = { OR = { has_synthetic_dawn = yes has_machine_age_dlc = yes } }
+		playable = { OR = { has_synthetic_dawn = yes has_machine_age_dlc = yes } }
+		portraits = { "itako" "zunko" "kiritan" "touhokusimai" }
+	}
+}
+
+touhoku-lithoids = {
+	species_class = TOHOLITHOID
+
+	conditional_portraits = {
+		randomizable = { has_lithoids = yes }
+		playable = { has_lithoids = yes }
+		portraits = { "itako" "zunko" "kiritan" "touhokusimai" }
+	}
+}
+
+
+yukari = {
+	species_class = yukari
+	portraits = { "yukari" }
+}
+
+yukari-machines = {
+	species_class = YUKAMACH
+
+	conditional_portraits = {
+		randomizable = { OR = { has_synthetic_dawn = yes has_machine_age_dlc = yes } }
+		playable = { OR = { has_synthetic_dawn = yes has_machine_age_dlc = yes } }
+		portraits = { "yukari" }
+	}
+}
+
+yukari-lithoids = {
+	species_class = YUKALITHOID
+
+	conditional_portraits = {
+		randomizable = { has_lithoids = yes }
+		playable = { has_lithoids = yes }
+		portraits = { "yukari" }
+	}
+}

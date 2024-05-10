@@ -4,5 +4,5 @@ tags={
 }
 name="ブラック企業を許さないマローダーの会"
 picture="thumbnail.png"
-supported_version="3.11.*"
+supported_version="3.12.*"
 remote_file_id="2789367575"

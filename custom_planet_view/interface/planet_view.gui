@@ -133,7 +133,6 @@ guiTypes = {
 				name = "open_orbital_ring"
 				quadTextureSprite = "GFX_button_orbital_ring"
 				position = { x = -19 y = 4 }
-				#shortcut = "TODO"
 				clicksound = "click"
 				pdx_tooltip = "OPEN_ORBITAL_RING"
 			}
@@ -379,9 +378,9 @@ guiTypes = {
 			position = { x = 25 y = 115 }
 			size = { width = 250 height = 105 }
 			clipping = no
-			}
+		}
 
-			containerWindowType = {
+		containerWindowType = {
 			name = "sector_governor_window"
 			position = { x = 92 y = 115 }
 			size = { width = 100 height = 105 }
@@ -876,14 +875,13 @@ guiTypes = {
 				}
 			}
 
-
 			containerWindowType = {
 				name = "colonizable_planet_window"
 
 
-			#<------------------------ PLANET FEATURES / DEPOSITS --------------------------->
-			# Planet Features
-			containerWindowType = {
+				#<------------------------ PLANET FEATURES / DEPOSITS --------------------------->
+				# Planet Features
+				containerWindowType = {
 				name = "deposits_summary_window"
 				size = { width = 150 height = 90 }
 				position = { x = 415 y = 95 }
@@ -956,9 +954,9 @@ guiTypes = {
 						orientation = upper_left
 					}
 				}
-			}
+				}
 
-			#<---------------------------- DISTRICTS ----------------------------->
+				#<---------------------------- DISTRICTS ----------------------------->
 
 					### Districts Container Window
 					containerWindowType = {
@@ -1260,7 +1258,7 @@ guiTypes = {
 					}
 				}
 
-			#<---------------------------- Buildings ----------------------------->
+				#<---------------------------- Buildings ----------------------------->
 
 				# Buildings
 				containerWindowType = {
@@ -2703,13 +2701,13 @@ guiTypes = {
 					name = "general_portrait_container"
 					position = { x = 569 y = 92 }
 					size = { width = 270 height = 100 }
-
+		
 					background = {
 						name = "leader_background"
 						spriteType = "GFX_dark_area_cut"
-							alwaysTransparent = yes
-						}
+						alwaysTransparent = yes
 					}
+				}
 
 				# Army Build Queue
 				containerWindowType = {
@@ -3225,12 +3223,12 @@ guiTypes = {
 
 					containerWindowType = {
 						name = "building_icon"
-						size = { width = 79 height = 79	}
+						size = { width = 78 height = 79	}
 						position = { x = 0 y = 22 }
 
 						iconType = {
 							name = "building_bg"
-							position = { x=1 y=1 }
+							position = { x=1 y=2 }
 							spriteType = "GFX_building_bg"
 							alwaysTransparent = yes
 							scale = 0.87
@@ -5490,7 +5488,7 @@ guiTypes = {
 
 		background = {
 			name = "job_background"
-			quadTextureSprite = "GFX_button_dark" # TODO: change background?
+			quadTextureSprite = "GFX_button_dark"
 			clicksound = "select_click"
 		}
 
@@ -5674,7 +5672,7 @@ guiTypes = {
 		iconType = {
 			name = "selected_building_icon"
 			spriteType = "GFX_selected_building"
-			position = { x=2 y=2 }
+			position = { x=1 y=1 }
 			scale = 0.55
 			alwaysTransparent = no
 		}
@@ -5707,7 +5705,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "entry_bg_gradient"
-			size = { width = 268 height = 98 }
+			size = { width = 280 height = 98 }
 			position = { x = 1 y = 25 }
 
 			background = {

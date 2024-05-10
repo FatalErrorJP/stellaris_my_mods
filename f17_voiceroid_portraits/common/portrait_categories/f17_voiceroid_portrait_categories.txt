@@ -1,0 +1,93 @@
+# Categories of portrait sets used in empire design view.
+# Portrait sets are listed in portrait_sets database.
+
+akari = {
+	name = akari
+	sets = { akari }
+}
+akari-machines = {
+	name = AKAMACH
+	sets = { akari-machines	}
+}
+akari-lithoids = {
+	name = AKALITHOID
+	sets = { akari-lithoids }
+}
+
+kotonoha = {
+	name = kotonoha
+	sets = { kotonoha }
+}
+kotonoha-machines = {
+	name = KOTOMACH
+	sets = { kotonoha-machines }
+}
+kotonoha-lithoids = {
+	name = KOTOLITHOID
+	sets = { kotonoha-lithoids }
+}
+
+meika = {
+	name = meika
+	sets = { meika }
+}
+meika-machines = {
+	name = MEKAMACH
+	sets = { meika-machines }
+}
+meika-lithoids = {
+	name = MEIKALITHOID
+	sets = { meika-lithoids	}
+}
+
+hinomoto = {
+	name = hinomoto
+	sets = { hinomoto }
+}
+hinomoto-machines = {
+	name = HINOMACH
+	sets = { hinomoto-machines }
+}
+hinomoto-lithoids = {
+	name = HINOLITHOID
+	sets = { hinomoto-lithoids }
+}
+
+sora = {
+	name = sora
+	sets = { sora }
+}
+sora-machines = {
+	name = SORAMACH
+	sets = { sora-machines }
+}
+sora-lithoids = {
+	name = SORALITHOID
+	sets = { sora-lithoids }
+}
+
+touhoku = {
+	name = touhoku
+	sets = { touhoku }
+}
+touhoku-machines = {
+	name = TOHOMACH
+	sets = { touhoku-machines }
+}
+touhoku-lithoids = {
+	name = TOHOLITHOID
+	sets = { touhoku-lithoids }
+}
+
+yukari = {
+	name = yukari
+	sets = { yukari }
+}
+yukari-machines = {
+	name = YUKAMACH
+	sets = { yukari-machines }
+}
+yukari-lithoids = {
+	name = YUKALITHOID
+	sets = { yukari-lithoids }
+}

@@ -80,6 +80,20 @@ static_fallen_1 = {
 				extra_trait_points = 3
 				allow_negative_traits = no
 			}
+			last_created_species = {
+				modify_species = {
+					species = this
+					add_trait = trait_cybernetic
+				}
+			}
+			if = {
+				limit = {
+					has_machine_age_dlc = yes
+				}
+				last_created_species = {
+					set_random_cybernetic_portrait_effect = yes
+				}
+			}
 			create_country = {
 				name = random
 				type = fallen_empire
@@ -126,23 +140,24 @@ static_fallen_1 = {
 			}
 
 			set_planet_flag = fallen_empire_world
+			set_planet_flag = fallen_empire_capital
 			prevent_anomaly = yes
 			set_owner = event_target:fallen_empire_1
 			set_controller = event_target:fallen_empire_1
 			set_capital = yes
 
 			add_building = building_ancient_palace
-			add_building = building_fe_stronghold
+			add_building = building_fe_security_2
 			add_building = building_fe_stronghold
 			add_building = building_affluence_center
-			add_building = building_affluence_center
+			add_building = building_fe_entertainment_2
 			add_building = building_nourishment_center
-			add_building = building_nourishment_center
+			add_building = building_fe_lab_2
 			add_building = building_class_4_singularity
 			add_building = building_dimensional_fabricator
-			add_building = building_dimensional_fabricator
+			add_building = building_fe_mine_2
 			add_building = building_nano_forge
-			add_building = building_nano_forge
+			add_building = building_fe_administration_2
 
 			while = {
 				count = 20
@@ -187,6 +202,7 @@ static_fallen_1 = {
 		}
 	}
 
+
 	planet = {
 		count = { min = 1 max = 1 }
 		orbit_distance = 25
@@ -218,6 +234,19 @@ static_fallen_1 = {
 			orbit_angle = { min = 90 max = 270 }
 			orbit_distance = 10
 		}
+	}
+
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_1_2"
+	}
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_orbitals_1"
+	}
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_orbitals_2"
 	}
 
 	init_effect = {
@@ -277,10 +306,10 @@ static_fallen_1_2 = {
 			add_building = building_class_4_singularity
 			add_building = building_affluence_center
 			add_building = building_nourishment_center
-			add_building = building_nourishment_center
+			add_building = building_fe_lab_2
 			add_building = building_dimensional_fabricator
 			add_building = building_nano_forge
-			add_building = building_nano_forge
+			add_building = building_fe_lab_2
 			while = {
 				count = 15
 				add_district = district_city
@@ -404,6 +433,12 @@ static_fallen_2 = {
 				extra_trait_points = 3
 				allow_negative_traits = no
 			}
+			last_created_species = {
+				modify_species = {
+					species = this
+					add_trait = trait_psionic
+				}
+			}
 			create_country = {
 				name = random
 				type = fallen_empire
@@ -450,6 +485,7 @@ static_fallen_2 = {
 			}
 
 			set_planet_flag = fallen_empire_world
+			set_planet_flag = fallen_empire_capital
 			prevent_anomaly = yes
 			set_owner = event_target:fallen_empire_2
 			set_controller = event_target:fallen_empire_2
@@ -458,28 +494,28 @@ static_fallen_2 = {
 			add_building = building_ancient_palace
 			add_building = building_fe_dome
 			add_building = building_fe_dome
-			add_building = building_fe_dome
-			add_building = building_fe_dome
-			add_building = building_fe_dome
+			add_building = building_fe_temple_2
+			add_building = building_fe_temple_2
+			add_building = building_fe_mine_2
 			add_building = building_fe_stronghold
 			add_building = building_fe_stronghold
 			add_building = building_dimensional_fabricator
 			add_building = building_class_4_singularity
-			add_building = building_nano_forge
+			add_building = building_affluence_center
 			add_building = building_nano_forge
 
 			while = {
-				count = 14
+				count = 16
 				add_district = district_city
 			}
 			while = {
-				count = 8
+				count = 7
 				add_district_and_planet_size_if_needed_effect = {
 					district = district_mining
 				}
 			}
 			while = {
-				count = 8
+				count = 7
 				add_district_and_planet_size_if_needed_effect = {
 					district = district_farming
 				}
@@ -534,7 +570,7 @@ static_fallen_2 = {
 			add_building = building_empyrean_shrine
 			add_building = building_fe_dome
 			add_building = building_fe_dome
-			add_building = building_fe_dome
+			add_building = building_dimensional_fabricator
 			add_building = building_fe_stronghold
 			add_building = building_fe_stronghold
 			add_building = building_class_4_singularity
@@ -597,6 +633,36 @@ static_fallen_2 = {
 			orbit_angle = { min = 90 max = 270 }
 			orbit_distance = 5
 		}
+	}
+
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_orbitals_1"
+	}
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_orbitals_2"
+	}
+	neighbor_system = {
+		distance = { min = 30 max = 100 }
+		initializer = "fallen_holy_01"
+	}
+	neighbor_system = {
+		distance = { min = 50 max = 150 }
+		initializer = "fallen_holy_02"
+	}
+	neighbor_system = {
+		distance = { min = 80 max = 200 }
+		initializer = "fallen_holy_03"
+	}
+	neighbor_system = {
+		distance = { min = 120 max = 250 }
+		initializer = "fallen_holy_04"
+	}
+	neighbor_system = {
+		spawn_chance = 25
+		distance = { min = 0 max = 30 }
+		initializer = "fallen_shrouded"
 	}
 
 	init_effect = {
@@ -711,6 +777,7 @@ static_fallen_3 = {
 				}
 
 				set_planet_flag = fallen_empire_world
+				set_planet_flag = fallen_empire_capital
 				prevent_anomaly = yes
 				set_owner = event_target:fallen_empire_3
 				set_controller = event_target:fallen_empire_3
@@ -718,7 +785,7 @@ static_fallen_3 = {
 
 				add_building = building_ancient_palace
 				add_building = building_fe_dome
-				add_building = building_fe_dome
+				add_building = building_fe_administration_2
 				add_building = building_fe_stronghold
 				add_building = building_fe_stronghold
 				add_building = building_affluence_center
@@ -726,8 +793,8 @@ static_fallen_3 = {
 				add_building = building_class_4_singularity
 				add_building = building_class_4_singularity
 				add_building = building_dimensional_fabricator
-				add_building = building_nano_forge
-				add_building = building_nano_forge
+				add_building = building_fe_security_2
+				add_building = building_fe_mine_2
 				while = {
 					count = 20
 					add_district = district_city
@@ -799,7 +866,7 @@ static_fallen_3 = {
 
 				add_building = building_ancient_palace
 				add_building = building_fe_stronghold
-				add_building = building_fe_dome
+				add_building = building_fe_stronghold
 				add_building = building_dimensional_fabricator
 				add_building = building_dimensional_fabricator
 				add_building = building_nano_forge
@@ -842,13 +909,13 @@ static_fallen_3 = {
 				add_building = building_ancient_palace
 				add_building = building_fe_stronghold
 				add_building = building_fe_dome
-				add_building = building_fe_dome
+				add_building = building_fe_market_2
 				add_building = building_class_4_singularity
 				add_building = building_class_4_singularity
 				add_building = building_affluence_center
 				add_building = building_affluence_center
 				add_building = building_affluence_center
-				add_building = building_nourishment_center
+				add_building = building_fe_clinic_2
 				add_building = building_nourishment_center
 				while = {
 					count = 12
@@ -868,6 +935,19 @@ static_fallen_3 = {
 				}
 			}
 		}
+	}
+
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_xeno_zoo"
+	}
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_orbitals_1"
+	}
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_orbitals_2"
 	}
 
 	init_effect = {
@@ -990,6 +1070,8 @@ static_fallen_4 = {
 			}
 
 			set_planet_flag = fallen_empire_world
+			set_planet_flag = fallen_empire_capital
+			set_planet_flag = xenophobe_fe_capital
 			prevent_anomaly = yes
 			set_owner = event_target:fallen_empire_4
 			set_controller = event_target:fallen_empire_4
@@ -998,10 +1080,10 @@ static_fallen_4 = {
 			add_building = building_ancient_palace
 			add_building = building_fe_stronghold
 			add_building = building_fe_stronghold
-			add_building = building_affluence_center
+			add_building = building_fe_stronghold
 			add_building = building_affluence_center
 			add_building = building_nourishment_center
-			add_building = building_nourishment_center
+			add_building = building_fe_security_2
 			add_building = building_class_4_singularity
 			add_building = building_class_4_singularity
 			add_building = building_dimensional_fabricator
@@ -1058,11 +1140,11 @@ static_fallen_4 = {
 				add_building = building_fe_stronghold
 				add_building = building_affluence_center
 				add_building = building_nourishment_center
-				add_building = building_nourishment_center
-				add_building = building_class_4_singularity
+				add_building = building_fe_mine_2
+				add_building = building_fe_security_2
 				add_building = building_class_4_singularity
 				add_building = building_dimensional_fabricator
-				add_building = building_dimensional_fabricator
+				add_building = building_fe_administration_2
 				add_building = building_nano_forge
 				add_building = building_nano_forge
 				while = {
@@ -1115,6 +1197,27 @@ static_fallen_4 = {
 			orbit_angle = { min = 90 max = 270 }
 			orbit_distance = 5
 		}
+	}
+
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_orbitals_1"
+	}
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_orbitals_2"
+	}
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_shielded_1"
+	}
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_shielded_2"
+	}
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_shielded_3"
 	}
 
 	init_effect = {
@@ -1964,6 +2067,7 @@ static_fallen_machine = {
 	usage = fallen_empire_init
 	name = "NAME_Alpha_Refuge"
 	class = "rl_standard_stars"
+
 	flags = { ring_world_built }
 	usage_odds = 0 # Mod追加コード
 
@@ -2078,6 +2182,7 @@ static_fallen_machine = {
 			}
 
 			set_planet_flag = fallen_empire_world
+			set_planet_flag = fallen_empire_capital
 			prevent_anomaly = yes
 			set_owner = event_target:fallen_empire_machine
 			set_controller = event_target:fallen_empire_machine
@@ -2085,16 +2190,16 @@ static_fallen_machine = {
 
 			add_building = building_ancient_control_center
 			add_building = building_nourishment_center
-			add_building = building_nourishment_center
+			add_building = building_fe_assembly_2
 			add_building = building_ancient_cryo_chamber
-			add_building = building_ancient_cryo_chamber
-			add_building = building_ancient_cryo_chamber
-			add_building = building_ancient_cryo_chamber
-			add_building = building_ancient_cryo_chamber
-			add_building = building_ancient_cryo_chamber
-			add_building = building_ancient_cryo_chamber
-			add_building = building_ancient_cryo_chamber
-			add_building = building_ancient_cryo_chamber
+			add_building = building_fe_stronghold
+			add_building = building_fe_administration_machine_2
+			add_building = building_fe_lab_2
+			add_building = building_fe_lab_2
+			add_building = building_dimensional_fabricator
+			add_building = building_class_4_singularity
+			add_building = building_class_4_singularity
+			add_building = building_fe_silo_2
 
 			while = {
 				count = 5
@@ -2152,11 +2257,12 @@ static_fallen_machine = {
 			set_owner = event_target:fallen_empire_machine
 
 			add_building = building_ancient_control_center
+			add_building = building_fe_administration_machine_2
 			add_building = building_dimensional_fabricator
 			add_building = building_dimensional_fabricator
 			add_building = building_dimensional_fabricator
 			add_building = building_dimensional_fabricator
-			add_building = building_dimensional_fabricator
+			add_building = building_fe_mine_2
 			add_building = building_nano_forge
 			add_building = building_nano_forge
 			add_building = building_nano_forge
@@ -2208,6 +2314,10 @@ static_fallen_machine = {
 			add_building = building_class_4_singularity
 			add_building = building_class_4_singularity
 			add_building = building_class_4_singularity
+			add_building = building_fe_assembly_2
+			add_building = building_fe_mine_2
+			add_building = building_fe_mine_2
+			add_building = building_fe_mine_2
 
 			while = {
 				count = 5
@@ -2220,6 +2330,23 @@ static_fallen_machine = {
 				}
 			}
 		}
+	}
+
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_machine_2"
+	}
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_machine_3"
+	}
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_machine_4"
+	}
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_machine_5"
 	}
 }
 
@@ -2595,6 +2722,7 @@ static_fallen_machine_4 = {
 # Custodian Nexus
 static_fallen_machine_5 = {
 	class = sc_black_hole
+
 	name = "NAME_Custodian_Nexus"
 	usage_odds = 0 # Mod追加コード
 

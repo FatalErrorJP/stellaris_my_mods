@@ -26,14 +26,18 @@ country_event = {
 		###
 		switch = {
 			trigger = has_origin
-			origin_life_seeded      = { home_planet = { change_pc = pc_gaia    } }    # 生命の播種
-			origin_post_apocalyptic = { home_planet = { change_pc = pc_nuked   } }    # ポスト・アポカリプス
-			origin_remnants         = { home_planet = { change_pc = pc_relic   } }    # 残党
-			origin_shattered_ring   = {}                                              # 砕けたリング(initializersで惑星が固定されるのでなにもしない)
-			origin_void_dwellers    = {}                                              # 宇宙生まれ(initializersで惑星が固定されるのでなにもしない)
-			origin_machine          = { home_planet = { change_pc = pc_machine } }    # 資源統合
-			origin_ocean_paradise   = { home_planet = { change_pc = pc_ocean   } }    # 海の楽園
-			default                 = {
+			origin_life_seeded               = { home_planet = { change_pc = pc_gaia    } } # 生命の播種
+			origin_life_seeded_ai_only       = { home_planet = { change_pc = pc_gaia    } } # 生命の播種
+			origin_post_apocalyptic          = { home_planet = { change_pc = pc_nuked   } } # ポスト・アポカリプス
+			origin_post_apocalyptic_machines = { home_planet = { change_pc = pc_nuked   } } # 放射能惑星探査機
+			origin_remnants                  = { home_planet = { change_pc = pc_relic   } } # 残党
+			origin_shattered_ring            = {}                                           # 砕けたリング(initializersで惑星が固定されるのでなにもしない)
+			origin_void_dwellers             = {}                                           # 宇宙生まれ(initializersで惑星が固定されるのでなにもしない)
+			origin_void_machines             = {}                                           # 虚空鋳造(initializersで惑星が固定されるのでなにもしない)
+			origin_machine                   = { home_planet = { change_pc = pc_machine } } # 資源統合
+			origin_ocean_paradise            = { home_planet = { change_pc = pc_ocean   } } # 海の楽園
+			origin_ocean_machines            = { home_planet = { change_pc = pc_ocean   } } # 半水生機械
+			default                          = {
 				###
 				# 起源で判別できない場合は創始種族の居住適正に則った惑星に変更する
 				###
@@ -314,7 +318,7 @@ event = {
 							factor = 0
 							OR = {
 								any_country = { has_country_flag = fallen_empire_machine }
-								has_synthethic_dawn = no
+								has_synthetic_dawn = no
 							}
 						}
 						random_system = {
@@ -339,7 +343,7 @@ event = {
 								not = { any_country = { has_country_flag = fallen_empire_4 } }
 								AND = {
 									not = { any_country = { has_country_flag = fallen_empire_machine } }
-									has_synthethic_dawn = yes
+									has_synthetic_dawn = yes
 								}
 							}
 						}

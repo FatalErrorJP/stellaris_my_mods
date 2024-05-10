@@ -5,5 +5,5 @@ tags={
 	"Species"
 }
 name="おめーの宿ねぇから！"
-supported_version="3.11.*"
+supported_version="3.12.*"
 remote_file_id="2916392007"

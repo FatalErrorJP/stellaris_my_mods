@@ -896,11 +896,10 @@ building_hive_primitive_capital = {
 }
 
 building_hive_urban_dwellings = {
-	icon = building_urban_dwellings
+	icon = building_residence
 	can_build = no
 	can_demolish = yes
 	can_be_ruined = no
-	icon = building_residence
 
 	position_priority = 1218
 	category = amenity
@@ -1000,11 +999,11 @@ building_primitive_clinic = {
 	}
 
 	on_destroy = {
-		
+
 	}
 
 	on_repaired = {
-		
+
 	}
 }
 
@@ -1055,11 +1054,11 @@ building_solarpunk_gaiaseeder = {
 	}
 
 	on_destroy = {
-		
+
 	}
 
 	on_repaired = {
-		
+
 	}
 }
 
@@ -1110,11 +1109,11 @@ building_solarpunk_ranger_lodge = {
 	}
 
 	on_destroy = {
-		
+
 	}
 
 	on_repaired = {
-		
+
 	}
 }
 
@@ -1166,11 +1165,11 @@ building_solarpunk_sapling = {
 	}
 
 	on_destroy = {
-		
+
 	}
 
 	on_repaired = {
-		
+
 	}
 }
 
@@ -1223,10 +1222,10 @@ building_solarpunk_organic_paradise = {
 	}
 
 	on_destroy = {
-		
+
 	}
 
 	on_repaired = {
-		
+
 	}
 }
