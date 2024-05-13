@@ -24,6 +24,10 @@ custom_map_mode_is_target_country = {
 		is_country_type = extradimensional_3
 		is_country_type = ai_empire
 		is_country_type = gate_builders
+		is_country_type = synth_queen_storm
+		is_country_type = synth_queen
+		is_country_type = awakened_synth_queen
+		is_country_type = synth_queen_outposts
 		is_primitive = yes
 	}
 	is_pirate = no
