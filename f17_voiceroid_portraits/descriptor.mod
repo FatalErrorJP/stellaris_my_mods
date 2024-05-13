@@ -1,6 +1,7 @@
 version="1.0.0"
 dependencies={
 	"[代理公開]F17 VOICEROID Portraits"
+	"VOICEROID Portraits"
 }
 tags={
 	"Graphics"

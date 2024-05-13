@@ -1,10 +1,10 @@
-kotonoha = {
+VOR04 = {
 	alari =  {
 		name = SPEC_Alari
 		plural = SPEC_Alari_pl
 		home_planet = SPEC_Alari_planet
 		home_system = SPEC_Alari_system
-		name_list =  "kotonoha"
+		name_list =  "VOR04"
 	}
 
 	mireesh =  {
@@ -12,7 +12,7 @@ kotonoha = {
 		plural = SPEC_Mireesh_pl
 		home_planet = SPEC_Mireesh_planet
 		home_system = SPEC_Mireesh_system
-		name_list =  "kotonoha"
+		name_list =  "VOR04"
 	}
 
 	triech =  {
@@ -20,7 +20,7 @@ kotonoha = {
 		plural = SPEC_Triech_pl
 		home_planet = SPEC_Triech_planet
 		home_system = SPEC_Triech_system
-		name_list =  "kotonoha"
+		name_list =  "VOR04"
 	}
 
 	vrinn =  {
@@ -28,7 +28,7 @@ kotonoha = {
 		plural = SPEC_Vrinn_pl
 		home_planet = SPEC_Vrinn_planet
 		home_system = SPEC_Vrinn_system
-		name_list =  "kotonoha"
+		name_list =  "VOR04"
 	}
 
 	cevanti =  {
@@ -36,7 +36,7 @@ kotonoha = {
 		plural = SPEC_Cevanti_pl
 		home_planet = SPEC_Cevanti_planet
 		home_system = SPEC_Cevanti_system
-		name_list =  "kotonoha"
+		name_list =  "VOR04"
 	}
 
 	mishar =  {
@@ -44,7 +44,7 @@ kotonoha = {
 		plural = SPEC_Mishar_pl
 		home_planet = SPEC_Mishar_planet
 		home_system = SPEC_Mishar_system
-		name_list =  "kotonoha"
+		name_list =  "VOR04"
 	}
 
 	fareen =  {
@@ -52,7 +52,7 @@ kotonoha = {
 		plural = SPEC_Fareen_pl
 		home_planet = SPEC_Fareen_planet
 		home_system = SPEC_Fareen_system
-		name_list =  "kotonoha"
+		name_list =  "VOR04"
 	}
 
 	yldar =  {
@@ -60,7 +60,7 @@ kotonoha = {
 		plural = SPEC_Yldar_pl
 		home_planet = SPEC_Yldar_planet
 		home_system = SPEC_Yldar_system
-		name_list =  "kotonoha"
+		name_list =  "VOR04"
 	}
 
 	korinth =  {
@@ -68,7 +68,7 @@ kotonoha = {
 		plural = SPEC_Korinth_pl
 		home_planet = SPEC_Korinth_planet
 		home_system = SPEC_Korinth_system
-		name_list =  "kotonoha"
+		name_list =  "VOR04"
 	}
 
 	sildor =  {
@@ -76,7 +76,7 @@ kotonoha = {
 		plural = SPEC_Sildor_pl
 		home_planet = SPEC_Sildor_planet
 		home_system = SPEC_Sildor_system
-		name_list =  "kotonoha"
+		name_list =  "VOR04"
 	}
 
 	nagyari =  {
@@ -84,7 +84,7 @@ kotonoha = {
 		plural = SPEC_Nagyari_pl
 		home_planet = SPEC_Nagyari_planet
 		home_system = SPEC_Nagyari_system
-		name_list =  "kotonoha"
+		name_list =  "VOR04"
 	}
 
 	kobarian =  {
@@ -92,7 +92,7 @@ kotonoha = {
 		plural = SPEC_Kobarian_pl
 		home_planet = SPEC_Kobarian_planet
 		home_system = SPEC_Kobarian_system
-		name_list =  "kotonoha"
+		name_list =  "VOR04"
 	}
 
 	Hesukar =  {
@@ -100,7 +100,7 @@ kotonoha = {
 		plural = SPEC_Hesukar_pl
 		home_planet = SPEC_Hesukar_planet
 		home_system = SPEC_Hesukar_system
-		name_list =  "kotonoha"
+		name_list =  "VOR04"
 	}
 
 	giroid =  {
@@ -108,7 +108,7 @@ kotonoha = {
 		plural = SPEC_Giroid_pl
 		home_planet = SPEC_Giroid_planet
 		home_system = SPEC_Giroid_system
-		name_list =  "kotonoha"
+		name_list =  "VOR04"
 	}
 
 	akkano =  {
@@ -116,6 +116,6 @@ kotonoha = {
 		plural = SPEC_Akkano_pl
 		home_planet = SPEC_Akkano_planet
 		home_system = SPEC_Akkano_system
-		name_list =  "kotonoha"
+		name_list =  "VOR04"
 	}
 }

@@ -4,7 +4,7 @@ AKALITHOID = {
 		plural = SPEC_Tharbarite_pl
 		home_planet = SPEC_Tharbarite_planet
 		home_system = SPEC_Tharbarite_system
-		name_list =  "LITHOID1"
+		name_list =  "AKALITHOID"
 	}
 
 	evarite =  {
@@ -12,7 +12,7 @@ AKALITHOID = {
 		plural = SPEC_Evarite_pl
 		home_planet = SPEC_Evarite_planet
 		home_system = SPEC_Evarite_system
-		name_list =  "LITHOID2"
+		name_list =  "AKALITHOID"
 	}
 
 	praku =  {
@@ -20,7 +20,7 @@ AKALITHOID = {
 		plural = SPEC_Praku_pl
 		home_planet = SPEC_Praku_planet
 		home_system = SPEC_Praku_system
-		name_list =  "LITHOID3"
+		name_list =  "AKALITHOID"
 	}
 
 	rak-rak =  {
@@ -28,7 +28,7 @@ AKALITHOID = {
 		plural = SPEC_Rak-Rak_pl
 		home_planet = SPEC_Rak-Rak_planet
 		home_system = SPEC_Rak-Rak_system
-		name_list =  "LITHOID4"
+		name_list =  "AKALITHOID"
 	}
 
 	yru =  {
@@ -36,7 +36,7 @@ AKALITHOID = {
 		plural = SPEC_Yru_pl
 		home_planet = SPEC_Yru_planet
 		home_system = SPEC_Yru_system
-		name_list =  "LITHOID1"
+		name_list =  "AKALITHOID"
 	}
 
 	kodranite =  {
@@ -44,7 +44,7 @@ AKALITHOID = {
 		plural = SPEC_Kodranite_pl
 		home_planet = SPEC_Kodranite_planet
 		home_system = SPEC_Kodranite_system
-		name_list =  "LITHOID2"
+		name_list =  "AKALITHOID"
 	}
 
 	cherk =  {
@@ -52,7 +52,7 @@ AKALITHOID = {
 		plural = SPEC_Cherk_pl
 		home_planet = SPEC_Cherk_planet
 		home_system = SPEC_Cherk_system
-		name_list =  "LITHOID3"
+		name_list =  "AKALITHOID"
 	}
 
 	tavurite =  {
@@ -60,7 +60,7 @@ AKALITHOID = {
 		plural = SPEC_Tavurite_pl
 		home_planet = SPEC_Tavurite_planet
 		home_system = SPEC_Tavurite_system
-		name_list =  "LITHOID4"
+		name_list =  "AKALITHOID"
 	}
 
 	ti-zru =  {
@@ -68,7 +68,7 @@ AKALITHOID = {
 		plural = SPEC_Ti-Zru_pl
 		home_planet = SPEC_Ti-Zru_planet
 		home_system = SPEC_Ti-Zru_system
-		name_list =  "LITHOID1"
+		name_list =  "AKALITHOID"
 	}
 
 	polvanite =  {
@@ -76,7 +76,7 @@ AKALITHOID = {
 		plural = SPEC_Polvanite_pl
 		home_planet = SPEC_Polvanite_planet
 		home_system = SPEC_Polvanite_system
-		name_list =  "LITHOID2"
+		name_list =  "AKALITHOID"
 	}
 
 	ithill =  {
@@ -84,7 +84,7 @@ AKALITHOID = {
 		plural = SPEC_Ithill_pl
 		home_planet = SPEC_Ithill_planet
 		home_system = SPEC_Ithill_system
-		name_list =  "LITHOID3"
+		name_list =  "AKALITHOID"
 	}
 
 	irzuku =  {
@@ -92,7 +92,7 @@ AKALITHOID = {
 		plural = SPEC_Irzuku_pl
 		home_planet = SPEC_Irzuku_planet
 		home_system = SPEC_Irzuku_system
-		name_list =  "LITHOID4"
+		name_list =  "AKALITHOID"
 	}
 
 	glirr =  {
@@ -100,7 +100,7 @@ AKALITHOID = {
 		plural = SPEC_Glirr_pl
 		home_planet = SPEC_Glirr_planet
 		home_system = SPEC_Glirr_system
-		name_list =  "LITHOID1"
+		name_list =  "AKALITHOID"
 	}
 
 	qvagh =  {
@@ -108,7 +108,7 @@ AKALITHOID = {
 		plural = SPEC_Qvagh_pl
 		home_planet = SPEC_Qvagh_planet
 		home_system = SPEC_Qvagh_system
-		name_list =  "LITHOID2"
+		name_list =  "AKALITHOID"
 	}
 
 	zurite =  {
@@ -116,7 +116,7 @@ AKALITHOID = {
 		plural = SPEC_Zurite_pl
 		home_planet = SPEC_Zurite_planet
 		home_system = SPEC_Zurite_system
-		name_list =  "LITHOID3"
+		name_list =  "AKALITHOID"
 	}
 
 	oviir =  {
@@ -124,7 +124,7 @@ AKALITHOID = {
 		plural = SPEC_Oviir_pl
 		home_planet = SPEC_Oviir_planet
 		home_system = SPEC_Oviir_system
-		name_list =  "LITHOID4"
+		name_list =  "AKALITHOID"
 	}
 
 	rukkari =  {
@@ -132,7 +132,7 @@ AKALITHOID = {
 		plural = SPEC_Rukkari_pl
 		home_planet = SPEC_Rukkari_planet
 		home_system = SPEC_Rukkari_system
-		name_list =  "LITHOID1"
+		name_list =  "AKALITHOID"
 	}
 
 	uraki =  {
@@ -140,7 +140,7 @@ AKALITHOID = {
 		plural = SPEC_Uraki_pl
 		home_planet = SPEC_Uraki_planet
 		home_system = SPEC_Uraki_system
-		name_list =  "LITHOID2"
+		name_list =  "AKALITHOID"
 	}
 
 	bodranite =  {
@@ -148,7 +148,7 @@ AKALITHOID = {
 		plural = SPEC_Bodranite_pl
 		home_planet = SPEC_Bodranite_planet
 		home_system = SPEC_Bodranite_system
-		name_list =  "LITHOID3"
+		name_list =  "AKALITHOID"
 	}
 
 	vran =  {
@@ -156,7 +156,7 @@ AKALITHOID = {
 		plural = SPEC_Vran_pl
 		home_planet = SPEC_Vran_planet
 		home_system = SPEC_Vran_system
-		name_list =  "LITHOID4"
+		name_list =  "AKALITHOID"
 	}
 
 	zri =  {
@@ -164,7 +164,7 @@ AKALITHOID = {
 		plural = SPEC_Zri_pl
 		home_planet = SPEC_Zri_planet
 		home_system = SPEC_Zri_system
-		name_list =  "LITHOID1"
+		name_list =  "AKALITHOID"
 	}
 
 	vuur =  {
@@ -172,7 +172,7 @@ AKALITHOID = {
 		plural = SPEC_Vuur_pl
 		home_planet = SPEC_Vuur_planet
 		home_system = SPEC_Vuur_system
-		name_list =  "LITHOID2"
+		name_list =  "AKALITHOID"
 	}
 
 	croll =  {
@@ -180,7 +180,7 @@ AKALITHOID = {
 		plural = SPEC_Croll_pl
 		home_planet = SPEC_Croll_planet
 		home_system = SPEC_Croll_system
-		name_list =  "LITHOID3"
+		name_list =  "AKALITHOID"
 	}
 
 	bruvan =  {
@@ -188,7 +188,7 @@ AKALITHOID = {
 		plural = SPEC_Bruvan_pl
 		home_planet = SPEC_Bruvan_planet
 		home_system = SPEC_Bruvan_system
-		name_list =  "LITHOID4"
+		name_list =  "AKALITHOID"
 	}
 
 	hrun =  {
@@ -196,7 +196,7 @@ AKALITHOID = {
 		plural = SPEC_HRuni_pl
 		home_planet = SPEC_HRuni_planet
 		home_system = SPEC_HRuni_system
-		name_list =  "LITHOID1"
+		name_list =  "AKALITHOID"
 	}
 
 	rhonzar =  {
@@ -204,7 +204,7 @@ AKALITHOID = {
 		plural = SPEC_Rhonzar_pl
 		home_planet = SPEC_Rhonzar_planet
 		home_system = SPEC_Rhonzar_system
-		name_list =  "LITHOID2"
+		name_list =  "AKALITHOID"
 	}
 
 	bhiir =  {
@@ -212,7 +212,7 @@ AKALITHOID = {
 		plural = SPEC_Bhiir_pl
 		home_planet = SPEC_Bhiir_planet
 		home_system = SPEC_Bhiir_system
-		name_list =  "LITHOID3"
+		name_list =  "AKALITHOID"
 	}
 
 	bzadi =  {
@@ -220,7 +220,7 @@ AKALITHOID = {
 		plural = SPEC_Bzadi_pl
 		home_planet = SPEC_Bzadi_planet
 		home_system = SPEC_Bzadi_system
-		name_list =  "LITHOID4"
+		name_list =  "AKALITHOID"
 	}
 
 	mtok =  {
@@ -228,7 +228,7 @@ AKALITHOID = {
 		plural = SPEC_Mtok_pl
 		home_planet = SPEC_Mtok_planet
 		home_system = SPEC_Mtok_system
-		name_list =  "LITHOID1"
+		name_list =  "AKALITHOID"
 	}
 
 	makar =  {
@@ -236,7 +236,7 @@ AKALITHOID = {
 		plural = SPEC_MaKar_pl
 		home_planet = SPEC_MaKar_planet
 		home_system = SPEC_MaKar_system
-		name_list =  "LITHOID2"
+		name_list =  "AKALITHOID"
 	}
 
 	shapa =  {
@@ -244,7 +244,7 @@ AKALITHOID = {
 		plural = SPEC_Shapa_pl
 		home_planet = SPEC_Shapa_planet
 		home_system = SPEC_Shapa_system
-		name_list =  "LITHOID3"
+		name_list =  "AKALITHOID"
 	}
 
 	ferbanite =  {
@@ -252,7 +252,7 @@ AKALITHOID = {
 		plural = SPEC_Ferbanite_pl
 		home_planet = SPEC_Ferbanite_planet
 		home_system = SPEC_Ferbanite_system
-		name_list =  "LITHOID4"
+		name_list =  "AKALITHOID"
 	}
 
 	pliffplaff =  {
@@ -260,6 +260,6 @@ AKALITHOID = {
 		plural = SPEC_Pliff-Plaff_pl
 		home_planet = SPEC_Pliff-Plaff_planet
 		home_system = SPEC_Pliff-Plaff_system
-		name_list =  "LITHOID1"
+		name_list =  "AKALITHOID"
 	}
 }

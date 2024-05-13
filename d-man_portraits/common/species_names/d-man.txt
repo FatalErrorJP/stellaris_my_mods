@@ -14,42 +14,42 @@ d-man-biologicals = {
 		plural = SPEC_D-MAN_pl
 		home_planet = SPEC_D-MAN_planet1
 		home_system = SPEC_D-MAN_system1
-		name_list = "HUM1"
+		name_list = "d-man-biologicals"
 	}
 	d-man2 = {
 		name = SPEC_D-MAN
 		plural = SPEC_D-MAN_pl
 		home_planet = SPEC_D-MAN_planet2
 		home_system = SPEC_D-MAN_system2
-		name_list = "HUM1"
+		name_list = "d-man-biologicals"
 	}
 	d-man3 = {
 		name = SPEC_D-MAN
 		plural = SPEC_D-MAN_pl
 		home_planet = SPEC_D-MAN_planet3
 		home_system = SPEC_D-MAN_system3
-		name_list = "HUM1"
+		name_list = "d-man-biologicals"
 	}
 	d-man4 = {
 		name = SPEC_D-MAN
 		plural = SPEC_D-MAN_pl
 		home_planet = SPEC_D-MAN_planet4
 		home_system = SPEC_D-MAN_system4
-		name_list = "HUM1"
+		name_list = "d-man-biologicals"
 	}
 	d-man5 = {
 		name = SPEC_D-MAN
 		plural = SPEC_D-MAN_pl
 		home_planet = SPEC_D-MAN_planet5
 		home_system = SPEC_D-MAN_system5
-		name_list = "HUM1"
+		name_list = "d-man-biologicals"
 	}
 	d-man6 = {
 		name = SPEC_D-MAN
 		plural = SPEC_D-MAN_pl
 		home_planet = SPEC_D-MAN_planet6
 		home_system = SPEC_D-MAN_system6
-		name_list = "HUM1"
+		name_list = "d-man-biologicals"
 	}
 }
 
@@ -60,42 +60,42 @@ d-man-machines = {
 		plural = SPEC_D-MAN_pl
 		home_planet = SPEC_D-MAN_planet1
 		home_system = SPEC_D-MAN_system1
-		name_list = "HUM1"
+		name_list = "d-man-machines"
 	}
 	d-man12 = {
 		name = SPEC_D-MAN
 		plural = SPEC_D-MAN_pl
 		home_planet = SPEC_D-MAN_planet2
 		home_system = SPEC_D-MAN_system2
-		name_list = "HUM1"
+		name_list = "d-man-machines"
 	}
 	d-man13 = {
 		name = SPEC_D-MAN
 		plural = SPEC_D-MAN_pl
 		home_planet = SPEC_D-MAN_planet3
 		home_system = SPEC_D-MAN_system3
-		name_list = "HUM1"
+		name_list = "d-man-machines"
 	}
 	d-man14 = {
 		name = SPEC_D-MAN
 		plural = SPEC_D-MAN_pl
 		home_planet = SPEC_D-MAN_planet4
 		home_system = SPEC_D-MAN_system4
-		name_list = "HUM1"
+		name_list = "d-man-machines"
 	}
 	d-man15 = {
 		name = SPEC_D-MAN
 		plural = SPEC_D-MAN_pl
 		home_planet = SPEC_D-MAN_planet5
 		home_system = SPEC_D-MAN_system5
-		name_list = "HUM1"
+		name_list = "d-man-machines"
 	}
 	d-man16 = {
 		name = SPEC_D-MAN
 		plural = SPEC_D-MAN_pl
 		home_planet = SPEC_D-MAN_planet6
 		home_system = SPEC_D-MAN_system6
-		name_list = "HUM1"
+		name_list = "d-man-machines"
 	}
 }
 
@@ -106,41 +106,41 @@ d-man-lithoids = {
 		plural = SPEC_D-MAN_pl
 		home_planet = SPEC_D-MAN_planet1
 		home_system = SPEC_D-MAN_system1
-		name_list = "HUM1"
+		name_list = "d-man-lithoids"
 	}
 	d-man22 = {
 		name = SPEC_D-MAN
 		plural = SPEC_D-MAN_pl
 		home_planet = SPEC_D-MAN_planet2
 		home_system = SPEC_D-MAN_system2
-		name_list = "HUM1"
+		name_list = "d-man-lithoids"
 	}
 	d-man23 = {
 		name = SPEC_D-MAN
 		plural = SPEC_D-MAN_pl
 		home_planet = SPEC_D-MAN_planet3
 		home_system = SPEC_D-MAN_system3
-		name_list = "HUM1"
+		name_list = "d-man-lithoids"
 	}
 	d-man24 = {
 		name = SPEC_D-MAN
 		plural = SPEC_D-MAN_pl
 		home_planet = SPEC_D-MAN_planet4
 		home_system = SPEC_D-MAN_system4
-		name_list = "HUM1"
+		name_list = "d-man-lithoids"
 	}
 	d-man25 = {
 		name = SPEC_D-MAN
 		plural = SPEC_D-MAN_pl
 		home_planet = SPEC_D-MAN_planet5
 		home_system = SPEC_D-MAN_system5
-		name_list = "HUM1"
+		name_list = "d-man-lithoids"
 	}
 	d-man26 = {
 		name = SPEC_D-MAN
 		plural = SPEC_D-MAN_pl
 		home_planet = SPEC_D-MAN_planet6
 		home_system = SPEC_D-MAN_system6
-		name_list = "HUM1"
+		name_list = "d-man-lithoids"
 	}
 }

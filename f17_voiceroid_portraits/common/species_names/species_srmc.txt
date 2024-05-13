@@ -4,7 +4,7 @@ SORAMACH = {
 		plural = SPEC_Shazarak_pl
 		home_planet = SPEC_Shazarak_planet
 		home_system = SPEC_Shazarak_system
-		name_list =  "MACHINE1"
+		name_list =  "SORAMACH"
 	}
 
 	mechazur =  {
@@ -12,7 +12,7 @@ SORAMACH = {
 		plural = SPEC_Mechazur_pl
 		home_planet = SPEC_Mechazur_planet
 		home_system = SPEC_Mechazur_system
-		name_list =  "MACHINE2"
+		name_list =  "SORAMACH"
 	}
 
 	zero-zero-one =  {
@@ -20,7 +20,7 @@ SORAMACH = {
 		plural = SPEC_Zero-Zero-One_pl
 		home_planet = SPEC_Zero-Zero-One_planet
 		home_system = SPEC_Zero-Zero-One_system
-		name_list =  "MACHINE3"
+		name_list =  "SORAMACH"
 	}
 
 	prime =  {
@@ -28,7 +28,7 @@ SORAMACH = {
 		plural = SPEC_Prime_pl
 		home_planet = SPEC_Prime_planet
 		home_system = SPEC_Prime_system
-		name_list =  "MACHINE4"
+		name_list =  "SORAMACH"
 	}
 
 	zenak =  {
@@ -36,7 +36,7 @@ SORAMACH = {
 		plural = SPEC_Zenak_pl
 		home_planet = SPEC_Zenak_planet
 		home_system = SPEC_Zenak_system
-		name_list =  "MACHINE1"
+		name_list =  "SORAMACH"
 	}
 
 	omni =  {
@@ -44,7 +44,7 @@ SORAMACH = {
 		plural = SPEC_Omni_pl
 		home_planet = SPEC_Omni_planet
 		home_system = SPEC_Omni_system
-		name_list =  "MACHINE2"
+		name_list =  "SORAMACH"
 	}
 
 	daar =  {
@@ -52,7 +52,7 @@ SORAMACH = {
 		plural = SPEC_DAAR_pl
 		home_planet = SPEC_DAAR_planet
 		home_system = SPEC_DAAR_system
-		name_list =  "MACHINE3"
+		name_list =  "SORAMACH"
 	}
 
 	tronzaru =  {
@@ -60,7 +60,7 @@ SORAMACH = {
 		plural = SPEC_Tronzaru_pl
 		home_planet = SPEC_Tronzaru_planet
 		home_system = SPEC_Tronzaru_system
-		name_list =  "MACHINE4"
+		name_list =  "SORAMACH"
 	}
 
 	techarus =  {
@@ -68,7 +68,7 @@ SORAMACH = {
 		plural = SPEC_Techarus_pl
 		home_planet = SPEC_Techarus_planet
 		home_system = SPEC_Techarus_system
-		name_list =  "MACHINE1"
+		name_list =  "SORAMACH"
 	}
 
 	jonus =  {
@@ -76,7 +76,7 @@ SORAMACH = {
 		plural = SPEC_Jonus_pl
 		home_planet = SPEC_Jonus_planet
 		home_system = SPEC_Jonus_system
-		name_list =  "MACHINE2"
+		name_list =  "SORAMACH"
 	}
 
 	iribot =  {
@@ -84,7 +84,7 @@ SORAMACH = {
 		plural = SPEC_Iribot_pl
 		home_planet = SPEC_Iribot_planet
 		home_system = SPEC_Iribot_system
-		name_list =  "MACHINE3"
+		name_list =  "SORAMACH"
 	}
 
 	silicron =  {
@@ -92,7 +92,7 @@ SORAMACH = {
 		plural = SPEC_Silicron_pl
 		home_planet = SPEC_Silicron_planet
 		home_system = SPEC_Silicron_system
-		name_list =  "MACHINE4"
+		name_list =  "SORAMACH"
 	}
 
 	dekron =  {
@@ -100,7 +100,7 @@ SORAMACH = {
 		plural = SPEC_Dekron_pl
 		home_planet = SPEC_Dekron_planet
 		home_system = SPEC_Dekron_system
-		name_list =  "MACHINE1"
+		name_list =  "SORAMACH"
 	}
 
 	synthoid =  {
@@ -108,7 +108,7 @@ SORAMACH = {
 		plural = SPEC_Synthoid_pl
 		home_planet = SPEC_Synthoid_planet
 		home_system = SPEC_Synthoid_system
-		name_list =  "MACHINE2"
+		name_list =  "SORAMACH"
 	}
 
 	cydran =  {
@@ -116,7 +116,7 @@ SORAMACH = {
 		plural = SPEC_Cydran_pl
 		home_planet = SPEC_Cydran_planet
 		home_system = SPEC_Cydran_system
-		name_list =  "MACHINE3"
+		name_list =  "SORAMACH"
 	}
 
 	kelbrid =  {
@@ -124,7 +124,7 @@ SORAMACH = {
 		plural = SPEC_Kelbrid_pl
 		home_planet = SPEC_Kelbrid_planet
 		home_system = SPEC_Kelbrid_system
-		name_list =  "MACHINE4"
+		name_list =  "SORAMACH"
 	}
 
 	model-16 =  {
@@ -132,7 +132,7 @@ SORAMACH = {
 		plural = SPEC_Model-16_pl
 		home_planet = SPEC_Model-16_planet
 		home_system = SPEC_Model-16_system
-		name_list =  "MACHINE1"
+		name_list =  "SORAMACH"
 	}
 
 	nex =  {
@@ -140,7 +140,7 @@ SORAMACH = {
 		plural = SPEC_NEX_pl
 		home_planet = SPEC_NEX_planet
 		home_system = SPEC_NEX_system
-		name_list =  "MACHINE2"
+		name_list =  "SORAMACH"
 	}
 
 	sictor =  {
@@ -148,6 +148,6 @@ SORAMACH = {
 		plural = SPEC_Mictor_pl
 		home_planet = SPEC_Mictor_planet
 		home_system = SPEC_Mictor_system
-		name_list =  "MACHINE3"
+		name_list =  "SORAMACH"
 	}
 }
