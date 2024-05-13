@@ -1153,21 +1153,21 @@ guiTypes = {
 				}
 			}
 
-			# メナスポイント
-			containerWindowType = {
-				name = "tb_menace_group"
+			# 「危機になる」系のリソース
+			dropDownBoxType = {
+				name = "tb_others_group"
 				size = { width = @topbar_resource_icon_short_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 730 y = @topbar_resource_lower_pos_y }									# MOD修正箇所
+				position = { x = 730 y = @topbar_resource_lower_pos_y } 								# Mod修正箇所
 
 				background = {
 					name = "background"
-					spriteType = "GFX_custom_topbar_button_narrow_hover"								# MOD修正箇所
+					spriteType = "GFX_topbar_button_narrow_hover"
 					frame = 1
 				}
 
 				iconType = {
 					name = "icon"
-					spriteType = "GFX_resource_menace"
+					spriteType = "GFX_resource_strategic_top_bar"
 					position = { x = @topbar_relative_icon_pos_x y = @topbar_relative_icon_pos_y }		# MOD修正箇所
 					tooltip_mode_enabled = yes
 					alwaysTransparent = yes
@@ -1183,46 +1183,12 @@ guiTypes = {
 					format = center
 					alwaysTransparent = yes
 				}
-			}
-			#############################################
-			# ここまでMOD追加リソース
-			#############################################
-
-			dropDownBoxType = {
-				name = "tb_others_group"
-				size = { width = 70 height = 36 }
-				position = { x = -1000 y = -1000 } 					# Mod修正箇所 本Modでは表示したくないので、見えない場所に飛ばす
-
-				background = {
-					name = "background"
-					spriteType = "GFX_topbar_button_narrow_hover"
-					frame = 1
-				}
-
-				iconType = {
-					name = "icon"
-					spriteType = "GFX_resource_strategic_top_bar"
-					position = { x = 27 y = 2 }
-					tooltip_mode_enabled = yes
-					alwaysTransparent = yes
-				}
-
-				instantTextBoxType={
-					name = "amount"
-					font = "cg_16b"
-					position = { x = 0 y = @topbar_amount_pos_y }
-					maxWidth = 70
-					maxHeight = 16
-					text = "0 / 0"
-					format = center
-					alwaysTransparent = yes
-				}
 
 				expandedWindow = {
 					name = "expanded_window"
 					hide_position = { x = 0 y = -190 }
-					show_position = { x = 0 y = 36 }
-					size = { width = 100 height = 230 } # Dynamic in topbar_other_resource_groups.txt
+					show_position = { x = 0 y = 25 }													# MOD修正箇所
+					size = { width = 100 height = 50 } # Dynamic in topbar_other_resource_groups.txt	# MOD修正箇所
 					show_animation_type = decelerated
 					hide_animation_type = accelerated
 					animation_time = 200
@@ -1250,6 +1216,9 @@ guiTypes = {
 					}
 				}
 			}
+			#############################################
+			# ここまでMOD追加リソース
+			#############################################
 
 		# リーダー上限数
 		containerWindowType = {

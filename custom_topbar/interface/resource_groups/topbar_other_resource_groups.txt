@@ -1,0 +1,16 @@
+tb_others_group = {
+	category = {
+		name = "become_the_crisis_chain"
+		resources = {
+			menace
+			advanced_logic
+		}
+		onclick = traditions
+	}
+
+	localization = {
+		"RESOURCE_GROUP_STORED_ONLY" = default
+	}
+
+	minimum_height = 50
+}
