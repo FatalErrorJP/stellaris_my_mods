@@ -1,0 +1,89 @@
+salvage_ships_from_debris = {
+	create_fleet = {
+		name = NAME_Salvaged_Fleet
+		effect = {
+			set_owner = root
+			set_location = from
+
+			# Standard ships
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = corvette						GIVES = corvette }
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = frigate						GIVES = frigate }
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = destroyer					GIVES = destroyer }
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cruiser						GIVES = cruiser }
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = battleship					GIVES = battleship }
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = titan						GIVES = titan }
+
+			# Offspring Ships
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_corvette			GIVES = corvette }
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_destroyer			GIVES = destroyer }
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_cruiser			GIVES = cruiser }
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = offspring_battleship			GIVES = battleship }
+
+			# Pirate ships
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = pirate_corvette				GIVES = corvette }
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = pirate_destroyer 			GIVES = destroyer }
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = pirate_cruiser				GIVES = cruiser }
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = bemat_corvette				GIVES = corvette }
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = bemat_destroyer				GIVES = destroyer }
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = bemat_cruiser				GIVES = cruiser }
+
+			# Marauder ships
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_corvette			GIVES = corvette }
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_destroyer			GIVES = destroyer }
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_cruiser				GIVES = cruiser }
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = marauder_galleon				GIVES = battleship }
+
+			# Fallen empire ships
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = small_ship_fallen_empire		GIVES = destroyer }
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = large_ship_fallen_empire		GIVES = battleship }
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = massive_ship_fallen_empire	GIVES = titan }
+
+			# Crisis ships
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = crisis_corvette				GIVES = corvette }
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = crisis_destroyer				GIVES = destroyer }
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = crisis_cruiser				GIVES = cruiser }
+
+			##############################################################
+			# ここからMod追加コード
+			##############################################################
+			# Cosmo Genesis ships
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cosmo_crisis_destroyer		GIVES = destroyer }
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cosmo_crisis_battlecruiser	GIVES = battleship }
+			add_ship_type_from_debris = { CHANCE = $CHANCE$ USES = cosmo_crisis_titan			GIVES = titan }
+			##############################################################
+			# ここまでMod追加コード
+			##############################################################
+		}
+	}
+	if = {
+		limit = {
+			last_created_fleet = { num_ships = 0 }
+		}
+		delete_fleet = last_created_fleet
+	}
+	else = {
+		last_created_fleet = {
+			set_variable = { which = num_ships_salvaged value = trigger:num_ships }
+		}
+		create_message = {
+			type = MESSAGE_SALVAGED_SHIPS_FROM_DEBRIS
+			localization = MESSAGE_SALVAGED_SHIPS_FROM_DEBRIS_DESC
+			days = 20
+			target = last_created_fleet
+			variable = {
+				type = name
+				localization = SYSTEM
+				scope = from.solar_system
+			}
+			variable = {
+				type = variable
+				varname = num_ships_salvaged
+				localization = NUM_SHIPS
+				scope = last_created_fleet
+			}
+		}
+		last_created_fleet = {
+			clear_variable = num_ships_salvaged
+		}
+	}
+}
