@@ -1,0 +1,9 @@
+﻿l_japanese:
+ orbital_arc_furnace_1_mod_tooltip: "星系内のすべての惑星、衛星、小惑星で、サイズ§Y1§! £minerals£の鉱床を発見$NEW_LINE$§E$SYSTEM_MODIFIER$§!: $TABBED_NEW_LINE$$mod_station_gatherers_produces_mult$: §G+$@arc_furnace_1_mod_value|%0$§! ([owner.arc_furnace_counter]/[owner.GetArcFurnaceLimit])"
+ orbital_arc_furnace_2_mod_tooltip: "発見した鉱床をサイズ§Y2§! £minerals£$NEW_LINE$§E$SYSTEM_MODIFIER$§!に拡大: $TABBED_NEW_LINE$$mod_station_gatherers_produces_mult$: §G+$@arc_furnace_2_mod_value|%0$§! ([owner.arc_furnace_counter]/[owner.GetArcFurnaceLimit])"
+ orbital_arc_furnace_3_mod_tooltip: "発見した鉱床をサイズ§Y3§! £minerals£と§Y1§! £alloys£に拡大$NEW_LINE$§E$SYSTEM_MODIFIER$§!: $TABBED_NEW_LINE$$mod_station_gatherers_produces_mult$: §G+$@arc_furnace_3_mod_value|%0$§! ([owner.arc_furnace_counter]/[owner.GetArcFurnaceLimit])"
+ orbital_arc_furnace_4_mod_tooltip: "発見した鉱床をサイズ§Y3§! £minerals£と§Y2§! £alloys£に拡大$NEW_LINE$§E$SYSTEM_MODIFIER$§!: $TABBED_NEW_LINE$$mod_station_gatherers_produces_mult$: §G+$@arc_furnace_4_mod_value|%0$§! ([owner.arc_furnace_counter]/[owner.GetArcFurnaceLimit])"
+
+ dyson_swarm_1_mod_tooltip: "星の産出: §G+$@dyson_swarm_1_mod_value|%0$§! ([owner.dyson_swarm_counter]/[owner.GetDysonSwarmLimit])"
+ dyson_swarm_2_mod_tooltip: "星の産出: §G+$@dyson_swarm_2_mod_value|%0$§! ([owner.dyson_swarm_counter]/[owner.GetDysonSwarmLimit])"
+ dyson_swarm_3_mod_tooltip: "星の産出: §G+$@dyson_swarm_3_mod_value|%0$§! ([owner.dyson_swarm_counter]/[owner.GetDysonSwarmLimit])"

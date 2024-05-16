@@ -1,0 +1,9 @@
+﻿l_spanish:
+ orbital_arc_furnace_1_mod_tooltip: "Descubre un depósito de tamaño §Y1§! £minerals£ en cada planeta, luna y asteroide del sistema$NEW_LINE$§E$SYSTEM_MODIFIER$§!: $TABBED_NEW_LINE$$mod_station_gatherers_produces_mult$: §G+$@arc_furnace_1_mod_value|%0$§! ([owner.arc_furnace_counter]/[owner.GetArcFurnaceLimit])"
+ orbital_arc_furnace_2_mod_tooltip: "Mejora el tamaño de los depósitos al nivel §Y2§! £minerals£$NEW_LINE$§E$SYSTEM_MODIFIER$§!: $TABBED_NEW_LINE$$mod_station_gatherers_produces_mult$: §G+$@arc_furnace_2_mod_value|%0$§! ([owner.arc_furnace_counter]/[owner.GetArcFurnaceLimit])"
+ orbital_arc_furnace_3_mod_tooltip: "Mejora el tamaño de los depósitos a los niveles §Y3§! £minerals£ y §Y1§! £alloys£$NEW_LINE$§E$SYSTEM_MODIFIER$§!: $TABBED_NEW_LINE$$mod_station_gatherers_produces_mult$: §G+$@arc_furnace_3_mod_value|%0$§! ([owner.arc_furnace_counter]/[owner.GetArcFurnaceLimit])"
+ orbital_arc_furnace_4_mod_tooltip: "Mejora el tamaño de los depósitos a los niveles §Y3§! £minerals£ y §Y2§! £alloys£$NEW_LINE$§E$SYSTEM_MODIFIER$§!: $TABBED_NEW_LINE$$mod_station_gatherers_produces_mult$: §G+$@arc_furnace_4_mod_value|%0$§! ([owner.arc_furnace_counter]/[owner.GetArcFurnaceLimit])"
+
+ dyson_swarm_1_mod_tooltip: "Rendimiento estelar: §G+$@dyson_swarm_1_mod_value|%0$§! ([owner.dyson_swarm_counter]/[owner.GetDysonSwarmLimit])"
+ dyson_swarm_2_mod_tooltip: "Rendimiento estelar: §G+$@dyson_swarm_2_mod_value|%0$§! ([owner.dyson_swarm_counter]/[owner.GetDysonSwarmLimit])"
+ dyson_swarm_3_mod_tooltip: "Rendimiento estelar: §G+$@dyson_swarm_3_mod_value|%0$§! ([owner.dyson_swarm_counter]/[owner.GetDysonSwarmLimit])"

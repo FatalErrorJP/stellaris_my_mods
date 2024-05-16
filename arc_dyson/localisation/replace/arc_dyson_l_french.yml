@@ -1,0 +1,9 @@
+﻿l_french:
+ orbital_arc_furnace_1_mod_tooltip: "Révèle un gisement de taille §Y1§!£minerals£ sur chaque planète, lune et astéroïde du système\n§E$SYSTEM_MODIFIER$§! : \n  $mod_station_gatherers_produces_mult$: §G+$@arc_furnace_1_mod_value|%0$§! ([owner.arc_furnace_counter]/[owner.GetArcFurnaceLimit])"
+ orbital_arc_furnace_2_mod_tooltip: "Augmente la taille des gisements à §Y2§!£minerals£\n§E$SYSTEM_MODIFIER$§! : \n  $mod_station_gatherers_produces_mult$: §G+$@arc_furnace_2_mod_value|%0$§! ([owner.arc_furnace_counter]/[owner.GetArcFurnaceLimit])"
+ orbital_arc_furnace_3_mod_tooltip: "Augmente la taille des gisements à §Y3§!£minerals£ et §Y1§!£alloys£\n§E$SYSTEM_MODIFIER$§! : \n  $mod_station_gatherers_produces_mult$: §G+$@arc_furnace_3_mod_value|%0$§! ([owner.arc_furnace_counter]/[owner.GetArcFurnaceLimit])"
+ orbital_arc_furnace_4_mod_tooltip: "Augmente la taille des gisements à §Y3§!£minerals£ et §Y2§!£alloys£\n§E$SYSTEM_MODIFIER$§! : \n  $mod_station_gatherers_produces_mult$: §G+$@arc_furnace_4_mod_value|%0$§! ([owner.arc_furnace_counter]/[owner.GetArcFurnaceLimit])"
+
+ dyson_swarm_1_mod_tooltip: "Production stellaire : §G+$@dyson_swarm_1_mod_value|%0$§! ([owner.dyson_swarm_counter]/[owner.GetDysonSwarmLimit])"
+ dyson_swarm_2_mod_tooltip: "Production stellaire : §G+$@dyson_swarm_2_mod_value|%0$§! ([owner.dyson_swarm_counter]/[owner.GetDysonSwarmLimit])"
+ dyson_swarm_3_mod_tooltip: "Production stellaire : §G+$@dyson_swarm_3_mod_value|%0$§! ([owner.dyson_swarm_counter]/[owner.GetDysonSwarmLimit])"

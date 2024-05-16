@@ -1,0 +1,9 @@
+﻿l_polish:
+ orbital_arc_furnace_1_mod_tooltip: "Ujawnia złoże rozmiaru §Y1§! £minerals£ na każdej planecie, księżycu i asteroidzie w układzie$NEW_LINE$§E$SYSTEM_MODIFIER$§!: $TABBED_NEW_LINE$$mod_station_gatherers_produces_mult$: §G + $@arc_furnace_1_mod_value|%0$§! ([owner.arc_furnace_counter]/[owner.GetArcFurnaceLimit])"
+ orbital_arc_furnace_2_mod_tooltip: "Ulepsza odkryte złoża do rozmiaru §Y2§! £minerals£$NEW_LINE$§E$SYSTEM_MODIFIER$§!: $TABBED_NEW_LINE$$mod_station_gatherers_produces_mult$: §G + $@arc_furnace_2_mod_value|%0$§! ([owner.arc_furnace_counter]/[owner.GetArcFurnaceLimit])"
+ orbital_arc_furnace_3_mod_tooltip: "Ulepsza odkryte złoża do rozmiaru §Y3§! £minerals£ i §Y1§! £alloys£$NEW_LINE$§E$SYSTEM_MODIFIER$§!: $TABBED_NEW_LINE$$mod_station_gatherers_produces_mult$: §G + $@arc_furnace_3_mod_value|%0$§! ([owner.arc_furnace_counter]/[owner.GetArcFurnaceLimit])"
+ orbital_arc_furnace_4_mod_tooltip: "Ulepsza odkryte złoża do rozmiaru §Y3§! £minerals£ i §Y2§! £alloys£$NEW_LINE$§E$SYSTEM_MODIFIER$§!: $TABBED_NEW_LINE$$mod_station_gatherers_produces_mult$: §G + $@arc_furnace_4_mod_value|%0$§! ([owner.arc_furnace_counter]/[owner.GetArcFurnaceLimit])"
+
+ dyson_swarm_1_mod_tooltip: "Produkcja gwiezdna: §G + $@dyson_swarm_1_mod_value|%0$§! ([owner.dyson_swarm_counter]/[owner.GetDysonSwarmLimit])"
+ dyson_swarm_2_mod_tooltip: "Produkcja gwiezdna: §G + $@dyson_swarm_2_mod_value|%0$§! ([owner.dyson_swarm_counter]/[owner.GetDysonSwarmLimit])"
+ dyson_swarm_3_mod_tooltip: "Produkcja gwiezdna: §G + $@dyson_swarm_3_mod_value|%0$§! ([owner.dyson_swarm_counter]/[owner.GetDysonSwarmLimit])"

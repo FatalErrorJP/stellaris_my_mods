@@ -1,0 +1,9 @@
+﻿l_korean:
+ orbital_arc_furnace_1_mod_tooltip: "성계 내 모든 행성, 위성, 소행성에서 크기 §Y1§!의 £minerals£ 매장지 발굴$NEW_LINE$§E$SYSTEM_MODIFIER$§!: $TABBED_NEW_LINE$$mod_station_gatherers_produces_mult$: §G+$@arc_furnace_1_mod_value|%0$§! ([owner.arc_furnace_counter]/[owner.GetArcFurnaceLimit])"
+ orbital_arc_furnace_2_mod_tooltip: "발굴한 매장지의 크기가 £minerals£ §Y2§!로 증가$NEW_LINE$§E$SYSTEM_MODIFIER$§!: $TABBED_NEW_LINE$$mod_station_gatherers_produces_mult$: §G+$@arc_furnace_2_mod_value|%0$§! ([owner.arc_furnace_counter]/[owner.GetArcFurnaceLimit])"
+ orbital_arc_furnace_3_mod_tooltip: "발굴한 매장지의 크기가 £minerals£ §Y3§! 및 £alloys£ §Y1§!로 증가$NEW_LINE$§E$SYSTEM_MODIFIER$§!: $TABBED_NEW_LINE$$mod_station_gatherers_produces_mult$: §G+$@arc_furnace_3_mod_value|%0$§! ([owner.arc_furnace_counter]/[owner.GetArcFurnaceLimit])"
+ orbital_arc_furnace_4_mod_tooltip: "발굴한 매장지의 크기가 £minerals£ §Y3§! 및 £alloys£ §Y2§!로 증가$NEW_LINE$§E$SYSTEM_MODIFIER$§!: $TABBED_NEW_LINE$$mod_station_gatherers_produces_mult$: §G+$@arc_furnace_4_mod_value|%0$§! ([owner.arc_furnace_counter]/[owner.GetArcFurnaceLimit])"
+
+ dyson_swarm_1_mod_tooltip: "항성 생산량: §G+$@dyson_swarm_1_mod_value|%0$§! ([owner.dyson_swarm_counter]/[owner.GetDysonSwarmLimit])"
+ dyson_swarm_2_mod_tooltip: "항성 생산량: §G+$@dyson_swarm_2_mod_value|%0$§! ([owner.dyson_swarm_counter]/[owner.GetDysonSwarmLimit])"
+ dyson_swarm_3_mod_tooltip: "항성 생산량: §G+$@dyson_swarm_3_mod_value|%0$§! ([owner.dyson_swarm_counter]/[owner.GetDysonSwarmLimit])"
