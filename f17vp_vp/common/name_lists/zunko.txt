@@ -1,8 +1,0 @@
-﻿zunko = {
-	selectable = { always = no }
-	inline_script = "name_lists/human_name_list"
-	inline_script = {
-		script = name_lists/character_name_list
-		NAME = F17_VOICEROID_CHR_TOUHOKU_ZUNKO
-	}
-}

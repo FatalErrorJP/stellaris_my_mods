@@ -1,27 +1,4 @@
-##############################################################
-# D言語くん種族用の定義
-##############################################################
-# D言語くん種族(有機種族)
-d-man-biologicals = {
-	# 種別
-	# BIOLOGICAL:有機種族
-	# MACHINE:機械知性
-	# ROBOT:ロボティクス
-	# LITHOID:岩石種族
-	# PRESAPIENT:準知性
-	# OTHER:その他
-	archetype = BIOLOGICAL
-
-	# 権限の設定
-	# 機械知性は選択不可
-	possible = { authority = { NOT = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE } } }
-
-	# グラフィックカルチャー
-	graphical_culture = no_culture
-}
-
-# D言語くん種族(機械知性)
-d-man-machines = {
+# 機械知性用テンプレート
 	# 種別
 	# BIOLOGICAL:有機種族
 	# MACHINE:機械知性
@@ -80,32 +57,4 @@ d-man-machines = {
 	leader_age_max = 10
 
 	# グラフィックカルチャー
-	graphical_culture = no_culture
-}
-
-# D言語くん種族(岩石種族)
-d-man-lithoids = {
-	# 種別
-	# BIOLOGICAL:有機種族
-	# MACHINE:機械知性
-	# ROBOT:ロボティクス
-	# LITHOID:岩石種族
-	# PRESAPIENT:準知性
-	# OTHER:その他
-	archetype = LITHOID
-
-	# この種族を利用可能な条件
-	# バニラの岩石種族の条件に準拠
-	possible = { authority = { NOT = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE } } }
-
-	# プレイ可能な条件
-	# バニラの岩石種族の条件に準拠
-	playable = { has_lithoids = yes }
-	randomized = { has_lithoids = yes }
-
-	# デフォルト種族特性「岩石」
-	trait = "trait_lithoid"
-
-	# グラフィックカルチャー
-	graphical_culture = no_culture
-}
+	graphical_culture = synthetics_01

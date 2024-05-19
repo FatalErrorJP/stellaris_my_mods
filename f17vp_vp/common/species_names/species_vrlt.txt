@@ -1,0 +1,269 @@
+# Generated species derive their names from here
+
+### VOICELITH
+
+VOICELITH = {
+	tharbarite =  {
+		name = SPEC_Tharbarite
+		plural = SPEC_Tharbarite_pl
+		home_planet = SPEC_Tharbarite_planet
+		home_system = SPEC_Tharbarite_system
+		name_list =  "VOICELITH"
+	}
+
+	evarite =  {
+		name = SPEC_Evarite
+		plural = SPEC_Evarite_pl
+		home_planet = SPEC_Evarite_planet
+		home_system = SPEC_Evarite_system
+		name_list =  "VOICELITH"
+	}
+
+	praku =  {
+		name = SPEC_Praku
+		plural = SPEC_Praku_pl
+		home_planet = SPEC_Praku_planet
+		home_system = SPEC_Praku_system
+		name_list =  "VOICELITH"
+	}
+
+	rak-rak =  {
+		name = SPEC_Rak-Rak
+		plural = SPEC_Rak-Rak_pl
+		home_planet = SPEC_Rak-Rak_planet
+		home_system = SPEC_Rak-Rak_system
+		name_list =  "VOICELITH"
+	}
+
+	yru =  {
+		name = SPEC_Yru
+		plural = SPEC_Yru_pl
+		home_planet = SPEC_Yru_planet
+		home_system = SPEC_Yru_system
+		name_list =  "VOICELITH"
+	}
+
+	kodranite =  {
+		name = SPEC_Kodranite
+		plural = SPEC_Kodranite_pl
+		home_planet = SPEC_Kodranite_planet
+		home_system = SPEC_Kodranite_system
+		name_list =  "VOICELITH"
+	}
+
+	cherk =  {
+		name = SPEC_Cherk
+		plural = SPEC_Cherk_pl
+		home_planet = SPEC_Cherk_planet
+		home_system = SPEC_Cherk_system
+		name_list =  "VOICELITH"
+	}
+
+	tavurite =  {
+		name = SPEC_Tavurite
+		plural = SPEC_Tavurite_pl
+		home_planet = SPEC_Tavurite_planet
+		home_system = SPEC_Tavurite_system
+		name_list =  "VOICELITH"
+	}
+
+	ti-zru =  {
+		name = SPEC_Ti-Zru
+		plural = SPEC_Ti-Zru_pl
+		home_planet = SPEC_Ti-Zru_planet
+		home_system = SPEC_Ti-Zru_system
+		name_list =  "VOICELITH"
+	}
+
+	polvanite =  {
+		name = SPEC_Polvanite
+		plural = SPEC_Polvanite_pl
+		home_planet = SPEC_Polvanite_planet
+		home_system = SPEC_Polvanite_system
+		name_list =  "VOICELITH"
+	}
+
+	ithill =  {
+		name = SPEC_Ithill
+		plural = SPEC_Ithill_pl
+		home_planet = SPEC_Ithill_planet
+		home_system = SPEC_Ithill_system
+		name_list =  "VOICELITH"
+	}
+
+	irzuku =  {
+		name = SPEC_Irzuku
+		plural = SPEC_Irzuku_pl
+		home_planet = SPEC_Irzuku_planet
+		home_system = SPEC_Irzuku_system
+		name_list =  "VOICELITH"
+	}
+
+	glirr =  {
+		name = SPEC_Glirr
+		plural = SPEC_Glirr_pl
+		home_planet = SPEC_Glirr_planet
+		home_system = SPEC_Glirr_system
+		name_list =  "VOICELITH"
+	}
+
+	qvagh =  {
+		name = SPEC_Qvagh
+		plural = SPEC_Qvagh_pl
+		home_planet = SPEC_Qvagh_planet
+		home_system = SPEC_Qvagh_system
+		name_list =  "VOICELITH"
+	}
+
+	zurite =  {
+		name = SPEC_Zurite
+		plural = SPEC_Zurite_pl
+		home_planet = SPEC_Zurite_planet
+		home_system = SPEC_Zurite_system
+		name_list =  "VOICELITH"
+	}
+
+	oviir =  {
+		name = SPEC_Oviir
+		plural = SPEC_Oviir_pl
+		home_planet = SPEC_Oviir_planet
+		home_system = SPEC_Oviir_system
+		name_list =  "VOICELITH"
+	}
+
+	rukkari =  {
+		name = SPEC_Rukkari
+		plural = SPEC_Rukkari_pl
+		home_planet = SPEC_Rukkari_planet
+		home_system = SPEC_Rukkari_system
+		name_list =  "VOICELITH"
+	}
+
+	uraki =  {
+		name = SPEC_Uraki
+		plural = SPEC_Uraki_pl
+		home_planet = SPEC_Uraki_planet
+		home_system = SPEC_Uraki_system
+		name_list =  "VOICELITH"
+	}
+
+	bodranite =  {
+		name = SPEC_Bodranite
+		plural = SPEC_Bodranite_pl
+		home_planet = SPEC_Bodranite_planet
+		home_system = SPEC_Bodranite_system
+		name_list =  "VOICELITH"
+	}
+
+	vran =  {
+		name = SPEC_Vran
+		plural = SPEC_Vran_pl
+		home_planet = SPEC_Vran_planet
+		home_system = SPEC_Vran_system
+		name_list =  "VOICELITH"
+	}
+
+	zri =  {
+		name = SPEC_Zri
+		plural = SPEC_Zri_pl
+		home_planet = SPEC_Zri_planet
+		home_system = SPEC_Zri_system
+		name_list =  "VOICELITH"
+	}
+
+	vuur =  {
+		name = SPEC_Vuur
+		plural = SPEC_Vuur_pl
+		home_planet = SPEC_Vuur_planet
+		home_system = SPEC_Vuur_system
+		name_list =  "VOICELITH"
+	}
+
+	croll =  {
+		name = SPEC_Croll
+		plural = SPEC_Croll_pl
+		home_planet = SPEC_Croll_planet
+		home_system = SPEC_Croll_system
+		name_list =  "VOICELITH"
+	}
+
+	bruvan =  {
+		name = SPEC_Bruvan
+		plural = SPEC_Bruvan_pl
+		home_planet = SPEC_Bruvan_planet
+		home_system = SPEC_Bruvan_system
+		name_list =  "VOICELITH"
+	}
+
+	hrun =  {
+		name = SPEC_HRuni
+		plural = SPEC_HRuni_pl
+		home_planet = SPEC_HRuni_planet
+		home_system = SPEC_HRuni_system
+		name_list =  "VOICELITH"
+	}
+
+	rhonzar =  {
+		name = SPEC_Rhonzar
+		plural = SPEC_Rhonzar_pl
+		home_planet = SPEC_Rhonzar_planet
+		home_system = SPEC_Rhonzar_system
+		name_list =  "VOICELITH"
+	}
+
+	bhiir =  {
+		name = SPEC_Bhiir
+		plural = SPEC_Bhiir_pl
+		home_planet = SPEC_Bhiir_planet
+		home_system = SPEC_Bhiir_system
+		name_list =  "VOICELITH"
+	}
+
+	bzadi =  {
+		name = SPEC_Bzadi
+		plural = SPEC_Bzadi_pl
+		home_planet = SPEC_Bzadi_planet
+		home_system = SPEC_Bzadi_system
+		name_list =  "VOICELITH"
+	}
+
+	mtok =  {
+		name = SPEC_Mtok
+		plural = SPEC_Mtok_pl
+		home_planet = SPEC_Mtok_planet
+		home_system = SPEC_Mtok_system
+		name_list =  "VOICELITH"
+	}
+
+	makar =  {
+		name = SPEC_MaKar
+		plural = SPEC_MaKar_pl
+		home_planet = SPEC_MaKar_planet
+		home_system = SPEC_MaKar_system
+		name_list =  "VOICELITH"
+	}
+
+	shapa =  {
+		name = SPEC_Shapa
+		plural = SPEC_Shapa_pl
+		home_planet = SPEC_Shapa_planet
+		home_system = SPEC_Shapa_system
+		name_list =  "VOICELITH"
+	}
+
+	ferbanite =  {
+		name = SPEC_Ferbanite
+		plural = SPEC_Ferbanite_pl
+		home_planet = SPEC_Ferbanite_planet
+		home_system = SPEC_Ferbanite_system
+		name_list =  "VOICELITH"
+	}
+
+	pliffplaff =  {
+		name = SPEC_Pliff-Plaff
+		plural = SPEC_Pliff-Plaff_pl
+		home_planet = SPEC_Pliff-Plaff_planet
+		home_system = SPEC_Pliff-Plaff_system
+		name_list =  "VOICELITH"
+	}
+}

@@ -1,0 +1,24 @@
+# 岩石種族用テンプレート
+	# 種別
+	# BIOLOGICAL:有機種族
+	# MACHINE:機械知性
+	# ROBOT:ロボティクス
+	# LITHOID:岩石種族
+	# PRESAPIENT:準知性
+	# OTHER:その他
+	archetype = LITHOID
+
+	# この種族を利用可能な条件
+	# バニラの岩石種族の条件に準拠
+	possible = { authority = { NOT = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE } } }
+
+	# プレイ可能な条件
+	# バニラの岩石種族の条件に準拠
+	playable = { has_lithoids = yes }
+	randomized = { has_lithoids = yes }
+
+	# デフォルト種族特性「岩石」
+	trait = "trait_lithoid"
+
+	# グラフィックカルチャー
+	graphical_culture = lithoid_01

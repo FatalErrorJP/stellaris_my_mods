@@ -1,13 +1,19 @@
 # Categories of portrait sets used in empire design view.
 # Portrait sets are listed in portrait_sets database.
+
+# D言語くん種族(有機種族)
 d-man-biologicals = {
 	name = d-man-biologicals
 	sets = { d-man-biologicals }
 }
+
+# D言語くん種族(機械知性)
 d-man-machines = {
 	name = d-man-machines
 	sets = { d-man-machines }
 }
+
+# D言語くん種族(岩石種族)
 d-man-lithoids = {
 	name = d-man-lithoids
 	sets = { d-man-lithoids }

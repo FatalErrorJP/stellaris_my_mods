@@ -10,11 +10,13 @@
 # uplifted_portraits = {}							List of portraits which will be used by species of corresponding class after uplifting
 #													(the number of uplifted portraits must be the same as the number of portraits in 'portraits' list).
 
+# D言語くん種族(有機種族)
 d-man-biologicals = {
 	species_class = d-man-biologicals
 	portraits = { "d-man-biological-01" "d-man-biological-02" }
 }
 
+# D言語くん種族(機械知性)
 d-man-machines = {
 	species_class = d-man-machines
 
@@ -25,6 +27,7 @@ d-man-machines = {
 	}
 }
 
+# D言語くん種族(岩石種族)
 d-man-lithoids = {
 	species_class = d-man-lithoids
 
@@ -33,4 +36,10 @@ d-man-lithoids = {
 		playable = { has_lithoids = yes }
 		portraits = { "d-man-lithoid-01" "d-man-lithoid-02" }
 	}
+}
+
+# D言語くん種族(ロボット)
+d-man-robots = {
+	species_class = ROBOT
+	portraits = { "d-man-robot-01" "d-man-robot-02" }
 }

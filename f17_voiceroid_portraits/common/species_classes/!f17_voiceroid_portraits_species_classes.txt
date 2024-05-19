@@ -1,0 +1,136 @@
+#
+# Mod側のspecies_classesのファイル名の付け方についての補足)
+# ファイル名順で昇順ソートしたときに、以下の順序になるようなファイル名にしておくと良い
+# ・Modのファイル名
+# ・00_species_classes.txt
+# ・01_base_species_classes.txt
+#
+# この順序になるようにしておくと、バニラのgraphical_cultureを使い回したときに
+# 都市外観等に表示される種族名がバニラのまま変わらないので、影響範囲を最小限に抑えられる。
+# 本ファイルの先頭に「!」をつけているのはこのファイル名の順序を意識した意図的なものとなっている。
+#
+# 以下ネームリスト用のダミークラス
+# これを作らないとランダムネームが指定できなくなるため
+#
+
+# 紲星あかり
+akari = {
+	inline_script = "species_classes/biological_species_class"
+}
+AKAMACH = {
+	inline_script = "species_classes/machine_species_class"
+}
+AKALITHOID = {
+	inline_script = "species_classes/lithoid_species_class"
+}
+
+# 琴葉姉妹
+kotonoha = {
+	inline_script = "species_classes/biological_species_class"
+}
+KOTOMACH = {
+	inline_script = "species_classes/machine_species_class"
+}
+KOTOLITHOID = {
+	inline_script = "species_classes/lithoid_species_class"
+}
+
+# 鳴花ヒメ・ミコト
+meika = {
+	inline_script = "species_classes/biological_species_class"
+}
+MEKAMACH = {
+	inline_script = "species_classes/machine_species_class"
+}
+MEIKALITHOID = {
+	inline_script = "species_classes/lithoid_species_class"
+}
+
+# 役ついな
+hinomoto = {
+	inline_script = "species_classes/biological_species_class"
+}
+HINOMACH = {
+	inline_script = "species_classes/machine_species_class"
+}
+HINOLITHOID = {
+	inline_script = "species_classes/lithoid_species_class"
+}
+
+# 桜乃そら
+sora = {
+	inline_script = "species_classes/biological_species_class"
+}
+SORAMACH = {
+	inline_script = "species_classes/machine_species_class"
+}
+SORALITHOID = {
+	inline_script = "species_classes/lithoid_species_class"
+}
+
+# 東北姉妹
+touhoku = {
+	inline_script = "species_classes/biological_species_class"
+}
+TOHOMACH = {
+	inline_script = "species_classes/machine_species_class"
+}
+TOHOLITHOID = {
+	inline_script = "species_classes/lithoid_species_class"
+}
+
+# 結月ゆかり
+yukari = {
+	inline_script = "species_classes/biological_species_class"
+}
+YUKAMACH = {
+	inline_script = "species_classes/machine_species_class"
+}
+YUKALITHOID = {
+	inline_script = "species_classes/lithoid_species_class"
+}
+
+
+
+# 以下ネームリスト用のダミークラス
+# これを作らないとランダムネームが指定できなくなるため
+akane = {
+	playable = { always = yes }
+	randomized = no
+	graphical_culture = humanoid_01
+}
+aoi = {
+	playable = { always = yes }
+	randomized = no
+	graphical_culture = humanoid_01
+}
+hime = {
+	playable = { always = yes }
+	randomized = no
+	graphical_culture = humanoid_01
+}
+mikoto = {
+	playable = { always = yes }
+	randomized = no
+	graphical_culture = humanoid_01
+}
+poron = {
+	playable = { always = yes }
+	randomized = no
+	graphical_culture = humanoid_01
+}
+itako = {
+	playable = { always = yes }
+	randomized = no
+	graphical_culture = humanoid_01
+}
+kiritan = {
+	playable = { always = yes }
+	randomized = no
+	graphical_culture = humanoid_01
+}
+zunko = {
+	playable = { always = yes }
+	randomized = no
+	graphical_culture = humanoid_01
+}

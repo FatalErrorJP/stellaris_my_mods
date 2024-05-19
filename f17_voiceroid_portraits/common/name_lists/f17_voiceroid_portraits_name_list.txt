@@ -1,0 +1,234 @@
+﻿# 紲星あかり
+akari = {
+	category = "akari"
+	inline_script = "name_lists/human_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_KIZUNA_AKARI
+	}
+}
+AKAMACH = {
+	selectable = { always = no }
+	inline_script = "name_lists/machine_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_KIZUNA_AKARI
+	}
+}
+AKALITHOID = {
+	selectable = { always = no }
+	inline_script = "name_lists/lithoid_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_KIZUNA_AKARI
+	}
+}
+
+# 琴葉姉妹
+kotonoha = {
+	inline_script = "name_lists/human_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_KOTONOHA
+	}
+}
+KOTOMACH = {
+	selectable = { always = no }
+	inline_script = "name_lists/machine_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_KOTONOHA
+	}
+}
+KOTOLITHOID = {
+	selectable = { always = no }
+	inline_script = "name_lists/lithoid_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_KOTONOHA
+	}
+}
+
+# 鳴花ヒメ・ミコト
+meika = {
+	inline_script = "name_lists/human_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_MEIKA
+	}
+}
+MEKAMACH = {
+	selectable = { always = no }
+	inline_script = "name_lists/machine_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_MEIKA
+	}
+}
+MEIKALITHOID = {
+	selectable = { always = no }
+	inline_script = "name_lists/lithoid_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_MEIKA
+	}
+}
+
+# 役ついな
+hinomoto = {
+	inline_script = "name_lists/human_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_HINOMOTO
+	}
+}
+HINOMACH = {
+	selectable = { always = no }
+	inline_script = "name_lists/machine_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_HINOMOTO
+	}
+}
+HINOLITHOID = {
+	selectable = { always = no }
+	inline_script = "name_lists/lithoid_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_HINOMOTO
+	}
+}
+
+# 桜乃そら
+sora = {
+	inline_script = "name_lists/human_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_HARUNO_SORA
+	}
+}
+SORAMACH = {
+	selectable = { always = no }
+	inline_script = "name_lists/machine_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_HARUNO_SORA
+	}
+}
+SORALITHOID = {
+	selectable = { always = no }
+	inline_script = "name_lists/lithoid_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_HARUNO_SORA
+	}
+}
+
+# 東北姉妹
+touhoku = {
+	inline_script = "name_lists/human_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_TOUHOKU
+	}
+}
+TOHOMACH = {
+	selectable = { always = no }
+	inline_script = "name_lists/machine_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_TOUHOKU
+	}
+}
+TOHOLITHOID = {
+	selectable = { always = no }
+	inline_script = "name_lists/lithoid_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_TOUHOKU
+	}
+}
+
+# 結月ゆかり
+yukari = {
+	inline_script = "name_lists/human_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_YUDUKI_YUKARI
+	}
+}
+YUKAMACH = {
+	selectable = { always = no }
+	inline_script = "name_lists/machine_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_YUDUKI_YUKARI
+	}
+}
+YUKALITHOID = {
+	selectable = { always = no }
+	inline_script = "name_lists/lithoid_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_YUDUKI_YUKARI
+	}
+}
+
+
+# 以下ネームリストオンリーのもの
+akane = {
+	inline_script = "name_lists/human_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_KOTONOHA_AKANE
+	}
+}
+aoi = {
+	inline_script = "name_lists/human_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_KOTONOHA_AOI
+	}
+}
+hime = {
+	inline_script = "name_lists/human_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_MEIKA_HIME
+	}
+}
+mikoto = {
+	inline_script = "name_lists/human_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_MEIKA_MIKOTO
+	}
+}
+poron = {
+	inline_script = "name_lists/human_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_PORON
+	}
+}
+itako = {
+	inline_script = "name_lists/human_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_TOUHOKU_ITAKO
+	}
+}
+kiritan = {
+	inline_script = "name_lists/human_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_TOUHOKU_KIRITAN
+	}
+}
+zunko = {
+	inline_script = "name_lists/human_name_list"
+	inline_script = {
+		script = name_lists/character_name_list
+		NAME = F17_VOICEROID_CHR_TOUHOKU_ZUNKO
+	}
+}

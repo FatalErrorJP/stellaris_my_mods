@@ -1,0 +1,17 @@
+# 有機種族用テンプレート
+
+	# 種別
+	# BIOLOGICAL:有機種族
+	# MACHINE:機械知性
+	# ROBOT:ロボティクス
+	# LITHOID:岩石種族
+	# PRESAPIENT:準知性
+	# OTHER:その他
+	archetype = BIOLOGICAL
+
+	# 権限の設定
+	# 機械知性は選択不可
+	possible = { authority = { NOT = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE } } }
+
+	# グラフィックカルチャー
+	graphical_culture = humanoid_01

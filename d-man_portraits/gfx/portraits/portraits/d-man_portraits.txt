@@ -170,7 +170,7 @@ portrait_groups = {
 		#リーダー
 		leader = {
 			add = {
-			trigger = { OR = { gender = male gender = indeterminable } }
+				trigger = { OR = { gender = male gender = indeterminable } }
 				portraits = {
 					d-man_red d-man_green d-man_blue
 				}
@@ -478,6 +478,190 @@ portrait_groups = {
 
 	# D言語君(岩石生命) 6色カラー
 	d-man-lithoid-02 = {
+		# デフォルト
+		default = d-man_red
+
+		# 帝国作成時
+		game_setup = {
+			add = {
+				trigger = { ruler = { OR = { gender = male gender = indeterminable } } }
+				portraits = {
+					d-man_red d-man_green d-man_blue
+				}
+			}
+			add = {
+				trigger = { ruler = { OR = { gender = female gender = indeterminable } } }
+				portraits = {
+					d-man_cyan d-man_magenta d-man_yellow
+				}
+			}
+		}
+
+		# 汎用
+		species = {
+			add = {
+				trigger = {
+					exists = species
+					NOT = { species = { species_gender = female } }
+				}
+				portraits = {
+					d-man_red d-man_green d-man_blue
+				}
+			}
+			add = {
+				trigger = {
+					exists = species
+					NOT = { species = { species_gender = male } }
+				}
+				portraits = {
+					d-man_cyan d-man_magenta d-man_yellow
+				}
+			}
+		}
+
+		# 惑星上のPOP
+		pop = {
+			add = {
+				trigger = { NOT = { species = { species_gender = female } } }
+				portraits = {
+					d-man_red d-man_green d-man_blue
+				}
+			}
+			add = {
+				trigger = { NOT = { species = { species_gender = male } } }
+				portraits = {
+					d-man_cyan d-man_magenta d-man_yellow
+				}
+			}
+		}
+
+		#リーダー
+		leader = {
+			add = {
+				trigger = { OR = { gender = male gender = indeterminable } }
+				portraits = {
+					d-man_red d-man_green d-man_blue
+				}
+			}
+			add = {
+				trigger = { OR = { gender = female gender = indeterminable } }
+				portraits = {
+					d-man_cyan d-man_magenta d-man_yellow
+				}
+			}
+		}
+
+		# 国家元首
+		ruler = {
+			add = {
+				trigger = { OR = { gender = male gender = indeterminable } }
+				portraits = {
+					d-man_red d-man_green d-man_blue
+				}
+			}
+			add = {
+				trigger = { OR = { gender = female gender = indeterminable } }
+				portraits = {
+					d-man_cyan d-man_magenta d-man_yellow
+				}
+			}
+		}
+	}
+
+	# D言語君(ロボット) 単色のみ
+	d-man-robot-01 = {
+		# デフォルト
+		default = d-man_red
+
+		# 帝国作成時
+		game_setup = {
+			add = {
+				trigger = { ruler = { OR = { gender = male gender = indeterminable } } }
+				portraits = {
+					d-man_red
+				}
+			}
+			add = {
+				trigger = { ruler = { OR = { gender = female gender = indeterminable } } }
+				portraits = {
+					d-man_red
+				}
+			}
+		}
+
+		# 汎用
+		species = {
+			add = {
+				trigger = {
+					exists = species
+					NOT = { species = { species_gender = female } }
+				}
+				portraits = {
+					d-man_red
+				}
+			}
+			add = {
+				trigger = {
+					exists = species
+					NOT = { species = { species_gender = male } }
+				}
+				portraits = {
+					d-man_red
+				}
+			}
+		}
+
+		# 惑星上のPOP
+		pop = {
+			add = {
+				trigger = { NOT = { species = { species_gender = female } } }
+				portraits = {
+					d-man_red
+				}
+			}
+			add = {
+				trigger = { NOT = { species = { species_gender = male } } }
+				portraits = {
+					d-man_red
+				}
+			}
+		}
+
+		#リーダー
+		leader = {
+			add = {
+				trigger = { OR = { gender = male gender = indeterminable } }
+				portraits = {
+					d-man_red
+				}
+			}
+			add = {
+				trigger = { OR = { gender = female gender = indeterminable } }
+				portraits = {
+					d-man_red
+				}
+			}
+		}
+
+		# 国家元首
+		ruler = {
+			add = {
+				trigger = { OR = { gender = male gender = indeterminable } }
+				portraits = {
+					d-man_red
+				}
+			}
+			add = {
+				trigger = { OR = { gender = female gender = indeterminable } }
+				portraits = {
+					d-man_red
+				}
+			}
+		}
+	}
+
+	# D言語君(ロボット) 6色カラー
+	d-man-robot-02 = {
 		# デフォルト
 		default = d-man_red
 
