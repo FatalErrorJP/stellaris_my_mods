@@ -87,4 +87,5 @@ https://steamcommunity.com/profiles/76561199152309881/myworkshopfiles/?p=1&numpe
 | {counter:index} | トンネルを抜けると、私は葵ちゃんになっていた                         | change_aoi_shroud_tunnel
 | {counter:index} | アーク炉とダイソン・スウォームの建造上限を確認したい                 | arc_dyson
 | {counter:index} | サルベージできる艦種を増やしたい                                     | additional_salvager_ship_type
+| {counter:index} | AIのアーク炉の建造条件を直したい                                     | arc_furnace
 |===
