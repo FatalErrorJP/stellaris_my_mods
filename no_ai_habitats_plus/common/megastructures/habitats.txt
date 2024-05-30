@@ -68,6 +68,16 @@ habitat_central_complex = {
 				}
 			}
 		}
+		#######################################################################
+		# ここからMod追加コード
+		#######################################################################
+		custom_tooltip = {
+			fail_text = "requires_no_arc_furnace"
+			system_has_arc_furnace = no
+		}
+		#######################################################################
+		# ここまでMod追加コード
+		#######################################################################
 	}
 
 	placement_rules = {
@@ -134,6 +144,20 @@ habitat_central_complex = {
 					has_deposit_for = shipclass_mining_station
 					has_deposit_for = shipclass_research_station
 				}
+
+				#######################################################################
+				# ここからMod追加コード
+				#######################################################################
+				# 軌道上居住地を作ってもあまり旨みのない、閾値以下の星系には作らない
+				solar_system = { has_star_flag = can_build_habitats }
+
+				from = {
+					# 帝国内の軌道上居住地の数は2つまでとする。それ以上建っている場合は作らない
+					count_planet_within_border = { limit = { is_planet_class = pc_habitat } count < 2 }
+				}
+				#######################################################################
+				# ここまでMod追加コード
+				#######################################################################
 			}
 		} # use these for all non-star megastructures
 	}
@@ -181,27 +205,6 @@ habitat_central_complex = {
 		modifier = {
 			factor = value:num_orbital_sites
 		}
-
-		#############################################################
-		# ここからMod追加コード
-		#############################################################
-		modifier = {
-			factor = 0
-			OR = {
-				# 軌道上居住地を作ってもあまり旨みのない、閾値以下の星系には作らない
-				not = { has_star_flag = can_build_habitats }
-
-				# 帝国内の軌道上居住地の数は2つまでとする。それ以上建っている場合は作らない
-				from = { count_planet_within_border = { limit = { is_planet_class = pc_habitat } count >= 2 } }
-
-				# 建設船で巨大建造物を建造中の場合は、建設しない
-				# ※軌道上居住地の数を2つに制限しても、2つ目を建造中に3つ目の建造指示が出てしまうためそれ対策
-				from = { any_owned_fleet = { has_fleet_order = build_megastructure_fleet_order } }
-			}
-		}
-		#############################################################
-		# ここまでMod追加コード
-		#############################################################
 	}
 
 	on_build_complete = {
