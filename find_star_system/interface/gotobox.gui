@@ -2,7 +2,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "gotobox"
 		position = { x = -1200 y = 200 }
-		size = { width = 760 height = 465 }
+		size = { width = 810 height = 465 }
 		orientation = upper_right
 		moveable = yes
 
@@ -114,7 +114,7 @@ guiTypes = {
 		containerWindowType = {
 			name = "start_screen_frame_bg_right"
 			position = { x = 300 y = 50 }
-			size = { width = 450 height = 400 }
+			size = { width = 500 height = 400 }
 			orientation = upper_left
 
 			background = {
@@ -345,6 +345,23 @@ guiTypes = {
 			orientation = "UPPER_LEFT"
 			effect = "find_megastructure_crisis_sphere_btn"
 		}
+		# アーク炉
+		effectButtonType  = {
+			name ="find_arc_furnace_btn"
+			quadTextureSprite = "GFX_find_arc_furnace_btn"
+			position = { x = 695 y = 165 }
+			orientation = "UPPER_LEFT"
+			effect = "find_arc_furnace_btn"
+		}
+		# ダイソンスウォーム
+		effectButtonType  = {
+			name ="find_dyson_swarm_btn"
+			quadTextureSprite = "GFX_find_dyson_swarm_btn"
+			position = { x = 730 y = 165 }
+			orientation = "UPPER_LEFT"
+			effect = "find_dyson_swarm_btn"
+		}
+
 
 		####
 		# 入植可能惑星

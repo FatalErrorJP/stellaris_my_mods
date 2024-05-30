@@ -1073,6 +1073,216 @@ find_megastructure_crisis_sphere_btn = {
 	}
 }
 
+#####
+# 自国内のアーク炉建造候補の星系を検索する
+#####
+find_arc_furnace_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_ARC_FURNACE_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					exists = owner
+					owner = {
+						is_same_value = from
+					}
+
+					# common\megastructures\17_orbital_arc_furnace.txtのpossibleの条件(※アーク炉を建造できる条件)
+					system_has_dyson_sphere = no
+					NOT = {
+						solar_system = {
+							has_star_flag = dyson_sphere_construction
+						}
+					}
+					system_has_arc_furnace = no
+
+					# common\megastructures\17_orbital_arc_furnace.txtのplanet_possibleの条件(※アーク炉を建造できる条件)
+					any_system_planet = {
+						is_planet_class = pc_molten
+						NOR = {
+							has_planet_flag = megastructure
+							has_planet_flag = has_megastructure
+						}
+					}
+					count_system_planet = {
+						count >= 16														# 閾値
+						limit = {
+							NOT = { has_deposit_for = shipclass_research_station }
+							is_star = no
+							is_astral_scar = no
+							colonizable_planet = no
+							# 交易価値のある星系はアーク炉の効果で内部的に鉱物や合金の埋蔵が増えても対象外となるので除外する
+							check_modifier_value = { modifier = trade_value_add value <= 0 }
+						}
+					}
+
+					# 追加条件
+					# 軌道上居住地の立ってない星系
+					NOT = {
+						OR = {
+							any_system_planet = {
+								has_planet_flag = habitat
+							}
+							has_megastructure = habitat_central_complex_ruined
+						}
+					}
+				}
+
+				save_event_target_as = target_system
+				export_trigger_value_to_variable = {
+					trigger = count_system_planet
+					parameters = {
+						limit = {
+							NOT = { has_deposit_for = shipclass_research_station }
+							is_star = no
+							is_astral_scar = no
+							colonizable_planet = no
+							# 交易価値のある星系はアーク炉の効果で内部的に鉱物や合金の埋蔵が増えても対象外となるので除外する
+							check_modifier_value = { modifier = trade_value_add value <= 0 }
+						}
+					}
+					variable = target_arc_furnace_planet
+				}
+
+				from = {
+					create_message = {
+						type = FOUND_ARC_FURNACE
+						localization = FOUND_ARC_FURNACE_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+						variable = { type = variable varname = prevprev.target_arc_furnace_planet localization = SCORE scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
+#####
+# 自国内のダイソンスウォーム建造候補の星系を検索する
+#####
+find_dyson_swarm_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_DYSON_SWARM_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					exists = owner
+					owner = {
+						is_same_value = from
+					}
+
+					# common\megastructures\18_dyson_swarm.txtのpossibleの条件(※ダイソンスウォームを建造できる条件)
+					NOR = {
+						is_star_class = sc_binary_1
+						is_star_class = sc_binary_2
+						is_star_class = sc_binary_3
+						is_star_class = sc_binary_4
+						is_star_class = sc_binary_5
+						is_star_class = sc_binary_6
+						is_star_class = sc_binary_7
+						is_star_class = sc_binary_8
+						is_star_class = sc_binary_9
+						is_star_class = sc_binary_10
+						is_star_class = sc_trinary_1
+						is_star_class = sc_trinary_2
+						is_star_class = sc_trinary_3
+						is_star_class = sc_trinary_4
+					}
+					NOT = {
+						is_star_class = sc_black_hole
+						is_star_class = sc_neutron_star
+						is_star_class = sc_pulsar
+					}
+
+					# common\megastructures\18_dyson_swarm.txtのplanet_possibleの条件(※ダイソンスウォームを建造できる条件)
+					any_system_planet = {
+						is_star = yes
+						NOR = {
+							has_planet_flag = megastructure
+							has_planet_flag = has_megastructure
+						}
+
+						# 独自要件
+						# 何かしらの資源を出している
+						# 埋蔵資源2種類以上 または しょぼい資源ではないもの
+						OR = {
+							has_resource = energy
+							has_resource = minerals
+							has_resource = food
+							has_resource = consumer_goods
+							has_resource = alloys
+							has_resource = volatile_motes
+							has_resource = exotic_gases
+							has_resource = rare_crystals
+							has_resource = sr_zro
+							has_resource = sr_living_metal
+							has_resource = nanites
+							has_resource = physics_research
+							has_resource = society_research
+							has_resource = engineering_research
+							has_resource = sr_dark_matter
+							has_resource = unity
+							has_resource = minor_artifacts
+							has_resource = astral_threads
+						}
+						OR = {
+							num_deposits  > 1
+							count_deposit = {
+								limit = {
+									NOR = {
+										has_deposit = d_energy_1
+										has_deposit = d_energy_2
+										has_deposit = d_energy_3
+										has_deposit = d_engineering_1
+										has_deposit = d_engineering_2
+										has_deposit = d_physics_1
+										has_deposit = d_physics_2
+										has_deposit = d_society_1
+										has_deposit = d_society_2
+									}
+								}
+								count > 0
+							}
+						}
+						# 交易価値は補正がのらないので対象外とする
+						check_modifier_value = { modifier = trade_value_add value <= 0 }
+					}
+				}
+
+				save_event_target_as = target_system
+
+				from = {
+					create_message = {
+						type = FOUND_DYSON_SWARM
+						localization = FOUND_DYSON_SWARM_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
 ###############################################################################
 # 未入植惑星
 ###############################################################################
@@ -1531,18 +1741,52 @@ find_habitat_system_btn = {
 							}
 							has_megastructure = habitat_central_complex_ruined
 						}
+					}
+					NOT = {
 						any_system_planet = {
 							has_planet_flag = has_orbital_debris
 						}
-						solar_system = {
-							OR = {
-								has_star_flag = ring_world_built
-								has_star_flag = ithomes_gate
+					}
+
+					# common\megastructures\habitats.txtのplanet_possibleの条件(※中央軌道上居住施設を建造できる条件)
+					any_system_planet = {
+						NOR = {
+							has_planet_flag = megastructure
+							has_planet_flag = has_megastructure
+							solar_system = {
+								OR = {
+									has_star_flag = ring_world_built
+									has_star_flag = ithomes_gate
+								}
+							}
+							is_planet_class = pc_ringworld_habitable
+							is_planet_class = pc_ringworld_habitable_damaged
+							is_planet_class = pc_ringworld_tech
+							is_planet_class = pc_ringworld_tech_damaged
+							is_planet_class = pc_ringworld_seam
+							is_planet_class = pc_ringworld_seam_damaged
+							is_planet_class = pc_habitat
+							is_planet_class = pc_cosmogenesis_world
+						}
+						NOR = {
+							is_asteroid = yes
+							is_moon = yes
+						}
+						is_astral_scar = no
+						NOT = {
+							solar_system = {
+								has_star_flag = solarpunk_system_02
 							}
 						}
 					}
 
-					# 閾値
+					###
+					# 追加条件
+					###
+					# アーク炉のある星系は除外する
+					system_has_arc_furnace = no
+
+					# 閾値を越えたものだけを対象にする
 					check_variable_arithmetic = { which = value:habitats_points value >= 18 }
 				}
 
@@ -2537,14 +2781,15 @@ find_strategic_resource_strategic_btn = {
 							has_resource = sr_dark_matter
 							has_resource = unity
 							has_resource = minor_artifacts
+							has_resource = astral_threads
 						}
 						has_mining_station = no
 						has_research_station = no
 						has_any_megastructure = no
 						not = {
-							any_moon = {
-								has_planet_flag = habitat
-							}
+							has_planet_flag = habitat
+							has_planet_flag = has_megastructure
+							check_modifier_value = { modifier = trade_value_add value > 0 } # 交易価値の出ている星系は他のリソースを出さない
 						}
 						has_orbital_station = no
 						is_colony = no

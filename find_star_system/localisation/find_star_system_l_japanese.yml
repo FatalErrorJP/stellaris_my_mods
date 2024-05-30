@@ -36,6 +36,8 @@
   TOOLTIP_FIND_MEGASTRUCTURE_MATTER_DECOMPRESSOR_BTN:0 "§H物質展開器§!のある星系を検索する"
   TOOLTIP_FIND_MEGASTRUCTURE_RING_WORLD_BTN:0 "§Hリングワールド§!のある星系を検索する"
   TOOLTIP_FIND_MEGASTRUCTURE_CRISIS_SPHERE_BTN:0 "§Hエーテル位相機関§!のある星系を検索する"
+  TOOLTIP_FIND_ARC_FURNACE_BTN:0 "§H自国内の一定以上の基準(※)を満たしたアーク炉建造候補の星系§!を検索する\n※条件を満たす惑星数16個以上"
+  TOOLTIP_FIND_DYSON_SWARM_BTN:0 "§H自国内の一定以上の基準(※)を満たしたダイソンスウォーム建造候補の星系§!を検索する\n※埋蔵資源2種類以上 または 以下を除く資源産出を含む恒星であるもの\n・$energy$：1～3\n・$physics_research$：1～2\n・$society_research$：1～2\n・$engineering_research$：1～2"
 
   TOOLTIP_FIND_PLANET_MOTE_HARVESTERS_BTN:0 "§H粉末採取用トラップ§!を建てられる未入植惑星を検索する"
   TOOLTIP_FIND_PLANET_GAS_EXTRACTORS_BTN:0 "§Hガス抽出井§!を建てられる未入植惑星を検索する"
@@ -128,6 +130,10 @@
   FOUND_MEGASTRUCTURE_RING_WORLD_MESSAGE:0 "リングワールドのある星系：$SYSTEM|H$"
   FOUND_MEGASTRUCTURE_CRISIS_SPHERE_TITLE:0 "検索条件：エーテル位相機関"
   FOUND_MEGASTRUCTURE_CRISIS_SPHERE_MESSAGE:0 "エーテル位相機関のある星系：$SYSTEM|H$"
+  FOUND_ARC_FURNACE_TITLE:0 "検索条件：自国内のアーク炉建造候補の星系"
+  FOUND_ARC_FURNACE_MESSAGE:0 "アーク炉建造候補の星系：$SYSTEM|H$\nスコア：$SCORE|H$"
+  FOUND_DYSON_SWARM_TITLE:0 "検索条件：自国内のダイソンスウォーム建造候補の星系"
+  FOUND_DYSON_SWARM_MESSAGE:0 "ダイソンスウォーム建造候補の星系：$SYSTEM|H$"
 
   FOUND_PLANET_MOTE_HARVESTERS_TITLE:0 "検索条件：粉末採取用トラップ"
   FOUND_PLANET_MOTE_HARVESTERS_MESSAGE:0 "粉末採取用トラップを建てられる惑星：$PLANET|H$\n星系：$SYSTEM|H$"
