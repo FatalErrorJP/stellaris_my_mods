@@ -141,10 +141,10 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "offensive_power"
-			position = { x = 40 y = 8 }
+			position = { x = 34 y = 8 } 		# Mod修正箇所
 			font = "cg_16b"
 			format = center
-			maxWidth = 56
+			maxWidth = 62 						# Mod修正箇所
 			maxHeight = 20
 			#alwaysTransparent = yes
 		}
