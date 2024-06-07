@@ -222,6 +222,13 @@ spriteTypes = {
 		texturefile = "gfx/interface/icons/find_habitat_system_btn.dds"
 		noOfFrames = 3
 	}
+	# ナノマシン収集機建造候補の星系
+	spriteType = {
+		name = "GFX_find_nanite_harvester_btn"
+		texturefile = "gfx/interface/icons/find_nanite_harvester_btn.dds"
+		noOfFrames = 3
+	}
+
 
 	####
 	# 入植済惑星

@@ -659,6 +659,8 @@ building_grand_battlements_of_steel = {
 		}
 	}
 
+	planetary_ftl_inhibitor = yes
+
 	planet_modifier = {
 		job_technophant_add = 1
 		job_haruspex_add = 1
@@ -1522,6 +1524,7 @@ building_lathe_capital = {
 	planet_modifier = {
 		planet_housing_add = 20
 		planet_amenities_add = 15
+		planet_stability_add = 15
 	}
 
 	triggered_planet_modifier = {
@@ -1576,6 +1579,7 @@ building_lathe_major_capital = {
 		planet_max_districts_add = 2
 		planet_housing_add = 40
 		planet_amenities_add = 30
+		planet_stability_add = 25
 	}
 
 	triggered_planet_modifier = {
@@ -1649,6 +1653,7 @@ building_lathe_super_capital = {
 		planet_max_districts_add = 4
 		planet_housing_add = 100
 		planet_amenities_add = 50
+		planet_stability_add = 40
 	}
 
 	triggered_planet_modifier = {
@@ -1691,7 +1696,7 @@ building_lathe_super_capital = {
 			}
 		}
 	}
-	
+
 	ai_estimate_without_unemployment = yes
 	additional_ai_weight = 200
 	ai_weight_coefficient = 1.2
@@ -1741,7 +1746,7 @@ building_lathe_resonator = {
 	triggered_desc = {
 		text = lathe_resonator_tt
 	}
-	
+
 	ai_estimate_without_unemployment = yes
 	additional_ai_weight = 200
 	ai_weight_coefficient = 1.2
@@ -1779,7 +1784,7 @@ building_lathe_stabilisator = {
 	triggered_planet_modifier = {
 		planet_stability_add = 15
 	}
-	
+
 	ai_estimate_without_unemployment = yes
 	additional_ai_weight = 200
 	ai_weight_coefficient = 1.2
@@ -1820,7 +1825,7 @@ building_lathe_overclocker = {
 			planet_neural_chips_society_research_produces_add = 1
 			planet_neural_chips_engineering_research_produces_add = 1
 			planet_neural_chips_advanced_logic_produces_add = 0.5
-			pop_purge_speed = 1
+			pop_purge_speed = 0.75
 		}
 	}
 
@@ -1831,7 +1836,7 @@ building_lathe_overclocker = {
 	prerequisites = {
 		tech_lathe_overclocker
 	}
-	
+
 	ai_estimate_without_unemployment = yes
 	additional_ai_weight = 200
 	ai_weight_coefficient = 1.2
@@ -1873,7 +1878,7 @@ building_lathe_preserver = {
 	prerequisites = {
 		tech_lathe_preserver
 	}
-	
+
 	ai_estimate_without_unemployment = yes
 	additional_ai_weight = 200
 	ai_weight_coefficient = 1.2
@@ -1912,7 +1917,7 @@ building_lathe_reactor = {
 		planet_buildings_upkeep_mult = -0.15
 		planet_districts_energy_upkeep_mult = -0.15
 	}
-	
+
 	ai_estimate_without_unemployment = yes
 	additional_ai_weight = 200
 	ai_weight_coefficient = 1.2
@@ -1955,7 +1960,7 @@ building_lathe_life_support = {
 	prerequisites = {
 		tech_lathe_life_support
 	}
-	
+
 	ai_estimate_without_unemployment = yes
 	additional_ai_weight = 200
 	ai_weight_coefficient = 1.2
@@ -2011,7 +2016,7 @@ building_lathe_cogitator = {
 	prerequisites = {
 		tech_lathe_cogitator
 	}
-	
+
 	ai_estimate_without_unemployment = yes
 	additional_ai_weight = 200
 	ai_weight_coefficient = 1.2
@@ -2047,7 +2052,7 @@ building_lathe_validator = {
 	}
 
 	planet_modifier = {
-		planet_stability_add = -20
+		planet_stability_add = -10
 	}
 
 	triggered_country_modifier = {
@@ -2065,7 +2070,7 @@ building_lathe_validator = {
 	prerequisites = {
 		tech_lathe_validator
 	}
-	
+
 	ai_estimate_without_unemployment = yes
 	additional_ai_weight = 200
 	ai_weight_coefficient = 1.2
@@ -2392,9 +2397,19 @@ building_cyberdome = { # Cyber Imperial Collectivist
 	}
 
 	destroy_trigger = {
-		exists = owner
-		owner = {
-			NOT = { has_authority = auth_imperial }
+		OR = {
+			AND = {
+				exists = owner
+				owner = {
+					NOT = { has_authority = auth_imperial }
+				}
+			}
+			AND = {
+				exists = planet
+				planet = {
+					is_capital = no
+				}
+			}
 		}
 	}
 

@@ -434,7 +434,7 @@ building_machine_assembly_plant = {
 				is_individual_machine = yes
 			}
 		}
-		text = job_roboticist_effect_desc
+		text = job_roboticist_individual_machine_effect_desc
 	}
 }
 
@@ -547,7 +547,7 @@ building_machine_assembly_complex = {
 				is_individual_machine = yes
 			}
 		}
-		text = job_roboticist_effect_desc
+		text = job_roboticist_individual_machine_effect_desc
 	}
 }
 

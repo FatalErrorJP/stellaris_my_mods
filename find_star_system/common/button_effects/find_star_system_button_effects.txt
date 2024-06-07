@@ -1807,6 +1807,132 @@ find_habitat_system_btn = {
 	}
 }
 
+#####
+# 自国内のナノマシン収集機建造候補の星系を検索する
+#####
+find_nanite_harvester_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_NANITE_HARVESTER_BTN"
+
+		hidden_effect = {
+			every_system = {
+				limit = {
+					exists = owner
+					owner = {
+						is_same_value = from
+					}
+					starbase = {
+						not = { has_starbase_building = nanite_harvester }
+					}
+				}
+
+				###
+				# cybernetics.5054の内容を元に最終的なナノマシンの収集量とナノマシンスウォームの数を計算
+				###
+				every_system_planet = {
+					limit = {
+						can_have_mineral_deposits = yes
+						NOT = {
+							has_deposit_for = shipclass_research_station
+							has_deposit = d_nanite_harvester_deposit
+						}
+					}
+					if = {
+						limit = { planet_size >= 25 }
+						prev = {
+							change_variable = { which = nanites_potential value = 50.4 }
+							change_variable = { which = nanite_swarmer_potential value = 64 }
+						}
+					} else_if = {
+						limit = { planet_size >= 21 }
+						prev = {
+							change_variable = { which = nanites_potential value = 25.2 }
+							change_variable = { which = nanite_swarmer_potential value = 32 }
+						}
+					} else_if = {
+						limit = { planet_size >= 18 }
+						prev = {
+							change_variable = { which = nanites_potential value = 12.8 }
+							change_variable = { which = nanite_swarmer_potential value = 16 }
+						}
+					} else_if = {
+						limit = { planet_size >= 15 }
+						prev = {
+							change_variable = { which = nanites_potential value = 6.4 }
+							change_variable = { which = nanite_swarmer_potential value = 8 }
+						}
+					} else_if = {
+						limit = { planet_size >= 12 }
+						prev = {
+							change_variable = { which = nanites_potential value = 3.2 }
+							change_variable = { which = nanite_swarmer_potential value = 4 }
+						}
+					} else_if = {
+						limit = { planet_size >= 9 }
+						prev = {
+							change_variable = { which = nanites_potential value = 1.6 }
+							change_variable = { which = nanite_swarmer_potential value = 2 }
+						}
+					} else_if = {
+						limit = { planet_size > 6 }
+						prev = {
+							change_variable = { which = nanites_potential value = 0.8 }
+						}
+					} else_if = {
+						limit = { planet_size >= 3 }
+						prev = {
+							change_variable = { which = nanites_potential value = 0.4 }
+						}
+					} else = {
+						prev = {
+							change_variable = { which = nanites_potential value = 0.2 }
+						}
+					}
+				}
+
+				if = {
+					limit = { check_variable = { which = nanites_potential value >=120 } }	# 閾値以上のものだけを対象とする
+
+					save_event_target_as = target_system
+					export_trigger_value_to_variable = {
+						trigger = count_system_planet
+						parameters = {
+							limit = {
+								can_have_mineral_deposits = yes
+								NOT = {
+									has_deposit_for = shipclass_research_station
+									has_deposit = d_nanite_harvester_deposit
+								}
+							}
+						}
+						variable = nanite_harvester_point
+					}
+
+					from = {
+						create_message = {
+							type = FOUND_NANITE_HARVESTER
+							localization = FOUND_NANITE_HARVESTER_MESSAGE
+							days = 30
+							target = event_target:target_system
+							variable = { type = name localization = SYSTEM scope = event_target:target_system }
+							variable = { type = variable varname = prevprev.nanite_harvester_point   localization = SCORE  scope = event_target:target_system }
+							variable = { type = variable varname = prevprev.nanites_potential        localization = SCORE2 scope = event_target:target_system }
+							variable = { type = variable varname = prevprev.nanite_swarmer_potential localization = SCORE3 scope = event_target:target_system }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 ###############################################################################
 # 入植済惑星
 ###############################################################################

@@ -2123,6 +2123,7 @@ static_fallen_machine = {
 				namelist = MACHINE3
 				portrait = random
 				traits = {
+					ideal_planet_class = pc_ringworld_habitable
 					trait = trait_machine_unit
 					trait = random_traits
 				}

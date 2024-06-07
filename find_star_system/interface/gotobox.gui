@@ -473,6 +473,14 @@ guiTypes = {
 			orientation = "UPPER_LEFT"
 			effect = "find_habitat_system_btn"
 		}
+		# ナノマシン収集機建造候補の星系
+		effectButtonType  = {
+			name ="find_nanite_harvester_btn"
+			quadTextureSprite = "GFX_find_nanite_harvester_btn"
+			position = { x = 695 y = 225 }
+			orientation = "UPPER_LEFT"
+			effect = "find_nanite_harvester_btn"
+		}
 
 		####
 		# 入植済惑星
