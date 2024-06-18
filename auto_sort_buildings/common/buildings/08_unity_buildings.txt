@@ -2008,7 +2008,6 @@ building_galactic_memorial_3 = {
 building_simulation_1 = {
 	base_buildtime = @b1_time
 	base_cap_amount = 1
-	icon = building_holo_theatres
 
 	position_priority = 921
 	category = unity
@@ -2084,7 +2083,6 @@ building_simulation_1 = {
 building_simulation_2 = {
 	base_buildtime = @b2_time
 	can_build = no
-	icon = building_hyper_entertainment_forum
 
 	position_priority = 922
 	category = unity
@@ -2164,7 +2162,6 @@ building_simulation_2 = {
 building_simulation_3 = {
 	base_buildtime = @b3_time
 	can_build = no
-	icon = building_citadel_of_faith
 
 	position_priority = 923
 	category = unity
@@ -2475,7 +2472,6 @@ building_corporate_forum = {
 building_sensorium_1 = {
 	base_buildtime = @b1_time
 	base_cap_amount = 1
-	icon = building_holo_theatres
 
 	position_priority = 927
 	category = unity
@@ -2551,7 +2547,6 @@ building_sensorium_1 = {
 building_sensorium_2 = {
 	base_buildtime = @b2_time
 	can_build = no
-	icon = building_hyper_entertainment_forum
 
 	position_priority = 928
 	category = unity
@@ -2631,7 +2626,6 @@ building_sensorium_2 = {
 building_sensorium_3 = {
 	base_buildtime = @b3_time
 	can_build = no
-	icon = building_citadel_of_faith
 
 	position_priority = 929
 	category = unity
