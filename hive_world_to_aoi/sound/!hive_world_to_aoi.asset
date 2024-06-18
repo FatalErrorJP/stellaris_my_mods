@@ -1,0 +1,78 @@
+soundeffect =
+{
+	name = "pc_hive"
+	volume = 0.3
+	max_audible = 1
+	max_audible_behaviour = fail
+	sounds = {
+		sound = 0_hive_aoi
+		sound = 1_hive_aoi
+		sound = 2_hive_aoi
+		sound = 3_hive_aoi
+		sound = 4_hive_aoi
+		sound = 5_hive_aoi
+		sound = 6_hive_aoi
+		sound = 7_hive_aoi
+		sound = 8_hive_aoi
+		sound = 9_hive_aoi
+		sound = 10_hive_aoi
+		sound = 11_hive_aoi
+		sound = 12_hive_aoi
+		sound = 13_hive_aoi
+		sound = 14_hive_aoi
+		sound = 15_hive_aoi
+		sound = 16_hive_aoi
+		sound = 17_hive_aoi
+		sound = 18_hive_aoi
+		sound = 19_hive_aoi
+		sound = 20_hive_aoi
+		sound = 21_hive_aoi
+		sound = 22_hive_aoi
+		sound = 23_hive_aoi
+		sound = 24_hive_aoi
+		sound = 25_hive_aoi
+		sound = 26_hive_aoi
+		sound = 27_hive_aoi
+		sound = 28_hive_aoi
+		sound = 29_hive_aoi
+		sound = 30_hive_aoi
+		sound = 31_hive_aoi
+		sound = 32_hive_aoi
+		sound = 33_hive_aoi
+	}
+}
+
+sound = { name = "0_hive_aoi" file = "vo/hive_world_to_aoi/0_hive_aoi.wav" volume = 1 }
+sound = { name = "1_hive_aoi" file = "vo/hive_world_to_aoi/1_hive_aoi.wav" volume = 1 }
+sound = { name = "2_hive_aoi" file = "vo/hive_world_to_aoi/2_hive_aoi.wav" volume = 1 }
+sound = { name = "3_hive_aoi" file = "vo/hive_world_to_aoi/3_hive_aoi.wav" volume = 1 }
+sound = { name = "4_hive_aoi" file = "vo/hive_world_to_aoi/4_hive_aoi.wav" volume = 1 }
+sound = { name = "5_hive_aoi" file = "vo/hive_world_to_aoi/5_hive_aoi.wav" volume = 1 }
+sound = { name = "6_hive_aoi" file = "vo/hive_world_to_aoi/6_hive_aoi.wav" volume = 1 }
+sound = { name = "7_hive_aoi" file = "vo/hive_world_to_aoi/7_hive_aoi.wav" volume = 1 }
+sound = { name = "8_hive_aoi" file = "vo/hive_world_to_aoi/8_hive_aoi.wav" volume = 1 }
+sound = { name = "9_hive_aoi" file = "vo/hive_world_to_aoi/9_hive_aoi.wav" volume = 1 }
+sound = { name = "10_hive_aoi" file = "vo/hive_world_to_aoi/10_hive_aoi.wav" volume = 1 }
+sound = { name = "11_hive_aoi" file = "vo/hive_world_to_aoi/11_hive_aoi.wav" volume = 1 }
+sound = { name = "12_hive_aoi" file = "vo/hive_world_to_aoi/12_hive_aoi.wav" volume = 1 }
+sound = { name = "13_hive_aoi" file = "vo/hive_world_to_aoi/13_hive_aoi.wav" volume = 1 }
+sound = { name = "14_hive_aoi" file = "vo/hive_world_to_aoi/14_hive_aoi.wav" volume = 1 }
+sound = { name = "15_hive_aoi" file = "vo/hive_world_to_aoi/15_hive_aoi.wav" volume = 1 }
+sound = { name = "16_hive_aoi" file = "vo/hive_world_to_aoi/16_hive_aoi.wav" volume = 1 }
+sound = { name = "17_hive_aoi" file = "vo/hive_world_to_aoi/17_hive_aoi.wav" volume = 1 }
+sound = { name = "18_hive_aoi" file = "vo/hive_world_to_aoi/18_hive_aoi.wav" volume = 1 }
+sound = { name = "19_hive_aoi" file = "vo/hive_world_to_aoi/19_hive_aoi.wav" volume = 1 }
+sound = { name = "20_hive_aoi" file = "vo/hive_world_to_aoi/20_hive_aoi.wav" volume = 1 }
+sound = { name = "21_hive_aoi" file = "vo/hive_world_to_aoi/21_hive_aoi.wav" volume = 1 }
+sound = { name = "22_hive_aoi" file = "vo/hive_world_to_aoi/22_hive_aoi.wav" volume = 1 }
+sound = { name = "23_hive_aoi" file = "vo/hive_world_to_aoi/23_hive_aoi.wav" volume = 1 }
+sound = { name = "24_hive_aoi" file = "vo/hive_world_to_aoi/24_hive_aoi.wav" volume = 1 }
+sound = { name = "25_hive_aoi" file = "vo/hive_world_to_aoi/25_hive_aoi.wav" volume = 1 }
+sound = { name = "26_hive_aoi" file = "vo/hive_world_to_aoi/26_hive_aoi.wav" volume = 1 }
+sound = { name = "27_hive_aoi" file = "vo/hive_world_to_aoi/27_hive_aoi.wav" volume = 1 }
+sound = { name = "28_hive_aoi" file = "vo/hive_world_to_aoi/28_hive_aoi.wav" volume = 1 }
+sound = { name = "29_hive_aoi" file = "vo/hive_world_to_aoi/29_hive_aoi.wav" volume = 1 }
+sound = { name = "30_hive_aoi" file = "vo/hive_world_to_aoi/30_hive_aoi.wav" volume = 1 }
+sound = { name = "31_hive_aoi" file = "vo/hive_world_to_aoi/31_hive_aoi.wav" volume = 1 }
+sound = { name = "32_hive_aoi" file = "vo/hive_world_to_aoi/32_hive_aoi.wav" volume = 1 }
+sound = { name = "33_hive_aoi" file = "vo/hive_world_to_aoi/33_hive_aoi.wav" volume = 1 }
