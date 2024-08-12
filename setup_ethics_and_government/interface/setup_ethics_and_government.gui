@@ -1,0 +1,392 @@
+@movable_editors = no
+@sub_window_pos_y = -50
+@sub_window_height = 420
+
+guiTypes = {
+	#######################
+	# ethics and government
+	#######################
+	containerWindowType = {
+		name = "empire_ethics_and_government_editor"
+		moveable = @movable_editors
+		position = { x = -400 y = @sub_window_pos_y }
+		size = { width = 1030 height = @sub_window_height }
+		orientation = center
+
+		background = {
+			name = "background"
+			spriteType = "GFX_subwindow_tile_plain_solid"
+		}
+
+		### ETHICS ###
+
+		containerWindowType = {
+			name = "ethics_header"
+			position = { x = 700 y = 0 }			# Mod変更箇所 0->700
+
+			iconType = {
+				name = "hex_bg"
+				spriteType = "GFX_hex_bg"
+				position = { x = -10 y = -8 }
+				alwaysTransparent = yes
+			}
+
+			iconType = {
+				name = "header_line"
+				spriteType = "GFX_line"
+				position = { x = 6 y = 26 }
+			}
+
+			instantTextBoxType = {
+				name = "label"
+				font = "malgun_goth_24"
+				position = { x = 16 y = 7 }
+				maxWidth = 400
+				text =	 "empire_ethics_editor"
+				format = left
+				alwaysTransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "ethics"
+			size = { width = 230 height = 230 }
+			position = { x = 720 y = 20 }			# Mod変更箇所 20->720 -25->20
+
+			instantTextBoxType = {
+				name = "ethic_points_left"
+				position = { x = -130 y = 95 }
+				font = "malgun_goth_24"
+				maxWidth = 310
+				maxHeight = 20
+				text = "POINTS_LEFT_ETHICS"
+				orientation = center_down
+				format = center
+			}
+
+			### NON-FANATIC ETHICS ###
+
+			buttonType = {
+				name = "ethic_militarist"
+				spriteType = "GFX_ethics_militarist"
+				position = { x = 125 y = 125 }
+				clicksound = interface
+			}
+
+			buttonType = {
+				name = "ethic_xenophobe"
+				spriteType = "GFX_ethics_xenophobe"
+				position = { x = 155 y = 140 }
+				clicksound = interface
+			}
+
+			buttonType = {
+				name = "ethic_egalitarian"
+				spriteType = "GFX_ethics_egalitarian"
+				position = { x = 170 y = 170 }
+				clicksound = interface
+			}
+
+			buttonType = {
+				name = "ethic_materialist"
+				spriteType = "GFX_ethics_materialist"
+				position = { x = 155 y = 200 }
+				clicksound = interface
+			}
+
+			buttonType = {
+				name = "ethic_pacifist"
+				spriteType = "GFX_ethics_pacifist"
+				position = { x = 125 y = 215 }
+				clicksound = interface
+			}
+
+			buttonType = {
+				name = "ethic_xenophile"
+				spriteType = "GFX_ethics_xenophile"
+				position = { x = 95 y = 200 }
+				clicksound = interface
+			}
+
+			buttonType = {
+				name = "ethic_authoritarian"
+				spriteType = "GFX_ethics_authoritarian"
+				position = { x = 80 y = 170 }
+				clicksound = interface
+			}
+
+			buttonType = {
+				name = "ethic_spiritualist"
+				spriteType = "GFX_ethics_spiritualist"
+				position = { x = 95 y = 140 }
+				clicksound = interface
+			}
+
+			### FANATIC ETHICS ###
+
+			buttonType = {
+				name = "ethic_fanatic_militarist"
+				spriteType = "GFX_ethics_fanatic_militarist"
+				position = { x = 125 y = 90 }
+				clicksound = interface
+			}
+
+			buttonType = {
+				name = "ethic_fanatic_xenophobe"
+				spriteType = "GFX_ethics_fanatic_xenophobe"
+				position = { x = 180 y = 115 }
+				clicksound = interface
+			}
+
+			buttonType = {
+				name = "ethic_fanatic_egalitarian"
+				spriteType = "GFX_ethics_fanatic_egalitarian"
+				position = { x = 205 y = 170 }
+				clicksound = interface
+			}
+
+			buttonType = {
+				name = "ethic_fanatic_materialist"
+				spriteType = "GFX_ethics_fanatic_materialist"
+				position = { x = 180 y = 225 }
+				clicksound = interface
+			}
+
+			buttonType = {
+				name = "ethic_fanatic_pacifist"
+				spriteType = "GFX_ethics_fanatic_pacifist"
+				position = { x = 125 y = 250 }
+				clicksound = interface
+			}
+
+			buttonType = {
+				name = "ethic_fanatic_xenophile"
+				spriteType = "GFX_ethics_fanatic_xenophile"
+				position = { x = 70 y = 225 }
+				clicksound = interface
+			}
+
+			buttonType = {
+				name = "ethic_fanatic_authoritarian"
+				spriteType = "GFX_ethics_fanatic_authoritarian"
+				position = { x = 45 y = 170 }
+				clicksound = interface
+			}
+
+			buttonType = {
+				name = "ethic_fanatic_spiritualist"
+				spriteType = "GFX_ethics_fanatic_spiritualist"
+				position = { x = 70 y = 115 }
+				clicksound = interface
+			}
+
+			buttonType = {
+				name = "ethic_gestalt_consciousness"
+				spriteType = "GFX_ethics_gestalt_consciousness"
+				position = { x = 125 y = 170 }
+				clicksound = interface
+			}
+
+			### SELECTED ETHICS ###
+
+			iconType = {
+				name = "ethic_col_selected"
+				spriteType = "GFX_ethic_selected"
+			}
+
+			iconType = {
+				name = "ethic_xen_selected"
+				spriteType = "GFX_ethic_selected"
+			}
+
+			iconType = {
+				name = "ethic_mil_selected"
+				spriteType = "GFX_ethic_selected"
+			}
+
+			iconType = {
+				name = "ethic_spi_selected"
+				spriteType = "GFX_ethic_selected"
+			}
+
+			iconType = {
+				name = "ethic_hive_selected"
+				spriteType = "GFX_ethic_selected"
+			}
+		}
+
+		### GOVERNMENT AUTHORITY ###
+
+		containerWindowType = {
+			name = "government_authority_header"
+			position = { x = 350 y = 0 }
+
+			iconType = {
+				name = "hex_bg"
+				spriteType = "GFX_hex_bg"
+				position = { x = -10 y = -8 }
+				alwaysTransparent = yes
+			}
+
+			iconType = {
+				name = "header_line"
+				spriteType = "GFX_line"
+				position = { x = 6 y = 26 }
+			}
+
+			instantTextBoxType = {
+				name = "label"
+				font = "malgun_goth_24"
+				position = { x = 16 y = 7 }
+				maxWidth = 400
+				text =	 "GOVERNMENT_AUTHORITY"
+				format = left
+				alwaysTransparent = yes
+			}
+		}
+
+		gridBoxType = {
+			name = "authority_grid"
+			position = { x = 362 y = 50 }
+			size = { width = 300 height = 50 }
+			slotSize = { width = 50 height = 50 }
+			max_slots_horizontal = 7					# Mod変更箇所 5->7
+			format = CENTERED_UP
+			add_horizontal = yes
+		}
+
+		containerWindowType = {
+			name = "authority_description"
+			size = { width = 350 height = 235 }			# Mod変更箇所 310->350 131->235
+			position = { x = 340 y = 105 }				# Mod変更箇所 360->340 160->105
+
+			background = {
+				name = "background"
+				spriteType = "GFX_tiles_dark_area_cut_8"
+				alwaysTransparent = yes
+			}
+
+			instantTextBoxType = {
+				name = "desc"
+				font = "cg_16b"
+				position = { x = 10 y = 10 }
+				maxWidth = 330							# Mod変更箇所 290->330
+				maxHeight = 215							# Mod変更箇所 111->160
+				text = ""
+				scrollbartype = "standardtext_slider"
+			}
+		}
+
+		instantTextBoxType = {
+			name = "government_type"
+			font = "malgun_goth_24"
+			position = { x = 360 y = 350 }			# Mod変更箇所 300->350
+			maxWidth = 310
+			maxHeight = 20
+			text =	""
+			format = center
+		}
+
+		### GOVERNMENT CIVICS ###
+
+		containerWindowType = {
+			name = "civics_header"
+			position = { x = 0 y = 0 }				# Mod変更箇所 700->0
+
+			iconType = {
+				name = "hex_bg"
+				spriteType = "GFX_hex_bg"
+				position = { x = -10 y = -8 }
+				alwaysTransparent = yes
+			}
+
+			iconType = {
+				name = "header_line"
+				spriteType = "GFX_line"
+				position = { x = 6 y = 26 }
+			}
+
+			instantTextBoxType = {
+				name = "label"
+				font = "malgun_goth_24"
+				position = { x = 16 y = 7 }
+				maxWidth = 400
+				text =	 "GOVERNMENT_CIVICS"
+				format = left
+				alwaysTransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "civics"
+			size = { width = 310 height = 290 }		# Mod変更箇所 223->290
+			position = { x = 10 y = 50 }			# Mod変更箇所 710->10
+
+			background = {
+				name = "dark_area_bg"
+				spriteType = "GFX_tiles_dark_area_cut_8"
+				alwaysTransparent = yes
+			}
+
+			smoothListboxType = {
+				name = "selected_entries"
+				position = { x = 8 y = 8 }
+				size = { x = 294 y = 207 }			# Mod変更箇所 207->280
+				scrollbarType = "standardlistbox_slider"
+				borderSize = { x = 0 y = 0 }
+				spacing = 3
+			}
+
+			smoothListboxType = {
+				name = "available_entries"
+				position = { x = 8 y = 15 }
+				size = { x = 294 y = 280 }			# Mod変更箇所 207->280
+				scrollbarType = "standardlistbox_slider"
+				borderSize = { x = 0 y = 0 }
+				spacing = 3
+			}
+		}
+
+		instantTextBoxType = {
+			name = "civic_points_left"
+			position = { x = 10 y = 350 }			# Mod変更箇所 710->10 300->350
+			font = "malgun_goth_24"
+			maxWidth = 310
+			maxHeight = 20
+			text = "POINTS_LEFT_CIVICS"
+			format = center
+		}
+
+		### APPLY / CANCEL BUTTONS ###
+
+		buttonType = {
+			name = "cancel"
+			quadTextureSprite = "GFX_close"
+			position = { x = -45 y = 8 }
+			Orientation = "UPPER_RIGHT"
+			shortCut = "ESCAPE"
+			pdx_tooltip = "CLOSE_TITLE"
+			clicksound = "back_click"
+		}
+		buttonType={
+			name = "back"
+			font = "cg_16b"
+			spriteType = "GFX_galactic_object_button"
+			buttonText = "BACK"
+			position = { x = 0 y = -40 }
+			orientation = LOWER_LEFT
+			shortcut = "BACKSPACE"
+			clicksound = back_click
+		}
+		buttonType={
+			name = "apply_and_close"
+			font = "cg_16b"
+			spriteType = "GFX_galactic_object_button"
+			buttonText = "NEXT"
+			position = { x = -290 y = -40 }
+			orientation = LOWER_RIGHT
+			#shortcut = "RETURN"
+			clicksound = confirm_click
+		}
+	}
+}
