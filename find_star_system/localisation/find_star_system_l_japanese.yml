@@ -158,7 +158,7 @@
   FOUND_HABITAT_SYSTEM_TITLE:0 "検索条件：自国内の軌道上居住地建造候補の星系"
   FOUND_HABITAT_SYSTEM_MESSAGE:0 "軌道上居住地建造候補の星系：$SYSTEM|H$\nスコア：$SCORE|H$"
   FOUND_NANITE_HARVESTER_TITLE:0 "検索条件：自国内のナノマシン収集機建造候補の星系"
-  FOUND_NANITE_HARVESTER_MESSAGE:0 "ナノマシン収集機建造候補の星系：$SYSTEM|H$\nナノマシンを収集可能な惑星数：$SCORE|H$\n収集可能なナノマシンの資源量：$SCORE2|H$\n収集可能な$nanite_swarmer$の数：$SCORE3|H$"
+  FOUND_NANITE_HARVESTER_MESSAGE:0 "ナノマシン収集機建造候補の星系：$SYSTEM|H$\nナノマシンを収集可能な惑星数：$SCORE|H$\n収集可能なナノマシンの資源量：$SCORE2|H$"
 
   FOUND_GALACTIC_MARKET_TITLE:0 "検索条件：銀河市場の開催先の惑星"
   FOUND_GALACTIC_MARKET_MESSAGE:0 "銀河市場の開催先の惑星：$PLANET|H$\n星系：$SYSTEM|H$"

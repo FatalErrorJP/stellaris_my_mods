@@ -1119,8 +1119,6 @@ find_arc_furnace_btn = {
 							is_star = no
 							is_astral_scar = no
 							colonizable_planet = no
-							# 交易価値のある星系はアーク炉の効果で内部的に鉱物や合金の埋蔵が増えても対象外となるので除外する
-							check_modifier_value = { modifier = trade_value_add value <= 0 }
 						}
 					}
 
@@ -1145,8 +1143,6 @@ find_arc_furnace_btn = {
 							is_star = no
 							is_astral_scar = no
 							colonizable_planet = no
-							# 交易価値のある星系はアーク炉の効果で内部的に鉱物や合金の埋蔵が増えても対象外となるので除外する
-							check_modifier_value = { modifier = trade_value_add value <= 0 }
 						}
 					}
 					variable = target_arc_furnace_planet
@@ -1834,8 +1830,9 @@ find_nanite_harvester_btn = {
 				}
 
 				###
-				# cybernetics.5054の内容を元に最終的なナノマシンの収集量とナノマシンスウォームの数を計算
+				# cybernetics.5054の内容を元に最終的なナノマシンの収集量を計算する
 				###
+				set_variable = { which = nanites_potential value = 0 }
 				every_system_planet = {
 					limit = {
 						can_have_mineral_deposits = yes
@@ -1847,38 +1844,32 @@ find_nanite_harvester_btn = {
 					if = {
 						limit = { planet_size >= 25 }
 						prev = {
-							change_variable = { which = nanites_potential value = 50.4 }
-							change_variable = { which = nanite_swarmer_potential value = 64 }
+							change_variable = { which = nanites_potential value = 51.2 }
 						}
 					} else_if = {
 						limit = { planet_size >= 21 }
 						prev = {
-							change_variable = { which = nanites_potential value = 25.2 }
-							change_variable = { which = nanite_swarmer_potential value = 32 }
+							change_variable = { which = nanites_potential value = 25.6 }
 						}
 					} else_if = {
 						limit = { planet_size >= 18 }
 						prev = {
 							change_variable = { which = nanites_potential value = 12.8 }
-							change_variable = { which = nanite_swarmer_potential value = 16 }
 						}
 					} else_if = {
 						limit = { planet_size >= 15 }
 						prev = {
 							change_variable = { which = nanites_potential value = 6.4 }
-							change_variable = { which = nanite_swarmer_potential value = 8 }
 						}
 					} else_if = {
 						limit = { planet_size >= 12 }
 						prev = {
 							change_variable = { which = nanites_potential value = 3.2 }
-							change_variable = { which = nanite_swarmer_potential value = 4 }
 						}
 					} else_if = {
 						limit = { planet_size >= 9 }
 						prev = {
 							change_variable = { which = nanites_potential value = 1.6 }
-							change_variable = { which = nanite_swarmer_potential value = 2 }
 						}
 					} else_if = {
 						limit = { planet_size > 6 }
@@ -1924,7 +1915,6 @@ find_nanite_harvester_btn = {
 							variable = { type = name localization = SYSTEM scope = event_target:target_system }
 							variable = { type = variable varname = prevprev.nanite_harvester_point   localization = SCORE  scope = event_target:target_system }
 							variable = { type = variable varname = prevprev.nanites_potential        localization = SCORE2 scope = event_target:target_system }
-							variable = { type = variable varname = prevprev.nanite_swarmer_potential localization = SCORE3 scope = event_target:target_system }
 						}
 					}
 				}
