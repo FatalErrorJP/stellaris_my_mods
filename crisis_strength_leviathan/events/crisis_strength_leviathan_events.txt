@@ -1,0 +1,48 @@
+namespace = crisis_strength_leviathan
+
+event = {
+	id = crisis_strength_leviathan.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {}
+
+	immediate = {
+		every_country = {
+			limit = {
+				is_guardian_country = yes
+			}
+			every_owned_ship = {
+				limit = {}
+				ship_event = { id = crisis_strength_leviathan.2 }
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = crisis_strength_leviathan.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { is_in_combat = no }
+
+	immediate = {
+		if = {
+			limit = { has_modifier = crisis_strength_leviathan }
+			remove_modifier = crisis_strength_leviathan
+		}
+
+		if = {
+			limit = {
+				owner = {
+					is_guardian_country = yes
+				}
+			}
+			add_modifier = {
+				modifier = crisis_strength_leviathan
+				multiplier = value:crisis_strength_leviathan_value
+			}
+		}
+	}
+}

@@ -1,0 +1,24 @@
+# 現在の危機の倍率設定を計算する
+crisis_strength_leviathan_value = {
+	base = 0
+
+	# 危機倍率(※ゲーム開始時に設定したもの)
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = crisis_strength_scale
+		}
+		mode = add
+	}
+	# 危機倍率(※危機を倒すたびに調整の入る補正値)
+	mult = trigger:additional_crisis_strength
+
+	# 難易度補正
+	modifier = { is_difficulty = 6 mult = 1.5  } # 元帥
+	modifier = { is_difficulty = 5 mult = 1.35 } # 大将
+	modifier = { is_difficulty = 4 mult = 1.2  } # 准将
+	modifier = { is_difficulty = 3 mult = 1.05 } # 大佐
+	modifier = { is_difficulty = 2 mult = 0.9  } # 少尉
+	modifier = { is_difficulty = 1 max  = 0    } # 士官候補生
+	modifier = { is_difficulty = 0 max  = 0    } # 民間人
+}

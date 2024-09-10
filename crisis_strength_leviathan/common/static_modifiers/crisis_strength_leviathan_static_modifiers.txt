@@ -1,0 +1,7 @@
+# 艦船補正「リヴァイアサン」
+crisis_strength_leviathan = {
+	ship_weapon_damage = 1.00		# 艦船武器ダメージ
+	ship_hull_mult     = 1.00		# 戦艦船体値
+	ship_armor_mult    = 1.00		# 装甲HP
+	ship_shield_mult   = 1.00		# シールドHP
+}

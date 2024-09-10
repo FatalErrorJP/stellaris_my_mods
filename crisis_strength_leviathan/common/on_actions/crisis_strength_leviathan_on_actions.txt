@@ -1,0 +1,11 @@
+on_game_start = {
+	events = {
+		crisis_strength_leviathan.1
+	}
+}
+
+on_yearly_pulse = {
+	events = {
+		crisis_strength_leviathan.1
+	}
+}
