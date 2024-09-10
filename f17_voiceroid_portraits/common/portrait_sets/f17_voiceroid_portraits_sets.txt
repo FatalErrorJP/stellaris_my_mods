@@ -190,3 +190,8 @@ yukari-lithoids = {
 		portraits = { "yukari" }
 	}
 }
+
+f17-voiceroid-robots = {
+	species_class = ROBOT
+	portraits = { "akariA" "akaneM" "aoiM" "hime" "mikoto" "tuina" "sora" "poron" "itako" "zunko" "kiritan" "yukari" }
+}

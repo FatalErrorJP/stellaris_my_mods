@@ -132,40 +132,6 @@ set_synth_or_robot_portrait_effect = {
 		prev = {
 			switch = {
 				trigger = is_species_class
-
-				VOICEROID = {
-					switch = {
-						trigger = species_portrait
-						yukari = { prev = { change_species_characteristics = { portrait = "yukari" } } }
-						maki = { prev = { change_species_characteristics = { portrait = "maki" } } }
-						zunko = { prev = { change_species_characteristics = { portrait = "zunko" } } }
-						akane = { prev = { change_species_characteristics = { portrait = "akane" } } }
-						aoi = { prev = { change_species_characteristics = { portrait = "aoi" } } }
-						seika = { prev = { change_species_characteristics = { portrait = "seika" } } }
-						kiritan = { prev = { change_species_characteristics = { portrait = "kiritan" } } }
-						akari = { prev = { change_species_characteristics = { portrait = "akari" } } }
-						ia = { prev = { change_species_characteristics = { portrait = "ia" } } }
-						one = { prev = { change_species_characteristics = { portrait = "one" } } }
-						allvr = { prev = { change_species_characteristics = { portrait = "allvr" } } }
-					}
-				}
-				VOICELITH = {
-					switch = {
-						trigger = species_portrait
-						yukari = { prev = { change_species_characteristics = { portrait = "yukari" } } }
-						maki = { prev = { change_species_characteristics = { portrait = "maki" } } }
-						zunko = { prev = { change_species_characteristics = { portrait = "zunko" } } }
-						akane = { prev = { change_species_characteristics = { portrait = "akane" } } }
-						aoi = { prev = { change_species_characteristics = { portrait = "aoi" } } }
-						seika = { prev = { change_species_characteristics = { portrait = "seika" } } }
-						kiritan = { prev = { change_species_characteristics = { portrait = "kiritan" } } }
-						akari = { prev = { change_species_characteristics = { portrait = "akari" } } }
-						ia = { prev = { change_species_characteristics = { portrait = "ia" } } }
-						one = { prev = { change_species_characteristics = { portrait = "one" } } }
-						allvr = { prev = { change_species_characteristics = { portrait = "allvr" } } }
-					}
-				}
-
 				akari = { prev = { change_species_characteristics = { portrait = "akariA" } } }
 				AKALITHOID = { prev = { change_species_characteristics = { portrait = "akari" } } }
 				kotonoha = {
@@ -220,8 +186,8 @@ set_synth_or_robot_portrait_effect = {
 					switch = {
 						trigger = species_portrait
 						itako = { prev = { change_species_characteristics = { portrait = "itako" } } }
-						touhoku_zunko = { prev = { change_species_characteristics = { portrait = "touhoku_zunko" } } }
-						touhoku_kiritan = { prev = { change_species_characteristics = { portrait = "touhoku_kiritan" } } }
+						zunko = { prev = { change_species_characteristics = { portrait = "zunko" } } }
+						kiritan = { prev = { change_species_characteristics = { portrait = "kiritan" } } }
 						touhokusimai = { prev = { change_species_characteristics = { portrait = "touhokusimai" } } }
 					}
 				}
@@ -229,13 +195,13 @@ set_synth_or_robot_portrait_effect = {
 					switch = {
 						trigger = species_portrait
 						itako = { prev = { change_species_characteristics = { portrait = "itako" } } }
-						touhoku_zunko = { prev = { change_species_characteristics = { portrait = "touhoku_zunko" } } }
-						touhoku_kiritan = { prev = { change_species_characteristics = { portrait = "touhoku_kiritan" } } }
+						zunko = { prev = { change_species_characteristics = { portrait = "zunko" } } }
+						kiritan = { prev = { change_species_characteristics = { portrait = "kiritan" } } }
 						touhokusimai = { prev = { change_species_characteristics = { portrait = "touhokusimai" } } }
 					}
 				}
-				yukari = { prev = { change_species_characteristics = { portrait = "yuduki_yukari" } } }
-				YUKALITHOID = { prev = { change_species_characteristics = { portrait = "yuduki_yukari" } } }
+				yukari = { prev = { change_species_characteristics = { portrait = "yukari" } } }
+				YUKALITHOID = { prev = { change_species_characteristics = { portrait = "yukari" } } }
 			}
 		}
 	}
