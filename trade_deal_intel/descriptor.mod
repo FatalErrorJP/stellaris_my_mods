@@ -3,5 +3,5 @@ tags={
 	"Balance"
 }
 name="「貿易しようぜ！」「いや誰お前」"
-supported_version="3.12.*"
+supported_version="v3.13.*"
 remote_file_id="2937161718"

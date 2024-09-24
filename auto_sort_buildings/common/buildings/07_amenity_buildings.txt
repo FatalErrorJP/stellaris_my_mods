@@ -17,7 +17,10 @@ building_luxury_residence = {
 				}
 			}
 		}
-		NOT = { has_modifier = slave_colony }
+		NOR = {	
+			has_modifier = slave_colony	
+			has_modifier = penal_colony	
+		}
 		exists = owner
 		owner = {
 			is_regular_empire = yes
@@ -99,6 +102,10 @@ building_paradise_dome = {
 				}
 			}
 		}
+		NOR = {	
+			has_modifier = slave_colony	
+			has_modifier = penal_colony	
+		}
 	}
 
 	allow = {
@@ -179,7 +186,10 @@ building_communal_housing = {
 				}
 			}
 		}
-		NOT = { has_modifier = slave_colony }
+		NOR = {	
+			has_modifier = slave_colony	
+			has_modifier = penal_colony	
+		}
 		exists = owner
 		owner = {
 			is_regular_empire = yes
@@ -267,6 +277,10 @@ building_communal_housing_large = {
 					is_void_dweller_empire = yes
 				}
 			}
+		}
+		NOR = {	
+			has_modifier = slave_colony	
+			has_modifier = penal_colony	
 		}
 	}
 
@@ -563,10 +577,15 @@ building_holo_theatres = {
 	category = amenity
 
 	potential = {
-		NOT = {	has_modifier = slave_colony	}
+		NOR = {	
+			has_modifier = slave_colony	
+			has_modifier = penal_colony	
+		}
 		owner = {
 			is_regular_empire = yes
-			NOT = { has_valid_civic = civic_dystopian_society }
+			NOT = { 
+				has_valid_civic = civic_dystopian_society
+			}
 		}
 		OR = {
 			owner = {
@@ -677,6 +696,10 @@ building_hyper_entertainment_forum = {
 				NOT = { has_forbidden_jobs = entertainer }
 			}
 		}
+		NOR = {	
+			has_modifier = slave_colony	
+			has_modifier = penal_colony	
+		}
 	}
 
 	destroy_trigger = {
@@ -758,8 +781,6 @@ building_clinic = {
 
 	potential = {
 		exists = owner
-		# rule out Thrall-Worlds
-		NOT = { has_modifier = slave_colony }
 		# check the empire is valid
 		owner = {
 			# rule out gestalts and pre-FTL societies
@@ -793,8 +814,6 @@ building_clinic = {
 
 	destroy_trigger = {
 		OR = {
-			# if this is now a Thrall-World
-			has_modifier = slave_colony
 			# if the planet is owned by a gestalt or pre-FTL society
 			AND = {
 				exists = owner
@@ -981,7 +1000,6 @@ building_hospital = {
 		exists = owner
 		OR = {
 			owner = { is_regular_empire = no }
-			has_modifier = slave_colony
 			AND = {
 				buildings_stop_pop = yes
 				owner = { is_ai = yes }
@@ -1090,45 +1108,11 @@ building_maintenance_depot = {
 	}
 }
 
-building_slave_huts = {
-	base_buildtime = 240
-	icon = building_crude_huts
-
-	position_priority = 813
-	category = amenity
-
-	potential = {
-		has_modifier = slave_colony
-	}
-
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			owner = { is_regular_empire = no }
-			NOT = { has_modifier = slave_colony }
-		}
-	}
-
-	planet_modifier = {
-		planet_housing_add = 8
-	}
-
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = 200
-		}
-		upkeep = {
-			energy = 1
-		}
-	}
-}
-
 building_overseer_homes = {
 	base_buildtime = 240
 	icon = building_residence
 
-	position_priority = 814
+	position_priority = 813
 	category = amenity
 
 	potential = {
@@ -1162,7 +1146,7 @@ building_overseer_homes = {
 building_ranger_lodge = {
 	base_buildtime = @b1_time
 	base_cap_amount = 1
-	position_priority = 815
+	position_priority = 814
 	category = amenity
 	icon = holding_park_ranger_lodge
 	potential = {
@@ -1303,7 +1287,7 @@ building_ranger_lodge = {
 building_toxic_bath = {
 	base_buildtime = @b1_time
 	base_cap_amount = 1
-	position_priority = 816
+	position_priority = 815
 	category = amenity
 	icon = building_toxic_bath
 

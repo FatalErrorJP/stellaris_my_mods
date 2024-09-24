@@ -1,6 +1,8 @@
 @movable_editors = no
+@sub_window_pos_x = -405
 @sub_window_pos_y = -50
-@sub_window_height = 420
+@sub_window_height = 405
+@sub_window_width = 1040
 
 guiTypes = {
 	#######################
@@ -9,8 +11,8 @@ guiTypes = {
 	containerWindowType = {
 		name = "empire_ethics_and_government_editor"
 		moveable = @movable_editors
-		position = { x = -400 y = @sub_window_pos_y }
-		size = { width = 1030 height = @sub_window_height }
+		position = { x = @sub_window_pos_x y = @sub_window_pos_y }
+		size = { width = @sub_window_width height = @sub_window_height }
 		orientation = center
 
 		background = {
@@ -51,7 +53,7 @@ guiTypes = {
 		containerWindowType = {
 			name = "ethics"
 			size = { width = 230 height = 230 }
-			position = { x = 720 y = 20 }			# Mod変更箇所 20->720 -25->20
+			position = { x = 720 y = 17 }			# Mod変更箇所 20->720 -25->17
 
 			instantTextBoxType = {
 				name = "ethic_points_left"
@@ -280,7 +282,7 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "government_type"
 			font = "malgun_goth_24"
-			position = { x = 360 y = 350 }			# Mod変更箇所 300->350
+			position = { x = 360 y = 342 }			# Mod変更箇所 300->342
 			maxWidth = 310
 			maxHeight = 20
 			text =	""
@@ -349,7 +351,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "civic_points_left"
-			position = { x = 10 y = 350 }			# Mod変更箇所 710->10 300->350
+			position = { x = 10 y = 342 }			# Mod変更箇所 710->10 300->342
 			font = "malgun_goth_24"
 			maxWidth = 310
 			maxHeight = 20
@@ -360,15 +362,6 @@ guiTypes = {
 		### APPLY / CANCEL BUTTONS ###
 
 		buttonType = {
-			name = "cancel"
-			quadTextureSprite = "GFX_close"
-			position = { x = -45 y = 8 }
-			Orientation = "UPPER_RIGHT"
-			shortCut = "ESCAPE"
-			pdx_tooltip = "CLOSE_TITLE"
-			clicksound = "back_click"
-		}
-		buttonType={
 			name = "back"
 			font = "cg_16b"
 			spriteType = "GFX_galactic_object_button"
@@ -378,7 +371,7 @@ guiTypes = {
 			shortcut = "BACKSPACE"
 			clicksound = back_click
 		}
-		buttonType={
+		buttonType = {
 			name = "apply_and_close"
 			font = "cg_16b"
 			spriteType = "GFX_galactic_object_button"

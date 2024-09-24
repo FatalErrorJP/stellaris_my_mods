@@ -486,6 +486,7 @@ building_affluence_emporium = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -563,6 +564,7 @@ building_affluence_center = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -644,6 +646,7 @@ building_nourishment_complex = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -722,6 +725,7 @@ building_nourishment_center = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -803,6 +807,7 @@ building_dimensional_replicator = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -878,6 +883,7 @@ building_dimensional_fabricator = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -954,6 +960,7 @@ building_class_3_singularity = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -1032,6 +1039,7 @@ building_class_4_singularity = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -1107,6 +1115,7 @@ building_micro_forge = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -1182,6 +1191,7 @@ building_nano_forge = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -1260,6 +1270,7 @@ building_fe_sky_dome = {
 		}
 		NOT = {
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -1342,6 +1353,7 @@ building_fe_dome = {
 		}
 		NOT = {
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -1424,6 +1436,7 @@ building_fe_fortress = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -1435,11 +1448,24 @@ building_fe_fortress = {
 		potential = {
 			exists = owner
 			owner = { is_gestalt = no }
+			NOT = { has_modifier = slave_colony }
 		}
 		modifier = {
 			job_soldier_add = @fe_jobs
 		}
 	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+			has_modifier = slave_colony
+		}
+		modifier = {
+			job_battle_thrall_add = @fe_jobs
+		}
+	}
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -1504,6 +1530,7 @@ building_fe_stronghold = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -1517,11 +1544,24 @@ building_fe_stronghold = {
 		potential = {
 			exists = owner
 			owner = { is_gestalt = no }
+			NOT = { has_modifier = slave_colony }
 		}
 		modifier = {
 			job_soldier_add = @fe_jobs
 		}
 	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+			has_modifier = slave_colony
+		}
+		modifier = {
+			job_battle_thrall_add = @fe_jobs
+		}
+	}
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -1590,6 +1630,7 @@ building_fe_administration_1 = {
 		}
 		NOT = {
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -1725,6 +1766,7 @@ building_fe_administration_2 = {
 		}
 		NOT = {
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -1874,6 +1916,7 @@ building_fe_administration_hive_1 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -1941,6 +1984,7 @@ building_fe_administration_hive_2 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -2008,6 +2052,7 @@ building_fe_administration_machine_1 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -2073,6 +2118,7 @@ building_fe_administration_machine_2 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -2140,6 +2186,7 @@ building_fe_temple_1 = {
 		}
 		NOT = {
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -2204,6 +2251,7 @@ building_fe_temple_2 = {
 		}
 		NOT = {
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -2296,6 +2344,7 @@ building_fe_assembly_1 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -2486,6 +2535,7 @@ building_fe_assembly_2 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -2641,6 +2691,7 @@ building_fe_clinic_1 = {
 		}
 		NOT = {
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -2797,6 +2848,7 @@ building_fe_clinic_2 = {
 		}
 		NOT = {
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -2943,6 +2995,11 @@ building_fe_security_1 = {
 				has_technology = tech_fe_security_1
 			}
 		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
 	}
 
 	destroy_trigger = {
@@ -3027,6 +3084,11 @@ building_fe_security_2 = {
 				is_fallen_empire = yes
 				has_technology = tech_fe_security_2
 			}
+		}
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -3154,6 +3216,7 @@ building_fe_market_1 = {
 		}
 		NOT = {
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -3219,6 +3282,11 @@ building_fe_market_2 = {
 			is_regular_empire = no
 			is_fallen_empire = no
 		}
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
 	}
 
 	resources = {
@@ -3277,6 +3345,7 @@ building_fe_silo_1 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -3324,6 +3393,7 @@ building_fe_silo_2 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -3369,6 +3439,7 @@ building_fe_entertainment_1 = {
 		}
 		NOT = {
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -3425,6 +3496,7 @@ building_fe_entertainment_2 = {
 		}
 		NOT = {
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -3479,6 +3551,7 @@ building_fe_lab_1 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -3630,6 +3703,7 @@ building_fe_lab_2 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -3782,6 +3856,7 @@ building_fe_mine_1 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
@@ -3856,6 +3931,7 @@ building_fe_mine_2 = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 

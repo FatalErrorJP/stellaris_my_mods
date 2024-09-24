@@ -6,7 +6,7 @@ building_augmentation_bazaars = {
 	base_buildtime = @b2_time
 	base_cap_amount = 1
 
-	position_priority = 2000
+	position_priority = 2100
 	category = trade
 
 	potential = {
@@ -117,7 +117,7 @@ building_transcendental_retreat = {
 	base_buildtime = @b2_time
 	base_cap_amount = 1
 
-	position_priority = 2001
+	position_priority = 2101
 	category = pop_assembly
 
 	potential = {
@@ -195,7 +195,7 @@ building_hive_transcendental_retreat = {
 	base_buildtime = @b2_time
 	base_cap_amount = 1
 
-	position_priority = 2002
+	position_priority = 2102
 	category = pop_assembly
 
 	potential = {
@@ -341,7 +341,7 @@ building_amphitheater_of_the_mind = {
 	}
 	can_demolish = no
 
-	position_priority = 2003
+	position_priority = 2103
 	category = research
 
 	potential = {
@@ -439,7 +439,7 @@ building_grand_concert_hall_of_the_mind = {
 	base_buildtime = @b3_time
 	can_build = no
 	can_demolish = no
-	position_priority = 2004
+	position_priority = 2104
 	category = research
 
 	allow = {
@@ -532,7 +532,7 @@ building_battlement_of_steel = {
 	}
 	can_demolish = no
 
-	position_priority = 2005
+	position_priority = 2105
 	category = army
 
 	potential = {
@@ -621,7 +621,7 @@ building_grand_battlements_of_steel = {
 	base_buildtime = @b3_time
 	can_build = no
 	can_demolish = no
-	position_priority = 2006
+	position_priority = 2106
 	category = army
 
 	allow = {
@@ -704,7 +704,7 @@ building_sanctuary_of_toil = {
 	}
 	can_demolish = no
 
-	position_priority = 2007
+	position_priority = 2107
 	category = resource
 
 	potential = {
@@ -788,7 +788,7 @@ building_grand_cathedral_of_toil = {
 	base_buildtime = @b2_time
 	can_build = no
 	can_demolish = no
-	position_priority = 2008
+	position_priority = 2108
 	category = resource
 
 	allow = {
@@ -865,7 +865,7 @@ building_forge_of_the_fellowship = {
 	}
 	can_demolish = no
 
-	position_priority = 2009
+	position_priority = 2109
 	category = manufacturing
 
 	potential = {
@@ -1050,7 +1050,7 @@ building_grand_forge_of_the_fellowship = {
 	base_buildtime = @b3_time
 	can_build = no
 	can_demolish = no
-	position_priority = 2010
+	position_priority = 2110
 	category = manufacturing
 
 	allow = {
@@ -1228,7 +1228,7 @@ building_the_sanctum_of_augmentation = {
 	}
 	can_demolish = no
 
-	position_priority = 2011
+	position_priority = 2111
 	category = unity
 
 	potential = {
@@ -1315,7 +1315,7 @@ building_the_united_sanctum_of_augmentation = {
 	base_buildtime = @b3_time
 	can_build = no
 	can_demolish = no
-	position_priority = 2012
+	position_priority = 2112
 	category = unity
 
 	allow = {
@@ -1386,7 +1386,7 @@ building_identity_repository = {
 	base_cap_amount = 1
 	can_demolish = no
 	can_be_disabled = no
-	position_priority = 2013
+	position_priority = 2113
 	category = resource
 
 	category = research
@@ -1466,7 +1466,7 @@ building_abandoned_gene_clinic = {
 	icon = building_ancient_cryo_chamber
 	can_demolish = no
 	can_build = no
-	position_priority = 2014
+	position_priority = 2114
 	category = resource
 
 	category = research
@@ -1711,7 +1711,7 @@ building_lathe_resonator = {
 		is_planet_class = pc_cosmogenesis_world
 	}
 
-	position_priority = 2018
+	position_priority = 2118
 	category = resource
 
 	resources = {
@@ -1765,7 +1765,7 @@ building_lathe_stabilisator = {
 		}
 	}
 
-	position_priority = 2019
+	position_priority = 2119
 	category = government
 
 	resources = {
@@ -1803,7 +1803,7 @@ building_lathe_overclocker = {
 		}
 	}
 
-	position_priority = 2020
+	position_priority = 2120
 	category = resource
 
 	resources = {
@@ -1855,7 +1855,7 @@ building_lathe_preserver = {
 		}
 	}
 
-	position_priority = 2021
+	position_priority = 2121
 	category = amenity
 
 	resources = {
@@ -1897,7 +1897,7 @@ building_lathe_reactor = {
 		}
 	}
 
-	position_priority = 2022
+	position_priority = 2122
 	category = resource
 
 	resources = {
@@ -1936,7 +1936,7 @@ building_lathe_life_support = {
 		}
 	}
 
-	position_priority = 2023
+	position_priority = 2123
 	category = amenity
 
 	resources = {
@@ -1979,7 +1979,7 @@ building_lathe_cogitator = {
 		}
 	}
 
-	position_priority = 2024
+	position_priority = 2124
 	category = army
 
 	resources = {
@@ -2035,7 +2035,7 @@ building_lathe_validator = {
 		}
 	}
 
-	position_priority = 2025
+	position_priority = 2125
 	category = research
 
 	resources = {
@@ -2155,7 +2155,7 @@ building_augmentation_center = {
 		text = building_augmentation_center_hive_desc
 	}
 
-	position_priority = 2026
+	position_priority = 2126
 	category = pop_assembly
 
 	base_cap_amount = 1
@@ -2381,12 +2381,12 @@ building_cyberdome = { # Cyber Imperial Collectivist
 		text = building_cyberdome_desc
 	}
 
-	position_priority = 2027
+	position_priority = 2127
 	category = amenity
 
 	potential = {
 		owner = {
-			has_authority = auth_imperial
+			is_imperial_authority = yes
 			has_country_flag = cyber_collectivist
 		}
 		is_capital = yes
@@ -2401,7 +2401,7 @@ building_cyberdome = { # Cyber Imperial Collectivist
 			AND = {
 				exists = owner
 				owner = {
-					NOT = { has_authority = auth_imperial }
+					is_imperial_authority = no
 				}
 			}
 			AND = {
@@ -2458,7 +2458,7 @@ building_identity_complex = {
 		text = building_identity_complex_desc
 	}
 
-	position_priority = 2028
+	position_priority = 2128
 	category = pop_assembly
 
 	potential = {
@@ -2517,7 +2517,7 @@ building_ai_emporium = {
 
 	owner_type = corporate
 
-	position_priority = 2029
+	position_priority = 2129
 	category = resource
 
 	potential = {
@@ -2603,7 +2603,7 @@ building_clear_thought_clinic = {
 
 	owner_type = corporate
 
-	position_priority = 2030
+	position_priority = 2130
 	category = resource
 
 	potential = {
@@ -2735,7 +2735,7 @@ building_clear_thought_clinic = {
 building_nanolab_1 = {
 	base_buildtime = @b2_time
 
-	position_priority = 2031
+	position_priority = 2131
 	category = research
 
 	potential = {
@@ -2818,7 +2818,7 @@ building_nanolab_2 = {
 	base_buildtime = @b3_time
 	can_build = no
 
-	position_priority = 2032
+	position_priority = 2132
 	category = research
 
 	potential = {
@@ -2896,7 +2896,7 @@ building_nanolab_2 = {
 building_nanotech_cauldron = {
 	base_buildtime = @b2_time
 
-	position_priority = 2033
+	position_priority = 2133
 	category = manufacturing
 
 	potential = {

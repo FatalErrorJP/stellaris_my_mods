@@ -4,5 +4,5 @@ tags={
 	"Spaceships"
 }
 name="サルベージできる艦種を増やしたい"
-supported_version="3.12.*"
+supported_version="v3.13.*"
 remote_file_id="3247070986"

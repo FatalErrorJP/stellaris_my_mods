@@ -5,5 +5,5 @@ tags={
 	"Events"
 }
 name="え、交易路に海賊が！？"
-supported_version="3.12.*"
+supported_version="v3.13.*"
 remote_file_id="2888039864"

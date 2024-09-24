@@ -99,7 +99,7 @@ volatile_motes_tooltip_btn = {
 		is_colony = yes
 		is_under_colonization = no
 
-		num_buildings = { type = building_mote_harvesters in_construction = any value < modifier:building_mote_harvesters_max }
+		check_modifier_value = { modifier = planet_miners_volatile_motes_produces_add value > 0 }
 	}
 	allow = {}
 	effect = {
@@ -121,7 +121,7 @@ exotic_gases_tooltip_btn = {
 		is_colony = yes
 		is_under_colonization = no
 
-		num_buildings = { type = building_gas_extractors in_construction = any value < modifier:building_gas_extractors_max }
+		check_modifier_value = { modifier = planet_miners_exotic_gases_produces_add value > 0 }
 	}
 	allow = {}
 	effect = {
@@ -143,7 +143,7 @@ rare_crystals_tooltip_btn = {
 		is_colony = yes
 		is_under_colonization = no
 
-		num_buildings = { type = building_crystal_mines in_construction = any value < modifier:building_crystal_mines_max }
+		check_modifier_value = { modifier = planet_miners_rare_crystals_produces_add value > 0 }
 	}
 	allow = {}
 	effect = {

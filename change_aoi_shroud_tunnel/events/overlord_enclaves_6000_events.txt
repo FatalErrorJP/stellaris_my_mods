@@ -16,7 +16,7 @@ fleet_event = {
 					ethic_xenophobe = { text = enclave.6000.b.desc }
 					ethic_gestalt_consciousness = {
 						if = {
-							limit = { has_authority = auth_machine_intelligence }
+							limit = { is_machine_empire = yes }
 							text = enclave.6000.d.desc
 						}
 						else = { text = enclave.6000.e.desc }
@@ -135,7 +135,7 @@ fleet_event = {
 		name = enclave.6000d.a
 		trigger = {
 			owner = {
-				has_authority = auth_machine_intelligence
+				is_machine_empire = yes
 			}
 		}
 		leader = {
@@ -157,7 +157,7 @@ fleet_event = {
 		trigger = {
 			owner = {
 				has_ethic = ethic_gestalt_consciousness
-				NOT = {has_authority = auth_machine_intelligence }
+				NOT = {is_machine_empire = yes }
 			}
 		}
 		leader = {

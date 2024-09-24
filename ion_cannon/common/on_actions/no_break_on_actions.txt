@@ -32,3 +32,40 @@ on_ship_disabled = {
 		break.21
 	}
 }
+
+#######################################
+# 戦争終了時のイベント
+#######################################
+# 勝利時のイベント
+# Root = Winner Warleader
+# From = Loser Warleader
+# FromFrom = War
+on_war_won = {
+	events = {
+		break.41
+	}
+}
+
+# 現状追認時のイベント
+# Root = Actor
+# From = Recipient
+# FromFrom = Main Attacker
+# FromFromFrom = Main Defender
+# FromFromFromFrom = War
+on_status_quo = {
+	events = {
+		break.42
+	}
+}
+
+# (強制的な)現状追認時のイベント
+# Root = Recipient
+# From = Actor
+# FromFrom = Main Attacker
+# FromFromFrom = Main Defender
+# FromFromFromFrom = War
+on_status_quo_forced = {
+	events = {
+		break.42
+	}
+}

@@ -1303,7 +1303,7 @@ find_planet_mote_harvesters_btn = {
 				every_system_planet = {
 					limit = {
 						is_colonizable = yes
-						num_buildings = { type = building_mote_harvesters in_construction = any value < modifier:building_mote_harvesters_max }
+						check_modifier_value = { modifier = planet_miners_volatile_motes_produces_add value > 0 }
 						is_surveyed = { who = from status = yes }
 					}
 
@@ -1347,7 +1347,7 @@ find_planet_gas_extractors_btn = {
 				every_system_planet = {
 					limit = {
 						is_colonizable = yes
-						num_buildings = { type = building_gas_extractors in_construction = any value < modifier:building_gas_extractors_max }
+						check_modifier_value = { modifier = planet_miners_exotic_gases_produces_add value > 0 }
 						is_surveyed = { who = from status = yes }
 					}
 
@@ -1391,7 +1391,7 @@ find_planet_crystal_mines_btn = {
 				every_system_planet = {
 					limit = {
 						is_colonizable = yes
-						num_buildings = { type = building_crystal_mines in_construction = any value < modifier:building_crystal_mines_max }
+						check_modifier_value = { modifier = planet_miners_rare_crystals_produces_add value > 0 }
 						is_surveyed = { who = from status = yes }
 					}
 
@@ -1952,7 +1952,7 @@ find_colony_mote_harvesters_btn = {
 				every_system_planet = {
 					limit = {
 						is_colony = yes
-						num_buildings = { type = building_mote_harvesters in_construction = any value < modifier:building_mote_harvesters_max }
+						check_modifier_value = { modifier = planet_miners_volatile_motes_produces_add value > 0 }
 					}
 
 					solar_system = { save_event_target_as = target_system }
@@ -2000,7 +2000,7 @@ find_colony_gas_extractors_btn = {
 				every_system_planet = {
 					limit = {
 						is_colony = yes
-						num_buildings = { type = building_gas_extractors in_construction = any value < modifier:building_gas_extractors_max }
+						check_modifier_value = { modifier = planet_miners_exotic_gases_produces_add value > 0 }
 					}
 
 					solar_system = { save_event_target_as = target_system }
@@ -2048,7 +2048,7 @@ find_colony_crystal_mines_btn = {
 				every_system_planet = {
 					limit = {
 						is_colony = yes
-						num_buildings = { type = building_crystal_mines in_construction = any value < modifier:building_crystal_mines_max }
+						check_modifier_value = { modifier = planet_miners_rare_crystals_produces_add value > 0 }
 					}
 
 					solar_system = { save_event_target_as = target_system }

@@ -4,5 +4,5 @@ tags={
 	"Fixes"
 }
 name="No AI habitats…2星系だけは許そう"
-supported_version="3.12.*"
+supported_version="v3.13.*"
 remote_file_id="2891865158"

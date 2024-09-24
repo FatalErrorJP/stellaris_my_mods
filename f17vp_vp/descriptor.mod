@@ -12,5 +12,5 @@ tags={
 }
 name="[Compatibility Patch]F17 VP/VP"
 picture="thumbnail.png"
-supported_version="v3.12.5"
+supported_version="v3.13.*"
 remote_file_id="2760247086"

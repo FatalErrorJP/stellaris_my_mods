@@ -237,3 +237,38 @@ defined_text = {
 	name = GetCrisisStrengthValue
 	value = value:crisis_strength_value
 }
+
+# 嵐の発生確率
+defined_text = {
+	name = GetCosmicStormEarlyGameSpawnChanceScale
+	value = trigger:num_cosmic_storm_early_game_spawn_chance_scale_setting
+}
+defined_text = {
+	name = GetCosmicStormMidGameSpawnChanceScale
+	value = trigger:num_cosmic_storm_mid_game_spawn_chance_scale_setting
+}
+defined_text = {
+	name = GetCosmicStormLateGameSpawnChanceScale
+	value = trigger:num_cosmic_storm_late_game_spawn_chance_scale_setting
+}
+# 嵐の最大数
+defined_text = {
+	name = GetCosmicStormEarlyGameSpawnMaxCap
+	value = trigger:num_cosmic_storm_early_game_spawn_max_cap_setting
+}
+defined_text = {
+	name = GetCosmicStormMidGameSpawnMaxCap
+	value = trigger:num_cosmic_storm_mid_game_spawn_max_cap_setting
+}
+defined_text = {
+	name = GetCosmicStormLateGameSpawnMaxCap
+	value = trigger:num_cosmic_storm_late_game_spawn_max_cap_setting
+}
+# 嵐のクールダウン
+defined_text = {
+	name = GetCosmicStormSpawnCooldownScale
+	value = trigger:num_cosmic_storm_spawn_cooldown_scale_setting
+}
+
+
+

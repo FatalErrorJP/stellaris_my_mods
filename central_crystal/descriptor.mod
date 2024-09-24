@@ -4,5 +4,5 @@ tags={
 	"Balance"
 }
 name="結晶帝国に会いたい"
-supported_version="3.12.*"
+supported_version="v3.13.*"
 remote_file_id="2842466768"

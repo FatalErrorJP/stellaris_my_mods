@@ -11,7 +11,10 @@ building_commercial_zone = {
 	potential = {
 		exists = owner
 		owner = { is_regular_empire = yes }
-		NOT = { has_modifier = slave_colony }
+		NOR = { 
+			has_modifier = slave_colony 
+			has_modifier = penal_colony	
+		}
 		NOT = { has_building = building_low_tech_capital }
 	}
 
@@ -20,6 +23,7 @@ building_commercial_zone = {
 		OR = {
 			owner = { is_regular_empire = no }
 			has_modifier = slave_colony
+			has_modifier = penal_colony	
 		}
 	}
 
@@ -81,7 +85,10 @@ building_commercial_megaplex = {
 	potential = {
 		exists = owner
 		owner = { is_regular_empire = yes }
-		NOT = { has_modifier = slave_colony }
+		NOR = { 
+			has_modifier = slave_colony 
+			has_modifier = penal_colony	
+		}
 		has_building = building_commercial_zone
 	}
 
@@ -90,6 +97,7 @@ building_commercial_megaplex = {
 		OR = {
 			owner = { is_regular_empire = no }
 			has_modifier = slave_colony
+			has_modifier = penal_colony	
 		}
 	}
 
@@ -160,8 +168,11 @@ building_galactic_stock_exchange = {
 	category = trade
 
 	potential = {
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
+		NOR = { 
+			has_modifier = resort_colony 
+			has_modifier = slave_colony 
+			has_modifier = penal_colony	
+		}
 	}
 
 	allow = {
@@ -188,6 +199,7 @@ building_galactic_stock_exchange = {
 			owner = { is_regular_empire = no }
 			has_modifier = slave_colony
 			has_modifier = resort_colony
+			has_modifier = penal_colony	
 		}
 	}
 

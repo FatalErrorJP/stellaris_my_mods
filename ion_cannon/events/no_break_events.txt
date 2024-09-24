@@ -114,3 +114,86 @@ ship_event = {
 		}
 	}
 }
+
+
+#######################################
+# 戦争勝利時のイベント
+# Root = Winner Warleader
+# From = Loser Warleader
+# FromFrom = War
+#######################################
+country_event = {
+	id = break.41
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {}
+
+	immediate = {
+		fromfrom = {
+			every_attacker = {
+				limit = {}
+				every_owned_ship = {
+					limit = {
+						is_ship_class = shipclass_military_station
+						is_disabled = yes
+					}
+					ship_event = { id = break.31 days = 1 scopes = { from = fleet } }
+				}
+			}
+
+			every_defender = {
+				limit = {}
+				every_owned_ship = {
+					limit = {
+						is_ship_class = shipclass_military_station
+						is_disabled = yes
+					}
+					ship_event = { id = break.31 days = 1 scopes = { from = fleet } }
+				}
+			}
+		}
+	}
+}
+
+#######################################
+# 現状追認時のイベント
+# Root = Actor or Recipient
+# From = Recipient or Actor
+# FromFrom = Main Attacker
+# FromFromFrom = Main Defender
+# FromFromFromFrom = War
+#######################################
+country_event = {
+	id = break.42
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {}
+
+	immediate = {
+		fromfromfromfrom = {
+			every_attacker = {
+				limit = {}
+				every_owned_ship = {
+					limit = {
+						is_ship_class = shipclass_military_station
+						is_disabled = yes
+					}
+					ship_event = { id = break.31 days = 1 scopes = { from = fleet } }
+				}
+			}
+
+			every_defender = {
+				limit = {}
+				every_owned_ship = {
+					limit = {
+						is_ship_class = shipclass_military_station
+						is_disabled = yes
+					}
+					ship_event = { id = break.31 days = 1 scopes = { from = fleet } }
+				}
+			}
+		}
+	}
+}

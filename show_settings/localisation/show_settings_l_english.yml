@@ -1,42 +1,43 @@
 ﻿l_english:
-  show_settings_game_start_chain_title:0 "Show game settings"
-  show_settings_game_start_chain_desc:0 "$SHOW_SETTING_01$$SHOW_SETTING_02$$SHOW_SETTING_03$$SHOW_SETTING_04$$SHOW_SETTING_05$$SHOW_SETTING_06$$SHOW_SETTING_07$$SHOW_SETTING_08$$SHOW_SETTING_09$$SHOW_SETTING_10$$SHOW_SETTING_11$$SHOW_SETTING_12$$SHOW_SETTING_13$$SHOW_SETTING_14$$SHOW_SETTING_15$$SHOW_SETTING_16$$SHOW_SETTING_17$$SHOW_SETTING_18$$SHOW_SETTING_19$$SHOW_SETTING_20$$SHOW_SETTING_21$$SHOW_SETTING_22$$SHOW_SETTING_23$$SHOW_SETTING_24$$SHOW_SETTING_25$$SHOW_SETTING_26$$SHOW_SETTING_27$$SHOW_SETTING_28$$SHOW_SETTING_29$$SHOW_SETTING_30$"
+  show_settings_game_start_chain_title: "Show game settings"
+  show_settings_game_start_chain_desc: "$SHOW_SETTING_01$$SHOW_SETTING_02$$SHOW_SETTING_03$$SHOW_SETTING_04$$SHOW_SETTING_05$$SHOW_SETTING_06$$SHOW_SETTING_07$$SHOW_SETTING_09$$SHOW_SETTING_10$$SHOW_SETTING_11$$SHOW_SETTING_12$$SHOW_SETTING_13$$SHOW_SETTING_14$$SHOW_SETTING_15$$SHOW_SETTING_16$$SHOW_SETTING_23$$SHOW_SETTING_24$$SHOW_SETTING_25$$SHOW_SETTING_27$$SHOW_SETTING_28$$SHOW_SETTING_29$$SHOW_SETTING_32$$SHOW_SETTING_33$$SHOW_SETTING_34$$SHOW_SETTING_35$$SHOW_SETTING_36$$SHOW_SETTING_37$$SHOW_SETTING_38$$SHOW_SETTING_39$"
 
-  SHOW_SETTING_01:0 "§L$GALAXY_SIZE$§!§W: [This.GetGalaxySize]§!\n"
-  SHOW_SETTING_02:0 "§L$GALAXY_SHAPE$§!§W: [This.GetGalaxyShape]§!\n"
-  SHOW_SETTING_03:0 "§L$NUM_EMPIRES$§!§W: [This.setup_value_num_empires]§!\n"
-  SHOW_SETTING_04:0 "§L$NUM_ADVANCED_EMPIRES$§!§W: [This.setup_value_num_advanced_empires]§!\n"
-  SHOW_SETTING_05:0 "§L$NUM_FALLEN_EMPIRES$§!§W: [This.setup_value_num_fallen_empires]§!\n"
-  SHOW_SETTING_06:0 "§L$NUM_MARAUDER_EMPIRES$§!§W: [This.setup_value_num_marauder_empires]§!\n"
-  SHOW_SETTING_07:0 "§L$FE_TECH_SPEED$§!§W: [This.setup_value_tech_costs_scale]x§!\n"
-  SHOW_SETTING_08:0 "§L$NUM_HABITABLE_WORLDS$§!§W: [This.setup_value_habitable_worlds_scale]x§!\n"
-  SHOW_SETTING_09:0 "§L$FE_PRIMITIVE_WORLDS$§!§W: [This.setup_value_primitive_worlds_scale]x§!\n"
-  SHOW_SETTING_10:0 "§L$FE_CRISES$§!§W: [This.setup_value_crisis_strength_scale]x([This.GetCrisisStrengthValue]x)§!\n"
-  SHOW_SETTING_11:0 "§L$CRISIS_TYPE_LABEL$§!§W: [This.GetAllowedCrisisType]§!\n"
-  SHOW_SETTING_12:0 "§L$FE_MID_GAME$§!§W: [This.setup_value_mid_game_year]§!\n"
-  SHOW_SETTING_13:0 "§L$FE_END_GAME$§!§W: [This.setup_value_end_game_year]§!\n"
-  SHOW_SETTING_14:0 "§L$FE_VICTORY$§!§W: [This.setup_value_victory_year]§!\n"
-  SHOW_SETTING_15:0 "§L$FE_DIFFICULTY$§!§W: [This.GetDifficulty]§!\n"
-  # FE_SCALING_DIFFICULTY
-  SHOW_SETTING_16:0 ""
-  # DIFFICULTY_ADJUSTED_AI_MODIFIERS
-  SHOW_SETTING_17:0 ""
-  # FE_AGGRESSIVENESS
-  SHOW_SETTING_18:0 ""
-  # FE_CLUSTERED_STARTS
-  SHOW_SETTING_19:0 ""
-  # FE_ADVANCED_NEAR_PLAYER
-  SHOW_SETTING_20:0 ""
-  SHOW_SETTING_21:0 "§L$NUM_HYPERLANES$§!§W: [This.setup_value_num_hyperlanes]x§!\n"
-  SHOW_SETTING_22:0 "§L$NUM_GATEWAYS$§!§W: [This.setup_value_num_gateways]x§!\n"
-  SHOW_SETTING_23:0 "§L$NUM_WORMHOLES$§!§W: [This.setup_value_num_wormhole_pairs]x§!\n"
-  # FE_GUARANTEED_COLONIES
-  SHOW_SETTING_24:0 ""
-  SHOW_SETTING_25:0 "§L$CARAVANEERS_LABEL$§!§W: [This.GetCaravaneersEnabled]§!\n"
-  SHOW_SETTING_26:0 "§L$LGATE_LABEL$§!§W: [This.GetLGateEnabled]§!\n"
-  SHOW_SETTING_27:0 "§L$XENO_COMPATIBILITY_LABEL$§!§W: [This.GetXenoCompatibilityEnabled]§!\n"
-  # FE_LOGISTIC_CEILING
-  SHOW_SETTING_28:0 ""
-  # FE_GROWTH_SCALE
-  SHOW_SETTING_29:0 ""
-  SHOW_SETTING_30:0 "§L$FE_IRONMAN$§!§W: [This.GetIsIronman]§!\n"
+  SHOW_SETTING_01: "§L$GALAXY_SIZE$§!§W: [This.GetGalaxySize]§!\n"
+  SHOW_SETTING_02: "§L$GALAXY_SHAPE$§!§W: [This.GetGalaxyShape]§!\n"
+  SHOW_SETTING_03: "§L$NUM_EMPIRES$§!§W: [This.setup_value_num_empires]§!\n"
+  SHOW_SETTING_04: "§L$NUM_ADVANCED_EMPIRES$§!§W: [This.setup_value_num_advanced_empires]§!\n"
+  SHOW_SETTING_05: "§L$NUM_FALLEN_EMPIRES$§!§W: [This.setup_value_num_fallen_empires]§!\n"
+  SHOW_SETTING_06: "§L$NUM_MARAUDER_EMPIRES$§!§W: [This.setup_value_num_marauder_empires]§!\n"
+  SHOW_SETTING_07: "§L$FE_TECH_SPEED$§!§W: [This.setup_value_tech_costs_scale]x§!\n"
+  SHOW_SETTING_08: "§L$FE_TRADITION_SPEED$§!§W: §!\n" # FE_TRADITION_SPEED
+  SHOW_SETTING_09: "§L$NUM_HABITABLE_WORLDS$§!§W: [This.setup_value_habitable_worlds_scale]x§!\n"
+  SHOW_SETTING_10: "§L$FE_PRIMITIVE_WORLDS$§!§W: [This.setup_value_primitive_worlds_scale]x§!\n"
+  SHOW_SETTING_11: "§L$FE_CRISES$§!§W: [This.setup_value_crisis_strength_scale]x([This.GetCrisisStrengthValue]x)§!\n"
+  SHOW_SETTING_12: "§L$CRISIS_TYPE_LABEL$§!§W: [This.GetAllowedCrisisType]§!\n"
+  SHOW_SETTING_13: "§L$FE_MID_GAME$§!§W: [This.setup_value_mid_game_year]§!\n"
+  SHOW_SETTING_14: "§L$FE_END_GAME$§!§W: [This.setup_value_end_game_year]§!\n"
+  SHOW_SETTING_15: "§L$FE_VICTORY$§!§W: [This.setup_value_victory_year]§!\n"
+  SHOW_SETTING_16: "§L$FE_DIFFICULTY$§!§W: [This.GetDifficulty]§!\n"
+  SHOW_SETTING_17: "§L$FE_SCALING_DIFFICULTY$§!§W: §!\n" # FE_SCALING_DIFFICULTY
+  SHOW_SETTING_18: "§L$DIFFICULTY_ADJUSTED_AI_MODIFIERS$§!§W: §!\n" # DIFFICULTY_ADJUSTED_AI_MODIFIERS
+  SHOW_SETTING_19: "§L$FE_TECH_SPEED_DIFFICULTY_SCALE$§!§W: §!\n" # FE_TECH_SPEED_DIFFICULTY_SCALE
+  SHOW_SETTING_20: "§L$FE_AGGRESSIVENESS$§!§W: §!\n" # FE_AGGRESSIVENESS
+  SHOW_SETTING_21: "§L$FE_CLUSTERED_STARTS$§!§W: §!\n" # FE_CLUSTERED_STARTS
+  SHOW_SETTING_22: "§L$FE_ADVANCED_NEAR_PLAYER$§!§W: §!\n" # FE_ADVANCED_NEAR_PLAYER
+  SHOW_SETTING_23: "§L$NUM_HYPERLANES$§!§W: [This.setup_value_num_hyperlanes]x§!\n"
+  SHOW_SETTING_24: "§L$NUM_GATEWAYS$§!§W: [This.setup_value_num_gateways]x§!\n"
+  SHOW_SETTING_25: "§L$NUM_WORMHOLES$§!§W: [This.setup_value_num_wormhole_pairs]x§!\n"
+  SHOW_SETTING_26: "§L$FE_GUARANTEED_COLONIES$§!§W: §!\n" # FE_GUARANTEED_COLONIES
+  SHOW_SETTING_27: "§L$CARAVANEERS_LABEL$§!§W: [This.GetCaravaneersEnabled]§!\n"
+  SHOW_SETTING_28: "§L$LGATE_LABEL$§!§W: [This.GetLGateEnabled]§!\n"
+  SHOW_SETTING_29: "§L$XENO_COMPATIBILITY_LABEL$§!§W: [This.GetXenoCompatibilityEnabled]§!\n"
+  SHOW_SETTING_30: "§L$FE_LOGISTIC_CEILING$§!§W: §!\n" # FE_LOGISTIC_CEILING
+  SHOW_SETTING_31: "§L$FE_GROWTH_SCALE$§!§W: §!\n" # FE_GROWTH_SCALE
+  SHOW_SETTING_32: "§L$FE_COSMIC_STORM_EARLY_GAME_SPAWN_CHANCE_SCALE$§!§W: [This.GetCosmicStormEarlyGameSpawnChanceScale]x§!\n"
+  SHOW_SETTING_33: "§L$FE_COSMIC_STORM_MID_GAME_SPAWN_CHANCE_SCALE$§!§W: [This.GetCosmicStormMidGameSpawnChanceScale]x§!\n"
+  SHOW_SETTING_34: "§L$FE_COSMIC_STORM_LATE_GAME_SPAWN_CHANCE_SCALE$§!§W: [This.GetCosmicStormLateGameSpawnChanceScale]x§!\n"
+  SHOW_SETTING_35: "§L$FE_COSMIC_STORM_EARLY_GAME_SPAWN_MAX_CAP$§!§W: [This.GetCosmicStormEarlyGameSpawnMaxCap]x§!\n"
+  SHOW_SETTING_36: "§L$FE_COSMIC_STORM_MID_GAME_SPAWN_MAX_CAP$§!§W: [This.GetCosmicStormMidGameSpawnMaxCap]x§!\n"
+  SHOW_SETTING_37: "§L$FE_COSMIC_STORM_LATE_GAME_SPAWN_MAX_CAP$§!§W: [This.GetCosmicStormLateGameSpawnMaxCap]x§!\n"
+  SHOW_SETTING_38: "§L$FE_COSMIC_STORM_SPAWN_COOLDOWN_SCALE$§!§W: [This.GetCosmicStormSpawnCooldownScale]x§!\n"
+  SHOW_SETTING_39: "§L$FE_IRONMAN$§!§W: [This.GetIsIronman]§!\n"

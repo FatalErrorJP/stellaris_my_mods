@@ -4,5 +4,5 @@ tags={
 	"Fixes"
 }
 name="事前に次元艦隊の数を確認できるようにしてくれパラド"
-supported_version="3.12.*"
+supported_version="v3.13.*"
 remote_file_id="3150452883"

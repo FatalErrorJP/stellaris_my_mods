@@ -3,5 +3,5 @@ tags={
 	"Balance"
 }
 name="リヴァイアサンにも危機倍率を乗せてくれ！"
-supported_version="v3.12.5"
+supported_version="v3.13.*"
 remote_file_id="3322530764"
