@@ -1,0 +1,12 @@
+if = {
+	limit = { fromfrom = { is_storm_type = $STORM_TYPE$ }}
+
+	create_message = {
+		type = $MESSAGE_KEY$
+		localization = CUSTOM_MESSAGE_COSMIC_STORM_SPOTTED_DESC
+		days = 30
+		target = fromfrom
+		recipient = root
+		variable = { type = key localization = TYPE value = $STORM_TYPE$ }
+	}
+}

@@ -1,0 +1,2 @@
+﻿l_russian:
+  CUSTOM_MESSAGE_COSMIC_STORM_SPOTTED_DESC: "Сканеры зафиксировали космическую бурю и определили ее тип: $TYPE|Y$. Мы назвали ее «§Y[fromfrom.GetName]§!».\n\n"

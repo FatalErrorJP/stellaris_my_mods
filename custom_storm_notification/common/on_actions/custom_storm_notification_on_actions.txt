@@ -1,0 +1,7 @@
+# This: System
+# From: Storm
+on_storm_entered_system = {
+	events = {
+		custom_storm_notification.1
+	}
+}

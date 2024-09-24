@@ -1,0 +1,2 @@
+﻿l_spanish:
+  CUSTOM_MESSAGE_COSMIC_STORM_SPOTTED_DESC: "Nuestros escáneres han detectado una tormenta cósmica del tipo $TYPE|Y$. La hemos bautizado como §Y[fromfrom.GetName]§!.\n\n"

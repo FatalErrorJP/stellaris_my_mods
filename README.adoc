@@ -92,4 +92,5 @@ https://steamcommunity.com/profiles/76561199152309881/myworkshopfiles/?p=1&numpe
 | {counter:index} | 集合意識惑星･･･？違うな葵ちゃん惑星だ                                | hive_world_to_aoi
 | {counter:index} | 国是選ぶときにツールチップが被って邪魔！                             | setup_ethics_and_government
 | {counter:index} | リヴァイアサンにも危機倍率を乗せてくれ！                             | crisis_strength_leviathan
+| {counter:index} | 「宇宙嵐を検知した！」の通知がうざすぎる                             | custom_storm_notification
 |===

@@ -1,0 +1,2 @@
+﻿l_japanese:
+  CUSTOM_MESSAGE_COSMIC_STORM_SPOTTED_DESC: "我々のスキャナーは$TYPE|Y$タイプの宇宙嵐を検知した！ 我々はこれを「§Y[fromfrom.GetName]§!」と命名した。\n\n"

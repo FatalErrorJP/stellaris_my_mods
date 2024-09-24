@@ -1,0 +1,100 @@
+namespace = custom_storm_notification
+
+# 自国領土内または2星系以内に宇宙嵐が入ってきた場合にその旨を通知する
+# Triggered from on_storm_entered_system
+# This: System
+# From: Storm
+system_event = {
+	id = custom_storm_notification.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_cosmic_storms_dlc = yes
+	}
+
+	immediate = {
+		every_system = {
+			limit = {
+				distance = {
+					source = prev
+					use_bypasses = no
+					min_jumps = 0
+					max_jumps = 2
+				}
+				exists = owner
+				owner = {
+					is_country_type = default
+					not = { has_country_flag = notified_storm_visible@fromfrom }
+				}
+			}
+			owner = {
+				country_event = { id = custom_storm_notification.2 scopes = { from = prevprev fromfrom = from } }
+			}
+		}
+	}
+}
+
+# 対象の国家に宇宙嵐を発見した旨を通知する
+# Triggered from on_storm_entered_system
+# Root: Country
+# From: System
+# FromFrom: Storm
+country_event = {
+	id = custom_storm_notification.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_cosmic_storms_dlc = yes
+		is_country_type = default
+		not = { has_country_flag = notified_storm_visible@fromfrom }
+		intel_level = { level >= low system = from } # 対象の星系の情報値低以上
+	}
+
+	immediate = {
+		inline_script = {
+			script = events/custom_storm_notification
+			STORM_TYPE = electric_storm
+			MESSAGE_KEY = CUSTOM_STORM_ELECTRIC_STORM_VISIBLE
+		}
+		inline_script = {
+			script = events/custom_storm_notification
+			STORM_TYPE = particle_storm
+			MESSAGE_KEY = CUSTOM_STORM_PARTICLE_STORM_VISIBLE
+		}
+		inline_script = {
+			script = events/custom_storm_notification
+			STORM_TYPE = gravity_storm
+			MESSAGE_KEY = CUSTOM_STORM_GRAVITY_STORM_VISIBLE
+		}
+		inline_script = {
+			script = events/custom_storm_notification
+			STORM_TYPE = magnetic_storm
+			MESSAGE_KEY = CUSTOM_STORM_MAGNETIC_STORM_VISIBLE
+		}
+		inline_script = {
+			script = events/custom_storm_notification
+			STORM_TYPE = solar_storm
+			MESSAGE_KEY = CUSTOM_STORM_SOLAR_STORM_VISIBLE
+		}
+		inline_script = {
+			script = events/custom_storm_notification
+			STORM_TYPE = celestial_storm
+			MESSAGE_KEY = CUSTOM_STORM_CELESTIAL_STORM_VISIBLE
+		}
+		inline_script = {
+			script = events/custom_storm_notification
+			STORM_TYPE = shroud_storm
+			MESSAGE_KEY = CUSTOM_STORM_SHROUD_STORM_VISIBLE
+		}
+		inline_script = {
+			script = events/custom_storm_notification
+			STORM_TYPE = nexus_storm
+			MESSAGE_KEY = CUSTOM_STORM_NEXUS_STORM_VISIBLE
+		}
+
+		# 多重に通知されないように、通知済フラグを付与する
+		set_country_flag = notified_storm_visible@fromfrom
+	}
+}

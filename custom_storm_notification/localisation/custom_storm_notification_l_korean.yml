@@ -1,0 +1,2 @@
+﻿l_korean:
+  CUSTOM_MESSAGE_COSMIC_STORM_SPOTTED_DESC: "스캐너로 $TYPE|Y$ 유형의 우주 폭풍을 감지했습니다! 이 폭풍을 §Y[fromfrom.GetName]§!(이)라고 이름 붙였습니다.\n\n"

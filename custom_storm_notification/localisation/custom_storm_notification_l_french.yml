@@ -1,0 +1,2 @@
+﻿l_french:
+  CUSTOM_MESSAGE_COSMIC_STORM_SPOTTED_DESC: "Nos capteurs ont enregistré une tempête cosmique de type $TYPE|Y$. Nous lui avons donné le nom de §Y[fromfrom.GetName]§!.\n\n"

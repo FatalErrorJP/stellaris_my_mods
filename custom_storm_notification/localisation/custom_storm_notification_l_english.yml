@@ -1,0 +1,2 @@
+﻿l_english:
+  CUSTOM_MESSAGE_COSMIC_STORM_SPOTTED_DESC: "Our scanners have picked up a cosmic storm of the $TYPE|Y$ type. We have named it §Y[fromfrom.GetName]§!.\n\n"

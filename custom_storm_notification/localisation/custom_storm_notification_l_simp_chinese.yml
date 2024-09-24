@@ -1,0 +1,2 @@
+﻿l_simp_chinese:
+  CUSTOM_MESSAGE_COSMIC_STORM_SPOTTED_DESC: "扫描仪探测到一场$TYPE|Y$型宇宙风暴正逼近我方边境。我们现已将其命名为§Y[fromfrom.GetName]§!。\n\n"
