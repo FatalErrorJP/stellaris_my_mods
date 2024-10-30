@@ -1,0 +1,17 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_resource_volatile_motes"
+		textureFile = "gfx/interface/icons/resources/volatile_motes.dds"
+	}
+
+	spriteType = {
+		name = "GFX_resource_exotic_gases"
+		textureFile = "gfx/interface/icons/resources/exotic_gases.dds"
+	}
+
+	spriteType = {
+		name = "GFX_resource_rare_crystals"
+		textureFile = "gfx/interface/icons/resources/rare_crystals.dds"
+	}
+}
