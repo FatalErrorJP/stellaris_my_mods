@@ -94,4 +94,5 @@ https://steamcommunity.com/profiles/76561199152309881/myworkshopfiles/?p=1&numpe
 | {counter:index} | リヴァイアサンにも危機倍率を乗せてくれ！                             | crisis_strength_leviathan
 | {counter:index} | 「宇宙嵐を検知した！」の通知がうざすぎる                             | custom_storm_notification
 | {counter:index} | 嵐の中を通過しろ！                                                   | fleet_pathfinding_cosmic_storm_weight
+| {counter:index} | でかい国はセクターもでかい！                                         | sector_max_jumps_add
 |===

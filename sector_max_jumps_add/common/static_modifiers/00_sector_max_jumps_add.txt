@@ -1,0 +1,4 @@
+# Per empire size over admin cap
+empire_size = {
+	sector_max_jumps_add = 0.01
+}
