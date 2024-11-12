@@ -3,5 +3,5 @@ tags={
 	"Fixes"
 }
 name="嵐の中を通過しろ！"
-supported_version="v3.13.*"
+supported_version="v3.14.*"
 remote_file_id="3332308791"

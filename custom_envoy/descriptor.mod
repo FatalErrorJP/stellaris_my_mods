@@ -7,5 +7,5 @@ tags={
 	"Fixes"
 }
 name="外交官と諜報員を分離したい"
-supported_version="v3.13.*"
+supported_version="v3.14.*"
 remote_file_id="2884186949"

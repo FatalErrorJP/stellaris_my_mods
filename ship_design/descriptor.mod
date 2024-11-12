@@ -5,5 +5,5 @@ tags={
 	"Gameplay"
 }
 name="艦隊設計がめんどくさい！"
-supported_version="v3.13.*"
+supported_version="v3.14.*"
 remote_file_id="3052944835"

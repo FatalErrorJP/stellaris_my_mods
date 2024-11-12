@@ -4,5 +4,5 @@ tags={
 	"Utilities"
 }
 name="造船機能をON/OFFしたい"
-supported_version="v3.13.*"
+supported_version="v3.14.*"
 remote_file_id="2896684303"

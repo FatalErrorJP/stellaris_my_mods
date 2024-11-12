@@ -4,5 +4,5 @@ tags={
 	"Fixes"
 }
 name="国是選ぶときにツールチップが被って邪魔！"
-supported_version="v3.13.*"
+supported_version="v3.14.*"
 remote_file_id="3284071307"

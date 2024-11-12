@@ -5,5 +5,5 @@ tags={
 	"Fixes"
 }
 name="ぼくのかんがえたさいきょうのとっぷばー"
-supported_version="v3.13.*"
+supported_version="v3.14.*"
 remote_file_id="2941992661"

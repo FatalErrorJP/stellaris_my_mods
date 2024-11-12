@@ -4,5 +4,5 @@ tags={
 	"Utilities"
 }
 name="ゲーム設定を確認したい"
-supported_version="v3.13.*"
+supported_version="v3.14.*"
 remote_file_id="2919009341"

@@ -270,5 +270,13 @@ defined_text = {
 	value = trigger:num_cosmic_storm_spawn_cooldown_scale_setting
 }
 
-
-
+#ボイドワーム
+defined_text = {
+	name = GetVoidwormsScaling
+	value = trigger:voidworms_scaling
+}
+#カサロイド
+defined_text = {
+	name = GetCutholoidsScaling
+	value = trigger:cutholoids_scaling
+}

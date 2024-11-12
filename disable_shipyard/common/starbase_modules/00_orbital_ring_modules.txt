@@ -106,7 +106,7 @@ orbital_ring_shipyard = {
 	}
 
 	#####################################
-	# Mod修正箇所
+	# ここからMod修正箇所
 	#####################################
 	triggered_station_modifier = {
 		potential = {
@@ -131,6 +131,19 @@ orbital_ring_shipyard = {
 		}
 		starbase_shipyard_capacity_add = -1
 	}
+
+	on_finished = {
+		set_ship_construction_type = starbase_shipyard
+	}
+	on_destroyed = {
+		if = {
+			limit = { NOT = { has_starbase_module = orbital_ring_shipyard } }
+			set_ship_construction_type = none
+		}
+	}
+	#####################################
+	# ここまでMod修正箇所
+	#####################################
 
 	ai_weight = {
 		weight = 100

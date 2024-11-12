@@ -17,10 +17,8 @@
 		}
 	}
 	possible_secondary = {
-		OR = {
-			AND = { host_has_dlc = "The Machine Age" civics = { NOT = { value = civic_machine_servitor } } }
-			OR = { always = no text = SECONDARY_SPECIES_CLASS_INVALID }
-		}
+		always = no
+		text = SECONDARY_SPECIES_CLASS_INVALID
 	}
 
 	# プレイ可能な条件

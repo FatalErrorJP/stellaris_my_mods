@@ -31,6 +31,8 @@ disable_starbase_shipyard_btn = {
 			OR = {
 				has_starbase_module = shipyard
 				has_starbase_module = orbital_ring_shipyard
+				has_starbase_module = hatchery
+				has_starbase_module = beastport
 			}
 		}
 	}
@@ -39,6 +41,7 @@ disable_starbase_shipyard_btn = {
 		hidden_effect = {
 			starbase = {
 				set_variable = { which = shipyard_off value = 1 }
+				set_ship_construction_type = none
 			}
 		}
 	}
@@ -66,6 +69,8 @@ enable_starbase_shipyard_btn = {
 			OR = {
 				has_starbase_module = shipyard
 				has_starbase_module = orbital_ring_shipyard
+				has_starbase_module = hatchery
+				has_starbase_module = beastport
 			}
 		}
 	}
@@ -74,6 +79,37 @@ enable_starbase_shipyard_btn = {
 		hidden_effect = {
 			starbase = {
 				clear_variable = shipyard_off
+
+				###
+				# Ver3.14.1だと一度モジュールを消してから作り直さないと復旧できないので、やむを得ず応急処置的に対応
+				###
+				if = {
+					limit = { has_starbase_module = shipyard }
+					remove_starbase_module = { slot = 1 }
+					set_starbase_module = { slot = 1 module = shipyard }
+					set_ship_construction_type = starbase_shipyard
+				}
+				if = {
+					limit = { has_starbase_module = orbital_ring_shipyard }
+					remove_starbase_module = { slot = 1 }
+					set_starbase_module = { slot = 1 module = orbital_ring_shipyard }
+					set_ship_construction_type = starbase_shipyard
+				}
+				if = {
+					limit = { has_starbase_module = hatchery }
+					remove_starbase_module = { slot = 1 }
+					set_starbase_module = { slot = 1 module = hatchery }
+					set_ship_construction_type = starbase_hatchery
+				}
+				if = {
+					limit = { has_starbase_module = beastport }
+					remove_starbase_module = { slot = 1 }
+					set_starbase_module = { slot = 1 module = beastport }
+					set_ship_construction_type = starbase_beastport
+				}
+				###
+				# ここまで応急処置
+				###
 			}
 		}
 	}
@@ -96,7 +132,11 @@ disable_juggernaut_shipyard_btn = {
 		owner = { is_same_value = from }
 		starbase = {
 			not = { is_variable_set = shipyard_off }
-			has_starbase_flag = juggernaut
+			OR = {
+				has_starbase_flag = juggernaut
+				has_starbase_flag = MFE1
+				has_starbase_flag = MFE2
+			}
 		}
 		from = { is_scope_type = country }
 	}
@@ -106,6 +146,7 @@ disable_juggernaut_shipyard_btn = {
 		hidden_effect = {
 			starbase = {
 				set_variable = { which = shipyard_off value = 1 }
+				set_ship_construction_type = starbase_shipyard
 			}
 		}
 	}
@@ -121,7 +162,11 @@ enable_juggernaut_shipyard_btn = {
 		owner = { is_same_value = from }
 		starbase = {
 			is_variable_set = shipyard_off
-			has_starbase_flag = juggernaut
+			OR = {
+				has_starbase_flag = juggernaut
+				has_starbase_flag = MFE1
+				has_starbase_flag = MFE2
+			}
 		}
 		from = { is_scope_type = country }
 	}
@@ -131,6 +176,7 @@ enable_juggernaut_shipyard_btn = {
 		hidden_effect = {
 			starbase = {
 				clear_variable = shipyard_off
+				set_ship_construction_type = starbase_shipyard
 			}
 		}
 	}

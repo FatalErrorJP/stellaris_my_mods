@@ -18,6 +18,10 @@ juggernaut_shipyard = {
 		starbase_shipyard_capacity_add = -2
 	}
 
+	on_finished = {
+		set_ship_construction_type = starbase_shipyard
+	}
+
 	ai_weight = {
 		weight = 0
 	}
