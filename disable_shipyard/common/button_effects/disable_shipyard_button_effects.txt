@@ -34,9 +34,11 @@ disable_starbase_shipyard_btn = {
 		starbase = {
 			OR = {
 				has_starbase_module = shipyard
-				has_starbase_module = orbital_ring_shipyard
 				has_starbase_module = hatchery
 				has_starbase_module = beastport
+				has_starbase_module = orbital_ring_shipyard
+				has_starbase_module = orbital_ring_hatchery
+				has_starbase_module = orbital_ring_beastport
 			}
 		}
 	}
@@ -72,9 +74,11 @@ enable_starbase_shipyard_btn = {
 		starbase = {
 			OR = {
 				has_starbase_module = shipyard
-				has_starbase_module = orbital_ring_shipyard
 				has_starbase_module = hatchery
 				has_starbase_module = beastport
+				has_starbase_module = orbital_ring_shipyard
+				has_starbase_module = orbital_ring_hatchery
+				has_starbase_module = orbital_ring_beastport
 			}
 		}
 	}
@@ -94,12 +98,6 @@ enable_starbase_shipyard_btn = {
 					set_ship_construction_type = starbase_shipyard
 				}
 				if = {
-					limit = { has_starbase_module = orbital_ring_shipyard }
-					remove_starbase_module = { slot = 1 }
-					set_starbase_module = { slot = 1 module = orbital_ring_shipyard }
-					set_ship_construction_type = starbase_shipyard
-				}
-				if = {
 					limit = { has_starbase_module = hatchery }
 					remove_starbase_module = { slot = 1 }
 					set_starbase_module = { slot = 1 module = hatchery }
@@ -109,6 +107,24 @@ enable_starbase_shipyard_btn = {
 					limit = { has_starbase_module = beastport }
 					remove_starbase_module = { slot = 1 }
 					set_starbase_module = { slot = 1 module = beastport }
+					set_ship_construction_type = starbase_beastport
+				}
+				if = {
+					limit = { has_starbase_module = orbital_ring_shipyard }
+					remove_starbase_module = { slot = 1 }
+					set_starbase_module = { slot = 1 module = orbital_ring_shipyard }
+					set_ship_construction_type = starbase_shipyard
+				}
+				if = {
+					limit = { has_starbase_module = orbital_ring_hatchery }
+					remove_starbase_module = { slot = 1 }
+					set_starbase_module = { slot = 1 module = orbital_ring_hatchery }
+					set_ship_construction_type = starbase_hatchery
+				}
+				if = {
+					limit = { has_starbase_module = orbital_ring_beastport }
+					remove_starbase_module = { slot = 1 }
+					set_starbase_module = { slot = 1 module = orbital_ring_beastport }
 					set_ship_construction_type = starbase_beastport
 				}
 				###
