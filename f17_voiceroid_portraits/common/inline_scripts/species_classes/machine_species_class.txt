@@ -12,8 +12,26 @@
 	# バニラの機械種族の条件に準拠
 	possible = {
 		OR = {
-			AND = { host_has_dlc = "The Machine Age" authority = { NOT = { value = auth_hive_mind } } }
-			authority = { OR = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_USE_MACHINE_INTELLIGENCE } }
+			AND = {
+				host_has_dlc = "The Machine Age"
+				authority = {
+					NOT = {
+						value = auth_hive_mind
+					}
+				}
+			}
+			authority = {
+				NOR = {
+					value = auth_democratic
+					value = auth_oligarchic
+					value = auth_dictatorial
+					value = auth_imperial
+					value = auth_hive_mind
+					value = auth_ancient_machine_intelligence
+					value = auth_corporate
+					text = SPECIES_CLASS_MUST_USE_MACHINE_INTELLIGENCE
+				}
+			}
 		}
 	}
 	possible_secondary = {

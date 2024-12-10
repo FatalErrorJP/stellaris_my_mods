@@ -488,6 +488,44 @@ orbital_ring_hatchery = {
 		}
 	}
 
+	triggered_station_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				exists = owner.overlord
+				has_holding = {
+					holding = holding_orbital_assembly_complex
+					owner = owner.overlord
+				}
+			}
+		}
+		custom_tooltip = sm_hatchery_capacity_add_tt
+		show_only_custom_tooltip = yes
+		starbase_shipyard_capacity_add = 1
+	}
+
+	#####################################
+	# ここからMod修正箇所
+	#####################################
+	triggered_station_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				exists = owner.overlord
+				has_holding = {
+					holding = holding_orbital_assembly_complex
+					owner = owner.overlord
+				}
+			}
+			is_variable_set = shipyard_off
+			owner = { is_ai = no }
+		}
+		starbase_shipyard_capacity_add = -1
+	}
+	#####################################
+	# ここまでMod修正箇所
+	#####################################
+
 	ai_weight = {
 		inline_script = {
 			script = starbase_modules/ship_construction_ai_weight
@@ -598,6 +636,44 @@ orbital_ring_beastport = {
 		}
 	}
 
+	triggered_station_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				exists = owner.overlord
+				has_holding = {
+					holding = holding_orbital_assembly_complex
+					owner = owner.overlord
+				}
+			}
+		}
+		custom_tooltip = sm_beastport_capacity_add_tt
+		show_only_custom_tooltip = yes
+		starbase_shipyard_capacity_add = 1
+	}
+
+	#####################################
+	# ここからMod修正箇所
+	#####################################
+	triggered_station_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				exists = owner.overlord
+				has_holding = {
+					holding = holding_orbital_assembly_complex
+					owner = owner.overlord
+				}
+			}
+			is_variable_set = shipyard_off
+			owner = { is_ai = no }
+		}
+		starbase_shipyard_capacity_add = -1
+	}
+	#####################################
+	# ここまでMod修正箇所
+	#####################################
+
 	ai_weight = {
 		inline_script = {
 			script = starbase_modules/ship_construction_ai_weight
@@ -657,4 +733,3 @@ orbital_ring_vivarium_tank = {
 
 	show_in_tech = "tech_gravity_wells"
 }
-

@@ -1907,9 +1907,6 @@ decentralized_research = {
 			unity = 10
 			multiplier = value:edict_size_effect
 		}
-		produces = {
-			minor_artifacts = 5
-		}
 	}
 
 	potential = {
@@ -2054,4 +2051,3 @@ auto_hunker_down = {
 		"tech_advanced_industrial_storm_protection"
 	}
 }
-
