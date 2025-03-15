@@ -1,0 +1,9 @@
+version="1.0.0"
+tags={
+	"Fixes"
+	"Events"
+	"Military"
+}
+name="結晶生命体のユニーク変異武装を使いたい"
+supported_version="v3.14.15926"
+remote_file_id="3387283388"
