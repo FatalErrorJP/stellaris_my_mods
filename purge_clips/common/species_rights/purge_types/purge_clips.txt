@@ -1,0 +1,25 @@
+# from = country
+# this = species
+purge_clips = {
+	pop_escape_chance = 0.2
+	pop_decline_rate = 50 # 1 pop per 2 months, overrides BASE_POP_DECLINE, will only work on purge types
+
+	pop_modifier = {
+		pop_happiness = -10
+	}
+
+	potential = {
+		exists = from
+		from = {
+			has_valid_civic = civic_machine_obsessional_directive
+			OR = {
+				has_ascension_perk = ap_become_the_crisis
+				has_valid_civic = civic_machine_terminator
+				has_country_flag = paperclip_shamed
+			}
+		}
+	}
+	allow = {
+		has_citizenship_type = { country = from type = citizenship_purge_machine } # Mod修正箇所
+	}
+}
