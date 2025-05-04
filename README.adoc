@@ -96,4 +96,7 @@ https://steamcommunity.com/profiles/76561199152309881/myworkshopfiles/?p=1&numpe
 | {counter:index} | 嵐の中を通過しろ！                                                   | fleet_pathfinding_cosmic_storm_weight
 | {counter:index} | でかい国はセクターもでかい！                                         | sector_max_jumps_add
 | {counter:index} | 狂乱のボイドワームの完了イベントを修正するやつ                       | voidworm
+| {counter:index} | 結晶生命体のユニーク変異武装を使いたい                               | unique_mutation_crystalline
+| {counter:index} | 独裁制配列かつ統治者が科学者な時もレア研究は出て欲しい               | auth_cyber_dictatorial_collectivist_tech
+| {counter:index} | 国是「執着的指令」を持ったAI国家が自壊するのを防ぐやつ               | purge_clips
 |===
