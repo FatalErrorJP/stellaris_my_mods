@@ -8,7 +8,6 @@ message_type = {
 	ping = "ping_notification_yellow"
 
 	default_toast = no
-	auto_opens = others
 	category = other
 }
 
@@ -22,7 +21,6 @@ message_type = {
 	ping = "ping_notification_yellow"
 
 	default_toast = no
-	auto_opens = others
 	category = other
 }
 
@@ -37,7 +35,6 @@ message_type = {
 	ping = "ping_notification_yellow"
 
 	default_toast = no
-	auto_opens = others
 	category = other
 }
 
@@ -51,7 +48,6 @@ message_type = {
 	ping = "ping_notification_yellow"
 
 	default_toast = no
-	auto_opens = others
 	category = other
 }
 
@@ -65,7 +61,6 @@ message_type = {
 	ping = "ping_notification_yellow"
 
 	default_toast = no
-	auto_opens = others
 	category = other
 }
 
@@ -79,7 +74,6 @@ message_type = {
 	ping = "ping_notification_yellow"
 
 	default_toast = no
-	auto_opens = others
 	category = other
 }
 
@@ -93,7 +87,6 @@ message_type = {
 	ping = "ping_notification_yellow"
 
 	default_toast = no
-	auto_opens = others
 	category = other
 }
 
@@ -107,6 +100,5 @@ message_type = {
 	ping = "ping_notification_yellow"
 
 	default_toast = no
-	auto_opens = others
 	category = other
 }

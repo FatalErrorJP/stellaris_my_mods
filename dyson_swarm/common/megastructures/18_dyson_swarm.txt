@@ -13,8 +13,27 @@ dyson_swarm_1 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 500
 			unity = 1000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 500
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 500
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 500
+			mult = @halved_alloy_to_food_cost_ratio
 		}
 
 		upkeep = {
@@ -201,8 +220,6 @@ dyson_swarm_1 = {
 						count > 0
 					}
 				}
-				# 交易価値は補正がのらないので対象外とする
-				check_modifier_value = { modifier = trade_value_add value <= 0 }
 				#######################################################################
 				# ここまでMod追加コード
 				#######################################################################
@@ -230,6 +247,15 @@ dyson_swarm_1 = {
 				exists = owner
 				NOT = {
 					owner = { is_same_value = from }
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			from = {
+				check_variable = {
+					which = dyson_swarm_counter
+					value >= value:dyson_swarm_limit
 				}
 			}
 		}
@@ -288,8 +314,27 @@ dyson_swarm_2 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 1000
 			unity = 2500
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 1000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 1000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 1000
+			mult = @halved_alloy_to_food_cost_ratio
 		}
 
 		upkeep = {
@@ -406,7 +451,7 @@ dyson_swarm_3 = {
 					}
 				}
 			}
-			from = {
+			owner = {
 				has_policy_flag = interference_aggressive
 			}
 		}
@@ -475,14 +520,55 @@ dyson_swarm_3 = {
 				}
 			}
 		}
+		##Deal with Dyson Sphere flag shenanigans
+		if = {
+			limit = {
+				solar_system = {
+					has_star_flag = dyson_sphere_construction
+				}
+			}
+			from = {
+				if = {
+					limit = {
+						has_country_flag = built_dyson_sphere_contingency_swarm
+					}
+					remove_country_flag = built_dyson_sphere_contingency_swarm
+				}
+				if = {
+					limit = {
+						has_country_flag = built_dyson_sphere_swarm
+					}
+					remove_country_flag = built_dyson_sphere_swarm
+				}
+			}
+		}
 	}
 
 	build_time = 1080 # 3 years
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 1500
 			unity = 5000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 1500
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 1500
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 1500
+			mult = @halved_alloy_to_food_cost_ratio
 		}
 
 		upkeep = {

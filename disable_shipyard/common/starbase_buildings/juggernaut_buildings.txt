@@ -7,7 +7,7 @@ juggernaut_shipyard = {
 	}
 
 	station_modifier = {
-		starbase_shipyard_capacity_add = 2
+		starbase_shipyard_capacity_add = 6
 	}
 
 	triggered_station_modifier = {
@@ -15,7 +15,7 @@ juggernaut_shipyard = {
 			is_variable_set = shipyard_off
 			owner = { is_ai = no }
 		}
-		starbase_shipyard_capacity_add = -2
+		starbase_shipyard_capacity_add = -6
 	}
 
 	on_finished = {

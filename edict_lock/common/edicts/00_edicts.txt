@@ -108,7 +108,7 @@ nutritional_plenitude = {
 	}
 
 	modifier = {
-		pop_growth_speed = 0.10
+		logistic_growth_mult = 0.1
 		biological_pop_happiness = 0.05
 		lithoid_pop_happiness = 0.05
 		planet_pops_organics_food_upkeep_mult = 0.25
@@ -150,7 +150,7 @@ nutritional_plenitude_hive = {
 	}
 
 	modifier = {
-		pop_growth_speed = 0.10
+		logistic_growth_mult = 0.1
 		planet_pops_organics_food_upkeep_mult = 0.25
 		planet_pops_organics_minerals_upkeep_mult = 0.25
 	}
@@ -190,7 +190,7 @@ expanded_breeding_program_servitor = {
 	}
 
 	modifier = {
-		pop_growth_speed = 0.20
+		logistic_growth_mult = 0.2
 		biological_pop_happiness = 0.05
 		lithoid_pop_happiness = 0.05
 		planet_pops_organics_food_upkeep_mult = 0.25
@@ -655,9 +655,8 @@ synaptic_reinforcement = {
 		}
 	}
 
-	# Synapse Nodes provide an extra Maintenance Drone job
 	modifier = {
-		custom_tooltip = edict_synaptic_reinforcement_tooltip
+		planet_maintenance_drones_trade_produces_add = 1
 	}
 
 	potential = {
@@ -690,9 +689,8 @@ industrial_maintenance = {
 		}
 	}
 
-	# Industrial Districts also provide an extra Maintenance Drone job
 	modifier = {
-		custom_tooltip = edict_industrial_maintenance_tooltip
+		planet_maintenance_drones_trade_produces_add = 1
 	}
 
 	potential = {
@@ -701,7 +699,7 @@ industrial_maintenance = {
 	}
 
 	ai_weight = {
-		weight = 0
+		weight = @EdictLowPrio
 	}
 	edict_lock_in_months = 12
 }
@@ -730,6 +728,47 @@ drone_overdrive = {
 	potential = {
 		is_gestalt = yes
 		has_active_tradition = tr_domination_drone_network
+		is_wilderness_empire = no
+	}
+
+	ai_weight = {
+		weight = @EdictHighPrio
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_authoritarian
+		}
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_authoritarian
+		}
+	}
+	edict_lock_in_months = 12
+}
+
+drone_overdrive_wilderness = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		planet_jobs_simple_drone_produces_mult = 0.10
+		pop_amenities_usage_no_happiness_mult = 0.10
+	}
+
+	potential = {
+		has_active_tradition = tr_domination_drone_network
+		is_wilderness_empire = yes
 	}
 
 	ai_weight = {
@@ -765,6 +804,55 @@ capacity_subsidies = {
 	modifier = {
 		planet_technician_produces_mult = 0.50
 		planet_technician_energy_upkeep_add = 0.5
+	}
+
+	potential = {
+		is_wilderness_empire = no
+	}
+	show_tech_unlock_if = {
+		is_wilderness_empire = no
+	}
+
+	prerequisites = {
+		"tech_power_hub_1"
+	}
+
+	ai_weight = {
+		weight = @EdictHighPrio
+		modifier = {
+			should_ai_focus_on_trade = yes
+			factor = 0
+		}
+	}
+	edict_lock_in_months = 12
+}
+
+capacity_subsidies_wilderness = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		planet_technician_produces_mult = 0.50
+		planet_technician_energy_upkeep_add = 0.5
+	}
+
+	potential = {
+		is_wilderness_empire = yes
+	}
+	show_tech_unlock_if = {
+		is_wilderness_empire = yes
 	}
 
 	prerequisites = {
@@ -803,6 +891,54 @@ mining_subsidies = {
 		planet_sr_miners_energy_upkeep_add = 0.5 #Note: _add modifiers don't apply to children, but _mult ones do, so this is necessary here
 	}
 
+	potential = {
+		is_wilderness_empire = no
+	}
+
+	show_tech_unlock_if = {
+		is_wilderness_empire = no
+	}
+
+	prerequisites = {
+		"tech_mineral_purification_1"
+	}
+
+	ai_weight = {
+		weight = @EdictHighPrio
+	}
+	edict_lock_in_months = 12
+}
+
+mining_subsidies_wilderness = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		planet_miners_produces_mult = 0.50 # Note: Also affects organic special resource miners!
+		planet_miners_energy_upkeep_add = 0.5
+		planet_sr_miners_energy_upkeep_add = 0.5 #Note: _add modifiers don't apply to children, but _mult ones do, so this is necessary here
+	}
+
+	potential = {
+		is_wilderness_empire = yes
+	}
+
+	show_tech_unlock_if = {
+		is_wilderness_empire = yes
+	}
+
 	prerequisites = {
 		"tech_mineral_purification_1"
 	}
@@ -832,6 +968,57 @@ farming_subsidies = {
 	modifier = {
 		planet_farmers_produces_mult = 0.50
 		planet_farmers_energy_upkeep_add = 0.5
+	}
+
+	potential = {
+		is_wilderness_empire = no
+	}
+
+	show_tech_unlock_if = {
+		is_wilderness_empire = no
+	}
+
+	prerequisites = {
+		"tech_food_processing_1"
+	}
+
+	ai_weight = {
+		weight = @EdictHighPrio
+		modifier = {
+			country_uses_food = no
+			factor = 0
+		}
+	}
+	edict_lock_in_months = 12
+}
+
+farming_subsidies_wilderness = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		planet_farmers_produces_mult = 0.50
+		planet_farmers_energy_upkeep_add = 0.5
+	}
+
+	potential = {
+		is_wilderness_empire = yes
+	}
+
+	show_tech_unlock_if = {
+		is_wilderness_empire = yes
 	}
 
 	prerequisites = {
@@ -908,6 +1095,53 @@ forge_subsidies = {
 		planet_metallurgists_energy_upkeep_add = 1
 	}
 
+	potential = {
+		is_wilderness_empire = no
+	}
+
+	show_tech_unlock_if = {
+		is_wilderness_empire = no
+	}
+
+	prerequisites = {
+		tech_global_production_strategy
+	}
+
+	ai_weight = {
+		weight = @EdictLowPrio
+	}
+	edict_lock_in_months = 12
+}
+
+forge_subsidies_wilderness = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		planet_metallurgists_produces_mult = 0.10
+		planet_metallurgists_energy_upkeep_add = 1
+	}
+
+	potential = {
+		is_wilderness_empire = yes
+	}
+
+	show_tech_unlock_if = {
+		is_wilderness_empire = yes
+	}
+
 	prerequisites = {
 		tech_global_production_strategy
 	}
@@ -936,11 +1170,48 @@ research_subsidies = {
 
 	modifier = {
 		planet_researchers_produces_mult = 0.10
-		planet_researchers_energy_upkeep_add = 1
+		planet_physicists_energy_upkeep_add = 1
+		planet_biologists_energy_upkeep_add = 1
+		planet_engineers_energy_upkeep_add = 1
 	}
 
 	potential = {
 		has_tradition = tr_discovery_databank_uplinks
+		is_wilderness_empire = no
+	}
+
+	ai_weight = {
+		weight = @EdictMedPrio
+	}
+	edict_lock_in_months = 12
+}
+
+research_subsidies_wilderness = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		planet_researchers_produces_mult = 0.10
+		planet_physicists_energy_upkeep_add = 1
+		planet_biologists_energy_upkeep_add = 1
+		planet_engineers_energy_upkeep_add = 1
+	}
+
+	potential = {
+		has_tradition = tr_discovery_databank_uplinks
+		is_wilderness_empire = yes
 	}
 
 	ai_weight = {
@@ -966,7 +1237,7 @@ veneration_of_saints = {
 	}
 
 	modifier = {
-		planet_priests_produces_mult = 0.20
+		planet_bureaucrats_produces_mult = 0.20
 		pop_ethic_spiritualist_attraction_mult = 0.25
 	}
 
@@ -1125,8 +1396,7 @@ land_of_opportunity = {
 	}
 
 	modifier = {
-		planet_immigration_pull_mult = 1
-		pop_growth_from_immigration = 0.25
+		planet_resettlement_unemployed_destination_mult = 0.5
 	}
 
 	potential = {
@@ -2041,7 +2311,7 @@ storm_repel_field = {
 	prerequisites = {
 		"tech_storm_manipulation"
 	}
-	
+
 	ai_weight = {
 		weight = @EdictLowPrio
 		modifier = {

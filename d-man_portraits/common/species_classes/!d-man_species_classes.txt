@@ -27,6 +27,9 @@ d-man-biologicals = {
 	# 機械知性は選択不可
 	possible = { authority = { NOT = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE } } }
 
+	# 艦船セットを利用しない
+	generate_shipset = no
+
 	# グラフィックカルチャー
 	graphical_culture = humanoid_01
 }
@@ -128,6 +131,9 @@ d-man-machines = {
 	leader_age_min = 5
 	leader_age_max = 10
 
+	# 艦船セットを利用しない
+	generate_shipset = no
+
 	# グラフィックカルチャー
 	graphical_culture = synthetics_01
 }
@@ -154,6 +160,9 @@ d-man-lithoids = {
 
 	# デフォルト種族特性「岩石」
 	trait = "trait_lithoid"
+
+	# 艦船セットを利用しない
+	generate_shipset = no
 
 	# グラフィックカルチャー
 	graphical_culture = lithoid_01

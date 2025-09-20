@@ -27,50 +27,60 @@ VOICELITH = {
 VOR01 = {
 	playable = { always = yes }
 	randomized = no
+	generate_shipset = no
 	graphical_culture = humanoid_01
 }
 VOR02 = {
 	playable = { always = yes }
 	randomized = no
+	generate_shipset = no
 	graphical_culture = humanoid_01
 }
 VOR03 = {
 	playable = { always = yes }
 	randomized = no
+	generate_shipset = no
 	graphical_culture = humanoid_01
 }
 VOR04 = {
 	playable = { always = yes }
 	randomized = no
+	generate_shipset = no
 	graphical_culture = humanoid_01
 }
 VOR05 = {
 	playable = { always = yes }
 	randomized = no
+	generate_shipset = no
 	graphical_culture = humanoid_01
 }
 VOR06 = {
 	playable = { always = yes }
 	randomized = no
+	generate_shipset = no
 	graphical_culture = humanoid_01
 }
 VOR07 = {
 	playable = { always = yes }
 	randomized = no
+	generate_shipset = no
 	graphical_culture = humanoid_01
 }
 VOR08 = {
 	playable = { always = yes }
 	randomized = no
+	generate_shipset = no
 	graphical_culture = humanoid_01
 }
 VOR09 = {
 	playable = { always = yes }
 	randomized = no
+	generate_shipset = no
 	graphical_culture = humanoid_01
 }
 VOR10 = {
 	playable = { always = yes }
 	randomized = no
+	generate_shipset = no
 	graphical_culture = humanoid_01
 }

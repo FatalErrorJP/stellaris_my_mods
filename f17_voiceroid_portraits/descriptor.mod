@@ -11,5 +11,5 @@ tags={
 }
 name="[Fix Patch]F17 VOICEROID Portraits"
 picture="thumbnail.png"
-supported_version="v3.14.*"
+supported_version="v4.0.*"
 remote_file_id="2759645085"

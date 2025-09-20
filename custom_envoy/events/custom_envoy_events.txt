@@ -36,9 +36,9 @@ country_event = {
 		# 外交使節の数の方が多い場合は諜報要員を、そうでない場合は外交使節のスキルを付与する
 		if = {
 			limit = { check_variable = { which = custom_envoy_diplomat_number value > custom_envoy_agent_number } }
-			from = { add_trait_no_notify = leader_trait_agent }
+			from = { add_trait = { trait = leader_trait_agent show_message = no } }
 		} else = {
-			from = { add_trait_no_notify = leader_trait_diplomat }
+			from = { add_trait = { trait = leader_trait_diplomat show_message = no } }
 		}
 
 		clear_variable = custom_envoy_diplomat_number

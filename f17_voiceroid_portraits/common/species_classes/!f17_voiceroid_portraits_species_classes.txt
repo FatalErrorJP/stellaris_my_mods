@@ -97,40 +97,48 @@ YUKALITHOID = {
 akane = {
 	playable = { always = yes }
 	randomized = no
+	generate_shipset = no
 	graphical_culture = humanoid_01
 }
 aoi = {
 	playable = { always = yes }
 	randomized = no
+	generate_shipset = no
 	graphical_culture = humanoid_01
 }
 hime = {
 	playable = { always = yes }
 	randomized = no
+	generate_shipset = no
 	graphical_culture = humanoid_01
 }
 mikoto = {
 	playable = { always = yes }
 	randomized = no
+	generate_shipset = no
 	graphical_culture = humanoid_01
 }
 poron = {
 	playable = { always = yes }
 	randomized = no
+	generate_shipset = no
 	graphical_culture = humanoid_01
 }
 itako = {
 	playable = { always = yes }
 	randomized = no
+	generate_shipset = no
 	graphical_culture = humanoid_01
 }
 kiritan = {
 	playable = { always = yes }
 	randomized = no
+	generate_shipset = no
 	graphical_culture = humanoid_01
 }
 zunko = {
 	playable = { always = yes }
 	randomized = no
+	generate_shipset = no
 	graphical_culture = humanoid_01
 }

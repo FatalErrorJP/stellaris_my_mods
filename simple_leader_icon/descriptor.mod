@@ -3,5 +3,5 @@ tags={
 	"Graphics"
 }
 name="リーダー特性のアイコンはシンプルな方が好き"
-supported_version="v3.14.*"
+supported_version="v4.0.*"
 remote_file_id="2978289506"

@@ -208,18 +208,6 @@ defined_text = {
 	default = OFF
 }
 
-# 異種族間交配
-defined_text = {
-	name = GetXenoCompatibilityEnabled
-	text = {
-		trigger = {
-			xeno_compatibility_enabled = yes
-		}
-		localization_key = ON
-	}
-	default = OFF
-}
-
 # 鉄人モード
 defined_text = {
 	name = GetIsIronman

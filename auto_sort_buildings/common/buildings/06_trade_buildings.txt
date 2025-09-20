@@ -3,19 +3,41 @@
 #############
 building_commercial_zone = {
 	base_buildtime = @b1_time
-
 	exempt_from_ai_planet_specialization = no
 	position_priority = 700
 	category = trade
 
+	building_sets = {
+		urban
+		trade
+	}
+
 	potential = {
 		exists = owner
-		owner = { is_regular_empire = yes }
-		NOR = { 
-			has_modifier = slave_colony 
-			has_modifier = penal_colony	
+		owner = {
+			is_regular_empire = yes
+		}
+		NOR = {
+			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 		NOT = { has_building = building_low_tech_capital }
+		OR = {
+			has_planet_flag = ignore_ai_building_limitations
+			owner = {
+				is_ai = no					
+			}
+			
+			# AI is allowed to build one of these unless they're a megacorp or this is a trade planet
+			owner = {
+				is_megacorp = yes	
+			}
+			has_any_trade_zone = yes
+			NOR = {
+				has_building = building_commercial_zone
+				has_building = building_commercial_megaplex
+			}
+		}	
 	}
 
 	destroy_trigger = {
@@ -23,8 +45,15 @@ building_commercial_zone = {
 		OR = {
 			owner = { is_regular_empire = no }
 			has_modifier = slave_colony
-			has_modifier = penal_colony	
+			has_modifier = penal_colony
 		}
+	}
+
+	allow = {
+	}
+
+	convert_to = {
+		building_maintenance_depot
 	}
 
 	resources = {
@@ -37,29 +66,9 @@ building_commercial_zone = {
 		}
 	}
 
-	planet_modifier = {
-		job_clerk_add = 2
-		job_trader_add = 1
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_active_tradition = tr_mercantile_commercial_enterprise
-			}
-		}
-		modifier = {
-			job_trader_add = 1
-		}
-	}
-
-	triggered_desc = {
-		text = job_clerk_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_trader_effect_desc
+	inline_script = {
+		script = jobs/trader_add
+		AMOUNT = @building_static_jobs
 	}
 
 	prerequisites = {
@@ -70,26 +79,27 @@ building_commercial_zone = {
 		is_regular_empire = yes
 	}
 
-	upgrades = {
-		"building_commercial_megaplex"
-	}
 }
 
 building_commercial_megaplex = {
 	base_buildtime = @b2_time
-	can_build = no
-
+	planet_limit = 1
 	position_priority = 701
 	category = trade
 
+	building_sets = {
+		trade
+	}
+
 	potential = {
 		exists = owner
-		owner = { is_regular_empire = yes }
-		NOR = { 
-			has_modifier = slave_colony 
-			has_modifier = penal_colony	
+		owner = {
+			is_regular_empire = yes
 		}
-		has_building = building_commercial_zone
+		NOR = {
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
 	}
 
 	destroy_trigger = {
@@ -97,8 +107,16 @@ building_commercial_megaplex = {
 		OR = {
 			owner = { is_regular_empire = no }
 			has_modifier = slave_colony
-			has_modifier = penal_colony	
+			has_modifier = penal_colony
 		}
+	}
+
+	allow = {
+	}
+
+	inline_script = {
+		script = jobs/trader_add
+		AMOUNT = @building_static_jobs
 	}
 
 	resources = {
@@ -114,28 +132,7 @@ building_commercial_megaplex = {
 	}
 
 	planet_modifier = {
-		job_clerk_add = 4
-		job_trader_add = 2
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_active_tradition = tr_mercantile_commercial_enterprise
-			}
-		}
-		modifier = {
-			job_trader_add = 2
-		}
-	}
-
-	triggered_desc = {
-		text = job_clerk_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_trader_effect_desc
+		planet_traders_upkeep_mult = -0.20
 	}
 
 	prerequisites = {
@@ -150,10 +147,10 @@ building_commercial_megaplex = {
 		energy = 6
 		trigger = {
 			OR = {
-				num_unemployed >= 10
+				num_unemployed >= 1000
 				num_assigned_jobs = {
-				job = servant
-					value >= 10
+					job = servant
+					value >= 1000
 				}
 			}
 		}
@@ -162,35 +159,23 @@ building_commercial_megaplex = {
 
 building_galactic_stock_exchange = {
 	base_buildtime = @b2_time
-	base_cap_amount = 1
-
+	planet_limit = 1
 	position_priority = 702
 	category = trade
 
+	building_sets = {
+		trade
+	}
+
 	potential = {
-		NOR = { 
-			has_modifier = resort_colony 
-			has_modifier = slave_colony 
-			has_modifier = penal_colony	
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			has_modifier = penal_colony
 		}
 	}
 
 	allow = {
-		has_major_upgraded_capital = yes
-		if = {
-			limit = {
-				exists = orbital_defence
-			}
-			orbital_defence = {
-				exists = starbase
-				starbase = {
-					NOR = {
-						has_starbase_building = ring_galactic_stock_exchange
-						is_starbase_building_building = ring_galactic_stock_exchange
-					}
-				}
-			}
-		}
 	}
 
 	destroy_trigger = {
@@ -199,14 +184,22 @@ building_galactic_stock_exchange = {
 			owner = { is_regular_empire = no }
 			has_modifier = slave_colony
 			has_modifier = resort_colony
-			has_modifier = penal_colony	
+			has_modifier = penal_colony
 		}
 	}
 
-
 	planet_modifier = {
-		job_merchant_add = 1
-		trade_value_mult = 0.20
+		pop_trader_bonus_workforce_mult = 0.15
+	}
+
+
+	country_modifier = {
+		country_trade_fee = -0.05
+	}
+
+	inline_script = {
+		script = jobs/trader_add
+		AMOUNT = @building_static_jobs
 	}
 
 	resources = {
@@ -225,25 +218,63 @@ building_galactic_stock_exchange = {
 		"tech_galactic_markets"
 	}
 
-	triggered_desc = {
-		text = job_merchant_effect_desc
+	ai_resource_production = {
+		trade = 10
+	}
+}
+
+building_maintenance_depot = {
+	base_buildtime = 240
+
+	position_priority = 703
+	category = trade
+
+	building_sets = {
+		urban
+		trade
 	}
 
-	ai_resource_production = {
-		energy = 5
-		trigger = {
-			solar_system = {
-				has_system_trade_value >= 50
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+		owner = { is_wilderness_empire = no }
+		
+		OR = {
+			has_planet_flag = ignore_ai_building_limitations
+			owner = {
+				is_ai = no					
 			}
+			
+			# AI is allowed to build one of these unless this is a trade planet
+			has_any_trade_zone = yes
+			NOT = {	has_building = building_maintenance_depot }
+		}	
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_gestalt = no }
+			owner = { is_wilderness_empire = yes }
 		}
 	}
 
-	ai_resource_production = {
-		energy = 3
-		trigger = {
-			solar_system = {
-				has_system_trade_value >= 80
-			}
+	convert_to = {
+		building_commercial_zone
+	}
+
+	inline_script = {
+		script = jobs/trader_add
+		AMOUNT = @building_static_jobs
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = 2
 		}
 	}
 }

@@ -94,5 +94,8 @@
 	leader_age_min = 5
 	leader_age_max = 10
 
+	# 艦船セットを利用しない
+	generate_shipset = no
+
 	# グラフィックカルチャー
 	graphical_culture = synthetics_01

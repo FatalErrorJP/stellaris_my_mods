@@ -3,5 +3,5 @@ tags={
 	"Utilities"
 }
 name="(評議会の方針の)進捗どうですか？"
-supported_version="v3.14.*"
+supported_version="v4.0.*"
 remote_file_id="3035999470"

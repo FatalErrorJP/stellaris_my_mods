@@ -4,5 +4,5 @@ tags={
 	"Military"
 }
 name="艦隊番号を振り直せ"
-supported_version="v3.14.*"
+supported_version="v4.0.*"
 remote_file_id="2920402460"

@@ -3,5 +3,5 @@ tags={
 	"Balance"
 }
 name="貢ぎ物を捧げた国を思い通りに操れちゃうのはやっぱりおかしいと思うんだ"
-supported_version="v3.14.*"
+supported_version="v4.0.*"
 remote_file_id="3031696031"

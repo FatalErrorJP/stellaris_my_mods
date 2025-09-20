@@ -8,5 +8,5 @@ tags={
 	"Fixes"
 }
 name="[互換パッチ]SpeedDial&帝国マップを見やすくしたい"
-supported_version="v3.14.*"
+supported_version="v4.0.*"
 remote_file_id="2813611573"

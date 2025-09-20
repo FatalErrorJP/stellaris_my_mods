@@ -4,10 +4,16 @@
 
 xeno_geology_holomuseum = {
 	base_buildtime = @b1_time
-	base_cap_amount = 1
 	empire_limit = 1
 	position_priority = 2200
-	category = unity
+	category = amenity
+
+	building_sets = {
+		government
+		urban
+		research
+		resort
+	}
 
 	potential = {
 		owner = {
@@ -20,15 +26,39 @@ xeno_geology_holomuseum = {
 		cost = {
 			minerals = @b1_minerals
 		}
+		cost = {
+			trigger = {
+				owner = { is_wilderness_empire = yes }
+			}
+			biomass = @b2_biomass
+		}
 		upkeep = {
 			energy = @b1_upkeep
 		}
+	}
+
+	inline_script = {
+		script = buildings/on_all_wilderness_buildings_districts
 	}
 
 	country_modifier = {
 		xeno_geology_specimens_produces_mult = @holomuseum_specimen_produces_mult
 	}
 
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_archaeoengineers
+			}
+		}
+		xeno_geology_specimens_produces_mult = @holomuseum_specimen_produces_mult
+	}
+
+	inline_script = {
+		script = jobs/entertainers_add
+		AMOUNT = @building_static_jobs
+	}
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -36,20 +66,21 @@ xeno_geology_holomuseum = {
 				is_regular_empire = yes
 			}
 		}
-		modifier = {
-			job_geologist_add = 2
-		}
+		planet_entertainers_unity_produces_add = 1
+		planet_entertainers_engineering_research_produces_add = 1
+		planet_entertainers_consumer_goods_upkeep_add = 1
 	}
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = {
-				is_gestalt = yes
+				is_regular_empire = yes
+				has_ascension_perk = ap_archaeoengineers
 			}
 		}
-		modifier = {
-			job_drone_geologist_add = 2
-		}
+		job_entertainer_add = @building_static_jobs
+		planet_entertainers_unity_produces_add = 1
+		planet_entertainers_engineering_research_produces_add = 1
 	}
 	triggered_desc = {
 		trigger = {
@@ -58,7 +89,7 @@ xeno_geology_holomuseum = {
 				is_regular_empire = yes
 			}
 		}
-		text = job_geologist_effect_desc
+		text = entertainers_are_curators_tt
 	}
 	triggered_desc = {
 		trigger = {
@@ -67,16 +98,46 @@ xeno_geology_holomuseum = {
 				is_gestalt = yes
 			}
 		}
-		text = job_drone_geologist_effect_desc
+		text = evaluators_are_curator_drones_tt
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		job_evaluator_add = @building_static_jobs_high
+		planet_evaluators_unity_produces_add = 1
+		planet_evaluators_engineering_research_produces_add = 1
+		planet_evaluators_minerals_upkeep_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				has_ascension_perk = ap_archaeoengineers
+			}
+		}
+		job_evaluator_add = @building_static_jobs_high
+		planet_evaluators_unity_produces_add = 1
+		planet_evaluators_engineering_research_produces_add = 1
 	}
 }
 
 aesthetic_wonders_holomuseum = {
 	base_buildtime = @b1_time
-	base_cap_amount = 1
 	empire_limit = 1
 	position_priority = 2201
-	category = unity
+	category = amenity
+
+	building_sets = {
+		government
+		urban
+		research
+		resort
+	}
 
 	potential = {
 		owner = {
@@ -89,15 +150,39 @@ aesthetic_wonders_holomuseum = {
 		cost = {
 			minerals = @b1_minerals
 		}
+		cost = {
+			trigger = {
+				owner = { is_wilderness_empire = yes }
+			}
+			biomass = @b2_biomass
+		}
 		upkeep = {
 			energy = @b1_upkeep
 		}
+	}
+
+	inline_script = {
+		script = buildings/on_all_wilderness_buildings_districts
 	}
 
 	country_modifier = {
 		aesthetic_wonder_specimens_produces_mult = @holomuseum_specimen_produces_mult
 	}
 
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_archaeoengineers
+			}
+		}
+		aesthetic_wonder_specimens_produces_mult = @holomuseum_specimen_produces_mult
+	}
+
+	inline_script = {
+		script = jobs/entertainers_add
+		AMOUNT = @building_static_jobs
+	}
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -105,20 +190,21 @@ aesthetic_wonders_holomuseum = {
 				is_regular_empire = yes
 			}
 		}
-		modifier = {
-			job_wonder_curator_add = 2
-		}
+		planet_entertainers_unity_produces_add = 1
+		planet_entertainers_physics_research_produces_add = 1
+		planet_entertainers_consumer_goods_upkeep_add = 1
 	}
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = {
-				is_gestalt = yes
+				is_regular_empire = yes
+				has_ascension_perk = ap_archaeoengineers
 			}
 		}
-		modifier = {
-			job_drone_wonder_curator_add = 2
-		}
+		job_entertainer_add = @building_static_jobs
+		planet_entertainers_unity_produces_add = 1
+		planet_entertainers_physics_research_produces_add = 1
 	}
 	triggered_desc = {
 		trigger = {
@@ -127,7 +213,7 @@ aesthetic_wonders_holomuseum = {
 				is_regular_empire = yes
 			}
 		}
-		text = job_wonder_curator_effect_desc
+		text = entertainers_are_curators_tt
 	}
 	triggered_desc = {
 		trigger = {
@@ -136,16 +222,46 @@ aesthetic_wonders_holomuseum = {
 				is_gestalt = yes
 			}
 		}
-		text = job_drone_wonder_curator_effect_desc
+		text = evaluators_are_curator_drones_tt
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		job_evaluator_add = @building_static_jobs_high
+		planet_evaluators_unity_produces_add = 1
+		planet_evaluators_physics_research_produces_add = 1
+		planet_evaluators_minerals_upkeep_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				has_ascension_perk = ap_archaeoengineers
+			}
+		}
+		job_evaluator_add = @building_static_jobs_high
+		planet_evaluators_unity_produces_add = 1
+		planet_evaluators_physics_research_produces_add = 1
 	}
 }
 
 galactic_history_holomuseum = {
 	base_buildtime = @b1_time
-	base_cap_amount = 1
 	empire_limit = 1
 	position_priority = 2202
-	category = unity
+	category = amenity
+
+	building_sets = {
+		government
+		urban
+		research
+		resort
+	}
 
 	potential = {
 		owner = {
@@ -158,15 +274,39 @@ galactic_history_holomuseum = {
 		cost = {
 			minerals = @b1_minerals
 		}
+		cost = {
+			trigger = {
+				owner = { is_wilderness_empire = yes }
+			}
+			biomass = @b2_biomass
+		}
 		upkeep = {
 			energy = @b1_upkeep
 		}
+	}
+
+	inline_script = {
+		script = buildings/on_all_wilderness_buildings_districts
 	}
 
 	country_modifier = {
 		historical_item_specimens_produces_mult = @holomuseum_specimen_produces_mult
 	}
 
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_archaeoengineers
+			}
+		}
+		historical_item_specimens_produces_mult = @holomuseum_specimen_produces_mult
+	}
+
+	inline_script = {
+		script = jobs/entertainers_add
+		AMOUNT = @building_static_jobs
+	}
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -174,20 +314,21 @@ galactic_history_holomuseum = {
 				is_regular_empire = yes
 			}
 		}
-		modifier = {
-			job_historical_curator_add = 2
-		}
+		planet_entertainers_unity_produces_add = 1
+		planet_entertainers_society_research_produces_add = 1
+		planet_entertainers_consumer_goods_upkeep_add = 1
 	}
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = {
-				is_gestalt = yes
+				is_regular_empire = yes
+				has_ascension_perk = ap_archaeoengineers
 			}
 		}
-		modifier = {
-			job_drone_historical_curator_add = 2
-		}
+		job_entertainer_add = @building_static_jobs
+		planet_entertainers_unity_produces_add = 1
+		planet_entertainers_society_research_produces_add = 1
 	}
 	triggered_desc = {
 		trigger = {
@@ -196,7 +337,7 @@ galactic_history_holomuseum = {
 				is_regular_empire = yes
 			}
 		}
-		text = job_historical_curator_effect_desc
+		text = entertainers_are_curators_tt
 	}
 	triggered_desc = {
 		trigger = {
@@ -205,15 +346,44 @@ galactic_history_holomuseum = {
 				is_gestalt = yes
 			}
 		}
-		text = job_drone_historical_curator_effect_desc
+		text = evaluators_are_curator_drones_tt
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		job_evaluator_add = @building_static_jobs_high
+		planet_evaluators_unity_produces_add = 1
+		planet_evaluators_society_research_produces_add = 1
+		planet_evaluators_minerals_upkeep_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				has_ascension_perk = ap_archaeoengineers
+			}
+		}
+		job_evaluator_add = @building_static_jobs_high
+		planet_evaluators_unity_produces_add = 1
+		planet_evaluators_society_research_produces_add = 1
 	}
 }
 
 wildlife_ranch = {
 	base_buildtime = @b1_time
-	base_cap_amount = 1
+	planet_limit = 1
 	position_priority = 2203
 	category = amenity
+
+	building_sets = {
+		government
+		urban
+	}
 
 	potential = {
 		owner = {
@@ -252,7 +422,7 @@ wildlife_ranch = {
 
 	inline_script = {
 		script = jobs/wranglers_add
-		AMOUNT = 2
+		AMOUNT = 200
 	}
 
 	upgrades = {
@@ -265,6 +435,11 @@ wildlife_ranch_2 = {
 	position_priority = 2204
 	category = amenity
 	can_build = no
+
+	building_sets = {
+		government
+		urban
+	}
 
 	allow = {
 		has_upgraded_capital = yes
@@ -308,7 +483,7 @@ wildlife_ranch_2 = {
 
 	inline_script = {
 		script = jobs/wranglers_add
-		AMOUNT = 4
+		AMOUNT = 400
 	}
 
 	upgrades = {
@@ -326,6 +501,11 @@ wildlife_ranch_3 = {
 	category = amenity
 	can_build = no
 
+	building_sets = {
+		government
+		urban
+	}
+
 	allow = {
 		has_major_upgraded_capital = yes
 	}
@@ -368,7 +548,7 @@ wildlife_ranch_3 = {
 
 	inline_script = {
 		script = jobs/wranglers_add
-		AMOUNT = 6
+		AMOUNT = 600
 	}
 
 	prerequisites = {
@@ -378,23 +558,45 @@ wildlife_ranch_3 = {
 
 hunting_grounds = {
 	base_buildtime = @b1_time
-	base_cap_amount = 1
+	planet_limit = 1
 	position_priority = 2206
 	category = amenity
 
+	building_sets = {
+		government
+		urban
+		hunting_zone
+	}
+
 	potential = {
-		owner = {
-			OR = {
-				has_trophy_hunter_job = yes
-				has_hunter_drone_job = yes
+		OR = {
+			owner = {
+				OR = {
+					has_trophy_hunter_job = yes
+					has_hunter_drone_job = yes
+				}
+			}
+			planet = {
+				has_zone = {
+					zone = zone_resort_hunting_ground
+				}
 			}
 		}
 	}
 
 	destroy_trigger = {
-		owner = {
-			has_trophy_hunter_job = no
-			has_hunter_drone_job = no
+		OR = {
+			owner = {
+				has_trophy_hunter_job = no
+				has_hunter_drone_job = no
+			}
+			planet = {
+				NOT = {
+					has_zone = {
+						zone = zone_resort_hunting_ground
+					}
+				}
+			}
 		}
 	}
 
@@ -417,7 +619,7 @@ hunting_grounds = {
 
 	inline_script = {
 		script = jobs/wranglers_add
-		AMOUNT = 2
+		AMOUNT = 200
 	}
 
 	upgrades = {
@@ -430,6 +632,11 @@ hunting_grounds_2 = {
 	position_priority = 2207
 	category = amenity
 	can_build = no
+
+	building_sets = {
+		government
+		urban
+	}
 
 	allow = {
 		has_upgraded_capital = yes
@@ -471,7 +678,7 @@ hunting_grounds_2 = {
 
 	inline_script = {
 		script = jobs/wranglers_add
-		AMOUNT = 4
+		AMOUNT = 400
 	}
 
 	upgrades = {
@@ -489,6 +696,11 @@ hunting_grounds_3 = {
 	category = amenity
 	can_build = no
 
+	building_sets = {
+		government
+		urban
+	}
+
 	allow = {
 		has_major_upgraded_capital = yes
 	}
@@ -529,7 +741,7 @@ hunting_grounds_3 = {
 
 	inline_script = {
 		script = jobs/wranglers_add
-		AMOUNT = 6
+		AMOUNT = 600
 	}
 
 	prerequisites = {
@@ -539,9 +751,14 @@ hunting_grounds_3 = {
 
 wildlife_sanctuary = {
 	base_buildtime = @b1_time
-	base_cap_amount = 1
+	planet_limit = 1
 	position_priority = 2209
 	category = amenity
+
+	building_sets = {
+		government
+		urban
+	}
 
 	potential = {
 		owner = {
@@ -574,7 +791,7 @@ wildlife_sanctuary = {
 
 	inline_script = {
 		script = jobs/wranglers_add
-		AMOUNT = 2
+		AMOUNT = 200
 	}
 
 	upgrades = {
@@ -587,6 +804,11 @@ wildlife_sanctuary_2 = {
 	position_priority = 2210
 	category = amenity
 	can_build = no
+
+	building_sets = {
+		government
+		urban
+	}
 
 	allow = {
 		has_upgraded_capital = yes
@@ -624,7 +846,7 @@ wildlife_sanctuary_2 = {
 
 	inline_script = {
 		script = jobs/wranglers_add
-		AMOUNT = 4
+		AMOUNT = 400
 	}
 
 	upgrades = {
@@ -641,6 +863,11 @@ wildlife_sanctuary_3 = {
 	position_priority = 2211
 	category = amenity
 	can_build = no
+
+	building_sets = {
+		government
+		urban
+	}
 
 	allow = {
 		has_major_upgraded_capital = yes
@@ -678,7 +905,7 @@ wildlife_sanctuary_3 = {
 
 	inline_script = {
 		script = jobs/wranglers_add
-		AMOUNT = 6
+		AMOUNT = 600
 	}
 
 	prerequisites = {
@@ -688,9 +915,14 @@ wildlife_sanctuary_3 = {
 
 primal_arena = {
 	base_buildtime = @b1_time
-	base_cap_amount = 1
+	planet_limit = 1
 	position_priority = 2212
 	category = amenity
+
+	building_sets = {
+		government
+		urban
+	}
 
 	potential = {
 		owner = {
@@ -723,7 +955,7 @@ primal_arena = {
 
 	inline_script = {
 		script = jobs/wranglers_add
-		AMOUNT = 2
+		AMOUNT = 200
 	}
 
 	upgrades = {
@@ -736,6 +968,11 @@ primal_arena_2 = {
 	position_priority = 2213
 	category = amenity
 	can_build = no
+
+	building_sets = {
+		government
+		urban
+	}
 
 	allow = {
 		has_upgraded_capital = yes
@@ -773,7 +1010,7 @@ primal_arena_2 = {
 
 	inline_script = {
 		script = jobs/wranglers_add
-		AMOUNT = 4
+		AMOUNT = 400
 	}
 
 	upgrades = {
@@ -790,6 +1027,11 @@ primal_arena_3 = {
 	position_priority = 2214
 	category = amenity
 	can_build = no
+
+	building_sets = {
+		government
+		urban
+	}
 
 	allow = {
 		has_major_upgraded_capital = yes
@@ -827,7 +1069,7 @@ primal_arena_3 = {
 
 	inline_script = {
 		script = jobs/wranglers_add
-		AMOUNT = 6
+		AMOUNT = 600
 	}
 
 	prerequisites = {
@@ -837,10 +1079,15 @@ primal_arena_3 = {
 
 symbiosis_nexus = {
 	base_buildtime = @b1_time
-	base_cap_amount = 1
+	planet_limit = 1
 	position_priority = 2215
 	category = amenity
 	icon = wildlife_sanctuary
+
+	building_sets = {
+		government
+		urban
+	}
 
 	potential = {
 		owner = {
@@ -873,7 +1120,7 @@ symbiosis_nexus = {
 
 	inline_script = {
 		script = jobs/wranglers_add
-		AMOUNT = 2
+		AMOUNT = 200
 	}
 
 	upgrades = {
@@ -887,6 +1134,11 @@ symbiosis_nexus_2 = {
 	category = amenity
 	icon = wildlife_sanctuary_2
 	can_build = no
+
+	building_sets = {
+		government
+		urban
+	}
 
 	allow = {
 		has_upgraded_capital = yes
@@ -924,7 +1176,7 @@ symbiosis_nexus_2 = {
 
 	inline_script = {
 		script = jobs/wranglers_add
-		AMOUNT = 4
+		AMOUNT = 400
 	}
 
 	upgrades = {
@@ -943,6 +1195,11 @@ symbiosis_nexus_3 = {
 	icon = wildlife_sanctuary_3
 	can_build = no
 
+	building_sets = {
+		government
+		urban
+	}
+
 	allow = {
 		has_major_upgraded_capital = yes
 	}
@@ -979,7 +1236,7 @@ symbiosis_nexus_3 = {
 
 	inline_script = {
 		script = jobs/wranglers_add
-		AMOUNT = 6
+		AMOUNT = 600
 	}
 
 	prerequisites = {

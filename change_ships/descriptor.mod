@@ -3,5 +3,5 @@ tags={
 	"Balance"
 }
 name="小型艦ばかり作るな！"
-supported_version="v3.14.*"
+supported_version="v4.0.*"
 remote_file_id="3134598676"

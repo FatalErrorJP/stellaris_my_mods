@@ -61,9 +61,9 @@ tb_food_group = {
 	onclick = market
 }
 
-tb_consumer_goods_group = {
+tb_influence_group = {
 	resources = {
-		consumer_goods
+		influence
 	}
 	localization = {
 		"RESOURCE_GROUP_DEFAULT" = default
@@ -72,7 +72,21 @@ tb_consumer_goods_group = {
 		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
 		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
 	}
-	onclick = market
+	onclick = claims
+}
+
+tb_unity_group = {
+	resources = {
+		unity
+	}
+	localization = {
+		"RESOURCE_GROUP_DEFAULT" = default
+		"RESOURCE_GROUP_DEFAULT_NEG_DEC" = { balance < 0 stored >= 1000 stored < 10000 }
+		"RESOURCE_GROUP_DEFAULT_NEG" = { balance < 0 }
+		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
+		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
+	}
+	onclick = traditions
 }
 
 tb_alloys_group = {
@@ -87,6 +101,45 @@ tb_alloys_group = {
 		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
 	}
 	onclick = market
+}
+
+tb_trade_group = {
+	resources = {
+		trade
+	}
+	localization = {
+		"RESOURCE_GROUP_DEFAULT" = default
+		"RESOURCE_GROUP_DEFAULT_NEG_DEC" = { balance < 0 stored >= 1000 stored < 10000 }
+		"RESOURCE_GROUP_DEFAULT_NEG" = { balance < 0 }
+		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
+		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
+	}
+	onclick = market
+}
+
+tb_consumer_goods_group = {
+	resources = {
+		consumer_goods
+	}
+	localization = {
+		"RESOURCE_GROUP_DEFAULT" = default
+		"RESOURCE_GROUP_DEFAULT_NEG_DEC" = { balance < 0 stored >= 1000 stored < 10000 }
+		"RESOURCE_GROUP_DEFAULT_NEG" = { balance < 0 }
+		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
+		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
+	}
+	onclick = market
+}
+
+tb_biomass_group = {
+	resources = {
+		biomass
+	}
+	localization = {
+		"RESOURCE_GROUP_DEFAULT" = default
+		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
+	}
+	onclick = traditions
 }
 
 tb_volatile_motes_group = {
@@ -274,34 +327,6 @@ tb_engineering_research_stored_group = {
 		"RESOURCE_GROUP_STORED_ONLY" = default
 	}
 	onclick = technology
-}
-
-tb_unity_group = {
-	resources = {
-		unity
-	}
-	localization = {
-		"RESOURCE_GROUP_DEFAULT" = default
-		"RESOURCE_GROUP_DEFAULT_NEG_DEC" = { balance < 0 stored >= 1000 stored < 10000 }
-		"RESOURCE_GROUP_DEFAULT_NEG" = { balance < 0 }
-		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
-		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
-	}
-	onclick = traditions
-}
-
-tb_influence_group = {
-	resources = {
-		influence
-	}
-	localization = {
-		"RESOURCE_GROUP_DEFAULT" = default
-		"RESOURCE_GROUP_DEFAULT_NEG_DEC" = { balance < 0 stored >= 1000 stored < 10000 }
-		"RESOURCE_GROUP_DEFAULT_NEG" = { balance < 0 }
-		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
-		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
-	}
-	onclick = claims
 }
 
 tb_menace_group = {

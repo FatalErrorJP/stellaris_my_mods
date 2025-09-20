@@ -5,5 +5,5 @@ tags={
 	"Leaders"
 }
 name="真・特性選択画面を見やすくしたい"
-supported_version="v3.14.*"
+supported_version="v4.0.*"
 remote_file_id="3053655313"

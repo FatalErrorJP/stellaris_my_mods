@@ -3,5 +3,5 @@ tags={
 	"Fixes"
 }
 name="イベント艦を合流したい"
-supported_version="v3.14.*"
+supported_version="v4.0.*"
 remote_file_id="2880113283"

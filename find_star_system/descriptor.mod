@@ -3,5 +3,5 @@ tags={
 	"Utilities"
 }
 name="条件を満たす星系を探したい"
-supported_version="v3.14.*"
+supported_version="v4.0.*"
 remote_file_id="2830386985"

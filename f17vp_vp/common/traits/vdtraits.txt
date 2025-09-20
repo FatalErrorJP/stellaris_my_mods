@@ -1,0 +1,17 @@
+trait_beautiful_voice = {
+	cost = 1
+	allowed_archetypes = {BIOLOGICAL}
+	icon = "interface/icons/traits/trait_beautiful_voice.dds"
+	modifier = {
+		#+30 opinion
+	}
+}
+
+trait_beautiful_voice_ma = {
+	cost = 1
+	allowed_archetypes = {MACHINE}
+	icon = "interface/icons/traits/trait_beautiful_voice_ma.dds"
+	modifier = {
+		#+30 opinion
+	}
+}

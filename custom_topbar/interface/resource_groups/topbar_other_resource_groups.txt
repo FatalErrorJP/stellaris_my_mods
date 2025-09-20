@@ -4,13 +4,15 @@ tb_others_group = {
 		resources = {
 			menace
 			advanced_logic
+			feral_insight
 		}
 		onclick = traditions
+		show_only_if_owned = no
 	}
 
 	localization = {
 		"RESOURCE_GROUP_STORED_ONLY" = default
 	}
 
-	minimum_height = 50
+	minimum_height = 75
 }

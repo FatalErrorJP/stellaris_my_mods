@@ -1,5 +1,4 @@
 guiTypes = {
-
 	###
 	# ここからMOD追加コード
 	###
@@ -225,7 +224,7 @@ guiTypes = {
 		containerWindowType = {
 			name = "topbar_extended"
 			position = { x = 0 y = 0 }
-			size = { width = 100%% height = 40 }															# MOD修正箇所
+			size = { width = 100%% height = 40 }							# MOD修正箇所
 			hide_position = { x = 0 y = 0 }
 			show_position = { x = 0 y = 0 }
 			show_animation_type = decelerated
@@ -238,148 +237,6 @@ guiTypes = {
 				quadTextureSprite = "GFX_topbar_background"
 				position = { x= 0 y = 0 }
 			}
-
-			# 帝国の人口
-			containerWindowType = {
-				name = "pop_group"
-				size = { width = @topbar_resource_icon_short_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 1070 y = @topbar_resource_lower_pos_y }									# MOD修正箇所
-
-				background = {
-					name = "background"
-					spriteType = "GFX_custom_topbar_button_narrow_hover"								# MOD修正箇所
-					frame = 1
-				}
-
-				iconType = {
-					name = "icon"
-					spriteType = "GFX_pop"
-					position = { x = @topbar_relative_icon_pos_x y = @topbar_relative_icon_pos_y }		# MOD修正箇所
-					scale = 0.7
-					tooltip_mode_enabled = yes
-					alwaysTransparent = yes
-				}
-
-				instantTextBoxType={
-					name = "amount"
-					font = "cg_16b"
-					position = { x = @topbar_relative_amount_pos_x y = @topbar_relative_amount_pos_y }	# MOD修正箇所
-					maxWidth = @topbar_amount_short_text_max_width										# MOD修正箇所
-					maxHeight = 16
-					text = "0 / 0"
-					format = center
-					alwaysTransparent = yes
-				}
-			}
-
-			# 星系基地許容量
-			containerWindowType = {
-				name = "starbase_group"
-				size = { width = @topbar_resource_icon_long_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 1140 y = @topbar_resource_lower_pos_y }									# MOD修正箇所
-
-				background = {
-					name = "background"
-					spriteType = "GFX_custom_topbar_button_hover"										# MOD修正箇所
-					frame = 1
-				}
-
-				iconType = {
-					name = "icon"
-					spriteType = "GFX_station_icon"
-					position = { x = @topbar_relative_icon_pos_x y = @topbar_relative_icon_pos_y }		# MOD修正箇所
-					tooltip_mode_enabled = yes
-					alwaysTransparent = yes
-				}
-
-				instantTextBoxType={
-					name = "amount"
-					font = "cg_16b"
-					position = { x = @topbar_relative_amount_pos_x y = @topbar_relative_amount_pos_y }	# MOD修正箇所
-					maxWidth = @topbar_amount_long_text_max_width										# MOD修正箇所
-					maxHeight = 16
-					text = "0 / 0"
-					format = center
-					alwaysTransparent = yes
-				}
-			}
-
-			# 宇宙軍許容量
-			containerWindowType = {
-				name = "navy_group"
-				size = { width = @topbar_resource_icon_long_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 1140 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
-
-				background = {
-					name = "background"
-					spriteType = "GFX_custom_topbar_button_hover"										# MOD修正箇所
-					frame = 1
-				}
-
-				iconType = {
-					name = "icon"
-					spriteType = "GFX_fleet_size_icon"
-					position = { x = @topbar_relative_icon_pos_x y = @topbar_relative_icon_pos_y }		# MOD修正箇所
-					tooltip_mode_enabled = yes
-					alwaysTransparent = yes
-				}
-
-				instantTextBoxType={
-					name = "amount"
-					font = "cg_16b"
-					position = { x = @topbar_relative_amount_pos_x y = @topbar_relative_amount_pos_y }	# MOD修正箇所
-					maxWidth = @topbar_amount_long_text_max_width										# MOD修正箇所
-					maxHeight = 16
-					text = "0 / 0"
-					format = center
-					alwaysTransparent = yes
-				}
-			}
-
-			# 帝国規模
-			containerWindowType = {
-				name = "empire_size_group"
-				size = { width = @topbar_resource_icon_short_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 1070 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
-
-				background = {
-					name = "background"
-					spriteType = "GFX_custom_topbar_button_narrow_hover"								# MOD修正箇所
-					frame = 1
-				}
-
-				iconType = {
-					name = "icon"
-					spriteType = "GFX_empire_sprawl_icon"
-					position = { x = @topbar_relative_icon_pos_x y = @topbar_relative_icon_pos_y }		# MOD修正箇所
-					scale = 0.8
-					tooltip_mode_enabled = yes
-					alwaysTransparent = yes
-				}
-
-				instantTextBoxType={
-					name = "amount"
-					font = "cg_16b"
-					position = { x = @topbar_relative_amount_pos_x y = @topbar_relative_amount_pos_y }	# MOD修正箇所
-					maxWidth = @topbar_amount_short_text_max_width										# MOD修正箇所
-					maxHeight = 16
-					text = "250"
-					format = center
-					alwaysTransparent = yes
-				}
-			}
-
-			# containerWindowType = {
-			# 	name = "topbar_bar_05"
-			# 	size = { width = 190 height = 25 }
-			# 	position = { x = 616 y = 12 }
-
-			# 	background = {
-			# 		name = "topbar_bar_03"
-			# 		spriteType = "GFX_topbar_bar_03"
-			# 		alwaysTransparent = yes
-			# 	}
-			# }
 		}
 
 		containerWindowType = {
@@ -392,7 +249,8 @@ guiTypes = {
 			containerWindowType = {
 				name = "tb_energy_group"
 				size = { width = @topbar_resource_icon_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 10 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
+				position = { x = 100 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
+				Orientation = UPPER_LEFT
 
 				background = {
 					name = "background"
@@ -408,7 +266,7 @@ guiTypes = {
 					alwaysTransparent = yes
 				}
 
-				instantTextBoxType={
+				instantTextBoxType = {
 					name = "amount"
 					font = "cg_16b"
 					position = { x = @topbar_relative_amount_pos_x y = @topbar_relative_amount_pos_y }	# MOD修正箇所
@@ -424,7 +282,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "tb_mineral_group"
 				size = { width = @topbar_resource_icon_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 100 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
+				position = { x = 190 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
 
 				background = {
 					name = "background"
@@ -440,7 +298,7 @@ guiTypes = {
 					alwaysTransparent = yes
 				}
 
-				instantTextBoxType={
+				instantTextBoxType = {
 					name = "amount"
 					font = "cg_16b"
 					position = { x = @topbar_relative_amount_pos_x y = @topbar_relative_amount_pos_y }	# MOD修正箇所
@@ -456,7 +314,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "tb_food_group"
 				size = { width = @topbar_resource_icon_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 190 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
+				position = { x = 280 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
 
 				background = {
 					name = "background"
@@ -472,7 +330,7 @@ guiTypes = {
 					alwaysTransparent = yes
 				}
 
-				instantTextBoxType={
+				instantTextBoxType = {
 					name = "amount"
 					font = "cg_16b"
 					position = { x = @topbar_relative_amount_pos_x y = @topbar_relative_amount_pos_y }	# MOD修正箇所
@@ -484,11 +342,24 @@ guiTypes = {
 				}
 			}
 
+			containerWindowType = {
+				name = "basic_resources_divider"
+				position = { x = 635 y = 5 }										# MOD修正箇所
+				size = { width = 8 height = 75% }
+				Orientation = UPPER_LEFT
+
+				background = {
+					name = "green_vertical_delimiters"
+					spriteType = "GFX_vertical_divider"
+					alwaysTransparent = yes
+				}
+			}
+
 			# 消費財
 			containerWindowType = {
 				name = "tb_consumer_goods_group"
 				size = { width = @topbar_resource_icon_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 280 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
+				position = { x = 370 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
 
 				background = {
 					name = "background"
@@ -504,7 +375,39 @@ guiTypes = {
 					alwaysTransparent = yes
 				}
 
-				instantTextBoxType={
+				instantTextBoxType = {
+					name = "amount"
+					font = "cg_16b"
+					position = { x = @topbar_relative_amount_pos_x y = @topbar_relative_amount_pos_y }	# MOD修正箇所
+					maxWidth = @topbar_amount_text_max_width											# MOD修正箇所
+					maxHeight = 16
+					text = "0 / 0"
+					format = center
+					alwaysTransparent = yes
+				}
+			}
+
+			# バイオマス
+			containerWindowType = {
+				name = "tb_biomass_group"
+				size = { width = @topbar_resource_icon_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
+				position = { x = 370 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
+
+				background = {
+					name = "background"
+					spriteType = "GFX_custom_topbar_button_hover"										# MOD修正箇所
+					frame = 1
+				}
+
+				iconType = {
+					name = "icon"
+					spriteType = "GFX_resource_biomass"
+					position = { x = @topbar_relative_icon_pos_x y = @topbar_relative_icon_pos_y }		# MOD修正箇所
+					tooltip_mode_enabled = yes
+					alwaysTransparent = yes
+				}
+
+				instantTextBoxType = {
 					name = "amount"
 					font = "cg_16b"
 					position = { x = @topbar_relative_amount_pos_x y = @topbar_relative_amount_pos_y }	# MOD修正箇所
@@ -520,7 +423,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "tb_alloys_group"
 				size = { width = @topbar_resource_icon_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 370 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
+				position = { x = 460 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
 
 				background = {
 					name = "background"
@@ -536,7 +439,7 @@ guiTypes = {
 					alwaysTransparent = yes
 				}
 
-				instantTextBoxType={
+				instantTextBoxType = {
 					name = "amount"
 					font = "cg_16b"
 					position = { x = @topbar_relative_amount_pos_x y = @topbar_relative_amount_pos_y }	# MOD修正箇所
@@ -548,9 +451,6 @@ guiTypes = {
 				}
 			}
 
-			#############################################
-			# ここからMOD追加リソース
-			#############################################
 			# 揮発性粉末
 			containerWindowType = {
 				name = "tb_volatile_motes_group"
@@ -747,7 +647,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "tb_nanites_group"
 				size = { width = @topbar_resource_icon_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 460 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
+				position = { x = 550 y = @topbar_resource_lower_pos_y }									# MOD修正箇所
 
 				background = {
 					name = "background"
@@ -779,7 +679,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "tb_minor_artifacts_group"
 				size = { width = @topbar_resource_icon_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 550 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
+				position = { x = 645 y = @topbar_resource_lower_pos_y }									# MOD修正箇所
 
 				background = {
 					name = "background"
@@ -811,7 +711,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "tb_astral_threads_group"
 				size = { width = @topbar_resource_icon_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 550 y = @topbar_resource_lower_pos_y }									# MOD修正箇所
+				position = { x = 735 y = @topbar_resource_lower_pos_y }									# MOD修正箇所
 
 				background = {
 					name = "background"
@@ -839,11 +739,128 @@ guiTypes = {
 				}
 			}
 
+			# 交易
+			containerWindowType = {
+				name = "tb_trade_group"
+				size = { width = @topbar_resource_icon_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
+				position = { x = 10 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
+
+				background = {
+					name = "background"
+					spriteType = "GFX_custom_topbar_button_hover"										# MOD修正箇所
+					frame = 1
+				}
+
+				iconType = {
+					name = "icon"
+					spriteType = "GFX_resource_trade"
+					position = { x = @topbar_relative_icon_pos_x y = @topbar_relative_icon_pos_y }		# MOD修正箇所
+					tooltip_mode_enabled = yes
+					alwaysTransparent = yes
+				}
+
+				instantTextBoxType = {
+					name = "amount"
+					font = "cg_16b"
+					position = { x = @topbar_relative_amount_pos_x y = @topbar_relative_amount_pos_y }	# MOD修正箇所
+					maxWidth = @topbar_amount_text_max_width											# MOD修正箇所
+					maxHeight = 16
+					text = "0 / 0"
+					format = center
+					alwaysTransparent = yes
+				}
+			}
+
+			# 危機になる
+			dropDownBoxType = {
+				name = "tb_others_group"
+				size = { width = @topbar_resource_icon_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
+				position = { x = 835 y = @topbar_resource_lower_pos_y }									# MOD修正箇所
+
+				background = {
+					name = "background"
+					spriteType = "GFX_custom_topbar_button_hover"										# MOD修正箇所
+					frame = 1
+				}
+
+				iconType = {
+					name = "icon"
+					spriteType = "GFX_resource_strategic_top_bar"
+					position = { x = @topbar_relative_icon_pos_x y = @topbar_relative_icon_pos_y }		# MOD修正箇所
+					tooltip_mode_enabled = yes
+					alwaysTransparent = yes
+				}
+
+				iconType = {
+					name = "expand_arrow"
+					position = { x = 65 y = 10 }
+					spriteType = "GFX_direction_down"
+					scale = 0.7
+					alwaysTransparent = yes
+				}
+
+				instantTextBoxType = {
+					name = "amount"
+					font = "cg_16b"
+					position = { x = @topbar_relative_amount_pos_x y = @topbar_relative_amount_pos_y }	# MOD修正箇所
+					maxWidth = @topbar_amount_short_text_max_width										# MOD修正箇所
+					maxHeight = 16
+					text = "0 / 0"
+					format = center
+					alwaysTransparent = yes
+				}
+
+				expandedWindow = {
+					name = "expanded_window"
+					hide_position = { x = 0 y = -190 }
+					show_position = { x = 0 y = 36 }
+					size = { width = 100 height = 230 } # Dynamic in topbar_other_resource_groups.txt
+					show_animation_type = decelerated
+					hide_animation_type = accelerated
+					animation_time = 200
+
+					background = {
+						name = "bg"
+						spriteType = "GFX_subwindow_tile_plain_solid"
+					}
+
+					iconType = {
+						name = "bg_separator"
+						position = { x = 50 y = 175 }
+						quadTextureSprite = "GFX_subwindow_tile_plain_solid_separator"
+						alwaysTransparent = yes
+					}
+
+					gridBoxType = {
+						name = "resources"
+						format = "UPPER_LEFT"
+						position = { x = 3 y = 3 }
+						size = { width = 100% }
+						slotsize = { width = 100% height = 25 }
+						max_slots_horizontal = 1
+						resizeparent = yes
+					}
+				}
+			}
+
+			containerWindowType = {
+				name = "advanced_resources_divider"
+				position = { x = 830 y = 5 }									# MOD修正箇所
+				size = { width = 8 height = 75% }
+				Orientation = UPPER_LEFT
+
+				background = {
+					name = "green_vertical_delimiters"
+					spriteType = "GFX_vertical_divider"
+					alwaysTransparent = yes
+				}
+			}
+
 			# 影響力
 			containerWindowType = {
 				name = "tb_influence_group"
 				size = { width = @topbar_resource_icon_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 640 y = @topbar_resource_lower_pos_y }									# MOD修正箇所
+				position = { x = 645 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
 
 				background = {
 					name = "background"
@@ -859,7 +876,7 @@ guiTypes = {
 					alwaysTransparent = yes
 				}
 
-				instantTextBoxType={
+				instantTextBoxType = {
 					name = "amount"
 					font = "cg_16b"
 					position = { x = @topbar_relative_amount_pos_x y = @topbar_relative_amount_pos_y }	# MOD修正箇所
@@ -875,7 +892,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "tb_unity_group"
 				size = { width = @topbar_resource_icon_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 640 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
+				position = { x = 735 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
 
 				background = {
 					name = "background"
@@ -891,7 +908,7 @@ guiTypes = {
 					alwaysTransparent = yes
 				}
 
-				instantTextBoxType={
+				instantTextBoxType = {
 					name = "amount"
 					font = "cg_16b"
 					position = { x = @topbar_relative_amount_pos_x y = @topbar_relative_amount_pos_y }	# MOD修正箇所
@@ -903,11 +920,11 @@ guiTypes = {
 				}
 			}
 
-			# 研究力
+			# 研究
 			dropDownBoxType = {
 				name = "tb_research_group"
-				size = { width = @topbar_resource_icon_short_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 730 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
+				size = { width = @topbar_resource_icon_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
+				position = { x = 835 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
 
 				background = {
 					name = "background"
@@ -924,7 +941,15 @@ guiTypes = {
 					alwaysTransparent = yes
 				}
 
-				instantTextBoxType={
+				iconType = {
+					name = "expand_arrow"
+					position = { x = 65 y = 10 }
+					spriteType = "GFX_direction_down"
+					scale = 0.7
+					alwaysTransparent = yes
+				}
+
+				instantTextBoxType = {
 					name = "amount"
 					font = "cg_16b"
 					position = { x = @topbar_relative_amount_pos_x y = @topbar_relative_amount_pos_y }	# MOD修正箇所
@@ -953,6 +978,7 @@ guiTypes = {
 					gridBoxType = {
 						name = "resources"
 						format = "UPPER_LEFT"
+						position = { x = 3 y = 3 }
 						size = { width = 100% }
 						slotsize = { width = 100% height = 25 }
 						max_slots_horizontal = 1
@@ -965,7 +991,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "tb_physics_research_group"
 				size = { width = @topbar_resource_icon_short_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 800 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
+				position = { x = 915 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
 
 				background = {
 					name = "background"
@@ -997,7 +1023,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "tb_society_research_group"
 				size = { width = @topbar_resource_icon_short_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 870 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
+				position = { x = 985 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
 
 				background = {
 					name = "background"
@@ -1029,7 +1055,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "tb_engineering_research_group"
 				size = { width = @topbar_resource_icon_short_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 940 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
+				position = { x = 1055 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
 
 				background = {
 					name = "background"
@@ -1061,7 +1087,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "tb_physics_research_stored_group"
 				size = { width = @topbar_resource_icon_short_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 800 y = @topbar_resource_lower_pos_y }									# MOD修正箇所
+				position = { x = 915 y = @topbar_resource_lower_pos_y }									# MOD修正箇所
 
 				background = {
 					name = "background"
@@ -1093,7 +1119,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "tb_society_research_stored_group"
 				size = { width = @topbar_resource_icon_short_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 870 y = @topbar_resource_lower_pos_y }									# MOD修正箇所
+				position = { x = 985 y = @topbar_resource_lower_pos_y }									# MOD修正箇所
 
 				background = {
 					name = "background"
@@ -1125,7 +1151,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "tb_engineering_research_stored_group"
 				size = { width = @topbar_resource_icon_short_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 940 y = @topbar_resource_lower_pos_y }									# MOD修正箇所
+				position = { x = 1055 y = @topbar_resource_lower_pos_y }									# MOD修正箇所
 
 				background = {
 					name = "background"
@@ -1153,78 +1179,57 @@ guiTypes = {
 				}
 			}
 
-			# 「危機になる」系のリソース
-			dropDownBoxType = {
-				name = "tb_others_group"
+			containerWindowType = {
+				name = "intangible_resources_divider"
+				position = { x = 1130 y = 5 }															# MOD修正箇所
+				size = { width = 8 height = 75% }
+				Orientation = UPPER_LEFT
+
+				background = {
+					name = "green_vertical_delimiters"
+					spriteType = "GFX_vertical_divider"
+					alwaysTransparent = yes
+				}
+			}
+
+			# 帝国規模
+			containerWindowType = {
+				name = "empire_size_group"
 				size = { width = @topbar_resource_icon_short_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 730 y = @topbar_resource_lower_pos_y } 								# Mod修正箇所
+				position = { x = 1140 y = @topbar_resource_upper_pos_y }
 
 				background = {
 					name = "background"
-					spriteType = "GFX_topbar_button_narrow_hover"
+					spriteType = "GFX_custom_topbar_button_narrow_hover"								# MOD修正箇所
 					frame = 1
 				}
 
 				iconType = {
 					name = "icon"
-					spriteType = "GFX_resource_strategic_top_bar"
+					spriteType = "GFX_empire_sprawl_icon"
 					position = { x = @topbar_relative_icon_pos_x y = @topbar_relative_icon_pos_y }		# MOD修正箇所
+					scale = 0.8
 					tooltip_mode_enabled = yes
 					alwaysTransparent = yes
 				}
 
-				instantTextBoxType={
+				instantTextBoxType = {
 					name = "amount"
 					font = "cg_16b"
 					position = { x = @topbar_relative_amount_pos_x y = @topbar_relative_amount_pos_y }	# MOD修正箇所
 					maxWidth = @topbar_amount_short_text_max_width										# MOD修正箇所
 					maxHeight = 16
-					text = "0 / 0"
+					text = "250"
 					format = center
 					alwaysTransparent = yes
 				}
-
-				expandedWindow = {
-					name = "expanded_window"
-					hide_position = { x = 0 y = -190 }
-					show_position = { x = 0 y = 25 }													# MOD修正箇所
-					size = { width = 100 height = 50 } # Dynamic in topbar_other_resource_groups.txt	# MOD修正箇所
-					show_animation_type = decelerated
-					hide_animation_type = accelerated
-					animation_time = 200
-
-					background = {
-						name = "bg"
-						spriteType = "GFX_subwindow_tile_plain_solid"
-					}
-
-					iconType = {
-						name = "bg_separator"
-						position = { x = 50 y = 175 }
-						quadTextureSprite = "GFX_subwindow_tile_plain_solid_separator"
-						alwaysTransparent = yes
-					}
-
-					gridBoxType = {
-						name = "resources"
-						format = "UPPER_LEFT"
-						position = { x = 3 y = 3 }
-						size = { width = 100% }
-						slotsize = { width = 100% height = 25 }
-						max_slots_horizontal = 1
-						resizeparent = yes
-					}
-				}
 			}
-			#############################################
-			# ここまでMOD追加リソース
-			#############################################
 
-		# リーダー上限数
-		containerWindowType = {
+			# 使節
+			containerWindowType = {
 				name = "leaders_group"
 				size = { width = @topbar_resource_icon_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
-				position = { x = 1190 y = @topbar_resource_upper_pos_y }								# MOD修正箇所
+				position = { x = 1140 y = @topbar_resource_lower_pos_y }								# MOD修正箇所
 				clipping = no
 
 				background = {
@@ -1235,19 +1240,83 @@ guiTypes = {
 				iconType = {
 					name = "icon"
 					spriteType = "GFX_envoy_icon"
-					position = { x = 10 y = 1 }														# MOD修正箇所
+					position = { x = @topbar_relative_icon_pos_x y = @topbar_relative_icon_pos_y }		# MOD修正箇所
 					scale = 0.65
 					tooltip_mode_enabled = yes
 					alwaysTransparent = yes
 				}
 
-				instantTextBoxType={
+				instantTextBoxType = {
 					name = "amount"
 					font = "cg_16b"
 					position = { x = @topbar_relative_amount_pos_x y = @topbar_relative_amount_pos_y }	# MOD修正箇所
-					maxWidth = @topbar_amount_text_max_width											# MOD修正箇所
+					maxWidth = @topbar_amount_short_text_max_width										# MOD修正箇所
 					maxHeight = 16
 					text = "250"
+					format = center
+					alwaysTransparent = yes
+				}
+			}
+
+			# 星系基地許容量
+			containerWindowType = {
+				name = "starbase_group"
+				size = { width = @topbar_resource_icon_long_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
+				position = { x = 1220 y = @topbar_resource_lower_pos_y }									# MOD修正箇所
+
+				background = {
+					name = "background"
+					spriteType = "GFX_custom_topbar_button_hover"										# MOD修正箇所
+					frame = 1
+				}
+
+				iconType = {
+					name = "icon"
+					spriteType = "GFX_station_icon"
+					position = { x = @topbar_relative_icon_pos_x y = @topbar_relative_icon_pos_y }		# MOD修正箇所
+					tooltip_mode_enabled = yes
+					alwaysTransparent = yes
+				}
+
+				instantTextBoxType = {
+					name = "amount"
+					font = "cg_16b"
+					position = { x = @topbar_relative_amount_pos_x y = @topbar_relative_amount_pos_y }	# MOD修正箇所
+					maxWidth = @topbar_amount_long_text_max_width										# MOD修正箇所
+					maxHeight = 16
+					text = "0 / 0"
+					format = center
+					alwaysTransparent = yes
+				}
+			}
+
+			# 宇宙軍許容量
+			containerWindowType = {
+				name = "navy_group"
+				size = { width = @topbar_resource_icon_long_size_w height = @topbar_resource_icon_size_h }	# MOD修正箇所
+				position = { x = 1220 y = @topbar_resource_upper_pos_y }									# MOD修正箇所
+
+				background = {
+					name = "background"
+					spriteType = "GFX_custom_topbar_button_hover"										# MOD修正箇所
+					frame = 1
+				}
+
+				iconType = {
+					name = "icon"
+					spriteType = "GFX_fleet_size_icon"
+					position = { x = @topbar_relative_icon_pos_x y = @topbar_relative_icon_pos_y }		# MOD修正箇所
+					tooltip_mode_enabled = yes
+					alwaysTransparent = yes
+				}
+
+				instantTextBoxType = {
+					name = "amount"
+					font = "cg_16b"
+					position = { x = @topbar_relative_amount_pos_x y = @topbar_relative_amount_pos_y }	# MOD修正箇所
+					maxWidth = @topbar_amount_long_text_max_width										# MOD修正箇所
+					maxHeight = 16
+					text = "0 / 0"
 					format = center
 					alwaysTransparent = yes
 				}
@@ -1259,7 +1328,7 @@ guiTypes = {
 		####################
 		containerWindowType = {
 			name = "time_window"
-			position = { x= -150 y = 1 }											# MOD修正箇所
+			position = { x= -150 y = 0 }
 			size = { width=200 height=200 }
 			Orientation = upper_right
 
@@ -1313,7 +1382,7 @@ guiTypes = {
 				oversound = no_sound
 			}
 
-			instantTextBoxType={
+			instantTextBoxType = {
 				name = "time"
 				font = "cg_16b"
 				position = { x= 12 y= 4 }
@@ -1345,7 +1414,7 @@ guiTypes = {
 			}
 		}
 
-		instantTextBoxType={
+		instantTextBoxType = {
 			name = "debug_version"
 			font = "cg_16b"
 			position = { x= -204 y= -52 }
@@ -1371,7 +1440,7 @@ guiTypes = {
 		position = { x = -400 y = 6 }
 		orientation = upper_right
 
-	containerWindowType = {
+		containerWindowType = {
 			name = "presence_grid_container"
 
 			gridBoxType = { # Contains "main_gui_presence_grid_entry_loose"
@@ -1426,11 +1495,11 @@ guiTypes = {
 			alwaysTransparent = yes
 		}
 
-		instantTextBoxType={
+		instantTextBoxType = {
 			name = "amount"
 			font = "cg_16b"
 			position = { x = 23 y = 0 }
-			maxWidth = 80
+			maxWidth = 70
 			maxHeight = 16
 			text = "0 / 0"
 			alwaysTransparent = yes
@@ -1448,7 +1517,7 @@ guiTypes = {
 			position = { x= 0 y = 0  }
 		}
 
-		instantTextBoxType={
+		instantTextBoxType = {
 			name = "label"
 			font = "cg_16b"
 			position = { x= 12 y= 6 }
@@ -1478,10 +1547,19 @@ guiTypes = {
 
 		buttonType = {
 			name = "message_icon_button"
-			quadTextureSprite = "GFX_test_message_icon"
+			quadTextureSprite = "GFX_message_background"
 			position = { x= -2 y = 12  }
 			clicksound = "confirmation"
 			oversound = no_sound
+		}
+
+		iconType = {
+			name = "message_icon"
+			quadTextureSprite = "GFX_test_message_icon"
+			position = { x= -13 y = 0 }
+			alwaysTransparent = yes
+			orientation = center
+			centerPosition = yes
 		}
 
 		iconType = {
@@ -1522,7 +1600,7 @@ guiTypes = {
 			clicksound = confirmation
 		}
 
-		instantTextBoxType={
+		instantTextBoxType = {
 			name = "text"
 			font = "cg_16b"
 			position = { x= 9 y= 9 }
@@ -1706,7 +1784,7 @@ guiTypes = {
 		containerWindowType = {
 			name = "background"
 			size = { width = 320 height = 610 }
-			position = { x = 5 y = 5 } # OFFE TODO Set x = -60 when minimized
+			position = { x = 5 y = 5 }
 
 			background = {
 				name = "navbar_bg"
@@ -1785,7 +1863,7 @@ guiTypes = {
 			alwaysTransparent = yes
 		}
 
-		instantTextBoxType={
+		instantTextBoxType = {
 			name = "avg_frame_time"
 			font = "cg_16b"
 			position = { x = 120 y = 60 }
@@ -1794,7 +1872,7 @@ guiTypes = {
 			text = "aaaaaaaah!"
 		}
 
-		instantTextBoxType={
+		instantTextBoxType = {
 			name = "avg_micro_tick"
 			font = "cg_16b"
 			position = { x = 120 y = 80 }
@@ -1802,7 +1880,7 @@ guiTypes = {
 			maxHeight = 16
 		}
 
-		instantTextBoxType={
+		instantTextBoxType = {
 			name = "last_daily_tick"
 			font = "cg_16b"
 			position = { x = 120 y = 100 }
@@ -1810,7 +1888,7 @@ guiTypes = {
 			maxHeight = 16
 		}
 
-		instantTextBoxType={
+		instantTextBoxType = {
 			name = "avg_daily_tick"
 			font = "cg_16b"
 			position = { x = 120 y = 120 }
@@ -1818,7 +1896,7 @@ guiTypes = {
 			maxHeight = 16
 		}
 
-		instantTextBoxType={
+		instantTextBoxType = {
 			name = "avg_extra_daily_tick_frames"
 			font = "cg_16b"
 			position = { x = 120 y = 140 }

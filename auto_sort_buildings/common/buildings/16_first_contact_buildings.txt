@@ -10,6 +10,10 @@ building_low_tech_scrap_refinery = {
 	position_priority = 1700
 	category = manufacturing
 
+	building_sets = {
+		pre_ftl
+	}
+
 	empire_limit = {
 		base = 1
 	}
@@ -48,20 +52,12 @@ building_low_tech_scrap_refinery = {
 				is_lithoid_empire = yes
 			}
 		}
-		job_low_tech_miner_add = 2
+		job_low_tech_miner_add = 200
 	}
 
 	planet_modifier = {
-		job_low_tech_laborer_add = 2
-		job_low_tech_miner_add = 2
-	}
-
-	triggered_desc = {
-		text = job_low_tech_miner_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_low_tech_laborer_effect_desc
+		job_low_tech_laborer_add = 200
+		job_low_tech_miner_add = 200
 	}
 }
 
@@ -72,6 +68,10 @@ building_low_tech_admin_hub = {
 
 	position_priority = 1701
 	category = unity
+
+	building_sets = {
+		pre_ftl
+	}
 
 	empire_limit = {
 		base = 1
@@ -107,67 +107,9 @@ building_low_tech_admin_hub = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			owner = {
-				is_spiritualist = yes
-			}
-		}
-		job_low_tech_priest_add = 2
+	planet_modifier = {
+		job_bureaucrat_add = 200
 	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_spiritualist = yes
-			}
-		}
-		text = job_low_tech_priest_effect_desc
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			owner = {
-				is_spiritualist = no
-				is_megacorp = no 
-			}
-		}
-		job_low_tech_bureaucrat_add = 2
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_spiritualist = no
-				is_megacorp = no 
-			}
-		}
-		text = job_low_tech_bureaucrat_effect_desc
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			owner = {
-				is_spiritualist = no
-				is_megacorp = yes 
-			}
-		}
-		job_low_tech_manager_add = 2
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_spiritualist = no
-				is_megacorp = yes 
-			}
-		}
-		text = job_low_tech_manager_effect_desc
-	}
-
 }
 
 building_low_tech_power_plant = {
@@ -177,6 +119,10 @@ building_low_tech_power_plant = {
 
 	position_priority = 1702
 	category = resource
+
+	building_sets = {
+		pre_ftl
+	}
 
 	empire_limit = {
 		base = 1
@@ -210,11 +156,7 @@ building_low_tech_power_plant = {
 	}
 
 	planet_modifier = {
-		job_low_tech_technician_add = 2
-	}
-
-	triggered_desc = {
-		text = job_low_tech_technician_effect_desc
+		job_low_tech_technician_add = 200
 	}
 }
 
@@ -226,6 +168,10 @@ building_low_tech_farm = {
 	position_priority = 1703
 	category = resource
 
+	building_sets = {
+		pre_ftl
+	}
+
 	empire_limit = {
 		base = 1
 	}
@@ -258,11 +204,7 @@ building_low_tech_farm = {
 	}
 
 	planet_modifier = {
-		job_low_tech_farmer_add = 10
-	}
-
-	triggered_desc = {
-		text = job_low_tech_farmer_effect_desc
+		job_low_tech_farmer_add = 1000
 	}
 }
 
@@ -273,8 +215,13 @@ building_low_tech_capital = {
 	can_be_ruined = no
 	can_be_disabled = no
 	position_priority = 0
+	capital_tier = 1
 
 	category = government
+
+	building_sets = {
+		pre_ftl
+	}
 
 	empire_limit = {
 		base = 1
@@ -297,23 +244,14 @@ building_low_tech_capital = {
 	}
 
 	planet_modifier = {
-		job_colonist_add = 2
-		job_low_tech_warrior_add = 1
-		planet_housing_add = 4
-		planet_amenities_add = 7
-		planet_max_buildings_add = 1
+		job_colonist_add = 200
+		job_low_tech_warrior_add = 100
+		planet_housing_add = 400
+		planet_amenities_add = 700
 	}
 
 	upgrades = {
 		building_capital
-	}
-
-	triggered_desc = {
-		text = job_colonist_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_low_tech_warrior_effect_desc
 	}
 }
 
@@ -324,6 +262,10 @@ building_low_tech_research_lab = {
 
 	position_priority = 1705
 	category = research
+
+	building_sets = {
+		pre_ftl
+	}
 
 	empire_limit = {
 		base = 1
@@ -357,10 +299,6 @@ building_low_tech_research_lab = {
 	}
 
 	planet_modifier = {
-		job_low_tech_researcher_add = 2
-	}
-
-	triggered_desc = {
-		text = job_low_tech_researcher_effect_desc
+		job_low_tech_researcher_add = 200
 	}
 }

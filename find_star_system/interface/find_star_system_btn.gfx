@@ -32,6 +32,12 @@ spriteTypes = {
 		texturefile = "gfx/interface/icons/find_shroudtunnel_btn.dds"
 		noOfFrames = 3
 	}
+	# 不思議なポータル
+	spriteType = {
+		name = "GFX_find_starlit_wormhole_btn"
+		texturefile = "gfx/interface/icons/find_starlit_wormhole_btn.dds"
+		noOfFrames = 3
+	}
 
 	####
 	# 基地/艦隊/リヴァイアサン/危機

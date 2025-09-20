@@ -184,6 +184,14 @@ guiTypes = {
 			orientation = "UPPER_LEFT"
 			effect = "find_bypass_shroudtunnel_btn"
 		}
+		# 不思議なポータル
+		effectButtonType  = {
+			name ="find_starlit_wormhole_btn"
+			quadTextureSprite = "GFX_find_starlit_wormhole_btn"
+			position = { x = 450 y = 105 }
+			orientation = "UPPER_LEFT"
+			effect = "find_starlit_wormhole_btn"
+		}
 
 		####
 		# 基地/艦隊/リヴァイアサン/危機

@@ -20,5 +20,8 @@
 	# デフォルト種族特性「岩石」
 	trait = "trait_lithoid"
 
+	# 艦船セットを利用しない
+	generate_shipset = no
+
 	# グラフィックカルチャー
 	graphical_culture = lithoid_01

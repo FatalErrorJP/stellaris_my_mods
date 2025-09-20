@@ -36,8 +36,9 @@ country_event = {
 	trigger = {
 		is_ai = no
 		not = { has_country_flag = anti_missile_corvette_design }
+		country_uses_bio_ships = no
 		has_technology = tech_corvettes
-		has_technology = tech_pd_tracking_1
+		has_technology = tech_flak_batteries_1
 		has_technology = tech_lasers_1
 		has_technology = tech_mass_drivers_1
 		has_technology = tech_ship_armor_1
@@ -64,6 +65,7 @@ country_event = {
 	trigger = {
 		is_ai = no
 		not = { has_country_flag = anti_corvette_pf_design }
+		country_uses_bio_ships = no
 		has_technology = tech_space_defense_station_1
 		has_technology = tech_ship_armor_1
 		has_technology = tech_shields_1
@@ -86,6 +88,7 @@ country_event = {
 	trigger = {
 		is_ai = no
 		not = { has_country_flag = anti_unbidden_cruiser_design }
+		country_uses_bio_ships = no
 		has_technology = tech_cruisers
 		has_technology = tech_swarmer_missiles_1
 		has_technology = tech_ship_armor_1
@@ -113,6 +116,7 @@ country_event = {
 	trigger = {
 		is_ai = no
 		not = { has_country_flag = anti_unbidden_battleship_design }
+		country_uses_bio_ships = no
 		has_technology = tech_battleships
 		has_technology = tech_mass_accelerator_1
 		has_technology = tech_kinetic_artillery_1
@@ -142,6 +146,7 @@ country_event = {
 	trigger = {
 		is_ai = no
 		not = { has_country_flag = anti_prethoryn_battleship_design }
+		country_uses_bio_ships = no
 		has_technology = tech_battleships
 		has_technology = tech_energy_lance_1
 		has_technology = tech_plasma_1
@@ -171,6 +176,7 @@ country_event = {
 	trigger = {
 		is_ai = no
 		not = { has_country_flag = anti_contingency_corvette_design }
+		country_uses_bio_ships = no
 		has_technology = tech_corvettes
 		has_technology = tech_disruptors_1
 		has_technology = tech_afterburners_1
@@ -196,6 +202,7 @@ country_event = {
 	trigger = {
 		is_ai = no
 		not = { has_country_flag = anti_contingency_battleship_design }
+		country_uses_bio_ships = no
 		has_technology = tech_battleships
 		has_technology = tech_arc_emitter_1
 		has_technology = tech_afterburners_1

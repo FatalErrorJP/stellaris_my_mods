@@ -55,7 +55,7 @@ fleet_event = {
 					}
 
 					export_trigger_value_to_variable = {
-						trigger = count_owned_pop
+						trigger = count_owned_pop_amount
 						parameters = {
 							limit = {
 								OR = {

@@ -12,14 +12,19 @@ country_event = {
 
 	trigger = {
 		is_country_type = default
+		years_passed > 10
 		NOR = {
 			has_country_flag = birth_of_piracy
 			has_ethic = ethic_gestalt_consciousness
 		}
 		exists = capital_scope
 		any_system_within_border = {
-			has_trade_route = yes
-			trade_intercepted_value > 0
+			any_system_planet = {
+				planet_resource_compare = {
+					resource = trade
+					value > 1000
+				}
+			}
 		}
 	}
 
@@ -36,14 +41,19 @@ country_event = {
 
 	trigger = {
 		is_country_type = default
+		years_passed > 10
 		NOR = {
 			has_country_flag = birth_of_piracy
 			has_ethic = ethic_gestalt_consciousness
 		}
 		exists = capital_scope
 		any_system_within_border = {
-			has_trade_route = yes
-			trade_intercepted_value > 0
+			any_system_planet = {
+				planet_resource_compare = {
+					resource = trade
+					value > 1000
+				}
+			}
 		}
 	}
 
@@ -62,9 +72,9 @@ country_event = {
 		is_country_type = default
 		NOT = { has_country_flag = birth_of_piracy }
 		exists = capital_scope
-		any_system_within_border = {
-			has_trade_route = yes
-			trade_intercepted_value > 0
+		has_monthly_income = {
+			resource = trade
+			value > 100
 		}
 	}
 
@@ -83,9 +93,9 @@ country_event = {
 		is_country_type = default
 		NOT = { has_country_flag = birth_of_piracy }
 		exists = capital_scope
-		any_system_within_border = {
-			has_trade_route = yes
-			trade_intercepted_value > 0
+		has_monthly_income = {
+			resource = trade
+			value > 100
 		}
 	}
 
@@ -104,9 +114,9 @@ country_event = {
 		is_country_type = default
 		NOT = { has_country_flag = birth_of_piracy }
 		exists = capital_scope
-		any_system_within_border = {
-			has_trade_route = yes
-			trade_intercepted_value > 0
+		has_monthly_income = {
+			resource = trade
+			value > 100
 		}
 	}
 
@@ -125,9 +135,9 @@ country_event = {
 		is_country_type = default
 		NOT = { has_country_flag = birth_of_piracy }
 		exists = capital_scope
-		any_system_within_border = {
-			has_trade_route = yes
-			trade_intercepted_value > 0
+		has_monthly_income = {
+			resource = trade
+			value > 100
 		}
 	}
 

@@ -6,7 +6,6 @@ message_type = {
 
 	name = "ASSIGNED_MISTAKE_AGENT_TITLE"
 	sound = "notification"
-	auto_opens = none
 	ping = "ping_notification_red"
 }
 
@@ -18,6 +17,5 @@ message_type = {
 
 	name = "ASSIGNED_MISTAKE_DIPLOMAT_TITLE"
 	sound = "notification"
-	auto_opens = none
 	ping = "ping_notification_red"
 }

@@ -28,6 +28,7 @@ custom_map_mode_is_target_country = {
 		is_country_type = synth_queen
 		is_country_type = awakened_synth_queen
 		is_country_type = synth_queen_outposts
+		is_country_type = abandoned_hatchery
 		is_primitive = yes
 	}
 	is_pirate = no

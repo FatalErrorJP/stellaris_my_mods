@@ -35,8 +35,10 @@ civic_idyllic_bloom = {
 			}
 		}
 		origin = {
-			NOT = {
+			NOR = {
 				value = origin_void_dwellers
+				value = origin_evolutionary_predators
+				value = origin_unplugged
 			}
 		}
 		civics = {
@@ -88,8 +90,9 @@ civic_hive_idyllic_bloom = {
 			}
 		}
 		origin = {
-			NOT = {
+			NOR = {
 				value = origin_void_dwellers
+				value = origin_evolutionary_predators
 			}
 		}
 	}
