@@ -66,7 +66,7 @@ building_hydroponics_farm = {
 	prerequisites = {
 		"tech_hydroponics"
 	}
-	
+
 	# Static jobs building
 	ai_weight_coefficient = 0.0
 }
@@ -90,7 +90,7 @@ building_food_processing_facility = {
 		}
 		OR = {
 			owner = { is_ai = no }
-			has_any_farming_district_or_buildings = yes
+			has_any_farming_district_or_building = yes
 		}
 	}
 	destroy_trigger = {
@@ -109,7 +109,7 @@ building_food_processing_facility = {
 			has_modifier = resort_colony
 			AND = {
 				owner = { is_ai = yes }
-				has_any_farming_district_or_buildings = no
+				has_any_farming_district_or_building = no
 			}
 		}
 	}
@@ -137,7 +137,7 @@ building_food_processing_facility = {
 	}
 
 	ai_resource_production = {
-   		food = 10
+		food = 10
 
 		trigger = {
 			has_any_agriculture_zone = yes
@@ -182,7 +182,7 @@ building_food_processing_center = {
 			}
 			AND = {
 				owner = { is_ai = yes }
-				has_any_farming_district_or_buildings = no
+				has_any_farming_district_or_building = no
 			}
 			is_planet_class = pc_machine
 			has_modifier = resort_colony
@@ -240,7 +240,7 @@ building_food_processing_center = {
 	}
 
 	ai_resource_production = {
-   		food = 15
+		food = 15
 
 		trigger = {
 			has_any_agriculture_zone = yes
@@ -623,7 +623,7 @@ building_mine_generic = {
 	prerequisites = {
 		"tech_mechanized_mining"
 	}
-	
+
 	# Static jobs building
 	ai_weight_coefficient = 0.0
 }
@@ -711,7 +711,7 @@ building_mineral_purification_plant = {
 	}
 
 	ai_resource_production = {
-   		minerals = 10
+		minerals = 10
 
 		trigger = {
 			has_any_mining_zone = yes
@@ -719,7 +719,7 @@ building_mineral_purification_plant = {
 	}
 
 	ai_resource_production = {
-   		minerals = 5
+		minerals = 5
 		energy = 10
 
 		trigger = {
@@ -845,7 +845,7 @@ building_mineral_purification_hub = {
 	}
 
 	ai_resource_production = {
-   		minerals = 15
+		minerals = 15
 
 		trigger = {
 			has_any_mining_zone = yes
@@ -853,7 +853,7 @@ building_mineral_purification_hub = {
 	}
 
 	ai_resource_production = {
-   		minerals = 7.5
+		minerals = 7.5
 		energy = 15
 
 		trigger = {
@@ -1120,7 +1120,7 @@ building_generator_generic = {
 	prerequisites = {
 		"tech_power_plant_1"
 	}
-	
+
 	# Static jobs building
 	ai_weight_coefficient = 0.0
 }
@@ -1194,7 +1194,7 @@ building_energy_grid = {
 	}
 
 	ai_resource_production = {
-   		energy = 10
+		energy = 10
 
 		trigger = {
 			has_any_generator_zone = yes
@@ -1294,7 +1294,7 @@ building_energy_nexus = {
 	}
 
 	ai_resource_production = {
-   		energy = 15
+		energy = 15
 
 		trigger = {
 			has_any_generator_zone = yes
@@ -1603,7 +1603,7 @@ building_bio_reactor = {
 			owner = {
 				is_ai = no
 			}
-			has_any_farming_district_or_buildings = yes
+			has_any_farming_district_or_building = yes
 		}
 	}
 
@@ -1620,7 +1620,7 @@ building_bio_reactor = {
 				owner = {
 					is_ai = yes
 				}
-				has_any_farming_district_or_buildings = no
+				has_any_farming_district_or_building = no
 			}
 		}
 	}
@@ -1674,7 +1674,7 @@ building_bio_reactor_2 = {
 			owner = {
 				is_ai = no
 			}
-			has_any_farming_district_or_buildings = yes
+			has_any_farming_district_or_building = yes
 		}
 	}
 
@@ -1691,7 +1691,7 @@ building_bio_reactor_2 = {
 				owner = {
 					is_ai = yes
 				}
-				has_any_farming_district_or_buildings = no
+				has_any_farming_district_or_building = no
 			}
 		}
 	}

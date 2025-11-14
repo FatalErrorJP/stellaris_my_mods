@@ -4,5 +4,5 @@ tags={
 	"Graphics"
 }
 name="紛らわしいからバイパスのアイコンは分けてくれ"
-supported_version="v4.0.*"
+supported_version="v4.1.*"
 remote_file_id="3027579736"

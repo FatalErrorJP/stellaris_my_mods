@@ -160,6 +160,12 @@ spriteTypes = {
 		texturefile = "gfx/interface/icons/find_dyson_swarm_btn.dds"
 		noOfFrames = 3
 	}
+	# シュラウド・シール
+	spriteType = {
+		name = "GFX_find_megastructure_shroud_seal_btn"
+		texturefile = "gfx/interface/icons/find_megastructure_shroud_seal_btn.dds"
+		noOfFrames = 3
+	}
 
 	####
 	# 入植可能惑星

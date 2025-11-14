@@ -4,5 +4,5 @@ tags={
 	"Balance"
 }
 name="危機の倍率を調整したい"
-supported_version="v4.0.*"
+supported_version="v4.1.*"
 remote_file_id="3021053060"

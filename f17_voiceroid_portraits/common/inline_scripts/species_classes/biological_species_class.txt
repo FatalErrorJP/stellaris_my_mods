@@ -13,6 +13,9 @@
 	# 機械知性は選択不可
 	possible = { authority = { NOT = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE } } }
 
+	# デフォルト種族特性「有機生命」
+	trait = "trait_organic"
+
 	# 艦船セットを利用しない
 	generate_shipset = no
 

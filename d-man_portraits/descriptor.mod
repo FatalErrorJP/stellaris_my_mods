@@ -6,5 +6,5 @@ tags={
 }
 picture="thumbnail.png"
 name="D-man Portraits"
-supported_version="v4.0.*"
+supported_version="v4.1.*"
 remote_file_id="2759667965"

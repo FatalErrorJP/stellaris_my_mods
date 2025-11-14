@@ -39,6 +39,7 @@
   TOOLTIP_FIND_MEGASTRUCTURE_CRISIS_SPHERE_BTN:0 "§Hエーテル位相機関§!のある星系を検索する"
   TOOLTIP_FIND_ARC_FURNACE_BTN:0 "§H自国内の一定以上の基準(※)を満たしたアーク炉建造候補の星系§!を検索する\n※条件を満たす惑星数16個以上"
   TOOLTIP_FIND_DYSON_SWARM_BTN:0 "§H自国内の一定以上の基準(※)を満たしたダイソンスウォーム建造候補の星系§!を検索する\n※埋蔵資源2種類以上 または 以下を除く資源産出を含む恒星であるもの\n・$energy$：1～3\n・$physics_research$：1～2\n・$society_research$：1～2\n・$engineering_research$：1～2"
+  TOOLTIP_FIND_MEGASTRUCTURE_SHROUD_SEAL_BTN:0 "§Hシュラウド・シール§!のある星系を検索する"
 
   TOOLTIP_FIND_PLANET_MOTE_HARVESTERS_BTN:0 "£job_miner£ [GetMinerPlural]が£volatile_motes£ $volatile_motes$を生産する未入植惑星を検索する"
   TOOLTIP_FIND_PLANET_GAS_EXTRACTORS_BTN:0 "£job_miner£ [GetMinerPlural]が£exotic_gases£ $exotic_gases$を生産する未入植惑星を検索する"
@@ -138,6 +139,8 @@
   FOUND_ARC_FURNACE_MESSAGE:0 "アーク炉建造候補の星系：$SYSTEM|H$\nスコア：$SCORE|H$"
   FOUND_DYSON_SWARM_TITLE:0 "検索条件：自国内のダイソンスウォーム建造候補の星系"
   FOUND_DYSON_SWARM_MESSAGE:0 "ダイソンスウォーム建造候補の星系：$SYSTEM|H$"
+  FOUND_MEGASTRUCTURE_SHROUD_SEAL_TITLE:0 "検索条件：シュラウド・シール"
+  FOUND_MEGASTRUCTURE_SHROUD_SEAL_MESSAGE:0 "シュラウド・シールのある星系：$SYSTEM|H$"
 
   FOUND_PLANET_MOTE_HARVESTERS_TITLE:0 "検索条件：£job_miner£ [GetMinerPlural]が£volatile_motes£ $volatile_motes$を生産する惑星"
   FOUND_PLANET_MOTE_HARVESTERS_MESSAGE:0 "惑星：$PLANET|H$\n星系：$SYSTEM|H$"

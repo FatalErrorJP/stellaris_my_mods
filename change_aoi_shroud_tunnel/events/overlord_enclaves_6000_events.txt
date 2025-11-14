@@ -36,10 +36,7 @@ fleet_event = {
 		NOT = { has_fleet_flag = strange_manifestations }
 		exists = leader
 		leader = {
-			NOR = {
-				has_leader_flag = renowned_leader
-				has_leader_flag = legendary_leader
-			}
+			is_leader_tier = leader_tier_default
 		}
 		owner = {
 			NOR = {

@@ -6,5 +6,5 @@ dependencies={
 	"造船機能をON/OFFしたい"
 }
 name="艦隊をグループ化したかった"
-supported_version="v4.0.*"
+supported_version="v4.1.*"
 remote_file_id="2816799181"

@@ -4,5 +4,5 @@ tags={
 }
 name="戦争が終わらない"
 picture="thumbnail.png"
-supported_version="v4.0.*"
+supported_version="v4.1.*"
 remote_file_id="2801661382"

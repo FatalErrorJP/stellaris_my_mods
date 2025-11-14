@@ -585,7 +585,7 @@ hunting_grounds = {
 	}
 
 	destroy_trigger = {
-		OR = {
+		AND = {
 			owner = {
 				has_trophy_hunter_job = no
 				has_hunter_drone_job = no

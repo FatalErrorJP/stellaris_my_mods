@@ -1326,6 +1326,55 @@ find_dyson_swarm_btn = {
 	}
 }
 
+#####
+# シュラウド・シールのある星系を検索する
+#####
+find_megastructure_shroud_seal_btn = {
+	potential = {}
+	allow = {
+		hidden_trigger = {
+			exists = from
+			from = { is_scope_type = country }
+		}
+	}
+	effect = {
+		custom_tooltip = "TOOLTIP_FIND_MEGASTRUCTURE_SHROUD_SEAL_BTN"
+		hidden_effect = {
+			every_megastructure = {
+				limit = {
+					OR = {
+						is_megastructure_type = shroud_seal
+					}
+					OR = {
+						star = {
+							solar_system = {
+								is_surveyed = { who = from status = yes }
+							}
+						}
+						from = { intel_level = { level > low system = prev.solar_system } }
+					}
+				}
+
+				star = {
+					solar_system = {
+						save_event_target_as = target_system
+					}
+				}
+
+				from = {
+					create_message = {
+						type = FOUND_MEGASTRUCTURE_SHROUD_SEAL
+						localization = FOUND_MEGASTRUCTURE_SHROUD_SEAL_MESSAGE
+						days = 30
+						target = event_target:target_system
+						variable = { type = name localization = SYSTEM scope = event_target:target_system }
+					}
+				}
+			}
+		}
+	}
+}
+
 ###############################################################################
 # 未入植惑星
 ###############################################################################

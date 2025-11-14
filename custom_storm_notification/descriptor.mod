@@ -3,5 +3,5 @@ tags={
 	"Fixes"
 }
 name="「宇宙嵐を検知した！」の通知がうざすぎる"
-supported_version="v4.0.*"
+supported_version="v4.1.*"
 remote_file_id="3329810778"

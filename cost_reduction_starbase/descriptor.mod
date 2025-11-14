@@ -6,5 +6,5 @@ tags={
 }
 name="星系基地の製造コスト削減"
 picture="thumbnail.png"
-supported_version="v4.0.*"
+supported_version="v4.1.*"
 remote_file_id="2759334076"

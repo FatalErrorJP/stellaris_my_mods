@@ -648,13 +648,13 @@ building_grand_battlements_of_steel = {
 	}
 
 	inline_script = {
-		script = jobs/unity_jobs_add
-		AMOUNT = @building_static_jobs_low
+		script = jobs/soldiers_add
+		AMOUNT = @building_static_jobs_high
 	}
 
 	inline_script = {
-		script = jobs/soldiers_add
-		AMOUNT = @building_static_job_high
+		script = jobs/unity_jobs_add
+		AMOUNT = @building_static_jobs_low
 	}
 
 	resources = {

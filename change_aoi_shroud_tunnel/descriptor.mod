@@ -4,5 +4,5 @@ tags={
 	"Fixes"
 }
 name="トンネルを抜けると、私は葵ちゃんになっていた"
-supported_version="v4.0.*"
+supported_version="v4.1.*"
 remote_file_id="3211025797"

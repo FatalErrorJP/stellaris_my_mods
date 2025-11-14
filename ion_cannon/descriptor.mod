@@ -6,5 +6,5 @@ tags={
 }
 name="イオン砲を救いたい"
 picture="thumbnail.png"
-supported_version="v4.0.*"
+supported_version="v4.1.*"
 remote_file_id="2778232170"

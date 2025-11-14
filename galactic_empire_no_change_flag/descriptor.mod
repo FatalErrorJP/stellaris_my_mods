@@ -4,5 +4,5 @@ tags={
 	"Graphics"
 }
 name="やはり伝統ある我が国の国旗が一番だな"
-supported_version="v4.0.*"
+supported_version="v4.1.*"
 remote_file_id="2917890684"
